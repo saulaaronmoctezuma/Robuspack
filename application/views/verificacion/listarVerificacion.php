@@ -44,7 +44,7 @@
     <head>
 
     <div class="container">
-        <h1>Control de </h1>
+        <h1></h1>
 
         <div class="alert alert-info alert-warning">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -67,15 +67,56 @@
                     <th>Cliente </th>
                     <th>Pedimento</th>
                     <th>Placa </th>
-                    <th>Factura</th>
+
+
+
+
+
+
+
+                    <?php
+                    if ($dataLevel == 'is_admin') {
+                        echo '<th>Factura</th>';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '<th>Factura</th>';
+                    } else if ($dataLevel == 'is_logistica') {
+                        echo '<th>Factura</th>';
+                    } else if ($dataLevel == 'is_credito') {
+                        echo '<th>Factura</th>';
+                    } else if ($dataLevel == 'is_refacciones') {
+                        
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '<th>Factura</th>';
+                    } else {
+                        
+                    }
+                    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <?php
                     if ($dataLevel == 'is_admin') {
                         echo '<th class="header" colspan="1" style="text-align: center">Eliminar</th><th class="header" colspan="1" align="center" >Modificar</th>';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '<th class="header" colspan="1" style="text-align: center">Eliminar</th><th class="header" colspan="1" align="center" >Modificar</th>';
                     } else if ($dataLevel == 'is_logistica') {
                         echo '<th class="header" colspan="2" align="center" >Modificar</th>';
-                    } else if ($dataLevel == 'is_refacciones') {
+                    } else if ($dataLevel == 'is_credito') {
                         echo '<th class="header" colspan="2" align="center" >Modificar</th>';
-                    } else if ($dataLevel == 'id_editor') {
+                    } else if ($dataLevel == 'is_refacciones') {
+                        echo '<th class="header" colspan="1" align="center" >Modificar</th>';
+                    } else if ($dataLevel == 'is_editor') {
                         echo '<th class="header" colspan="2" style="text-align: center">Eliminar</th><th class="header" colspan="2" align="center" >Modificar</th>';
                     } else {
                         
@@ -107,20 +148,50 @@
                 ;
 
                 if ($obj->getPlaca() != null) {
-                    echo '<td width="250px"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getPlaca() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+                    echo '<td><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getPlaca() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                 } else {
                     echo '<td>Sin Archivo</td>';
                 }
-                if ($obj->getFactura() != null) {
-                    echo '<td width="250px"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
-                } else {
+
+
+
+
+
+                if (($obj->getFactura() == null) && ($dataLevel == 'is_editor')) {
                     echo '<td>Sin Archivo</td>';
+                } else if (($obj->getFactura() != null) && ($dataLevel == 'is_editor')) {
+                    echo '<td><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                 }
+
+                if (($obj->getFactura() == null) && ($dataLevel == 'is_admin')) {
+                    echo '<td>Sin Archivo</td>';
+                } else if (($obj->getFactura() != null) && ($dataLevel == 'is_admin')) {
+                    echo '<td><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+                }
+
+                if (($obj->getFactura() == null) && ($dataLevel == 'is_logistica')) {
+                    echo '<td>Sin Archivo</td>';
+                } else if (($obj->getFactura() != null) && ($dataLevel == 'is_logistica')) {
+                    echo '<td><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+                }
+
+                if (($obj->getFactura() == null) && ($dataLevel == 'is_credito')) {
+                    echo '<td>Sin Archivo</td>';
+                } else if (($obj->getFactura() != null) && ($dataLevel == 'is_credito')) {
+                    echo '<td><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+                }
+
+
+
+
 
 
 
 
                 ;
+
+
+
 
                 /* echo '<td width="250px"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/placa/' . $obj->getPlaca() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                   echo '<td><img src="' . base_url() . 'assets/placa/' . $obj->getPlaca() . '" ></td>';
@@ -128,15 +199,17 @@
 
 
                 if ($dataLevel == 'is_admin') {
-                    echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'verificacion/eliminar/' . $obj->getId() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
-                    echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    echo '<td style="text-align: center;"><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'verificacion/eliminar/' . $obj->getId() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                    echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                 } else if ($dataLevel == 'is_editor') {
-                    echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'verificacion/eliminar/' . $obj->getId() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
-                    echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    echo '<td style="text-align: center;"><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'verificacion/eliminar/' . $obj->getId() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                    echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                 } else if ($dataLevel == 'is_refacciones') {
-                    echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                 } else if ($dataLevel == 'is_logistica') {
-                    echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                } else if ($dataLevel == 'is_credito') {
+                    echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                 }
 
                 //echo "<td><a href='" . base_url() . "verificacion/eliminar/" . $obj->getId() . "'>Elimina</a></td>";
@@ -145,10 +218,44 @@
             ?>
         </table>
     </div>
-    <div class="text-center">
-        <a  class="btn btn-success" href="<?= base_url('verificacion/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar nuevo registro</a>
 
-    </div>
+
+
+
+
+    <?php
+    if ($dataLevel == 'is_admin') {
+
+        echo '<div class="text-center">
+        <a class="btn btn-success" href="' . base_url('verificacion/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar nuevo registro</a>
+
+    </div>';
+    } else if ($dataLevel == 'is_editor') {
+
+        echo '<div class="text-center">
+        <a  class="btn btn-success" href="' . base_url('verificacion/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar nuevo registro</a>
+
+    </div>';
+    } else if ($dataLevel == 'is_logistica') {
+
+        echo '<div class="text-center">
+        <a  class="btn btn-success" href="' . base_url('verificacion/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar nuevo registro</a>
+
+    </div>';
+    } else if ($dataLevel == 'is_credito') {
+        
+    } else if ($dataLevel == 'is_refacciones') {
+        
+    } else {
+        
+    }
+    ?>
+
+
+    <!-- <div class="text-center">
+         <a  class="btn btn-success" href="<?= base_url('verificacion/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar nuevo registro</a>
+ 
+     </div>-->
 </div>
 </body>
 </html>

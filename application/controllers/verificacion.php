@@ -75,6 +75,12 @@ class verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('verificacion/listarVerificacion', $data);
             $this->load->view('footer');
+        } else if ($dataLevel == "is_credito") {
+            $data['placa'] = $this->verificacionModelo->query();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('verificacion/listarVerificacion', $data);
+            $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
@@ -166,27 +172,35 @@ class verificacion extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
 
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
 
             $this->load->view('verificacion/agregar');
             $this->load->view('footer');
         } else if ($dataLevel == "is_refacciones") {
-
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('verificacion/agregar');
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
 
+            $this->load->view('verificacion/agregar');
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_logistica") {
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('verificacion/agregar');
             $this->load->view('footer');
-        } else if ($dataLevel == "is_logistica") {
-
+        } else if ($dataLevel == "is_credito") {
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('verificacion/agregar');
@@ -250,7 +264,7 @@ class verificacion extends CI_Controller {
 
         // get foto
         $config['upload_path'] = './assets/verificacion';
-        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
         $config['max_size'] = '2048';  //2MB max
         $config['max_width'] = '4480'; // pixel
         $config['max_height'] = '4480'; // pixel
@@ -361,6 +375,7 @@ class verificacion extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             //se trae el id del  modelo ClientesRefaccionesModelo
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $kondisi = array('id_verificacion' => $id);
             $data['data'] = $this->verificacionModelo->get_by_id($kondisi);
             return $this->load->view('verificacion/editar', $data);
@@ -372,6 +387,7 @@ class verificacion extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $kondisi = array('id_verificacion' => $id);
             $data['data'] = $this->verificacionModelo->get_by_id($kondisi);
             return $this->load->view('verificacion/editar', $data);
@@ -383,7 +399,31 @@ class verificacion extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
+            $kondisi = array('id_verificacion' => $id);
+            $data['data'] = $this->verificacionModelo->get_by_id($kondisi);
+            return $this->load->view('verificacion/editar', $data);
 
+
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_editor") {
+
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
+            $kondisi = array('id_verificacion' => $id);
+            $data['data'] = $this->verificacionModelo->get_by_id($kondisi);
+            return $this->load->view('verificacion/editar', $data);
+
+
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_credito") {
+
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['clienteCombo'] = $this->verificacionModelo->getCliente();
             $kondisi = array('id_verificacion' => $id);
             $data['data'] = $this->verificacionModelo->get_by_id($kondisi);
             return $this->load->view('verificacion/editar', $data);
@@ -452,7 +492,7 @@ class verificacion extends CI_Controller {
         $factura = $this->input->post('factura');
         $foto = $this->input->post('old');
 
-        $path = './assets/picture/';
+        $path = './assets/verificacion/';
         $id = $this->input->post('id');
         $kondisi = array('id_verificacion' => $id);
         // get fotoz

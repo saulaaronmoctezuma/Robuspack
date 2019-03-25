@@ -108,5 +108,26 @@ class verificacionModelo extends CI_Model implements IModeloAbstracto
     public function refacciones() {
         
     }
+    
+    
+    //select grupo
+    function getCliente() {
+        $grupo = $this->db->select('id_cliente, cliente')->order_by("cliente", "asc")
+                ->get('cliente')
+                ->result();
+
+        $options_arr;
+
+        // entre el arreglo va a ir el dato que se guarde en caso de que no seleccione nada
+        $options_arr[' '] = 'Selecciona una opción';
+
+        // Formato para pasar a la función form_dropdown
+
+        foreach ($grupo as $option) {
+            $options_arr[$option->cliente] = $option->cliente;
+        }
+
+        return $options_arr;
+    }
 
 }
