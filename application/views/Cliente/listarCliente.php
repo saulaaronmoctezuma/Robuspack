@@ -75,6 +75,10 @@
             <MARQUEE SCROLLDELAY =200> </MARQUEE>
             <thead>
                 <tr >
+                    
+                    <th style="text-align: center">Formato</th>
+                    <th style="text-align: center">PDF</th>
+                    <th class="header" colspan="2" style="text-align: center" >Acción</th>
 
                     <th style="text-align: center">Grupo</th>
                     <th style="text-align: center">Cliente</th>
@@ -102,9 +106,7 @@
                     
                     
                     <th style="text-align: center" >Dirección de Entrega</th>
-                    <th style="text-align: center">Formato</th>
-                    <th style="text-align: center">PDF</th>
-                    <th class="header" colspan="2" style="text-align: center" >Acción</th>
+                    
 
 
                 </tr>
@@ -114,7 +116,29 @@
 
                 <?php
                 foreach ($cliente as $obj) {
-                    echo '<tr><td>';
+                    echo '<tr>';
+                      echo '<td><a href="' . base_url() . 'Reporte/visualizar/' . $obj->getId_Cliente() . '"  target=”_blank”><span class="glyphicon glyphicon-indent-right"></a></td>
+					<td> <a target="_blank" title="Descargar la ficha técnica en PDF" href="' . base_url() . 'Reporte/pdf/' . $obj->getId_Cliente() . '"  ><i style="font-size:18px;color:red" class="fa fa-file-pdf-o"></i></a></td>
+				
+				';
+
+
+
+                    //compara si es administrador
+                    if ($dataLevel == 'is_admin') {
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Cliente/eliminar/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_credito') {
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Cliente/eliminar/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                   } else {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    }
+
+
+                  
+                
+                echo '<td>';
                     echo $obj->getGrupo() .
                     '</td>'
                     . '<td>'
@@ -182,25 +206,6 @@
                     '</td>';
 
 
-  echo '<td><a href="' . base_url() . 'Reporte/visualizar/' . $obj->getId_Cliente() . '"  target=”_blank”><span class="glyphicon glyphicon-indent-right"></a></td>
-					<td> <a target="_blank" title="Descargar la ficha técnica en PDF" href="' . base_url() . 'Reporte/pdf/' . $obj->getId_Cliente() . '"  ><i style="font-size:18px;color:red" class="fa fa-file-pdf-o"></i></a></td>
-				
-				';
-
-
-
-                    //compara si es administrador
-                    if ($dataLevel == 'is_admin') {
-                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Cliente/eliminar/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
-                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                    } else if ($dataLevel == 'is_credito') {
-                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                    } else {
-                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                    }
-
-
-                  
                 }
                 ?>
                 </tr>

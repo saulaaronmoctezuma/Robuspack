@@ -969,8 +969,8 @@
 
                         </tr>
                         <tr>
-                            <td>Fecha de ultimo consumo</td>
-                            <td><input id="ultimo_consumo"  class="form-control" type="date"  autofocus name="ultimo_consumo" value="<?= $ultimo_consumo ?>"></td>
+                            <td>fecha_ultima_factura</td>
+                            <td><input id="fecha_ultima_factura"  class="form-control" type="date"  autofocus name="fecha_ultima_factura" value="<?= $fecha_ultima_factura ?>"></td>
                         </tr>
 
                         <tr>

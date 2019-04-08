@@ -648,6 +648,19 @@ class Htmltopdf_model extends CI_Model {
           
            
             
+        }else if ($dataLevel == "is_jefe_mantenimiento"){
+            /* Para traerse el id del usuario 
+            $data = $this->session->userdata;
+            $this->db->select('users.first_name,users.email,users.last_login');
+            $this->db->from('users');
+            $this->db->where("users.id='6' OR users.id='7'  OR users.id='8' OR users.id='9'  OR users.id='10'");
+            $this->db->order_by("last_login", "desc");*/
+           
+            $data = $this->db->query('select first_name  ,email,last_login  from users where users.id=11 OR users.id=12 OR users.id=13');
+
+          
+           
+            
         }
              else{
              redirect(site_url().'main/');

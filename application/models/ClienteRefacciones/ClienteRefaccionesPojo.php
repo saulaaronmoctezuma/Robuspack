@@ -50,14 +50,14 @@ class ClienteRefaccionesPojo {
     private $fecha_seguimiento;
     private $golpes_maquina;
     private $confirmacion_orden_compra;
-    private $ultimo_consumo;
+    private $fecha_ultima_factura;
     private $first_name;
 
     /* Constructor con campos 
      * 
      */
 
-    function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra, $ultimo_consumo, $first_name) {
+    function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra, $fecha_ultima_factura, $first_name) {
         $this->id_venta = $id_venta;
         $this->grupo = $grupo;
         $this->cliente = $cliente;
@@ -98,10 +98,9 @@ class ClienteRefaccionesPojo {
         $this->fecha_seguimiento = $fecha_seguimiento;
         $this->golpes_maquina = $golpes_maquina;
         $this->confirmacion_orden_compra = $confirmacion_orden_compra;
-        $this->ultimo_consumo = $ultimo_consumo;
+        $this->fecha_ultima_factura = $fecha_ultima_factura;
         $this->first_name = $first_name;
     }
-
     public function getId_venta() {
         return $this->id_venta;
     }
@@ -262,8 +261,8 @@ class ClienteRefaccionesPojo {
         return $this->confirmacion_orden_compra;
     }
 
-    public function getUltimo_consumo() {
-        return $this->ultimo_consumo;
+    public function getFecha_ultima_factura() {
+        return $this->fecha_ultima_factura;
     }
 
     public function getFirst_name() {
@@ -430,12 +429,13 @@ class ClienteRefaccionesPojo {
         $this->confirmacion_orden_compra = $confirmacion_orden_compra;
     }
 
-    public function setUltimo_consumo($ultimo_consumo) {
-        $this->ultimo_consumo = $ultimo_consumo;
+    public function setFecha_ultima_factura($fecha_ultima_factura) {
+        $this->fecha_ultima_factura = $fecha_ultima_factura;
     }
 
     public function setFirst_name($first_name) {
         $this->first_name = $first_name;
     }
+
 
 }

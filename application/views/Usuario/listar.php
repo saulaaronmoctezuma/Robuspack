@@ -1,4 +1,4 @@
-<html lang="es-mx">
+<!--<html lang="es-mx">-->
     <head>
 
         <title>Robuspack</title>
@@ -16,6 +16,8 @@
             }
         </script>
 
+        
+        
         <!-- Para traerse el rol que esta registrado-->
         <?php
         //check user level
@@ -60,7 +62,6 @@
                       <?php
                             if ($dataLevel == 'is_admin') {
                     echo   '
-               
                   <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button  style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a PDF" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
                    </a>';
                                   
@@ -68,8 +69,12 @@
                       echo   '
                   <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button  style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a PDF" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
                    </a>';
+                            }else if ($dataLevel == 'is_Gerente_Ventas') {
+                      echo   '
+                  <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
+                   </a>';
                             }
-                            else if ($dataLevel == 'is_Gerente_Ventas') {
+                            else if ($dataLevel == 'is_jefe_mantenimiento') {
                       echo   '
                   <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
                    </a>';
@@ -114,8 +119,7 @@
                     echo '<tr><td>';
                     echo $obj->getFirst_name() .
                     '</td>'
-                    
-                    . '<td>'
+                   . '<td>'
                     . $obj->getEmail() .
                     '</td>'
                     . '<td>'
@@ -123,14 +127,8 @@
                     '</td>'
                     ;
 
-
-
-
-
-
-               
                 }
-                ?>
+                ?>    
                 </tr>
             </tbody>
         </table>

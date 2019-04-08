@@ -1,15 +1,16 @@
 <?php
 
-require 'verificacionPojo.php';
+require 'VerificacionPojo.php';
 require 'IModeloAbstracto.php';
 /**
- *
+<!--
+ * @author  Saul González & Karen González
+ * Fecha : Ultimo Cambio 26/03/2018 Hora 10:15 pm
+ * Fecha : Ultimo Cambio 03/0/2019 Hora 10:36 pm
+ * Sistema de Control Robuspack
  */
-class verificacionModelo extends CI_Model implements IModeloAbstracto
+class VerificacionModelo extends CI_Model implements IModeloAbstracto
 {
-    
-    
-    
      public function __construct() {
         parent::__construct();
         $this->load->database();
@@ -17,7 +18,7 @@ class verificacionModelo extends CI_Model implements IModeloAbstracto
         $this->css = $this->config->item('css');
         $this->load->library('session');
         //poner para el poner selet en un formulario
-        $this->load->model('verificacion/verificacionModelo');
+        $this->load->model('Verificacion/VerificacionModelo');
         //para que tenga el mismo header
         $this->load->model('User_model', 'User_model');
         $this->load->library('form_validation');
@@ -93,7 +94,8 @@ class verificacionModelo extends CI_Model implements IModeloAbstracto
         $colPlaca = array();
 
         foreach ($query->result() as $key => $value) {
-            $objeto = new verificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo, $value->serie,$value->cliente, $value->pedimento, $value->foto, $value->factura 
+            $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
+                    $value->cliente, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
             );
 
             array_push($colPlaca, $objeto);

@@ -69,6 +69,12 @@ Class Usuario extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Usuario/listar', $data);
             $this->load->view('footer');
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+           $data['usuario'] = $this->UsuarioModelo->query();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('Usuario/listar', $data);
+            $this->load->view('footer');
         }  else {
             redirect(site_url() . 'main/');
         }

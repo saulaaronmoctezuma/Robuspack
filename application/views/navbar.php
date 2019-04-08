@@ -11,19 +11,18 @@ $site_title = $result->site_title;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.2.1/jquery.quicksearch.js"></script>
 <script>
-    $(function () {
+    $(function() {
         $('#buscandoIguales').quicksearch('table tbody tr');
     });
 </script> 
-
 
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                
-               <!--<img src="https://robuspack.com/img/logoROBUSPACK.png" border="0" width="60" height="40">-->
+
+<!--<img src="https://robuspack.com/img/logoROBUSPACK.png" border="0" width="60" height="40">-->
                 <a class="navbar-brand" href="<?php echo site_url(); ?>main/"><?php echo $site_title; ?></a>
             </div>
 
@@ -33,7 +32,7 @@ $site_title = $result->site_title;
                     <li><a href="<?php echo site_url(); ?>main/"><i class="glyphicon glyphicon-home" aria-hidden="true"></i> Inicio</a></li>
                     <?php
                     if ($dataLevel == 'is_admin') { //Menú para Karen & Saúl
-                       echo'
+                        echo'
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Usuarios <span class="caret"></span></a>
                               <ul class="dropdown-menu">
@@ -82,6 +81,7 @@ $site_title = $result->site_title;
                                    <li><a href="' . site_url() . 'Cliente">Clientes</a></li>
                                     <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
                                          <li><a href="' . site_url() . 'BitacoraMtto">Bitácora Mantenimiento</a></li>
+                                               <li><a href="' . site_url() . 'verificacion">Placas de Maquinaria</a></li>
                               </ul>
                             </li>
                            
@@ -108,7 +108,7 @@ $site_title = $result->site_title;
                                     <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
                                     <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
                                     <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
-                                     <li><a href="' . site_url() . 'Bitacora/refacciones">Bitácora</a></li>
+                                    <li><a href="' . site_url() . 'Bitacora/refacciones">Bitácora</a></li>
                               </ul>
                             </li>
                             
@@ -125,7 +125,7 @@ $site_title = $result->site_title;
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                     <li><a href="' . site_url() . '">Vendedores y Técnicos</a></li>
-                                   <li><a href="' . site_url() . '">Clientes</a></li>
+                                    <li><a href="' . site_url() . '">Clientes</a></li>
                                     <li><a href="' . site_url() . '">Empresas</a></li>
                                         
                               </ul>
@@ -137,7 +137,7 @@ $site_title = $result->site_title;
 
 
                     if ($dataLevel == 'is_editor') { //Menú Lic. Rocio
-                       echo'
+                        echo'
                            
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC Refacciones <span class="caret"></span></a>
@@ -164,9 +164,10 @@ $site_title = $result->site_title;
                               <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                    <li><a href="' . site_url() . 'CatalogoVenTec">Vendedores y Técnicos</a></li>
+                                   <li><a href="' . site_url() . 'CatalogoVenTec">Vendedores y Técnicos</a></li>
                                    <li><a href="' . site_url() . 'Cliente">Clientes</a></li>
-                                    <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                   <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                   <li><a href="' . site_url() . 'verificacion">Catálogo de Placas de Maquinaria</a></li>
                               </ul>
                             </li>
                             ';
@@ -179,11 +180,11 @@ $site_title = $result->site_title;
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC Refacciones <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                  <li><a href="' . site_url() . 'ClienteRefacciones">Control SIC</a></li>
-                                <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
-                                <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
-                                <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
+                                 <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
+                                 <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                 <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
                                  <li><a href="' . site_url() . 'ReporteMaximoMinimo">Reporte Rotación de Inventario</a></li>
-                                <li><a href="' . site_url() . 'Bitacora/refacciones">Bitácora</a></li>
+                                 <li><a href="' . site_url() . 'Bitacora/refacciones">Bitácora</a></li>
                                   
                               </ul>
                             </li>
@@ -294,10 +295,10 @@ $site_title = $result->site_title;
                             </li>
                             ';
                     }
-                       
-                    
-                            if ($dataLevel == 'is_mantenimiento') { //NavBar para Mantenimiento
-                            echo'
+
+
+                    if ($dataLevel == 'is_mantenimiento') { //NavBar para Mantenimiento
+                        echo'
 
                                 <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Mantenimiento <span class="caret"></span></a>
@@ -314,7 +315,7 @@ $site_title = $result->site_title;
 
 
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC Refacciones <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                  <li><a href="' . site_url() . '">Control SIC</a></li>
                                 <li><a href="' . site_url() . '">Lista de Precios Cubiertas</a></li>
@@ -348,10 +349,10 @@ $site_title = $result->site_title;
 
 
                                 ';
-                            }
+                    }
 
-                              if ($dataLevel == 'is_jefe_mantenimiento') { //NavBar para Mantenimiento
-                            echo'
+                    if ($dataLevel == 'is_jefe_mantenimiento') { //NavBar para Mantenimiento
+                        echo'
 
                                 <li class="dropdown">
                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Mantenimiento <span class="caret"></span></a>
@@ -367,27 +368,55 @@ $site_title = $result->site_title;
 
 
                                 ';
-                            }
+                    }
+
+
+                    if ($dataLevel == 'is_logistica') { //NavBar para Mantenimiento
+                        echo'
+
+                              
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Refacciones <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                 <li><a href="' . site_url() . '">Control SIC</a></li>
+                                <li><a href="' . site_url() . '">Lista de Precios Cubiertas</a></li>
+                                <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
+                                 <li><a href="' . site_url() . '">Reporte Rotación de Inventario</a></li>
+                                <li><a href="' . site_url() . '">Bitácora</a></li>
+                                    <li role="separator" class="divider"></li>
+                                <li><a href="' . site_url() . '">Clientes por vendedor</a></li>
+                                <li><a href="' . site_url() . '">Máquinas por Clientes</a></li>
+                                <li><a href="' . site_url() . '">Máquinas por Vendedor</a></li>
+                                 <li><a href="' . site_url() . '">Total Registros Bitácora</a></li>
+                                 <li><a href="' . site_url() . '">Total Sic</a></li>
+                                  
+                              </ul>
+                            </li>
+                            
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i> Maquinaria <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . '">Control SIC</a></li>
+                                    <li><a href="' . site_url() . '">Bitácora</a></li>
+                              </ul>
+                            </li>
                             
                             
-                              if ($dataLevel == 'is_logistica') { //NavBar para Mantenimiento
-                            echo'
-
-                                <li class="dropdown">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Mantenimiento <span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
-                                    <li><a href="' . site_url() . 'verificacion">Verificación de Placas</a></li>
-
-
-
-                                  </ul>
-                                </li>
-
-
+                              <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . '">Vendedores y Técnicos</a></li>
+                                   <li><a href="' . site_url() . '">Clientes</a></li>
+                                    <li><a href="' . site_url() . '">Empresas</a></li>
+                                      
+                                               <li><a href="' . site_url() . 'verificacion">Catálogo de Placas de Maquinaria</a></li>
+                              </ul>
+                            </li>
 
 
                                 ';
-                            }
+                    }
 
 
                     if ($dataLevel == 'is_maquinaria_refacciones') { //NavBar para Gerardo
@@ -441,15 +470,15 @@ $site_title = $result->site_title;
                             <?php
                             if ($dataLevel == 'is_admin') {
                                 echo ' <li><a href="main/changeuser">Editar Perfil</a></li>';
-                                     echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
-                            
+                                echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
                             } else if ($dataLevel == 'is_editor') {
-                                 echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
-                            }else if ($dataLevel == 'is_Gerente_Ventas') {
-                                 echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
-                            }
-                            else if ($dataLevel == 'is_director') {
-                                 echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
+                                echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
+                            } else if ($dataLevel == 'is_Gerente_Ventas') {
+                                echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
+                            } else if ($dataLevel == 'is_director') {
+                                echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
+                            }else if ($dataLevel == 'is_jefe_mantenimiento') {
+                                echo ' <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>';
                             }
                             ?>
 

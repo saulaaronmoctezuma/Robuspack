@@ -93,10 +93,10 @@
 <br>
 
 
-<video poster="<?php echo base_url(); ?>assets/images/marzo.png" id="bgvid" playsinline autoplay muted loop>
+<video poster="<?php echo base_url(); ?>assets/images/marzop2019.mp4" id="bgvid" playsinline autoplay muted loop>
     <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-    <source src="<?php echo base_url(); ?>assets/images/marzo.png" type="video/webm">
-    <source src="<?php echo base_url(); ?>assets/images/marzo.png" type="video/mp4">
+    <source src="<?php echo base_url(); ?>assets/images/marzop2019.mp4" type="video/webm">
+    <source src="<?php echo base_url(); ?>assets/images/marzop2019.mp4" type="video/mp4">
 </video>
 <br>
 
@@ -131,9 +131,6 @@
             ?>
 
 <?php echo form_error('email') ?>
-
-
-
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
 

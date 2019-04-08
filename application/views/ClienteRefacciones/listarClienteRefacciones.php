@@ -175,7 +175,7 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         <th class="header">Fecha seguimiento</th>
                         <th class="header">Golpes máquina por día</th>
                         <th class="header">Confirmación de Orden de Compra</th>
-                        <th class="header">Ultimo Consumo</th>
+                        <th class="header">fecha_ultima_factura</th>
 
 
 
@@ -346,7 +346,7 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         . $obj->getConfirmacion_orden_compra() .
                         '</td>'
                         . '<td>'
-                        . $obj->getUltimo_consumo() .
+                        . $obj->getFecha_ultima_factura() .
                         '</td>';
 
 

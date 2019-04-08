@@ -1,15 +1,19 @@
- </div><!--row 
-    <a href="#arriba" class="to-top">Ir a la parte de arriba</a>-->  
- <!--   <a href="#top" title="Da clic para ir arriba"><i class="fa fa-arrow-circle-up"></i></a>
-<a name="abajo"></a>--> 
- 
+ </div><!--row-->   
+   <!--
+ * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
+ * Sistema de Control Robuspack SCR
+ * https://scrobuspack.com 
+ * "Controlar la complejidad es la esencia de la programación"
+ */
+--> 
     <footer>
         <div class="col-md-12" style="text-align:center;">
             <hr>
             
               
                     <h5 class="text-center " style="color:black">&#169;   Copyright Robuspack <?php echo date("Y"); ?> </h5>
-                <div style="visibility: hidden">Sistema de Control Robuspack</div>
+                <meta name="description" content="sistema de control de robuspack" />
+                
                 
         </div>
     </footer>
@@ -32,19 +36,14 @@
         <span id="liveclock" style="position:absolute;left:0;top:0;"></span>
        
         
-       
+        <!--Para Buscar-->
         
-
-       <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.2.1/jquery.quicksearch.js"></script>
         <script>
-         $(document).ready(function() {
-            $('#example').DataTable( {
-             "scrollX": true
-                    } );
-            } );
+            $(function () {
+                $('#buscandoIguales').quicksearch('table tbody tr');
+            });
         </script> 
        
     </body>

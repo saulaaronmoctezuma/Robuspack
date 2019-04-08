@@ -43,6 +43,7 @@
         <!--<?php echo $this->benchmark->memory_usage(); ?>-->
 
     <head>
+    <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
     <div class="container" style="margin-top:1px;">
 
 

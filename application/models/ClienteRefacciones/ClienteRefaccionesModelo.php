@@ -94,7 +94,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-            $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->ultimo_consumo, $value->first_name);
+            $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->fecha_ultima_factura, $value->first_name);
 
                 array_push($colVentas, $objeto);
             }
@@ -126,7 +126,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                   $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->ultimo_consumo, $value->first_name);
+                   $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->fecha_ultima_factura, $value->first_name);
 
                 array_push($colVentas, $objeto);
             }
@@ -156,7 +156,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                     $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->ultimo_consumo, $value->first_name);
+                     $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->fecha_ultima_factura, $value->first_name);
 
                 array_push($colVentas, $objeto);
             }
@@ -186,7 +186,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                   $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->ultimo_consumo, $value->first_name);
+                   $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->fecha_ultima_factura, $value->first_name);
 
                 array_push($colVentas, $objeto);
             }
@@ -239,7 +239,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
                 "fecha_seguimiento" => $venta->getFecha_seguimiento(),
                 "golpes_maquina" => $venta->getGolpes_maquina(),
                 "confirmacion_orden_compra" => $venta->getConfirmacion_orden_compra(),
-                "ultimo_consumo" => $venta->getUltimo_consumo()
+                "fecha_ultima_factura" => $venta->getfecha_ultima_factura()
             );
             $this->db->where("id_venta", $venta->getId_venta());
             $this->db->update("venta", $datos);
@@ -289,7 +289,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             'fecha_seguimiento' => $obj->fecha_seguimiento,
             'golpes_maquina' => $obj->golpes_maquina,
             'confirmacion_orden_compra' => $obj->confirmacion_orden_compra,
-            'ultimo_consumo' => $obj->ultimo_consumo
+            'fecha_ultima_factura' => $obj->fecha_ultima_factura
         );
         return $dp;
     }

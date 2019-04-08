@@ -204,7 +204,7 @@ class ClienteRefacciones extends CI_Controller {
             'fecha_seguimiento' => $_POST['fecha_seguimiento'],
             'golpes_maquina' => $_POST['golpes_maquina'],
             'confirmacion_orden_compra' => $_POST['confirmacion_orden_compra'],
-            'ultimo_consumo' => $_POST['ultimo_consumo'],
+            'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
             /* Es para traerse el id del usuario */
             'id' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
@@ -264,9 +264,9 @@ class ClienteRefacciones extends CI_Controller {
             $golpes_maquina = $datos['golpes_maquina'];
 
             $confirmacion_orden_compra = $datos['confirmacion_orden_compra'];
-            $ultimo_consumo = $datos['ultimo_consumo'];
+            $fecha_ultima_factura = $datos['fecha_ultima_factura'];
             $this->ClienteRefaccionesModelo->actualizar(
-                    $id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra,$ultimo_consumo);
+                    $id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra,$fecha_ultima_factura);
             redirect('');
             redirect('ClienteRefacciones');
         }
@@ -383,7 +383,7 @@ class ClienteRefacciones extends CI_Controller {
             'fecha_seguimiento' => $_POST['fecha_seguimiento'],
             'golpes_maquina' => $_POST['golpes_maquina'],
             'confirmacion_orden_compra' => $_POST['confirmacion_orden_compra'],
-            'ultimo_consumo' => $_POST['ultimo_consumo']
+            'fecha_ultima_factura' => $_POST['fecha_ultima_factura']
         );
         $this->load->model('ClienteRefacciones/ClienteRefaccionesModelo');
         $this->ClienteRefaccionesModelo->actualizar($data);

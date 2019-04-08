@@ -256,7 +256,23 @@ class Reporte extends CI_Controller {
                 $this->pdf->render();
                 $this->pdf->stream("Usuarios.pdf", array("Attachment" => 0));
             }
-        }  else if ($dataLevel == "is_director") {
+        } 
+        
+        
+          else if ($dataLevel == "is_jefe_mantenimiento") {
+
+            if ($this->uri->segment(3)) {
+               $id= $this->uri->segment(3);
+                $html_content = ' <h3 align="center">Lista de Usuarios</h3>';
+                $html_content .= $this->htmltopdf_model->convertirListaUsuarioPdf($id);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Usuarios.pdf", array("Attachment" => 0));
+            }
+        } 
+        
+        
+        else if ($dataLevel == "is_director") {
 
             if ($this->uri->segment(3)) {
                $id= $this->uri->segment(3);
