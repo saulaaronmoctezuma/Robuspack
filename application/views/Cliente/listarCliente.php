@@ -128,11 +128,13 @@
                     if ($dataLevel == 'is_admin') {
                         echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Cliente/eliminar/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                    } else if ($dataLevel == 'is_credito') {
+                    }else  if ($dataLevel == 'is_editor') {
                         echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Cliente/eliminar/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                   } else {
-                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_credito') {
+                       echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_logistica') {
+                       echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Cliente/obtener/' . $obj->getId_Cliente() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                     }
 
 

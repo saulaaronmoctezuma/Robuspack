@@ -969,7 +969,7 @@
 
                         </tr>
                         <tr>
-                            <td>fecha_ultima_factura</td>
+                            <td>Fecha de Última Factura</td>
                             <td><input id="fecha_ultima_factura"  class="form-control" type="date"  autofocus name="fecha_ultima_factura" value="<?= $fecha_ultima_factura ?>"></td>
                         </tr>
 

@@ -40,17 +40,17 @@ background-color: #FF3C12;
 
         <h2> 👋 ¡Qué bueno volverte a ver, <?php echo $first_name; ?> !</h2>
         <br>
-        <p>Sistema de Control de Robuspack</p>
+      <h1><font color="#009942"> Sistema de Control de Robuspack</font></h1>
         
        
-        <!--<div style="text-align:center;padding:1em 0;"> 
+        <<div style="text-align:center;padding:1em 0;"> 
             <h2>
                 <a style="text-decoration:none;" href="https://www.zeitverschiebung.net/es/city/3530597">
                     <span style="color:gray;">Hora actual </span><br />
                     </a></h2> 
             <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=America%2FMexico_City" width="100%" height="140" frameborder="0" seamless></iframe> </div>
 
-    </div>-->
+    </div>
 </div>  
 
 

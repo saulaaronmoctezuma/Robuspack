@@ -844,7 +844,7 @@
                                 
                                 
                                  <div class="form-group col-xs-4">
-                                    <label for="nombre">fecha_ultima_factura</label>
+                                    <label for="nombre">Fecha de Última Factura</label>
                                     <input id="fecha_ultima_factura" type="date" class="form-control input-sm" name="fecha_ultima_factura">
                                 </div>
 

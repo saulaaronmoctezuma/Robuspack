@@ -14,7 +14,7 @@ Class BitacoraMtto extends CI_Controller {
         $this->css = $this->config->item('css');
         $this->load->library('session');
         //poner para el poner selet en un formulario
-       $this->load->model('Cliente/ClienteModelo');
+        $this->load->model('Cliente/ClienteModelo');
         //poner para el poner selet en un formulario
         //para que tenga el mismo header y trearse el usuario para dar permisos
         $this->load->model('User_model', 'User_model');
@@ -61,14 +61,13 @@ Class BitacoraMtto extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_jefe_mantenimiento") {
+        } else if ($dataLevel == "is_jefe_mantenimiento") {
             $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
-        }
-        else {
+        } else {
             redirect(site_url() . 'main/');
         }
     }
@@ -116,23 +115,22 @@ Class BitacoraMtto extends CI_Controller {
         } else if ($dataLevel == "is_mantenimiento") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/agregarBitacoraMtto', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
-           $this->load->view('header', $data);
+            $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/agregarBitacoraMtto', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_jefe_mantenimiento") {
-           $this->load->view('header', $data);
+            $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/agregarBitacoraMtto', $data);
             $this->load->view('footer');
-        } 
-        else {
+        } else {
             redirect(site_url() . 'main/');
         }
     }
@@ -229,7 +227,7 @@ Class BitacoraMtto extends CI_Controller {
         if (isset($datos)) {
             $id_bitacora = $datos['id_bitacora'];
             $planta = $datos['planta'];
-            $modelo= $datos['modelo'];
+            $modelo = $datos['modelo'];
             $maquina = $datos['maquina'];
             $fecha = $datos['fecha'];
             $oc = $datos['oc'];
@@ -315,10 +313,6 @@ Class BitacoraMtto extends CI_Controller {
 
     public function obtener($id_bitacora) {
 
-
-
-
-
         $this->load->model('BitacoraMtto/BitacoraMttoModelo');
 
 
@@ -342,7 +336,7 @@ Class BitacoraMtto extends CI_Controller {
 
             $data = array();
             $data = $this->BitacoraMttoModelo->obtener($id_bitacora);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/modificarBitacoraMtto', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_mantenimiento") {
@@ -354,7 +348,7 @@ Class BitacoraMtto extends CI_Controller {
 
             $data = array();
             $data = $this->BitacoraMttoModelo->obtener($id_bitacora);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/modificarBitacoraMtto', $data);
 
             $this->load->view('footer');
@@ -367,7 +361,7 @@ Class BitacoraMtto extends CI_Controller {
 
             $data = array();
             $data = $this->BitacoraMttoModelo->obtener($id_bitacora);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/modificarBitacoraMtto', $data);
 
             $this->load->view('footer');
@@ -380,17 +374,15 @@ Class BitacoraMtto extends CI_Controller {
 
             $data = array();
             $data = $this->BitacoraMttoModelo->obtener($id_bitacora);
-             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $this->load->view('BitacoraMtto/modificarBitacoraMtto', $data);
 
             $this->load->view('footer');
-        }
-        else {
+        } else {
             redirect(site_url() . 'main/');
         }
     }
 
-    
     public function bitacoraMttoModificar() {
         $data = array(
             'id_bitacora' => $_POST['id_bitacora'],

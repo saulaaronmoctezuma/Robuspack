@@ -159,6 +159,10 @@ class EmpresaModelo extends CI_Model implements IModeloAbstracto {
         return $this->db->update('Empresa', $data);
     }
 
+    public function refacciones() {
+        
+    }
+
 }
 
   

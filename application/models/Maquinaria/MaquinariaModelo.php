@@ -31,7 +31,9 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
 
         foreach ($query->result() as $key => $value) {
             $objeto = new MaquinariaPojo($value->id_maquinaria, $value->referencia, $value->fecha
-                    , $value->fabricante, $value->maquina, $value->precio1, $value->precio2, $value->precio3, $value->precio4, $value->precio5, $value->pcexwork, $value->pcfob, $value->pccif, $value->pccip, $value->ancho, $value->espesor, $value->diametro, $value->empresa_competencia_1, $value->empresa_competencia_2, $value->inventario,
+                    , $value->fabricante, $value->maquina, $value->precio1, $value->precio2, $value->precio3, $value->precio4, $value->precio5, 
+                    $value->pcexwork, $value->pcfob, $value->pccif, $value->pccip, $value->ancho, $value->espesor, $value->diametro, $value->empresa_competencia_1,
+                    $value->empresa_competencia_2, $value->inventario,
                     $value->piezas_recibir,$value->fecha_corte_rotacion);
 
             array_push($colMaquinarias, $objeto);
