@@ -61,6 +61,11 @@
                 <input type="submit" title="Da clic para exportar los datos a Excel" name="export" class="btn btn-success" value="Exportar a excel" />
             </form>
         </div>
+    </div>
+ <div class="container" style="margin-top:1px;">
+
+
+        <div class="table-responsive">
 
         <table  border="1" class="table table-bordered table-striped">
             <MARQUEE SCROLLDELAY =200> </MARQUEE>
@@ -70,11 +75,14 @@
 
 
                     <th class="header" style="text-align: center">Código</th>
-                    <th class="header" style="text-align: center">Fecha Corte de Rotación</th>
+                    <th class="header" style="text-align: center">Fecha_Corte de Rotación</th>
+                    <th class="header" style="text-align: center">Fecha_Último Consumo</th>
+                    <th class="header" style="text-align: center">Fecha_Requiere Piezas</th>
+                    <th class="header" style="text-align: center">Pedido_Inteligente</th>
                     <th class="header" style="text-align: center">Total Req. Mensual</th>
                     <th class="header" style="text-align: center">Total Req. Trimestral</th>
                     <th class="header" style="text-align: center">Total Req. Mensual con Oc y Cons</th>
-                    <th class="header" style="text-align: center">Total Req. Trimestral con Oc y Cons</th>
+                    <th class="header" style="text-align: center">Total Req. Trimestral con Oc y Consignación</th>
                     <th class="header" style="text-align: center">Inventario</th>
                     <th class="header" style="text-align: center">Piezas a recibir</th>
                     <th class="header" style="text-align: center">Disponibilidad Total</th>
@@ -107,16 +115,25 @@
                     . $obj->getFecha_corte_rotacion() .
                     '</td>'
                     . '<td>'
-                    . $obj->getTotal_requerido_mensual() .
+                    . $obj->getFecha_ultimo_consumo() .
                     '</td>'
                     . '<td>'
-                    . $obj->getTotal_requerido_trimestral() .
+                    . $obj->getFecha_requiere_piezas() .
                     '</td>'
                     . '<td>'
-                    . $obj->getTotal_requerido_mensual_con_or_cons() .
+                    . $obj->getPedido_inteligente() .
                     '</td>'
                     . '<td>'
-                    . $obj->getTotal_requerido_trimestral_con_or_cons() .
+                    . $obj->getSuma_total_requerido_mensual() .
+                    '</td>'
+                    . '<td>'
+                    . $obj->getSuma_total_requerido_trimestral() .
+                    '</td>'
+                    . '<td>'
+                    . $obj->getSuma_total_requerido_mensual_con_oc_consignacion() .
+                    '</td>'
+                    . '<td>'
+                    . $obj->getSuma_total_requerido_trimestral_con_oc_y_consignacion() .
                     '</td>'
                     . '<td>'
                     . $obj->getInventario() .
@@ -137,7 +154,7 @@
                     . $obj->getFecha_cubierta() .
                     '</td>'
                     . '<td>'
-                    . $obj->getPcfob() .
+                    . $obj->getPc_fob() .
                     '</td>'
 
 
@@ -156,7 +173,7 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2"></td> 
+                    <td colspan="5"></td> 
 
 
                     <td>
@@ -275,7 +292,9 @@
 
 
 
-
-    </body>
 </div>
+    </body>
+
+
+
 </html>

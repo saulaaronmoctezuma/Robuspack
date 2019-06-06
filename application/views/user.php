@@ -57,6 +57,8 @@
                         $rolename = "Jefe de Mantenimiento";
                     }elseif($row->role == 13){
                         $rolename = "Logistica";
+                    }elseif($row->role == 14){
+                        $rolename = "Servicio a Clientes";
                     }
                     
                     

@@ -52,30 +52,35 @@ Class Maquinaria extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_refacciones") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
         }  else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+               $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_maquinaria_refacciones") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+               $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
@@ -83,6 +88,7 @@ Class Maquinaria extends CI_Controller {
         else if ($dataLevel == "is_director") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+               $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
@@ -233,6 +239,48 @@ Class Maquinaria extends CI_Controller {
             $data = array();
             $data = $this->MaquinariaModelo->obtener($id_maquinaria);
             $this->load->view('Maquinaria/modificarMaquinaria', $data);
+            $this->load->view('footer');
+        } else {
+            redirect(site_url() . 'main/');
+        }
+    }
+    
+    
+    
+    public function actualiza($id_maquinaria) {
+        $this->load->model('Maquinaria/MaquinariaModelo');
+
+
+
+
+
+
+        //user data from session
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //agregar para el select de refacción de tabla maquinaria        
+            $data = array();
+            $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+            $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_editor") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data = array();
+            $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+            $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
             $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');

@@ -126,7 +126,7 @@ class UsuarioModelo extends CI_Model implements IModeloAbstractoUsuario {
 
             $this->db->select('users.first_name,users.email,users.last_login');
             $this->db->from('users');
-            $this->db->where("users.id='6' OR users.id='7'  OR users.id='8' OR users.id='9'  OR users.id='10'");
+            $this->db->where("users.id='6' OR users.id='7'  OR users.id='8' OR users.id='28' ");
             $this->db->order_by("last_login", "desc");
 
 

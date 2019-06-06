@@ -44,14 +44,14 @@
                     if ($dataLevel == 'is_admin') {
                         echo '
                         <label>No máquina</label><br>
-                        <input type="text" name="no_maqui"><br><br>
+                        <input form-control  style="width: 270px; height: 35px" type="text" name="no_maqui"><br><br>
                        
 
 
                         <div class="row">
                         <div class="form-group col-xs-3">
                         <label>Modelo</label><br>
-                        <input type="text" name="modelo"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="modelo"><br><br>
                         </div>
                         </div>
                         
@@ -59,22 +59,22 @@
                         <div class="row">
                         <div class="form-group col-xs-3">
                         <label>Empresa</label><br>
-                        <select name="empresa" class="form-control " id="empresa" require>
+                        <select  name="empresa" class="form-control " id="empresa" require>
                         <option  value="">Selecciona una opción</option>
-                        <OPTION VALUE="Makbox">Makbox</OPTION>
-                        <OPTION VALUE="Robuspack">Robuspack</OPTION>
+                        <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                        <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
                         </select><br>
                         </div>
                         </div>
                         
                         <label>Serie</label><br>
-                        <input type="text" name="serie"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="serie"><br><br>
                         
                         <label>Cliente</label><br>
-                        <input type="text" name="cliente"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="cliente"><br><br>
                        
                         <label>No. Pedimento</label><br>
-                        <input type="text" name="pedimento"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="pedimento"><br><br>
                         
                          <label>Pedimento</label><br>
                          <input type="file" name="pedimentopdf"><br>
@@ -83,7 +83,7 @@
                         <input type="file" name="fotopost"><br>
                         
                         <label>No. Factura</label><br>
-                        <input type="text" name="num_factura"><br><br>
+                        <input style="width: 270px; height: 35px" type="text" name="num_factura"><br><br>
                         
                         <label>Factura</label><br>
                         <input type="file" name="fotopostpdf"><br>
@@ -93,30 +93,30 @@
                         ';
                     } else  if ($dataLevel == 'is_editor') {
                         echo '<label>No máquina</label><br>
-                        <input type="text" name="no_maqui"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="no_maqui"><br><br>
                         
                         <label>Modelo</label><br>
-                        <input type="text" name="modelo"><br><br>
+                        <input type="text"  style="width: 270px; height: 35px"name="modelo"><br><br>
                         
                          <div class="row">
                          <div class="form-group col-xs-3">
                          <label>Empresa</label><br>
                          <select name="empresa" class="form-control " id="empresa" require>
                          <option  value="">Selecciona una opción</option>
-                         <OPTION VALUE="Makbox">Makbox</OPTION>
-                         <OPTION VALUE="Robuspack">Robuspack</OPTION>
+                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
                          </select><br>
                          </div>
                          </div> 
                          
                         <label>Serie</label><br>
-                        <input type="text" name="serie"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="serie"><br><br>
                         
                         <label>Cliente</label><br>
-                        <input type="text" name="cliente"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="cliente"><br><br>
                         
                         <label>No. Pedimento</label><br>
-                        <input type="text" name="pedimento"><br><br>
+                        <input type="text" style="width: 270px; height: 35px" name="pedimento"><br><br>
                         
                          <label>Pedimento PDF</label><br>
                          <input type="file" name="pedimentopdf"><br>
@@ -125,7 +125,7 @@
                         <input type="file" name="fotopost"><br>
                         
                         <label>No. Factura</label><br>
-                        <input type="text" name="num_factura"><br><br>
+                        <input style="width: 270px; height: 35px" type="text" name="num_factura"><br><br>
 
                         <label>Factura</label><br>
                         <input type="file" name="fotopostpdf"><br>
@@ -140,34 +140,34 @@
                     else if ($dataLevel == 'is_logistica') {
                        echo '
                         <label>No máquina</label><br>
-                        <input type="text" name="no_maqui"><br><br>
+                        <input style="width: 270px; height: 35px"  type="text" name="no_maqui"><br><br>
                         
                         <label>Modelo</label><br>
-                        <input type="text" name="modelo"><br><br>
+                        <input  style="width: 270px; height: 35px"  type="text" name="modelo"><br><br>
                         
                          <div class="row">
                          <div class="form-group col-xs-3">
                          <label>Empresa</label><br>
                          <select name="empresa" class="form-control " id="empresa" require>
                          <option  value="">Selecciona una opción</option>
-                         <OPTION VALUE="Makbox">Makbox</OPTION>
-                         <OPTION VALUE="Robuspack">Robuspack</OPTION>
+                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
                          </select><br>
                          </div>
                          </div>
              
                         <label>Serie</label><br>
-                        <input type="text" name="serie"><br><br>
+                        <input style="width: 270px; height: 35px"  type="text" name="serie"><br><br>
                         
                         <label>Cliente</label><br>
-                        <input type="text" name="cliente"><br><br>
+                        <input style="width: 270px; height: 35px"  type="text" name="cliente"><br><br>
                         
 
                         <label>No. Pedimento</label><br>
-                        <input type="text" name="pedimento"><br><br>
+                        <input style="width: 270px; height: 35px"  type="text" name="pedimento"><br><br>
                         
                         <label>Pedimento</label><br>
-                        <input type="file" name="pedimentopdf"><br>
+                        <input style="width: 270px; height: 35px"  type="file" name="pedimentopdf"><br>
 
                         
                         <label>Foto</label><br>

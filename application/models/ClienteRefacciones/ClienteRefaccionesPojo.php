@@ -43,6 +43,8 @@ class ClienteRefaccionesPojo {
     private $marca_maquina;
     private $contacto;
     private $tipo_maquina;
+    private $formato;
+    private $ancho;
     private $troquel;
     private $uso_de_cfdi;
     private $metodo_pago;
@@ -50,14 +52,16 @@ class ClienteRefaccionesPojo {
     private $fecha_seguimiento;
     private $golpes_maquina;
     private $confirmacion_orden_compra;
+   
     private $fecha_ultima_factura;
+     private $consumo_real;
     private $first_name;
 
     /* Constructor con campos 
      * 
      */
-
-    function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra, $fecha_ultima_factura, $first_name) {
+    
+    function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $formato, $ancho, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra, $fecha_ultima_factura, $consumo_real, $first_name) {
         $this->id_venta = $id_venta;
         $this->grupo = $grupo;
         $this->cliente = $cliente;
@@ -91,6 +95,8 @@ class ClienteRefaccionesPojo {
         $this->marca_maquina = $marca_maquina;
         $this->contacto = $contacto;
         $this->tipo_maquina = $tipo_maquina;
+        $this->formato = $formato;
+        $this->ancho = $ancho;
         $this->troquel = $troquel;
         $this->uso_de_cfdi = $uso_de_cfdi;
         $this->metodo_pago = $metodo_pago;
@@ -99,8 +105,10 @@ class ClienteRefaccionesPojo {
         $this->golpes_maquina = $golpes_maquina;
         $this->confirmacion_orden_compra = $confirmacion_orden_compra;
         $this->fecha_ultima_factura = $fecha_ultima_factura;
+        $this->consumo_real = $consumo_real;
         $this->first_name = $first_name;
     }
+
     public function getId_venta() {
         return $this->id_venta;
     }
@@ -233,6 +241,14 @@ class ClienteRefaccionesPojo {
         return $this->tipo_maquina;
     }
 
+    public function getFormato() {
+        return $this->formato;
+    }
+
+    public function getAncho() {
+        return $this->ancho;
+    }
+
     public function getTroquel() {
         return $this->troquel;
     }
@@ -263,6 +279,10 @@ class ClienteRefaccionesPojo {
 
     public function getFecha_ultima_factura() {
         return $this->fecha_ultima_factura;
+    }
+
+    public function getConsumo_real() {
+        return $this->consumo_real;
     }
 
     public function getFirst_name() {
@@ -401,6 +421,14 @@ class ClienteRefaccionesPojo {
         $this->tipo_maquina = $tipo_maquina;
     }
 
+    public function setFormato($formato) {
+        $this->formato = $formato;
+    }
+
+    public function setAncho($ancho) {
+        $this->ancho = $ancho;
+    }
+
     public function setTroquel($troquel) {
         $this->troquel = $troquel;
     }
@@ -431,6 +459,10 @@ class ClienteRefaccionesPojo {
 
     public function setFecha_ultima_factura($fecha_ultima_factura) {
         $this->fecha_ultima_factura = $fecha_ultima_factura;
+    }
+
+    public function setConsumo_real($consumo_real) {
+        $this->consumo_real = $consumo_real;
     }
 
     public function setFirst_name($first_name) {

@@ -626,7 +626,7 @@ class Main extends CI_Controller {
                 $this->load->view('header', $data);
                 $this->load->view('container');
                 $this->load->view('login');
-                $this->load->view('footer');
+               // $this->load->view('footer');
             }else{
                 $post = $this->input->post();
                 $clean = $this->security->xss_clean($post);

@@ -109,10 +109,9 @@ $theme = $result->theme;
                         <td><input id="a10" class="form-control" type="text" name="piezas_recibir" value="<?= $piezas_recibir ?>"></td>
                     </tr>
                     
-                     <tr>
-                        <td>Fecha Corte de Rotación</td>
-                        <td><input id="fecha_corte_rotacion" class="form-control" type="date" name="fecha_corte_rotacion" value="<?= $piezas_recibir ?>"></td>
-                    </tr>
+                     
+                        <input id="fecha_corte_rotacion" class="form-control" type="hidden" name="fecha_corte_rotacion" value="<?= $fecha_corte_rotacion ?>">
+                   
                     
                     
                     

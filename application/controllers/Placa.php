@@ -99,6 +99,7 @@ class Placa extends CI_Controller {
         $config['allowed_types'] = '*';
         $config['encrypt_name'] = FALSE;
         $config['overwrite'] = TRUE;
+       
 
         $this->load->library('upload', $config);
         

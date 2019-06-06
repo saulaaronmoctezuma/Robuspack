@@ -48,14 +48,30 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
-            $query = $this->db->query('SELECT * from rotacion_inventario_prueba order by codigo desc');
+            $query = $this->db->query('SELECT * from mayo_2019_rotacion_inventario order by codigo desc');
 
 
             $colMaximoMinimo = array();
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ReporteMaximoMinimoPojo(
-                        $value->codigo, $value->fecha_corte_rotacion, $value->total_requerido_mensual, $value->total_requerido_trimestral, $value->total_requerido_mensual_con_or_cons, $value->total_requerido_trimestral_con_or_cons, $value->inventario, $value->piezas_a_recibir, $value->disponibilidad_total, $value->piezas_a_solicitar, $value->meses_cubiertos, $value->fecha_cubierta, $value->pcfob, $value->vendedor
+                        $value->codigo,
+                        $value->fecha_corte_rotacion,
+                        $value->fecha_ultimo_consumo,
+                        $value->fecha_requiere_piezas,
+                        $value->pedido_inteligente,
+                        $value->suma_total_requerido_mensual,
+                        $value->suma_total_requerido_trimestral,
+                        $value->suma_total_requerido_mensual_con_oc_y_consignacion,
+                        $value->suma_total_requerido_trimestral_con_oc_y_consignacion,
+                        $value->inventario, 
+                        $value->piezas_a_recibir,
+                        $value->disponibilidad_total,
+                        $value->piezas_a_solicitar,
+                        $value->meses_cubiertos, 
+                        $value->fecha_cubierta, 
+                        $value->pc_fob, 
+                        $value->vendedor
                 );
 
                 array_push($colMaximoMinimo, $objeto);
@@ -66,7 +82,7 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
             $data = $this->session->userdata;
 
             //consulta la tabla venta
-            $query = $this->db->from('rotacion_inventario_prueba');
+            $query = $this->db->from('mayo_2019_rotacion_inventario');
 
             $query = $this->db->order_by("codigo", "asc");
 
@@ -78,8 +94,23 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ReporteMaximoMinimoPojo(
-                        $value->codigo, $value->fecha_corte_rotacion, $value->total_requerido_mensual, $value->total_requerido_trimestral, $value->total_requerido_mensual_con_or_cons, $value->total_requerido_trimestral_con_or_cons, $value->inventario, $value->piezas_a_recibir, $value->disponibilidad_total, $value->piezas_a_solicitar, $value->meses_cubiertos, $value->fecha_cubierta, $value->pcfob, $value->vendedor
-                );
+                 $value->codigo,
+                        $value->fecha_corte_rotacion,
+                        $value->fecha_ultimo_consumo,
+                        $value->fecha_requiere_piezas,
+                        $value->pedido_inteligente,
+                        $value->suma_total_requerido_mensual,
+                        $value->suma_total_requerido_trimestral,
+                        $value->suma_total_requerido_mensual_con_oc_y_consignacion,
+                        $value->suma_total_requerido_trimestral_con_oc_y_consignacion,
+                        $value->inventario, 
+                        $value->piezas_a_recibir,
+                        $value->disponibilidad_total,
+                        $value->piezas_a_solicitar,
+                        $value->meses_cubiertos, 
+                        $value->fecha_cubierta, 
+                        $value->pc_fob, 
+                        $value->vendedor);
 
                 array_push($colMaximoMinimo, $objeto);
             }
@@ -89,7 +120,7 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
             $data = $this->session->userdata;
 
             //consulta la tabla venta
-            $query = $this->db->from('rotacion_inventario_prueba');
+            $query = $this->db->from('mayo_2019_rotacion_inventario');
 
             $query = $this->db->order_by("codigo", "asc");
 
@@ -101,8 +132,23 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ReporteMaximoMinimoPojo(
-                        $value->codigo, $value->fecha_corte_rotacion, $value->total_requerido_mensual, $value->total_requerido_trimestral, $value->total_requerido_mensual_con_or_cons, $value->total_requerido_trimestral_con_or_cons, $value->inventario, $value->piezas_a_recibir, $value->disponibilidad_total, $value->piezas_a_solicitar, $value->meses_cubiertos, $value->fecha_cubierta, $value->pcfob, $value->vendedor
-                );
+               $value->codigo,
+                        $value->fecha_corte_rotacion,
+                        $value->fecha_ultimo_consumo,
+                        $value->fecha_requiere_piezas,
+                        $value->pedido_inteligente,
+                        $value->suma_total_requerido_mensual,
+                        $value->suma_total_requerido_trimestral,
+                        $value->suma_total_requerido_mensual_con_oc_y_consignacion,
+                        $value->suma_total_requerido_trimestral_con_oc_y_consignacion,
+                        $value->inventario, 
+                        $value->piezas_a_recibir,
+                        $value->disponibilidad_total,
+                        $value->piezas_a_solicitar,
+                        $value->meses_cubiertos, 
+                        $value->fecha_cubierta, 
+                        $value->pc_fob, 
+                        $value->vendedor );
 
                 array_push($colMaximoMinimo, $objeto);
             }
@@ -112,7 +158,7 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
             $data = $this->session->userdata;
 
             //consulta la tabla venta
-            $query = $this->db->from('rotacion_inventario_prueba');
+            $query = $this->db->from('mayo_2019_rotacion_inventario');
 
             $query = $this->db->order_by("codigo", "asc");
 
@@ -124,8 +170,23 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ReporteMaximoMinimoPojo(
-                        $value->codigo, $value->fecha_corte_rotacion, $value->total_requerido_mensual, $value->total_requerido_trimestral, $value->total_requerido_mensual_con_or_cons, $value->total_requerido_trimestral_con_or_cons, $value->inventario, $value->piezas_a_recibir, $value->disponibilidad_total, $value->piezas_a_solicitar, $value->meses_cubiertos, $value->fecha_cubierta, $value->pcfob, $value->vendedor
-                );
+               $value->codigo,
+                        $value->fecha_corte_rotacion,
+                        $value->fecha_ultimo_consumo,
+                        $value->fecha_requiere_piezas,
+                        $value->pedido_inteligente,
+                        $value->suma_total_requerido_mensual,
+                        $value->suma_total_requerido_trimestral,
+                        $value->suma_total_requerido_mensual_con_oc_y_consignacion,
+                        $value->suma_total_requerido_trimestral_con_oc_y_consignacion,
+                        $value->inventario, 
+                        $value->piezas_a_recibir,
+                        $value->disponibilidad_total,
+                        $value->piezas_a_solicitar,
+                        $value->meses_cubiertos, 
+                        $value->fecha_cubierta, 
+                        $value->pc_fob, 
+                        $value->vendedor);
 
                 array_push($colMaximoMinimo, $objeto);
             }
@@ -152,61 +213,65 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
     }
 
     public function totalRequeridoMensual() {
-        $this->db->select('SUM(total_requerido_mensual) total_requerido_mensual');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->select('SUM(suma_total_requerido_mensual) total_requerido_mensual');
+        $this->db->from('mayo_2019_rotacion_inventario');
         //$this->db->where('venta.id= ', 6);
         $query = $this->db->get();
         return $query->result();
     }
 
     public function totalRequeridoTrimestrual() {
-        $this->db->select('SUM(total_requerido_trimestral) as total_requerido_trimestral');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->select('SUM(suma_total_requerido_trimestral) as total_requerido_trimestral');
+        $this->db->from('mayo_2019_rotacion_inventario');
         //$this->db->where('venta.id= ', 6);
         $query = $this->db->get();
         return $query->result();
     }
 
     public function totalRequeridoMensualOcyCons() {
-        $this->db->select('SUM(total_requerido_mensual_con_or_cons) as total_requerido_mensual_con_or_cons');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->select('SUM(suma_total_requerido_mensual_con_oc_y_consignacion ) as total_requerido_mensual_con_or_cons');
+        $this->db->from('mayo_2019_rotacion_inventario');
         //$this->db->where('venta.id= ', 6);
         $query = $this->db->get();
         return $query->result();
     }
 
     public function totalRequeridoTrimestrualOcyCons() {
-        $this->db->select('SUM(total_requerido_trimestral_con_or_cons) as total_requerido_trimestral_con_or_cons');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->select('SUM(suma_total_requerido_trimestral_con_oc_y_consignacion) as total_requerido_trimestral_con_or_cons');
+        $this->db->from('mayo_2019_rotacion_inventario');
         $query = $this->db->get();
         return $query->result();
     }
 
     public function totalInventario() {
         $this->db->select('SUM(inventario) as inventario');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->from('mayo_2019_rotacion_inventario');
         $query = $this->db->get();
         return $query->result();
     }
 
     public function totalPiezasRecibir() {
         $this->db->select('SUM(piezas_a_recibir) as piezas_a_recibir');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->from('mayo_2019_rotacion_inventario');
         $query = $this->db->get();
         return $query->result();
     }
 
     public function totalDisponibilidadTotal() {
         $this->db->select('SUM(disponibilidad_total) as disponibilidad_total');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->from('mayo_2019_rotacion_inventario');
         $query = $this->db->get();
         return $query->result();
     }
     public function totalPiezasSolicitar() {
         $this->db->select('SUM(piezas_a_solicitar) as piezas_a_solicitar');
-        $this->db->from('rotacion_inventario_prueba');
+        $this->db->from('mayo_2019_rotacion_inventario');
         $query = $this->db->get();
         return $query->result();
+    }
+
+    public function querybusqueda() {
+        
     }
 
 }

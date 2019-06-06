@@ -42,19 +42,21 @@ Class MaqCli extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['resumen'] = $this->MaqCliModelo->query();
-            
+            $data['totalRegistroMaquinaPorCliente'] = $this->MaqCliModelo->totalRegistroMaquinaPorCliente(1);
             $this->load->view('MaqCli/listarMaqCli', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['resumen'] = $this->MaqCliModelo->query();
+             $data['totalRegistroMaquinaPorCliente'] = $this->MaqCliModelo->totalRegistroMaquinaPorCliente(1);
             $this->load->view('MaqCli/listarMaqCli', $data);
             $this->load->view('footer');
         }else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['resumen'] = $this->MaqCliModelo->query();
+             $data['totalRegistroMaquinaPorCliente'] = $this->MaqCliModelo->totalRegistroMaquinaPorCliente(1);
             $this->load->view('MaqCli/listarMaqCli', $data);
             $this->load->view('footer');
         }

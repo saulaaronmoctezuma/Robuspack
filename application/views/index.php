@@ -43,7 +43,7 @@ background-color: #FF3C12;
       <h1><font color="#009942"> Sistema de Control de Robuspack</font></h1>
         
        
-        <<div style="text-align:center;padding:1em 0;"> 
+        <div style="text-align:center;padding:1em 0;"> 
             <h2>
                 <a style="text-decoration:none;" href="https://www.zeitverschiebung.net/es/city/3530597">
                     <span style="color:gray;">Hora actual </span><br />

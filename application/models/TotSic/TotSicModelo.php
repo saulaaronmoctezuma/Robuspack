@@ -86,11 +86,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
              return $query->result();
         }
         
-           public function totalRegistroSicOrlene()
+           public function totalRegistroSicJaime()
     {
-            $this->db->select('COUNT(*) as total_registros_orlene');
+            $this->db->select('COUNT(*) as total_registros_jaime');
             $this->db->from('venta');
-           $this->db->where('venta.id= ', 9);
+           $this->db->where('venta.id= ', 28);
             $query = $this->db->get();
              return $query->result();
         }
@@ -123,11 +123,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
              return $query->result();
         }
         
-           public function totalRegistroSicNoTroquelaOrlene()
+           public function totalRegistroSicNoTroquelaJaime()
     {
-            $this->db->select('COUNT(*) as total_registros_orlene');
+            $this->db->select('COUNT(*) as total_registros_jaime');
             $this->db->from('venta');
-           $this->db->where('venta.id=9 and venta.troquel="No"');
+           $this->db->where('venta.id=28 and venta.troquel="No"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -175,11 +175,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
              return $query->result();
         }
         
-           public function totalRegistroSicConfirmacionOrlene()
+           public function totalRegistroSicConfirmacionJaime()
     {
-            $this->db->select('COUNT(*) as total_registros_orlene');
+            $this->db->select('COUNT(*) as total_registros_jaime');
             $this->db->from('venta');
-            $this->db->where('venta.id=9 and venta.confirmacion_orden_compra="Consignación"');
+            $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Consignación"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -229,11 +229,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
              return $query->result();
         }
         
-           public function totalRegistroSicOrdenOrlene()
+           public function totalRegistroSicOrdenJaime()
     {
-            $this->db->select('COUNT(*) as total_registros_orlene');
+            $this->db->select('COUNT(*) as total_registros_jaime');
             $this->db->from('venta');
-           $this->db->where('venta.id=9 and venta.confirmacion_orden_compra="Orden de Compra"');
+           $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Orden de Compra"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -281,11 +281,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
              return $query->result();
         }
         
-           public function totalRegistroSicSinPedidoOrlene()
+           public function totalRegistroSicSinPedidoJaime()
     {
-            $this->db->select('COUNT(*) as total_registros_orlene');
+            $this->db->select('COUNT(*) as total_registros_jaime');
             $this->db->from('venta');
-           $this->db->where('venta.id=9 and venta.confirmacion_orden_compra="Sin Pedido"');
+           $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Sin Pedido"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -309,7 +309,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
         {
             $this->db->select('COUNT(*) as total_registros_sic');
             $this->db->from('venta');
-          $this->db->where('venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=9');
+          $this->db->where('venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=28');
             $query = $this->db->get();
              return $query->result();
         }
@@ -319,7 +319,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_no_troquela');
             $this->db->from('venta');
-           $this->db->where('venta.troquel="No" and venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=9');
+           $this->db->where('venta.troquel="No"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -328,7 +328,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_consignacion');
             $this->db->from('venta');
-           $this->db->where('venta.confirmacion_orden_compra="Consignación" and venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=9');
+           $this->db->where('venta.confirmacion_orden_compra="Consignación"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -337,7 +337,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_orden_compra');
             $this->db->from('venta');
-           $this->db->where('venta.confirmacion_orden_compra="Orden de Compra" and venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=9');
+           $this->db->where('venta.confirmacion_orden_compra="Orden de Compra"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -347,24 +347,13 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_sin_pedido');
             $this->db->from('venta');
-           $this->db->where('venta.confirmacion_orden_compra="Sin Pedido" and venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=9');
+           $this->db->where('venta.confirmacion_orden_compra="Sin Pedido"');
             $query = $this->db->get();
              return $query->result();
         }
+
+    public function querybusqueda() {
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }
+
 }

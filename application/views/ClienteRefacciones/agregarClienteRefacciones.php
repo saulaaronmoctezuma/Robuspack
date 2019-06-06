@@ -2,7 +2,8 @@
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 16/11/2018 Hora 2:34 pm
  * Sistema de Control Robuspack
- */-->
+ */
+-->
 
 <head>
 
@@ -257,7 +258,7 @@
 
 
 
-                document.getElementById("confirmacion_orden_compra").value = " ";
+                document.getElementById("confirmacion_orden_compra").value = "";
                 document.getElementById("capacitacion_fecha").value = " ";
                 document.getElementById("pulgadas").value = "";
                 document.getElementById("milimetros").value = "";
@@ -365,6 +366,7 @@
                 document.getElementById("capacitacion_fecha").readOnly = false;
                 document.getElementById("ope_golpes_prom_rodicut").readOnly = false;
                 document.getElementById("ope_tiempo_rot_com").readOnly = false;
+                document.getElementById("confirmacion_orden_compra").readOnly = false;
                 document.getElementById("ope_tiempo_rot_rodicut").readOnly = false;
                 form.uso_de_cfdi.readOnly = false;
                 form.metodo_pago.readOnly = false;
@@ -526,7 +528,7 @@
                                         <OPTION VALUE="Semanal">Semanal</OPTION>
                                         <OPTION VALUE="Quincenal">Quincenal</OPTION>
                                         <OPTION VALUE="Mensual">Mensual</OPTION>
-                                        <OPTION VALUE="Bimestrual">Bimestrual</OPTION>
+                                        <OPTION VALUE="Bimestral">Bimestral</OPTION>
                                         <OPTION VALUE="Semestral">Semestral</OPTION>
                                         <OPTION VALUE="Anual">Anual</OPTION>
                                     </select>
@@ -711,7 +713,27 @@
 
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Marca de Máquina</label>
-                                    <input id="a6" type="text" class="form-control input-sm"  name="marca_maquina" placeholder="Ingresa la marca " required>
+                                   <!-- <input id="a6" type="text" class="form-control input-sm"  name="marca_maquina" placeholder="Ingresa la marca " required>-->
+
+
+                                    <select name="marca_maquina" id="marca_maquina" class="form-control input-sm" require>
+                                        <option  value="">Selecciona una opción</option>
+                                        <OPTION VALUE="CURIONI">CURIONI</OPTION>
+                                        <OPTION VALUE="HOPPER">HOPPER</OPTION>
+                                        <OPTION VALUE="LANGSTON">LANGSTON</OPTION>
+                                        <OPTION VALUE="LATITUD">LATITUD</OPTION>
+                                        <OPTION VALUE="MARTIN">MARTIN</OPTION>
+
+                                        <OPTION VALUE="SMARTBOX">SMARTBOX</OPTION>
+                                        <OPTION VALUE="STALEY">STALEY</OPTION>
+                                        <OPTION VALUE="TECASA">TECASA</OPTION>
+                                        <OPTION VALUE="WARD">WARD</OPTION>
+                                        <OPTION VALUE="WARD III">WARD III</OPTION>
+                                        <OPTION VALUE="WARD IV">WARD IV</OPTION>
+                                        <OPTION VALUE="WARD V">WARD V</OPTION>
+
+
+                                    </select>
                                 </div>
 
 
@@ -721,7 +743,32 @@
 
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Modelo de la máquina</label>
-                                    <input id="a6" type="text" class="form-control input-sm"  name="contacto" placeholder="Ingresa el modelo de maquina" required>
+                                   <!--<input id="a6" type="text" class="form-control input-sm"  name="contacto" placeholder="Ingresa el modelo de maquina" required>-->
+                                    <select name="contacto" class="form-control input-sm" require>
+                                        <option  value="">Selecciona una opción</option>
+                                        <OPTION VALUE="DRO">DRO</OPTION>
+                                        <OPTION VALUE="DRO  NT/ RS">DRO  NT/ RS</OPTION>
+                                        <OPTION VALUE="DRO NT">DRO NT</OPTION>
+
+                                        <OPTION VALUE="FFG Midline">FFG Midline</OPTION> 
+                                        <OPTION VALUE="FFG Transline">FFG Transline</OPTION>
+
+                                        <OPTION VALUE="LANGSTON">LANGSTON</OPTION> 
+                                        <OPTION VALUE="Midline NT/ RS">Midline NT/ RS</OPTION>
+                                        <OPTION VALUE="Miniline">Miniline</OPTION> 
+                                        <OPTION VALUE="Miniline RS">Miniline RS</OPTION> 
+                                        <OPTION VALUE="SR-PACK">SR-PACK</OPTION>
+                                        <OPTION VALUE="TECASA">TECASA</OPTION> 
+                                        <OPTION VALUE="Transline">Transline</OPTION> 
+                                        <OPTION VALUE="Transline RS">Transline RS</OPTION>
+                                        <OPTION VALUE="Transline NT/ RS">Transline NT/ RS</OPTION> 
+
+
+
+
+
+                                    </select>
+
                                 </div>
                                 <div class="form-group col-xs-4">
                                     <label for="nombre"> Tipo máquina</label>
@@ -733,9 +780,77 @@
                                         <OPTION VALUE="RDC">RDC</OPTION>
                                     </select>
 
+
+  <!--<select name="tipo_maquina" class="form-control input-sm" requireD>
+    <option  value="">Selecciona una opción</option>
+    <OPTION VALUE="616">616</OPTION>
+    <OPTION VALUE="618">618</OPTION>
+    <OPTION VALUE="920">920</OPTION>
+    <OPTION VALUE="924">924</OPTION>
+    <OPTION VALUE="1228">1228</OPTION>
+    <OPTION VALUE="1624">1624</OPTION>
+    <OPTION VALUE="1628">1628</OPTION>
+    <OPTION VALUE="J4500">J4500</OPTION>
+    <OPTION VALUE="1224">1224</OPTION>
+    <OPTION VALUE="TBC">TBC</OPTION>
+</select>-->
+
                                 </div>
 
 
+
+
+
+
+
+
+                                <div class="form-group col-xs-4">
+                                    <label for="nombre"> Formato</label>
+
+                                    <select name="formato" class="form-control input-sm" requireD>
+                                        <option  value="">Selecciona una opción</option>
+                                        <OPTION VALUE="616">616</OPTION>
+                                        <OPTION VALUE="618">618</OPTION>
+                                        <OPTION VALUE="920">920</OPTION>
+                                        <OPTION VALUE="924">924</OPTION>
+                                        <OPTION VALUE="1228">1228</OPTION>
+                                        <OPTION VALUE="1624">1624</OPTION>
+                                        <OPTION VALUE="1628">1628</OPTION>
+                                        <OPTION VALUE="J4500">J4500</OPTION>
+                                        <OPTION VALUE="1224">1224</OPTION>
+                                        <OPTION VALUE="TBC">TBC</OPTION>
+                                    </select>
+
+                                </div>
+                                 </div>
+                                <br>
+
+                             <div class="row">
+
+                                <div class="form-group col-xs-4">
+                                    <label for="nombre">Ancho</label>
+
+                                    <select name="ancho" class="form-control input-sm" requireD>
+                                        <option  value="">Selecciona una opción</option>
+                                        <OPTION VALUE="2800 mm">2800 mm</OPTION>
+                                        <OPTION VALUE="2400 mm">2400 mm</OPTION>
+                                        <OPTION VALUE="2000 mm">2000 mm</OPTION>
+                                        <OPTION VALUE="3000 mm">3000 mm</OPTION>
+                                        <OPTION VALUE='2032 mm 80" inch'>2032mm 88" inch</OPTION>
+                                        <OPTION VALUE='3302 mm 130" inch'>3302 mm 130" inch</OPTION>
+                                        <OPTION VALUE='2800 mm 114" inch'>2800 mm 114" inch</OPTION>
+                                        <OPTION VALUE='3000 mm 125" inch'>3300 mm 125" inch</OPTION>
+                                        <OPTION VALUE="TBC">TBC</OPTION>
+                                        <OPTION VALUE="1800 mm">1800 mm</OPTION>
+                                        <OPTION VALUE='2000 mm80" inch'>2000 mm80" inch</OPTION>
+                                        <OPTION VALUE='110" inch'>110" inch</OPTION>
+                                        <OPTION VALUE='100" inch'>100" inch</OPTION>
+                                        <OPTION VALUE='2800 mm 113" inch'>2800 mm 113" inch</OPTION>
+                                        <OPTION VALUE="1600 mm">1600 mm</OPTION>
+
+                                    </select>
+
+                                </div>
 
 
 
@@ -750,9 +865,9 @@
                                     </select>
 
                                 </div>
-                            </div>
+                           
 
-                            <br>  <div class="row">
+                            
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Uso de cfdi</label>
                                     <select name="uso_de_cfdi" id="uso_de_cfdi" class="form-control input-sm" require>
@@ -784,7 +899,11 @@
 
                                     </select>
                                 </div>
+      
+                            </div>
+<br>
 
+<div class="row">
                                 <div class="form-group col-xs-4">
                                     <label>Método de pago</label>
 
@@ -811,16 +930,16 @@
                                     <input min="2017-01-01" max="2025-12-31"min="2017-01-01" max="2025-12-31" id="a6" type="date" class="form-control input-sm"  name="fecha_visita" placeholder="Ingresa " required>
                                 </div>
 
-                            </div><br>
-
-
-
-
-                            <div class="row">
+                            
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Fecha seguimiento</label>
                                     <input id="a6" min="2017-01-01" max="2025-12-31" type="date" class="form-control input-sm"  name="fecha_seguimiento" placeholder="Ingresa " required>
                                 </div>
+
+                        </div>
+
+<br>
+<div class="row">
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Golpes máquina por día</label>
                                     <input id="golpes_maquina" onkeyup="mulVida_util_dias();
@@ -841,12 +960,15 @@
                                     </select>
 
                                 </div>
-                                
-                                
-                                 <div class="form-group col-xs-4">
-                                    <label for="nombre">Fecha de Última Factura</label>
-                                    <input id="fecha_ultima_factura" type="date" class="form-control input-sm" name="fecha_ultima_factura">
-                                </div>
+ </div>
+
+
+                                <input id="fecha_ultima_factura" type="hidden" class="form-control input-sm" name="fecha_ultima_factura">
+
+                                <input id="consumo_real" type="hidden" class="form-control input-sm" name="consumo_real">
+
+
+
 
                             </div>
                         </div>

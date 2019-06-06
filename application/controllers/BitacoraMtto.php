@@ -45,6 +45,30 @@ Class BitacoraMtto extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
+            $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
+            $data['totalRegistroBitacoraMantenimientoCarlos'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoCarlos(1);
+            $data['totalRegistroBitacoraMantenimientoJorge'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoJorge(1);
+            $data['totalRegistroBitacoraMantenimientoMiguel'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoMiguel(1);
+            $data['totalRegistroBitacoraMantenimientoPablo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoPablo(1);
+            $data['totalRegistroBitacoraMantenimientoRodrigo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoRodrigo(1);
+            $data['totalRegistroBitacoraMantenimientoVeronica'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVeronica(1);
+            $data['totalRegistroBitacoraMantenimientoVicente'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVicente(1);
+            
+            
+            
+            
+            
+            $data['fechaUltimoRegistroVeronica'] = $this->BitacoraMttoModelo->fechaUltimoRegistroVeronica(1);
+            $data['fechaUltimoRegistroRodrigo'] = $this->BitacoraMttoModelo->fechaUltimoRegistroRodrigo(1);
+            $data['fechaUltimoRegistroJorge'] = $this->BitacoraMttoModelo->fechaUltimoRegistroJorge(1);
+            $data['fechaUltimoRegistroPablo'] = $this->BitacoraMttoModelo->fechaUltimoRegistroPablo(1);
+            $data['fechaUltimoRegistroAlejandro'] = $this->BitacoraMttoModelo->fechaUltimoRegistroAlejandro(1);
+            $data['fechaUltimoRegistroMiguel'] = $this->BitacoraMttoModelo->fechaUltimoRegistroMiguel(1);
+            $data['fechaUltimoRegistroVicente'] = $this->BitacoraMttoModelo->fechaUltimoRegistroVicente(1);
+            $data['fechaUltimoRegistroCarlos'] = $this->BitacoraMttoModelo->fechaUltimoRegistroCarlos(1);
+
+
+
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
@@ -57,12 +81,42 @@ Class BitacoraMtto extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
+            $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
+            $data['totalRegistroBitacoraMantenimientoCarlos'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoCarlos(1);
+            $data['totalRegistroBitacoraMantenimientoJorge'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoJorge(1);
+            $data['totalRegistroBitacoraMantenimientoMiguel'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoMiguel(1);
+            $data['totalRegistroBitacoraMantenimientoPablo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoPablo(1);
+            $data['totalRegistroBitacoraMantenimientoRodrigo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoRodrigo(1);
+            $data['totalRegistroBitacoraMantenimientoVeronica'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVeronica(1);
+            $data['totalRegistroBitacoraMantenimientoVicente'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVicente(1);
+
+
+
+            $data['fechaUltimoRegistroVeronica'] = $this->BitacoraMttoModelo->fechaUltimoRegistroVeronica(1);
+            $data['fechaUltimoRegistroRodrigo'] = $this->BitacoraMttoModelo->fechaUltimoRegistroRodrigo(1);
+            $data['fechaUltimoRegistroJorge'] = $this->BitacoraMttoModelo->fechaUltimoRegistroJorge(1);
+            $data['fechaUltimoRegistroPablo'] = $this->BitacoraMttoModelo->fechaUltimoRegistroPablo(1);
+            $data['fechaUltimoRegistroAlejandro'] = $this->BitacoraMttoModelo->fechaUltimoRegistroAlejandro(1);
+            $data['fechaUltimoRegistroMiguel'] = $this->BitacoraMttoModelo->fechaUltimoRegistroMiguel(1);
+            $data['fechaUltimoRegistroVicente'] = $this->BitacoraMttoModelo->fechaUltimoRegistroVicente(1);
+            $data['fechaUltimoRegistroCarlos'] = $this->BitacoraMttoModelo->fechaUltimoRegistroCarlos(1);
+
+
+
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_jefe_mantenimiento") {
             $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
+            $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
+            $data['totalRegistroBitacoraMantenimientoCarlos'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoCarlos(1);
+            $data['totalRegistroBitacoraMantenimientoJorge'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoJorge(1);
+            $data['totalRegistroBitacoraMantenimientoMiguel'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoMiguel(1);
+            $data['totalRegistroBitacoraMantenimientoPablo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoPablo(1);
+            $data['totalRegistroBitacoraMantenimientoRodrigo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoRodrigo(1);
+            $data['totalRegistroBitacoraMantenimientoVeronica'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVeronica(1);
+            $data['totalRegistroBitacoraMantenimientoVicente'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVicente(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);

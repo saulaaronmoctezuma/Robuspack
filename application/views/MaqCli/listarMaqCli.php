@@ -112,7 +112,7 @@
                             $obj->getMaquinas_por_cliente() .
                             '</td>'
                              ;
-
+                            
                             if ($dataLevel == 'is_admin') {
                                 
                             } else if ($dataLevel == 'is_editor') {
@@ -122,10 +122,27 @@
                             }
                         }
                         ?>
-                        
+                      
                    
 
                         </tr>
+                        
+                        
+                        <tr>
+                            <td colspan="2" bgcolor="#6F6F6F"><p style="color:white;">Total</p></td>
+                          <td bgcolor="#6F6F6F">
+                            <?php
+                            foreach ($totalRegistroMaquinaPorCliente as $fila) {
+                                ?>
+
+                              <p style="color:white;"> <?= $fila->total_registros ?></p>
+
+                                <?php
+                            }
+                            ?>
+                        </td>
+                         </tr>
+                        
                         
               
                     </tbody>

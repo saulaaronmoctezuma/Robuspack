@@ -48,7 +48,15 @@ class ClienteRefacciones extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $data['ventas'] = $this->ClienteRefaccionesModelo->query();
+            
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
 
+            $this->load->view('footer');
+        }else  if ($dataLevel == "is_editor") {
+            $data['ventas'] = $this->ClienteRefaccionesModelo->query();
+            
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
@@ -72,6 +80,12 @@ class ClienteRefacciones extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
             $this->load->view('footer');
+        }else if ($dataLevel == "is_servicio_a_clientes") {
+            $data['ventas'] = $this->ClienteRefaccionesModelo->query();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
+            $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
@@ -90,11 +104,7 @@ class ClienteRefacciones extends CI_Controller {
         redirect('ClienteRefacciones');
     }
 
-    public function youControllerAction() {
-        if ($this->input->post) {
-            echo $this->input->post("troquel");
-        }
-    }
+   
 
     public function agregar() {
 
@@ -154,7 +164,25 @@ class ClienteRefacciones extends CI_Controller {
             $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
             $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
             $this->load->view('footer');
-        } else {
+        }else if ($dataLevel == "is_servicio_a_clientes") {
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['grupoCombo'] = $this->ClienteRefaccionesModelo->getGrupo();
+            $data['clienteCombo'] = $this->ClienteRefaccionesModelo->getCliente();
+            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
+            $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_editor") {
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['grupoCombo'] = $this->ClienteRefaccionesModelo->getGrupo();
+            $data['clienteCombo'] = $this->ClienteRefaccionesModelo->getCliente();
+            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
+            $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
+            $this->load->view('footer');
+        }  else {
             redirect(site_url() . 'main/');
         }
     }
@@ -197,6 +225,8 @@ class ClienteRefacciones extends CI_Controller {
             'marca_maquina' => $_POST['marca_maquina'],
             'contacto' => $_POST['contacto'],
             'tipo_maquina' => $_POST['tipo_maquina'],
+             'formato' => $_POST['formato'],
+             'ancho' => $_POST['ancho'],
             'troquel' => $_POST['troquel'],
             'uso_de_cfdi' => $_POST['uso_de_cfdi'],
             'metodo_pago' => $_POST['metodo_pago'],
@@ -205,6 +235,7 @@ class ClienteRefacciones extends CI_Controller {
             'golpes_maquina' => $_POST['golpes_maquina'],
             'confirmacion_orden_compra' => $_POST['confirmacion_orden_compra'],
             'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
+            'consumo_real' => $_POST['consumo_real'],
             /* Es para traerse el id del usuario */
             'id' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
@@ -255,6 +286,8 @@ class ClienteRefacciones extends CI_Controller {
             $marca_maquina = $datos['marca_maquina'];
             $contacto = $datos['contacto'];
             $tipo_maquina = $datos['tipo_maquina'];
+            $formato = $datos['formato'];
+             $ancho = $datos['ancho'];
             $troquel = $datos['troquel'];
             $uso_de_cfdi = $datos['uso_de_cfdi'];
             $metodo_pago = $datos['metodo_pago'];
@@ -265,8 +298,17 @@ class ClienteRefacciones extends CI_Controller {
 
             $confirmacion_orden_compra = $datos['confirmacion_orden_compra'];
             $fecha_ultima_factura = $datos['fecha_ultima_factura'];
+             $consumo_real = $datos['consumo_real'];
+            
             $this->ClienteRefaccionesModelo->actualizar(
-                    $id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra,$fecha_ultima_factura);
+                    $id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, 
+                    $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion,
+                    $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom,
+                    $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, 
+                    $tipo_maquina, $formato,$ancho,
+                    
+                    $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra,
+                    $fecha_ultima_factura, $consumo_real);
             redirect('');
             redirect('ClienteRefacciones');
         }
@@ -336,10 +378,47 @@ class ClienteRefacciones extends CI_Controller {
             $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
             $this->load->view('ClienteRefacciones/modificarClienteRefacciones', $data);
             $this->load->view('footer');
+        }else if ($dataLevel == "is_editor") {
+
+            $data['ventas'] = $this->ClienteRefaccionesModelo->query();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //agregar para el select de refacción de tabla maquinaria
+            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
+            //se trae el arreglo de los datos seleccionados por el di
+            $data = array();
+            $data = $this->ClienteRefaccionesModelo->obtener($id_venta);
+            //agregar para el select de refacción de tabla maquinaria
+            $data['grupoCombo'] = $this->ClienteRefaccionesModelo->getGrupo();
+            $data['clienteCombo'] = $this->ClienteRefaccionesModelo->getCliente();
+            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
+            $this->load->view('ClienteRefacciones/modificarClienteRefacciones', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+
+            $data['ventas'] = $this->ClienteRefaccionesModelo->query();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //agregar para el select de refacción de tabla maquinaria
+            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
+            //se trae el arreglo de los datos seleccionados por el di
+            $data = array();
+            $data = $this->ClienteRefaccionesModelo->obtener($id_venta);
+            //agregar para el select de refacción de tabla maquinaria
+            $data['grupoCombo'] = $this->ClienteRefaccionesModelo->getGrupo();
+            $data['clienteCombo'] = $this->ClienteRefaccionesModelo->getCliente();
+            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
+            $this->load->view('ClienteRefacciones/modificarClienteRefaccionesServicioAClientes', $data);
+            $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
     }
+    
+    
+    
+    
+    
 
     public function clienteRefaccionesModificar() {
         $data = array(
@@ -376,6 +455,8 @@ class ClienteRefacciones extends CI_Controller {
             'marca_maquina' => $_POST['marca_maquina'],
             'contacto' => $_POST['contacto'],
             'tipo_maquina' => $_POST['tipo_maquina'],
+             'formato' => $_POST['formato'],
+              'ancho' => $_POST['ancho'],
             'troquel' => $_POST['troquel'],
             'uso_de_cfdi' => $_POST['uso_de_cfdi'],
             'metodo_pago' => $_POST['metodo_pago'],
@@ -383,7 +464,9 @@ class ClienteRefacciones extends CI_Controller {
             'fecha_seguimiento' => $_POST['fecha_seguimiento'],
             'golpes_maquina' => $_POST['golpes_maquina'],
             'confirmacion_orden_compra' => $_POST['confirmacion_orden_compra'],
-            'fecha_ultima_factura' => $_POST['fecha_ultima_factura']
+            'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
+            'consumo_real' => $_POST['consumo_real'],
+            
         );
         $this->load->model('ClienteRefacciones/ClienteRefaccionesModelo');
         $this->ClienteRefaccionesModelo->actualizar($data);
@@ -391,4 +474,8 @@ class ClienteRefacciones extends CI_Controller {
         redirect('ClienteRefacciones');
     }
 
+    
+    
+    
+    
 }

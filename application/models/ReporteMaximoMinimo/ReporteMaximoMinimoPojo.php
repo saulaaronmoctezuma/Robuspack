@@ -1,152 +1,181 @@
 <?php
 
 class ReporteMaximoMinimoPojo {
-    
-    
-     
+
     private $codigo;
     private $fecha_corte_rotacion;
-   private $total_requerido_mensual;
-    private $total_requerido_trimestral;
-    private $total_requerido_mensual_con_or_cons;
-    private $total_requerido_trimestral_con_or_cons;
+    private $fecha_ultimo_consumo;
+    private $fecha_requiere_piezas;
+    private $pedido_inteligente;
+    private $suma_total_requerido_mensual;
+    private $suma_total_requerido_trimestral;
+    private $suma_total_requerido_mensual_con_oc_consignacion;
+   private $suma_total_requerido_trimestral_con_oc_y_consignacion;
     private $inventario;
     private $piezas_a_recibir;
     private $disponibilidad_total;
     private $piezas_a_solicitar;
     private $meses_cubiertos;
     private $fecha_cubierta;
-    private $pcfob;
+    private $pc_fob;
     private $vendedor;
-    
-    function __construct($codigo, $fecha_corte_rotacion, $total_requerido_mensual, $total_requerido_trimestral, $total_requerido_mensual_con_or_cons, $total_requerido_trimestral_con_or_cons, $inventario, $piezas_a_recibir, $disponibilidad_total, $piezas_a_solicitar, $meses_cubiertos, $fecha_cubierta, $pcfob, $vendedor) {
+
+    function __construct($codigo, $fecha_corte_rotacion, $fecha_ultimo_consumo, $fecha_requiere_piezas, $pedido_inteligente, $suma_total_requerido_mensual, $suma_total_requerido_trimestral, $suma_total_requerido_mensual_con_oc_consignacion, $suma_total_requerido_trimestral_con_oc_y_consignacion, $inventario, $piezas_a_recibir, $disponibilidad_total, $piezas_a_solicitar, $meses_cubiertos, $fecha_cubierta, $pc_fob, $vendedor) {
         $this->codigo = $codigo;
         $this->fecha_corte_rotacion = $fecha_corte_rotacion;
-        $this->total_requerido_mensual = $total_requerido_mensual;
-        $this->total_requerido_trimestral = $total_requerido_trimestral;
-        $this->total_requerido_mensual_con_or_cons = $total_requerido_mensual_con_or_cons;
-        $this->total_requerido_trimestral_con_or_cons = $total_requerido_trimestral_con_or_cons;
+        $this->fecha_ultimo_consumo = $fecha_ultimo_consumo;
+        $this->fecha_requiere_piezas = $fecha_requiere_piezas;
+        $this->pedido_inteligente = $pedido_inteligente;
+        $this->suma_total_requerido_mensual = $suma_total_requerido_mensual;
+        $this->suma_total_requerido_trimestral = $suma_total_requerido_trimestral;
+        $this->suma_total_requerido_mensual_con_oc_consignacion = $suma_total_requerido_mensual_con_oc_consignacion;
+        $this->suma_total_requerido_trimestral_con_oc_y_consignacion = $suma_total_requerido_trimestral_con_oc_y_consignacion;
         $this->inventario = $inventario;
         $this->piezas_a_recibir = $piezas_a_recibir;
         $this->disponibilidad_total = $disponibilidad_total;
         $this->piezas_a_solicitar = $piezas_a_solicitar;
         $this->meses_cubiertos = $meses_cubiertos;
         $this->fecha_cubierta = $fecha_cubierta;
-        $this->pcfob = $pcfob;
+        $this->pc_fob = $pc_fob;
         $this->vendedor = $vendedor;
     }
-    function getCodigo() {
+
+    public function getCodigo() {
         return $this->codigo;
     }
 
-    function getFecha_corte_rotacion() {
+    public function getFecha_corte_rotacion() {
         return $this->fecha_corte_rotacion;
     }
 
-    function getTotal_requerido_mensual() {
-        return $this->total_requerido_mensual;
+    public function getFecha_ultimo_consumo() {
+        return $this->fecha_ultimo_consumo;
     }
 
-    function getTotal_requerido_trimestral() {
-        return $this->total_requerido_trimestral;
+    public function getFecha_requiere_piezas() {
+        return $this->fecha_requiere_piezas;
     }
 
-    function getTotal_requerido_mensual_con_or_cons() {
-        return $this->total_requerido_mensual_con_or_cons;
+    public function getPedido_inteligente() {
+        return $this->pedido_inteligente;
     }
 
-    function getTotal_requerido_trimestral_con_or_cons() {
-        return $this->total_requerido_trimestral_con_or_cons;
+    public function getSuma_total_requerido_mensual() {
+        return $this->suma_total_requerido_mensual;
     }
 
-    function getInventario() {
+    public function getSuma_total_requerido_trimestral() {
+        return $this->suma_total_requerido_trimestral;
+    }
+
+    public function getSuma_total_requerido_mensual_con_oc_consignacion() {
+        return $this->suma_total_requerido_mensual_con_oc_consignacion;
+    }
+
+    public function getSuma_total_requerido_trimestral_con_oc_y_consignacion() {
+        return $this->suma_total_requerido_trimestral_con_oc_y_consignacion;
+    }
+
+    public function getInventario() {
         return $this->inventario;
     }
 
-    function getPiezas_a_recibir() {
+    public function getPiezas_a_recibir() {
         return $this->piezas_a_recibir;
     }
 
-    function getDisponibilidad_total() {
+    public function getDisponibilidad_total() {
         return $this->disponibilidad_total;
     }
 
-    function getPiezas_a_solicitar() {
+    public function getPiezas_a_solicitar() {
         return $this->piezas_a_solicitar;
     }
 
-    function getMeses_cubiertos() {
+    public function getMeses_cubiertos() {
         return $this->meses_cubiertos;
     }
 
-    function getFecha_cubierta() {
+    public function getFecha_cubierta() {
         return $this->fecha_cubierta;
     }
 
-    function getPcfob() {
-        return $this->pcfob;
+    public function getPc_fob() {
+        return $this->pc_fob;
     }
 
-    function getVendedor() {
+    public function getVendedor() {
         return $this->vendedor;
     }
 
-    function setCodigo($codigo) {
+    public function setCodigo($codigo) {
         $this->codigo = $codigo;
     }
 
-    function setFecha_corte_rotacion($fecha_corte_rotacion) {
+    public function setFecha_corte_rotacion($fecha_corte_rotacion) {
         $this->fecha_corte_rotacion = $fecha_corte_rotacion;
     }
 
-    function setTotal_requerido_mensual($total_requerido_mensual) {
-        $this->total_requerido_mensual = $total_requerido_mensual;
+    public function setFecha_ultimo_consumo($fecha_ultimo_consumo) {
+        $this->fecha_ultimo_consumo = $fecha_ultimo_consumo;
     }
 
-    function setTotal_requerido_trimestral($total_requerido_trimestral) {
-        $this->total_requerido_trimestral = $total_requerido_trimestral;
+    public function setFecha_requiere_piezas($fecha_requiere_piezas) {
+        $this->fecha_requiere_piezas = $fecha_requiere_piezas;
     }
 
-    function setTotal_requerido_mensual_con_or_cons($total_requerido_mensual_con_or_cons) {
-        $this->total_requerido_mensual_con_or_cons = $total_requerido_mensual_con_or_cons;
+    public function setPedido_inteligente($pedido_inteligente) {
+        $this->pedido_inteligente = $pedido_inteligente;
     }
 
-    function setTotal_requerido_trimestral_con_or_cons($total_requerido_trimestral_con_or_cons) {
-        $this->total_requerido_trimestral_con_or_cons = $total_requerido_trimestral_con_or_cons;
+    public function setSuma_total_requerido_mensual($suma_total_requerido_mensual) {
+        $this->suma_total_requerido_mensual = $suma_total_requerido_mensual;
     }
 
-    function setInventario($inventario) {
+    public function setSuma_total_requerido_trimestral($suma_total_requerido_trimestral) {
+        $this->suma_total_requerido_trimestral = $suma_total_requerido_trimestral;
+    }
+
+    public function setSuma_total_requerido_mensual_con_oc_consignacion($suma_total_requerido_mensual_con_oc_consignacion) {
+        $this->suma_total_requerido_mensual_con_oc_consignacion = $suma_total_requerido_mensual_con_oc_consignacion;
+    }
+
+    public function setSuma_total_requerido_trimestral_con_oc_y_consignacion($suma_total_requerido_trimestral_con_oc_y_consignacion) {
+        $this->suma_total_requerido_trimestral_con_oc_y_consignacion = $suma_total_requerido_trimestral_con_oc_y_consignacion;
+    }
+
+    public function setInventario($inventario) {
         $this->inventario = $inventario;
     }
 
-    function setPiezas_a_recibir($piezas_a_recibir) {
+    public function setPiezas_a_recibir($piezas_a_recibir) {
         $this->piezas_a_recibir = $piezas_a_recibir;
     }
 
-    function setDisponibilidad_total($disponibilidad_total) {
+    public function setDisponibilidad_total($disponibilidad_total) {
         $this->disponibilidad_total = $disponibilidad_total;
     }
 
-    function setPiezas_a_solicitar($piezas_a_solicitar) {
+    public function setPiezas_a_solicitar($piezas_a_solicitar) {
         $this->piezas_a_solicitar = $piezas_a_solicitar;
     }
 
-    function setMeses_cubiertos($meses_cubiertos) {
+    public function setMeses_cubiertos($meses_cubiertos) {
         $this->meses_cubiertos = $meses_cubiertos;
     }
 
-    function setFecha_cubierta($fecha_cubierta) {
+    public function setFecha_cubierta($fecha_cubierta) {
         $this->fecha_cubierta = $fecha_cubierta;
     }
 
-    function setPcfob($pcfob) {
-        $this->pcfob = $pcfob;
+    public function setPc_fob($pc_fob) {
+        $this->pc_fob = $pc_fob;
     }
 
-    function setVendedor($vendedor) {
+    public function setVendedor($vendedor) {
         $this->vendedor = $vendedor;
     }
 
 
-
+    
 }

@@ -1,6 +1,7 @@
 <?php
 
 require 'MaquinariaPojo.php';
+require 'MaquinariaPojoCorteRotacion.php';
 require 'IModeloAbstracto.php';
 
 /*
@@ -108,6 +109,188 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
 
     public function refacciones() {
         
+    }
+    
+     public function querybusqueda() {
+
+
+        //user data from session
+        $data = $this->session->userdata;
+        
+
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            /* Para traerse el id del usuario */
+            //$query = $this->db->query('SELECT * FROM Venta order by id_venta desc');
+            
+       
+            
+            $this->db->select('id_maquinaria,fecha_corte_rotacion');
+            $this->db->from('maquinaria');
+            //$this->db->join('users', 'maquinaria.id=users.id');
+            $this->db->where('maquinaria.id_maquinaria=', '1');
+            $this->db->order_by('maquinaria.id_maquinaria', 'asc');
+
+            $query = $this->db->get();
+            $data = $query->result_array();
+            
+            
+            
+            
+            
+            
+            
+            $colVentas = array();
+            foreach ($query->result() as $key => $value) {
+                $objeto = new MaquinariaPojoCorteRotacion(
+           $value->id_maquinaria,$value->fecha_corte_rotacion);
+
+                array_push($colVentas, $objeto);
+            }
+            return $colVentas;
+        }
+        //condicions que realice la consulta solo si es refacciones
+         else if ($dataLevel == "is_editor") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+             
+            $this->db->select('id_maquinaria,fecha_corte_rotacion');
+            $this->db->from('maquinaria');
+            //$this->db->join('users', 'maquinaria.id=users.id');
+            $this->db->where('maquinaria.id_maquinaria=', '1');
+            $this->db->order_by('maquinaria.id_maquinaria', 'asc');
+
+            $query = $this->db->get();
+            $data = $query->result_array();
+            
+            
+            
+            
+            
+            
+            
+            $colVentas = array();
+            foreach ($query->result() as $key => $value) {
+                $objeto = new MaquinariaPojoCorteRotacion(
+           $value->id_maquinaria,$value->fecha_corte_rotacion);
+
+                array_push($colVentas, $objeto);
+            }
+            return $colVentas;
+        }  //condicions que realice la consulta solo si es refacciones
+         else if ($dataLevel == "is_refacciones") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+             
+            $this->db->select('id_maquinaria,fecha_corte_rotacion');
+            $this->db->from('maquinaria');
+            //$this->db->join('users', 'maquinaria.id=users.id');
+            $this->db->where('maquinaria.id_maquinaria=', '1');
+            $this->db->order_by('maquinaria.id_maquinaria', 'asc');
+
+            $query = $this->db->get();
+            $data = $query->result_array();
+           
+          
+            $colVentas = array();
+            foreach ($query->result() as $key => $value) {
+                $objeto = new MaquinariaPojoCorteRotacion(
+           $value->id_maquinaria,$value->fecha_corte_rotacion);
+
+                array_push($colVentas, $objeto);
+            }
+            return $colVentas;
+        } //condicions que realice la consulta solo si es refacciones
+         else if ($dataLevel == "is_Gerente_Ventas") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+             
+            $this->db->select('id_maquinaria,fecha_corte_rotacion');
+            $this->db->from('maquinaria');
+            //$this->db->join('users', 'maquinaria.id=users.id');
+            $this->db->where('maquinaria.id_maquinaria=', '1');
+            $this->db->order_by('maquinaria.id_maquinaria', 'asc');
+
+            $query = $this->db->get();
+            $data = $query->result_array();
+            
+            
+            
+            
+            
+            
+            
+            $colVentas = array();
+            foreach ($query->result() as $key => $value) {
+                $objeto = new MaquinariaPojoCorteRotacion(
+           $value->id_maquinaria,$value->fecha_corte_rotacion);
+
+                array_push($colVentas, $objeto);
+            }
+            return $colVentas;
+        } //condicions que realice la consulta solo si es refacciones
+         else if ($dataLevel == "is_Director") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+             
+            $this->db->select('id_maquinaria,fecha_corte_rotacion');
+            $this->db->from('maquinaria');
+            //$this->db->join('users', 'maquinaria.id=users.id');
+            $this->db->where('maquinaria.id_maquinaria=', '1');
+            $this->db->order_by('maquinaria.id_maquinaria', 'asc');
+
+            $query = $this->db->get();
+            $data = $query->result_array();
+            
+            
+            
+            
+            
+            
+            
+            $colVentas = array();
+            foreach ($query->result() as $key => $value) {
+                $objeto = new MaquinariaPojoCorteRotacion(
+           $value->id_maquinaria,$value->fecha_corte_rotacion);
+
+                array_push($colVentas, $objeto);
+            }
+            return $colVentas;
+        }else {
+            redirect(site_url() . 'main/');
+        }
     }
 
 }

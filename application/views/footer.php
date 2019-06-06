@@ -6,6 +6,18 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 --> 
+<!-- Smartsupp Live Chat script 
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'bb88f9ad19c9ad2ca084ef3765d1b072ab789fbb';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>-->
+
     <footer>
         <div class="col-md-12" style="text-align:center;">
             <hr>

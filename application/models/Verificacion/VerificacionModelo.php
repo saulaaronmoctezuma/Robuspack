@@ -90,7 +90,14 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
   }
   
     public function query() {
-        $query = $this->db->get('verificacion');
+            //$query = $this->db->get('verificacion');
+            $this->db->select('*');
+            $this->db->from('verificacion');
+            $this->db->order_by('verificacion.no_maqui', 'desc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            // $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->get();
+            
         $colPlaca = array();
 
         foreach ($query->result() as $key => $value) {
@@ -131,5 +138,19 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
 
         return $options_arr;
     }
+
+    public function querybusqueda() {
+        
+    }
+    
+    
+       public function totalRegistroPlacas()
+    {
+            $this->db->select('COUNT(*) as total_registros_placas');
+            $this->db->from('verificacion');
+          // $this->db->where('venta.id= ', 1);
+            $query = $this->db->get();
+             return $query->result();
+        }
 
 }

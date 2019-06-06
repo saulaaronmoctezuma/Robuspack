@@ -150,4 +150,8 @@ class CliVenModelo extends CI_Model implements IModeloAbstracto {
     public function refacciones() {
     }
 
+    public function querybusqueda() {
+        
+    }
+
 }

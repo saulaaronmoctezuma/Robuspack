@@ -11,4 +11,5 @@ interface IModeloAbstracto {
     public function delete($id);
     public function update($objeto);
     public function query();
+    public function querybusqueda();
 }

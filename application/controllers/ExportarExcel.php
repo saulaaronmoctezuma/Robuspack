@@ -392,7 +392,7 @@ class ExportarExcel extends CI_Controller {
             $excel_row++;
         }
 
-       
+
         $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
         header('Content-Type: application/vnd.ms-excel');
 
@@ -754,6 +754,15 @@ class ExportarExcel extends CI_Controller {
         $object->getActiveSheet()->getStyle("I{$contador}")->getFont()->setBold(true);
         $object->getActiveSheet()->getStyle("J{$contador}")->getFont()->setBold(true);
         $object->getActiveSheet()->getStyle("K{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("L{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("M{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("N{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("O{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("P{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("Q{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("R{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("S{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("T{$contador}")->getFont()->setBold(true);
 
 
 
@@ -764,16 +773,20 @@ class ExportarExcel extends CI_Controller {
         $object->getActiveSheet()->setCellValue("D{$contador}", 'Grupo');
         $object->getActiveSheet()->setCellValue("E{$contador}", 'Cliente');
         $object->getActiveSheet()->setCellValue("F{$contador}", 'Cantidad Máxima');
-        $object->getActiveSheet()->setCellValue("G{$contador}", 'Total Requerido Mensual');
-        $object->getActiveSheet()->setCellValue("H{$contador}", 'Total Requerido Trimestral');
-        $object->getActiveSheet()->setCellValue("I{$contador}", 'Total Requerido Mensual con OC o CONS');
-        $object->getActiveSheet()->setCellValue("J{$contador}", 'Total Requerido Trimestral con OC o CONS');
-        $object->getActiveSheet()->setCellValue("K{$contador}", 'Inventario');
-        $object->getActiveSheet()->setCellValue("L{$contador}", 'Piezas a recibir');
-        $object->getActiveSheet()->setCellValue("M{$contador}", 'Disponibilidad Total');
-        $object->getActiveSheet()->setCellValue("N{$contador}", 'Piezas a solicitar');
-        $object->getActiveSheet()->setCellValue("O{$contador}", 'Meses Cubiertos');
-        $object->getActiveSheet()->setCellValue("P{$contador}", 'Fecha Cubierta');
+        $object->getActiveSheet()->setCellValue("G{$contador}", 'Fecha Último Consumo');
+        $object->getActiveSheet()->setCellValue("H{$contador}", 'Periodo Surtimiento');
+        $object->getActiveSheet()->setCellValue("I{$contador}", 'Fecha Requiere Piezas');
+        $object->getActiveSheet()->setCellValue("J{$contador}", 'Pedido Inteligente');
+        $object->getActiveSheet()->setCellValue("K{$contador}", 'Total Requerido Mensual');
+        $object->getActiveSheet()->setCellValue("L{$contador}", 'Total Requerido Trimestral');
+        $object->getActiveSheet()->setCellValue("M{$contador}", 'Total Requerido Mensual con OC o CONS');
+        $object->getActiveSheet()->setCellValue("N{$contador}", 'Total Requerido Trimestral con OC o CONS');
+        $object->getActiveSheet()->setCellValue("O{$contador}", 'Inventario');
+        $object->getActiveSheet()->setCellValue("P{$contador}", 'Piezas a recibir');
+        $object->getActiveSheet()->setCellValue("Q{$contador}", 'Disponibilidad Total');
+        $object->getActiveSheet()->setCellValue("R{$contador}", 'Piezas a solicitar');
+        $object->getActiveSheet()->setCellValue("S{$contador}", 'Meses Cubiertos');
+        $object->getActiveSheet()->setCellValue("T{$contador}", 'Fecha Cubierta');
 
 
 
@@ -790,16 +803,20 @@ class ExportarExcel extends CI_Controller {
             $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->grupo);
             $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->cliente);
             $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->cantidad_maxima);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row->total_requerido_mensual);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row->total_requerido_trimestral);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row->total_requerido_mensual_con_or_cons);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, $row->total_requerido_trimestral_con_or_cons);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, $row->inventario);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(11, $excel_row, $row->piezas_a_recibir);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(12, $excel_row, $row->disponibilidad_total);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(13, $excel_row, $row->piezas_a_solicitar);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(14, $excel_row, $row->meses_cubiertos);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(15, $excel_row, $row->fecha_cubierta);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row->fecha_ultimo_consumo);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row->periodo_surtimiento);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row->fecha_requiere_piezas);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, $row->pedido_inteligente);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, $row->suma_total_requerido_mensual);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(11, $excel_row, $row->suma_total_requerido_trimestral);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(12, $excel_row, $row->suma_total_requerido_mensual_con_oc_y_consignacion);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(13, $excel_row, $row->suma_total_requerido_trimestral_con_oc_y_consignacion);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(14, $excel_row, $row->inventario);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(15, $excel_row, $row->piezas_a_recibir);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(16, $excel_row, $row->disponibilidad_total);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(17, $excel_row, $row->piezas_a_solicitar);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(18, $excel_row, $row->meses_cubiertos);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(19, $excel_row, $row->fecha_cubierta);
 
 
 
@@ -815,7 +832,7 @@ class ExportarExcel extends CI_Controller {
     }
 
     // create xlsx
-    public function crearExcelRotacionInventario() {
+    public function crearExcelRotacionInventario2() {
         // create file name
         //  $fileName = 'feedbackdata-' . time() . '.xls'; 
         $this->load->library("excel");
@@ -886,11 +903,11 @@ class ExportarExcel extends CI_Controller {
 
 
 
-        $listaRotacionInventario = $this->export->ListaRotacionInventario();
+        $listaRotacionInventario = $this->export->ListaRotacionInventario2();
 
         $excel_row = 2;
-        
-        
+
+
         //exporta los datos de la tabla
         foreach ($listaRotacionInventario as $row) {
 
@@ -911,22 +928,28 @@ class ExportarExcel extends CI_Controller {
 
             $excel_row++;
         }
-       $object->getActiveSheet()->getStyle(
-    'A2:' . 
-    $object->getActiveSheet()->getHighestColumn() . 
-    $object->getActiveSheet()->getHighestRow() 
-)->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN); 
+        /*$object->getActiveSheet()->getStyle(
+                'A2:' .
+                $object->getActiveSheet()->getHighestColumn() .
+                $object->getActiveSheet()->getHighestRow()
+        )->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);*/
+        
+        
+        
         // Combino las celdas desde A1 hasta E1
         //x$object->setActiveSheetIndex(0)->mergeCells('A1:F1');
 
-        $object->getActiveSheet()->getStyle(1)->getFill()->setFillType(PHPExcel_Style_Fill::FILL_SOLID);
-        $object->getActiveSheet()->getStyle(1)->getFill()->getStartColor()->setARGB('29bb04');
-        // Add some data
-        $object->getActiveSheet()->getStyle(1)->getFont()->setBold(true);
-        $object->getActiveSheet()->getStyle(1)->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
-
-
         
+        
+        
+        /*$object->getActiveSheet()->getStyle(1)->getFill()->setFillType(PHPExcel_Style_Fill::FILL_SOLID);
+        $object->getActiveSheet()->getStyle(1)->getFill()->getStartColor()->setARGB('29bb04');*/
+        // Add some data
+       /* $object->getActiveSheet()->getStyle(1)->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle(1)->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);*/
+
+
+
         //para hacer las sumas 
         $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, 'Total');
         $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, '= SUM(C2:C' . ($excel_row - 1) . ')');
@@ -1116,5 +1139,158 @@ class ExportarExcel extends CI_Controller {
         header('Content-Disposition: attachment;filename="Clientes.xlsx"');
         $object_writer->save('php://output');
     }
+ // crear el excel
+    public function crearExcelRotacionInventario() {
+        // create file name
+        //  $fileName = 'feedbackdata-' . time() . '.xls'; 
+        $this->load->library("excel");
+        $object = new PHPExcel();
 
+        $object->setActiveSheetIndex(0);
+        $object->getActiveSheet()->setTitle('Rotación Inventario');
+        //Aquí puedes modificar algunas propiedades del archivo que será creado
+        // Se asignan las propiedades del libro
+        $object->getProperties()->setCreator("Karen & Saúl") //Autor
+                ->setLastModifiedBy("SISTEMA DE CONTROL ROBUSPACK") //Ultimo usuario que lo modificó
+                ->setTitle("SISTEMA DE CONTROL ROBUSPACK")
+                ->setSubject("SISTEMA DE CONTROL ROBUSPACK")
+                ->setDescription("Desarrolladores de Software Karen & Saúl  ")
+                ->setKeywords("SISTEMA DE CONTROL ROBUSPACK")
+                ->setCategory("Descargado de SCR");
+        $contador = 1;
+        //Le aplicamos ancho las columnas.
+        $object->getActiveSheet()->getColumnDimension('A')->setWidth(30);
+        $object->getActiveSheet()->getColumnDimension('B')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('C')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('D')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('E')->setWidth(30);
+        $object->getActiveSheet()->getColumnDimension('F')->setWidth(25);
+        $object->getActiveSheet()->getColumnDimension('G')->setWidth(38);
+        $object->getActiveSheet()->getColumnDimension('H')->setWidth(35);
+        $object->getActiveSheet()->getColumnDimension('I')->setWidth(30);
+        $object->getActiveSheet()->getColumnDimension('J')->setWidth(30);
+        $object->getActiveSheet()->getColumnDimension('K')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('L')->setWidth(18);
+        $object->getActiveSheet()->getColumnDimension('M')->setWidth(18);
+        $object->getActiveSheet()->getColumnDimension('N')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('O')->setWidth(18);
+        $object->getActiveSheet()->getColumnDimension('P')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('Q')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('R')->setWidth(32);
+        $object->getActiveSheet()->getColumnDimension('S')->setWidth(32);
+        $object->getActiveSheet()->getColumnDimension('T')->setWidth(32);
+        $object->getActiveSheet()->getColumnDimension('U')->setWidth(32);
+        $object->getActiveSheet()->getColumnDimension('V')->setWidth(32);
+        $object->getActiveSheet()->getColumnDimension('W')->setWidth(32);
+        $object->getActiveSheet()->getColumnDimension('X')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('Y')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('Z')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AA')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AB')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AC')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AD')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AE')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AF')->setWidth(18);
+        $object->getActiveSheet()->getColumnDimension('AG')->setWidth(25);
+        $object->getActiveSheet()->getColumnDimension('AH')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('AI')->setWidth(20);
+
+        //Le aplicamos el tipo, color y tamaño de letra.
+        $styleArray = array('font' => array('bold' => true, 'color' => array('rgb' => '000000'), 'size' => 12, 'name' => 'Arial'));
+        $object->getActiveSheet()->getStyle('1')->applyFromArray($styleArray);
+
+
+
+
+        //Le aplicamos negrita a los títulos de la cabecera.
+        $object->getActiveSheet()->getStyle("A{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("B{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("C{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("D{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("E{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("F{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("G{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("H{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("I{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("J{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("K{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("L{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("M{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("N{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("O{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("P{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("Q{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("R{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("S{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("T{$contador}")->getFont()->setBold(true);
+
+
+
+        //Definimos los títulos de la cabecera.
+        $object->getActiveSheet()->setCellValue("A{$contador}", 'Código');
+        $object->getActiveSheet()->setCellValue("B{$contador}", 'Fecha Corte Rotación');
+        
+        $object->getActiveSheet()->setCellValue("C{$contador}", 'Fecha Último Consumo');
+        $object->getActiveSheet()->setCellValue("D{$contador}", 'Fecha Requiere Piezas');
+        $object->getActiveSheet()->setCellValue("E{$contador}", 'Pedido Inteligente');
+        $object->getActiveSheet()->setCellValue("F{$contador}", 'Total Requerido Mensual');
+        $object->getActiveSheet()->setCellValue("G{$contador}", 'Total Requerido Trimestral');
+        $object->getActiveSheet()->setCellValue("H{$contador}", 'Total Requerido Mensual con OC o CONS');
+        $object->getActiveSheet()->setCellValue("I{$contador}", 'Total Requerido Trimestral con OC o CONS');
+        $object->getActiveSheet()->setCellValue("J{$contador}", 'Inventario');
+        $object->getActiveSheet()->setCellValue("K{$contador}", 'Piezas a recibir');
+        $object->getActiveSheet()->setCellValue("L{$contador}", 'Disponibilidad Total');
+        $object->getActiveSheet()->setCellValue("M{$contador}", 'Piezas a solicitar');
+        $object->getActiveSheet()->setCellValue("N{$contador}", 'Meses Cubiertos');
+        $object->getActiveSheet()->setCellValue("O{$contador}", 'Fecha Cubierta');
+        $object->getActiveSheet()->setCellValue("P{$contador}", 'PC FOB');
+
+
+
+
+        $listaRotacionInventaro = $this->export->ListaRotacionInventario();
+
+        $excel_row = 2;
+        foreach ($listaRotacionInventaro as $row) {
+           
+            $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->codigo);
+
+            $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->fecha_corte_rotacion);
+            
+            $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->fecha_ultimo_consumo);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->fecha_requiere_piezas);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->pedido_inteligente);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->suma_total_requerido_mensual);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row->suma_total_requerido_trimestral);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row->suma_total_requerido_mensual_con_oc_y_consignacion);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row->suma_total_requerido_trimestral_con_oc_y_consignacion);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, $row->inventario);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(10,$excel_row, $row->piezas_a_recibir);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(11,$excel_row, $row->disponibilidad_total);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(12,$excel_row, $row->piezas_a_solicitar);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(13, $excel_row, $row->meses_cubiertos);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(14, $excel_row, $row->fecha_cubierta);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(15, $excel_row, $row->pc_fob);
+            
+            
+            
+            $excel_row++;
+        }
+         //para hacer las sumas 
+        $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, 'Total');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, '= SUM(F2:F' . ($excel_row - 1) . ')');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, '= SUM(G2:G' . ($excel_row - 1) . ')');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, '= SUM(H2:H' . ($excel_row - 1) . ')');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, '= SUM(I2:I' . ($excel_row - 1) . ')');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, '= SUM(J2:J' . ($excel_row - 1) . ')');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, '= SUM(K2:K' . ($excel_row - 1) . ')');
+        $object->getActiveSheet()->setCellValueByColumnAndRow(11, $excel_row, '= SUM(L2:L' . ($excel_row - 1) . ')');
+        
+        
+        $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+        header('Content-Type: application/vnd.ms-excel');
+
+        header('Content-Disposition: attachment;filename="R  otación Inventario.xlsx"');
+        $object_writer->save('php://output');
+    }
 }

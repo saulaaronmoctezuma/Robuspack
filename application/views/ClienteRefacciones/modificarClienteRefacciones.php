@@ -1,4 +1,4 @@
-<!--
+1<!--
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 16/11/2018 Hora 2:34 pm
  * Sistema de Control Robuspack
@@ -22,6 +22,16 @@
         <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>"> 
 
 
+        <!-- Para traerse el rol que esta registrado-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+        $site_title = $result->site_title;
+        //check user level
+        ?>
+
+     
         <script>
             function multCostoJuego() {
                 precio_unitario = document.getElementById("mulprecio_unitario").value;
@@ -263,7 +273,7 @@
                      document.getElementById("uso_de_cfdi").value = " ";
                      document.getElementById("res_precio_golpe").value = " ";
                      document.getElementById("res_beneficio_rot_prom").value = " ";
-                  
+                     
                      document.getElementById("ope_tiempo_rot_com").value = " ";
                      document.getElementById("res_beneficio_golpes").value = " ";
                      document.getElementById("ope_golpes_prom_rodicut").value = " ";
@@ -279,15 +289,15 @@
 
                 {
 
-                   // document.formulario.confirmacion_orden_compra.selectedIndex = null;
+                    // document.formulario.confirmacion_orden_compra.selectedIndex = null;
                     document.formulario.uso_de_cfdi.selectedIndex = null;
                     document.formulario.paqueteria.selectedIndex = null;
                     document.formulario.metodo_pago.selectedIndex = null;
                     document.formulario.tipo_entrega.selectedIndex = null;
                     // document.formulario.periodo_surtimiento.selectedIndex = null;
                     document.formulario.dias_credito.selectedIndex = null;
-                    document.formulario.troquel.selectedIndex = null;
-                   // document.formulario.elements['confirmacion_orden_compra'].style.display = 'block';
+                    //document.formulario.troquel.selectedIndex = null;
+                    // document.formulario.elements['confirmacion_orden_compra'].style.display = 'block';
                     //document.formulario.elements['periodo_surtimiento'].style.display = 'block';
                     document.formulario.elements['tipo_entrega'].style.display = 'block';
                     document.formulario.elements['dias_credito'].style.display = 'block';
@@ -440,7 +450,7 @@
                         <tr>
                             <td>Cliente</td>
                             <td> <select id="a3" class="form-control" name="cliente"   <?php echo form_dropdown('clienteCombo', $clienteCombo, $cliente, '#', 'id="clienteCombo"'); ?> </select></td>
-                            </tr>
+                        </tr>
 
                         <tr>
                             <td>Código</td>
@@ -694,11 +704,76 @@
                         </tr>
                         <tr>
                             <td>Marca de la máquina</td>
-                            <td><input id="a1" class="form-control" type="text"  autofocus name="marca_maquina" value="<?= $marca_maquina ?>"></td>
+                            <td>
+                                
+                               <!-- <input id="a1" class="form-control" type="text"  autofocus name="marca_maquina" value="<?= $marca_maquina ?>">-->
+                            
+                            
+                            
+                            <SELECT name="marca_maquina" class="form-control input-sm"> 
+                                    <optgroup label="Selecciona una opción">
+                                       
+                                        <option value="CURIONI" <?php  if ($marca_maquina == "CURIONI") { echo "Selected";  } ?>>CURIONI</option>
+                                        <option value="HOPPER" <?php if ($marca_maquina == "HOPPER") {  echo "Selected"; } ?>>HOPPER</option>
+                                       <option value="LANGSTON" <?php if ($marca_maquina == "LANGSTON") { echo "Selected"; } ?>>LANGSTON</option>
+                                       <option value="LATITUD" <?php if ($marca_maquina == "LATITUD") {  echo "Selected"; } ?>>LATITUD</option>
+                                       <option value="MARTIN" <?php if ($marca_maquina == "MARTIN") { echo "Selected"; } ?>>MARTIN</option>
+                                      <option value="SMARTBOX" <?php if ($marca_maquina == "SMARTBOX") { echo "Selected"; } ?>>SMARTBOX</option>
+                                       <option value="STALEY" <?php if ($marca_maquina == "STALEY") {  echo "Selected"; } ?>>STALEY</option>
+                                       <option value="TECASA" <?php if ($marca_maquina == "TECASA") { echo "Selected"; } ?>>TECASA</option>
+                                       <option value="WARD" <?php if ($marca_maquina == "WARD") {  echo "Selected"; } ?>>WARD</option>
+                                       <option value="WARD III" <?php if ($marca_maquina == "WARD III") { echo "Selected"; } ?>>WARD III</option>
+                                       <option value="WARD IV" <?php if ($marca_maquina == "WARD IV") {  echo "Selected"; } ?>>WARD IV</option>
+                                       <option value="WARD V" <?php if ($marca_maquina == "WARD V") { echo "Selected"; } ?>>WARD V</option>
+                                       
+                                       
+                                    </optgroup>
+                                </SELECT>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            </td>
                         </tr>
                         <tr>
                             <td>Modelo de la máquina</td>
-                            <td><input id="a1" class="form-control" type="text"  autofocus name="contacto" value="<?= $contacto ?>"></td>
+                            <td>
+                               <!-- <input id="a1" class="form-control" type="text"  autofocus name="contacto" value="<?= $contacto ?>">-->
+                            
+                                <SELECT name="contacto" class="form-control input-sm"> 
+                                    <optgroup label="Selecciona una opción">
+                                        <option value="DRO" <?php  if ($contacto == "DRO") { echo "Selected";  } ?>>DRO</option>
+                                        <option value="DRO  NT/ RS" <?php if ($contacto == "DRO  NT/ RS") {  echo "Selected"; } ?>>DRO  NT/ RS</option>
+                                        <option value="DRO NT" <?php  if ($contacto == "DRO NT") { echo "Selected";  } ?>>DRO NT</option>
+                                        <!--<option value="FFG" <?php if ($contacto == "FFG") {  echo "Selected"; } ?>>FFG</option>-->
+                                        <option value="FFG Midline" <?php  if ($contacto == "FFG Midline") { echo "Selected";  } ?>>FFG Midline</option>
+                                        <option value="FFG Transline" <?php if ($contacto == "FFG Transline") {  echo "Selected"; } ?>>FFG Transline</option>
+                                        <!-- <option value="FRDC" <?php  if ($contacto == "FRDC") { echo "Selected";  } ?>>FRDC</option>-->
+                                        <option value="LANGSTON" <?php if ($contacto == "LANGSTON") {  echo "Selected"; } ?>>LANGSTON</option>
+                                        <option value="Midline NT/ RS" <?php  if ($contacto == "Midline NT/ RS") { echo "Selected";  } ?>>Midline NT/ RS</option>
+                                        <option value="Miniline" <?php if ($contacto == "Miniline") {  echo "Selected"; } ?>>Miniline</option>
+                                        <option value="Miniline RS" <?php  if ($contacto == "Miniline RS") { echo "Selected";  } ?>>Miniline RS</option>
+                                        <option value="SR-PACK" <?php if ($contacto == "SR-PACK") {  echo "Selected"; } ?>>SR-PACK</option>
+                                        <option value="TECASA" <?php  if ($contacto == "TECASA") { echo "Selected";  } ?>>TECASA</option>
+                                        <option value="Transline" <?php if ($contacto == "Transline") {  echo "Selected"; } ?>>Transline</option>
+                                         <option value="Transline RS" <?php  if ($contacto == "Transline RS") { echo "Selected";  } ?>>Transline RS</option>
+                                        <option value="Transline NT/ RS" <?php if ($contacto == "Transline NT/ RS") {  echo "Selected"; } ?>>Transline NT/ RS</option>
+                                      
+                                    
+                                       
+                                       
+                                    </optgroup>
+                                </SELECT>
+                            
+                            
+                            </td>
                         </tr>
 
 
@@ -710,26 +785,85 @@
 
                                 <SELECT name="tipo_maquina" class="form-control input-sm"> 
                                     <optgroup label="Selecciona una opción">
-                                        <option value="FFG" <?php
-                                        if ($tipo_maquina == "FFG") {
-                                            echo "Selected";
-                                        }
-                                        ?>>FFG</option>
-                                        <option value="FRDC" <?php
-                                        if ($tipo_maquina == "FRDC") {
-                                            echo "Selected";
-                                        }
-                                        ?>>FRDC</option>
-
-                                        <option value="RDC" <?php
-                                        if ($tipo_maquina == "RDC") {
-                                            echo "Selected";
-                                        }
-                                        ?>>RDC</option>
-                                    </optgroup>
+                                        
+                    <option value="" <?php if ($tipo_maquina == "") {  echo "Selected";}?>></option>                    
+         <option value="FFG" <?php if ($tipo_maquina == "FFG") {  echo "Selected";}?>>FFG</option>
+         <option value="FRDC" <?php if ($tipo_maquina == "FRDC") { echo "Selected";} ?>>FRDC</option>
+         <option value="RDC" <?php if ($tipo_maquina == "RDC") { echo "Selected";}?>>RDC</option>
+                                        
+        <!-- <option value="616" <?php if ($tipo_maquina == "616") {  echo "Selected";}?>>616</option>
+         <option value="618" <?php if ($tipo_maquina == "618") { echo "Selected";} ?>>618</option>
+         <option value="920" <?php if ($tipo_maquina == "920") { echo "Selected";}?>>920</option>
+         <option value="924" <?php if ($tipo_maquina == "924") {  echo "Selected";}?>>924</option>
+         <option value="1228" <?php if ($tipo_maquina == "1228") { echo "Selected";} ?>>1228</option>
+         <option value="1628" <?php if ($tipo_maquina == "1628") { echo "Selected";}?>>1628</option>
+         <option value="J4500" <?php if ($tipo_maquina == "J4500") {  echo "Selected";}?>>J4500</option>
+         <option value="1224" <?php if ($tipo_maquina == "1224") { echo "Selected";} ?>>1224</option>
+         <option value="TBC" <?php if ($tipo_maquina == "TBC") { echo "Selected";}?>>TBC</option>-->
                                 </SELECT>
                             </td>
                         </tr>
+                        
+                        
+                        
+                        
+                           
+                        
+                        
+                        
+                        
+                        <tr>
+                            <td>Formato</td>
+                            <td>
+
+
+                                <SELECT name="formato" class="form-control input-sm"> 
+                                    
+        
+                           <option value="" <?php if ($formato == "") {  echo "Selected";}?>>Selecciona una opción</option>             
+        <option value="616" <?php if ($formato == "616") {  echo "Selected";}?>>616</option>
+         <option value="618" <?php if ($formato == "618") { echo "Selected";} ?>>618</option>
+         <option value="920" <?php if ($formato == "920") { echo "Selected";}?>>920</option>
+         <option value="924" <?php if ($formato == "924") {  echo "Selected";}?>>924</option>
+         <option value="1228" <?php if ($formato == "1228") { echo "Selected";} ?>>1228</option>
+         <option value="1624" <?php if ($formato == "1624") { echo "Selected";}?>>1624</option>
+         <option value="1628" <?php if ($formato == "1628") { echo "Selected";}?>>1628</option>
+         <option value="J4500" <?php if ($formato == "J4500") {  echo "Selected";}?>>J4500</option>
+         <option value="1224" <?php if ($formato == "1224") { echo "Selected";} ?>>1224</option>
+         <option value="TBC" <?php if ($formato == "TBC") { echo "Selected";}?>>TBC</option>
+                                </SELECT>
+                            </td>
+                        </tr>
+                        
+                          <tr>
+                            <td>Ancho</td>
+                            <td>
+
+
+                                <SELECT name="ancho" class="form-control input-sm"> 
+                                    <optgroup label="Selecciona una opción">
+        <option value="" <?php if ($ancho == "") {  echo "Selected";}?>>Selecciona una opción</option>
+                                        
+        <option value="2800 mm" <?php if ($ancho == "2800 mm") {  echo "Selected";}?>>2800 mm</option>
+         <option value="2400 mm" <?php if ($ancho == "2400 mm") { echo "Selected";} ?>>2400 mm</option>
+         <option value="2000 mm" <?php if ($ancho == "2000 mm") { echo "Selected";}?>>2000 mm</option>
+         <option value="3000 mm" <?php if ($ancho == "3000 mm") {  echo "Selected";}?>>3000 mm</option>
+         <option value='2032 mm 80" inch' <?php if ($ancho == '2032 mm 80" inch') { echo "Selected";} ?>>2032 mm 80" inch</option>
+         <option value='3302 mm 130" inch' <?php if ($ancho == '3302 mm 130" inch') { echo "Selected";}?>>3302 mm 130" inch</option>
+         <option value='2800 mm 114" inch' <?php if ($ancho == '2800 mm 114" inch') { echo "Selected";}?>>2800 mm 114" inch</option>
+         <option value='3000 mm 125" inch' <?php if ($ancho == '3000 mm 125" inch') {  echo "Selected";}?>>3000 mm 125" inch</option>
+         <option value="TBC" <?php if ($ancho == "TBC") { echo "Selected";} ?>>TBC</option>
+         <option value="1800 mm" <?php if ($ancho == "1800 mm") { echo "Selected";}?>>1800 mm</option>
+         <option value="2000 mm80" <?php if ($ancho == "2000 mm80") { echo "Selected";}?>>2000 mm80</option>
+         <option value='110" inch' <?php if ($ancho == "1800 mm") { echo "Selected";}?>>1800 mm</option>
+         <option value='100" inch' <?php if ($ancho == '100" inch') { echo "Selected";}?>>100" inch</option>
+         <option value="'2800 mm 113" inch' <?php if ($ancho == '2800 mm 113" inch') { echo "Selected";}?>>2800 mm 113" inch</option>
+         <option value="1600 mm" <?php if ($ancho == "1600 mm") { echo "Selected";}?>>1600 mm</option>
+                                </SELECT>
+                            </td>
+                        </tr>
+                        
+                        
                         <tr>
                             <td>Troquel</td>
                             <td>
@@ -953,25 +1087,49 @@
                             <td>
                                 <SELECT name="confirmacion_orden_compra" class="form-control input-sm"> 
                                     <optgroup label="Selecciona una opción">
-                                        <option value="Consignación" <?php if ($confirmacion_orden_compra == "Consignación") {
-                                    echo "Selected";
-                                } ?>>Consignación</option>
-                                        <option value="Orden de Compra" <?php if ($confirmacion_orden_compra == "Orden de Compra") {
-                                    echo "Selected";
-                                } ?>>Orden de Compra</option>
-                                        <option value="Sin Pedido" <?php if ($confirmacion_orden_compra == "Sin Pedido") {
-                                    echo "Selected";
-                                } ?>>Sin Pedido</option>
+                                        <option value="Consignación" <?php
+                                        if ($confirmacion_orden_compra == "Consignación") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Consignación</option>
+                                        <option value="Orden de Compra" <?php
+                                        if ($confirmacion_orden_compra == "Orden de Compra") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Orden de Compra</option>
+                                        <option value="Sin Pedido" <?php
+                                                if ($confirmacion_orden_compra == "Sin Pedido") {
+                                                    echo "Selected";
+                                                }
+                                        ?>>Sin Pedido</option>
                                     </optgroup>
                                 </SELECT>
                             </td>
 
 
                         </tr>
-                        <tr>
-                            <td>Fecha de Última Factura</td>
-                            <td><input id="fecha_ultima_factura"  class="form-control" type="date"  autofocus name="fecha_ultima_factura" value="<?= $fecha_ultima_factura ?>"></td>
-                        </tr>
+                        <input id="fecha_ultima_factura"  class="form-control" type="hidden"  autofocus name="fecha_ultima_factura" value="<?= $fecha_ultima_factura ?>">                      
+<input id="consumo_real"  class="form-control" type="hidden"  autofocus name="consumo_real" value="<?= $consumo_real ?>">                      
+
+                        <?php
+                        if ($dataLevel == 'is_admin') {
+                            echo '<tr>';
+                            echo '<td>Fecha Última Factura</td>';
+                            echo '<td><input id="fecha_ultima_factura"  class="form-control" type="date"  autofocus name="fecha_ultima_factura" value="' . $fecha_ultima_factura . '"> </td>';
+                            ;
+
+                            echo '</tr>';
+                            
+                            
+                             echo '<tr>';
+                            echo '<td>Consumo Real</td>';
+                            echo '<td><input id="consumo_real"  class="form-control" type="text"  autofocus name="consumo_real" value="' . $consumo_real . '"> </td>';
+                            ;
+
+                            echo '</tr>';
+                        }
+                        ?>
+
 
                         <tr>
                             <td>

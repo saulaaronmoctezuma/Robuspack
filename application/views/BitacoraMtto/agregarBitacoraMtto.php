@@ -21,7 +21,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $theme; ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
+<script type="text/javascript">
+        function Validate()
+        {
+            var e = document.getElementById("cliente");
+            var strUser = e.options[e.selectedIndex].value;
 
+            var strUser1 = e.options[e.selectedIndex].text;
+            if (strUser == 0)
+            {
+                alert("Selecciona un Cliente");
+
+                document.getElementById('cliente').focus();
+            }
+        }
+
+        function ValidaGrupo()
+        {
+            var e = document.getElementById("grupo");
+            var strUser = e.options[e.selectedIndex].value;
+
+            var strUser1 = e.options[e.selectedIndex].text;
+            if (strUser == 0)
+            {
+                alert("Selecciona un Grupo");
+                document.formulario.grupo.focus;
+            }
+        }
+    </script>
 
     <div id="maquinaria">
         <div class="container" >      
@@ -403,7 +430,8 @@
                 <br><br>
                 <center>
 
-                <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+                <input class="btn btn-success"  onclick="Validate();
+                                    ValidaGrupo()" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
                 <a title="Da clic para regresar" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
                 </center>
 

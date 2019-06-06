@@ -42,46 +42,66 @@ Class ReporteMaximoMinimo extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['maximominimo'] = $this->ReporteMaximoMinimoModelo->query();
-            
-            
-               $data['totalRequeridoMensual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensual(1);
-               $data['totalRequeridoTrimestrual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrual(1);
-               $data['totalRequeridoMensualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensualOcyCons(1);
-               $data['totalRequeridoTrimestrualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrualOcyCons(1);
-               $data['totalInventario'] = $this->ReporteMaximoMinimoModelo->totalInventario(1);
-               $data['totalPiezasRecibir'] = $this->ReporteMaximoMinimoModelo->totalPiezasRecibir(1);
-               $data['totalDisponibilidadTotal'] = $this->ReporteMaximoMinimoModelo->totalDisponibilidadTotal(1);
-               $data['totalPiezasSolicitar'] = $this->ReporteMaximoMinimoModelo->totalPiezasSolicitar(1);
-               
-               
-           $this->load->view('ReporteMaximoMinimo/listarMaximoMinimo', $data);
+
+
+            $data['totalRequeridoMensual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensual(1);
+            $data['totalRequeridoTrimestrual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrual(1);
+            $data['totalRequeridoMensualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensualOcyCons(1);
+            $data['totalRequeridoTrimestrualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrualOcyCons(1);
+            $data['totalInventario'] = $this->ReporteMaximoMinimoModelo->totalInventario(1);
+            $data['totalPiezasRecibir'] = $this->ReporteMaximoMinimoModelo->totalPiezasRecibir(1);
+            $data['totalDisponibilidadTotal'] = $this->ReporteMaximoMinimoModelo->totalDisponibilidadTotal(1);
+            $data['totalPiezasSolicitar'] = $this->ReporteMaximoMinimoModelo->totalPiezasSolicitar(1);
+
+
+            $this->load->view('ReporteMaximoMinimo/listarMaximoMinimo', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['maximominimo'] = $this->ReporteMaximoMinimoModelo->query();
+            $data['totalRequeridoMensual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensual(1);
+            $data['totalRequeridoTrimestrual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrual(1);
+            $data['totalRequeridoMensualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensualOcyCons(1);
+            $data['totalRequeridoTrimestrualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrualOcyCons(1);
+            $data['totalInventario'] = $this->ReporteMaximoMinimoModelo->totalInventario(1);
+            $data['totalPiezasRecibir'] = $this->ReporteMaximoMinimoModelo->totalPiezasRecibir(1);
+            $data['totalDisponibilidadTotal'] = $this->ReporteMaximoMinimoModelo->totalDisponibilidadTotal(1);
+            $data['totalPiezasSolicitar'] = $this->ReporteMaximoMinimoModelo->totalPiezasSolicitar(1);
             $this->load->view('ReporteMaximoMinimo/listarMaximoMinimo', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_Gerente_Ventas") {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['totalRequeridoMensual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensual(1);
+            $data['totalRequeridoTrimestrual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrual(1);
+            $data['totalRequeridoMensualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensualOcyCons(1);
+            $data['totalRequeridoTrimestrualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrualOcyCons(1);
+            $data['totalInventario'] = $this->ReporteMaximoMinimoModelo->totalInventario(1);
+            $data['totalPiezasRecibir'] = $this->ReporteMaximoMinimoModelo->totalPiezasRecibir(1);
+            $data['totalDisponibilidadTotal'] = $this->ReporteMaximoMinimoModelo->totalDisponibilidadTotal(1);
+            $data['totalPiezasSolicitar'] = $this->ReporteMaximoMinimoModelo->totalPiezasSolicitar(1);
             $data['maximominimo'] = $this->ReporteMaximoMinimoModelo->query();
             $this->load->view('ReporteMaximoMinimo/listarMaximoMinimo', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_director") {
+        } else if ($dataLevel == "is_director") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            $data['totalRequeridoMensual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensual(1);
+            $data['totalRequeridoTrimestrual'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrual(1);
+            $data['totalRequeridoMensualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoMensualOcyCons(1);
+            $data['totalRequeridoTrimestrualOcyCons'] = $this->ReporteMaximoMinimoModelo->totalRequeridoTrimestrualOcyCons(1);
+            $data['totalInventario'] = $this->ReporteMaximoMinimoModelo->totalInventario(1);
+            $data['totalPiezasRecibir'] = $this->ReporteMaximoMinimoModelo->totalPiezasRecibir(1);
+            $data['totalDisponibilidadTotal'] = $this->ReporteMaximoMinimoModelo->totalDisponibilidadTotal(1);
+            $data['totalPiezasSolicitar'] = $this->ReporteMaximoMinimoModelo->totalPiezasSolicitar(1);
+            
             $data['maximominimo'] = $this->ReporteMaximoMinimoModelo->query();
             $this->load->view('ReporteMaximoMinimo/listarMaximoMinimo', $data);
             $this->load->view('footer');
-        }else {
+        } else {
             redirect(site_url() . 'main/');
         }
     }
-    
-    
-
-  
-    
 
 }

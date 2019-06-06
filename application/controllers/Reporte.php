@@ -71,6 +71,12 @@ class Reporte extends CI_Controller {
                 $data['customer_details'] = $this->htmltopdf_model->buscar_detalles_individualesHtml($id_venta);
                 $this->load->view('htmltopdf', $data);
             }
+        }else if ($dataLevel == "is_servicio_a_clientes") {
+            if ($this->uri->segment(3)) {
+                $id_venta = $this->uri->segment(3);
+                $data['customer_details'] = $this->htmltopdf_model->buscar_detalles_individualesHtml($id_venta);
+                $this->load->view('htmltopdf', $data);
+            }
         } else {
             redirect(site_url() . 'main/');
         }
@@ -108,7 +114,17 @@ class Reporte extends CI_Controller {
                 $this->pdf->render();
                 $this->pdf->stream("Robuspack_" . $id_cliente . ".pdf", array("Attachment" => 0));
             }
-        } else {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            if ($this->uri->segment(3)) {
+                $id_cliente = $this->uri->segment(3);
+                $html_content = ' <h1 align="center">Cliente</h1>';
+
+                $html_content .= $this->htmltopdf_model->buscar_detalles_individualesPdf($id_cliente);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Robuspack_" . $id_cliente . ".pdf", array("Attachment" => 0));
+            }
+        }else {
             redirect(site_url() . 'main/');
         }
     }

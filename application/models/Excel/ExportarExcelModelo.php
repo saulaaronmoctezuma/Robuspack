@@ -168,16 +168,7 @@ class ExportarExcelModelo extends CI_Model {
             return $query->result();
         }
         
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        
+     
           // get employee list
     public function ListaClienteSeguimiento() {
 
@@ -358,7 +349,7 @@ class ExportarExcelModelo extends CI_Model {
             /* Para traerse el id del usuario */
 
             //consulta de los datos que va a descargar en excel
-            $query = $this->db->select('*')->from('maximo_minimo')->get();
+            $query = $this->db->select('*')->from('mayo_2019_maximo_minimo')->get();
             return $query->result();
         }
        
@@ -371,7 +362,7 @@ class ExportarExcelModelo extends CI_Model {
                 $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */);
             /* consulta los datos de excel */
 
-            $query = $this->db->select('*')->from('maximo_minimo')->get();
+            $query = $this->db->select('*')->from('mayo_2019_maximo_minimo')->get();
             return $query->result();
         }//
         
@@ -382,7 +373,7 @@ class ExportarExcelModelo extends CI_Model {
     
     
     
-     public function ListaRotacionInventario() {
+     public function ListaRotacionInventario2() {
 
         //user data from session
         $data = $this->session->userdata;
@@ -449,6 +440,73 @@ class ExportarExcelModelo extends CI_Model {
         }
     }
     
+    
+    public function ListaRotacionInventario() {
+
+        //user data from session
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            /* Para traerse el id del usuario */
+
+            //consulta de los datos que va a descargar en excel
+            $query = $this->db->select( '*'
+                    )->from('mayo_2019_rotacion_inventario')->get();
+            return $query->result();
+        }
+       //condicions que realice la consulta solo si es refacciones
+        else if ($dataLevel == "mayo_2019_rotacion_inventario") {
+
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */);
+            /* consulta los datos de excel */
+
+            $query = $this->db->select('*'
+                    )->from('mayo_2019_rotacion_inventario')->get();
+            return $query->result();
+        }//
+        else if ($dataLevel == "is_Gerente_Ventas") {
+
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */);
+            /* consulta los datos de excel */
+
+            $query = $this->db->select('*'
+                    )->from('mayo_2019_rotacion_inventario')->get();
+            return $query->result();
+        }else if ($dataLevel == "is_director") {
+
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */);
+            /* consulta los datos de excel */
+
+            $query = $this->db->select('*'
+                    )->from('mayo_2019_rotacion_inventario')->get();
+            return $query->result();
+        }
+        else {
+            redirect(site_url() . 'main/');
+        }
+    }
                                                                                                                                                                                                                                                                                                                    
         
 }

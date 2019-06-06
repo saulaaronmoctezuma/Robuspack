@@ -27,7 +27,7 @@
             <MARQUEE SCROLLDELAY =200></MARQUEE>
             <form name="formulario" id="formal" role="form" action="<?= base_url('Cliente/formularioAgregar') ?>" method="POST" onsubmit="return valida()">
 
-
+sd
                 <div class="form-group">
                     <input type="hidden" class="form-control" id="id_maquinaria"  name="id_maquinaria">
                 </div>

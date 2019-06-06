@@ -49,6 +49,7 @@ Class MaximoMinimo extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['maximominimo'] = $this->MaximoMinimoModelo->query();
+            $data['totalRegistroCodigo'] = $this->MaximoMinimoModelo->totalRegistroCodigo(1);
             $this->load->view('MaximoMinimo/listarMaximoMinimo', $data);
             $this->load->view('footer');
         } else {

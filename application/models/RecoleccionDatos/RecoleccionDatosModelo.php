@@ -6,8 +6,9 @@ require 'IModeloAbstracto.php';
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
- * "Controlar la complejidad es la esencia de la programación
- * Fecha: 11-04-2019 10:19 am"
+ * "Controlar la complejidad es la esencia de la programación"
+ * Versión 1 Fecha: 11-04-2019 10:19 am 
+ * Versión 2 Fecha: 18-04-2019 10:30 am 
  */
 class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
 
@@ -189,6 +190,40 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
                 array_push($colDatos, $objeto);
             }
             return $colDatos;
+        }else if ($dataLevel == "is_consultor") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+                    . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
+                    . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
+            $this->db->from('recoleccion_datos');
+            $this->db->join('users', 'recoleccion_datos.id=users.id');
+            $this->db->order_by('users.first_name', 'asc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            $this->db->where('users.id= ', $dataLevel);
+            //$query = $this->db->order_by("id_venta", "desc");
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+            $colDatos = array();
+
+            foreach ($query->result() as $key => $value) {
+                $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                );
+
+                array_push($colDatos, $objeto);
+            }
+            return $colDatos;
         } else if ($dataLevel == "is_editor") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -223,7 +258,41 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
                 array_push($colDatos, $objeto);
             }
             return $colDatos;
-        } else {
+        }else if ($dataLevel == "is_servicio_a_clientes") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+                    . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
+                    . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
+            $this->db->from('recoleccion_datos');
+            $this->db->join('users', 'recoleccion_datos.id=users.id');
+            $this->db->order_by('users.first_name', 'asc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            //$this->db->where('users.id= ', $dataLevel);
+            //$query = $this->db->order_by("id_venta", "desc");
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+            $colDatos = array();
+
+            foreach ($query->result() as $key => $value) {
+                $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio,
+                        $value->nombre, $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                );
+
+                array_push($colDatos, $objeto);
+            }
+            return $colDatos;
+        }  else {
             redirect(site_url() . 'main/');
         }
     }
@@ -281,5 +350,56 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
     public function refacciones() {
         
     }
+    
+    
+       public function totalRegistroEmpresaAlethia()
+    {
+            $this->db->select('COUNT(*) as total_registros_alethia');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 15);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+        
+           public function totalRegistroEmpresaBerenice()
+    {
+            $this->db->select('COUNT(*) as total_registros_berenice');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 19);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+           public function totalRegistroEmpresaOscar()
+    {
+            $this->db->select('COUNT(*) as total_registros_oscar');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 29);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+        
+        
+         public function totalRegistroEmpresaAldo()
+    {
+            $this->db->select('COUNT(*) as total_registros_aldo');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 7);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+            public function totalRegistroEmpresaNadia()
+    {
+            $this->db->select('COUNT(*) as total_registros_nadia');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 31);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+       
 
 }

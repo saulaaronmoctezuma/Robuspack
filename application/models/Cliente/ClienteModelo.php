@@ -117,6 +117,24 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colCliente;
         
+        }else if ($dataLevel == "is_servicio_a_clientes") {
+          /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            /* Para traerse el id del usuario */
+            $query = $this->db->query('SELECT * FROM cliente order by cliente_sae desc');
+
+            $colCliente = array();
+            foreach ($query->result() as $key => $value) {
+                $objeto = new ClientePojo($value->id_cliente, $value->grupo, $value->cliente, $value->cliente_sae, $value->cliente_sae_dolares,
+                        $value->razon_soc, $value->rfc, $value->direccion, $value->tel_cel, $value->extension, $value->correo,
+                        $value->correo1, $value->correo2, $value->correo3, $value->moneda, $value->cta_banc,$value->cta_banc_dolares, $value->vendedor_refacciones, 
+                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega
+                );
+
+                array_push($colCliente, $objeto);
+            }
+            return $colCliente;
+        
         } else {
             redirect(site_url() . 'main/');
         }

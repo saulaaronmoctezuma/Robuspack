@@ -630,7 +630,7 @@ class Htmltopdf_model extends CI_Model {
             $this->db->where("users.id='6' OR users.id='7'  OR users.id='8' OR users.id='9'  OR users.id='10'");
             $this->db->order_by("last_login", "desc");*/
            
-            $data = $this->db->query('select first_name  ,email,last_login  from users where users.id=6 OR users.id=7 OR users.id=8 OR users.id=9 OR users.id=10');
+            $data = $this->db->query('select first_name  ,email,last_login  from users where users.id=6 OR users.id=7 OR users.id=8 OR users.id=28' );
 
           
            

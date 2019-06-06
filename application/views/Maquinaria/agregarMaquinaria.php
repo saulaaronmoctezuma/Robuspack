@@ -152,10 +152,9 @@ $theme = $result->theme;
                     </div>
                
                    
-                   <div class="form-group col-xs-4">
-                        <label for="nombre">fecha_corte_rotacion</label>
-                        <input id="fecha_corte_rotacion" type="date" class="form-control"  name="fecha_corte_rotacion" placeholder="Introduce las Piezas por recibir">
-                    </div>
+                   
+                   <input id="fecha_corte_rotacion" type="hidden" class="form-control"  name="fecha_corte_rotacion" placeholder="Introduce las Piezas por recibir">
+                    
             </div>
             <center>
                 <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">

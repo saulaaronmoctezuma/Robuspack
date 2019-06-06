@@ -4,8 +4,8 @@
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
- * "Controlar la complejidad es la esencia de la programación
- * Fecha: 11-04-2019 10:19 am"
+ * * Versión 1 Fecha: 11-04-2019 10:19 am 
+ * Versión 2 Fecha: 18-04-2019 10:30 am 
  */-->
 <html lang="es-mx">
     <title>Robuspack</title>
@@ -56,6 +56,8 @@
                          <SELECT name="estado" class="form-control input-sm"> 
                             <optgroup label="Selecciona una opción">
                                
+                                
+                                <option value="" <?php if ($estado == "") {echo "Selected"; } ?>></option>
                               <option value="Aguascalientes" <?php if ($estado == "Aguascalientes") {echo "Selected"; } ?>>Aguascalientes</option>
                                 <option value="Baja California" <?php if ($estado == "Baja California") {  echo "Selected";} ?>>Baja California</option>
                                 <option value="Baja California Sur" <?php if ($estado == "Baja California Sur") {echo "Selected"; } ?>>Baja California Sur</option>

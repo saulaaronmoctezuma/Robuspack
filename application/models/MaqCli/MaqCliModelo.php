@@ -143,5 +143,14 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
 
     public function refacciones() {
     }
+    
+     public function totalRegistroMaquinaPorCliente() {
+        $this->db->select('sum(maquinas_por_cliente) as total_registros');
+        $this->db->from('maquinas_por_cliente');
+       // $this->db->where('bitacora_mtto.id= ', 24);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 
 }

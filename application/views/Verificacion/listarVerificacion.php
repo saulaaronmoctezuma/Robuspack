@@ -55,7 +55,7 @@
         <left> <h1>Buscar</h1> </left>
         <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
     </div>
-    <br>
+    <br> 
     
     <?php
 if ($dataLevel == 'is_admin') {
@@ -85,6 +85,23 @@ if ($dataLevel == 'is_admin') {
 }
 ?>
     <div class="container" style="margin-top:1px;">
+        <td>Total de Registros:</td>
+                        <td>
+                            <?php
+                            foreach ($totalRegistroPlacas as $fila) {
+                                ?>
+
+                        <b><?= $fila->total_registros_placas ?></b>
+
+                                <?php
+                            }
+                            ?>
+                        </td>
+                        
+                    
+                        
+                        
+                        
         <table  border="1" class="table table-bordered table-striped">
             <MARQUEE SCROLLDELAY =200> </MARQUEE>
             <thead
@@ -170,7 +187,7 @@ if ($dataLevel == 'is_admin') {
                     } else if ($dataLevel == 'is_editor') {
                         echo '<th class="header" colspan="1" style="text-align: center">Eliminar</th><th class="header" colspan="1" align="center" >Modificar</th>';
                     } else if ($dataLevel == 'is_logistica') {
-                        echo '<th class="header" colspan="2" align="center" >Modificar</th>';
+                        echo '<th class="header" colspan="2" align="center" >Accion</th>';
                     } else if ($dataLevel == 'is_credito') {
                         echo '<th class="header" colspan="2" align="center" >Modificar</th>';
                     } else if ($dataLevel == 'is_refacciones') {
@@ -415,7 +432,10 @@ if ($dataLevel == 'is_admin') {
                 } else if ($dataLevel == 'is_refacciones') {
                     echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                 } else if ($dataLevel == 'is_logistica') {
+                      echo '<td style="text-align: center;"><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'verificacion/eliminar/' . $obj->getId() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                     echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+               
+                    
                 } else if ($dataLevel == 'is_credito') {
                     echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                 } else if ($dataLevel == 'is_mantenimiento') {

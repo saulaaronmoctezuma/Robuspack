@@ -82,6 +82,7 @@ $site_title = $result->site_title;
                                     <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
                                          <li><a href="' . site_url() . 'BitacoraMtto">Bitácora Mantenimiento</a></li>
                                                <li><a href="' . site_url() . 'verificacion">Placas de Maquinaria</a></li>
+                                                   <li><a href="' . site_url() . 'RecoleccionDatos">Registro de Empresa</a></li>
                               </ul>
                             </li>
                            
@@ -145,8 +146,8 @@ $site_title = $result->site_title;
                                 <li><a href="' . site_url() . 'ClienteRefacciones">Control SIC</a></li>
                                 <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
                                 <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
-                                <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
-                                <li><a href="' . site_url() . '">Reporte Rotación de Inventario</a></li>
+                                <li><a href="' . site_url() . 'MaximoMinimo">Reporte Máximo Mínimo</a></li>
+                                <li><a href="' . site_url() . 'ReporteMaximoMinimo">Reporte Rotación de Inventario</a></li>
                                 <li><a href="' . site_url() . 'Bitacora/refacciones">Bitácora</a></li>
                                   
                               </ul>
@@ -241,7 +242,48 @@ $site_title = $result->site_title;
                             ';
                     }
 
+                    if ($dataLevel == 'is_consultor') { // Menú
+                        echo'
+                           
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Control SIC Refacciones <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="' . site_url() . '">Control SIC</a></li>
+                                
+                                    
+                                    <li><a href="' . site_url() . '">Lista de Precios Cubiertas</a></li>
+                                    <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                    <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
+                                     <li><a href="' . site_url() . '">Bitácora</a></li>
+                              </ul>
+                            </li>
+                            
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i> Control SIM Maquinaria <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . '">Control SIC</a></li>
+                                    <li><a href="' . site_url() . '">Bitácora</a></li>
+                              </ul>
+                            </li>
+                            
+                            
+                              <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . '">Vendedores y Técnicos</a></li>
+                                   <li><a href="' . site_url() . '">Clientes</a></li>
+                                    <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                    <li><a href="' . site_url() . 'RecoleccionDatos">Registro de Empresas</a></li>
+                              </ul>
+                            </li>
 
+                            ';
+                            
+                            
+                            
+                            
+                    }
+                    
                     if ($dataLevel == 'is_credito') { //Menú para el usuario de credito Marisol
                         echo'
                            <li class="dropdown">
@@ -250,9 +292,63 @@ $site_title = $result->site_title;
                                 <li><a href="' . site_url() . 'Cliente">Gestión Cliente</a></li>
                               </ul>
                             </li>
+                            
+
+
+                    <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Control SIC Refacciones <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="' . site_url() . 'ClienteRefacciones">Control SIC</a></li>
+                                
+                                    
+                                    <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
+                                    <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                    <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
+                                 <li><a href="' . site_url() . 'ReporteMaximoMinimo">Reporte Rotación de Inventario</a></li>
+                                     <li><a href="' . site_url() . 'Bitacora/refacciones">Bitácora</a></li>
+                              </ul>
+                            </li>
                             ';
                     }
 
+                    
+                    
+                      if ($dataLevel == 'is_servicio_a_clientes') { //Menú para el usuario de Oscar
+                        echo'
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Control SIC Refacciones <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="' . site_url() . 'ClienteRefacciones">Control SIC</a></li>
+                                
+                                    
+                                    <li><a href="' . site_url() . '">Lista de Precios Cubiertas</a></li>
+                                    <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                    <li><a href="' . site_url() . '">Reporte Máximo Mínimo</a></li>
+                                     <li><a href="' . site_url() . '">Bitácora</a></li>
+                              </ul>
+                            </li>
+                            
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i> Control SIM Maquinaria <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . '">Control SIC</a></li>
+                                    <li><a href="' . site_url() . '">Bitácora</a></li>
+                              </ul>
+                            </li>
+                            
+                            
+                              <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . '">Vendedores y Técnicos</a></li>
+                                   <li><a href="' . site_url() . 'Cliente">Clientes</a></li>
+                                    <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                    <li><a href="' . site_url() . 'RecoleccionDatos">Registro de Empresas</a></li>
+                              </ul>
+                            </li>
+
+                            ';
+                    }
 
 
                     if ($dataLevel == 'is_director') { //Menú para el usuario de Sergio Peñafiel
@@ -497,4 +593,4 @@ $site_title = $result->site_title;
 </nav>
 
 
-<!--<a href="#abajo" class="to-abajo">Ir a la parte de abajo</a>-->    
+<!--<a href="#abajo" class="to-abajo">Ir a la parte de abajo</a

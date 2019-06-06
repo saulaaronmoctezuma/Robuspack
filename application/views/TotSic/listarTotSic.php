@@ -335,13 +335,13 @@
 
 
                     <tr>
-                        <td>Orlene</td>
+                        <td>Jaime</td>
                         <td>
                             <?php
-                            foreach ($totalRegistroSicOrlene as $fila) {
+                            foreach ($totalRegistroSicJaime as $fila) {
                                 ?>
 
-                                <?= $fila->total_registros_orlene ?>
+                                <?= $fila->total_registros_jaime ?>
 
                                 <?php
                             }
@@ -349,10 +349,10 @@
                         </td>
                         <td>
                             <?php
-                            foreach ($totalRegistroSicNoTroquelaOrlene as $fila) {
+                            foreach ($totalRegistroSicNoTroquelaJaime as $fila) {
                                 ?>
 
-                                <?= $fila->total_registros_orlene ?>
+                                <?= $fila->total_registros_jaime ?>
 
                                 <?php
                             }
@@ -364,10 +364,10 @@
                         
                          <td>
                             <?php
-                            foreach ($totalRegistroSicConfirmacionOrlene as $fila) {
+                            foreach ($totalRegistroSicConfirmacionJaime as $fila) {
                                 ?>
 
-                                <?= $fila->total_registros_orlene ?>
+                                <?= $fila->total_registros_jaime ?>
 
                                 <?php
                             }
@@ -375,10 +375,10 @@
                         </td>
                         <td>
                             <?php
-                            foreach ($totalRegistroSicOrdenOrlene as $fila) {
+                            foreach ($totalRegistroSicOrdenJaime as $fila) {
                                 ?>
 
-                                <?= $fila->total_registros_orlene ?>
+                                <?= $fila->total_registros_jaime ?>
 
                                 <?php
                             }
@@ -389,10 +389,10 @@
                         
                            <td>
                             <?php
-                            foreach ($totalRegistroSicSinPedidoOrlene as $fila) {
+                            foreach ($totalRegistroSicSinPedidoJaime as $fila) {
                                 ?>
 
-                                <?= $fila->total_registros_orlene ?>
+                                <?= $fila->total_registros_jaime ?>
 
                                 <?php
                             }
@@ -429,24 +429,25 @@
                     
                     
                      <tr>
-                         <td bgcolor="#A8A8A8" ><b>Total</b> </td>
-                        <td bgcolor="#A8A8A8" >
+                         <td bgcolor="#6F6F6F" ><b><p style="color:white;">Total</p></b> </td>
+                        <td bgcolor="#6F6F6F" >
                             <?php
                             foreach ($totalRegistroSic as $fila) {
                                 ?>
 
-                            <b>  <?= $fila->total_registros_sic ?> </b>
+                            <b> <p style="color:white;"> <?= $fila->total_registros_sic ?> </p>
+                            </b>
 
                                 <?php
                             }
                             ?>
                         </td>
-                        <td  bgcolor="#A8A8A8">
+                        <td  bgcolor="#6F6F6F">
                             <?php
                             foreach ($totalRegistroSicNoTroquela as $fila) {
                                 ?>
 
-                             <b>    <?= $fila->total_registros_no_troquela ?> </b>
+                             <b>   <p style="color:white;"> <?= $fila->total_registros_no_troquela ?></p> </b>
 
                                 <?php
                             }
@@ -456,23 +457,23 @@
                         
                         
                         
-                         <td  bgcolor="#A8A8A8">
+                         <td  bgcolor="#6F6F6F">
                             <?php
                             foreach ($totalRegistroSicSConsignacion as $fila) {
                                 ?>
 
-                            <b>     <?= $fila->total_consignacion ?> </b>
+                            <b>   <p style="color:white;">  <?= $fila->total_consignacion ?> </p></b>
 
                                 <?php
                             }
                             ?>
                         </td>
-                        <td  bgcolor="#A8A8A8">
+                        <td  bgcolor="#6F6F6F">
                             <?php
                             foreach ($totalRegistroSicOrdenCompra as $fila) {
                                 ?>
 
-                             <b>    <?= $fila->total_registros_orden_compra ?> </b>
+                             <b>  <p style="color:white;">  <?= $fila->total_registros_orden_compra ?></p> </b>
 
                                 <?php
                             }
@@ -481,12 +482,12 @@
                         
                         
                         
-                           <td  bgcolor="#A8A8A8">
+                           <td  bgcolor="#6F6F6F">
                             <?php
                             foreach ($totalRegistroSicSinPedido as $fila) {
                                 ?>
 
-                            <b>     <?= $fila->total_registros_sin_pedido ?> </b>
+                               <b>    <p style="color:white;"> <?= $fila->total_registros_sin_pedido ?> </p></b>
 
                                 <?php
                             }

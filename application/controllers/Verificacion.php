@@ -51,44 +51,51 @@ class Verificacion extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $data['placa'] = $this->VerificacionModelo->query();
-
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
+            
 
             $this->load->view('footer');
         } else if ($dataLevel == "is_refacciones") {
             $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_logistica") {
             $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_credito") {
             $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_mantenimiento") {
             $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_jefe_mantenimiento") {
             $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
@@ -286,6 +293,7 @@ class Verificacion extends CI_Controller {
         // get foto
         $config['upload_path'] = './assets/verificacion';
         $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
+          $config['overwrite'] = TRUE;
         /* $config['max_size'] = '2048';  //2MB max
           $config['max_width'] = '4480'; // pixel
           $config['max_height'] = '4480'; // pixel */

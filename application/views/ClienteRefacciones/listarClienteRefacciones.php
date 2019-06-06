@@ -96,10 +96,16 @@ var tf6 = setFilterGrid("table6", table6_Props);
         <div class="table-responsive">
 
 
-
+         
             <table class="table table-hover table-bordered table-striped" id="example" >
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
 
+                
+              
+                
+                
+                
+                
 
                 <thead>
                     <tr >
@@ -111,11 +117,13 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
                             
                         } else if ($dataLevel == 'is_refacciones') {
-                            echo '<th class="header" colspan="2" align="center" >Modificar</th>';
+                            echo '<th class="header" colspan="1" align="center" >Modificar</th>';
                         } else if ($dataLevel == 'is_maquinaria_refacciones') {
-                            echo '<th class="header" colspan="2" >Acción</th>';
-                        } else {
-                            
+                            echo '<th class="header" colspan="1" >Acción</th>';
+                        }else if ($dataLevel == 'is_editor') {
+                            echo '<th class="header" style="text-align: center"  colspan="2" >Acción</th>';
+                        } else if($dataLevel == 'is_servicio_a_clientes'){
+                            echo '<th class="header" align="center" >Modificar</th>';
                         }
                         ?>
 
@@ -135,6 +143,24 @@ var tf6 = setFilterGrid("table6", table6_Props);
                             
                         }
                         ?>
+                        
+                        
+                         <?php
+                        if ($dataLevel == 'is_admin') {
+                            echo '<th class="header" width="50" height="16">Fecha_Última_Factura</th>';
+                             echo '<th class="header" width="50" height="16">Consumo Real</th>';
+                        } else if ($dataLevel == 'is_servicio_a_clientes') {
+                              echo '<th class="header" width="50" height="16">Fecha_Última&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Factura</th>';
+                               echo '<th class="header" width="50" height="16">Consumo Real</th>';
+                        } else if ($dataLevel == 'is_editor') {
+                             echo '<th class="header" width="50" height="16">Fecha_Última Factura</th>';
+                              echo '<th class="header" width="50" height="16">Consumo Real</th>';
+                        } else {
+                            
+                        }
+                        ?>
+
+                       
                         <th class="header" style="text-align: center">Grupo</th>
                         <th class="header" style="text-align: center">Cliente</th>
                         <th class="header" style="text-align: center">Código</th>
@@ -149,7 +175,6 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         <th class="header">Dias crédito</th>
                         <th class="header">Pulgadas</th>
                         <th class="header">Diametro de Rodillo en Milimetros</th>
-
                         <th class="header">Máquina cliente</th>
                         <th class="header">Capacitación</th>
                         <th class="header">Capacitación fecha</th>
@@ -168,6 +193,8 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         <th class="header">Marca de la máquina</th>
                         <th class="header">Modelo de la máquina</th>
                         <th class="header">Tipo máquina</th>
+                         <th class="header">Formato</th>
+                         <th class="header">Ancho</th>
                         <th class="header">Troquel</th>
                         <th class="header">Uso de cfdi</th>
                         <th class="header">Método pago</th>
@@ -175,17 +202,20 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         <th class="header">Fecha seguimiento</th>
                         <th class="header">Golpes máquina por día</th>
                         <th class="header">Confirmación de Orden de Compra</th>
-                        <th class="header">Fecha Última Factura</th>
-
-
-
+                        
+                        
+                        
+                        
 
 
                     </tr>
                 </thead>
                 <tbody align="center">
 
+                    
                     <?php
+                   
+                    
                     foreach ($ventas as $obj) {
 
 
@@ -200,36 +230,67 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         if ($dataLevel == 'is_admin') {
                             echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                        } else if ($dataLevel == 'is_Gerente_Ventas') {
+                        }else if ($dataLevel == 'is_editor') {
+                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        }  else if ($dataLevel == 'is_Gerente_Ventas') {
                             
                         } else if ($dataLevel == 'is_refacciones') {
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                         } else if ($dataLevel == 'is_maquinaria_refacciones') {
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        }else if ($dataLevel == 'is_servicio_a_clientes') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                         }
-                        echo '</td><td>';
-
+                        
+                        
+                        
 
                         if ($dataLevel == 'is_admin') {
-                            echo
-                            $obj->getFirst_name() .
+                            echo '</td><td>';
+                            echo $obj->getFirst_name() .
                             '</td>'
-                            . '<td>'
+                            
                             ;
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
-                            echo
-
-                            $obj->getFirst_name() .
+                            echo '</td><td>';
+                            echo $obj->getFirst_name() .
                             '</td>'
-                            . '<td>'
+                            
                             ;
                         } else {
                             
                         }
+                        
+                        
+                        
+                           if ($dataLevel == 'is_admin') {
+                            echo '<td>';
+                          echo $obj->getFecha_ultima_factura() .
+                            '</td>';
+                          echo '<td>';
+                          echo $obj->getConsumo_real() .
+                            '</td>';
+                        } else if ($dataLevel == 'is_servicio_a_clientes') {
+                            echo '<td>';
+                            echo $obj->getFecha_ultima_factura() .
+                            '</td>';
+                             echo '<td>';
+                          echo $obj->getConsumo_real() .
+                            '</td>';
+                        }else if ($dataLevel == 'is_editor') {
+                            echo '<td>';
+                          echo $obj->getFecha_ultima_factura() .
+                            '</td>';
+                            ;
+                             echo '<td>';
+                          echo $obj->getConsumo_real() .
+                            '</td>';
+                        }
 
-                        echo
+                        echo '<td>';
 
-                        $obj->getGrupo() .
+                        echo $obj->getGrupo() .
                         '</td>'
                         . '<td>'
                         . $obj->getCliente() .
@@ -324,6 +385,12 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         . '<td>'
                         . $obj->getTipo_maquina() .
                         '</td>'
+                                 . '<td>'
+                        . $obj->getFormato() .
+                        '</td>'
+                                   . '<td>'
+                        . $obj->getAncho() .
+                        '</td>'
                         . '<td>'
                         . $obj->getTroquel() .
                         '</td>'
@@ -345,9 +412,11 @@ var tf6 = setFilterGrid("table6", table6_Props);
                         . '<td>'
                         . $obj->getConfirmacion_orden_compra() .
                         '</td>'
-                        . '<td>'
-                        . $obj->getFecha_ultima_factura() .
-                        '</td>';
+                       
+                            
+                            
+                            
+                            ;
 
 
 
@@ -361,6 +430,9 @@ var tf6 = setFilterGrid("table6", table6_Props);
                           }
 
                          */
+                         
+                      
+                        
                     }
                     ?>
                     </tr    >

@@ -64,7 +64,13 @@ Class Cliente extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Cliente/listarCliente', $data);
             $this->load->view('footer');
-        }  else {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            $data['cliente'] = $this->ClienteModelo->query();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('Cliente/listarCliente', $data);
+            $this->load->view('footer');
+        } else {
             redirect(site_url() . 'main/');
         }
     }
@@ -107,6 +113,12 @@ Class Cliente extends CI_Controller {
             $this->load->view('Cliente/agregarCliente', $data);
             $this->load->view('footer');
         }  else if ($dataLevel == "is_editor") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+
+            $this->load->view('Cliente/agregarCliente', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_servicio_a_clientes") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
 
@@ -231,6 +243,18 @@ Class Cliente extends CI_Controller {
 
             $this->load->view('footer');
         }else if ($dataLevel == "is_editor") {
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //agregar para el select de refacción de tabla maquinaria
+            //se trae el arreglo de los datos seleccionados por el di
+
+            $data = array();
+            $data = $this->ClienteModelo->obtener($id_cliente);
+            $this->load->view('Cliente/modificarCliente', $data);
+
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_servicio_a_clientes") {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
