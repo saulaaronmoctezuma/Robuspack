@@ -32,6 +32,11 @@
         $result = $this->User_model->getAllSettings();
         $theme = $result->theme;
         ?>
+        
+        
+        
+        
+        
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
 
@@ -106,7 +111,7 @@
                     
                     
                     <th style="text-align: center" >Dirección de Entrega</th>
-                    
+                        <th style="text-align: center" >Empresa</th>
 
 
                 </tr>
@@ -209,7 +214,11 @@
                     '</td>'
                     . '<td>'
                     . $obj->getDireccion_entrega() .
-                    '</td>';
+                    '</td>'
+                     . '<td>'
+                    . $obj->getEmpresa() .
+                    '</td>'   
+                     ;
 
 
                 }

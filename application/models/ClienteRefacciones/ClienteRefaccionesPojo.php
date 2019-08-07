@@ -55,13 +55,13 @@ class ClienteRefaccionesPojo {
    
     private $fecha_ultima_factura;
      private $consumo_real;
+     private $archivo;
     private $first_name;
 
     /* Constructor con campos 
      * 
      */
-    
-    function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $formato, $ancho, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra, $fecha_ultima_factura, $consumo_real, $first_name) {
+    function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $vida_util_dias, $periodo_surtimiento, $periodo_surtimiento_vida_util, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $diametro_rod_ml, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $marca_maquina, $contacto, $tipo_maquina, $formato, $ancho, $troquel, $uso_de_cfdi, $metodo_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina, $confirmacion_orden_compra, $fecha_ultima_factura, $consumo_real, $archivo, $first_name) {
         $this->id_venta = $id_venta;
         $this->grupo = $grupo;
         $this->cliente = $cliente;
@@ -106,6 +106,7 @@ class ClienteRefaccionesPojo {
         $this->confirmacion_orden_compra = $confirmacion_orden_compra;
         $this->fecha_ultima_factura = $fecha_ultima_factura;
         $this->consumo_real = $consumo_real;
+        $this->archivo = $archivo;
         $this->first_name = $first_name;
     }
 
@@ -283,6 +284,10 @@ class ClienteRefaccionesPojo {
 
     public function getConsumo_real() {
         return $this->consumo_real;
+    }
+
+    public function getArchivo() {
+        return $this->archivo;
     }
 
     public function getFirst_name() {
@@ -463,6 +468,10 @@ class ClienteRefaccionesPojo {
 
     public function setConsumo_real($consumo_real) {
         $this->consumo_real = $consumo_real;
+    }
+
+    public function setArchivo($archivo) {
+        $this->archivo = $archivo;
     }
 
     public function setFirst_name($first_name) {

@@ -246,9 +246,8 @@
                 document.formulario.elements['metodo_pago'].style.display = 'none';
                 document.formulario.elements['paqueteria'].style.display = 'none';
 
-                document.formulario.elements['confirmacion_orden_compra'].style.display = 'none';
+                //document.formulario.elements['confirmacion_orden_compra'].style.display = 'none';
                 document.formulario.troquel.selectedIndex = 2;
-
 
 
 
@@ -294,6 +293,7 @@
                  document.getElementById("mulpiezas_juego").value = " ";-*/
 
 
+ document.formulario.confirmacion_orden_compra.selectedIndex = 4;
 
 
             } else
@@ -301,7 +301,8 @@
             {
 
                 document.formulario.confirmacion_orden_compra.selectedIndex = null;
-                document.formulario.uso_de_cfdi.selectedIndex = null;
+                document.formulario.uso_de_cfdi.sele
+                document.formulario.confirctedIndex = null;
                 document.formulario.paqueteria.selectedIndex = null;
                 document.formulario.metodo_pago.selectedIndex = null;
                 document.formulario.tipo_entrega.selectedIndex = null;
@@ -529,6 +530,7 @@
                                         <OPTION VALUE="Quincenal">Quincenal</OPTION>
                                         <OPTION VALUE="Mensual">Mensual</OPTION>
                                         <OPTION VALUE="Bimestral">Bimestral</OPTION>
+                                        <OPTION VALUE="Bimestral">Trimestral</OPTION>
                                         <OPTION VALUE="Semestral">Semestral</OPTION>
                                         <OPTION VALUE="Anual">Anual</OPTION>
                                     </select>
@@ -955,11 +957,16 @@
                                         <OPTION VALUE="Consignación">Consignación</OPTION>
                                         <OPTION VALUE="Orden de Compra">Orden de Compra</OPTION>
                                         <OPTION VALUE="Sin Pedido">Sin Pedido</OPTION>
-
+                                         <OPTION VALUE="No Aplica">No Aplica</OPTION>
 
                                     </select>
 
                                 </div>
+                                <div class="form-group col-xs-4">
+                                    <label for="nombre">Archivo</label>
+                                    <input id="a6" min="2017-01-01" max="2025-12-31" type="text" class="form-control input-sm"  name="archivo" placeholder="Ingresa " required>
+                                </div>
+    
  </div>
 
 
@@ -990,7 +997,7 @@
                     </div>
 
                     </form>
-                    </form>
+                  
                 </div> 
 
                 </body>

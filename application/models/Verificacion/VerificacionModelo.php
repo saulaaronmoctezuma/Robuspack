@@ -2,12 +2,15 @@
 
 require 'VerificacionPojo.php';
 require 'IModeloAbstracto.php';
+
 /**
-<!--
- * @author  Saul González & Karen González
- * Fecha : Ultimo Cambio 26/03/2018 Hora 10:15 pm
- * Fecha : Ultimo Cambio 03/0/2019 Hora 10:36 pm
- * Sistema de Control Robuspack
+ 
+ * class @author  Saul González & Karen González
+ * Fecha : Ultimo Cambio 26/03/2019 Hora 10:15 pm
+ * Fecha : Ultimo Cambio 03/04/2019 Hora 10:36 pm
+ * * Fecha : Ultimo Cambio 20/07/2019 Hora 5:47 pm
+ * Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
+ * Sistema de Control Robuspack.
  */
 class VerificacionModelo extends CI_Model implements IModeloAbstracto
 {
@@ -102,7 +105,7 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
-                    $value->cliente, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
             );
 
             array_push($colPlaca, $objeto);

@@ -519,7 +519,7 @@ class ExportarExcel extends CI_Controller {
 
 
 
-        $listaEmpresa = $this->export->ListaEmpresa();
+            $listaEmpresa = $this->export->ListaEmpresa();
 
         $excel_row = 2;
         foreach ($listaEmpresa as $row) {
@@ -1099,6 +1099,7 @@ class ExportarExcel extends CI_Controller {
         $object->getActiveSheet()->setCellValue("Q{$contador}", 'CFDI');
         $object->getActiveSheet()->setCellValue("R{$contador}", 'Método de pago');
         $object->getActiveSheet()->setCellValue("S{$contador}", 'Dirección de Entrega');
+        $object->getActiveSheet()->setCellValue("T{$contador}", 'Empresa');
 
 
 
@@ -1127,7 +1128,7 @@ class ExportarExcel extends CI_Controller {
             $object->getActiveSheet()->setCellValueByColumnAndRow(16, $excel_row, $row->uso_de_cfdi);
             $object->getActiveSheet()->setCellValueByColumnAndRow(17, $excel_row, $row->metodo_pago);
             $object->getActiveSheet()->setCellValueByColumnAndRow(18, $excel_row, $row->direccion_entrega);
-
+            $object->getActiveSheet()->setCellValueByColumnAndRow(19, $excel_row, $row->empresa);
             $excel_row++;
         }
 
@@ -1291,6 +1292,150 @@ class ExportarExcel extends CI_Controller {
         header('Content-Type: application/vnd.ms-excel');
 
         header('Content-Disposition: attachment;filename="R  otación Inventario.xlsx"');
+        $object_writer->save('php://output');
+    }
+    
+    
+    
+    
+    
+    
+    public function crearExcelEmpresaRecoleccionDatos() {
+        // create file name
+        //  $fileName = 'feedbackdata-' . time() . '.xls'; 
+        $this->load->library("excel");
+        $object = new PHPExcel();
+
+        $object->setActiveSheetIndex(0);
+        $object->getActiveSheet()->setTitle('Empresa');
+        // Se asignan las propiedades del libro
+        $object->getProperties()->setCreator("Karen & Saúl") //Autor
+                ->setLastModifiedBy("SISTEMA DE CONTROL ROBUSPACK") //Ultimo usuario que lo modificó
+                ->setTitle("SISTEMA DE CONTROL ROBUSPACK")
+                ->setSubject("SISTEMA DE CONTROL ROBUSPACK")
+                ->setDescription("Desarrolladores de Software Karen & Saúl  ")
+                ->setKeywords("SISTEMA DE CONTROL ROBUSPACK")
+                ->setCategory("Descargado de SCR");
+        $contador = 1;
+        //Le aplicamos ancho las columnas.
+        $object->getActiveSheet()->getColumnDimension('A')->setWidth(40);
+        $object->getActiveSheet()->getColumnDimension('B')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('C')->setWidth(40);
+        $object->getActiveSheet()->getColumnDimension('D')->setWidth(25);
+        $object->getActiveSheet()->getColumnDimension('E')->setWidth(25);
+        $object->getActiveSheet()->getColumnDimension('F')->setWidth(40);
+        $object->getActiveSheet()->getColumnDimension('G')->setWidth(40);
+        $object->getActiveSheet()->getColumnDimension('H')->setWidth(35);
+        $object->getActiveSheet()->getColumnDimension('I')->setWidth(40);
+         $object->getActiveSheet()->getColumnDimension('J')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('K')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('M')->setWidth(40);
+        $object->getActiveSheet()->getColumnDimension('N')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('O')->setWidth(18);
+        $object->getActiveSheet()->getColumnDimension('P')->setWidth(45);
+        $object->getActiveSheet()->getColumnDimension('Q')->setWidth(35);
+        $object->getActiveSheet()->getColumnDimension('R')->setWidth(15);
+        $object->getActiveSheet()->getColumnDimension('S')->setWidth(15);
+        $object->getActiveSheet()->getColumnDimension('T')->setWidth(15);
+        $object->getActiveSheet()->getColumnDimension('U')->setWidth(15);
+        $object->getActiveSheet()->getColumnDimension('V')->setWidth(15);
+        $object->getActiveSheet()->getColumnDimension('W')->setWidth(15);
+        $object->getActiveSheet()->getColumnDimension('X')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('Y')->setWidth(20);
+        $object->getActiveSheet()->getColumnDimension('Z')->setWidth(25);
+        $object->getActiveSheet()->getColumnDimension('AA')->setWidth(60);
+
+        //Le aplicamos el tipo, color y tamaño de letra.
+        $styleArray = array('font' => array('bold' => true, 'color' => array('rgb' => '000000'), 'size' => 12, 'name' => 'Arial'));
+        $object->getActiveSheet()->getStyle('1')->applyFromArray($styleArray);
+
+
+
+
+        //Le aplicamos negrita a los títulos de la cabecera.
+        $object->getActiveSheet()->getStyle("A{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("B{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("C{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("D{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("E{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("F{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("G{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("H{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("I{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("J{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("K{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("L{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("M{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("N{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("O{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("P{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("Q{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("R{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("S{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("T{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("U{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("V{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("W{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("X{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("Y{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("Z{$contador}")->getFont()->setBold(true);
+        $object->getActiveSheet()->getStyle("AA{$contador}")->getFont()->setBold(true);
+
+
+
+
+        //Definimos los títulos de la cabecera.
+        $object->getActiveSheet()->setCellValue("A{$contador}", 'Vendedor');
+        $object->getActiveSheet()->setCellValue("B{$contador}", 'Identificador');
+        $object->getActiveSheet()->setCellValue("C{$contador}", 'Nombre de la Empresa');
+        $object->getActiveSheet()->setCellValue("D{$contador}", 'Estado');
+        $object->getActiveSheet()->setCellValue("E{$contador}", 'Ciudad');
+        $object->getActiveSheet()->setCellValue("F{$contador}", 'Domicilio');
+        $object->getActiveSheet()->setCellValue("G{$contador}", 'Nombre');
+        $object->getActiveSheet()->setCellValue("H{$contador}", 'Cargo');
+        $object->getActiveSheet()->setCellValue("I{$contador}", 'Email');
+        $object->getActiveSheet()->setCellValue("J{$contador}", 'Telefono ');
+        $object->getActiveSheet()->setCellValue("K{$contador}", 'Nombre 2');
+        $object->getActiveSheet()->setCellValue("L{$contador}", 'Cargo 2');
+        $object->getActiveSheet()->setCellValue("M{$contador}", 'Email 2');
+        $object->getActiveSheet()->setCellValue("N{$contador}", 'Teléfono 2');
+        $object->getActiveSheet()->setCellValue("O{$contador}", 'Comentarios');
+       $object->getActiveSheet()->setCellValue("P{$contador}", 'Usuario');
+
+
+
+
+
+        $ListaRecoleccionDatos = $this->export->ListaRecoleccionDatos();
+
+        $excel_row = 2;
+        foreach ($ListaRecoleccionDatos as $row) {
+            $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row->vendedor);
+           $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row->identificador);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row->nombre_empresa);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row->estado);
+           $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row->ciudad);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row->domicilio);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row->nombre);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row->cargo);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row->email);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, $row->tel);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, $row->nombre2);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(11, $excel_row, $row->cargo2);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(12, $excel_row, $row->email2);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(13, $excel_row, $row->tel2);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(14, $excel_row, $row->comentarios);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(15, $excel_row, $row->first_name);
+            
+           
+            $excel_row++;
+        }
+
+        $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+        header('Content-Type: application/vnd.ms-excel');
+
+        header('Content-Disposition: attachment;filename="Empresa.xlsx"');
         $object_writer->save('php://output');
     }
 }

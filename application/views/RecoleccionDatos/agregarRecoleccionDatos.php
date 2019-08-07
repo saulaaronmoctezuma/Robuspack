@@ -8,6 +8,9 @@
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación
  * Fecha: 11-04-2019 10:19 am"
+    Fecha: 26-06-2019 10:40 am 
+    Fecha: 26-06-2019 12:40 Pm
+    Fecha: 27-06-2019 11:06 Pm 
  */-->
     <title>Robuspack</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,6 +24,16 @@
     $result = $this->User_model->getAllSettings();
     $theme = $result->theme;
     ?>
+    <!-- Para traerse el rol que esta registrado-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+       
+        //check user level
+        ?>
+    
+ 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $theme; ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
@@ -33,6 +46,11 @@
             <strong>Bienvenido</strong> Agrega los datos segun corresponda
         </div>
         <h1>Gestión de Empresas</h1>
+        
+        
+        <style>
+            
+            </style>
         <MARQUEE SCROLLDELAY =200></MARQUEE>
         <form name="formulario" id="formal" role="form" action="<?= base_url('RecoleccionDatos/formularioAgregar') ?>" method="POST" onsubmit="return valida()">
 
@@ -42,27 +60,161 @@
                 <input type="hidden" class="form-control" id="id_recolecion_datos"  name="id_recolecion_datos">
             </div>
 
-            <div class="row">
-
-                <div class="form-group col-xs-4">
-                    <label for="nombre">Identificador</label>
-                    <input id="a3" type="text" class="form-control"  name="identificador" placeholder="Ingresa el identificador" >
+          
+            
+             <?php
+                    if ($dataLevel == 'is_admin') {
+                        echo '  <div class="row">
+                <!-- <div class="form-group col-xs-8">
+                    <label for="nombre">Vendedor</label>
+                    <input id="a3" type="text" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
                 </div>
+                -->
+
+
+                <div class="form-group col-xs-8">
+                    <label>Vendedor</label>
+                    <select name="vendedor"  class="form-control" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Benjamín Lopéz Gamboa">Benjamín Lopéz Gamboa</OPTION>
+                        <OPTION VALUE="Gerardo López Martinez">Gerardo López Martinez</OPTION>
+                         <OPTION VALUE="César Alberto Cantú Omaña">César Alberto Cantú Omaña</OPTION>
+                          <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+                         </select>
+                </div>
+                
+               
+                
+          
+
+                
+                 
+                 
+                </div>';
+                    } else  if ($dataLevel == 'is_editor') {
+                         echo '  <div class="row">
+                   <div class="form-group col-xs-8">
+                    <label>Vendedor</label>
+                    <select name="vendedor"  class="form-control" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Benjamín Lopéz Gamboa">Benjamín Lopéz Gamboa</OPTION>
+                        <OPTION VALUE="Gerardo López Martinez">Gerardo López Martinez</OPTION>
+                        <OPTION VALUE="César Alberto Cantú Omaña">César Alberto Cantú Omaña</OPTION>
+                       <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+                         </select>
+                </div>
+                
+             
+                
+                
+                 
+                 
+                </div>';
+                    } else if ($dataLevel == 'is_maquinaria') {
+                       echo '  <div class="row">
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+               
+              
+                
+                 
+                 
+                </div>';
+                    }else if ($dataLevel == 'is_director') {
+                       echo '  <div class="row">
+                  <div class="form-group col-xs-8">
+                    <label>Vendedor</label>
+                    <select name="vendedor"  class="form-control" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Benjamín Lopéz Gamboa">Benjamín Lopéz Gamboa</OPTION>
+                        <OPTION VALUE="Gerardo López Martinez">Gerardo López Martinez</OPTION>
+                        <OPTION VALUE="César Alberto Cantú Omaña">César Alberto Cantú Omaña</OPTION>
+                         <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+                         </select>
+                </div>
+                
+               
+                
+                
+                 
+                 
+                </div>';
+                    } else if ($dataLevel == 'is_consultor') {
+                         echo '
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+                
+                   
+                   
+                ';
+                    } else if ($dataLevel == 'is_logistica') {
+                          echo '
+                              
+                       <div class="row">
+                  <div class="form-group col-xs-8">
+                    <label>Vendedor</label>
+                    <select name="vendedor"  class="form-control" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Benjamín Lopéz Gamboa">Benjamín Lopéz Gamboa</OPTION>
+                        <OPTION VALUE="Gerardo López Martinez">Gerardo López Martinez</OPTION>
+                        <OPTION VALUE="César Alberto Cantú Omaña">César Alberto Cantú Omaña</OPTION>
+                         <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+                         </select>
+                </div>
+                
+              
+                
+                 
+                 
+                </div>
+                   
+                ';
+                    } else if ($dataLevel == 'is_servicio_a_clientes') {
+                         echo '
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+                
+                  
+                ';
+                    } else if ($dataLevel == 'is_refacciones') {
+                echo '
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+                
+                   
+                    
+                ';
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+                echo '
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+                
+                   
+                    
+                ';
+                    }else {
+                         
+                    }
+                    ?>
+            
+            <br>
+            
+            
+                  <div class="row">
+               
+                      
+                      
+                      
                 
                 
                
 
                 
                 
-                <div class="form-group col-xs-4">
+                <div class="form-group col-xs-6">
                     <label for="nombre">Nombre de la Empresa </label>
-                    <input id="a3" type="text" class="form-control"  name="nombre_empresa" placeholder="Ingresa el nombre de la empresa" >
+                    <input onKeyUp="this.value=this.value.toUpperCase();" id="a3" type="text" class="form-control"  name="nombre_empresa" placeholder="Ingresa el nombre de la empresa" require>
                 </div>
 
 
-                <div class="form-group col-xs-4">
+                <div class="form-group col-xs-6">
                     <label>Estado</label>
-                    <select name="estado"  class="form-control input-sm" require>
+                    <select name="estado"  class="form-control" require>
                         <option  value="">Selecciona una opción</option>
                         <OPTION VALUE="Aguascalientes">Aguascalientes</OPTION>1
                         <OPTION VALUE="Baja California">Baja California</OPTION>
@@ -197,6 +349,44 @@
                     <label for="nombre">Comentarios</label>
                     <textarea name="comentarios" class="form-control input-sm" style="resize:none;"   rows="5" cols="80" placeholder="Ingresa un comentario"></textarea>
                 </div>
+             
+              
+               
+             
+             <?php
+                  //compara si es administrador
+                    if ($dataLevel == 'is_maquinaria') {
+                      echo '        
+                  <div class="form-group col-xs-4">
+                    <label>Identificador</label>
+                    <select name="identificador"  class="form-control" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Expopack 2019">Expopack 2019</OPTION>
+                        <OPTION VALUE="Clientes Nuevos">Clientes Nuevos</OPTION>
+                         </select>
+                </div>
+                ';
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+                           echo '        
+                  <div class="form-group col-xs-4">
+                    <label>Identificador</label>
+                    <select name="identificador"  class="form-control" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Expopack 2019">Expopack 2019</OPTION>
+                        <OPTION VALUE="Clientes Nuevos">Clientes Nuevos</OPTION>
+                         </select>
+                </div>
+                ';
+                    } else {
+                      echo '   <div class="form-group col-xs-4">
+                    <label for="nombre">Identificador</label>
+                    <input id="a3" type="text" class="form-control"  name="identificador" placeholder="Ingresa el identificador" >
+                </div>';
+                    }
+
+             
+             ?>
+             
 
                   </div>
             <!-- <div class="form-group col-xs-4">

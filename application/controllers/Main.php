@@ -141,7 +141,7 @@ class Main extends CI_Controller {
             }else{
                 $post = $this->input->post(NULL, TRUE);
                 $cleanPost = $this->security->xss_clean($post);
-                $cleanPost['id'] = $this->input->post('id');
+                //$cleanPost['id'] = $this->input->post('id');
                 $cleanPost['site_title'] = $this->input->post('site_title');
                 $cleanPost['timezone'] = $this->input->post('timezone');
                 $cleanPost['recaptcha'] = $this->input->post('recaptcha');
@@ -725,7 +725,7 @@ class Main extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('container');
             $this->load->view('forgot');
-            $this->load->view('footer');
+           // $this->load->view('footer');
         }else{
             $email = $this->input->post('email');
             $clean = $this->security->xss_clean($email);

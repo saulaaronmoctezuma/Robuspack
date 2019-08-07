@@ -507,6 +507,90 @@ class ExportarExcelModelo extends CI_Model {
             redirect(site_url() . 'main/');
         }
     }
-                                                                                                                                                                                                                                                                                                                   
+                   
+    
+    
+        // Descargar Excel de Recoleccion de Datos
+    public function ListaRecoleccionDatos() {
+
+        //user data from session
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        
+        if ($dataLevel == "is_admin") {
+            /* Para traerse el id del usuario */
+
+             //consulta de los datos que va a descargar en exce
+            
+            
+           $query = $this->db->query('SELECT r.id_recolecion_datos,r.vendedor,r.identificador,r.nombre_empresa, r.estado, r.ciudad, r.domicilio, r.nombre, r.cargo, r.email, r.tel,r.nombre2,r.cargo2, r.email2, r.tel2, r.comentarios, u.first_name, DATE_ADD(r.fecha_insercion, INTERVAL -5 HOUR),DATE_ADD(r.fecha_modificacion, INTERVAL -5 HOUR) FROM recoleccion_datos AS r INNER JOIN users AS u ON r.id=u.id order by u.first_name');
+           /* $query = $this->db->select('*')->from('recoleccion_datos')->join('users', 'recoleccion_datos.id=users.id')
+                    ->order_by('users.first_name', 'asc')->get();*/
+            return $query->result();
+            
+            
+            
+            
+            
+        }
+        else   if ($dataLevel == "is_editor") {
+            /* Para traerse el id del usuario */
+
+           
+            
+           $query = $this->db->query('SELECT r.id_recolecion_datos,r.vendedor,r.identificador,r.nombre_empresa, r.estado, r.ciudad, r.domicilio, r.nombre, r.cargo, r.email, r.tel,r.nombre2,r.cargo2, r.email2, r.tel2, r.comentarios, u.first_name, DATE_ADD(r.fecha_insercion, INTERVAL -5 HOUR),DATE_ADD(r.fecha_modificacion, INTERVAL -5 HOUR) FROM recoleccion_datos AS r INNER JOIN users AS u ON r.id=u.id order by u.first_name');
+           /* $query = $this->db->select('*')->from('recoleccion_datos')->join('users', 'recoleccion_datos.id=users.id')
+                    ->order_by('users.first_name', 'asc')->get();*/
+            return $query->result();
+            
+        }
+        //condicions que realice la consulta solo si es refacciones
+        else if ($dataLevel == "is_refacciones") {
+
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */);
+            /* consulta los datos de excel */
+
+            
+            
+           $query = $this->db->query('SELECT r.id_recolecion_datos,r.vendedor,r.identificador,r.nombre_empresa, r.estado, r.ciudad, r.domicilio, r.nombre, r.cargo, r.email, r.tel,r.nombre2,r.cargo2, r.email2, r.tel2, r.comentarios, u.first_name, DATE_ADD(r.fecha_insercion, INTERVAL -5 HOUR),DATE_ADD(r.fecha_modificacion, INTERVAL -5 HOUR) FROM recoleccion_datos AS r INNER JOIN users AS u ON r.id=u.id');
+           /* $query = $this->db->select('*')->from('recoleccion_datos')->join('users', 'recoleccion_datos.id=users.id')
+                    ->order_by('users.first_name', 'asc')->get();*/
+            return $query->result();
+        }else if ($dataLevel == "is_maquinaria_refacciones") {
+
+             /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */);
+            /* consulta los datos de excel */
+
+            $query = $this->db->select('*')->from('recoleecion_datos')->join('users', 'recoleccion_datos.id=users.id')->where('recoleccion_datos.id= ', $dataLevel)->get();
+            return $query->result();
+        } else    if ($dataLevel == "is_Gerente_Ventas") {
+            /* Para traerse el id del usuario */
+
+             //consulta de los datos que va a descargar en excel
+            $query = $this->db->select('*')->from('recoleecion_datos')->join('users', 'recoleccion_datos.id=users.id')->order_by('users.first_name', 'asc')->get();
+            return $query->result();
+        }
+        else {
+            redirect(site_url() . 'main/');
+        }
+    }
         
 }

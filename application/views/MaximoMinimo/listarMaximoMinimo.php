@@ -73,7 +73,7 @@
 
 
 
-            <table  border="1" class="table table-bordered table-striped">
+            <table  id="countit" border="1" class="table table-bordered table-striped">
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
                 <thead>
                     <tr>
@@ -149,10 +149,10 @@
                         . '<td>'
                         . $obj->getFecha_requiere_piezas() .
                         '</td>'
-                        . '<td>'
+                        . '<td >'
                         . $obj->getPedido_inteligente() .
                         '</td>'
-                        . '<td>'
+                        . '<td class="count-me1">'
                         . $obj->getSuma_total_requerido_mensual() .
                         '</td>'
                         . '<td>'
@@ -164,7 +164,7 @@
                         . '<td>'
                         . $obj->getSuma_total_requerido_trimestral_con_oc_y_consignacion() .
                         '</td>'
-                        . '<td>'
+                        . '<td >'
                         . $obj->getInventario() .
                         '</td>'
                         . '<td>'
@@ -201,29 +201,68 @@
 
 
                     </tr>
-                    <tr>
+                    
+                    <?php
+                    
+                     if ($dataLevel == 'is_admin') {
+                           echo '<tr>
                         <td></td>
                         <td></td>
-                        <td>
-                            <?php
+                        <td>';
+                            
                             foreach ($totalRegistroCodigo as $fila) {
-                                ?>
-                                <div class="grid_12" id="cuerpo">
-                                    Total:<div class="grid_1"><?= $fila->codigo ?></div>
-                                </div>
-                                <?php
+                               
+                            echo   ' <div class="grid_12" id="cuerpo">
+                                    Total:<div class="grid_1">'. $fila->codigo.'</div>
+                                </div>';
+                               
                             }
-                            ?></td>
+                           
+                        echo '</td>
                         <td colspan="18"></td>
                        
-                    </tr>
+                    </tr>  ';
+                        } else if ($dataLevel == 'is_editor') {
+                            
+                        } else {
+                            
+                        }
+                  
+
+     if ($this->db->simple_query('YOUR QUERY'))
+{
+        echo "Success!";
+}
+else
+{
+        echo "Query failed!";
+}
+
+                    ?>
+
+                    
+                    
+                    
 
                 </tbody>
             </table>
+            
+             <script language="javascript" type="text/javascript">
+            var tds = document.getElementById('countit').getElementsByTagName('td');
+            var sum = 0;
+            for(var i = 0; i < tds.length; i ++) {
+                if(tds[i].className == 'count-me1') {
+                    sum += isNaN(tds[i].innerHTML) ? 0 : parseInt(tds[i].innerHTML);
+                }
+            }
+            document.getElementById('countit').innerHTML += '<div>' + sum + '</div><div>total<div>';
+        </script>
 
 
 
 
             </body>
         </div>
+        <html>
+   
 </html>

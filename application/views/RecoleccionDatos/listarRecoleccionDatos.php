@@ -5,14 +5,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <!--
-          /*
-       * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
-       * Sistema de Control Robuspack SCR
-       * https://scrobuspack.com 
-       * "Controlar la complejidad es la esencia de la programación"
-       * Versión 1 Fecha: 11-04-2019 10:19 am
-         Versión 2 Fecha: 18-04-2019 10:30 am
-       */-->
+    /*
+ * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
+ * Sistema de Control Robuspack SCR
+ * https://scrobuspack.com 
+ * "Controlar la complejidad es la esencia de la programación
+ * Fecha: 11-04-2019 10:19 am"
+    Fecha: 26-06-2019 10:40 am 
+    Fecha: 26-06-2019 12:40 Pm
+    Fecha: 27-06-2019 11:06 Pm 
+ */-->
 
         <!-- Pregunta al dar clic a eliminar-->
         <script type="text/javascript">
@@ -46,20 +48,6 @@
 
         <link rel="icon" href="<?= base_url('assets/images/icono.PNG') ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -152,7 +140,7 @@
 
 
     <div class="container" style="margin-top:1px;">
-        <center>  <h1> Registro de Clientes</h1></center>
+        <center>  <h1> Registro de Empresas</h1></center>
 
         <div class="alert alert-info alert-info">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -167,16 +155,7 @@
             <a  class="btn btn-success" href="<?= base_url('RecoleccionDatos/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos de los Clientes">Agregar Nuevo Registro</a>
         </div>
 
-    </div>
-
-
-    <div class="container" style="margin-top:1px;">
-
-
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped"  >
-
-        </div>
+   
 
 
 
@@ -226,6 +205,29 @@
 </div>';
 
 
+                echo '
+<div class="divTableRow">
+<div class="divTableCell">Alehia Información Compartida</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaAlethiaExistente   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_alethia_existente ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+           
+            
+            
+            
 
             echo '
 <div class="divTableRow">
@@ -281,7 +283,7 @@
                 ?>
 
 
-               27
+              0
 
 
                 <?php
@@ -312,7 +314,47 @@
             echo '</div>
 </div>';
 
+                    
+      echo '
+<div class="divTableRow">
+<div class="divTableCell">Karen</div>
+<div class="divTableCell"> ';
 
+            foreach ($totalRegistroEmpresaKaren   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_karen ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+            
+               echo '
+<div class="divTableRow">
+<div class="divTableCell">Saúl</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaSaul   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_saul ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
 
             echo '
 <div class="divTableRow">
@@ -358,7 +400,7 @@
             
             
         } else if ($dataLevel == 'is_editor') {
-            echo '
+             echo '
     <p><button class="hidediv">Ocultar Registros</button>
 <button class="showdiv">Mostrar Registros</button>
 </p>    
@@ -390,13 +432,36 @@
 </div>';
 
 
+                echo '
+<div class="divTableRow">
+<div class="divTableCell">Alehia Información Compartida</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaAlethiaExistente   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_alethia_existente ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+           
+            
+            
+            
 
             echo '
 <div class="divTableRow">
 <div class="divTableCell">Fernanda</div>
 <div class="divTableCell"> ';
 
-            foreach ($totalRegistroEmpresaBerenice as $fila) {
+            foreach ($totalRegistroEmpresaBerenice   as $fila) {
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -410,11 +475,31 @@
             }
             echo '</div>
 </div>';
+           
+            
+            
+                  echo '
+<div class="divTableRow">
+<div class="divTableCell">Nadia</div>
+<div class="divTableCell"> ';
 
+            foreach ($totalRegistroEmpresaNadia   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_nadia ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
             
             
-            
-               echo '
+                echo '
 <div class="divTableRow">
 <div class="divTableCell">Berenice</div>
 <div class="divTableCell"> ';
@@ -425,20 +510,18 @@
                 ?>
 
 
-               27
+              0
 
 
                 <?php
                 echo '</center></div>';
             }
             echo '</div>
-</div>'      
-            
-            
-            
-            ;
+</div>'   ;
 
-echo '
+            
+                      
+      echo '
 <div class="divTableRow">
 <div class="divTableCell">Aldo</div>
 <div class="divTableCell"> ';
@@ -458,9 +541,51 @@ echo '
             echo '</div>
 </div>';
 
+                    
+      echo '
+<div class="divTableRow">
+<div class="divTableCell">Karen</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaKaren   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_karen ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+            
+               echo '
+<div class="divTableRow">
+<div class="divTableCell">Saúl</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaSaul   as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_saul ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
             echo '
 <div class="divTableRow">
-<div class="divTableCell">Óscar</div>
+<div class="divTableCell">Oscar</div>
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroEmpresaOscar as $fila) {
@@ -482,6 +607,7 @@ echo '
             
             
             
+            
            
          
             
@@ -489,16 +615,36 @@ echo '
         }
         ?>
 
+ </div>
 
-        <table border = "0" class = "table table-bordered table-striped">
-            <MARQUEE SCROLLDELAY = 200> </MARQUEE>
+
+    <div class="container" style="margin-top:1px;">
+  <?php
+            if ($dataLevel == 'is_admin') {
+                echo '<center>
+                  <a title="Da clic para exportar los datos en Excel" href="' . base_url() . 'ExportarExcel/crearExcelEmpresaRecoleccionDatos/">     <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+                   </a></center>';
+            } else if ($dataLevel == 'is_editor') {
+                
+            } else if ($dataLevel == 'is_director') {
+                
+            }
+            ?>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped"  >
+
+        </div>
+           <table id="example" class="table table-bordered table-striped" style="width:100%">    
+       
+            
             <thead>
-                <tr >
+                <tr>
 
 
                     <?php
                     if ($dataLevel == 'is_admin') {
-                        echo '<th class="header" style="text-align: center">Eliminar</th>'
+                        echo '<th class="header" style="text-align: center" colspan= "Accion">Eliminar</th>'
                         . '<th class="header" style="text-align: center">Modificar</th>'
                         . '<th class="header" style="text-align: center">Usuario</th>';
                     } else if ($dataLevel == 'is_editor') {
@@ -513,6 +659,12 @@ echo '
                         echo '<th class="header" style="text-align: center">Modificar</th>';
                     }else if ($dataLevel == 'is_servicio_a_clientes') {
                         echo '<th class="header" style="text-align: center">Modificar</th>';
+                    }else if ($dataLevel == 'is_refacciones') {
+                        echo '<th class="header" style="text-align: center">Modificar</th>';
+                    }else if ($dataLevel == 'is_maquinaria') {
+                        echo '<th class="header" style="text-align: center">Modificar</th>';
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<th class="header" style="text-align: center">Modificar</th>';
                     }else {
                         
                     }
@@ -525,9 +677,61 @@ echo '
 
 
 
+                    <?php
+                    if ($dataLevel == 'is_admin') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                   
+                      
+                      ';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                   
+                     
+                      ';
+                    } else if ($dataLevel == 'is_logistica') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                    
+                     
+                      ';
+                    }else if ($dataLevel == 'is_director') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                  
+                     
+                      ';
+                    } else if ($dataLevel == 'is_maquinaria') {
+                        echo ' 
+                  
+                     
+                      ';
+                    }else if ($dataLevel == 'is_maquinaria') {
+                        echo ' 
+                  
+                     
+                      ';
+                    } else {
+                        
+                    }
+                    ?>
 
 
+                    
+                      
+                    <?php
+                    if ($dataLevel == 'is_maquinaria') {
+                       
+                    }  if ($dataLevel == 'is_Gerente_Ventas') {
+                       
+                    }  else {
+                       
+                    }
+                    ?>
 
+                      
+                      
+                      
+                      
+                      
+                      
                     <th style="text-align: center">Identificador</th>
                     <th style="text-align: center">Nombre de la Empresa</th>
                     <th style="text-align: center">Estado</th>
@@ -574,36 +778,80 @@ echo '
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                     }else if ($dataLevel == 'is_servicio_a_clientes') {
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                    }  else {
+                    }else if ($dataLevel == 'is_refacciones') {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    }else if ($dataLevel == 'is_maquinaria') {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    }    else {
                         
                     }
 
 
 
 
-                    echo '<td>';
+                   
 
 
 
                     //compara si es administrador
                     if ($dataLevel == 'is_admin') {
+                         echo '<td>';
                         echo $obj->getFirst_name() .
-                        '</td><td>';
+                        '</td>';
                     } else if ($dataLevel == 'is_editor') {
+                         echo '<td>';
                         echo $obj->getFirst_name() .
-                        '</td><td>';
+                                
+                        '</td>';
                     } else if ($dataLevel == 'is_credito') {
                         
                     } else {
                         
                     }
 
-
-
-
-                    echo $obj->getIdentificador() .
+                    
+                    
+                       //compara si es administrador
+                    if ($dataLevel == 'is_admin') {
+                         echo '<td>'. $obj->getVendedor() .
                     '</td>'
-                    . '<td>' .
+                   
+                     ;
+                    } else if ($dataLevel == 'is_editor') {
+                           echo '<td>'. $obj->getVendedor() .
+                    '</td>'
+                   
+                     ;
+                    } else if ($dataLevel == 'is_logistica') {
+                           echo '<td>'. $obj->getVendedor() .
+                    '</td>'
+                  
+                     ;
+                    }else if ($dataLevel == 'is_maquinaria') {
+                           
+                   
+                    }else if ($dataLevel == 'is_credito') {
+                        
+                    } else {
+                        
+                    }
+
+                    
+                    
+                    
+                    
+                    
+                    
+                        echo '<td>' .
+                    $obj->getIdentificador() .
+                    '</td>';
+                    
+                    
+
+
+                    echo  '<td>' .
                     $obj->getNombre_empresa() .
                     '</td>'
                     . '<td>'
@@ -638,13 +886,14 @@ echo '
                     '</td>'
                     . '<td>'
                     . $obj->getTel2() .
-                    '</td>'
-
+                    '</td>'.
+'</tr>'
                     ;
                 }
                 ?>
-                </tr>
+                
             </tbody>
+            
         </table>
 
 

@@ -74,7 +74,7 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
                 $objeto = new ClientePojo($value->id_cliente, $value->grupo, $value->cliente, $value->cliente_sae, $value->cliente_sae_dolares,
                         $value->razon_soc, $value->rfc, $value->direccion, $value->tel_cel, $value->extension, $value->correo,
                         $value->correo1, $value->correo2, $value->correo3, $value->moneda, $value->cta_banc,$value->cta_banc_dolares, $value->vendedor_refacciones, 
-                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega
+                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega,$value->empresa
                 );
 
                 array_push($colCliente, $objeto);
@@ -93,7 +93,7 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
                 $objeto = new ClientePojo($value->id_cliente, $value->grupo, $value->cliente, $value->cliente_sae, $value->cliente_sae_dolares,
                         $value->razon_soc, $value->rfc, $value->direccion, $value->tel_cel, $value->extension, $value->correo,
                         $value->correo1, $value->correo2, $value->correo3, $value->moneda, $value->cta_banc,$value->cta_banc_dolares, $value->vendedor_refacciones, 
-                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega
+                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega,$value->empresa
                 );
 
                 array_push($colCliente, $objeto);
@@ -110,7 +110,7 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
                 $objeto = new ClientePojo($value->id_cliente, $value->grupo, $value->cliente, $value->cliente_sae, $value->cliente_sae_dolares,
                         $value->razon_soc, $value->rfc, $value->direccion, $value->tel_cel, $value->extension, $value->correo,
                         $value->correo1, $value->correo2, $value->correo3, $value->moneda, $value->cta_banc,$value->cta_banc_dolares, $value->vendedor_refacciones, 
-                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega
+                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega,$value->empresa
                 );
 
                 array_push($colCliente, $objeto);
@@ -128,7 +128,7 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
                 $objeto = new ClientePojo($value->id_cliente, $value->grupo, $value->cliente, $value->cliente_sae, $value->cliente_sae_dolares,
                         $value->razon_soc, $value->rfc, $value->direccion, $value->tel_cel, $value->extension, $value->correo,
                         $value->correo1, $value->correo2, $value->correo3, $value->moneda, $value->cta_banc,$value->cta_banc_dolares, $value->vendedor_refacciones, 
-                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega
+                        $value->vendedor_maquinaria, $value->forma_pago, $value->metodo_pago, $value->uso_de_cfdi,$value->direccion_entrega,$value->empresa
                 );
 
                 array_push($colCliente, $objeto);
@@ -164,7 +164,8 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
                 "forma_pago" => $cliente->getForma_pago(),
                 "metodo_pago" => $cliente->getMetodo_pago(),
                 "uso_de_cfdi" => $cliente->getUso_de_cfdi(),
-                "direccion_entrega" => $cliente->getDireccion_entrega()
+                "direccion_entrega" => $cliente->getDireccion_entrega(),
+                "empresa" => $cliente->getEmpresa()
             );
             $this->db->where("id_cliente", $cliente->getId_cliente());
             $this->db->update("cliente", $datos);
@@ -196,7 +197,8 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
             'forma_pago' => $obj->forma_pago,
             'metodo_pago' => $obj->metodo_pago,
             'uso_de_cfdi' => $obj->uso_de_cfdi,
-            'direccion_entrega' => $obj->direccion_entrega
+            'direccion_entrega' => $obj->direccion_entrega,
+            'empresa' => $obj->empresa
         );
         return $dp;
     }

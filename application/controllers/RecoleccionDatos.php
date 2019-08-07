@@ -1,10 +1,13 @@
 <?php
+
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
  * Fecha: 11-04-2019 10:19 am 
+ * Fecha: 26-06-2019 10:40 am 
+ * * Fecha: 27-06-2019 12:40 Pm 
  */
 
 class RecoleccionDatos extends CI_Controller {
@@ -55,34 +58,48 @@ class RecoleccionDatos extends CI_Controller {
             $data['totalRegistroEmpresaOscar'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaOscar(1);
             $data['totalRegistroEmpresaAldo'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAldo(1);
             $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
-            
+            $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
+            $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+            $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_credito") {
+        } else if ($dataLevel == "is_refacciones") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_logistica") {
+        } else if ($dataLevel == "is_logistica") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_consultor") {
+        } else if ($dataLevel == "is_consultor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_servicio_a_clientes") {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_editor") {
+        } else if ($dataLevel == "is_maquinaria") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
+            $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
+            $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
@@ -90,10 +107,30 @@ class RecoleccionDatos extends CI_Controller {
             $data['totalRegistroEmpresaBerenice'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaBerenice(1);
             $data['totalRegistroEmpresaOscar'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaOscar(1);
             $data['totalRegistroEmpresaAldo'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAldo(1);
-             $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
+            $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
+            $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
+            $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+            $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+
+
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }  else {
+        } else if ($dataLevel == "is_director") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
+            $data['totalRegistroEmpresaAlethia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlethia(1);
+            $data['totalRegistroEmpresaBerenice'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaBerenice(1);
+            $data['totalRegistroEmpresaOscar'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaOscar(1);
+            $data['totalRegistroEmpresaAldo'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAldo(1);
+            $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
+            $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
+            $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+             $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+
+            $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else {
             redirect(site_url() . 'main/');
         }
     }
@@ -125,27 +162,42 @@ class RecoleccionDatos extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_credito") {
+        } else if ($dataLevel == "is_refacciones") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }  else if ($dataLevel == "is_logistica") {
+        } else if ($dataLevel == "is_logistica") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_editor") {
+        } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_consultor") {
+        } else if ($dataLevel == "is_consultor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_servicio_a_clientes") {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_maquinaria") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_director") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
@@ -155,14 +207,12 @@ class RecoleccionDatos extends CI_Controller {
         }
     }
 
-    
-    
     public function formularioAgregar() {
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
         $data = array(
-            
+            'vendedor' => $_POST['vendedor'],
             'identificador' => $_POST['identificador'],
             'nombre_empresa' => $_POST['nombre_empresa'],
             'estado' => $_POST['estado'],
@@ -187,14 +237,14 @@ class RecoleccionDatos extends CI_Controller {
 
         redirect('RecoleccionDatos');
     }
-    
-    
-    
 
     public function modificar() {
         $datos = $this->input->post();
         if (isset($datos)) {
             $id_recolecion_datos = $datos['id_recolecion_datos'];
+
+
+            $vendedor = $datos['vendedor'];
             $identificador = $datos['identificador'];
             $nombre_empresa = $datos['nombre_empresa'];
             $estado = $datos['estado'];
@@ -217,8 +267,6 @@ class RecoleccionDatos extends CI_Controller {
             redirect('Cliente');
         }
     }
-    
-    
 
     public function obtener($id_recoleccion_datos) {
         $this->load->model('RecoleccionDatos/RecoleccionDatosModelo');
@@ -238,8 +286,8 @@ class RecoleccionDatos extends CI_Controller {
             $data = array();
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
-             $this->load->view('footer');
-        } else if ($dataLevel == "is_credito") {
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_refacciones") {
             $this->load->view('header', $data);
 
             $this->load->view('navbar', $data);
@@ -247,7 +295,7 @@ class RecoleccionDatos extends CI_Controller {
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_logistica") {
+        } else if ($dataLevel == "is_logistica") {
             $this->load->view('header', $data);
 
             $this->load->view('navbar', $data);
@@ -263,7 +311,7 @@ class RecoleccionDatos extends CI_Controller {
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_consultor") {
+        } else if ($dataLevel == "is_consultor") {
             $this->load->view('header', $data);
 
             $this->load->view('navbar', $data);
@@ -271,7 +319,7 @@ class RecoleccionDatos extends CI_Controller {
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_consultor") {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
             $this->load->view('header', $data);
 
             $this->load->view('navbar', $data);
@@ -279,13 +327,39 @@ class RecoleccionDatos extends CI_Controller {
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
-        }else {
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            $this->load->view('header', $data);
+
+            $this->load->view('navbar', $data);
+            $data = array();
+            $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
+            $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_maquinaria") {
+            $this->load->view('header', $data);
+
+            $this->load->view('navbar', $data);
+            $data = array();
+            $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
+            $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_director") {
+            $this->load->view('header', $data);
+
+            $this->load->view('navbar', $data);
+            $data = array();
+            $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
+            $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        } else {
             redirect(site_url() . 'main/');
         }
     }
+
     public function recoleccionDatosModificar() {
         $data = array(
             'id_recolecion_datos' => $_POST['id_recolecion_datos'],
+            'vendedor' => $_POST['vendedor'],
             'identificador' => $_POST['identificador'],
             'nombre_empresa' => $_POST['nombre_empresa'],
             'estado' => $_POST['estado'],

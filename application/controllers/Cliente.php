@@ -70,7 +70,7 @@ Class Cliente extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Cliente/listarCliente', $data);
             $this->load->view('footer');
-        } else {
+        }  else {
             redirect(site_url() . 'main/');
         }
     }
@@ -157,6 +157,7 @@ Class Cliente extends CI_Controller {
             
             'uso_de_cfdi' => $_POST['uso_de_cfdi'],
              'direccion_entrega' => $_POST['direccion_entrega'],
+            'empresa' => $_POST['empresa'],
             /* Es para traerse el id del usuario */
             'id' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
@@ -196,8 +197,9 @@ Class Cliente extends CI_Controller {
             $metodo_pago = $datos['forma_pago'];
             $uso_de_cfdi= $datos['uso_de_cfdi'];
             $direccion_entrega = $datos['direccion_entrega'];
+            $empresa= $datos['empresa'];
             $this->ClienteModelo->actualizar($id_cliente, $grupo, $cliente, $cliente_sae,$cliente_sae_dolares, $razon_soc, $rfc, $direccion, $tel_cel, 
-                    $extension, $correo,$correo1,$correo2,$correo3, $moneda, $cta_banc, $cta_banc_dolares ,$vendedor_refacciones, $vendedor_maquinaria,$forma_pago,$metodo_pago,$uso_de_cfdi,$direccion_entrega);
+                    $extension, $correo,$correo1,$correo2,$correo3, $moneda, $cta_banc, $cta_banc_dolares ,$vendedor_refacciones, $vendedor_maquinaria,$forma_pago,$metodo_pago,$uso_de_cfdi,$direccion_entrega, $empresa);
             redirect('');
             redirect('Cliente');
         }
@@ -295,12 +297,12 @@ Class Cliente extends CI_Controller {
              'forma_pago' => $_POST['forma_pago'],
             'metodo_pago' => $_POST['metodo_pago'],
             'uso_de_cfdi' => $_POST['uso_de_cfdi'],
-            'direccion_entrega' => $_POST['direccion_entrega']
+             'direccion_entrega' => $_POST['direccion_entrega'],
+            'empresa' => $_POST['empresa']
         );
 
         $this->load->model('Cliente/ClienteModelo');
         $this->ClienteModelo->actualizar($data);
         redirect('Cliente');
     }
-
 }

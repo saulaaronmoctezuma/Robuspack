@@ -59,7 +59,7 @@ class MaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
-            $query = $this->db->query('SELECT * from mayo_2019_maximo_minimo order by codigo asc');
+            $query = $this->db->query('SELECT * from julio_2019_maximo_minimo order by codigo asc');
 
 
             $colMaximoMinimo = array();
@@ -150,7 +150,7 @@ class MaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
 
     public function totalRegistroCodigo() {
         $this->db->select('count(codigo) as  codigo');
-        $this->db->from('mayo_2019_maximo_minimo');
+        $this->db->from('julio_2019_maximo_minimo');
         //$this->db->where('venta.id= ', 6);
         $query = $this->db->get();
         return $query->result();

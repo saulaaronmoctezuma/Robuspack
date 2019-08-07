@@ -1,37 +1,42 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-/*
- * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
- * Sistema de Control Robuspack SCR
- * https://scrobuspack.com 
- * "Controlar la complejidad es la esencia de la programación"
+/* * zz
+
+ * class @author  Saul González & Karen González
+ * Fecha : Ultimo Cambio 25/06/2019 Hora 10:26 am
+ * Fecha : 
+ * Sistema de Control Robuspack.
  */
 
-Class Bitacora extends CI_Controller {
+class Bitacora extends CI_Controller {
 
-    function __construct() {
+    public function __construct() {
         parent::__construct();
+
+        $this->load->library('upload');
+        $this->load->library('pagination');
+
         $this->base = $this->config->item('base_url');
         $this->css = $this->config->item('css');
         $this->load->library('session');
+        //poner para el poner selet en un formulario
+        $this->load->model("Bitacora/BitacoraModelo");
+        //poner para el poner selet en un formulario
+        //para que tenga el mismo header y trearse el usuario para dar permisos
         $this->load->model('User_model', 'User_model');
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
         $this->status = $this->config->item('status');
         $this->roles = $this->config->item('roles');
         $this->load->library('userlevel');
-        //para que tenga el mismo header
-        $this->load->model("Bitacora/BitacoraModelo");
     }
 
     public function index() {
-        $data ['css'] = $this->css;
-        $data ['base'] = $this->base;
+        $data['css'] = $this->css;
+        $data['base'] = $this->base;
         $this->load->model('Bitacora/BitacoraModelo');
-        $data['title'] = "Robuspack";
-
-
-
+        $data['title'] = 'Bitacora';
         //user data from session
         $data = $this->session->userdata;
         if (empty($data)) {
@@ -45,73 +50,116 @@ Class Bitacora extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
+            $data['bitacora'] = $this->BitacoraModelo->query();
+            //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['bitacora'] = $this->BitacoraModelo->query();
-            $this->load->view('Bitacora/listarBitacoraMaquinaria', $data);
+            $this->load->view('Bitacora/listarBitacora', $data);
             $this->load->view('footer');
-        }  else if ($dataLevel == "is_maquinaria") {
+        } else if ($dataLevel == "is_maquinaria") {
+          $data['bitacora'] = $this->BitacoraModelo->query();
+            //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['bitacora'] = $this->BitacoraModelo->query();
-            $this->load->view('Bitacora/listarBitacoraMaquinaria', $data);
+            $this->load->view('Bitacora/listarBitacora', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
+            $data['bitacora'] = $this->BitacoraModelo->query();
+            //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['bitacora'] = $this->BitacoraModelo->query();
-            $this->load->view('Bitacora/listarBitacoraMaquinaria', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['bitacora'] = $this->BitacoraModelo->query();
-            $this->load->view('Bitacora/listarBitacoraMaquinaria', $data);
+            $this->load->view('Bitacora/listarBitacora', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_director") {
+            $data['bitacora'] = $this->BitacoraModelo->query();
+            //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-
-            $data['bitacora'] = $this->BitacoraModelo->query();
-            $this->load->view('Bitacora/listarBitacoraMaquinaria', $data);
+            $this->load->view('Bitacora/listarBitacora', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-
-            $data['bitacora'] = $this->BitacoraModelo->query();
-            $this->load->view('Bitacora/listarBitacoraMaquinaria', $data);
-            $this->load->view('footer');
-        } else {
+        }  else {
             redirect(site_url() . 'main/');
         }
+
+        //sesion
+
+        /* } else {//Si el usuario no está¡ logueado lo manda a registrarse
+          redirect('main/logeo');
+          } */
     }
 
-    public function refacciones() {
-        $data ['css'] = $this->css;
-        $data ['base'] = $this->base;
-        $this->load->model('Bitacora/BitacoraModelo');
-        $data['title'] = "Robuspack";
+    // fungsi untuk mengambil data
+    public function lista() {
 
+        $cari = $this->input->get('cari');
+        $page = $this->input->get('per_page');
+
+        $search = array('serie' => $cari);
+
+        $batas = 9; // 9 data per page
+        if (!$page):
+            $offset = 0;
+        else:
+            $offset = $page;
+        endif;
+
+        $config['page_query_string'] = TRUE;
+        $config['base_url'] = base_url() . 'index.php/home/?cari=' . $cari;
+        // $config['total_rows'] = $this->modelcrud->jumlah_row($search);
+
+        /* $config['per_page'] = $batas;
+          $config['uri_segment'] = $page;
+
+          $config['full_tag_open'] = '<ul class="pagination">';
+          $config['full_tag_close'] = '<ul>';
+
+          $config['first_link'] = 'first';
+          $config['first_tag_open'] = '<li><a>';
+          $config['first_tag_close'] = '</a></li>';
+
+          $config['last_link'] = 'last';
+          $config['last_tag_open'] = '<li><a>';
+          $config['last_tag_close'] = '</a></li>';
+
+          $config['next_link'] = '&raquo;';
+          $config['next_tag_open'] = '<li><a>';
+          $config['next_tag_close'] = '</a></li>';
+
+          $config['prev_link'] = '&laquo;';
+          $config['prev_tag_open'] = '<li><a>';
+          $config['prev_tag_close'] = '</a></li>';
+
+          $config['cur_tag_open'] = '<li class="active"><a>';
+          $config['cur_tag_close'] = '</a></li>';
+
+          $config['num_tag_open'] = '<li><a>';
+          $config['num_tag_close'] = '</a></li>'; */
+
+        $this->pagination->initialize($config);
+        $data['pagination'] = $this->pagination->create_links();
+        $data['jumlah_page'] = $page;
+
+        $data['data'] = $this->ClienteSeguimientoModelo->get($batas, $offset, $search);
+
+        $this->load->view('ClienteSeguimiento/lista', $data);
+    }
+
+    // untuk menampilkan halaman tambah data
+    public function agregar() {
+
+        $data['css'] = $this->css;
+        $data['base'] = $this->base;
+
+        $this->load->model('Bitacora/BitacoraModelo');
+        $data['title'] = 'Robuspack';
 
 
         //user data from session
         $data = $this->session->userdata;
-        if (empty($data)) {
-            redirect(site_url() . 'main/login/');
-        }
+        /* if (empty($data)) {
+          redirect(site_url() . 'main/login/');
+          } */
+
         //check user level
         if (empty($data['role'])) {
             redirect(site_url() . 'main/login/');
@@ -120,290 +168,136 @@ Class Bitacora extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
+            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
 
-            $data['bitacora'] = $this->BitacoraModelo->refacciones();
-            $this->load->view('Bitacora/listarBitacoraRefacciones', $data);
+            //$data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+
+            $this->load->view('Bitacora/agregarBitacora');
             $this->load->view('footer');
-        } else if ($dataLevel == "is_refacciones") {
+        } else if ($dataLevel == "is_maquinaria") {
+            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
 
-            $data['bitacora'] = $this->BitacoraModelo->refacciones();
-            $this->load->view('Bitacora/listarBitacoraRefacciones', $data);
+            //$data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+
+            $this->load->view('Bitacora/agregarBitacora');
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
 
-            $data['bitacora'] = $this->BitacoraModelo->refacciones();
-            $this->load->view('Bitacora/listarBitacoraRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['bitacora'] = $this->BitacoraModelo->refacciones();
-            $this->load->view('Bitacora/listarBitacoraRefacciones', $data);
+            $this->load->view('ClienteSeguimiento/agregar');
             $this->load->view('footer');
         } else if ($dataLevel == "is_director") {
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-
-            $data['bitacora'] = $this->BitacoraModelo->refacciones();
-            $this->load->view('Bitacora/listarBitacoraRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-
-            $data['bitacora'] = $this->BitacoraModelo->refacciones();
-            $this->load->view('Bitacora/listarBitacoraRefacciones', $data);
+            $this->load->view('ClienteSeguimiento/agregar');
             $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
     }
 
-    public function eliminar($id) {
-        $this->load->model('Bitacora/BitacoraModelo');
-        $this->BitacoraModelo->delete($id);
+    // untuk memasukan data ke database
+    /* public function insertdata()
+      {
+      $name   = $this->input->post('name');
+      $alamat = $this->input->post('alamat');
+
+      // get foto
+      $config['upload_path'] = './assets/picture';
+      $config['allowed_types'] = 'jpg|png|jpeg|gif';
+      $config['max_size'] = '2048';  //2MB max
+      $config['max_width'] = '4480'; // pixel
+      $config['max_height'] = '4480'; // pixel
+      $config['file_name'] = $_FILES['fotopost']['name'];
+
+      $this->upload->initialize($config);
+
+      if (!empty($_FILES['fotopost']['name'])) {
+      if ( $this->upload->do_upload('fotopost') ) {
+      $foto = $this->upload->data();
+      $data = array(
+      'name'       => $name,
+      'foto'       => $foto['file_name'],
+      'alamat'     => $alamat,
+      );
+      $this->modelcrud->insert($data);
+      redirect('');
+      }else {
+      die("gagal upload");
+      }
+      }else {
+      echo "tidak masuk";
+      }
+
+      } */
+
+    public function insertdata() {
+
+        /* Para traerse el id del usuario */
+        $data = $this->session->userdata;
+        /* Para traerse el id del usuario */
+        $grupo = $this->input->post('grupo');
+        $cliente = $this->input->post('cliente');
+        $descripcion = $this->input->post('descripcion');
+        $archivo1 = $this->input->post('archivo1');
+        $observacion = $this->input->post('observacion');
+
+
+        // get foto
+        $config['upload_path'] = './assets/bitacora';
+        $config['allowed_types'] = '*';
+        $config['overwrite'] = TRUE;
+
+
+        /* $config['max_size'] = '2048';  //2MB max
+          $config['max_width'] = '4480'; // pixel
+          $config['max_height'] = '4480'; // pixel */
+        $this->upload->initialize($config);
+
+
+        $data = array(
+            'grupo' => $grupo,
+            'cliente' => $cliente,
+            'descripcion' => $descripcion,
+            'archivo1' => $archivo1,
+            'observacion' => $observacion,
+            'id' => $dataLevel = $this->userlevel->id($data['id'])
+        );
+
+        $this->upload->do_upload('archivo1');
+        $archivo1 = $this->upload->data();
+        if (!empty($_FILES['archivo1']['name'])) {
+            $data['archivo1'] = $archivo1['file_name'];
+        }
+
+
+
+
+
+
+
+
+        $this->BitacoraModelo->insert($data);
         redirect('Bitacora');
     }
 
-    public function agregar() {
-        $data ['css'] = $this->css;
-        $data ['base'] = $this->base;
+    public function eliminar($id) {
 
-        $this->load->model('Bitacora/BitacoraModelo');
-        $data['title'] = 'Robuspack';
-        //user data from session
-        $data = $this->session->userdata;
-        /* if (empty($data)) {
-          redirect(site_url() . 'main/login/');
-          } */
-
-        //check user level
-        if (empty($data['role'])) {
-            redirect(site_url() . 'main/login/');
-        }
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        //check user level
-        $data['title'] = "Robuspack";
-        if ($dataLevel == "is_admin") {
-            $this->load->view('header', $data);
-
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivos', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivos', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivos', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivos', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-
-            $this->load->view('Bitacora/agregarBitacoraArchivos', $data);
-            $this->load->view('footer');
-        } else {
-            redirect(site_url() . 'main/');
-        }
-    }
-    
-    
-    
-    public function agregarRefacciones() {
-        $data ['css'] = $this->css;
-        $data ['base'] = $this->base;
-
-        $this->load->model('Bitacora/BitacoraModelo');
-        $data['title'] = 'Robuspack';
-        //user data from session
-        $data = $this->session->userdata;
-        /* if (empty($data)) {
-          redirect(site_url() . 'main/login/');
-          } */
-
-        //check user level
-        if (empty($data['role'])) {
-            redirect(site_url() . 'main/login/');
-        }
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        //check user level
-        $data['title'] = "Robuspack";
-        if ($dataLevel == "is_admin") {
-            $this->load->view('header', $data);
-
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivosRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivosRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivosRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/agregarBitacoraArchivosRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-
-            $this->load->view('Bitacora/agregarBitacoraArchivosRefacciones', $data);
-            $this->load->view('footer');
-        } else {
-            redirect(site_url() . 'main/');
-        }
+        $where = array('id_bitacora' => $id);
+        $this->BitacoraModelo->delete($where);
+        return redirect('Bitacora');
     }
 
-    public function formularioAgregar() {
-        /* Para traerse el id del usuario */
-        $data = $this->session->userdata;
-        /* Para traerse el id del usuario */
-        $data = array(
-            'grupo' => $_POST['grupo'],
-            'cliente' => $_POST['cliente'],
-            'descripcion' => $_POST['descripcion'],
-            'archivo1' => $_POST['archivo1'],
-            'observacion' => $_POST['observacion'],
-            /* Es para traerse el id del usuario */
-            'id' => $dataLevel = $this->userlevel->id($data['id'])
-                /* Es para traerse el id del usuario */
-        );
-
-
+    // edit
+    public function actualizar($id) {
         $this->load->model('Bitacora/BitacoraModelo');
-        $this->BitacoraModelo->add($data);
-
-
-           //user data from session
-        $data = $this->session->userdata;
-    
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        
-           if ($dataLevel == "is_admin") {
-           redirect('Bitacora/refacciones/');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-           redirect('Bitacora/refacciones');
-        }else if ($dataLevel == "is_maquinaria") {
-          redirect('Bitacora/');
-        }else if ($dataLevel == "is_refacciones") {
-          redirect('Bitacora/refacciones34242');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-           redirect('Bitacora/');
-        }else {
-           
-        }
-
-       
-    }
-
-    public function modificar() {
-        $datos = $this->input->post();
-        if (isset($datos)) {
-            $id_bitacora = $datos['id_bitacora'];
-            $grupo = $datos['grupo'];
-            $cliente = $datos['cliente'];
-            $descripcion = $datos['descripcion'];
-            $archivo1 = $datos['archivo1'];
-            $observacion = $datos['observacion'];
-
-
-            $this->BitacoraModelo->actualizar($id_bitacora, $grupo, $cliente, $descripcion, $archivo1, $observacion);
-            //user data from session
-        $data = $this->session->userdata;
-    
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        
-           if ($dataLevel == "is_admin") {
-           redirect('Bitacora/refacciones/');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-           redirect('Bitacora/refacciones');
-        }else if ($dataLevel == "is_maquinaria") {
-          redirect('Bitacora/');
-        }else if ($dataLevel == "is_refacciones") {
-          redirect('Bitacora/refacciones');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-           redirect('Bitacora/');
-        }else {
-           
-        }
-        }
-    }
-
-    public function obtener($id_bitacora) {
-        $this->load->model('Bitacora/BitacoraModelo');
-
-
-
 
         //user data from session
         $data = $this->session->userdata;
@@ -417,231 +311,159 @@ Class Bitacora extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-            $this->load->view('header', $data);
+            
+            
+              $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
+            //se trae el id del  modelo ClientesRefaccionesModelo
             $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/modificarBitacora', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
-
-            $this->load->view('Bitacora/modificarBitacora', $data);
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
+            return $this->load->view('Bitacora/editarBitacora', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_maquinaria") {
+
+
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
 
-            $this->load->view('Bitacora/modificarBitacora', $data);
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
+            return $this->load->view('Bitacora/editarBitacora', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_director") {
+
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
+            return $this->load->view('Bitacora/editarBitacora', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
+
+
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
 
-            $this->load->view('Bitacora/modificarBitacora', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
+            return $this->load->view('Bitacora/editarBitacora', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
 
-            $this->load->view('Bitacora/modificarBitacora', $data);
             $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
     }
 
-    public function obtener1($id_bitacora) {
-        $this->load->model('Bitacora/BitacoraModelo');
+    // update
+
+    /*
+      public function updatedata()
+      {
+      $id   = $this->input->post('id');
+      $name = $this->input->post('name');
+      $alamat = $this->input->post('alamat');
+
+      $path = './assets/picture/';
+
+      $kondisi = array('id' => $id );
+
+      // get foto
+      $config['upload_path'] = './assets/picture';
+      $config['allowed_types'] = 'jpg|png|jpeg|gif';
+      $config['max_size'] = '2048';  //2MB max
+      $config['max_width'] = '4480'; // pixel
+      $config['max_height'] = '4480'; // pixel
+      $config['file_name'] = $_FILES['fotopost']['name'];
+
+      $this->upload->initialize($config);
+
+      if (!empty($_FILES['fotopost']['name'])) {
+      if ( $this->upload->do_upload('fotopost') ) {
+      $foto = $this->upload->data();
+      $data = array(
+      'name'       => $name,
+      'foto'       => $foto['file_name'],
+      'alamat'     => $alamat,
+      );
+      // hapus foto pada direktori
+      @unlink($path.$this->input->post('filelama'));
+
+      $this->modelcrud->update($data,$kondisi);
+      redirect('');
+      }else {
+      die("gagal update");
+      }
+      }else {
+      echo "tidak masuk";
+      }
+
+      } */
 
 
-        //user data from session
-        $data = $this->session->userdata;
-        
-        //check user level
-        if (empty($data['role'])) {
-            redirect(site_url() . 'main/login/');
-        }
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        //check user level
-        $data['title'] = "Robuspack";
-        if ($dataLevel == "is_admin") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
 
-            $this->load->view('Bitacora/modificarBitacoraComentario', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data = array();
-            $data = $this->BitacoraModelo->obtener($id_bitacora);
-            $data['grupoCombo'] = $this->BitacoraModelo->getGrupo();
-            $data['clienteCombo'] = $this->BitacoraModelo->getCliente();
+    public function updatedata() {
 
-            $this->load->view('Bitacora/modificarBitacoraComentario', $data);
-            $this->load->view('footer');
-        } else {
-            redirect(site_url() . 'main/');
-        }
-    }
-
-    public function bitacoraModificar() {
-        $data = array(
-            'id_bitacora' => $_POST['id_bitacora'],
-            'grupo' => $_POST['grupo'],
-            'cliente' => $_POST['cliente'],
-            'descripcion' => $_POST['descripcion'],
-            'archivo1' => $_POST['archivo1'],
-            'observacion' => $_POST['observacion']
-        );
-
-        $this->load->model('Bitacora/BitacoraModelo');
-        $this->BitacoraModelo->actualizar($data);
-        
-        
-        
-        
-        
-         //user data from session
-        $data = $this->session->userdata;
-    
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        
-         if ($dataLevel == "is_admin") {
-           redirect('Bitacora/refacciones/');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
-           redirect('Bitacora/refacciones');
-        }else if ($dataLevel == "is_maquinaria") {
-          redirect('Bitacora/');
-        }else if ($dataLevel == "is_refacciones") {
-          redirect('Bitacora/refacciones');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
-           redirect('Bitacora/');
-        }else {
-           
-        }
-        
-        
-        
-        
-        
-    
-    }
-
-    public function subir() {
-
-        //print_r($_FILES);
-        $this->load->library("upload");
-        $config = array(
-            "upload_path" => "./assets/documentos",
-            'allowed_types' => "jpg|png|pdf|docx|doc|xls|xlsx|xlsx|xlsx|html|mp3"
-        );
-
-        $variablefile = $_FILES;
-        $info = array();
-        $files = count($_FILES['archivo']['name']);
-        for ($i = 0; $i < $files; $i++) {
-            $_FILES['archivo']['name'] = $variablefile['archivo']['name'][$i];
-            $_FILES['archivo']['type'] = $variablefile['archivo']['type'][$i];
-            $_FILES['archivo']['tmp_name'] = $variablefile['archivo']['tmp_name'][$i];
-            $_FILES['archivo']['error'] = $variablefile['archivo']['error'][$i];
-            $_FILES['archivo']['size'] = $variablefile['archivo']['size'][$i];
-            $this->upload->initialize($config);
-            if ($this->upload->do_upload('archivo')) {
-                $data = array("upload_data" => $this->upload->data());
-                $datos = array(
-                    "name" => $data['upload_data']['file_name'],
-                        //aqui debe de traerte el usuario que esta en la sesion solo el 
-                );
-                if ($this->BitacoraModelo->guardar($datos)) {
-                    //echo "Registro guardado";
-                    $info[$i] = array(
-                        "archivo" => $data['upload_data']['file_name'],
-                        "mensaje" => "Archivo subido y guardado"
-                    );
-                } else {
-                    //echo "Error al intentar guardar la informacion";
-                    $info[$i] = array(
-                        "archivo" => $data['upload_data']['file_name'],
-                        "mensaje" => "Archivo subido pero no guardado guardado"
-                    );
-                }
-            } else {
-                //echo $this->upload->display_errors();
-                $info[$i] = array(
-                    "archivo" => $_FILES['archivo']['name'],
-                    "mensaje" => "Archivo no subido ni guardado"
-                );
-            }
-        }
-
-        $envio = "";
-        foreach ($info as $key) {
-            $envio .= "Archivo : " . $key['archivo'] . " - " . $key["mensaje"] . "\n";
-        }
-        echo $envio;
-    }
-
-    function bitacoraAgregar() {
-        $this->load->view('Bitacora/agregarBitacoraArchivos');
-    }
-
-    function do_upload() {
-
-        $config['upload_path'] = "./assets/bitacora/";
-        $config['allowed_types'] = '*';
-        $config['encrypt_name'] = FALSE;
-
-        $this->load->library('upload', $config);
-        $this->upload->do_upload("file");
-        $data = $this->upload->data();
-
-        //Resize and Compress Image
-        $config['image_library'] = 'gd2';
-        $config['source_image'] = './assets/bitacora/' . $data['file_name'];
-        $config['create_thumb'] = FALSE;
-        $config['maintain_ratio'] = FALSE;
-        $config['quality'] = '100%';
-        /* $config['width'] = 600;
-          $config['height'] = 400;
-          $config['new_image'] = './assets/documentos/' . $data['file_name'];
-          $this->load->library('image_lib', $config);
-          $this->image_lib->resize(); */
-
-        $title = $this->input->post('title');
+        $grupo = $this->input->post('grupo');
         $cliente = $this->input->post('cliente');
         $descripcion = $this->input->post('descripcion');
-        $image = $data['file_name'];
+        $archivo1 = $this->input->post('archivo1');
         $observacion = $this->input->post('observacion');
 
-        $result = $this->BitacoraModelo->save_upload($title, $cliente, $descripcion, $image, $observacion);
 
-        echo json_decode($result);
+        $path = './assets/bitacora/';
+        $id = $this->input->post('id');
+        $kondisi = array('id_bitacora' => $id);
+        // get fotoz
+
+
+        $config['upload_path'] = './assets/bitacora';
+        $config['allowed_types'] = '*';
+        /* $config['max_size'] = '2048';  //2MB max
+          $config['max_width'] = '4480'; // pixel
+          $config['max_height'] = '4480'; // pixel */
+
+        $this->upload->initialize($config);
+
+
+
+
+
+
+
+
+        $data['grupo'] = $grupo;
+        $data['cliente'] = $cliente;
+        $data['descripcion'] = $descripcion;
+
+        $this->upload->do_upload('archivo1');
+        $archivo1 = $this->upload->data();
+
+        if (!empty($_FILES['archivo1']['name'])) {
+            $data['archivo1'] = $archivo1['file_name'];
+        }
+
+
+        $data['observacion'] = $observacion;
+
+
+
+
+
+
+        // hapus foto pada direktori
+        @unlink($path . $this->input->post('filelama'));
+        $this->BitacoraModelo->updatedata($data, $kondisi);
+        redirect('Bitacora');
     }
 
 }
+
+// end class

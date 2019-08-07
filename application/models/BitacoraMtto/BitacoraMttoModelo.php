@@ -86,7 +86,16 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
             $colBitacora_Mtto = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha, $value->oc, $value->tipo, $value->mantenimiento, $value->reporto, $value->des_acti, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29, $value->ref_recomen30, $value->recomendaciones, $value->proxima_inter, $value->first_name
+                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha,
+                         $value->motivo_asistencia,
+                        $value->tipo, 
+                        $value->mantenimiento,
+                       
+                        $value->consecutivo, $value->des_acti1, $value->des_acti2, $value->des_acti3, $value->des_acti4, $value->des_acti5, $value->des_acti6, $value->des_acti7, $value->des_acti8, $value->des_acti9, $value->des_acti10, $value->des_acti11, $value->des_acti12, $value->des_acti13, $value->des_acti14, $value->des_acti15, $value->reporto, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29
+                        , $value->ref_recomen30
+                          , $value->capacitacion
+                           ,$value->aceptacion_capacitacion,
+                        $value->recomendaciones, $value->proxima_inter, $value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -112,10 +121,19 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
             $query = $this->db->get();
 
 
-            $colBitacora_Mtto = array();
+              $colBitacora_Mtto = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha, $value->oc, $value->tipo, $value->mantenimiento, $value->reporto, $value->des_acti, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29, $value->ref_recomen30, $value->recomendaciones, $value->proxima_inter, $value->first_name
+                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha,
+                         $value->motivo_asistencia,
+                        $value->tipo, 
+                        $value->mantenimiento,
+                       
+                        $value->consecutivo, $value->des_acti1, $value->des_acti2, $value->des_acti3, $value->des_acti4, $value->des_acti5, $value->des_acti6, $value->des_acti7, $value->des_acti8, $value->des_acti9, $value->des_acti10, $value->des_acti11, $value->des_acti12, $value->des_acti13, $value->des_acti14, $value->des_acti15, $value->reporto, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29
+                        , $value->ref_recomen30
+                          , $value->capacitacion
+                           ,$value->aceptacion_capacitacion,
+                        $value->recomendaciones, $value->proxima_inter, $value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -144,10 +162,19 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
 
 
 
-            $colBitacora_Mtto = array();
+              $colBitacora_Mtto = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha, $value->oc, $value->tipo, $value->mantenimiento, $value->reporto, $value->des_acti, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29, $value->ref_recomen30, $value->recomendaciones, $value->proxima_inter, $value->first_name
+                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha,
+                         $value->motivo_asistencia,
+                        $value->tipo, 
+                        $value->mantenimiento,
+                       
+                        $value->consecutivo, $value->des_acti1, $value->des_acti2, $value->des_acti3, $value->des_acti4, $value->des_acti5, $value->des_acti6, $value->des_acti7, $value->des_acti8, $value->des_acti9, $value->des_acti10, $value->des_acti11, $value->des_acti12, $value->des_acti13, $value->des_acti14, $value->des_acti15, $value->reporto, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29
+                        , $value->ref_recomen30
+                          , $value->capacitacion
+                           ,$value->aceptacion_capacitacion,
+                        $value->recomendaciones, $value->proxima_inter, $value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -173,10 +200,19 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
             $query = $this->db->get();
 
 
-            $colBitacora_Mtto = array();
+             $colBitacora_Mtto = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha, $value->oc, $value->tipo, $value->mantenimiento, $value->reporto, $value->des_acti, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29, $value->ref_recomen30, $value->recomendaciones, $value->proxima_inter, $value->first_name
+                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha,
+                         $value->motivo_asistencia,
+                        $value->tipo, 
+                        $value->mantenimiento,
+                       
+                        $value->consecutivo, $value->des_acti1, $value->des_acti2, $value->des_acti3, $value->des_acti4, $value->des_acti5, $value->des_acti6, $value->des_acti7, $value->des_acti8, $value->des_acti9, $value->des_acti10, $value->des_acti11, $value->des_acti12, $value->des_acti13, $value->des_acti14, $value->des_acti15, $value->reporto, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29
+                        , $value->ref_recomen30
+                          , $value->capacitacion
+                           ,$value->aceptacion_capacitacion,
+                        $value->recomendaciones, $value->proxima_inter, $value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -194,11 +230,27 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                 "modelo" => $bitacoramtto->getModelo(),
                 "maquina" => $bitacoramtto->getMaquina(),
                 "fecha" => $bitacoramtto->getFecha(),
-                "oc" => $bitacoramtto->getOc(),
+                 "motivo_asistencia" => $bitacoramtto->getMotivo_asistencia(),
                 "tipo" => $bitacoramtto->getTipo(),
                 "mantenimiento" => $bitacoramtto->getMantenimiento(),
+                
+                "consecutivo" => $bitacoramtto->getConsecutivo(),
+                "des_acti1" => $bitacoramtto->getDes_acti1(),
+                "des_acti2" => $bitacoramtto->getDes_acti2(),
+                "des_acti3" => $bitacoramtto->getDes_acti3(),
+                "des_acti4" => $bitacoramtto->getDes_acti4(),
+                "des_acti5" => $bitacoramtto->getDes_acti5(),
+                "des_acti6" => $bitacoramtto->getDes_acti6(),
+                "des_acti7" => $bitacoramtto->getDes_acti7(),
+                "des_acti8" => $bitacoramtto->getDes_acti8(),
+                "des_acti9" => $bitacoramtto->getDes_acti9(),
+                "des_acti10" => $bitacoramtto->getDes_acti10(),
+                "des_acti11" => $bitacoramtto->getDes_acti11(),
+                "des_acti12" => $bitacoramtto->getDes_acti12(),
+                "des_acti13" => $bitacoramtto->getDes_acti13(),
+                "des_acti14" => $bitacoramtto->getDes_acti14(),
+                "des_acti15" => $bitacoramtto->getDes_acti15(),
                 "reporto" => $bitacoramtto->getReporto(),
-                "des_acti" => $bitacoramtto->getDes_acti(),
                 "ref_usadas1" => $bitacoramtto->getRef_usadas1(),
                 "ref_usadas2" => $bitacoramtto->getRef_usadas2(),
                 "ref_usadas3" => $bitacoramtto->getRef_usadas3(),
@@ -258,6 +310,8 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                 "ref_recomen27" => $bitacoramtto->getRef_recomen27(),
                 "ref_recomen28" => $bitacoramtto->getRef_recomen28(),
                 "ref_recomen29" => $bitacoramtto->getRef_recomen29(),
+                "capacitacion" => $bitacoramtto->getCapacitacion(),
+                "aceptacion_capacitacion" => $bitacoramtto->getAceptacion_capacitacion(),
                 "ref_recomen30" => $bitacoramtto->getRef_recomen30(),
                 "recomendaciones" => $bitacoramtto->getRecomendaciones(),
                 "proxima_inter" => $bitacoramtto->getProxima_inter()
@@ -275,11 +329,27 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
             'modelo' => $obj->modelo,
             'maquina' => $obj->maquina,
             'fecha' => $obj->fecha,
-            'oc' => $obj->oc,
+            'motivo_asistencia' => $obj->motivo_asistencia,
             'tipo' => $obj->tipo,
             'mantenimiento' => $obj->mantenimiento,
+             
+            'consecutivo' => $obj->consecutivo,
             'reporto' => $obj->reporto,
-            'des_acti' => $obj->des_acti,
+            'des_acti1' => $obj->des_acti1,
+            'des_acti2' => $obj->des_acti2,
+            'des_acti3' => $obj->des_acti3,
+            'des_acti4' => $obj->des_acti4,
+            'des_acti5' => $obj->des_acti5,
+            'des_acti6' => $obj->des_acti6,
+            'des_acti7' => $obj->des_acti7,
+            'des_acti8' => $obj->des_acti8,
+            'des_acti9' => $obj->des_acti9,
+            'des_acti10' => $obj->des_acti10,
+            'des_acti11' => $obj->des_acti11,
+            'des_acti12' => $obj->des_acti12,
+            'des_acti13' => $obj->des_acti13,
+            'des_acti14' => $obj->des_acti14,
+            'des_acti15' => $obj->des_acti15,
             'ref_usadas1' => $obj->ref_usadas1,
             'ref_usadas2' => $obj->ref_usadas2,
             'ref_usadas3' => $obj->ref_usadas3,
@@ -340,6 +410,8 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
             'ref_recomen28' => $obj->ref_recomen28,
             'ref_recomen29' => $obj->ref_recomen29,
             'ref_recomen30' => $obj->ref_recomen30,
+            'capacitacion' => $obj->capacitacion,
+            'aceptacion_capacitacion' => $obj->aceptacion_capacitacion,
             'recomendaciones' => $obj->recomendaciones,
             'proxima_inter' => $obj->proxima_inter
         );
@@ -356,7 +428,7 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
     }
 
     function getCliente() {
-        $grupo = $this->db->select('id_cliente, cliente')->where('id_cliente <> 6')->order_by("cliente", "asc")
+          $grupo = $this->db->select('id_cliente, cliente')->where('id_cliente <> 248')->order_by("cliente", "asc")
                 ->get('cliente')
                 ->result();
 
@@ -373,8 +445,24 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
 
         return $options_arr;
     }
+    
+    
+     public function get_by_id($kondisi) {
+        $this->db->where($kondisi);
+        $this->db->from('bitacora_mtto');
+        $query = $this->db->get();
+        return $query->row();
+    }
 
-    public function totalRegistroBitacoraMantenimientoAlejandro() {
+    public function updatedata($data, $kondisi) {
+        $this->db->update('bitacora_mtto', $data, $kondisi);
+        return TRUE;
+    }
+    
+    
+    
+    
+     public function totalRegistroBitacoraMantenimientoAlejandro() {
         $this->db->select('COUNT(*) as total_registros_alejandro');
         $this->db->from('bitacora_mtto');
         $this->db->where('bitacora_mtto.id= ', 24);
@@ -437,70 +525,13 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
         $query = $this->db->get();
         return $query->result();
     }
-
-    public function querybusqueda() {
-        
-    }
-    
-     public function fechaUltimoRegistroAlejandro() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=24 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
-    
-    
-     public function fechaUltimoRegistroCarlos() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=30 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
-    
-    
-    public function fechaUltimoRegistroJorge() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=23 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
-    
-    
-    public function fechaUltimoRegistroMiguel() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=26 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
     
     
     
-      public function fechaUltimoRegistroPablo() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=25 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }  
-    
-    public function fechaUltimoRegistroRodrigo() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=22 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
-      public function fechaUltimoRegistroVeronica() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=21 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
-    
-      
-    
-      
-    
-     
     
     
     
-      public function fechaUltimoRegistroVicente() {
-      $query = $this->db->query('Select b.fecha_insercion as ultima_insercion FROM bitacora_mtto b WHERE b.id=27 Order by b.fecha_insercion DESC limit 1');
-
-        return $query->result();
-    }
-     
+    
+    
 
 }

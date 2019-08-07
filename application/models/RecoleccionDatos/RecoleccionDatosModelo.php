@@ -9,6 +9,7 @@ require 'IModeloAbstracto.php';
  * "Controlar la complejidad es la esencia de la programación"
  * Versión 1 Fecha: 11-04-2019 10:19 am 
  * Versión 2 Fecha: 18-04-2019 10:30 am 
+ * Fecha: 26-06-2019 10:40 am 
  */
 class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
 
@@ -100,11 +101,12 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
             //$query = $this->db->query('SELECT * FROM Venta order by id_venta desc');
 
-            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
                     . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
                     . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
             $this->db->from('recoleccion_datos');
             $this->db->join('users', 'recoleccion_datos.id=users.id');
+            // $this->db->where('users.id= ', 15);
             $this->db->order_by('recoleccion_datos.identificador', 'asc');
 
             $query = $this->db->get();
@@ -113,7 +115,7 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new RecoleccionDatosPojo(
-                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
                         $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
                 );
 
@@ -132,7 +134,7 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
-            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
                     . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
                     . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
             $this->db->from('recoleccion_datos');
@@ -148,15 +150,16 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             $colDatos = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new RecoleccionDatosPojo(
-                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio,
-                        $value->nombre, $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
                 );
 
                 array_push($colDatos, $objeto);
             }
             return $colDatos;
-        } else if ($dataLevel == "is_credito") {
+        }   //condicions que realice la consulta solo si es refacciones
+        else if ($dataLevel == "is_refacciones") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             $data = array(
@@ -166,7 +169,7 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
-            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
                     . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
                     . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
             $this->db->from('recoleccion_datos');
@@ -182,8 +185,76 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             $colDatos = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new RecoleccionDatosPojo(
-                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor,$value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                );
+
+                array_push($colDatos, $objeto);
+            }
+            return $colDatos;
+        }else if ($dataLevel == "is_maquinaria") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+                    . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
+                    . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
+            $this->db->from('recoleccion_datos');
+            $this->db->join('users', 'recoleccion_datos.id=users.id');
+            $this->db->order_by('users.first_name', 'asc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            $this->db->where('users.id= ', $dataLevel);
+            //$query = $this->db->order_by("id_venta", "desc");
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+            $colDatos = array();
+
+            foreach ($query->result() as $key => $value) {
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                );
+
+                array_push($colDatos, $objeto);
+            }
+            return $colDatos;
+        }else if ($dataLevel == "is_credito") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+                    . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
+                    . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
+            $this->db->from('recoleccion_datos');
+            $this->db->join('users', 'recoleccion_datos.id=users.id');
+            $this->db->order_by('users.first_name', 'asc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            $this->db->where('users.id= ', $dataLevel);
+            //$query = $this->db->order_by("id_venta", "desc");
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+            $colDatos = array();
+
+            foreach ($query->result() as $key => $value) {
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
                         $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
                 );
 
@@ -200,7 +271,7 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
-            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+           $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
                     . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
                     . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
             $this->db->from('recoleccion_datos');
@@ -216,8 +287,8 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             $colDatos = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new RecoleccionDatosPojo(
-                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
                         $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
                 );
 
@@ -234,7 +305,7 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
-            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
                     . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
                     . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
             $this->db->from('recoleccion_datos');
@@ -250,9 +321,77 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             $colDatos = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new RecoleccionDatosPojo(
-                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio,
-                        $value->nombre, $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                );
+
+                array_push($colDatos, $objeto);
+            }
+            return $colDatos;
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+                    . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
+                    . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
+            $this->db->from('recoleccion_datos');
+            $this->db->join('users', 'recoleccion_datos.id=users.id');
+            $this->db->order_by('users.first_name', 'asc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            $this->db->where('users.id= ', $dataLevel);
+            //$query = $this->db->order_by("id_venta", "desc");
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+            $colDatos = array();
+
+            foreach ($query->result() as $key => $value) {
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                );
+
+                array_push($colDatos, $objeto);
+            }
+            return $colDatos;
+        }else if ($dataLevel == "is_director") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+                    . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
+                    . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
+            $this->db->from('recoleccion_datos');
+            $this->db->join('users', 'recoleccion_datos.id=users.id');
+            $this->db->order_by('users.first_name', 'asc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            //$this->db->where('users.id= ', $dataLevel);
+            //$query = $this->db->order_by("id_venta", "desc");
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+            $colDatos = array();
+
+            foreach ($query->result() as $key => $value) {
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor , $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
                 );
 
                 array_push($colDatos, $objeto);
@@ -268,14 +407,14 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
-            $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
+     $this->db->select('recoleccion_datos.id_recolecion_datos,recoleccion_datos.vendedor,recoleccion_datos.identificador, recoleccion_datos.nombre_empresa, recoleccion_datos.estado,'
                     . 'recoleccion_datos.ciudad, recoleccion_datos.domicilio, recoleccion_datos.nombre, recoleccion_datos.cargo, recoleccion_datos.email, recoleccion_datos.tel, '
                     . 'recoleccion_datos.nombre2,recoleccion_datos.cargo2,recoleccion_datos.email2, recoleccion_datos.tel2, recoleccion_datos.comentarios, users.first_name');
             $this->db->from('recoleccion_datos');
             $this->db->join('users', 'recoleccion_datos.id=users.id');
             $this->db->order_by('users.first_name', 'asc');
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
-            //$this->db->where('users.id= ', $dataLevel);
+            $this->db->where('users.id= ', $dataLevel);
             //$query = $this->db->order_by("id_venta", "desc");
             //tree los datos de la consulta
             $query = $this->db->get();
@@ -284,11 +423,10 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
             $colDatos = array();
 
             foreach ($query->result() as $key => $value) {
-                $objeto = new RecoleccionDatosPojo(
-                        $value->id_recolecion_datos, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio,
-                        $value->nombre, $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
+                 $objeto = new RecoleccionDatosPojo(
+                        $value->id_recolecion_datos,$value->vendedor, $value->identificador, $value->nombre_empresa, $value->estado, $value->ciudad, $value->domicilio, $value->nombre, 
+                        $value->cargo, $value->email, $value->tel, $value->nombre2, $value->cargo2, $value->email2, $value->tel2, $value->comentarios,$value->first_name
                 );
-
                 array_push($colDatos, $objeto);
             }
             return $colDatos;
@@ -300,6 +438,8 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
     public function update($recoleccion_datos) {
         if ($recoleccion_datos instanceof RecoleccionDatosPojo) {
             $datos = array(
+                "vendedor" => $recoleccion_datos->getVendedor(),
+                 
                 "identificador" => $recoleccion_datos->getIdentificador(),
                 "nombre_empresa" => $recoleccion_datos->getNombre_empresa(),
                 "estado" => $recoleccion_datos->getEstado(),
@@ -324,6 +464,9 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
         $objj = $this->db->query("Select * from recoleccion_datos where id_recolecion_datos=$id_recolecion_datos");
         $obj = $objj->row();
         $dp = array('id_recolecion_datos' => $obj->id_recolecion_datos,
+              'vendedor' => $obj->vendedor,
+            
+            
             'identificador' => $obj->identificador,
             'nombre_empresa' => $obj->nombre_empresa,
             'estado' => $obj->estado,
@@ -352,15 +495,7 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
     }
     
     
-       public function totalRegistroEmpresaAlethia()
-    {
-            $this->db->select('COUNT(*) as total_registros_alethia');
-            $this->db->from('recoleccion_datos');
-           $this->db->where('recoleccion_datos.id= ', 15);
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
+      
         
            public function totalRegistroEmpresaBerenice()
     {
@@ -400,6 +535,55 @@ class RecoleccionDatosModelo extends CI_Model implements IModeloAbstracto {
              return $query->result();
         }
         
-       
+        
+            public function totalRegistroEmpresaKaren()
+    {
+            $this->db->select('COUNT(*) as total_registros_karen');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 2);
+            $query = $this->db->get();
+             return $query->result();
+        }
+
+        
+               public function totalRegistroEmpresaSaul()
+    {
+            $this->db->select('COUNT(*) as total_registros_saul');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 1);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+         public function totalRegistroEmpresaAlethia()
+    {
+           
+             $query = $this->db->query('SELECT COUNT(*) as total_registros_alethia FROM recoleccion_datos r  where r.id=15 and r.identificador <> "Información compartida"');
+          /* $this->db->select('COUNT(*) as total_registros_alethia');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 15);
+            $query = $this->db->get();*/
+             return $query->result();
+        }
+        
+        
+        
+        
+               public function totalRegistroEmpresaAlehiaExistente()
+    {
+                   
+                   
+                   
+                    $query = $this->db->query('SELECT COUNT(*) as total_registros_alethia_existente FROM recoleccion_datos r  where r.id=15 and r.identificador="Información compartida"');
+            /*$this->db->select('COUNT(*) as total_registros_alethia_existente');
+            $this->db->from('recoleccion_datos');
+           $this->db->where('recoleccion_datos.id= ', 15);
+            $this->db->where('recoleccion_datos.identificador= ', '');
+            $query = $this->db->get();*/
+             return $query->result();
+        }
+    public function querybusqueda() {
+        
+    }
 
 }

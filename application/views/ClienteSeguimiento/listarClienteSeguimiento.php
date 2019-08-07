@@ -52,7 +52,7 @@
         
         
         <div class="container" style="margin-top:1px;">
-            <center>  <h1>Control SIC</h1></center>
+            <center>  <h1>Control SIM</h1></center>
 
 
 
@@ -73,7 +73,9 @@
             echo '<td><a  class="btn btn-success" href="ClienteSeguimiento/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
             echo '</div>';
         } else if ($dataLevel == 'is_editor') {
-            
+             echo '<div class="text-center">';
+            echo '<td><a  class="btn btn-success" href="ClienteSeguimiento/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
+            echo '</div>';
         }  else if ($dataLevel == 'is_director') {
             
         }
@@ -85,14 +87,14 @@
         }
         ?>
                 <br>
-         <div class="text-center">
+       <!--  <div class="text-center">
        
              
                  <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelClienteSeguimiento">
 
                         <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:16px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
                     </form>   
-         </div> 
+         </div> -->
             
             
         </div>
@@ -112,14 +114,55 @@
                     <thead >
                         <tr >
                             
+                             <?php
+                            if ($dataLevel == 'is_admin') {
+                               
+                               
+                                echo '<th class="header" colspan="2" style="text-align:center;">Acción</th>';
+                            } else if ($dataLevel == 'is_editor') {
+                                echo '<th class="header" colspan="2" style="text-align:center;" >Acción</th>';
+                               // echo '<th class="header">Fecha De Inserción</th>';
+                               // echo '<th class="header">Fecha de Modificación</th>';
+                            } else if ($dataLevel == 'is_maquinaria') {
 
+                                echo '<th class="header" style="text-align:center;" colspan="1" >Modificar</th>';
+                            }else if ($dataLevel == 'is_maquinaria_refacciones') {
+
+                                echo '<th class="header" style="text-align:center;" colspan="2" >Acción</th>';
+                            }  else if ($dataLevel == 'is_refacciones') {
+
+
+                                echo '<th class="header" style="text-align:center;" colspan="2" >Acción</th>';
+                            } else if ($dataLevel == 'is_Gerente_Ventas') {
+                          
+                           // echo '<th class="header">Fecha De Inserción</th>';
+                             //   echo '<th class="header">Fecha de Modificación</th>';
+                                  echo '<th class="header" style="text-align:center;" colspan="1" >Modificar</th>';
+                       
+                        } else if ($dataLevel == 'is_director') {
+                          
+                           // echo '<th class="header">Fecha De Inserción</th>';
+                              //  echo '<th class="header">Fecha de Modificación</th>';
+                        } 
+                            else {
+                                
+                            }
+                            ?>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <?php
                             if ($dataLevel == 'is_admin') {
                                 echo '<th class="header">Usuario</th>';
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<th class="header">Usuario</th>';
                             } else if ($dataLevel == 'is_Gerente_Ventas') {
-                                echo '<th class="header">Usuario</th>';
+                                
                             } 
                             else if ($dataLevel == 'is_director') {
                                 echo '<th class="header">Usuario</th>';
@@ -129,56 +172,21 @@
                             }
                             ?>
 
-                            <th class="header">Grupo</th>
+                           
                             <th class="header">Cliente</th>
-                            <th class="header">Prioridad</th>
-                            <th class="header">Estatus</th>
-                            <th class="header">Necesidad</th>
-                            <th class="header">Fecha de Cotización</th>
-                            <th class="header">Archivo</th>
-
-                            <th class="header">Fecha a Contactar</th>
+                            <th class="header">Nivel</th>
+                            <th style="width:45px;">Necesidad</th>
                             <th class="header">Compromiso</th>
-                            <th class="header">Notas</th>
+                            <th  style="width:45px;" class="header">Notas</th>
+
+                            <th class="header">Cotización</th>
+                            <th class="header">Pedido</th>
+                            <th class="header">Contrato</th>
 
 
 
 
-                            <?php
-                            if ($dataLevel == 'is_admin') {
-                               
-                                echo '<th class="header">Fecha De Inserción</th>';
-                                echo '<th class="header">Fecha de Modificación</th>';
-                                echo '<th class="header" colspan="2" >Acción</th>';
-                            } else if ($dataLevel == 'is_editor') {
-
-                                echo '<th class="header">Fecha De Inserción</th>';
-                                echo '<th class="header">Fecha de Modificación</th>';
-                            } else if ($dataLevel == 'is_maquinaria') {
-
-                                echo '<th class="header" colspan="2" >Acción</th>';
-                            }else if ($dataLevel == 'is_maquinaria_refacciones') {
-
-                                echo '<th class="header" colspan="2" >Acción</th>';
-                            }  else if ($dataLevel == 'is_refacciones') {
-
-
-                                echo '<th class="header" colspan="2" >Acción</th>';
-                            } else if ($dataLevel == 'is_Gerente_Ventas') {
-                          
-                            echo '<th class="header">Fecha De Inserción</th>';
-                                echo '<th class="header">Fecha de Modificación</th>';
-                            
-                        } else if ($dataLevel == 'is_director') {
-                          
-                            echo '<th class="header">Fecha De Inserción</th>';
-                                echo '<th class="header">Fecha de Modificación</th>';
-                            
-                        } 
-                            else {
-                                
-                            }
-                            ?>
+                           
 
 
                         </tr>
@@ -188,8 +196,34 @@
 
                     <?php
                     foreach ($clienteseguimiento as $obj) {
-                        echo '<tr><td>';
+                        echo '<tr>';
                         
+                        
+                        //compara si es administrador
+                        if ($dataLevel == 'is_admin') {
+                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteSeguimiento/eliminar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_editor') {
+                                 echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteSeguimiento/eliminar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                       
+                        }else if ($dataLevel == 'is_Gerente_Ventas') {
+                                echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        
+                        }else if ($dataLevel == 'is_maquinaria') {
+                                echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        
+                        }else if ($dataLevel == 'is_director') {
+                            
+                        }
+                        
+                        else {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        }
+
+                        
+                        
+                          echo '<td>';
                         if ($dataLevel == 'is_admin') {
                             echo 
                              $obj->getFirst_name() .
@@ -202,10 +236,7 @@
                                    '<td>'
                             ;
                         }else if ($dataLevel == 'is_Gerente_Ventas') {
-                            echo $obj->getFirst_name() .
-                            '</td>'.
-                                   '<td>'
-                            ;
+                           
                         }else if ($dataLevel == 'is_director') {
                             echo $obj->getFirst_name() .
                             '</td>'.
@@ -218,32 +249,14 @@
 
                         
                         echo 
-                         $obj->getGrupo() .
+                         $obj->getCliente() .
                         '</td>'
-                        . '<td>'
-                        . $obj->getCliente() .
+                         . '<td>'
+                        . $obj->getNivel() .
                         '</td>'
-                        . '<td>'
-                        . $obj->getPrioridad() .
-                        '</td>'
-                        . '<td>'
-                        . $obj->getEstatus() .
-                        '</td>'
+                               
                         . '<td>'
                         . $obj->getNecesidad() .
-                        '</td>'
-                        . '<td>'
-                        . $obj->getFecha_cotizacion() .
-                        '</td>';
-                        
-                          if($obj->getArchivo1() != null) {
-                                echo '<td width="250px"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/bitacora/' . $obj->getArchivo1() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
-                            } else {
-                                echo '<td>Sin Archivo</td>';
-                            }
-                            
-                        echo '<td>'
-                        . $obj->getFecha_contactar() .
                         '</td>'
                         . '<td>'
                         . $obj->getCompromiso() .
@@ -251,65 +264,47 @@
                         . '<td>'
                         . $obj->getNotas() .
                         '</td>'
-
-                        ;
-
-
-
-                        if ($dataLevel == 'is_admin') {
-                            echo'<td>'
-                            . $obj->getFecha_insercion() .
-                            '</td>'
-                            . '<td>'
-                            . $obj->getFecha_modificacion() .
-                            '</td>';
-                        } else if ($dataLevel == 'is_editor') {
-                            echo
-                            '<td>'
-                            . $obj->getFecha_insercion() .
-                            '</td>'
-                            . '<td>'
-                            . $obj->getFecha_modificacion() .
-                            '</td>';
-                        }else if ($dataLevel == 'is_Gerente_Ventas') {
-                            echo'<td>'
-                            . $obj->getFecha_insercion() .
-                            '</td>'
-                            . '<td>'
-                            . $obj->getFecha_modificacion() .
-                            '</td>';
-                         
-                        }else if ($dataLevel == 'is_director') {
-                            echo'<td>'
-                            . $obj->getFecha_insercion() .
-                            '</td>'
-                            . '<td>'
-                            . $obj->getFecha_modificacion() .
-                            '</td>';
-                         
-                        }
-                        else {
-                            
-                        }
-
-
-
-                        //compara si es administrador
-                        if ($dataLevel == 'is_admin') {
-                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteSeguimiento/eliminar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
-                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/obtener/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                        } else if ($dataLevel == 'is_editor') {
-                            
-                        }else if ($dataLevel == 'is_Gerente_Ventas') {
-                            
-                        }else if ($dataLevel == 'is_director') {
-                            
-                        }
+                ;
                         
-                        else {
-                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/obtener/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-                        }
+                          if($obj->getCotizacion() != null) {
+                              
+                              
+                              echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getCotizacion() . '"><img width=100" height="100" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
+                               </a></center></td>';
+                            } else {
+                                echo '<td><center><img src="http://rubiotarifa.es/imagenes/atencion.gif" width=75" height="75"/></center></td>';
+                            }
+                            
+                            
+                              if($obj->getPedido() != null) {
+                                  
+                                  echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getPedido() . '"><img width=100" height="100" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
+                               </a></center></td>';
+                                  
+                                  
+                           } else {
+                                echo '<td><center><img src="http://rubiotarifa.es/imagenes/atencion.gif" width=75" height="75"/></center></td>';
+                            }
+                            
+                            
+                              if($obj->getContrato() != null) {
+                                  
+                                   echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getContrato() . '"><img width=100" height="100" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
+                               </a></center></td>';
+                                  
+                                  
+                            } else {
+                                echo '<td><center><img src="http://rubiotarifa.es/imagenes/atencion.gif" width=75" height="75"/></center></td>';
+                           }
+                            
+                       
 
+
+                        
+
+
+
+                        
                         //echo "<td><a href='" . base_url() . "ClienteSeguimiento/eliminar/" . $obj->getId_clienteseguimiento() . "'>Elimina</a></td>";
                         //  echo "<td><a href=" . base_url() . "ClienteSeguimiento/obtener/" . $obj->getId_clienteseguimiento() . ">Actualizar</a></td>";
                     }

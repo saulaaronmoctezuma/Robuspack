@@ -273,3 +273,7 @@ ERROR - 2019-06-06 11:42:00 --> Severity: Notice --> Undefined index: pedimentop
 ERROR - 2019-06-06 11:42:10 --> Página no encontrada: Assets/font
 ERROR - 2019-06-06 11:43:53 --> Página no encontrada: Assets/font
 ERROR - 2019-06-06 11:44:02 --> Página no encontrada: Assets/font
+ERROR - 2019-06-06 12:12:55 --> Página no encontrada: Assets/font
+ERROR - 2019-06-06 13:13:35 --> Página no encontrada: Assets/font
+ERROR - 2019-06-06 13:13:44 --> Página no encontrada: Assets/font
+ERROR - 2019-06-06 13:13:50 --> Página no encontrada: Assets/font

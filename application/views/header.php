@@ -16,95 +16,91 @@ $theme = $result->theme;
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php echo $title; ?></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
          <link rel="icon" href="<?= base_url('assets/images/robuspack_icon.png') ?>">
        
         <!--CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url().'public/css/main.css' ?>">
-        
-        
+    <!--    <link rel="stylesheet" href="<?php echo base_url().'assets/css/cosmobootstrap.min.css' ?>">-->
+       
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         
         
-     
-        
+        <!--´Para el filtro por busqueda por cierta cantidad-->
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+      
+      
+      
+      
+      
+         <!--´Para el filtro por busqueda por cierta cantidad-->
     </head>
-        <style >
-                body{
-	
-	
-	
-	
-	font-family: Ariañ, arial, sans-serif;
-}
-.to-top{
-	color:black;
-	padding-top:1.8em;
-	display:inline-block;/* or block */
-	position:relative;
-	border-color:white;
-	text-decoration:none;
-	transition:all .3s ease-out;
-}
-.to-top:before{
-	content:'▲';
-	font-size:.9em;
-	position:absolute;
-	top:0;
-	left:50%;
-	margin-left:-.7em;
-	border:solid .13em white;
-	border-radius:10em;
-	width:1.4em;
-	height:1.4em;
-	line-height:1.3em;
-	border-color:inherit;
-	transition:transform .5s ease-in;
-}
-.to-top:hover{
-	color:pink;
-	border-color:pink;
-}
-.to-top:hover:before{
-	transform: rotate(360deg);
-}
-
-
-.to-abajo{
-	color:black;
-	padding-top:1.8em;
-	display:inline-block;/* or block */
-	position:relative;
-	border-color:white;
-	text-decoration:none;
-	transition:all .3s ease-out;
-}
-.to-abajo:before{
-	content:'▼';
-	font-size:.9em;
-	position:absolute;
-	top:0;
-	left:50%;
-	margin-left:-.7em;
-	border:solid .13em white;
-	border-radius:10em;
-	width:1.4em;
-	height:1.4em;
-	line-height:1.3em;
-	border-color:inherit;
-	transition:transform .5s ease-in;
-}
-.to-abajo:hover{
-	color:pink;
-	border-color:pink;
-}
-.to-abajo:hover:before{
-	transform: rotate(360deg);
-}
-        </style>
+     
    <!--<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">-->
+    <style>
     
+     #toTop {
+        position: fixed;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background: #999999;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        width: 55px;
+        height: 55px;
+        bottom: 5px;
+        left: 5px;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 32px;
+        text-align: center;
+        display: none;
+        padding: 10px 0 0 2px;
+        z-index: 14;
+    }
+   
+    tfoot {
+    display: table-header-group;
+}
+
+
+
+
+
+
+
+
+
+
+p, h1, h2, h3, h4, h5, table{
+font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+    </style>
+
    <body>
    <!--<center>  <a name="arriba"></a></center>-->

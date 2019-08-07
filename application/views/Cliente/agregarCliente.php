@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
 
-   
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $header ?>
     <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
@@ -23,11 +23,13 @@
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Bienvenido</strong> Agrega los datos segun corresponda
             </div>
-            <center> <h4>Agregar Cliente </h4></center>
+
+    
+
+            <center> <h3>Agregar Cliente </h3></center>
             <MARQUEE SCROLLDELAY =200></MARQUEE>
             <form name="formulario" id="formal" role="form" action="<?= base_url('Cliente/formularioAgregar') ?>" method="POST" onsubmit="return valida()">
 
-sd
                 <div class="form-group">
                     <input type="hidden" class="form-control" id="id_maquinaria"  name="id_maquinaria">
                 </div>
@@ -46,11 +48,11 @@ sd
                     <div class="row">
                         <div class="form-group  col-xs-4">
                             <label for="nombre">Cliente SAE Pesos</label>
-                            <input id="a3" type="number" class="form-control input-sm"  name="cliente_sae" placeholder="Introduce el cliente sae" >
+                            <input id="a3" type="text" class="form-control input-sm"  name="cliente_sae" placeholder="Introduce el cliente sae" >
                         </div>
                         <div class="form-group  col-xs-4">
                             <label for="nombre">Cliente SAE Dolares</label>
-                            <input id="a3" type="number" class="form-control input-sm"  name="cliente_sae_dolares" placeholder="Introduce el cliente sae dolares" >
+                            <input id="a3" type="text" class="form-control input-sm"  name="cliente_sae_dolares" placeholder="Introduce el cliente sae dolares" >
                         </div>
                         <div class="form-group  col-xs-4">
                             <label for="nombre">Razón Social</label>
@@ -120,7 +122,7 @@ sd
 
 
                     <br>    
-                   
+
 
                     <div class="row">
 
@@ -246,7 +248,14 @@ sd
                             <label for="nombre">Dirección Entrega</label>
                             <input id="a5" type="text" class="form-control input-sm"  name="direccion_entrega" placeholder="Introduce la dirección" >
                         </div>
-
+                        <div class="form-group col-xs-4">
+                            <label>Empresa</label><br>
+                            <select  name="empresa" class="form-control input-sm"  id="empresa" require>
+                                <option  value="">Selecciona una opción</option>
+                                <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                                <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+                            </select>
+                        </div>
 
                     </div>
                 </div>

@@ -1,7 +1,10 @@
 <!--
  * @author  Saul González & Karen González
- * Fecha : Ultimo Cambio 26/03/2019 Hora 10:15 pm
-   Fecha : Ultimo Cambio 03/0/2019 Hora 10:36 pm
+* Fecha : Ultimo Cambio 26/03/2019 Hora 10:15 pm
+ * Fecha : Ultimo Cambio 03/04/2019 Hora 10:36 pm
+ * * Fecha : Ultimo Cambio 20/07/2019 Hora 5:47 pm  
+Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
+   
  * Sistema de Control Robuspack
  */-->
 <!DOCTYPE html>
@@ -14,52 +17,205 @@
 
         <!-- Bootstrap -->
 
-        <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
-   <!-- Para traerse el rol que esta registrado-->
+
+        <!-- Para traerse el rol que esta registrado-->
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
 
-       
+
         //check user level
         ?>
-    </head>
-    <body>
-       
-            <!--<div class="container">
-              <h1>Agregar placa nuevo</h1>
-              <hr>
-            </div>-->
 
-            <!-- KONTEN UTAMA -->
-            <div class="container">
-                <h3>Agregar Registro</h3><br>
-                
-                <div class="row">
-                    <form action="<?= base_url() ?>verificacion/insertdata" method="post" enctype="multipart/form-data">
-                  <!--
-                  '. form_dropdown('cliente', $clienteCombo, '#', 'id="cliente"').'<br>
-                  -->
-                           <?php
-                    if ($dataLevel == 'is_admin') {
-                        echo '
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        function showContent() {
+            element = document.getElementById("content");
+            elementempresa = document.getElementById("contentempresa");
+            check = document.getElementById("check");
+            if (check.checked) {
+
+                element.style.display = 'block';
+                elementempresa.style.display = 'none';
+                deseleccionarClienteCombo();
+
+            }
+            else {
+
+                element.style.display = 'none';
+                elementempresa.style.display = 'block';
+                limpiarCajaTextoCliente();
+            }
+        }
+
+        function limpiarCajaTextoCliente() {
+            document.getElementById('cliente_temporal').value = "";
+        }
+
+        function deseleccionarClienteCombo() {
+            document.getElementById("cliente").selectedIndex = 0;
+
+        }
+    </script>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+    <div id="maquinaria"> <BR>
+        <div class="container" >      
+            <div class="alert alert-info alert-dismissable">
+
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Agregar</strong> Ingresa los datos según corresponda
+            </div>
+            <!--<h1>Agregar Datos</h1>-->
+            <MARQUEE SCROLLDELAY =200></MARQUEE>
+            <form name="formulario" id="formal" role="form"  action="<?= base_url() ?>verificacion/insertdata" method="post" enctype="multipart/form-data">
+
+
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="id_maquinaria"  name="id_clienteseguimiento">
+                </div>
+                <div class="jumbotron">
+                    <div class="row">
+
+                        <?php
+                        if ($dataLevel == 'is_admin') {
+                            echo '
+                            
+                         <div class="row">
+                        <div class="form-group col-xs-4">
                         <label>No máquina</label><br>
-                        <input form-control  style="width: 270px; height: 35px" type="text" name="no_maqui"><br><br>
-                       
-
-
-                        <div class="row">
-                        <div class="form-group col-xs-3">
+                        <input class="form-control input-sm"  type="text" name="no_maqui"><br>
+                        </div>
+                        
+                        <div class="form-group col-xs-4">
                         <label>Modelo</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="modelo"><br><br>
+                        <input type="text" class="form-control input-sm"   name="modelo"><br>
+                        </div>
+                       
+                        <div class="form-group col-xs-4">
+                        <label>Empresa</label><br>
+                        <select  name="empresa" class="form-control input-sm"  id="empresa" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                        <OPTect><br>
+                        </div>ION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+                        </select><br>
                         </div>
                         </div>
                         
+                     <div class="row">
+                        <div class="form-group col-xs-4">
+                         <label>Serie</label><br>
+                        <input type="text" class="form-control input-sm" name="serie"><br>
+                            </div></div>
+                        
+                        ';
+                            ?>
+
+                            <div class="form-group col-xs-4" id="contentempresa" style="display: block;">
+                                <label for="nombre">Cliente</label>
+                                <select required id="cliente" onChange="habilitar(this.form)" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group col-xs-4" id="content" style="display: none;">
+                                <label for="nombre">Cliente</label>
+                                <input type="text" id="cliente_temporal" class="form-control input-sm" name="cliente_temporal"><br>
+                            </div>
+
+
+                            <div class="form-group col-xs-4">
+                                <label>No. Pedimento</label><br>
+                                <input type="text" class="form-control input-sm" name="pedimento"><br>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
 
                         <div class="row">
-                        <div class="form-group col-xs-3">
+                            <div class="form-group col-xs-4 "></div>
+                            <div class="form-group col-xs-4"> <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                                <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+                            </div>
+                        </div>
+                        <?php
+                        echo '
+                        <!--<label>Cliente</label><br>
+                        <input type="text" class="form-control input-sm" name="cliente"><br><br>-->
+                       
+                         <div class="row">
+                        
+                           
+                        <div class="form-group col-xs-4">
+                         <label>Pedimento</label><br>
+                         <input type="file" name="pedimentopdf"><br>
+                               </div>
+                            
+
+                         <div class="form-group col-xs-4">
+                        <label>Foto</label><br>
+                        <input type="file" name="fotopost"><br>
+                         </div>
+                          <div class="form-group col-xs-4">
+                        <label>No. Factura</label><br>
+                        <input class="form-control input-sm" type="text" name="num_factura"><br>
+                         </div>
+</div>
+
+                    <div class="row">
+                   
+                          
+                              <div class="form-group col-xs-4">
+                        <label>Factura</label>
+                        <input type="file" name="fotopostpdf">
+                        </div>
+                         <div class="form-group col-xs-4">
+                        <label>Refacciones</label><br>
+                        <input type="file" name="refacciones"><br>
+                        </div>
+                        </div>
+                        ';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '
+                            
+                          <div class="row">
+                        <div class="form-group col-xs-4">
+                        <label>No máquina</label><br>
+                        <input class="form-control input-sm"  type="text" name="no_maqui"><br>
+                        </div>
+                        
+                        <div class="form-group col-xs-4">
+                        <label>Modelo</label><br>
+                        <input type="text" class="form-control input-sm"   name="modelo"><br>
+                        </div>
+                       
+                        <div class="form-group col-xs-4">
                         <label>Empresa</label><br>
-                        <select  name="empresa" class="form-control " id="empresa" require>
+                        <select  name="empresa" class="form-control input-sm"  id="empresa" require>
                         <option  value="">Selecciona una opción</option>
                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
@@ -67,164 +223,212 @@
                         </div>
                         </div>
                         
-                        <label>Serie</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="serie"><br><br>
+                     <div class="row">
+                        <div class="form-group col-xs-4">
+                         <label>Serie</label><br>
+                        <input type="text" class="form-control input-sm" name="serie"><br>
+                            </div>
                         
-                        <label>Cliente</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="cliente"><br><br>
+                        ';
+                        ?>
+
+                        <div class="form-group col-xs-4" id="contentempresa" style="display: block;">
+                            <label for="nombre">Cliente</label>
+                            <select required id="cliente" onChange="habilitar(this.form)" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group col-xs-4" id="content" style="display: none;">
+                            <label for="nombre">Cliente</label>
+                            <input id="cliente_temporal" type="text" class="form-control input-sm" name="cliente_temporal"><br>
+                        </div>
+
+
+                        <div class="form-group col-xs-4">
+                            <label>No. Pedimento</label><br>
+                            <input type="text" class="form-control input-sm" name="pedimento"><br>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="form-group col-xs-4"></div>
+                        <div class="form-group col-xs-4"> <input type="checkbox" name="check" id="check" value="1" onchange="javascript
+                                :showContent()" />
+                            <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+                        </div>
+                    </div>
+                    <?php
+                    echo '
+                        <!--<label>Cliente</label><br>
+                        <input type="text" class="form-control input-sm" name="cliente"><br><br>-->
                        
-                        <label>No. Pedimento</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="pedimento"><br><br>
+                         <div class="row">
                         
+                           
+                        <div class="form-group col-xs-4">
                          <label>Pedimento</label><br>
                          <input type="file" name="pedimentopdf"><br>
+                               </div>
                             
+
+                         <div class="form-group col-xs-4">
                         <label>Foto</label><br>
                         <input type="file" name="fotopost"><br>
-                        
+                         </div>
+                          <div class="form-group col-xs-4">
                         <label>No. Factura</label><br>
-                        <input style="width: 270px; height: 35px" type="text" name="num_factura"><br><br>
-                        
-                        <label>Factura</label><br>
-                        <input type="file" name="fotopostpdf"><br>
-                        
+                        <input class="form-control input-sm" type="text" name="num_factura"><br>
+                         </div>
+</div>
+
+                    <div class="row">
+                   
+                          
+                              <div class="form-group col-xs-4">
+                        <label>Factura</label>
+                        <input type="file" name="fotopostpdf">
+                        </div>
+                         <div class="form-group col-xs-4">
                         <label>Refacciones</label><br>
                         <input type="file" name="refacciones"><br>
+                        </div>
+                        </div>
                         ';
-                    } else  if ($dataLevel == 'is_editor') {
-                        echo '<label>No máquina</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="no_maqui"><br><br>
-                        
-                        <label>Modelo</label><br>
-                        <input type="text"  style="width: 270px; height: 35px"name="modelo"><br><br>
-                        
-                         <div class="row">
-                         <div class="form-group col-xs-3">
-                         <label>Empresa</label><br>
-                         <select name="empresa" class="form-control " id="empresa" require>
-                         <option  value="">Selecciona una opción</option>
-                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
-                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
-                         </select><br>
-                         </div>
-                         </div> 
+                } else if ($dataLevel == 'is_logistica') {
+                    echo '
                          
-                        <label>Serie</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="serie"><br><br>
-                        
-                        <label>Cliente</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="cliente"><br><br>
-                        
-                        <label>No. Pedimento</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="pedimento"><br><br>
-                        
-                         <label>Pedimento PDF</label><br>
-                         <input type="file" name="pedimentopdf"><br>
-
-                        <label>Foto de la placa</label><br>
-                        <input type="file" name="fotopost"><br>
-                        
-                        <label>No. Factura</label><br>
-                        <input style="width: 270px; height: 35px" type="text" name="num_factura"><br><br>
-
-                        <label>Factura</label><br>
-                        <input type="file" name="fotopostpdf"><br>
-                        
-                        <label>Refacciones</label><br>
-                        <input type="file" name="refacciones"><br>
-
-                    ';
-                        
-                        
-                    }
-                    else if ($dataLevel == 'is_logistica') {
-                       echo '
+                        <div class="row">
+                        <div class="form-group col-xs-4">
                         <label>No máquina</label><br>
-                        <input style="width: 270px; height: 35px"  type="text" name="no_maqui"><br><br>
+                        <input class="form-control input-sm"  type="text" name="no_maqui"><br>
+                        </div>
                         
+                        <div class="form-group col-xs-4">
                         <label>Modelo</label><br>
-                        <input  style="width: 270px; height: 35px"  type="text" name="modelo"><br><br>
+                        <input type="text" class="form-control input-sm"   name="modelo"><br>
+                        </div>
+                       
+                        <div class="form-group col-xs-4">
+                        <label>Empresa</label><br>
+                        <select  name="empresa" class="form-control input-sm"  id="empresa" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                        <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+                        </select><br>
+                        </div>
+                        </div>
                         
+                     <div class="row">
+                        <div class="form-group col-xs-4">
+                         <label>Serie</label><br>
+                        <input type="text" class="form-control input-sm" name="serie"><br>
+                            </div>
+                        
+                        ';
+                            ?>
+
+                            <div class="form-group col-xs-4" id="contentempresa" style="display: block;">
+                                <label for="nombre">Cliente</label>
+                                <select required id="cliente" onChange="habilitar(this.form)" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group col-xs-4" id="content" style="display: none;">
+                                <label for="nombre">Cliente</label>
+                                <input type="text" id="cliente_temporal" class="form-control input-sm" name="cliente_temporal"><br>
+                            </div>
+
+
+                            <div class="form-group col-xs-4">
+                                <label>No. Pedimento</label><br>
+                                <input type="text" class="form-control input-sm" name="pedimento"><br>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-4 "></div>
+                            <div class="form-group col-xs-4"> <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                                <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+                            </div>
+                        </div>
+                        <?php
+                        echo '
+                        <!--<label>Cliente</label><br>
+                        <input type="text" class="form-control input-sm" name="cliente"><br><br>-->
+                       
                          <div class="row">
-                         <div class="form-group col-xs-3">
-                         <label>Empresa</label><br>
-                         <select name="empresa" class="form-control " id="empresa" require>
-                         <option  value="">Selecciona una opción</option>
-                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
-                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
-                         </select><br>
-                         </div>
-                         </div>
-             
-                        <label>Serie</label><br>
-                        <input style="width: 270px; height: 35px"  type="text" name="serie"><br><br>
                         
-                        <label>Cliente</label><br>
-                        <input style="width: 270px; height: 35px"  type="text" name="cliente"><br><br>
-                        
+                           
+                        <div class="form-group col-xs-4">
+                         <label>Pedimento</label><br>
+                         <input type="file" name="pedimentopdf"><br>
+                               </div>
+                            
 
-                        <label>No. Pedimento</label><br>
-                        <input style="width: 270px; height: 35px"  type="text" name="pedimento"><br><br>
-                        
-                        <label>Pedimento</label><br>
-                        <input style="width: 270px; height: 35px"  type="file" name="pedimentopdf"><br>
-
-                        
+                         <div class="form-group col-xs-4">
                         <label>Foto</label><br>
                         <input type="file" name="fotopost"><br>
-                        
+                         </div></div>
                         <input type="hidden" name="num_factura">
-
+                        <input type="hidden" name="factura">
+                        <input type="hidden" name="refacciones">
                         ';
-                    } else if ($dataLevel == 'is_credito') {
-                        echo '
+                } else if ($dataLevel == 'is_credito') {
+                    echo '
                         <label>Factura</label><br>
                         <input type="file" name="fotopostpdf"><br>';
-                        
-                    } else if ($dataLevel == 'is_refacciones') {
-                       echo '
+                } else if ($dataLevel == 'is_refacciones') {
+                    echo '
                         <label>Foto</label><br>
                         <input type="file" name="fotopost"><br>
                         
 ';
-                    } else {
-                        
-                    }
-                    ?>
-                        
-                        
-                        <!--<label>No máquina</label><br>
-                        <input type="text" name="no_maqui"><br><br>
-                        <label>Modelo</label><br>
-                        <input type="text" name="modelo"><br><br>
+                } else {
+                    
+                }
+                ?>
 
-                        <label>Serie</label><br>
-                        <input type="text" name="serie"><br><br>
-                        <label>Cliente</label><br>
-                        <input type="text" name="cliente"><br><br>
-                        <label>Pedimento</label><br>
-                        <input type="text" name="pedimento"><br><br>
 
-                        <label>Foto</label><br>
-                        <input type="file" name="fotopost"><br>
 
-                        <label>Factura</label><br>
-                        <input type="file" name="fotopostpdf"><br>-->
-                        
-                        
-                        
-                        
-                        
-                        <input type="submit" name="submit" value="Agregar" class="btn btn-success">
-                        <a title="Da clic para regresar" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
 
-                    </form>
 
-                </div>
-            </div>
-            <!-- END KONTEN UTAMA -->
 
-            <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
-            <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-        </body>
-    </html>
+
+                <center><input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+
+                    <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
+                </center>
+            </form>
+
+        </div>
+    </div>
+    <!-- END KONTEN UTAMA -->
+
+    <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+
+</body>
+</html>

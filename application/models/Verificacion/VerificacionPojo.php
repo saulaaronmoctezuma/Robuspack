@@ -5,6 +5,7 @@
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 26/03/2018 Hora 10:15 pm
  * Fecha : Ultimo Cambio 03/0/2019 Hora 10:36 pm
+ * Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
  * Sistema de Control Robuspack
  */
 
@@ -16,6 +17,7 @@ class verificacionPojo {
     private $empresa;
     private $serie;
     private $cliente;
+    private $cliente_temporal;
     private $pedimento;
     private $pedimentoodf;
     private $placa;
@@ -23,13 +25,14 @@ class verificacionPojo {
     private $factura;
     private $refacciones;
 
-    function __construct($id, $no_maqui, $modelo, $empresa, $serie, $cliente, $pedimento, $pedimentoodf, $placa, $num_factura, $factura, $refacciones) {
+    function __construct($id, $no_maqui, $modelo, $empresa, $serie, $cliente, $cliente_temporal, $pedimento, $pedimentoodf, $placa, $num_factura, $factura, $refacciones) {
         $this->id = $id;
         $this->no_maqui = $no_maqui;
         $this->modelo = $modelo;
         $this->empresa = $empresa;
         $this->serie = $serie;
         $this->cliente = $cliente;
+        $this->cliente_temporal = $cliente_temporal;
         $this->pedimento = $pedimento;
         $this->pedimentoodf = $pedimentoodf;
         $this->placa = $placa;
@@ -38,6 +41,7 @@ class verificacionPojo {
         $this->refacciones = $refacciones;
     }
 
+    
     public function getId() {
         return $this->id;
     }
@@ -60,6 +64,10 @@ class verificacionPojo {
 
     public function getCliente() {
         return $this->cliente;
+    }
+
+    public function getCliente_temporal() {
+        return $this->cliente_temporal;
     }
 
     public function getPedimento() {
@@ -110,6 +118,10 @@ class verificacionPojo {
         $this->cliente = $cliente;
     }
 
+    public function setCliente_temporal($cliente_temporal) {
+        $this->cliente_temporal = $cliente_temporal;
+    }
+
     public function setPedimento($pedimento) {
         $this->pedimento = $pedimento;
     }
@@ -133,5 +145,7 @@ class verificacionPojo {
     public function setRefacciones($refacciones) {
         $this->refacciones = $refacciones;
     }
+
+    
 
 }

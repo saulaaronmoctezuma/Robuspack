@@ -148,6 +148,7 @@ class Reporte extends CI_Controller {
                 $html_content = '<center> </center>  <h3 align="center"></h3>';
 
                 $html_content .= $this->htmltopdf_model->bitacorasMantenimientoPdf($id_bitacora);
+                
                 $this->pdf->loadHtml($html_content);
                 $this->pdf->render();
                 $this->pdf->stream("Robuspack Mantenimiento-". $id_bitacora ."-".date('d-m-Y_H:i:s'). ".pdf", array("Attachment" => 0));

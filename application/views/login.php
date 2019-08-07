@@ -1,33 +1,100 @@
-
+<!--
+ * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
+ * Sistema de Control Robuspack SCR
+ * https://scrobuspack.com 
+ * "Controlar la complejidad es la esencia de la programación"
+ */
+ 
+ 
+-->
 <style>
-   
-    video { 
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -100;
-        transform: translateX(-50%) translateY(-50%);
-        background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
-        background-size: cover;
-        transition: 1s opacity;
-    }
-   
-</style> 
+
+
+video { 
+    position: fixed;
+    max-width:100%;
+    
+    top:50%;
+    left:50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(148, 37, 13,15);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  /*background: rgba(255,255,255,0.23);*/
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(160,170,60,0.5);
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(160,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(160,0,0,0.9);
+}
+
+@media screen and (max-device-width: 800px) {
+  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #94250D no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+ </style> 
 
 <script>
-    function mostrarContrasena() {
-        var x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
+function mostrarContrasena() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
     }
+}
 
+
+
+</script>
 </script>
 <br>
 <br>
@@ -36,10 +103,10 @@
 
 <font color="red"><h1>LOCALHOST PRUEBAS</h1></font>
 
-<video poster="<?php echo base_url(); ?>assets/login/junio.jpg" id="bgvid" playsinline autoplay muted loop>
+<video poster="<?php echo base_url(); ?>assets/login/sep.jpg" id="bgvid" playsinline autoplay muted loop>
     <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-    <source src="<?php echo base_url(); ?>assets/login/junio.jpg" type="video/webm">
-    <source src="<?php echo base_url(); ?>assets/login/junio.jpg" type="video/mp4">
+    <source src="<?php echo base_url(); ?>assets/login/sep.jpg" type="video/webm">
+    <source src="<?php echo base_url(); ?>assets/login/sep.jpg" type="video/mp4">
 </video>
 
 
@@ -47,11 +114,11 @@
 
 
 
-<div class="col-lg-4 col-lg-offset-4">
+<div class="col-lg-4 ">
 <!--<div class="col-lg-4 col-lg-4">-->
    
-    <center><h2 ><p style="color:#2ECC71">Bienvenido</p></h2>
-        <h5 style="color:#2ECC71">Ingresa los datos correspondientes</h5></center><br>
+<center><h2 ><p style="color:#FF0000"><b>Bienvenido</p></h2>
+        <h5 style="color:#FF0000">Ingresa los datos correspondientes</b></h5></center><br>
     <?php $fattr = array('class' => 'form-signin');
     echo form_open(site_url() . 'main/login/', $fattr);
     ?>
@@ -104,8 +171,8 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
 
-    <input type="checkbox" onclick="mostrarContrasena()" title="Selecciona para mostrar el campo de contraseña en modo texto"> <font color="white">
-    Mostrar Contraseña</font>
+    <input type="checkbox" onclick="mostrarContrasena()" title="Selecciona para mostrar el campo de contraseña en modo texto"> <font color="#FF0000">
+    <b> Mostrar Contraseña</p></font>
 
     <?php if ($recaptcha == 'yes') { ?>
         <div style="text-align:center;" class="form-group">
@@ -120,7 +187,7 @@
 
     <center>
 
-        <a title="Da clic para recuperar tu contraseña" style="color:#ffffff" href="<?php echo site_url(); ?>main/forgot"> ¿Olvidaste tu contraseña? </a></p></center>
+        <a title="Da clic para recuperar tu contraseña" style="color:#000000" href="<?php echo site_url(); ?>main/forgot"> ¿Olvidaste tu contraseña? </a></p></center>
     <br> 
 
 </div>

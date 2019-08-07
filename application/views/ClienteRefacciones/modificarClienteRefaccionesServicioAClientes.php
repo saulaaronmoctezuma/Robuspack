@@ -424,7 +424,7 @@
         <body onclick="habilitar(this.form)">
 
 
-            <form name="formulario" id="formal" role="form" action="<?= base_url('ClienteRefacciones/clienteRefaccionesModificar') ?>" method="post" align="center">
+            <form name="formulario" id="formal" role="form"  action="<?= base_url() ?>verificacion/updatedata" method="post" enctype="multipart/form-data" align="center">
                 <h1>Actualizar datos</h1>
                 <MARQUEE SCROLLDELAY =200>Actualizando sus datos</MARQUEE>
                 <div class="container" >
@@ -688,5 +688,9 @@
                     </table>
                 </div>
             </form>
+                    
+        <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+        <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
+
         </body>
 </php>

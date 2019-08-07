@@ -10,154 +10,114 @@
  * Description of ClienteSeguimientoPojo
  *
  * @author Desarrollo.robus
+ * 25-06-2019 10:31 am
  */
 class ClienteSeguimientoPojo {
-    
-    private $id_clienteseguimiento;
-    private $grupo;
-    private $cliente;
-    private $prioridad;
-    private $estatus;
-    private $necesidad;
-    private $fecha_cotizacion;
-    private $archivo1;
 
-    private $fecha_contactar;
+    private $id_clienteseguimiento;
+    private $cliente;
+    private $nivel;
+    private $necesidad;
     private $compromiso;
     private $notas;
-    private $fecha_insercion;
-    private $fecha_modificacion;
+    private $cotizacion;
+    private $pedido;
+    private $contrato;
     private $first_name;
-          
-    function __construct($id_clienteseguimiento, $grupo, $cliente, $prioridad, $estatus, $necesidad, $fecha_cotizacion, $archivo1, $fecha_contactar, $compromiso, $notas, $fecha_insercion, $fecha_modificacion, $first_name) {
+
+    function __construct($id_clienteseguimiento, $cliente, $nivel, $necesidad, $compromiso, $notas, $cotizacion, $pedido, $contrato, $first_name) {
         $this->id_clienteseguimiento = $id_clienteseguimiento;
-        $this->grupo = $grupo;
         $this->cliente = $cliente;
-        $this->prioridad = $prioridad;
-        $this->estatus = $estatus;
+        $this->nivel = $nivel;
         $this->necesidad = $necesidad;
-        $this->fecha_cotizacion = $fecha_cotizacion;
-        $this->archivo1 = $archivo1;
-        $this->fecha_contactar = $fecha_contactar;
         $this->compromiso = $compromiso;
         $this->notas = $notas;
-        $this->fecha_insercion = $fecha_insercion;
-        $this->fecha_modificacion = $fecha_modificacion;
+        $this->cotizacion = $cotizacion;
+        $this->pedido = $pedido;
+        $this->contrato = $contrato;
         $this->first_name = $first_name;
     }
 
-    function getId_clienteseguimiento() {
+    
+    public function getId_clienteseguimiento() {
         return $this->id_clienteseguimiento;
     }
 
-    function getGrupo() {
-        return $this->grupo;
-    }
-
-    function getCliente() {
+    public function getCliente() {
         return $this->cliente;
     }
 
-    function getPrioridad() {
-        return $this->prioridad;
+    public function getNivel() {
+        return $this->nivel;
     }
 
-    function getEstatus() {
-        return $this->estatus;
-    }
-
-    function getNecesidad() {
+    public function getNecesidad() {
         return $this->necesidad;
     }
 
-    function getFecha_cotizacion() {
-        return $this->fecha_cotizacion;
-    }
-
-    function getArchivo1() {
-        return $this->archivo1;
-    }
-
-    function getFecha_contactar() {
-        return $this->fecha_contactar;
-    }
-
-    function getCompromiso() {
+    public function getCompromiso() {
         return $this->compromiso;
     }
 
-    function getNotas() {
+    public function getNotas() {
         return $this->notas;
     }
 
-    function getFecha_insercion() {
-        return $this->fecha_insercion;
+    public function getCotizacion() {
+        return $this->cotizacion;
     }
 
-    function getFecha_modificacion() {
-        return $this->fecha_modificacion;
+    public function getPedido() {
+        return $this->pedido;
     }
 
-    function getFirst_name() {
+    public function getContrato() {
+        return $this->contrato;
+    }
+
+    public function getFirst_name() {
         return $this->first_name;
     }
 
-    function setId_clienteseguimiento($id_clienteseguimiento) {
+    public function setId_clienteseguimiento($id_clienteseguimiento) {
         $this->id_clienteseguimiento = $id_clienteseguimiento;
     }
 
-    function setGrupo($grupo) {
-        $this->grupo = $grupo;
-    }
-
-    function setCliente($cliente) {
+    public function setCliente($cliente) {
         $this->cliente = $cliente;
     }
 
-    function setPrioridad($prioridad) {
-        $this->prioridad = $prioridad;
+    public function setNivel($nivel) {
+        $this->nivel = $nivel;
     }
 
-    function setEstatus($estatus) {
-        $this->estatus = $estatus;
-    }
-
-    function setNecesidad($necesidad) {
+    public function setNecesidad($necesidad) {
         $this->necesidad = $necesidad;
     }
 
-    function setFecha_cotizacion($fecha_cotizacion) {
-        $this->fecha_cotizacion = $fecha_cotizacion;
-    }
-
-    function setArchivo1($archivo1) {
-        $this->archivo1 = $archivo1;
-    }
-
-    function setFecha_contactar($fecha_contactar) {
-        $this->fecha_contactar = $fecha_contactar;
-    }
-
-    function setCompromiso($compromiso) {
+    public function setCompromiso($compromiso) {
         $this->compromiso = $compromiso;
     }
 
-    function setNotas($notas) {
+    public function setNotas($notas) {
         $this->notas = $notas;
     }
 
-    function setFecha_insercion($fecha_insercion) {
-        $this->fecha_insercion = $fecha_insercion;
+    public function setCotizacion($cotizacion) {
+        $this->cotizacion = $cotizacion;
     }
 
-    function setFecha_modificacion($fecha_modificacion) {
-        $this->fecha_modificacion = $fecha_modificacion;
+    public function setPedido($pedido) {
+        $this->pedido = $pedido;
     }
 
-    function setFirst_name($first_name) {
+    public function setContrato($contrato) {
+        $this->contrato = $contrato;
+    }
+
+    public function setFirst_name($first_name) {
         $this->first_name = $first_name;
     }
 
 
-  
 }

@@ -236,6 +236,8 @@
                     document.formulario.elements['paqueteria'].style.display = 'none';
                     document.formulario.troquel.selectedIndex = 2;
 
+                    
+ document.formulario.confirmacion_orden_compra.selectedIndex = 4;
 
 
 
@@ -283,8 +285,6 @@
                      document.getElementById("mulpiezas_juego").value = " ";-*/
 
 
-
-
                 } else
 
                 {
@@ -302,7 +302,7 @@
                     document.formulario.elements['tipo_entrega'].style.display = 'block';
                     document.formulario.elements['dias_credito'].style.display = 'block';
                     document.formulario.elements['uso_de_cfdi'].style.display = 'block';
-                    document.formulario.elements['metodo_pago'].style.display = 'block';
+                    document.formulario.elements['c'].style.display = 'block';
                     document.formulario.elements['paqueteria'].style.display = 'block';
 
 
@@ -1085,7 +1085,7 @@
                         <tr>
                             <td>Confirmación de Orden de Compra</td>
                             <td>
-                                <SELECT name="confirmacion_orden_compra" class="form-control input-sm"> 
+                                <SELECT name="confirmacion_orden_compra" id="confirmacion_orden_compra" class="form-control input-sm"> 
                                     <optgroup label="Selecciona una opción">
                                         <option value="Consignación" <?php
                                         if ($confirmacion_orden_compra == "Consignación") {
@@ -1102,6 +1102,12 @@
                                                     echo "Selected";
                                                 }
                                         ?>>Sin Pedido</option>
+                                        
+                                        <option value="No Aplica" <?php
+                                                if ($confirmacion_orden_compra == "No Aplica") {
+                                                    echo "Selected";
+                                                }
+                                        ?>>No Aplica</option>
                                     </optgroup>
                                 </SELECT>
                             </td>
@@ -1109,7 +1115,8 @@
 
                         </tr>
                         <input id="fecha_ultima_factura"  class="form-control" type="hidden"  autofocus name="fecha_ultima_factura" value="<?= $fecha_ultima_factura ?>">                      
-<input id="consumo_real"  class="form-control" type="hidden"  autofocus name="consumo_real" value="<?= $consumo_real ?>">                      
+                        <input id="consumo_real"  class="form-control" type="hidden"  autofocus name="consumo_real" value="<?= $consumo_real ?>">                      
+                        <input id="archivo"  class="form-control" type="hidden"  autofocus name="archivo" value="<?= $archivo ?>">                      
 
                         <?php
                         if ($dataLevel == 'is_admin') {

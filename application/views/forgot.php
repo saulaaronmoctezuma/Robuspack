@@ -5,7 +5,7 @@ body {
 
 /* Ubicación de la imagen */
 
-background-image: url(<?php echo base_url(); ?>assets/images/red.jpg);
+background-image: url(<?php echo base_url(); ?>assets/images/fondo_src.png);
 
 /* Para dejar la imagen de fondo centrada, vertical y
 
@@ -54,10 +54,10 @@ background-color: #FF3C12;
       <?php echo form_error('email') ?>
     </div>
     
-    <?php echo form_submit(array('value'=>'Enviar','title'=>'Da clic para recuperar tu contraseña', 'class'=>'btn btn-primary')); ?>
+    <?php echo form_submit(array('value'=>'Enviar','title'=>'Da clic para recuperar tu contraseña', 'class'=>'btn btn-success')); ?>
     <?php echo form_close(); ?>   
     <br>
      <p> <!--<a style="color:#ffffff" href="<?php echo site_url();?>main/login">Regresar</a></p></center>-->
-        <input class="btn btn-warning" title="Da clic para regresar al login"  style="color:#ffffff" type="button" onclick="history.back()" name="Regresar" value="Regresar">
+        <input class="btn btn-primary" title="Da clic para regresar al login"  style="color:#ffffff" type="button" onclick="history.back()" name="Regresar" value="Regresar">
     </center>
 </div>

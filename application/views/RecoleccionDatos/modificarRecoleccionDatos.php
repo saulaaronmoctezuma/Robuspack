@@ -1,11 +1,14 @@
     
-      <!--
+   <!--
     /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
- * * Versión 1 Fecha: 11-04-2019 10:19 am 
- * Versión 2 Fecha: 18-04-2019 10:30 am 
+ * "Controlar la complejidad es la esencia de la programación
+ * Fecha: 11-04-2019 10:19 am"
+    Fecha: 26-06-2019 10:40 am 
+    Fecha: 26-06-2019 12:40 Pm
+    Fecha: 27-06-2019 11:06 Pm 
  */-->
 <html lang="es-mx">
     <title>Robuspack</title>
@@ -20,6 +23,14 @@
     $result = $this->User_model->getAllSettings();
     $theme = $result->theme;
     ?>
+    <!-- Para traerse el rol que esta registrado-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+       
+        //check user level
+        ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $theme; ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>"> 
@@ -31,15 +42,214 @@
         <div class="container" >
             <table class="table table-bordered table-striped">
                 <tbody>
+                    
+                    
+                    
+                    
                     <tr>
                         <input class="form-control"type="hidden" name="id_recolecion_datos" value="<?= $id_recolecion_datos  ?>">
                     </tr>
                     
                     
-                    <tr>
-                        <td>Identificador</td>
-                        <td><input id="a3" class="form-control" type="text" name="identificador"  value="<?= $identificador ?>" ></td>
+                    
+                    
+                    
+                    
+                    
+                    
+                     <?php
+                    if ($dataLevel == 'is_admin') {
+                        
+                         ?>
+                        <tr>
+                        <td>Vendedor</td>
+                        <td> <SELECT name="vendedor" class="form-control " > 
+                            <optgroup label="Selecciona una opción">
+                                 <option value="" <?php if ($vendedor == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="Benjamín Lopéz Gamboa" <?php if ($vendedor == "Benjamín Lopéz Gamboa") {echo "Selected"; } ?>>Benjamín Lopéz Gamboa</option>
+                                <option value="Gerardo López Martinez" <?php if ($vendedor == "Gerardo López Martinez") {  echo "Selected";} ?>>Gerardo López Martinez</option>
+                                <option value="César Alberto Cantú Omaña" <?php if ($vendedor == "César Alberto Cantú Omaña") {  echo "Selected";} ?>>César Alberto Cantú Omaña</option>
+                                <option value="Sergio Peñafiel Soto" <?php if ($vendedor == "Sergio Peñafiel Soto") {  echo "Selected";} ?>>Sergio Peñafiel Soto</option>
+                                
+                            </optgroup>
+                           </SELECT></td>
                     </tr>
+                    
+                    
+                        
+                    
+                    
+                              <?php 
+                    } else if ($dataLevel == 'is_editor') {
+                        ?>
+                        <tr>
+                        <td>Vendedor</td>
+                        <td> <SELECT name="vendedor" class="form-control " > 
+                            <optgroup label="Selecciona una opción">
+                                 <option value="" <?php if ($vendedor == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="Benjamín Lopéz Gamboa" <?php if ($vendedor == "Benjamín Lopéz Gamboa") {echo "Selected"; } ?>>Benjamín Lopéz Gamboa</option>
+                                <option value="Gerardo López Martinez" <?php if ($vendedor == "Gerardo López Martinez") {  echo "Selected";} ?>>Gerardo López Martinez</option>
+                                 <option value="César Alberto Cantú Omaña" <?php if ($vendedor == "César Alberto Cantú Omaña") {  echo "Selected";} ?>>César Alberto Cantú Omaña</option>
+                                <option value="Sergio Peñafiel Soto" <?php if ($vendedor == "Sergio Peñafiel Soto") {  echo "Selected";} ?>>Sergio Peñafiel Soto</option>
+                                
+                            </optgroup>
+                           </SELECT></td>
+                    </tr>
+                    
+                    
+                            
+                        
+                    
+                    
+                              <?php 
+                    } else if ($dataLevel == 'is_director') {
+                          ?>
+                        <tr>
+                        <td>Vendedor</td>
+                        <td> <SELECT name="vendedor" class="form-control " > 
+                            <optgroup label="Selecciona una opción">
+                                 <option value="" <?php if ($vendedor == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="Benjamín Lopéz Gamboa" <?php if ($vendedor == "Benjamín Lopéz Gamboa") {echo "Selected"; } ?>>Benjamín Lopéz Gamboa</option>
+                                <option value="Gerardo López Martinez" <?php if ($vendedor == "Gerardo López Martinez") {  echo "Selected";} ?>>Gerardo López Martinez</option>
+                                 <option value="César Alberto Cantú Omaña" <?php if ($vendedor == "César Alberto Cantú Omaña") {  echo "Selected";} ?>>César Alberto Cantú Omaña</option>
+                                <option value="Sergio Peñafiel Soto" <?php if ($vendedor == "Sergio Peñafiel Soto") {  echo "Selected";} ?>>Sergio Peñafiel Soto</option>
+                                
+                            </optgroup>
+                           </SELECT></td>
+                    </tr>
+                    
+                    
+                             
+                         
+                    
+                    
+                              <?php 
+                    } else if ($dataLevel == 'is_maquinaria') {
+                          echo '<tr>
+                        
+                        <input id="a3" class="form-control" type="hidden" name="vendedor"  value="'. $vendedor .'" >
+                                      
+                       ';
+                          
+                          
+                          
+                           
+                    ?>
+                      
+                    
+                              <?php 
+                    } else if ($dataLevel == 'is_consultor') {
+                        echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >'
+                               ;
+                         
+                        
+                    }else if ($dataLevel == 'is_logistica') {
+                          ?>
+                        <tr>
+                        <td>Vendedor</td>
+                        <td> <SELECT name="vendedor" class="form-control " > 
+                            <optgroup label="Selecciona una opción">
+                                 <option value="" <?php if ($vendedor == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="Benjamín Lopéz Gamboa" <?php if ($vendedor == "Benjamín Lopéz Gamboa") {echo "Selected"; } ?>>Benjamín Lopéz Gamboa</option>
+                                <option value="Gerardo López Martinez" <?php if ($vendedor == "Gerardo López Martinez") {  echo "Selected";} ?>>Gerardo López Martinez</option>
+                                 <option value="Sergio Peñafiel Soto" <?php if ($vendedor == "Sergio Peñafiel Soto") {  echo "Selected";} ?>>Sergio Peñafiel Soto</option>
+                                
+                            </optgroup>
+                           </SELECT></td>
+                    </tr>
+                    
+                    
+                            
+                      
+                    
+                    
+                              <?php 
+                    }else if ($dataLevel == 'is_servicio_a_clientes') {
+                        echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                        
+                    
+                    
+                           
+                         
+                    }else if ($dataLevel == 'is_refacciones') {
+                         echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                             
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                         echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                             
+                    }else {
+                        
+                    }
+                    ?>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                     
+             <?php
+                  //compara si es administrador
+                    if ($dataLevel == 'is_maquinaria') {
+                     ?> <tr>
+                        <td>Identificador</td>
+                        <td> <SELECT name="identificador" class="form-control " > 
+                            <optgroup label="Selecciona una opción">
+                                 <option value="" <?php if ($identificador == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="Expopack 2019" <?php if ($identificador == "Expopack 2019") {echo "Selected"; } ?>>Expopack 2019</option>
+                                <option value="Clientes Nuevos" <?php if ($identificador == "Clientes Nuevos") {  echo "Selected";} ?>>Clientes Nuevos</option>
+                                
+                            </optgroup>
+                           </SELECT></td>
+                    </tr>
+                      <?php
+                    } else if (($dataLevel == 'is_consultor') && ($identificador == 'Información compartida'))  {
+                       ?> <tr>
+                        <td>Identificador</td>
+                       <!-- <td> <SELECT name="identificador" class="form-control " > 
+                            <optgroup label="Selecciona una opción">
+                                
+                                <option value="Información compartida" <?php if ($identificador == "Información compartida") {echo "Selected"; } ?>>Información compartida</option>
+                               
+                            </optgroup>
+                           </SELECT></td>-->
+                           
+                           
+                                 <td>  <input class="form-control" type="text" readonly="readonly"  style="background-color:#03E7F7;"name="identificador" value="<?= $identificador ?>"> </td>
+                       
+                    </tr>
+                      <?php
+                    }else {
+                      echo ' <tr>
+                        <td>Identificador</td>
+                        <td><input id="a3" class="form-control" type="text" name="identificador"  value="'.$identificador .'" ></td>
+                    </tr>
+                   ';
+                    }
+
+             
+             ?>
+             
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                   
                    
                     <tr>
                         <td>Nombre de la Empresa</td>
