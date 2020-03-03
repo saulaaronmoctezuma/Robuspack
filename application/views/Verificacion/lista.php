@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/font/glyphicons-halflings-regular.ttf">
+   <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
 
   </head>
   <body>

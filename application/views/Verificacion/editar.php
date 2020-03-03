@@ -17,7 +17,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
         <!-- Bootstrap -->
 
-        <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+       <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
@@ -422,7 +422,10 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Pedimento PDF</label><br>
                              <input type="file" name="pedimentopdf"><br>';
                     } else if (($data->pedimentopdf != null) && ($dataLevel == 'is_logistica')) {
-                        echo '<input class="form-control" type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">';
+                        //echo '<input class="form-control" type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">';
+                             echo '<font color="red">Ya tienes un archivo cargado</font><br>
+                        <label>Pedimento PDF</label><br>
+                             <input type="file" name="pedimentopdf"><br>';
                     }
                     ?>
 
@@ -486,7 +489,10 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Foto Placa</label><br>
                              <input type="file" name="fotopost"><br>';
                     } else if (($data->foto != null) && ($dataLevel == 'is_logistica')) {
-                        echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
+                       // echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
+                         echo '<font color="red">Ya tienes un archivo cargado</font><br>
+                        <label>Foto Placa</label><br>
+                             <input type="file" name="fotopost"><br>';
                     }
                     ?>
 

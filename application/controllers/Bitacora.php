@@ -52,6 +52,10 @@ class Bitacora extends CI_Controller {
         if ($dataLevel == "is_admin") {
             $data['bitacora'] = $this->BitacoraModelo->query();
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
+            $data['totalRegistroBitacoraCarlos'] = $this->BitacoraModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraModelo->totalRegistroBitacoraOrlene(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Bitacora/listarBitacora', $data);
@@ -65,6 +69,10 @@ class Bitacora extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $data['bitacora'] = $this->BitacoraModelo->query();
+               $data['totalRegistroBitacoraCarlos'] = $this->BitacoraModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraModelo->totalRegistroBitacoraOrlene(1);
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -262,21 +270,7 @@ class Bitacora extends CI_Controller {
         $this->upload->initialize($config);
 
 
-        $data = array(
-            'grupo' => $grupo,
-            'cliente' => $cliente,
-            'descripcion' => $descripcion,
-            'archivo1' => $archivo1,
-            'observacion' => $observacion,
-            'id' => $dataLevel = $this->userlevel->id($data['id'])
-        );
-
-        $this->upload->do_upload('archivo1');
-        $archivo1 = $this->upload->data();
-        if (!empty($_FILES['archivo1']['name'])) {
-            $data['archivo1'] = $archivo1['file_name'];
-        }
-
+      
 
 
 

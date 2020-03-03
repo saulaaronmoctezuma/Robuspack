@@ -3,7 +3,7 @@
 
 class MaximoMinimoPojo {
     
-    private $descripcion;
+  private $descripcion;
     private $codigo;
     private $fecha_corte_rotacion;
     private $grupo;
@@ -17,6 +17,8 @@ class MaximoMinimoPojo {
     private $suma_total_requerido_trimestral;
     private $suma_total_requerido_mensual_con_oc_y_consignacion;
     private $suma_total_requerido_trimestral_con_oc_y_consignacion;
+    private $piezas_requeridas_con_oc_consig_mensual;
+    private $piezas_requeridas_con_oc_consig_trimestral;
     private $inventario;
     private $piezas_a_recibir;
     private $disponibilidad_total;
@@ -24,9 +26,13 @@ class MaximoMinimoPojo {
     private $meses_cubiertos;
     private $fecha_cubierta;
     private $vendedor;
+    private $id_usuario;
+    private $total_mensual_sin_oc;
+    private $informativo_prospectacion_mercado;
+    private $pc_fob;
+    private $id_maquinaria;
     
-    
-    function __construct($descripcion, $codigo, $fecha_corte_rotacion, $grupo, $cliente, $cantidad_maxima, $fecha_ultimo_consumo, $periodo_surtimiento, $fecha_requiere_piezas, $pedido_inteligente, $suma_total_requerido_mensual, $suma_total_requerido_trimestral, $suma_total_requerido_mensual_con_oc_y_consignacion, $suma_total_requerido_trimestral_con_oc_y_consignacion, $inventario, $piezas_a_recibir, $disponibilidad_total, $piezas_a_solicitar, $meses_cubiertos, $fecha_cubierta, $vendedor) {
+    function __construct($descripcion, $codigo, $fecha_corte_rotacion, $grupo, $cliente, $cantidad_maxima, $fecha_ultimo_consumo, $periodo_surtimiento, $fecha_requiere_piezas, $pedido_inteligente, $suma_total_requerido_mensual, $suma_total_requerido_trimestral, $suma_total_requerido_mensual_con_oc_y_consignacion, $suma_total_requerido_trimestral_con_oc_y_consignacion, $piezas_requeridas_con_oc_consig_mensual, $piezas_requeridas_con_oc_consig_trimestral, $inventario, $piezas_a_recibir, $disponibilidad_total, $piezas_a_solicitar, $meses_cubiertos, $fecha_cubierta, $vendedor, $id_usuario, $total_mensual_sin_oc, $informativo_prospectacion_mercado, $pc_fob, $id_maquinaria) {
         $this->descripcion = $descripcion;
         $this->codigo = $codigo;
         $this->fecha_corte_rotacion = $fecha_corte_rotacion;
@@ -41,6 +47,8 @@ class MaximoMinimoPojo {
         $this->suma_total_requerido_trimestral = $suma_total_requerido_trimestral;
         $this->suma_total_requerido_mensual_con_oc_y_consignacion = $suma_total_requerido_mensual_con_oc_y_consignacion;
         $this->suma_total_requerido_trimestral_con_oc_y_consignacion = $suma_total_requerido_trimestral_con_oc_y_consignacion;
+        $this->piezas_requeridas_con_oc_consig_mensual = $piezas_requeridas_con_oc_consig_mensual;
+        $this->piezas_requeridas_con_oc_consig_trimestral = $piezas_requeridas_con_oc_consig_trimestral;
         $this->inventario = $inventario;
         $this->piezas_a_recibir = $piezas_a_recibir;
         $this->disponibilidad_total = $disponibilidad_total;
@@ -48,7 +56,14 @@ class MaximoMinimoPojo {
         $this->meses_cubiertos = $meses_cubiertos;
         $this->fecha_cubierta = $fecha_cubierta;
         $this->vendedor = $vendedor;
+        $this->id_usuario = $id_usuario;
+        $this->total_mensual_sin_oc = $total_mensual_sin_oc;
+        $this->informativo_prospectacion_mercado = $informativo_prospectacion_mercado;
+        $this->pc_fob = $pc_fob;
+        $this->id_maquinaria = $id_maquinaria;
     }
+
+
     public function getDescripcion() {
         return $this->descripcion;
     }
@@ -105,6 +120,14 @@ class MaximoMinimoPojo {
         return $this->suma_total_requerido_trimestral_con_oc_y_consignacion;
     }
 
+    public function getPiezas_requeridas_con_oc_consig_mensual() {
+        return $this->piezas_requeridas_con_oc_consig_mensual;
+    }
+
+    public function getPiezas_requeridas_con_oc_consig_trimestral() {
+        return $this->piezas_requeridas_con_oc_consig_trimestral;
+    }
+
     public function getInventario() {
         return $this->inventario;
     }
@@ -131,6 +154,26 @@ class MaximoMinimoPojo {
 
     public function getVendedor() {
         return $this->vendedor;
+    }
+
+    public function getId_usuario() {
+        return $this->id_usuario;
+    }
+
+    public function getTotal_mensual_sin_oc() {
+        return $this->total_mensual_sin_oc;
+    }
+
+    public function getInformativo_prospectacion_mercado() {
+        return $this->informativo_prospectacion_mercado;
+    }
+
+    public function getPc_fob() {
+        return $this->pc_fob;
+    }
+
+    public function getId_maquinaria() {
+        return $this->id_maquinaria;
     }
 
     public function setDescripcion($descripcion) {
@@ -189,6 +232,14 @@ class MaximoMinimoPojo {
         $this->suma_total_requerido_trimestral_con_oc_y_consignacion = $suma_total_requerido_trimestral_con_oc_y_consignacion;
     }
 
+    public function setPiezas_requeridas_con_oc_consig_mensual($piezas_requeridas_con_oc_consig_mensual) {
+        $this->piezas_requeridas_con_oc_consig_mensual = $piezas_requeridas_con_oc_consig_mensual;
+    }
+
+    public function setPiezas_requeridas_con_oc_consig_trimestral($piezas_requeridas_con_oc_consig_trimestral) {
+        $this->piezas_requeridas_con_oc_consig_trimestral = $piezas_requeridas_con_oc_consig_trimestral;
+    }
+
     public function setInventario($inventario) {
         $this->inventario = $inventario;
     }
@@ -217,8 +268,27 @@ class MaximoMinimoPojo {
         $this->vendedor = $vendedor;
     }
 
+    public function setId_usuario($id_usuario) {
+        $this->id_usuario = $id_usuario;
+    }
 
-    
+    public function setTotal_mensual_sin_oc($total_mensual_sin_oc) {
+        $this->total_mensual_sin_oc = $total_mensual_sin_oc;
+    }
+
+    public function setInformativo_prospectacion_mercado($informativo_prospectacion_mercado) {
+        $this->informativo_prospectacion_mercado = $informativo_prospectacion_mercado;
+    }
+
+    public function setPc_fob($pc_fob) {
+        $this->pc_fob = $pc_fob;
+    }
+
+    public function setId_maquinaria($id_maquinaria) {
+        $this->id_maquinaria = $id_maquinaria;
+    }
+
+
 
 }
     

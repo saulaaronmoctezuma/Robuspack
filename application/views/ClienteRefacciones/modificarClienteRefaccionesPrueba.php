@@ -44,18 +44,19 @@
                         
                         
                          <?php
-                    if (($data->archivo == null) && ($dataLevel == 'is_admin')) {
+                    if (($data->archivo == null)) {
                         echo '    <tr>
                             <td bgcolor="#b0aeae">Archivo</td>
                             <td bgcolor="#b0aeae"><font color="red">No tienes ningún archivo cargado</font><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;"  id="archivo"  class="form-control" type="file"  name="archivo"></td>
                         </tr>';
-                    } else if (($data->archivo != null) && ($dataLevel == 'is_admin')) {
+                    } else if (($data->archivo != null)) {
                         echo '
                             <tr>
                             <td bgcolor="#b0aeae">Archivo</td>
                             <td bgcolor="#b0aeae"><font color="red">
                            <a  title="Da clic para visualizar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $data->archivo . '" target=”_blank” rel=”nofollow”> Ya tienes un archivo cargado</a><br>
-                           </font><br><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;" size="10" maxlength="30 id="archivo"  class="form-control" type="file"  name="archivo"></td>
+                           </font><br><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;" size="10" maxlength="30 id="archivo"  class="form-control" type="file"  name="archivo">
+                           </td>
                         </tr>';
                     }
                     ?>
@@ -66,14 +67,14 @@
                     if (($data->archivo == null) && ($dataLevel == 'is_servicio_a_clientes')) {
                         echo '    <tr>
                             <td bgcolor="#b0aeae">Archivo</td>
-                            <td bgcolor="#b0aeae"><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;"  id="archivo"  class="form-control" type="file"  name="archivo"></td>
+                            <td bgcolor="#b0aeae"><font color="#B60D1F">No tienes archivo cargado</font><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;"  id="archivo"  class="form-control" type="file"  name="archivo"></td>
                         </tr>';
                     } else if (($data->archivo != null) && ($dataLevel == 'is_servicio_a_clientes')) {
                         echo '
                            <tr>
                             <td bgcolor="#b0aeae">Archivo</td>
                             <td bgcolor="#b0aeae"><font color="red">
-                           <a  title="Da clic para visualizar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $data->archivo . '" target=”_blank” rel=”nofollow”> Ya tienes un archivo cargado</a>
+                           <a  title="Da clic para visualizar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $data->archivo . '" target=”_blank” rel=”nofollow”> <font color="red">Ya tienes un archivo cargado</font></a>
                            </font><br><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;" size="10" maxlength="30 id="archivo"  class="form-control" type="file"  name="archivo"></td>
                         </tr>';
                     }

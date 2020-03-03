@@ -201,9 +201,7 @@ if ($dataLevel == 'is_admin') {
 
 
 
-        <table class="table table-hover tablesorter" >
-
-
+       
 
 
 
@@ -213,7 +211,7 @@ if ($dataLevel == 'is_admin') {
 
 
 
-            <table  border="0" class="table table-bordered table-striped">
+            <table id="example2"  border="0" class="table table-bordered table-striped">
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
                 <thead >
                     <tr >
@@ -221,7 +219,7 @@ if ($dataLevel == 'is_admin') {
 <?php
 if ($dataLevel == 'is_admin') {
 
-    echo ' <th class="header" colspan="2" style="text-align: center" >Acción</th>';
+    echo '     <th class="header" style="text-align: center">eli</th>     <th class="header" style="text-align: center">modi</th>';
 } else if ($dataLevel == 'is_editor') {
 
     echo ' <th class="header" colspan="2" style="text-align: center" >Acción</th>';

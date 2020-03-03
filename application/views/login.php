@@ -4,17 +4,77 @@
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
  */
- 
- 
--->
+ arriba -->
 <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+  h1 {
+  font-family:verdana;
+  font-size:50px;
+  color:red;
+  text-shadow: 1px  0px 0px yellow,
+               0px  1px 0px yellow,
+              -1px  0px 0px yellow,
+               0px -1px 0px yellow;
+}
+
+
+ p {
+  font-family:verdana;
+  font-size:35px;
+  color:red;
+  text-shadow: 1px  0px 0px white,
+               0px  1px 0px white,
+              -1px  0px 0px white,
+               0px -1px 0px white;
+}
+
+h5 {
+  font-family:verdana;
+  font-size:15px;
+  color:red;
+  text-shadow: 1px  0px 0px white,
+               0px  1px 0px white,
+              -1px  0px 0px white,
+               0px -1px 0px white;
+}
+
+h2 {
+  font-family:verdana;
+  font-size:10px;
+  color:red;
+  text-shadow: 1px  0px 0px white,
+               0px  1px 0px white,
+              -1px  0px 0px white,
+               0px -1px 0px white;
+}
+
+a {
+  font-family:verdana;
+  font-size:10px;
+  color:red;
+  text-shadow: 1px  0px 0px white,
+               0px  1px 0px white,
+              -1px  0px 0px white,
+               0px -1px 0px white;
+}
+  </style>
+<body data-vide-bg="<?php echo base_url(); ?>assets/login/felicitacion-ano-nuevo-3.jpg">
+
+ 
+
+<!--<style>
 
 
 video { 
     position: fixed;
     max-width:100%;
     
-    top:50%;
+    top:60%;
     left:50%;
     min-width: 100%;
     min-height: 100%;
@@ -80,7 +140,7 @@ a:hover{
   html { background: url(https://thenewcode.com/assets/images/polina.jpg) #94250D no-repeat center center fixed; }
   #bgvid { display: none; }
 }
- </style> 
+ </style> -->
 
 <script>
 function mostrarContrasena() {
@@ -103,11 +163,10 @@ function mostrarContrasena() {
 
 <font color="red"><h1>LOCALHOST PRUEBAS</h1></font>
 
-<video poster="<?php echo base_url(); ?>assets/login/sep.jpg" id="bgvid" playsinline autoplay muted loop>
-    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-    <source src="<?php echo base_url(); ?>assets/login/sep.jpg" type="video/webm">
-    <source src="<?php echo base_url(); ?>assets/login/sep.jpg" type="video/mp4">
-</video>
+  <!--  <video poster="<?php echo base_url(); ?>assets/login/septiembre2019.mp4" id="bgvid" playsinline autoplay muted loop>
+    <source src="<?php echo base_url(); ?>assets/login/septiembre2019.mp4" type="video/webm">
+    <source src="<?php echo base_url(); ?>assets/login/septiembre2019.mp4" type="video/mp4">
+</video>-->
 
 
 
@@ -117,8 +176,19 @@ function mostrarContrasena() {
 <div class="col-lg-4 ">
 <!--<div class="col-lg-4 col-lg-4">-->
    
-<center><h2 ><p style="color:#FF0000"><b>Bienvenido</p></h2>
-        <h5 style="color:#FF0000">Ingresa los datos correspondientes</b></h5></center><br>
+<center><h2 >
+       
+       <p><b>Bienvenido</p>
+     <!--
+    <font color="green">Bie</font><font color="white">nven</font><font color="red">ido</font>-->
+    
+    </h2>
+    
+    
+       <h5>Ingresa los datos correspondientes</b></h5>
+
+       <!--  <h5>  <font color="green">Ingresa</font><font color="white"> los datos</font><font color="red"> correspondientes</font></h5>-->
+</center><br>
     <?php $fattr = array('class' => 'form-signin');
     echo form_open(site_url() . 'main/login/', $fattr);
     ?>
@@ -170,9 +240,9 @@ function mostrarContrasena() {
 
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
-
+<h2>
     <input type="checkbox" onclick="mostrarContrasena()" title="Selecciona para mostrar el campo de contraseña en modo texto"> <font color="#FF0000">
-    <b> Mostrar Contraseña</p></font>
+    <b> Mostrar Contraseña</h2>
 
     <?php if ($recaptcha == 'yes') { ?>
         <div style="text-align:center;" class="form-group">
@@ -191,3 +261,8 @@ function mostrarContrasena() {
     <br> 
 
 </div>
+<!--abajo-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="<?php echo base_url();?>assets/js/jquery.vide.js"></script>
+

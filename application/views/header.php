@@ -30,15 +30,33 @@ $theme = $result->theme;
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         
         
-        <!--´Para el filtro por busqueda por cierta cantidad-->
+       <!--´Para el filtro por busqueda por cierta cantidad-->
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+         <!--´Para el filtro por busqueda por cierta cantidad-->
       
+         
+         
+         
+         <!--https://datatables.net/extensions/fixedcolumns/examples/integration/select.html-->
+       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.3.0/css/fixedColumns.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdn.datatables.net/keytable/2.5.1/css/keyTable.dataTables.min.css">
+       <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+        <!--https://datatables.net/extensions/fixedcolumns/examples/integration/select.html-->
+    <style>
+      body {
+        font-family: 'Montserrat', serif;
+        font-size: 11px;
+      }
       
-      
-      
-      
-      
-      
+      table {
+         font-family: 'Montserrat', serif;
+        font-size: 11px; 
+      }
+     
+    </style>
       
       
       
@@ -84,12 +102,26 @@ $theme = $result->theme;
 }
 
 
+.btn_whatsapp {
+        display:block;
+        width:70px;
+        height:70px;
+        color:#fff;
+        position: fixed;
+        right:20px;
+        bottom:15px;
+        border-radius:30%;
+        line-height:60px;
+        text-align:center;
+        z-index:999;
+
+}
 
 
-
-
-
-
+@media (max-width: 600px) {
+  .btn_whatsapp {
+    display: none;
+  }
 
 
 p, h1, h2, h3, h4, h5, table{
@@ -104,3 +136,89 @@ font-family: 'Montserrat', sans-serif;
 
    <body>
    <!--<center>  <a name="arriba"></a></center>-->
+      
+       <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <!-- Latest compiled and minified CSS -->
+  	
+  	
+      <script type="text/javascript">
+        $(document).ready(function () {
+            (function ($) {
+                $('#filtrar').keyup(function () {
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.buscar tr').hide();
+                    $('.buscar tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+                })
+            }(jQuery));
+        });
+      </script> 
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<div class="btn_whatsapp">
+<a href="https://wa.link/0E6H" target="_blank">
+<img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+</a>
+</div>
+
+
+
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".hidediv").click(function() {
+                    $(".divdemo").hide("slow");
+                });
+
+                $(".showdiv").click(function() {
+                    $(".divdemo").show(2000);
+                });
+
+            });
+
+        </script>
+<!--
+       
+<style>
+ .scrollable {
+    width: 500%;
+    margin: 0 auto;
+    border: 1px dashed black;   
+}
+
+    .fixed {
+    position: fixed;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #000;
+}
+
+.side {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    background-color: red;
+}
+ </style>
+        <div class='fixed side'>hola</div>
+<div class='scrollable'>hola</div>
+ 
+-->

@@ -111,8 +111,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <select  name="empresa" class="form-control input-sm"  id="empresa" require>
                         <option  value="">Selecciona una opción</option>
                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
-                        <OPTect><br>
-                        </div>ION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+                        <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
                         </select><br>
                         </div>
                         </div>
@@ -121,7 +120,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <div class="form-group col-xs-4">
                          <label>Serie</label><br>
                         <input type="text" class="form-control input-sm" name="serie"><br>
-                            </div></div>
+                            </div>
                         
                         ';
                             ?>

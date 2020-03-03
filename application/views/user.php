@@ -4,7 +4,7 @@
         <h2>Lista de Usuario</h2>
         <div class="form-group input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+                <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
         </div>
         
         <table class="table table-hover table-bordered table-striped">
@@ -60,7 +60,10 @@
                     }elseif($row->role == 14){
                         $rolename = "Servicio a Clientes";
                     }
-                    
+                    ?>
+                    <tbody id="myTable">
+                    <?php
+          
                     
                     echo '<tr>';
                     echo '<td>'.$row->first_name.'</td>';
@@ -73,6 +76,7 @@
                     echo '</tr>';
                     }
                 ?>
+          </tbody>
         </table>
     </div>
 </html>

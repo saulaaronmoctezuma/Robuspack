@@ -1,9 +1,10 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
+ * Sistema de Control Robuspack SCR
+ * https://scrobuspack.com 
+ * "Controlar la complejidad es la esencia de la programación"
  */
 
 Class BitacoraMtto extends CI_Controller {
@@ -12,11 +13,12 @@ Class BitacoraMtto extends CI_Controller {
         parent::__construct();
         $this->load->library('upload');
         $this->load->library('pagination');
+
         $this->base = $this->config->item('base_url');
         $this->css = $this->config->item('css');
         $this->load->library('session');
         //poner para el poner selet en un formulario
-        $this->load->model('Cliente/ClienteModelo');
+        $this->load->model('BitacoraMtto/BitacoraMttoModelo');
         //poner para el poner selet en un formulario
         //para que tenga el mismo header y trearse el usuario para dar permisos
         $this->load->model('User_model', 'User_model');
@@ -90,7 +92,21 @@ Class BitacoraMtto extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
-        } else {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
+            $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
+            $data['totalRegistroBitacoraMantenimientoCarlos'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoCarlos(1);
+            $data['totalRegistroBitacoraMantenimientoJorge'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoJorge(1);
+            $data['totalRegistroBitacoraMantenimientoMiguel'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoMiguel(1);
+            $data['totalRegistroBitacoraMantenimientoPablo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoPablo(1);
+            $data['totalRegistroBitacoraMantenimientoRodrigo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoRodrigo(1);
+            $data['totalRegistroBitacoraMantenimientoVeronica'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVeronica(1);
+            $data['totalRegistroBitacoraMantenimientoVicente'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVicente(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
+            $this->load->view('footer');
+        }  else {
             redirect(site_url() . 'main/');
         }
     }
@@ -243,6 +259,7 @@ Class BitacoraMtto extends CI_Controller {
             'aceptacion_capacitacion' => $_POST['aceptacion_capacitacion'],
             'recomendaciones' => $_POST['recomendaciones'],
             'proxima_inter' => $_POST['proxima_inter'],
+            'foto' => $_POST['foto'],
             /* Es para traerse el id del usuario */
             'id' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
@@ -354,8 +371,10 @@ Class BitacoraMtto extends CI_Controller {
             $aceptacion_capacitacion = $datos['aceptacion_capacitacion'];
             $recomendaciones = $datos['recomendaciones'];
             $proxima_inter = $datos['proxima_inter'];
+            $foto = $datos['foto'];
 
-            $this->BitacoraMttoModelo->actualizar($id_bitacora, $planta, $modelo, $maquina, $fecha, $motivo_asistencia, $tipo, $mantenimiento, $consecutivo, $des_acti1, $des_acti2, $des_acti3, $des_acti4, $des_acti5, $des_acti6, $des_acti7, $des_acti8, $des_acti9, $des_acti10, $des_acti11, $des_acti12, $des_acti13, $des_acti14, $des_acti15, $reporto, $des_acti, $ref_usadas1, $ref_usadas2, $ref_usadas3, $ref_usadas4, $ref_usadas5, $ref_usadas6, $ref_usadas7, $ref_usadas8, $ref_usadas9, $ref_usadas10, $ref_usadas11, $ref_usadas12, $ref_usadas13, $ref_usadas14, $ref_usadas15, $ref_usadas16, $ref_usadas17, $ref_usadas18, $ref_usadas19, $ref_usadas20, $ref_usadas21, $ref_usadas22, $ref_usadas23, $ref_usadas24, $ref_usadas25, $ref_usadas26, $ref_usadas27, $ref_usadas28, $ref_usadas29, $ref_usadas30, $ref_recomen1, $ref_recomen2, $ref_recomen3, $ref_recomen4, $ref_recomen5, $ref_recomen6, $ref_recomen7, $ref_recomen8, $ref_recomen9, $ref_recomen10, $ref_recomen11, $ref_recomen12, $ref_recomen13, $ref_recomen14, $ref_recomen15, $ref_recomen16, $ref_recomen17, $ref_recomen18, $ref_recomen19, $ref_recomen20, $ref_recomen21, $ref_recomen22, $ref_recomen23, $ref_recomen24, $ref_recomen25, $ref_recomen26, $ref_recomen27, $ref_recomen28, $ref_recomen29, $ref_recomen30, $capacitacion, $aceptacion_capacitacion, $recomendaciones, $proxima_inter);
+
+            $this->BitacoraMttoModelo->actualizar($id_bitacora, $planta, $modelo, $maquina, $fecha, $motivo_asistencia, $tipo, $mantenimiento, $consecutivo, $des_acti1, $des_acti2, $des_acti3, $des_acti4, $des_acti5, $des_acti6, $des_acti7, $des_acti8, $des_acti9, $des_acti10, $des_acti11, $des_acti12, $des_acti13, $des_acti14, $des_acti15, $reporto, $des_acti, $ref_usadas1, $ref_usadas2, $ref_usadas3, $ref_usadas4, $ref_usadas5, $ref_usadas6, $ref_usadas7, $ref_usadas8, $ref_usadas9, $ref_usadas10, $ref_usadas11, $ref_usadas12, $ref_usadas13, $ref_usadas14, $ref_usadas15, $ref_usadas16, $ref_usadas17, $ref_usadas18, $ref_usadas19, $ref_usadas20, $ref_usadas21, $ref_usadas22, $ref_usadas23, $ref_usadas24, $ref_usadas25, $ref_usadas26, $ref_usadas27, $ref_usadas28, $ref_usadas29, $ref_usadas30, $ref_recomen1, $ref_recomen2, $ref_recomen3, $ref_recomen4, $ref_recomen5, $ref_recomen6, $ref_recomen7, $ref_recomen8, $ref_recomen9, $ref_recomen10, $ref_recomen11, $ref_recomen12, $ref_recomen13, $ref_recomen14, $ref_recomen15, $ref_recomen16, $ref_recomen17, $ref_recomen18, $ref_recomen19, $ref_recomen20, $ref_recomen21, $ref_recomen22, $ref_recomen23, $ref_recomen24, $ref_recomen25, $ref_recomen26, $ref_recomen27, $ref_recomen28, $ref_recomen29, $ref_recomen30, $capacitacion, $aceptacion_capacitacion, $recomendaciones, $foto);
             redirect('');
             redirect('BitacoraMtto');
         }
@@ -523,18 +542,15 @@ Class BitacoraMtto extends CI_Controller {
             'capacitacion' => $_POST['capacitacion'],
             'aceptacion_capacitacion' => $_POST['aceptacion_capacitacion'],
             'recomendaciones' => $_POST['recomendaciones'],
-            'proxima_inter' => $_POST['proxima_inter']
+            'proxima_inter' => $_POST['proxima_inter'],
+            'foto' => $_POST['foto'],
         );
 
         $this->load->model('BitacoraMtto/BitacoraMttoModelo');
         $this->BitacoraMttoModelo->actualizar($data);
         redirect('BitacoraMtto');
     }
-    
-    
-    
-    
-    
+
     public function actualizar($id) {
         $this->load->model('BitacoraMtto/BitacoraMttoModelo');
 
@@ -550,9 +566,9 @@ Class BitacoraMtto extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-            
-            
-              $this->load->view('header', $data);
+
+
+            $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             //se trae el id del  modelo ClientesRefaccionesModelo
             $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
@@ -560,56 +576,54 @@ Class BitacoraMtto extends CI_Controller {
             $data['data'] = $this->BitacoraMttoModelo->get_by_id($kondisi);
             return $this->load->view('BitacoraMtto/modificarBitacoraMtto_1', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria") {
+        }  else if ($dataLevel == "is_director") {
 
 
-            $this->load->view('header', $data);
+        $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-
-            $kondisi = array('id_bitacora' => $id);
-            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
-            return $this->load->view('Bitacora/editarBitacora', $data);
             //se trae el id del  modelo ClientesRefaccionesModelo
-
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_director") {
-
-
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
             $kondisi = array('id_bitacora' => $id);
-            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
-            return $this->load->view('Bitacora/editarBitacora', $data);
-            //se trae el id del  modelo ClientesRefaccionesModelo
-
+            $data['data'] = $this->BitacoraMttoModelo->get_by_id($kondisi);
+            return $this->load->view('BitacoraMtto/modificarBitacoraMtto_1', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
 
 
+             $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraMttoModelo->get_by_id($kondisi);
+            return $this->load->view('BitacoraMtto/modificarBitacoraMtto_1', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+
+
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-
-            $kondisi = array('id_bitacora' => $id);
-            $data['data'] = $this->BitacoraModelo->get_by_id($kondisi);
-            return $this->load->view('Bitacora/editarBitacora', $data);
             //se trae el id del  modelo ClientesRefaccionesModelo
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraMttoModelo->get_by_id($kondisi);
+            return $this->load->view('BitacoraMtto/modificarBitacoraMtto_1', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_mantenimiento") {
 
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+            $data['clienteCombo'] = $this->BitacoraMttoModelo->getCliente();
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraMttoModelo->get_by_id($kondisi);
+            return $this->load->view('BitacoraMtto/modificarBitacoraMtto_1', $data);
             $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     public function updatedata() {
 
@@ -704,6 +718,7 @@ Class BitacoraMtto extends CI_Controller {
         $aceptacion_capacitacion = $this->input->post('aceptacion_capacitacion');
         $recomendaciones = $this->input->post('recomendaciones');
         $proxima_inter = $this->input->post('proxima_inter');
+        $foto = $this->input->post('foto');
 
 
 
@@ -735,9 +750,9 @@ Class BitacoraMtto extends CI_Controller {
 
         $config['upload_path'] = './assets/bitacora_mtto';
         $config['allowed_types'] = '*';
-        /* $config['max_size'] = '2048';  //2MB max
-          $config['max_width'] = '4480'; // pixel
-          $config['max_height'] = '4480'; // pixel */
+        $config['max_size'] = '20480';  //2MB max
+          $config['max_width'] = '44800'; // pixel
+          $config['max_height'] = '44800'; // pixel 
 
         $this->upload->initialize($config);
 
@@ -759,7 +774,7 @@ Class BitacoraMtto extends CI_Controller {
         $data['des_acti6'] = $des_acti6;
         $data['des_acti7'] = $des_acti7;
         $data['des_acti8'] = $des_acti8;
-        $data['9des_acti'] = $des_acti9;
+        $data['des_acti9'] = $des_acti9;
         $data['des_acti10'] = $des_acti10;
         $data['des_acti11'] = $des_acti11;
         $data['des_acti12'] = $des_acti12;
@@ -833,16 +848,15 @@ Class BitacoraMtto extends CI_Controller {
 
 
 
-        /*
 
-          $this->upload->do_upload('archivo1');
-          $archivo1 = $this->upload->data();
 
-          if (!empty($_FILES['archivo1']['name'])) {
-          $data['archivo1'] = $archivo1['file_name'];
-          }
+        $this->upload->do_upload('foto');
+        $foto = $this->upload->data();
 
-         */
+        if (!empty($_FILES['foto']['name'])) {
+            $data['foto'] = $foto['file_name'];
+        }
+
 
 
 

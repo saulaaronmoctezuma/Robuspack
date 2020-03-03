@@ -287,6 +287,42 @@ Class Maquinaria extends CI_Controller {
         }
     }
 
+    
+    
+      public function rotacion($id_maquinaria) {
+        $this->load->model('Maquinaria/MaquinariaModelo');
+
+        //user data from session
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //agregar para el select de refacción de tabla maquinaria        
+            $data = array();
+            $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+            $this->load->view('Maquinaria/modificarMaquinariaRotacion', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_editor") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data = array();
+            $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+            $this->load->view('Maquinaria/modificarMaquinariaRotacion', $data);
+            $this->load->view('footer');
+        } else {
+            redirect(site_url() . 'main/');
+        }
+    }
     public function maquinariaModificar() {
         $data = array(
             'id_maquinaria' => $_POST['id_maquinaria'],
@@ -315,6 +351,67 @@ Class Maquinaria extends CI_Controller {
         $this->load->model('Maquinaria/MaquinariaModelo');
         $this->MaquinariaModelo->actualizar($data);
         redirect('Maquinaria');
+    }
+    
+    
+      public function maquinariaModificarRotacion() {
+        $data = array(
+            'id_maquinaria' => $_POST['id_maquinaria'],
+            'referencia' => $_POST['referencia'],
+            'fecha' => $_POST['fecha'],
+            'fabricante' => $_POST['fabricante'],
+            'maquina' => $_POST['maquina'],
+            'precio1' => $_POST['precio1'],
+            'precio2' => $_POST['precio2'],
+            'precio3' => $_POST['precio3'],
+            'precio4' => $_POST['precio4'],
+            'precio5' => $_POST['precio5'],
+            'pcexwork' => $_POST['pcexwork'],
+            'pcfob' => $_POST['pcfob'],
+            'pccif' => $_POST['pccif'],
+            'pccip' => $_POST['pccip'],
+            'ancho' => $_POST['ancho'],
+            'espesor' => $_POST['espesor'],
+            'diametro' => $_POST['diametro'],
+            'empresa_competencia_1' => $_POST['empresa_competencia_1'],
+            'empresa_competencia_2' => $_POST['empresa_competencia_2'],
+            'inventario' => $_POST['inventario'],
+             'piezas_recibir' => $_POST['piezas_recibir'],
+            'fecha_corte_rotacion' => $_POST['fecha_corte_rotacion']
+        );
+        $this->load->model('Maquinaria/MaquinariaModelo');
+        $this->MaquinariaModelo->actualizar($data);
+        redirect('MaxMin');
+    }
+    
+     public function maquinariaModificarFechaCorteRotacion() {
+        $data = array(
+            'id_maquinaria' => $_POST['id_maquinaria'],
+            'referencia' => $_POST['referencia'],
+            'fecha' => $_POST['fecha'],
+            'fabricante' => $_POST['fabricante'],
+            'maquina' => $_POST['maquina'],
+            'precio1' => $_POST['precio1'],
+            'precio2' => $_POST['precio2'],
+            'precio3' => $_POST['precio3'],
+            'precio4' => $_POST['precio4'],
+            'precio5' => $_POST['precio5'],
+            'pcexwork' => $_POST['pcexwork'],
+            'pcfob' => $_POST['pcfob'],
+            'pccif' => $_POST['pccif'],
+            'pccip' => $_POST['pccip'],
+            'ancho' => $_POST['ancho'],
+            'espesor' => $_POST['espesor'],
+            'diametro' => $_POST['diametro'],
+            'empresa_competencia_1' => $_POST['empresa_competencia_1'],
+            'empresa_competencia_2' => $_POST['empresa_competencia_2'],
+            'inventario' => $_POST['inventario'],
+             'piezas_recibir' => $_POST['piezas_recibir'],
+            'fecha_corte_rotacion' => $_POST['fecha_corte_rotacion']
+        );
+        $this->load->model('Maquinaria/MaquinariaModelo');
+        $this->MaquinariaModelo->actualizar($data);
+        redirect('MaxMin');
     }
 
 }

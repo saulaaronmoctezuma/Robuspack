@@ -24,7 +24,7 @@
 
 
         <form action="<?= base_url('BitacoraMtto/bitacoraMttoModificar') ?>" method="post" align="center" onsubmit="return vali()">
-            <h1>Actualizar datos</h1>
+            <h1>Actualizar dadstos</h1>
             <MARQUEE SCROLLDELAY =200></MARQUEE>
             <div class="container" >  
                 <div class="row">

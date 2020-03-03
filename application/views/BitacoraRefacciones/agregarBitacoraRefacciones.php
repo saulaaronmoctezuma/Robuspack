@@ -14,7 +14,7 @@
 
         <!-- Bootstrap -->
 
-        <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+        <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
    <!-- Para traerse el rol que esta registrado-->
         <?php
         //check user level

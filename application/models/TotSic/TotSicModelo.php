@@ -81,7 +81,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('venta');
-           $this->db->where('venta.id= ', 8);
+           $this->db->where('venta.id= ',33);
             $query = $this->db->get();
              return $query->result();
         }
@@ -118,7 +118,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('venta');
-           $this->db->where('venta.id=8 and venta.troquel="No"');
+           $this->db->where('venta.id=33 and venta.troquel="No"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -170,7 +170,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('venta');
-          $this->db->where('venta.id=8 and venta.confirmacion_orden_compra="Consignación"');
+          $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Consignación"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -224,7 +224,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('venta');
-           $this->db->where('venta.id=8 and venta.confirmacion_orden_compra="Orden de Compra"');
+           $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Orden de Compra"');
             $query = $this->db->get();
              return $query->result();
         }
@@ -276,7 +276,7 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('venta');
-           $this->db->where('venta.id=8 and venta.confirmacion_orden_compra="Sin Pedido"');
+           $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Sin Pedido"');
             $query = $this->db->get();
              return $query->result();
         }

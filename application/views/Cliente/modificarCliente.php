@@ -133,9 +133,11 @@
             echo "Selected";
         } ?>>Selecciona una opción</option>
 
-                                        <option value="Carlos Hernández Maza" <?php if ($vendedor_refacciones == "Carlos Hernández Maza") {
-            echo "Selected";
-        } ?>>Carlos Hernández Maza</option>
+         <option value="Carlos Hernández Maza" <?php if ($vendedor_refacciones == "Carlos Hernández Maza") {echo "Selected";} ?>>Carlos Hernández Maza</option>
+           <option value="Martin Sena Cardona" <?php if ($vendedor_refacciones == "Martin Sena Cardona") {echo "Selected";} ?>>Martin Sena Cardona</option>
+         
+         
+         
                                         <option value="Elvira Parreño Arango" <?php if ($vendedor_refacciones == "Elvira Parreño Arango") {
             echo "Selected";
         } ?>>Elvira Parreño Arango</option>

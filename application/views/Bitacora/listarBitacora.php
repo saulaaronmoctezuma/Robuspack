@@ -28,6 +28,70 @@
         </script>
 
 
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".hidediv").click(function() {
+                    $(".divdemo").hide("slow");
+                });
+
+                $(".showdiv").click(function() {
+                    $(".divdemo").show(2000);
+                });
+
+            });
+
+        </script>
+        <style>
+            .divTable,divTableBody{
+
+                background-color:#0780BA;
+                color:#fff;
+                padding:100px;
+                font-size:25px;
+            }
+            /* DivTable.com */
+            .divTable{
+                display: table;
+                width: 100%;
+            }
+            .divTableRow {
+                display: table-row;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+            }
+            .divTableCell, .divTableHead {
+                border: 1px solid #999999;
+                display: table-cell;
+                padding: 3px 10px;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+                font-weight: bold;
+            }
+            .divTableFoot {
+                background-color: #EEE;
+                display: table-footer-group;
+                font-weight: bold;
+            }
+            .divTableBody {
+                display: table-row-group;
+            }
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    border: 1px solid blue;
+    width: 100px;
+    word-wrap: break-word;
+}
+        </style>
+
         <!-- Para traerse el rol que esta registrado-->
         <?php
         //check user level
@@ -59,6 +123,157 @@
             <div class="text-center">
                 <a  class="btn btn-success" href="<?= base_url('Bitacora/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos de las Bitacoras">Agregar nuevo registro</a>
             </div>
+            
+             <?php
+        if ($dataLevel == 'is_admin') {
+            echo '
+    <p><button class="hidediv ">Ocultar Registros</button>
+<button class="showdiv">Mostrar Registros</button>
+</p>    
+   
+     
+     <div class="divdemo" style="display:none";>    
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Usuario</p></strong></div>
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Registros</p></strong></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">Gerardo</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroBitacoraAldo as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_aldo ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+
+
+//            echo '
+//<div class="divTableRow">
+//<div class="divTableCell">Martin</div>
+//<div class="divTableCell"> ';
+//
+//            foreach ($totalRegistroBitacoraElvira as $fila) {
+//
+//                echo '<div class="grid_12" id="cuerpo"><center>';
+//                /*
+            
+
+
+//                echo '</center></div>';
+//            }
+//            echo '</div>
+//</div>';
+
+
+
+
+
+            echo '
+
+
+';
+
+         
+            echo '
+';
+
+
+
+
+
+        
+
+
+            echo '</div></div>
+        ';
+        } else if ($dataLevel == 'is_editor') {
+             echo '
+    <p><button class="hidediv ">Ocultar Registros</button>
+<button class="showdiv">Mostrar Registros</button>
+</p>    
+   
+     
+     <div class="divdemo" style="display:none";>    
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Usuario</p></strong></div>
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Registros</p></strong></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">Gerardo</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroBitacoraAldo as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_aldo ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+
+
+//            echo '
+//<div class="divTableRow">
+//<div class="divTableCell">Martin</div>
+//<div class="divTableCell"> ';
+//
+//            foreach ($totalRegistroBitacoraElvira as $fila) {
+//
+//                echo '<div class="grid_12" id="cuerpo"><center>';
+//                /*
+            
+
+
+//                echo '</center></div>';
+//            }
+//            echo '</div>
+//</div>';
+
+
+
+
+
+            echo '
+
+
+';
+
+         
+            echo '
+';
+
+
+
+            echo '</div></div>
+        ';
+           
+
+
+
+
+        }
+        ?>
+        
             <BR>
             <table  border="0" class="table table-bordered table-striped">
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>

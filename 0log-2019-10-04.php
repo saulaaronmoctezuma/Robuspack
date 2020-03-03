@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2019-10-04 09:11:23 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 09:11:23 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 09:11:24 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 09:11:24 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 09:12:55 --> Severity: Warning --> mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() C:\xampp\htdocs\master\system\libraries\Email.php 1906
+ERROR - 2019-10-04 17:08:35 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:35 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:35 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:35 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:45 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:45 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:45 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:08:45 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:11 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:11 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:11 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:11 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:42 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:42 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:42 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:29:42 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:30:32 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:30:32 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:30:32 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:30:32 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:34:55 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:34:55 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:34:55 --> Página no encontrada: Assets/login
+ERROR - 2019-10-04 17:34:55 --> Página no encontrada: Assets/login

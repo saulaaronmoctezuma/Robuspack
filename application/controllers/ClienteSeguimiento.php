@@ -628,5 +628,83 @@ class ClienteSeguimiento extends CI_Controller {
     }
 
 }
-
-// end class
+//
+//// end class
+//<?php
+//
+//defined('BASEPATH') OR exit('No direct script access allowed');
+//
+//class Excel_import extends CI_Controller {
+//
+//    public function __construct() {
+//        parent::__construct();
+//
+//        $this->load->library('form_validation');
+//        $this->load->helper('url');
+//    }
+//
+//    public function index() {
+//        $data['num_rows'] = $this->db->get('fuventas')->num_rows();
+//
+//        $this->load->view('excel_import', $data);
+//    }
+//
+//    public function import_data() {
+//        $config = array(
+//            'upload_path' => FCPATH . 'upload/',
+//            'allowed_types' => '*'
+//        );
+//        $this->load->library('upload', $config);
+//        if ($this->upload->do_upload('file')) {
+//            $data = $this->upload->data();
+//            @chmod($data['full_path'], 0777);
+//
+//            $this->load->library('Spreadsheet_Excel_Reader');
+//            $this->spreadsheet_excel_reader->setOutputEncoding('CP1251');
+//
+//            $this->spreadsheet_excel_reader->read($data['full_path']);
+//            $sheets = $this->spreadsheet_excel_reader->sheets[0];
+//            error_reporting(0);
+//
+//            $data_excel = array();
+//            for ($i = 2; $i <= $sheets['numRows']; $i++) {
+//                if ($sheets['cells'][$i][1] == '')
+//                    break;
+//
+//                $data_excel[$i - 1]['ref'] = $sheets['cells'][$i][1];
+//                $data_excel[$i - 1]['cliente'] = $sheets['cells'][$i][2];
+//                $data_excel[$i - 1]['direccion'] = $sheets['cells'][$i][3];
+//                $data_excel[$i - 1]['codigo'] = $sheets['cells'][$i][4];
+//                $data_excel[$i - 1]['tipo_de_prod'] = $sheets['cells'][$i][5];
+//                $data_excel[$i - 1]['rfc'] = $sheets['cells'][$i][6];
+//                $data_excel[$i - 1]['factura'] = $sheets['cells'][$i][7];
+//                $data_excel[$i - 1]['remision'] = $sheets['cells'][$i][8];
+//                $data_excel[$i - 1]['fecha_de_remision'] = $sheets['cells'][$i][9];
+//                $data_excel[$i - 1]['orden_compra'] = $sheets['cells'][$i][10];
+//                $data_excel[$i - 1]['cantidad'] = $sheets['cells'][$i][11];
+//                $data_excel[$i - 1]['pu_usd'] = $sheets['cells'][$i][12];
+//                $data_excel[$i - 1]['subtotal'] = $sheets['cells'][$i][13];
+//                $data_excel[$i - 1]['iva'] = $sheets['cells'][$i][14];
+//                $data_excel[$i - 1]['total_usd'] = $sheets['cells'][$i][15];
+//                $data_excel[$i - 1]['fecha'] = $sheets['cells'][$i][16];
+//                $data_excel[$i - 1]['pedimento'] = $sheets['cells'][$i][17];
+//                $data_excel[$i - 1]['fecha_pedimento'] = $sheets['cells'][$i][18];
+//                $data_excel[$i - 1]['dias_de_credito'] = $sheets['cells'][$i][19];
+//                $data_excel[$i - 1]['fecha_vencimiento'] = $sheets['cells'][$i][20];
+//                $data_excel[$i - 1]['fecha_de_pago'] = $sheets['cells'][$i][21];
+//                $data_excel[$i - 1]['status_de_pago'] = $sheets['cells'][$i][22];
+//                $data_excel[$i - 1]['refacturacion'] = $sheets['cells'][$i][23];
+//                $data_excel[$i - 1]['nueva'] = $sheets['cells'][$i][24];
+//                $data_excel[$i - 1]['observaciones'] = $sheets['cells'][$i][25];
+//                $data_excel[$i - 1]['vendedor'] = $sheets['cells'][$i][26];
+//                $data_excel[$i - 1]['fecha_de_cobro_de_comisiones'] = $sheets['cells'][$i][27];
+//                $data_excel[$i - 1]['id'] = $sheets['cells'][$i][28];
+//            }
+//
+//            $this->db->insert_batch('fuventas', $data_excel);
+//             @unlink($data['full_path']);
+//            redirect('excel-import');
+//        }
+//    }
+//
+//}

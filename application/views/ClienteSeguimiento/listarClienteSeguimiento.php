@@ -50,11 +50,15 @@
 
     <body>
         
-        
+      
         <div class="container" style="margin-top:1px;">
             <center>  <h1>Control SIM</h1></center>
 
-
+            <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    <input type="text" id="myInput"  placeholder="Escribe para buscar..."  class="form-control" />
+                     
+                </div>
 
 
 
@@ -62,10 +66,7 @@
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
                 </div>
-                <div class="form-group input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                    <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
-                </div>
+               
                 
                  <?php
         if ($dataLevel == 'is_admin') {
@@ -114,7 +115,47 @@
                     <thead >
                         <tr >
                             
-                             <?php
+                           
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                         
+
+                           
+                            <th class="header">Cliente</th>
+                            <th class="header">Nivel</th>
+                            <th style="width:45px;">Necesidad</th>
+                            <th class="header">Compromiso</th>
+                            <th  style="width:45px;" class="header">Notas</th>
+
+                            <th class="header">Cotización</th>
+                            <th class="header">Pedido</th>
+                            <th class="header">Contrato</th>
+
+
+                               <?php
+                            if ($dataLevel == 'is_admin') {
+                                echo '<th class="header">Usuario</th>';
+                            } else if ($dataLevel == 'is_editor') {
+                                echo '<th class="header">Usuario</th>';
+                            } else if ($dataLevel == 'is_Gerente_Ventas') {
+                                
+                            } 
+                            else if ($dataLevel == 'is_director') {
+                                echo '<th class="header">Usuario</th>';
+                            } 
+                            else {
+                                
+                            }
+                            ?>
+
+                           
+                              <?php
                             if ($dataLevel == 'is_admin') {
                                
                                
@@ -148,61 +189,118 @@
                                 
                             }
                             ?>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <?php
-                            if ($dataLevel == 'is_admin') {
-                                echo '<th class="header">Usuario</th>';
-                            } else if ($dataLevel == 'is_editor') {
-                                echo '<th class="header">Usuario</th>';
-                            } else if ($dataLevel == 'is_Gerente_Ventas') {
-                                
-                            } 
-                            else if ($dataLevel == 'is_director') {
-                                echo '<th class="header">Usuario</th>';
-                            } 
-                            else {
-                                
-                            }
-                            ?>
-
-                           
-                            <th class="header">Cliente</th>
-                            <th class="header">Nivel</th>
-                            <th style="width:45px;">Necesidad</th>
-                            <th class="header">Compromiso</th>
-                            <th  style="width:45px;" class="header">Notas</th>
-
-                            <th class="header">Cotización</th>
-                            <th class="header">Pedido</th>
-                            <th class="header">Contrato</th>
-
-
-
-
-                           
-
 
                         </tr>
                     </thead>
 
-
+<tbody id="myTable">
 
                     <?php
                     foreach ($clienteseguimiento as $obj) {
                         echo '<tr>';
                         
+                     
                         
+                      
+
+
+                        
+                        echo '<td>'.
+                         $obj->getCliente() .
+                        '</td>'
+                         . '<td>'
+                        . $obj->getNivel() .
+                        '</td>';
+                        
+                        
+                        
+                        
+               if (($obj->getNecesidad() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getNecesidad() != null)) {
+        echo '<td title="'. $obj->getNecesidad() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }
+    
+    
+               if (($obj->getCompromiso() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getCompromiso() != null)) {
+        echo '<td title="'. $obj->getCompromiso() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }
+    
+    
+               if (($obj->getNotas() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getNotas() != null)) {
+        echo '<td title="'. $obj->getNotas() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }
+    
+                               
+                      
+                        
+                          if($obj->getCotizacion() != null) {
+                              
+                              
+                              echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getCotizacion() . '"><img width="42" height="42" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
+                               </a></center></td>';
+                            } else {
+                                echo '<td><center><img height="42" width="42" src="http://rubiotarifa.es/imagenes/atencion.gif" /></center></td>';
+                            }
+                            
+                            
+                              if($obj->getPedido() != null) {
+                                  
+                                  echo '<td><center> <a height="42" width="42" target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getPedido() . '"><img width="42" height="42" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
+                               </a></center></td>';
+                                  
+                                  
+                           } else {
+                                echo '<td><center><img height="42" width="42" src="http://rubiotarifa.es/imagenes/atencion.gif" /></center></td>';
+                            }
+                            
+                            
+                              if($obj->getContrato() != null) {
+                                  
+                                   echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getContrato() . '"><img width="42" height="42" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
+                               </a></center></td>';
+                                  
+                                  
+                            } else {
+                                echo '<td><center><img height="42" width="42" src="http://rubiotarifa.es/imagenes/atencion.gif" /></center></td>';
+                           }
+                            
+                       
+
+                             
+                          echo '<td>';
+                        if ($dataLevel == 'is_admin') {
+                            echo 
+                             $obj->getFirst_name() .
+                            '</td>'
+
+                            ;
+                        } else if ($dataLevel == 'is_editor') {
+                            echo $obj->getFirst_name() .
+                            '</td>'
+                            ;
+                        }else if ($dataLevel == 'is_Gerente_Ventas') {
+                           
+                        }else if ($dataLevel == 'is_director') {
+                            echo $obj->getFirst_name() .
+                            '</td>'
+                            ;
+                        } else {
+                            
+                        }
+                        
+                           
                         //compara si es administrador
                         if ($dataLevel == 'is_admin') {
-                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteSeguimiento/eliminar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
-                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteSeguimiento/eliminar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
                         } else if ($dataLevel == 'is_editor') {
                                  echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteSeguimiento/eliminar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
@@ -220,87 +318,6 @@
                         else {
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteSeguimiento/actualizar/' . $obj->getId_clienteseguimiento() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                         }
-
-                        
-                        
-                          echo '<td>';
-                        if ($dataLevel == 'is_admin') {
-                            echo 
-                             $obj->getFirst_name() .
-                            '</td>'. '<td>'
-
-                            ;
-                        } else if ($dataLevel == 'is_editor') {
-                            echo $obj->getFirst_name() .
-                            '</td>'.
-                                   '<td>'
-                            ;
-                        }else if ($dataLevel == 'is_Gerente_Ventas') {
-                           
-                        }else if ($dataLevel == 'is_director') {
-                            echo $obj->getFirst_name() .
-                            '</td>'.
-                                   '<td>'
-                            ;
-                        } else {
-                            
-                        }
-
-
-                        
-                        echo 
-                         $obj->getCliente() .
-                        '</td>'
-                         . '<td>'
-                        . $obj->getNivel() .
-                        '</td>'
-                               
-                        . '<td>'
-                        . $obj->getNecesidad() .
-                        '</td>'
-                        . '<td>'
-                        . $obj->getCompromiso() .
-                        '</td>'
-                        . '<td>'
-                        . $obj->getNotas() .
-                        '</td>'
-                ;
-                        
-                          if($obj->getCotizacion() != null) {
-                              
-                              
-                              echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getCotizacion() . '"><img width=100" height="100" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
-                               </a></center></td>';
-                            } else {
-                                echo '<td><center><img src="http://rubiotarifa.es/imagenes/atencion.gif" width=75" height="75"/></center></td>';
-                            }
-                            
-                            
-                              if($obj->getPedido() != null) {
-                                  
-                                  echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getPedido() . '"><img width=100" height="100" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
-                               </a></center></td>';
-                                  
-                                  
-                           } else {
-                                echo '<td><center><img src="http://rubiotarifa.es/imagenes/atencion.gif" width=75" height="75"/></center></td>';
-                            }
-                            
-                            
-                              if($obj->getContrato() != null) {
-                                  
-                                   echo '<td><center> <a  target=”_blank”  href="' . base_url() . 'assets/clienteseguimiento/' . $obj->getContrato() . '"><img width=100" height="100" src="http://englishworldwide.edu.co/assets/img/check.gif" alt="Los Tejos" /></a>
-                               </a></center></td>';
-                                  
-                                  
-                            } else {
-                                echo '<td><center><img src="http://rubiotarifa.es/imagenes/atencion.gif" width=75" height="75"/></center></td>';
-                           }
-                            
-                       
-
-
-                        
 
 
 

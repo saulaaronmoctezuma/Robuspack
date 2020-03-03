@@ -14,7 +14,7 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
 
         <!-- Bootstrap -->
 
-        <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+      <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);

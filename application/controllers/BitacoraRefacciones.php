@@ -51,6 +51,10 @@ class BitacoraRefacciones extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+            $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -58,6 +62,10 @@ class BitacoraRefacciones extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
             $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+            $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -65,6 +73,10 @@ class BitacoraRefacciones extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
              $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+             $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);

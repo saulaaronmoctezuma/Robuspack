@@ -290,12 +290,7 @@
                 {
 
                     // document.formulario.confirmacion_orden_compra.selectedIndex = null;
-                    document.formulario.uso_de_cfdi.selectedIndex = null;
-                    document.formulario.paqueteria.selectedIndex = null;
-                    document.formulario.metodo_pago.selectedIndex = null;
-                    document.formulario.tipo_entrega.selectedIndex = null;
-                    // document.formulario.periodo_surtimiento.selectedIndex = null;
-                    document.formulario.dias_credito.selectedIndex = null;
+                   
                     //document.formulario.troquel.selectedIndex = null;
                     // document.formulario.elements['confirmacion_orden_compra'].style.display = 'block';
                     //document.formulario.elements['periodo_surtimiento'].style.display = 'block';
@@ -474,6 +469,14 @@
                             <td>
                                 <SELECT name="periodo_surtimiento" id="periodo_surtimiento" class="form-control input-sm"> 
                                     <optgroup label="Selecciona una opción">
+                                        
+                                         <option value="<?= $periodo_surtimiento ?>"<?php
+                                        if ($periodo_surtimiento == $periodo_surtimiento) {
+                                            echo "Selected";
+                                        }
+                                        ?>>
+                                        <?=$periodo_surtimiento?></option>
+                                        
                                         <option value="Semanal" <?php
                                         if ($periodo_surtimiento == "Semanal") {
                                             echo "Selected";
@@ -529,7 +532,10 @@
                             <td>
                                 <SELECT name="paqueteria" id="paqueteria" class="form-control input-sm"> 
                                     <optgroup label="Selecciona una opción">
-
+                                        
+                                        
+                                        
+                                        
                                         <option value="Tres guerras" <?php
                                         if ($paqueteria == "Tres guerras") {
                                             echo "Selected";
@@ -550,11 +556,11 @@
                                             echo "Selected";
                                         }
                                         ?>>Flecha Amarilla</option>
-                                        <option value="Almex" <?php
-                                        if ($paqueteria == "Almex") {
+                                        <option value="Castores" <?php
+                                        if ($paqueteria == "Castores") {
                                             echo "Selected";
                                         }
-                                        ?>>Almex</option>
+                                        ?>>Castores</option>
                                     </optgroup>
                                 </SELECT>
                             </td>
@@ -718,8 +724,9 @@
                                        <option value="LANGSTON" <?php if ($marca_maquina == "LANGSTON") { echo "Selected"; } ?>>LANGSTON</option>
                                        <option value="LATITUD" <?php if ($marca_maquina == "LATITUD") {  echo "Selected"; } ?>>LATITUD</option>
                                        <option value="MARTIN" <?php if ($marca_maquina == "MARTIN") { echo "Selected"; } ?>>MARTIN</option>
-                                      <option value="SMARTBOX" <?php if ($marca_maquina == "SMARTBOX") { echo "Selected"; } ?>>SMARTBOX</option>
+                                     
                                        <option value="STALEY" <?php if ($marca_maquina == "STALEY") {  echo "Selected"; } ?>>STALEY</option>
+                                       <option value="SRPACK" <?php if ($marca_maquina == "SRPACK") {  echo "Selected"; } ?>>SRPACK</option>
                                        <option value="TECASA" <?php if ($marca_maquina == "TECASA") { echo "Selected"; } ?>>TECASA</option>
                                        <option value="WARD" <?php if ($marca_maquina == "WARD") {  echo "Selected"; } ?>>WARD</option>
                                        <option value="WARD III" <?php if ($marca_maquina == "WARD III") { echo "Selected"; } ?>>WARD III</option>
@@ -760,13 +767,20 @@
                                         <option value="Midline NT/ RS" <?php  if ($contacto == "Midline NT/ RS") { echo "Selected";  } ?>>Midline NT/ RS</option>
                                         <option value="Miniline" <?php if ($contacto == "Miniline") {  echo "Selected"; } ?>>Miniline</option>
                                         <option value="Miniline RS" <?php  if ($contacto == "Miniline RS") { echo "Selected";  } ?>>Miniline RS</option>
-                                        <option value="SR-PACK" <?php if ($contacto == "SR-PACK") {  echo "Selected"; } ?>>SR-PACK</option>
+                                        
                                         <option value="TECASA" <?php  if ($contacto == "TECASA") { echo "Selected";  } ?>>TECASA</option>
                                         <option value="Transline" <?php if ($contacto == "Transline") {  echo "Selected"; } ?>>Transline</option>
                                          <option value="Transline RS" <?php  if ($contacto == "Transline RS") { echo "Selected";  } ?>>Transline RS</option>
                                         <option value="Transline NT/ RS" <?php if ($contacto == "Transline NT/ RS") {  echo "Selected"; } ?>>Transline NT/ RS</option>
                                       
-                                    
+                                         <option value="INOVA" <?php  if ($contacto == "INOVA") { echo "Selected";  } ?>>INOVA</option>
+                                         <option value="PRIMA" <?php  if ($contacto == "PRIMA") { echo "Selected";  } ?>>PRIMA</option>
+                                         <option value="NOVO" <?php  if ($contacto == "NOVO") { echo "Selected";  } ?>>NOVO</option>
+                                         <option value="NOVA" <?php  if ($contacto == "NOVA") { echo "Selected";  } ?>>NOVA</option>
+                                         <option value="BPSD" <?php  if ($contacto == "BPSD") { echo "Selected";  } ?>>BPSD</option>
+                                         <option value="BP" <?php  if ($contacto == "BP") { echo "Selected";  } ?>>BP</option>
+                                         <option value="ASPF" <?php  if ($contacto == "ASPF") { echo "Selected";  } ?>>ASPF</option>
+                                        
                                        
                                        
                                     </optgroup>

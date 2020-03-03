@@ -65,15 +65,15 @@
         if ($dataLevel == 'is_editor') {
             
         } else if ($dataLevel == 'is_admin') {
-            
+               echo '<left> <h1>Buscar</h1> </left>
+        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+        ';
         } else if ($dataLevel == 'is_logistica') {
             
         } else if ($dataLevel == 'is_refacciones') {
             
         } else {
-            echo '<left> <h1>Buscar</h1> </left>
-        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
-        ';
+         
         }
         ?>
 

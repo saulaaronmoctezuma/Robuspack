@@ -14,8 +14,8 @@
 
         <!-- Bootstrap -->
 
-        <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
-   <!-- Para traerse el rol que esta registrado-->
+   <!--     <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+    Para traerse el rol que esta registrado-->
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
@@ -88,7 +88,7 @@
                 <div class="row">
 
                     <div class="form-group col-xs-6">
-                        <label for="nombre">Descripcion</label>
+                        <label for="nombre">Descripción</label>
                              <textarea name="descripcion" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa una nota" require></textarea>
                    
                     </div>

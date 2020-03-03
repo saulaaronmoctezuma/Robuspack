@@ -73,9 +73,8 @@
                 <tr>
 
 
-
                     <th class="header" style="text-align: center">Código</th>
-                    <th class="header" style="text-align: center">Fecha_Corte de Rotación</th>
+                    <th class="header" style="text-align: center"> <a href="http://localhost/master/Maquinaria/actualiza/1">Fecha_Corte de Rotación</th>
                     <th class="header" style="text-align: center">Fecha_Último Consumo</th>
                     <th class="header" style="text-align: center">Fecha_Requiere Piezas</th>
                     <th class="header" style="text-align: center">Pedido_Inteligente</th>

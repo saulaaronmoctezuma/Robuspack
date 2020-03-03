@@ -357,4 +357,42 @@ order by b.id_bitacora desc
         return $options_arr;
     }
 
+    
+    
+    public function totalRegistroBitacoraCarlos()
+    {
+            $this->db->select('COUNT(*) as total_registros_gerardo');
+            $this->db->from('bitacora');
+           $this->db->where('bitacora.id= ', 6);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+        
+           public function totalRegistroBitacoraAldo()
+    {
+            $this->db->select('COUNT(*) as total_registros_aldo');
+            $this->db->from('bitacora');
+           $this->db->where('bitacora.id= ', 13);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+           public function totalRegistroBitacoraElvira()
+    {
+            $this->db->select('COUNT(*) as total_registros_elvira');
+            $this->db->from('bitacora_refacciones');
+           $this->db->where('bitacora_refacciones.id= ', 33);
+            $query = $this->db->get();
+             return $query->result();
+        }
+        
+           public function totalRegistroBitacoraOrlene()
+    {
+            $this->db->select('COUNT(*) as total_registros_orlene');
+            $this->db->from('bitacora_refacciones');
+           $this->db->where('bitacora_refacciones.id= ', 9);
+            $query = $this->db->get();
+             return $query->result();
+        }
 }

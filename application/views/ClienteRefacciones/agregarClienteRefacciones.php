@@ -513,7 +513,7 @@
                             <input id="mulprecio_unitario" min="0" onkeyup="multCostoJuego();" type="number" class="form-control input-sm"  name="precio_unitario" placeholder="Ingresa el precio unitario " require>
                         </div>
                         <div class="form-group col-xs-4">
-                            <label for="nombre">Vida Util Dias</label>
+                            <label for="nombre">Vida Util en Dias</label>
                             <input id="res_vida_util_dias"  type="number" readonly="readonly" min="0" style="background-color:#03E7F7;" title="Campo Autocompletable" class="form-control input-sm"  name="vida_util_dias" placeholder=" "  require>
                         </div>
                         <div>
@@ -560,7 +560,7 @@
                                         <OPTION VALUE="Paquete Express">Paquete Express</OPTION>
                                         <OPTION VALUE="Estafeta">Estafeta</OPTION>
                                         <OPTION VALUE="Flecha Amarilla">Flecha amarilla</OPTION>
-                                        <OPTION VALUE="Almex">Almex</OPTION>
+                                        <OPTION VALUE="Castores">Castores</OPTION>
 
                                     </select>
 
@@ -654,7 +654,7 @@
 
 
                                 <div class="form-group col-xs-4">
-                                    <label for="nombre">Juego mensuales</label>
+                                    <label for="nombre">Juegos mensuales</label>
                                     <input style="background-color:#03E7F7;"  id="res_juegos_mensuales" type="text" readonly="readonly" class="form-control input-sm"  name="juego_mensuales" title="Campo Autocompletable"   >
                                 </div>
                                 <div class="form-group col-xs-4">
@@ -726,8 +726,9 @@
                                         <OPTION VALUE="LATITUD">LATITUD</OPTION>
                                         <OPTION VALUE="MARTIN">MARTIN</OPTION>
 
-                                        <OPTION VALUE="SMARTBOX">SMARTBOX</OPTION>
+                                       
                                         <OPTION VALUE="STALEY">STALEY</OPTION>
+                                         <OPTION VALUE="SRPACK">SRPACK</OPTION>
                                         <OPTION VALUE="TECASA">TECASA</OPTION>
                                         <OPTION VALUE="WARD">WARD</OPTION>
                                         <OPTION VALUE="WARD III">WARD III</OPTION>
@@ -759,13 +760,20 @@
                                         <OPTION VALUE="Midline NT/ RS">Midline NT/ RS</OPTION>
                                         <OPTION VALUE="Miniline">Miniline</OPTION> 
                                         <OPTION VALUE="Miniline RS">Miniline RS</OPTION> 
-                                        <OPTION VALUE="SR-PACK">SR-PACK</OPTION>
+                                        
                                         <OPTION VALUE="TECASA">TECASA</OPTION> 
                                         <OPTION VALUE="Transline">Transline</OPTION> 
                                         <OPTION VALUE="Transline RS">Transline RS</OPTION>
                                         <OPTION VALUE="Transline NT/ RS">Transline NT/ RS</OPTION> 
-
-
+                                       
+                                        
+                                        <OPTION VALUE="INOVA">INOVA</OPTION> 
+                                        <OPTION VALUE="PRIMA">PRIMA</OPTION> 
+                                        <OPTION VALUE="NOVO">NOVO</OPTION> 
+                                        <OPTION VALUE="NOVA">NOVA</OPTION> 
+                                        <OPTION VALUE="BPSD">BPSD</OPTION> 
+                                        <OPTION VALUE="BP">BP</OPTION> 
+                                        <OPTION VALUE="ASPF">ASPF</OPTION>  
 
 
 
@@ -962,10 +970,7 @@
                                     </select>
 
                                 </div>
-                                <div class="form-group col-xs-4">
-                                    <label for="nombre">Archivo</label>
-                                    <input id="a6" min="2017-01-01" max="2025-12-31" type="text" class="form-control input-sm"  name="archivo" placeholder="Ingresa " required>
-                                </div>
+                                
     
  </div>
 
@@ -973,6 +978,8 @@
                                 <input id="fecha_ultima_factura" type="hidden" class="form-control input-sm" name="fecha_ultima_factura">
 
                                 <input id="consumo_real" type="hidden" class="form-control input-sm" name="consumo_real">
+                                 <input id="consumo_real" type="hidden" class="form-control input-sm" name="archivo">
+
 
 
 

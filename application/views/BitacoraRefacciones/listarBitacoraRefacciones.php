@@ -55,13 +55,102 @@ th, td {
 
 
 </style>
+
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".hidediv").click(function() {
+                    $(".divdemo").hide("slow");
+                });
+
+                $(".showdiv").click(function() {
+                    $(".divdemo").show(2000);
+                });
+
+            });
+
+        </script>
+        <style>
+            .divTable,divTableBody{
+
+                background-color:#0780BA;
+                color:#fff;
+                padding:100px;
+                font-size:25px;
+            }
+            /* DivTable.com */
+            .divTable{
+                display: table;
+                width: 100%;
+            }
+            .divTableRow {
+                display: table-row;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+            }
+            .divTableCell, .divTableHead {
+                border: 1px solid #999999;
+                display: table-cell;
+                padding: 3px 10px;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+                font-weight: bold;
+            }
+            .divTableFoot {
+                background-color: #EEE;
+                display: table-footer-group;
+                font-weight: bold;
+            }
+            .divTableBody {
+                display: table-row-group;
+            }
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    border: 1px solid blue;
+    width: 100px;
+    word-wrap: break-word;
+}
+        </style>
     </head>
 
 
     <head>
     <div class="container" style="margin-top:1px;">
 
-
+        <br>    
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div class="table-responsive">
             <center>  <h1>Bitácora Refacciones</h1></center>
 
@@ -77,6 +166,189 @@ th, td {
             <div class="text-center">
                 <a  class="btn btn-success" href="<?= base_url('BitacoraRefacciones/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos de las Bitacoras">Agregar nuevo registro</a>
             </div>
+            
+               <?php
+        if ($dataLevel == 'is_admin') {
+            echo '
+    <p><button class="hidediv ">Ocultar Registros</button>
+<button class="showdiv">Mostrar Registros</button>
+</p>    
+   
+     
+     <div class="divdemo" style="display:none";>    
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Usuario</p></strong></div>
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Registros</p></strong></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">Aldo</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroBitacoraAldo as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_aldo ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+
+
+//            echo '
+//<div class="divTableRow">
+//<div class="divTableCell">Martin</div>
+//<div class="divTableCell"> ';
+//
+//            foreach ($totalRegistroBitacoraElvira as $fila) {
+//
+//                echo '<div class="grid_12" id="cuerpo"><center>';
+//                /*
+            
+
+
+//                echo '</center></div>';
+//            }
+//            echo '</div>
+//</div>';
+
+
+
+
+
+            echo '
+<div class="divTableRow">
+<div class="divTableCell">Martín</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroBitacoraElvira as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_elvira ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+
+
+
+
+        
+
+
+            echo '</div></div>
+        ';
+        } else if ($dataLevel == 'is_editor') {
+            
+     echo '
+    <p><button class="hidediv">Ocultar Registros</button>
+<button class="showdiv">Mostrar Registros</button>
+</p>    
+   
+     
+     <div class="divdemo" style="display:none";>    
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Usuario</p></strong></div>
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Registros</p></strong></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">Aldo</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroBitacoraAldo as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_aldo ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+
+
+//            echo '
+//<div class="divTableRow">
+//<div class="divTableCell">Martin</div>
+//<div class="divTableCell"> ';
+//
+//            foreach ($totalRegistroBitacoraElvira as $fila) {
+//
+//                echo '<div class="grid_12" id="cuerpo"><center>';
+//                /*
+            
+
+
+//                echo '</center></div>';
+//            }
+//            echo '</div>
+//</div>';
+
+
+
+
+
+            echo '
+<div class="divTableRow">
+<div class="divTableCell">Martín</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroBitacoraElvira as $fila) {
+
+                echo '<div class="grid_12" id="cuerpo"><center>';
+                ?>
+
+
+                <?= $fila->total_registros_elvira ?>
+
+
+                <?php
+                echo '</center></div>';
+            }
+            echo '</div>
+</div>';
+
+
+
+
+
+        
+
+
+            echo '</div></div>
+        ';
+
+
+
+           
+
+
+
+
+        }
+        ?>
+        
+        
             <BR>
             <table  border="2" class="table table-bordered table-striped" table="example" >
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
@@ -178,14 +450,16 @@ echo '<th class="header">Observación</th>';
                         '</td>'
                         . '<td>'
                         . $obj->getCliente() .
-                        '</td>'
-                        . '<td>'
-                        . $obj->getDescripcion() .
-                        '</td>'
-
-                                    
-
-                        ;
+                        '</td>';
+                        
+                        
+                                          if (($obj->getDescripcion() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getDescripcion() != null)) {
+        echo '<td title="'. $obj->getDescripcion() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></center></i></td>';
+    }
+            
 
 
 
@@ -290,4 +564,22 @@ echo '<th class="header">Observación</th>';
 
 
     </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+ // Write on keyup event of keyword input element
+ $(document).ready(function(){
+ $("#buscandoIguales").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+ $.each($("#example tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
 </html>

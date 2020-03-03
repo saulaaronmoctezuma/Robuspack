@@ -62,8 +62,8 @@ class TotBitModelo extends CI_Model implements IModeloAbstracto {
       public function totalRegistroBitacoraCarlos()
     {
             $this->db->select('COUNT(*) as total_registros_carlos');
-            $this->db->from('bitacora');
-           $this->db->where('bitacora.id= ', 6);
+            $this->db->from('bitacora_refacciones');
+           $this->db->where('bitacora_refacciones.id= ', 6);
             $query = $this->db->get();
              return $query->result();
         }
@@ -72,8 +72,8 @@ class TotBitModelo extends CI_Model implements IModeloAbstracto {
            public function totalRegistroBitacoraAldo()
     {
             $this->db->select('COUNT(*) as total_registros_aldo');
-            $this->db->from('bitacora');
-           $this->db->where('bitacora.id= ', 7);
+            $this->db->from('bitacora_refacciones');
+           $this->db->where('bitacora_refacciones.id= ', 7);
             $query = $this->db->get();
              return $query->result();
         }
@@ -81,8 +81,8 @@ class TotBitModelo extends CI_Model implements IModeloAbstracto {
            public function totalRegistroBitacoraElvira()
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
-            $this->db->from('bitacora');
-           $this->db->where('bitacora.id= ', 8);
+            $this->db->from('bitacora_refacciones');
+           $this->db->where('bitacora_refacciones.id= ', 33);
             $query = $this->db->get();
              return $query->result();
         }
@@ -90,8 +90,8 @@ class TotBitModelo extends CI_Model implements IModeloAbstracto {
            public function totalRegistroBitacoraOrlene()
     {
             $this->db->select('COUNT(*) as total_registros_orlene');
-            $this->db->from('bitacora');
-           $this->db->where('bitacora.id= ', 9);
+            $this->db->from('bitacora_refacciones');
+           $this->db->where('bitacora_refacciones.id= ', 9);
             $query = $this->db->get();
              return $query->result();
         }

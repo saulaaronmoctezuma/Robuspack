@@ -146,6 +146,8 @@
                                 <OPTION VALUE="Karen Orlene Hernández Villagrán">Karen Orlene Hernández Villagrán</OPTION>
                                 <OPTION VALUE="César Alberto Cantú Omaña">César Alberto Cantú Omaña</OPTION>
                                 <OPTION VALUE="Josué Aldo Guillén Ortega">Josué Aldo Guillén Ortega</OPTION>
+                                <OPTION VALUE="Martin Sena Cardona">Martin Sena Cardona</OPTION>
+                                
                             </select>
                         </div>
                     </div>

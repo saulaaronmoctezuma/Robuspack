@@ -279,13 +279,21 @@ s
 
 	  <br>
 
-<fieldset>
+
+';}
+
+ if ($row->motivo_asistencia == null) {
+            $output .= '';
+        } else {
+        $output .= '
+          <fieldset>
   <legend>Motivo de asistencia por parte del técnico</legend>
 ' . nl2br($row->motivo_asistencia) . ' 
   
   
-</fieldset>
-
+</fieldset>      
+       ';}
+$output .= '
 <br><br>
             
 <!--<fieldset style="width:100%;height: 100%" >-->
@@ -317,7 +325,7 @@ s
 
 
 			';
-        }
+        
 
         $output .= '
             
@@ -710,15 +718,46 @@ $output .= '';
     
 
 </table>
-<br><br><br>';
+<br>';
 
 
        
 
 
 
+       
+
+ if ($row->recomendaciones == null) {
+            $output .= '';
+        } else {
+        $output .= '
+    <fieldset>
+  <legend>Observaciones del Técnico</legend>
+ ' . nl2br($row->recomendaciones) . '
+  
+  
+</fieldset>     
+       ';}
+
         
-        
+
+
+
+
+
+ if ($row->proxima_inter == null) {
+            $output .= '';
+        } else {
+        $output .= '
+               
+<fieldset>
+  <legend>Proxima Fecha de Intervención Sugerida Robuspack:</legend>
+ ' . nl2br($row->proxima_inter) . ' &nbsp;
+  
+  
+</fieldset>    
+       ';}
+
         
 
 
@@ -731,23 +770,16 @@ $output .= '';
         $output .= '
 	
 
-            
-<fieldset>
-  <legend>Observaciones del Técnico</legend>
- ' . nl2br($row->recomendaciones) . '
-  
-  
-</fieldset>
 
-<br><br>	
+     
 
             
-<fieldset>
-  <legend>Proxima Fecha de Intervención Sugerida Robuspack:</legend>
- ' . nl2br($row->proxima_inter) . ' &nbsp;
-  
-  
-</fieldset>
+
+
+
+
+
+<br>
 
 
 
@@ -799,7 +831,12 @@ $output .= '';
 
 <!--<center>Recibe ' . $row->planta . '</center>
 <br><br><br>
-<div class="divTable" style="width: 100%;border: 1px solid #000;" >
+
+
+';
+
+ if ($row->foto == null) {
+            $output .= '<div class="divTable" style="width: 100%;border: 1px solid #000;" >
 <div class="divTableBody">
 
 
@@ -937,7 +974,25 @@ $output .= '';
 <center>Nombre de quien entrega</center></div>
 <div class="divTableCell"><center><br><center><br><br><br><hr/><center>Firma de quien entrega</center></div>
 
+</div>';
+        } else {
+            $output .= '
+
+
+   <div class="divTableRow">
+<!--
+<img src="https://anthoncode.com/wp-content/uploads/2019/01/codeigniter-logo-png.png">-->
+
+
+<img src="' . base_url() . 'assets/bitacora_mtto/' . $row->foto . '" width="612px" height="400px">
+    
 </div>
+    
+';}
+
+$output .= '
+
+
 
 
 

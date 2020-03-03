@@ -55,7 +55,85 @@ class ClienteRefacciones extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
+           
+            
+            
+            $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
+            $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
+            $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
+            $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
+
+
+            $data['totalRegistroSicNoTroquelaCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaCarlos(1);
+            $data['totalRegistroSicNoTroquelaAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaAldo(1);
+            $data['totalRegistroSicNoTroquelaElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaElvira(1);
+            $data['totalRegistroSicNoTroquelaJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaJaime(1);
+
+
+            $data['totalRegistroSicConfirmacionCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionCarlos(1);
+            $data['totalRegistroSicConfirmacionAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionAldo(1);
+            $data['totalRegistroSicConfirmacionElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionElvira(1);
+            $data['totalRegistroSicConfirmacionJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionJaime(1);
+
+
+            $data['totalRegistroSicOrdenCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCarlos(1);
+            $data['totalRegistroSicOrdenAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenAldo(1);
+            $data['totalRegistroSicOrdenElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenElvira(1);
+            $data['totalRegistroSicOrdenJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenJaime(1);
+
+
+            $data['totalRegistroSicSinPedidoCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoCarlos(1);
+            $data['totalRegistroSicSinPedidoAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoAldo(1);
+            $data['totalRegistroSicSinPedidoElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoElvira(1);
+            $data['totalRegistroSicSinPedidoJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoJaime(1);
+
+
+            $data['totalRegistroSic'] = $this->ClienteRefaccionesModelo->totalRegistroSic(1);
+            $data['totalRegistroSicNoTroquela'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquela(1);
+            $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
+            $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
+            $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
+
+
+            $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
+            $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
+            $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
+            $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
+
+
+            $data['totalRegistroSicNoTroquelaCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaCarlos(1);
+            $data['totalRegistroSicNoTroquelaAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaAldo(1);
+            $data['totalRegistroSicNoTroquelaElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaElvira(1);
+            $data['totalRegistroSicNoTroquelaJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaJaime(1);
+
+
+            $data['totalRegistroSicConfirmacionCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionCarlos(1);
+            $data['totalRegistroSicConfirmacionAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionAldo(1);
+            $data['totalRegistroSicConfirmacionElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionElvira(1);
+            $data['totalRegistroSicConfirmacionJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionJaime(1);
+
+
+            $data['totalRegistroSicOrdenCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCarlos(1);
+            $data['totalRegistroSicOrdenAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenAldo(1);
+            $data['totalRegistroSicOrdenElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenElvira(1);
+            $data['totalRegistroSicOrdenJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenJaime(1);
+
+
+            $data['totalRegistroSicSinPedidoCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoCarlos(1);
+            $data['totalRegistroSicSinPedidoAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoAldo(1);
+            $data['totalRegistroSicSinPedidoElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoElvira(1);
+            $data['totalRegistroSicSinPedidoJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoJaime(1);
+
+
+            $data['totalRegistroSic'] = $this->ClienteRefaccionesModelo->totalRegistroSic(1);
+            $data['totalRegistroSicNoTroquela'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquela(1);
+            $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
+            $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
+            $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
+
+ $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
+            
+
 
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
@@ -63,6 +141,79 @@ class ClienteRefacciones extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+            
+               $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
+            $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
+            $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
+            $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
+
+
+            $data['totalRegistroSicNoTroquelaCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaCarlos(1);
+            $data['totalRegistroSicNoTroquelaAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaAldo(1);
+            $data['totalRegistroSicNoTroquelaElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaElvira(1);
+            $data['totalRegistroSicNoTroquelaJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaJaime(1);
+
+
+            $data['totalRegistroSicConfirmacionCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionCarlos(1);
+            $data['totalRegistroSicConfirmacionAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionAldo(1);
+            $data['totalRegistroSicConfirmacionElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionElvira(1);
+            $data['totalRegistroSicConfirmacionJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionJaime(1);
+
+
+            $data['totalRegistroSicOrdenCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCarlos(1);
+            $data['totalRegistroSicOrdenAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenAldo(1);
+            $data['totalRegistroSicOrdenElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenElvira(1);
+            $data['totalRegistroSicOrdenJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenJaime(1);
+
+
+            $data['totalRegistroSicSinPedidoCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoCarlos(1);
+            $data['totalRegistroSicSinPedidoAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoAldo(1);
+            $data['totalRegistroSicSinPedidoElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoElvira(1);
+            $data['totalRegistroSicSinPedidoJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoJaime(1);
+
+
+            $data['totalRegistroSic'] = $this->ClienteRefaccionesModelo->totalRegistroSic(1);
+            $data['totalRegistroSicNoTroquela'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquela(1);
+            $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
+            $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
+            $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
+
+
+            $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
+            $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
+            $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
+            $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
+
+
+            $data['totalRegistroSicNoTroquelaCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaCarlos(1);
+            $data['totalRegistroSicNoTroquelaAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaAldo(1);
+            $data['totalRegistroSicNoTroquelaElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaElvira(1);
+            $data['totalRegistroSicNoTroquelaJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaJaime(1);
+
+
+            $data['totalRegistroSicConfirmacionCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionCarlos(1);
+            $data['totalRegistroSicConfirmacionAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionAldo(1);
+            $data['totalRegistroSicConfirmacionElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionElvira(1);
+            $data['totalRegistroSicConfirmacionJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionJaime(1);
+
+
+            $data['totalRegistroSicOrdenCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCarlos(1);
+            $data['totalRegistroSicOrdenAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenAldo(1);
+            $data['totalRegistroSicOrdenElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenElvira(1);
+            $data['totalRegistroSicOrdenJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenJaime(1);
+
+
+            $data['totalRegistroSicSinPedidoCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoCarlos(1);
+            $data['totalRegistroSicSinPedidoAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoAldo(1);
+            $data['totalRegistroSicSinPedidoElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoElvira(1);
+            $data['totalRegistroSicSinPedidoJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoJaime(1);
+
+
+            $data['totalRegistroSic'] = $this->ClienteRefaccionesModelo->totalRegistroSic(1);
+            $data['totalRegistroSicNoTroquela'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquela(1);
+            $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
+            $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
+            $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
             $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
 
             $this->load->view('footer');
@@ -166,16 +317,7 @@ class ClienteRefacciones extends CI_Controller {
             $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
             $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_servicio_a_clientes") {
-
-            $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $data['grupoCombo'] = $this->ClienteRefaccionesModelo->getGrupo();
-            $data['clienteCombo'] = $this->ClienteRefaccionesModelo->getCliente();
-            $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
-            $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
-            $this->load->view('footer');
-        } else if ($dataLevel == "is_editor") {
+        }  else if ($dataLevel == "is_editor") {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -358,7 +500,7 @@ class ClienteRefacciones extends CI_Controller {
             $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
             $this->load->view('ClienteRefacciones/modificarClienteRefacciones', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_maquinaria_refacciones") {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
 
             $data['ventas'] = $this->ClienteRefaccionesModelo->query();
             $this->load->view('header', $data);
@@ -512,7 +654,7 @@ class ClienteRefacciones extends CI_Controller {
         $fecha_ultima_factura = $this->input->post('fecha_ultima_factura');
         $consumo_real = $this->input->post('consumo_real');
 
-        $fecha_busqueda = $this->input->post('fecha_busqueda');
+        
         $archivo = $this->input->post('archivo');
 
         $path = './assets/ClienteRefacciones/';
@@ -599,8 +741,7 @@ class ClienteRefacciones extends CI_Controller {
           } */
 
 
-        $data['fecha_busqueda'] = $fecha_busqueda;
-
+       
         //$data['archivo'] = $archivo;
 
         $this->upload->do_upload('archivo');

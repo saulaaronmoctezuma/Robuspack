@@ -156,11 +156,11 @@ transform: rotate(360deg);
                         <?php
                     } else if ($dataLevel_id == 32) {
                         ?>
-                        <center><img src="<?php echo base_url(); ?>assets/fotos_perfil/benjamin.png" height="150px"  width="150px" border="none" /></center>
+                        <center><img src="<?php echo base_url(); ?>assets/fotos_perfil/martin.png" height="150px" class="perfil"   width="150px" border="none" /></center>
                         <?php
                     } else if ($dataLevel_id == 33) {
                         ?>
-                        <center><img src="<?php echo base_url(); ?>assets/fotos_perfil/sin_foto.png" height="150px"  width="150px" border="none" /></center>
+                        <center><img src="<?php echo base_url(); ?>assets/fotos_perfil/silo.jpeg" height="150px"  class="perfil"  width="150px" border="none" /></center>
                         <?php
                     } else {
                         

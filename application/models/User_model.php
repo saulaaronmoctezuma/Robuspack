@@ -286,7 +286,7 @@ class User_model extends CI_Model {
     {   
         /*$query = $this->db->get('users');
         return $query->result();*/
-            $query =  $this->db->query(" Select * From users");
+            $query =  $this->db->query(" Select * From users where users.banned_users <> 'ban' ");
         return $query->result();
     }
     

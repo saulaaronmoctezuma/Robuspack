@@ -98,9 +98,11 @@ class BitacoraMttoPojo {
     private $aceptacion_capacitacion;
     private $recomendaciones;
     private $proxima_inter;
+    private $foto;
     private $first_name;
 
-    function __construct($id_bitacora, $planta, $modelo, $maquina, $fecha, $motivo_asistencia, $tipo, $mantenimiento, $consecutivo, $des_acti1, $des_acti2, $des_acti3, $des_acti4, $des_acti5, $des_acti6, $des_acti7, $des_acti8, $des_acti9, $des_acti10, $des_acti11, $des_acti12, $des_acti13, $des_acti14, $des_acti15, $reporto, $ref_usadas1, $ref_usadas2, $ref_usadas3, $ref_usadas4, $ref_usadas5, $ref_usadas6, $ref_usadas7, $ref_usadas8, $ref_usadas9, $ref_usadas10, $ref_usadas11, $ref_usadas12, $ref_usadas13, $ref_usadas14, $ref_usadas15, $ref_usadas16, $ref_usadas17, $ref_usadas18, $ref_usadas19, $ref_usadas20, $ref_usadas21, $ref_usadas22, $ref_usadas23, $ref_usadas24, $ref_usadas25, $ref_usadas26, $ref_usadas27, $ref_usadas28, $ref_usadas29, $ref_usadas30, $ref_recomen1, $ref_recomen2, $ref_recomen3, $ref_recomen4, $ref_recomen5, $ref_recomen6, $ref_recomen7, $ref_recomen8, $ref_recomen9, $ref_recomen10, $ref_recomen11, $ref_recomen12, $ref_recomen13, $ref_recomen14, $ref_recomen15, $ref_recomen16, $ref_recomen17, $ref_recomen18, $ref_recomen19, $ref_recomen20, $ref_recomen21, $ref_recomen22, $ref_recomen23, $ref_recomen24, $ref_recomen25, $ref_recomen26, $ref_recomen27, $ref_recomen28, $ref_recomen29, $ref_recomen30, $capacitacion, $aceptacion_capacitacion, $recomendaciones, $proxima_inter, $first_name) {
+    
+    function __construct($id_bitacora, $planta, $modelo, $maquina, $fecha, $motivo_asistencia, $tipo, $mantenimiento, $consecutivo, $des_acti1, $des_acti2, $des_acti3, $des_acti4, $des_acti5, $des_acti6, $des_acti7, $des_acti8, $des_acti9, $des_acti10, $des_acti11, $des_acti12, $des_acti13, $des_acti14, $des_acti15, $reporto, $ref_usadas1, $ref_usadas2, $ref_usadas3, $ref_usadas4, $ref_usadas5, $ref_usadas6, $ref_usadas7, $ref_usadas8, $ref_usadas9, $ref_usadas10, $ref_usadas11, $ref_usadas12, $ref_usadas13, $ref_usadas14, $ref_usadas15, $ref_usadas16, $ref_usadas17, $ref_usadas18, $ref_usadas19, $ref_usadas20, $ref_usadas21, $ref_usadas22, $ref_usadas23, $ref_usadas24, $ref_usadas25, $ref_usadas26, $ref_usadas27, $ref_usadas28, $ref_usadas29, $ref_usadas30, $ref_recomen1, $ref_recomen2, $ref_recomen3, $ref_recomen4, $ref_recomen5, $ref_recomen6, $ref_recomen7, $ref_recomen8, $ref_recomen9, $ref_recomen10, $ref_recomen11, $ref_recomen12, $ref_recomen13, $ref_recomen14, $ref_recomen15, $ref_recomen16, $ref_recomen17, $ref_recomen18, $ref_recomen19, $ref_recomen20, $ref_recomen21, $ref_recomen22, $ref_recomen23, $ref_recomen24, $ref_recomen25, $ref_recomen26, $ref_recomen27, $ref_recomen28, $ref_recomen29, $ref_recomen30, $capacitacion, $aceptacion_capacitacion, $recomendaciones, $proxima_inter, $foto, $first_name) {
         $this->id_bitacora = $id_bitacora;
         $this->planta = $planta;
         $this->modelo = $modelo;
@@ -190,8 +192,11 @@ class BitacoraMttoPojo {
         $this->aceptacion_capacitacion = $aceptacion_capacitacion;
         $this->recomendaciones = $recomendaciones;
         $this->proxima_inter = $proxima_inter;
+        $this->foto = $foto;
         $this->first_name = $first_name;
     }
+
+    
     public function getId_bitacora() {
         return $this->id_bitacora;
     }
@@ -212,7 +217,7 @@ class BitacoraMttoPojo {
         return $this->fecha;
     }
 
-        public function getMotivo_asistencia() {
+    public function getMotivo_asistencia() {
         return $this->motivo_asistencia;
     }
 
@@ -546,6 +551,10 @@ class BitacoraMttoPojo {
 
     public function getProxima_inter() {
         return $this->proxima_inter;
+    }
+
+    public function getFoto() {
+        return $this->foto;
     }
 
     public function getFirst_name() {
@@ -906,6 +915,10 @@ class BitacoraMttoPojo {
 
     public function setProxima_inter($proxima_inter) {
         $this->proxima_inter = $proxima_inter;
+    }
+
+    public function setFoto($foto) {
+        $this->foto = $foto;
     }
 
     public function setFirst_name($first_name) {

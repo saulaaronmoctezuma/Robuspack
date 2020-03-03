@@ -187,6 +187,17 @@ class Reporte extends CI_Controller {
                   $this->pdf->stream("Robuspack_" . $id_bitacora ."-".date('d-m-Y_H:i:s'). ".pdf", array("Attachment" => 0));
            
             }
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            if ($this->uri->segment(3)) {
+                $id_bitacora = $this->uri->segment(3);
+                //$html_content = ' <h1 align="center">Cliente</h1>';
+                //$html_content. = $this->htmltopdf_model->bitacorasMantenimientoPdf($id_bitacora);
+                $html_content = $this->htmltopdf_model->bitacorasMantenimientoPdf($id_bitacora);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                  $this->pdf->stream("Robuspack_" . $id_bitacora ."-".date('d-m-Y_H:i:s'). ".pdf", array("Attachment" => 0));
+           
+            }
         }
         else {
             redirect(site_url() . 'main/');

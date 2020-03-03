@@ -137,7 +137,7 @@
 
 
                     <tr>
-                        <td>Elvira</td>
+                        <td>Martín</td>
                         <td>
                             <?php
                             foreach ($totalRegistroBitacoraElvira as $fila) {

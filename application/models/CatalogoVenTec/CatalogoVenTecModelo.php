@@ -85,4 +85,8 @@ class CatalogoVenTecModelo extends CI_Model implements IModeloAbstracto {
         
     }
 
+    public function querybusqueda() {
+        
+    }
+
 }

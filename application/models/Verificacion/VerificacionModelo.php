@@ -93,7 +93,48 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
   }
   
     public function query() {
+        
+          $data = $this->session->userdata;
+
+
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
             //$query = $this->db->get('verificacion');
+            $this->db->select('*');
+            $this->db->from('verificacion');
+               $this->db->where('verificacion.empresa=' , 'CARTONPACK S DE RL DE CV');
+            $this->db->order_by('verificacion.no_maqui', 'desc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            // $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->get();
+            
+        $colPlaca = array();
+
+        foreach ($query->result() as $key => $value) {
+            $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
+            );
+
+            array_push($colPlaca, $objeto);
+        }
+        return $colPlaca;
+    }
+    
+      else  {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            
+             //$query = $this->db->get('verificacion');
             $this->db->select('*');
             $this->db->from('verificacion');
             $this->db->order_by('verificacion.no_maqui', 'desc');
@@ -111,8 +152,17 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
             array_push($colPlaca, $objeto);
         }
         return $colPlaca;
-    }
-
+    
+            
+            
+            
+      }
+    
+    
+    
+    
+    
+      }
     public function add($objeto) {
         
     }

@@ -12,9 +12,9 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Robuspack</title>
 
-        <!-- Bootstrap -->
+        
 
-        <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+        <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);

@@ -3,12 +3,12 @@
 require 'BitacoraMttoPojo.php';
 require 'IModeloAbstracto.php';
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
+ * Sistema de Control Robuspack SCR
+ * https://scrobuspack.com 
+ * "Controlar la complejidad es la esencia de la programación"
  */
-
-class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
+class BitacoraMttoModelo extends CI_Model {
 
     public function __construct() {
         parent::__construct();
@@ -95,7 +95,7 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                         , $value->ref_recomen30
                           , $value->capacitacion
                            ,$value->aceptacion_capacitacion,
-                        $value->recomendaciones, $value->proxima_inter, $value->first_name
+                        $value->recomendaciones, $value->proxima_inter,$value->foto, $value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -133,7 +133,7 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                         , $value->ref_recomen30
                           , $value->capacitacion
                            ,$value->aceptacion_capacitacion,
-                        $value->recomendaciones, $value->proxima_inter, $value->first_name
+                        $value->recomendaciones, $value->proxima_inter,$value->foto, $value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -174,7 +174,7 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                         , $value->ref_recomen30
                           , $value->capacitacion
                            ,$value->aceptacion_capacitacion,
-                        $value->recomendaciones, $value->proxima_inter, $value->first_name
+                        $value->recomendaciones, $value->proxima_inter, $value->foto,$value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
@@ -212,13 +212,51 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                         , $value->ref_recomen30
                           , $value->capacitacion
                            ,$value->aceptacion_capacitacion,
-                        $value->recomendaciones, $value->proxima_inter, $value->first_name
+                        $value->recomendaciones, $value->proxima_inter, $value->foto,$value->first_name
                 );
 
                 array_push($colBitacora_Mtto, $objeto);
             }
             return $colBitacora_Mtto;
-        } else {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('*');
+            $this->db->from('bitacora_mtto');
+            $this->db->join('users', 'bitacora_mtto.id=users.id');
+            $this->db->order_by('bitacora_mtto.id_bitacora', 'desc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            // $this->db->where('users.id= ', $dataLevel);
+            //tree los datos de la consulta
+            $query = $this->db->get();
+
+
+             $colBitacora_Mtto = array();
+
+            foreach ($query->result() as $key => $value) {
+                $objeto = new BitacoraMttoPojo($value->id_bitacora, $value->planta, $value->modelo, $value->maquina, $value->fecha,
+                         $value->motivo_asistencia,
+                        $value->tipo, 
+                        $value->mantenimiento,
+                       
+                        $value->consecutivo, $value->des_acti1, $value->des_acti2, $value->des_acti3, $value->des_acti4, $value->des_acti5, $value->des_acti6, $value->des_acti7, $value->des_acti8, $value->des_acti9, $value->des_acti10, $value->des_acti11, $value->des_acti12, $value->des_acti13, $value->des_acti14, $value->des_acti15, $value->reporto, $value->ref_usadas1, $value->ref_usadas2, $value->ref_usadas3, $value->ref_usadas4, $value->ref_usadas5, $value->ref_usadas6, $value->ref_usadas7, $value->ref_usadas8, $value->ref_usadas9, $value->ref_usadas10, $value->ref_usadas11, $value->ref_usadas12, $value->ref_usadas13, $value->ref_usadas14, $value->ref_usadas15, $value->ref_usadas16, $value->ref_usadas17, $value->ref_usadas18, $value->ref_usadas19, $value->ref_usadas20, $value->ref_usadas21, $value->ref_usadas22, $value->ref_usadas23, $value->ref_usadas24, $value->ref_usadas25, $value->ref_usadas26, $value->ref_usadas27, $value->ref_usadas28, $value->ref_usadas29, $value->ref_usadas30, $value->ref_recomen1, $value->ref_recomen2, $value->ref_recomen3, $value->ref_recomen4, $value->ref_recomen5, $value->ref_recomen6, $value->ref_recomen7, $value->ref_recomen8, $value->ref_recomen9, $value->ref_recomen10, $value->ref_recomen11, $value->ref_recomen12, $value->ref_recomen13, $value->ref_recomen14, $value->ref_recomen15, $value->ref_recomen16, $value->ref_recomen17, $value->ref_recomen18, $value->ref_recomen19, $value->ref_recomen20, $value->ref_recomen21, $value->ref_recomen22, $value->ref_recomen23, $value->ref_recomen24, $value->ref_recomen25, $value->ref_recomen26, $value->ref_recomen27, $value->ref_recomen28, $value->ref_recomen29
+                        , $value->ref_recomen30
+                          , $value->capacitacion
+                           ,$value->aceptacion_capacitacion,
+                        $value->recomendaciones, $value->proxima_inter, $value->foto,$value->first_name
+                );
+
+                array_push($colBitacora_Mtto, $objeto);
+            }
+            return $colBitacora_Mtto;
+        }else {
             redirect(site_url() . 'main/');
         }
     }
@@ -314,7 +352,8 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
                 "aceptacion_capacitacion" => $bitacoramtto->getAceptacion_capacitacion(),
                 "ref_recomen30" => $bitacoramtto->getRef_recomen30(),
                 "recomendaciones" => $bitacoramtto->getRecomendaciones(),
-                "proxima_inter" => $bitacoramtto->getProxima_inter()
+                "proxima_inter" => $bitacoramtto->getProxima_inter(),
+                "foto" => $bitacoramtto->getFoto()
             );
             $this->db->where("id_bitacora", $bitacoramtto->getId_bitacora());
             $this->db->update("bitacora_mtto", $datos);
@@ -413,7 +452,8 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
             'capacitacion' => $obj->capacitacion,
             'aceptacion_capacitacion' => $obj->aceptacion_capacitacion,
             'recomendaciones' => $obj->recomendaciones,
-            'proxima_inter' => $obj->proxima_inter
+            'proxima_inter' => $obj->proxima_inter,
+            'foto' => $obj->foto
         );
         return $dp;
     }
@@ -497,7 +537,7 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
     public function totalRegistroBitacoraMantenimientoPablo() {
         $this->db->select('COUNT(*) as total_registros_pablo');
         $this->db->from('bitacora_mtto');
-        $this->db->where('bitacora_mtto.id= ', 25);
+        $this->db->where('bitacora_mtto.id= ', 35);
         $query = $this->db->get();
         return $query->result();
     }
@@ -525,13 +565,9 @@ class BitacoraMttoModelo extends CI_Model implements IModeloAbstracto {
         $query = $this->db->get();
         return $query->result();
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public function querybusqueda() {
+        
+    }
 
 }

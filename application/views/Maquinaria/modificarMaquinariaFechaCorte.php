@@ -13,7 +13,7 @@ $theme = $result->theme;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <div id="maquinaria">
-    <form action="<?= base_url('Maquinaria/maquinariaModificar') ?>" method="post" align="center" onsubmit="return vali()">
+    <form action="<?= base_url('Maquinaria/maquinariaModificarFechaCorteRotacion') ?>" method="post" align="center" onsubmit="return vali()">
         <h1>Actualizar Fecha Corte Rotación</h1>
         <MARQUEE SCROLLDELAY =200></MARQUEE>
         <div class="container" >

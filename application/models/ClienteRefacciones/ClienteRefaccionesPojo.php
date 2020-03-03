@@ -52,7 +52,6 @@ class ClienteRefaccionesPojo {
     private $fecha_seguimiento;
     private $golpes_maquina;
     private $confirmacion_orden_compra;
-   
     private $fecha_ultima_factura;
      private $consumo_real;
      private $archivo;
