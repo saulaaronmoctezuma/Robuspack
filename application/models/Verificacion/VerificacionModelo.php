@@ -93,8 +93,29 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
   }
   
     public function query() {
+           /* //$query = $this->db->get('verificacion');
+            $this->db->select('*');
+            $this->db->from('verificacion');
+           $this->db->where('verificacion.empresa=' , 'CARTONPACK S DE RL DE CV');
+            $this->db->order_by('verificacion.no_maqui', 'desc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            // $this->db->where('users.id= ', $dataLevel);
+            
+            $query = $this->db->get();
+            
+        $colPlaca = array();
+
+        foreach ($query->result() as $key => $value) {
+            $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
+            );
+
+            array_push($colPlaca, $objeto);
+        }
+        return $colPlaca;*/
         
-          $data = $this->session->userdata;
+        
+         $data = $this->session->userdata;
 
 
         //check user level
@@ -108,17 +129,18 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
             //$query = $this->db->get('verificacion');
             $this->db->select('*');
             $this->db->from('verificacion');
-               $this->db->where('verificacion.empresa=' , 'CARTONPACK S DE RL DE CV');
+              // $this->db->where('verificacion.empresa=' , 'CARTONPACK S DE RL DE CV');
             $this->db->order_by('verificacion.no_maqui', 'desc');
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
             // $this->db->where('users.id= ', $dataLevel);
+            $this->db->where('verificacion.empresa= ', 'MAKBOX S DE RL DE CV');
             $query = $this->db->get();
             
         $colPlaca = array();
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
-                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , $value->comentario 
             );
 
             array_push($colPlaca, $objeto);
@@ -146,7 +168,7 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
-                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones 
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , $value->comentario 
             );
 
             array_push($colPlaca, $objeto);
@@ -157,12 +179,9 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
             
             
       }
-    
-    
-    
-    
-    
-      }
+        
+    }
+
     public function add($objeto) {
         
     }
@@ -204,6 +223,8 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
           // $this->db->where('venta.id= ', 1);
             $query = $this->db->get();
              return $query->result();
-        }
+            }
 
-}
+            
+    
+    }

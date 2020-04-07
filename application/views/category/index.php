@@ -34,10 +34,10 @@
           </div>
         <?php endif; ?>
 
-        <?php if(in_array('createCategory', $user_permission)): ?>
+        <?php /*if(in_array('createCategory', $user_permission)):*/ ?>
           <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Agregar Categoría</button>
           <br /> <br />
-        <?php endif; ?>
+        <?php /*endif;*/ ?>
 
         <div class="box">
           <div class="box-header">
@@ -50,9 +50,9 @@
               <tr>
                 <th>Nombre</th>
                 <th>Estatus</th>
-                <?php if(in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
+                <?php /*if(in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)):*/ ?>
                   <th>Accion</th>
-                <?php endif; ?>
+                <?php /*endif;*/ ?>
               </tr>
               </thead>
 
@@ -72,7 +72,7 @@
 </div>
 <!-- /.content-wrapper -->
 
-<?php if(in_array('createCategory', $user_permission)): ?>
+<?php /*if(in_array('createCategory', $user_permission))*/ ?>
 <!-- create brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="addModal">
   <div class="modal-dialog" role="document">
@@ -110,9 +110,9 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php endif; ?>
+<?php /*endif;*/ ?>
 
-<?php if(in_array('updateCategory', $user_permission)): ?>
+<?php /*if(in_array('updateCategory', $user_permission)):*/ ?>
 <!-- edit brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
   <div class="modal-dialog" role="document">
@@ -151,9 +151,9 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php endif; ?>
+<?php /*endif;*/ ?>
 
-<?php if(in_array('deleteCategory', $user_permission)): ?>
+<?php /*if(in_array('deleteCategory', $user_permission)):*/ ?>
 <!-- remove brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
@@ -177,7 +177,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php endif; ?>
+<?php /*endif;*/     ?>
 
 
 <script type="text/javascript">

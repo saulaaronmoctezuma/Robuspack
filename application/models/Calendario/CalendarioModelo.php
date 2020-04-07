@@ -56,6 +56,10 @@ class CalendarioModelo extends CI_Model {
             $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
             return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
 
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
+            return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
+
         } else {
             redirect(site_url() . 'Calendario/');
         }

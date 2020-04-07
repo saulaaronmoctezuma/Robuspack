@@ -13,7 +13,7 @@ $(document).ready(function() {
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Administrar
+      Administrar 
       <small>Productos</small>
     </h1>
     <ol class="breadcrumb">
@@ -70,7 +70,7 @@ $(document).ready(function() {
                   
                  <div class="form-group">
                   <label for="sku">Código del Producto</label>
-                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Escribe el SKU" autocomplete="off" />
+                  <input type="text" class="form-control"  required="required" id="sku" name="sku" placeholder="Escribe el SKU" autocomplete="off" />
                 </div>
                   
                   
@@ -91,13 +91,30 @@ $(document).ready(function() {
                   <label for="price">Precio Venta</label>
                   <input type="text" class="form-control" id="price" name="price" placeholder="Escribe el Precio de Venta" autocomplete="off" />
                 </div>
+                 
+                 
+                 <div class="form-group">
+                  <label for="min">Cantidad Mínima</label>
+                  <input type="text" class="form-control" id="min" name="min" placeholder="min" autocomplete="off" />
+                </div>
+                 
+                    
+                 <div class="form-group">
+                  <label for="max">Cantidad Máxima</label>
+                  <input type="text" class="form-control" id="max" name="max" placeholder="max" autocomplete="off" />
+                </div>
+                 
+                 
+         
 
                 <div class="form-group">
                   <label for="qty">Cantidad Stock</label>
                   <input type="text" class="form-control" id="qty" name="qty" placeholder="Escribe el stock" autocomplete="off" />
                 </div>
 
-                <!--<div class="form-group">
+            <!--
+            el id sirve para mostrar y opermita diseño      
+            <div class="form-group">
                   <label for="">Descripción</label>
                   <textarea type="text" class="form-control" id="description" name="Escribe la descripción" placeholder="Escribe la descripción" autocomplete="off">
                   </textarea>
@@ -111,6 +128,25 @@ $(document).ready(function() {
                   <label for="location">Ubicacion</label>
                   <input type="text" class="form-control" id="location" name="location" placeholder="Escribe la ubicación" autocomplete="off" />
                 </div>
+                 
+                  <!--<div class="form-group">
+                  <label for="area">Area</label>
+                  <input type="text" class="form-control" id="area" name="area" placeholder="Escribe el area" autocomplete="off" />
+                </div>-->
+                 
+                 
+                 
+                   <div class="form-group"> <label for="area">Area</label>
+
+                                    <select name="area" id="area" class="form-control input-sm" require>
+                                        <option  value="">Selecciona una opción</option>
+                                        <OPTION VALUE="Conversión">Conversión</OPTION>
+                                        <OPTION VALUE="Corrugados">Corrugados</OPTION>
+                                      
+                                    </select>
+                                </div> 
+                 
+                 
 <!--
                 <?php /*if($attributes):*/ ?>
                   <?php /*foreach ($attributes as $k => $v):*/ ?>

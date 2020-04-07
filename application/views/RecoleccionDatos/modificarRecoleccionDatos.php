@@ -175,7 +175,13 @@
                     
                            
                          
+                    }else if ($dataLevel == 'is_freelance') {
+                         echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                             
                     }else if ($dataLevel == 'is_refacciones') {
+                         echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                             
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
                          echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
                              
                     }else if ($dataLevel == 'is_Gerente_Ventas') {
@@ -225,7 +231,11 @@
                        
                     </tr>
                       <?php
-                    }else {
+                    }else if($dataLevel == 'is_freelance'){
+                        
+                        echo '<input id="a3" class="form-control" type="hidden" name="identificador"  value="'.$identificador .'" >';
+                    }
+                    else {
                       echo ' <tr>
                         <td>Identificador</td>
                         <td><input id="a3" class="form-control" type="text" name="identificador"  value="'.$identificador .'" ></td>

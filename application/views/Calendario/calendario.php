@@ -62,8 +62,8 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="color">Color</label>
                                 <div class="col-md-4">
-                                    <input id="color" name="color" type="text" class="form-control input-md" readonly="readonly" />
-                                    <span class="help-block">Elige Color</span>
+                                    <input id="color" name="color" type="text" class="form-control input-md" />
+                                    <span class="help-block">Elige Coloqqr</span>
                                 </div>
                             </div>
                         </form>

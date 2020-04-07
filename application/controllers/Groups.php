@@ -136,7 +136,7 @@ class Groups extends Admin_Controller
 				else {
 					$delete = $this->model_groups->delete($id);
 					if($delete == true) {
-		        		$this->session->set_flashdata('success', 'Successfully removed');
+		        		$this->session->set_flashdata('success', 'Eliminado correctamente');
 		        		redirect('groups/', 'refresh');
 		        	}
 		        	else {

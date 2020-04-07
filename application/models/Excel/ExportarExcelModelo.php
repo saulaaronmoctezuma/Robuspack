@@ -210,6 +210,11 @@ class ExportarExcelModelo extends CI_Model {
             $query = $this->db->query("SELECT events.title, events.description, DATE_FORMAT(events.start, '%d/%m/%Y') AS start, DATE_FORMAT(events.end, '%d/%m/%Y') AS end FROM events order by events.start asc");
             
             return $query->result(); 
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+           //consulta de los datos que va a descargar en excel
+            $query = $this->db->query("SELECT events.title, events.description, DATE_FORMAT(events.start, '%d/%m/%Y') AS start, DATE_FORMAT(events.end, '%d/%m/%Y') AS end FROM events order by events.start asc");
+            
+            return $query->result(); 
         }else {
             redirect(site_url() . 'Calendario/');
         }

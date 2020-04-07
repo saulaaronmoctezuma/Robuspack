@@ -156,11 +156,11 @@ class Brands extends Admin_Controller
 	        	$update = $this->model_brands->update($data, $id);
 	        	if($update == true) {
 	        		$response['success'] = true;
-	        		$response['messages'] = 'Succesfully updated';
+	        		$response['messages'] = 'Actualizado correctamente';
 	        	}
 	        	else {
 	        		$response['success'] = false;
-	        		$response['messages'] = 'Error in the database while updated the brand information';			
+	        		$response['messages'] = 'Error al actualizarn';			
 	        	}
 	        }
 	        else {
@@ -195,7 +195,7 @@ class Brands extends Admin_Controller
 
 			if($delete == true) {
 				$response['success'] = true;
-				$response['messages'] = "Successfully removed";	
+				$response['messages'] = "Eliminado correctamente";	
 			}
 			else {
 				$response['success'] = false;

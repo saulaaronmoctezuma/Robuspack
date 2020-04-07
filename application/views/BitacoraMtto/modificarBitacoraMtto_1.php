@@ -26,13 +26,13 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
         //check user level
         ?>
 
-        <style>
+        <!--<style>
             body {
 
                 margin-left: 200px;
             }
 
-        </style>
+        </style>-->
     </head>
     <body>
 

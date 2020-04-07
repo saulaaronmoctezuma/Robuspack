@@ -1,9 +1,9 @@
-<aside class="main-sidebar">
+<aside class="main-sidebar position-fixed">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="tree" >
         
         <li id="dashboardMainMenu">
           <a href="<?php echo base_url('dashboard') ?>">
@@ -81,7 +81,7 @@
             
               </ul>
             </li>
-          <<li class="treeview" id="mainOrdersNav">
+          <li class="treeview" id="mainOrdersNav">
               <a href="#">
                 <i class="fa fa-dollar"></i>
                 <span>Ordenes</span>

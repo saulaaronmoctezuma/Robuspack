@@ -5,7 +5,35 @@ class Model_stores extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-	}
+	 
+
+        $this->load->database();
+        $this->base = $this->config->item('base_url');
+        $this->css = $this->config->item('css');
+        $this->load->library('session');
+        //poner para el poner selet en un formulario
+        $this->load->model('Model_stores');
+        //para que tenga el mismo header
+        $this->load->model('User_model', 'User_model');
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        $this->status = $this->config->item('status');
+        $this->roles = $this->config->item('roles');
+        $this->load->library('userlevel');
+    }
+
+    public function getAllSettings() {
+        $this->db->select('*');
+        $this->db->from('settings');
+        return $this->db->get()->row();
+    }
+
+    public function getUsers() {
+        $this->db->select('*');
+        $this->db->from('users');
+        return $this->db->get()->row();
+    }
+
 
 	/* get the active store data */
 	public function getActiveStore()
@@ -15,7 +43,7 @@ class Model_stores extends CI_Model
 		return $query->result_array();
 	}
 
-	/* get the brand data */
+            /* get the brand data */
 	public function getStoresData($id = null)
 	{
 		if($id) {
@@ -60,6 +88,16 @@ class Model_stores extends CI_Model
 		$sql = "SELECT * FROM stores WHERE active = ?";
 		$query = $this->db->query($sql, array(1));
 		return $query->num_rows();
+	}
+        
+        
+          public function updateStock($data, $id)
+	{
+		if($data && $id) {
+			$this->db->where('id', $id);
+			$update = $this->db->update('products', $data);
+			return ($update == true) ? true : false;
+		}
 	}
 
 }

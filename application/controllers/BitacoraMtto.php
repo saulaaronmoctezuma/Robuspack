@@ -106,6 +106,20 @@ Class BitacoraMtto extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
+        }else if ($dataLevel == "is_refacciones") {
+            $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
+            $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
+            $data['totalRegistroBitacoraMantenimientoCarlos'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoCarlos(1);
+            $data['totalRegistroBitacoraMantenimientoJorge'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoJorge(1);
+            $data['totalRegistroBitacoraMantenimientoMiguel'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoMiguel(1);
+            $data['totalRegistroBitacoraMantenimientoPablo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoPablo(1);
+            $data['totalRegistroBitacoraMantenimientoRodrigo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoRodrigo(1);
+            $data['totalRegistroBitacoraMantenimientoVeronica'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVeronica(1);
+            $data['totalRegistroBitacoraMantenimientoVicente'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVicente(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
+            $this->load->view('footer');
         }  else {
             redirect(site_url() . 'main/');
         }

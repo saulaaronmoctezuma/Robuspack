@@ -34,7 +34,8 @@
             '11' => 'Mantenimiento',
             '12' => 'Jefe de Mantenimiento',
             '13' => 'Logística',
-            '14' => 'Servicio a Clientes'
+            '14' => 'Servicio a Clientes',
+             '15' => 'Freelance',
             
         );
         $dd_name = "role";

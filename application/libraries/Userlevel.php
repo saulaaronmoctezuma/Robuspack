@@ -69,6 +69,11 @@ class UserLevel{
             {
                 $userLevel = 'is_servicio_a_clientes';
             }
+             elseif($role == 15)
+            {
+                $userLevel = 'is_freelance';
+            }
+            
             
         }else{
             echo "El rol esta vacio";

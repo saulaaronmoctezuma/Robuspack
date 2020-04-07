@@ -173,7 +173,16 @@
                 
                   
                 ';
-                    } else if ($dataLevel == 'is_refacciones') {
+                    } 
+                    else if ($dataLevel == 'is_freelance') {
+                         echo '
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+                
+                  
+                ';
+                    } 
+                    
+                    else if ($dataLevel == 'is_refacciones') {
                 echo '
                     <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
                 
@@ -377,7 +386,12 @@
                          </select>
                 </div>
                 ';
-                    } else {
+                    }
+                    else if ($dataLevel == 'is_freelance') {
+                           echo '        
+                  <input id="a3" type="hidden" class="form-control"  name="identificador" value="Dulce" placeholder="Ingresa el identificador" >
+                ';
+                    }else {
                       echo '   <div class="form-group col-xs-4">
                     <label for="nombre">Identificador</label>
                     <input id="a3" type="text" class="form-control"  name="identificador" placeholder="Ingresa el identificador" >

@@ -15,18 +15,34 @@ class Orders extends Admin_Controller
 		$this->load->model('model_orders');
 		$this->load->model('model_products');
 		$this->load->model('model_company');
-	}
+                
+	   $this->load->library('upload');
+        $this->load->library('pagination');
+
+        $this->base = $this->config->item('base_url');
+        $this->css = $this->config->item('css');
+        $this->load->library('session');
+        //poner para el poner selet en un formulario
+       
+        //poner para el poner selet en un formulario
+        //para que tenga el mismo header y trearse el usuario para dar permisos
+        $this->load->model('User_model', 'User_model');
+        $this->load->library('form_validation');
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        $this->status = $this->config->item('status');
+        $this->roles = $this->config->item('roles');
+        $this->load->library('userlevel');
+    }
 
 	/* 
 	* It only redirects to the manage order page
 	*/
 	public function index()
 	{
-		/*if(!in_array('viewOrder', $this->permission)) {
+	/*	if(!in_array('viewOrder', $this->permission)) {
             redirect('dashboard', 'refresh');
         }*/
-
-              $this->load->model('Model_orders');
+              $this->load->model('Model_products');
         $data['title'] = 'Refacciones';
         //user data from session
         $data = $this->session->userdata;
@@ -41,10 +57,9 @@ class Orders extends Admin_Controller
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
- $this->load->view('header', $data);
-  $this->load->view('navbar', $data);
-            
-		$this->data['page_title'] = 'Ventas';
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+		$this->data['page_title'] = 'Manage Orders';
 		$this->render_template('orders/index', $this->data);		
 	}
         }
@@ -86,16 +101,16 @@ class Orders extends Admin_Controller
 			}
 			else {
 				$paid_status = '<span class="label label-warning">Not Paid</span>';
-		}
+			}
 
 			$result['data'][$key] = array(
 				$value['bill_no'],
 				$value['customer_name'],
-				$value['customer_phone'],
+				//$value['customer_phone'],
 				$date_time,
 				$count_total_item,
 				$value['net_amount'],
-				/*$paid_status,*/
+				//$paid_status,
 				$buttons
 			);
 		} // /foreach
@@ -110,9 +125,9 @@ class Orders extends Admin_Controller
 	*/
 	public function create()
 	{
-		/*if(!in_array('createOrder', $this->permission)) {*/
-            ///redirect('dashboard', 'refresh');
-        /*}*/
+		/*if(!in_array('createOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }*/
 
 		$this->data['page_title'] = 'Add Order';
 
@@ -124,8 +139,9 @@ class Orders extends Admin_Controller
         	$order_id = $this->model_orders->create();
         	
         	if($order_id) {
-        		$this->session->set_flashdata('success', 'Successfully created');
-        		redirect('orders/update/'.$order_id, 'refresh');
+        		$this->session->set_flashdata('success', 'Creado Correctamente');
+        		//redirect('orders/update/'.$order_id, 'refresh');
+                        redirect('orders/', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
@@ -133,18 +149,42 @@ class Orders extends Admin_Controller
         	}
         }
         else {
+            
+            
+            
+            
+                 $this->load->model('Model_products');
+        $data['title'] = 'Refacciones';
+        //user data from session
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+         
             // false case
         	$company = $this->model_company->getCompanyData(1);
         	$this->data['company_data'] = $company;
         	$this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
         	$this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
-
+   
         	$this->data['products'] = $this->model_products->getActiveProductData();      	
-
+           
+                $data['clienteCombo'] = $this->model_orders->getCliente();
+                
+                $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
             $this->render_template('orders/create', $this->data);
         }	
 	}
-
+        }
 	/*
 	* It gets the product id passed from the ajax method.
 	* It checks retrieves the particular product data from the product id 
@@ -177,10 +217,10 @@ class Orders extends Admin_Controller
 	*/
 	public function update($id)
 	{
-		/*if(!in_array('updateOrder', $this->permission)) {*/
-           // redirect('dashboard', 'refresh');
-        /*}*/
-
+		/*if(!in_array('updateOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }
+*/
 		if(!$id) {
 			redirect('dashboard', 'refresh');
 		}
@@ -195,15 +235,39 @@ class Orders extends Admin_Controller
         	$update = $this->model_orders->update($id);
         	
         	if($update == true) {
-        		$this->session->set_flashdata('success', 'Successfully updated');
-        		redirect('orders/', 'refresh');
+        		$this->session->set_flashdata('success', 'Agregado Correctamente');
+        		//redirect('orders/update/'.$id, 'refresh');
+                        redirect('orders/', 'refresh');
         	}
         	else {
-        		$this->session->set_flashdata('errors', 'Error occurred!!');
+        		$this->session->set_flashdata('errors', 'Error al agregar!');
         		redirect('orders/update/'.$id, 'refresh');
         	}
         }
         else {
+            
+            
+            
+                 $this->load->model('Model_products');
+        $data['title'] = 'Refacciones';
+        //user data from session
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            
+            
+           //este es para que se lleve el valor del select que esta seleciconado
+            $data['clienteCombo'] = $this->model_orders->getCliente();
+            
             // false case
         	$company = $this->model_company->getCompanyData(1);
         	$this->data['company_data'] = $company;
@@ -224,7 +288,11 @@ class Orders extends Admin_Controller
 
         	$this->data['products'] = $this->model_products->getActiveProductData();      	
 
+                    $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            
             $this->render_template('orders/edit', $this->data);
+        }
         }
 	}
 
@@ -234,9 +302,9 @@ class Orders extends Admin_Controller
 	*/
 	public function remove()
 	{
-		/*if(!in_array('deleteOrder', $this->permission)) {*/
+		/*if(!in_array('deleteOrder', $this->permission)) {
             redirect('dashboard', 'refresh');
-       /* }*/
+        }*/
 
 		$order_id = $this->input->post('order_id');
 
@@ -245,7 +313,7 @@ class Orders extends Admin_Controller
             $delete = $this->model_orders->remove($order_id);
             if($delete == true) {
                 $response['success'] = true;
-                $response['messages'] = "Successfully removed"; 
+                $response['messages'] = "Eliminado correctamente"; 
             }
             else {
                 $response['success'] = false;
@@ -266,9 +334,9 @@ class Orders extends Admin_Controller
 	*/
 	public function printDiv($id)
 	{
-		/*if(!in_array('viewOrder', $this->permission)) {*/
-            //redirect('dashboard', 'refresh');
-        /*}*/
+		/*if(!in_array('viewOrder', $this->permission)) {
+            redirect('dashboard', 'refresh');
+        }*/
         
 		if($id) {
 			$order_data = $this->model_orders->getOrdersData($id);
@@ -302,7 +370,7 @@ class Orders extends Admin_Controller
 			      <div class="col-xs-12">
 			        <h2 class="page-header">
 			          '.$company_info['company_name'].'
-			          <small class="pull-right">Date: '.$order_date.'</small>
+			          <small class="pull-right">Fecha: '.$order_date.'</small>
 			        </h2>
 			      </div>
 			      <!-- /.col -->
@@ -312,10 +380,10 @@ class Orders extends Admin_Controller
 			      
 			      <div class="col-sm-4 invoice-col">
 			        
-			        <b>Bill ID:</b> '.$order_data['bill_no'].'<br>
-			        <b>Name:</b> '.$order_data['customer_name'].'<br>
-			        <b>Address:</b> '.$order_data['customer_address'].' <br />
-			        <b>Phone:</b> '.$order_data['customer_phone'].'
+			        <b>No Factura:</b> '.$order_data['bill_no'].'<br>
+			        <b>Cliente</b> '.$order_data['customer_name'].'<br>
+			        <!--<b>Address:</b> '.$order_data['customer_address'].' <br />
+			        <b>Phone:</b> '.$order_data['customer_phone'].'-->
 			      </div>
 			      <!-- /.col -->
 			    </div>
@@ -327,10 +395,10 @@ class Orders extends Admin_Controller
 			        <table class="table table-striped">
 			          <thead>
 			          <tr>
-			            <th>Product name</th>
-			            <th>Price</th>
-			            <th>Qty</th>
-			            <th>Amount</th>
+			            <th>Refacciones</th>
+			            <th>Precio</th>
+			            <th>Piezas</th>
+			            <th>Total</th>
 			          </tr>
 			          </thead>
 			          <tbody>'; 
@@ -361,7 +429,7 @@ class Orders extends Admin_Controller
 			        <div class="table-responsive">
 			          <table class="table">
 			            <tr>
-			              <th style="width:50%">Gross Amount:</th>
+			              <th style="width:50%">Total</th>
 			              <td>'.$order_data['gross_amount'].'</td>
 			            </tr>';
 
@@ -380,7 +448,7 @@ class Orders extends Admin_Controller
 			            }
 			            
 			            
-			            $html .=' <tr>
+			            $html .=' <!--<tr>
 			              <th>Discount:</th>
 			              <td>'.$order_data['discount'].'</td>
 			            </tr>
@@ -391,7 +459,7 @@ class Orders extends Admin_Controller
 			            <tr>
 			              <th>Paid Status:</th>
 			              <td>'.$paid_status.'</td>
-			            </tr>
+			            </tr>-->
 			          </table>
 			        </div>
 			      </div>

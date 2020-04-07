@@ -17,10 +17,10 @@ class FuventasPojo {
     
     
     private $id_fuventas;
+    private $cantidad_registros;
     private $ref;
     private $cliente;
     private $direccion;
-    
     private $codigo;
     private $tipo_de_prod;
     private $rfc;
@@ -47,8 +47,10 @@ class FuventasPojo {
     private $vendedor;
     private $fecha_de_cobro_de_comisiones;
 
-    function __construct($id_fuventas, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $pu_usd, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
+   
+    function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $pu_usd, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
         $this->id_fuventas = $id_fuventas;
+        $this->cantidad_registros = $cantidad_registros;
         $this->ref = $ref;
         $this->cliente = $cliente;
         $this->direccion = $direccion;
@@ -78,9 +80,12 @@ class FuventasPojo {
         $this->vendedor = $vendedor;
         $this->fecha_de_cobro_de_comisiones = $fecha_de_cobro_de_comisiones;
     }
-
     public function getId_fuventas() {
         return $this->id_fuventas;
+    }
+
+    public function getCantidad_registros() {
+        return $this->cantidad_registros;
     }
 
     public function getRef() {
@@ -199,6 +204,10 @@ class FuventasPojo {
         $this->id_fuventas = $id_fuventas;
     }
 
+    public function setCantidad_registros($cantidad_registros) {
+        $this->cantidad_registros = $cantidad_registros;
+    }
+
     public function setRef($ref) {
         $this->ref = $ref;
     }
@@ -312,5 +321,4 @@ class FuventasPojo {
     }
 
 
-    
 }

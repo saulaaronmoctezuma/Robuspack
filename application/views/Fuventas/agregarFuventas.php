@@ -181,7 +181,7 @@
             }
 
 
-            //--></script>
+ //--></script>
 
 
     </head>
@@ -204,12 +204,17 @@
 
 
                 <div class="form-group">
-                    <input type="hidden" class="form-control" id="id_fuventas"  name="id_fuventas">
+                    <input type="hidden" class="form-control" id="id_maquinaria"  name="id_fuventas">
                 </div>
                 <div class="jumbotron">
                     <div class="row">
 
-
+ <div class="row">
+<div class="form-group col-xs-1">
+                                <label>Cantidad Registros</label><br>
+                                <input class="form-control input-sm"  type="number" maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="1"  max="99" name="cantidad_registros" maxlength="2" value="1"><br>
+                            </div>
+</div>
 
                         <div class="row">
                             <div class="form-group col-xs-4">
@@ -217,24 +222,17 @@
                                 <input class="form-control input-sm"  type="text" name="ref"><br>
                             </div>
 
-                        <!--     <div class="form-group col-xs-4">
+                            <div class="form-group col-xs-4">
                                 <label>Cliente</label><br>
                                 <input type="text" class="form-control input-sm"   name="cliente"><br>
                             </div>
--->
-                            <div class="form-group col-xs-4">
-                  <label for="nombre">Cliente</label>
-                  <select required id="cliente" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
-              </div>
-
 
                             <div class="form-group col-xs-4">
                                 <label>Dirección</label><br>
 
                                 <input type="text" class="form-control input-sm" name="direccion"><br>
                             </div>
-
-  </div>
+                        </div>
 
                         <div class="row">
 
@@ -313,8 +311,8 @@
                             <div class="form-group col-xs-4">
                                 <label>Cantidad</label><br>
                                 <input id="cantidad" onkeyup="calcularSubtotal();
-                                        calcularIva();
-                                        calcularTotal();" min="0" type="number" class="form-control input-sm" name="cantidad">
+                                            calcularIva();
+                                            calcularTotal();" min="0" type="number" class="form-control input-sm" name="cantidad">
                             </div> 
 
 
@@ -331,8 +329,8 @@
                                 <label>PU USD</label><br>
 
                                 <input id="pu_usd" onkeyup="calcularSubtotal();
-                                        calcularIva();
-                                        calcularTotal();" min="0" type="number" class="form-control input-sm" name="pu_usd">
+                                            calcularIva();
+                                            calcularTotal();" min="0" type="text" class="form-control input-sm" name="pu_usd">
                             </div> 
 
                             <div class="form-group col-xs-4">
@@ -465,13 +463,12 @@
                                 <input type="text" class="form-control input-sm" name="vendedor">-->
                                 <select name="vendedor"  class="form-control input-sm" require>
                                     <option  value="" >Selecciona una opción</option>
-
-                                    <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
                                     <OPTION VALUE="Aldo Guillén">Aldo Guillén</OPTION>
-                                    <OPTION VALUE="Martín Sena">Martín Sena</OPTION>
+                                    <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
+                                    <OPTION VALUE="Cesar Cantú">Cesar Cantú</OPTION>
                                     <OPTION VALUE="Gerardo Lopéz">Gerardo Lopéz</OPTION>
-
-
+                                    <OPTION VALUE="Martín Sena">Martín Sena</OPTION>
+                                    <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
 
 
                                 </select>

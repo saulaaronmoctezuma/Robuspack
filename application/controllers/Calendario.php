@@ -64,7 +64,12 @@ class Calendario extends CI_Controller {
 
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
-        } else {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $this->load->view('header', $data);
+
+            $this->load->view('navbar', $data);
+            $this->load->view('Calendario/calendario');
+        }else {
             redirect(site_url() . 'main/');
         }
     }
@@ -144,7 +149,10 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_refacciones") {
             $result = $this->CalendarioModelo->updateEvent();
             echo $result;
-        } else {
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            $result = $this->CalendarioModelo->updateEvent();
+            echo $result;
+        }  else {
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -179,7 +187,10 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_refacciones") {
             $result = $this->CalendarioModelo->deleteEvent();
             echo $result;
-        }  else {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $result = $this->CalendarioModelo->deleteEvent();
+            echo $result;
+        } else {
             redirect(site_url() . 'Calendario/');
         }
     }

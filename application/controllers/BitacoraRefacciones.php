@@ -96,6 +96,13 @@ class BitacoraRefacciones extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraRefacciones/listarBitacoraRefacciones', $data);
             $this->load->view('footer');
+        }else if ($dataLevel == "is_freelance") {
+            $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+            //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('BitacoraRefacciones/listarBitacoraRefacciones', $data);
+            $this->load->view('footer');
         } else {
             redirect(site_url() . 'main/');
         }
@@ -237,7 +244,17 @@ class BitacoraRefacciones extends CI_Controller {
 
             $this->load->view('BitacoraRefacciones/agregarBitacoraRefacciones');
             $this->load->view('footer');
-        } else {
+        }else if ($dataLevel == "is_freelance") {
+            $data['grupoCombo'] = $this->BitacoraRefaccionesModelo->getGrupo();
+          $data['clienteCombo'] = $this->BitacoraRefaccionesModelo->getCliente();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+
+            //$data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+
+            $this->load->view('BitacoraRefacciones/agregarBitacoraRefacciones');
+            $this->load->view('footer');
+        }  else {
             redirect(site_url() . 'main/');
         }
     }
@@ -401,6 +418,16 @@ class BitacoraRefacciones extends CI_Controller {
             return $this->load->view('BitacoraRefacciones/editarBitacoraRefacciones', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
+ 
+              $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+            $data['clienteCombo'] = $this->BitacoraRefaccionesModelo->getCliente();
+            $kondisi = array('id_bitacora' => $id);
+            $data['data'] = $this->BitacoraRefaccionesModelo->get_by_id($kondisi);
+            return $this->load->view('BitacoraRefacciones/editarBitacoraRefacciones', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_freelance") {
  
               $this->load->view('header', $data);
             $this->load->view('navbar', $data);

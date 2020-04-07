@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  
- * class @author  Saul González & Karen González
- * Fecha : Ultimo Cambio 26/03/2019 Hora 10:15 pm
- * Fecha : Ultimo Cambio 03/04/2019 Hora 10:36 pm
+ *  class @author  Saul González & Karen González
+ *  Fecha : Ultimo Cambio 26/03/2019 Hora 10:15 pm
+ *  Fecha : Ultimo Cambio 03/04/2019 Hora 10:36 pm
  *  Fecha : Ultimo Cambio 20/07/2019 Hora 5:47 pm
  *  Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
- * Sistema de Control Robuspack.
+ *  Sistema de Control Robuspack.
  */
 class Verificacion extends CI_Controller {
 
@@ -103,7 +103,21 @@ class Verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
-        } else {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('Verificacion/listarVerificacion', $data);
+            $this->load->view('footer');
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $data['placa'] = $this->VerificacionModelo->query();
+            $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('Verificacion/listarVerificacion', $data);
+            $this->load->view('footer');
+        }else {
             redirect(site_url() . 'main/');
         }
 
@@ -238,7 +252,13 @@ class Verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/agregar');
             $this->load->view('footer');
-        } else {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $data['clienteCombo'] = $this->VerificacionModelo->getCliente();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('Verificacion/agregar');
+            $this->load->view('footer');
+        }else {
             redirect(site_url() . 'main/');
         }
     }
@@ -292,7 +312,7 @@ class Verificacion extends CI_Controller {
         $cliente_temporal = $this->input->post('cliente_temporal');
         $pedimento = $this->input->post('pedimento');
         $num_factura = $this->input->post('num_factura');
-
+        $comentario = $this->input->post('comentario');
         // get foto
         $config['upload_path'] = './assets/verificacion';
         $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
@@ -324,6 +344,7 @@ class Verificacion extends CI_Controller {
             'cliente_temporal' => $cliente_temporal,
             'pedimento' => $pedimento,
             'num_factura' => $num_factura,
+            'comentario' => $comentario,
             'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
         
@@ -615,6 +636,18 @@ class Verificacion extends CI_Controller {
 
 
             $this->load->view('footer');
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['clienteCombo'] = $this->VerificacionModelo->getCliente();
+            $kondisi = array('id_verificacion' => $id);
+            $data['data'] = $this->VerificacionModelo->get_by_id($kondisi);
+            return $this->load->view('Verificacion/editar', $data);
+
+
+            $this->load->view('footer');
         }else {
             redirect(site_url() . 'main/');
         }
@@ -681,6 +714,7 @@ class Verificacion extends CI_Controller {
         $pedimentopdf = $this->input->post('pedimentopdf');
         $refacciones = $this->input->post('refacciones');
         $num_factura = $this->input->post('num_factura');
+        $comentario = $this->input->post('comentario');
         
         $path = './assets/verificacion/';
         $id = $this->input->post('id');
@@ -756,9 +790,18 @@ class Verificacion extends CI_Controller {
          if (!empty($_FILES['refacciones']['name'])) {
             $data['refacciones'] = $refacciones['file_name'];
         }
+        
+         
+        $data['comentario'] = $comentario;
+        
 
-
-
+         /* Para traerse el id del usuario */
+        $data = $this->session->userdata;
+        /* Para traerse el id del usuario */
+        $data = array(
+     
+            'id' => $dataLevel = $this->userlevel->id($data['id'])
+        );
         // hapus foto pada direktori
         @unlink($path . $this->input->post('filelama'));
         $this->VerificacionModelo->update($data, $kondisi);

@@ -20,10 +20,10 @@ class Category extends Admin_Controller
 	*/
 	public function index()
 	{
-
-		if(!in_array('viewCategory', $this->permission)) {
+                    
+		/*if(!in_array('viewCategory', $this->permission)) {
 			redirect('dashboard', 'refresh');
-		}
+		}*/
 
 		$this->render_template('category/index', $this->data);	
 	}	
@@ -59,13 +59,13 @@ class Category extends Admin_Controller
 			// button
 			$buttons = '';
 
-			if(in_array('updateCategory', $this->permission)) {
+			/*if(in_array('updateCategory', $this->permission)) {*/
 				$buttons .= '<button type="button" class="btn btn-default" onclick="editFunc('.$value['id'].')" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil"></i></button>';
-			}
+			/*}*/
 
-			if(in_array('deleteCategory', $this->permission)) {
+			/*if(in_array('deleteCategory', $this->permission)) {*/
 				$buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc('.$value['id'].')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
-			}
+			/*}*/
 				
 
 			$status = ($value['active'] == 1) ? '<span class="label label-success">Activado</span>' : '<span class="label label-warning">Desactivado</span>';
@@ -87,9 +87,9 @@ class Category extends Admin_Controller
 	*/
 	public function create()
 	{
-		if(!in_array('createCategory', $this->permission)) {
+		/*if(!in_array('createCategory', $this->permission)) {
 			redirect('dashboard', 'refresh');
-		}
+		}*/
 
 		$response = array();
 
@@ -132,9 +132,9 @@ class Category extends Admin_Controller
 	public function update($id)
 	{
 
-		if(!in_array('updateCategory', $this->permission)) {
+		/*if(!in_array('updateCategory', $this->permission)) {
 			redirect('dashboard', 'refresh');
-		}
+		}*/
 
 		$response = array();
 
@@ -153,7 +153,7 @@ class Category extends Admin_Controller
 	        	$update = $this->model_category->update($data, $id);
 	        	if($update == true) {
 	        		$response['success'] = true;
-	        		$response['messages'] = 'Succesfully updated';
+	        		$response['messages'] = 'Actualizado correctamente';
 	        	}
 	        	else {
 	        		$response['success'] = false;
@@ -181,9 +181,9 @@ class Category extends Admin_Controller
 	*/
 	public function remove()
 	{
-		if(!in_array('deleteCategory', $this->permission)) {
+		/*if(!in_array('deleteCategory', $this->permission)) {
 			redirect('dashboard', 'refresh');
-		}
+		}*/
 		
 		$category_id = $this->input->post('category_id');
 
@@ -192,7 +192,7 @@ class Category extends Admin_Controller
 			$delete = $this->model_category->remove($category_id);
 			if($delete == true) {
 				$response['success'] = true;
-				$response['messages'] = "Successfully removed";	
+				$response['messages'] = "Eliminado correctamente";	
 			}
 			else {
 				$response['success'] = false;

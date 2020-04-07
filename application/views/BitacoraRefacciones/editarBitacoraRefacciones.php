@@ -92,15 +92,18 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
 
 
                                 <tr>
-                                    <td><b>Descripcion</b></td>
+                                    <td><b>Descripción</b></td>
                                     <td colspan="3">
                                        <!-- <input id="a2" class="form-control" type="text" name="compromiso" value="<?= $data->compromiso ?>">-->
                                         <textarea name="descripcion" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->descripcion ?></textarea>
 
                                     </td>
                                 </tr>
+                                
+                                
+                                <input id="a2"  type="hidden" name="observacion" value="<?= $data->observacion ?>">
                                 <?php
-                            } else if ($dataLevel == 'is_editor') {
+                            } else if ($dataLevel == 'is_freelance') {
                                 ?>
                                 <tr>
                                     <td><b>Grupo</b></td>
@@ -121,13 +124,41 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
 
 
                                 <tr>
-                                    <td><b>Descripcion</b></td>
+                                    <td><b>Descripción</b></td>
                                     <td colspan="3">
                                        <!-- <input id="a2" class="form-control" type="text" name="compromiso" value="<?= $data->compromiso ?>">-->
                                         <textarea name="descripcion" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->descripcion ?></textarea>
 
                                     </td>
                                 </tr>
+                                
+                                 <input id="a2"  type="hidden" name="observacion" value="<?= $data->observacion ?>">
+                             
+                                <?php
+                            } else if ($dataLevel == 'is_editor') {
+                                ?>
+                          <tr>
+                                    <td>Grupo</td>
+                                    <td><input id="a2" readonly style="background-color:#03E7F7;" class="form-control" type="text" name="grupo" value="<?= $data->grupo ?>"></td></tr>
+                            <td>Cliente</td>
+                            <td><input id="a2" readonly style="background-color:#03E7F7;" class="form-control" type="text" name="cliente" value="<?= $data->cliente ?>"></td></tr>
+                            <tr>
+                                <td><br><br><br>Descripción</td>
+                                <td>
+                                    <textarea readonly style="background-color:#03E7F7;" style="resize:none;" name="descripcion" class="form-control input-sm"  rows="8" cols="80"><?= $data->descripcion ?></textarea>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><br><br><br>Observación</td>
+
+                                <td>
+                                    <textarea name="observacion" style="resize:none;" class="form-control input-sm"  rows="8" cols="80" placeholder="Ingrese una observación"><?= $data->observacion ?></textarea>
+                                </td></tr>
+                            <center>
+
+                                <TR><TD>
                                 <?php
                             } else if ($dataLevel == 'is_Gerente_Ventas') {
                                 ?>
@@ -138,7 +169,7 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
                                     <td>Grupo</td>
                                     <td><input id="a2" readonly style="background-color:#03E7F7;" class="form-control" type="text" name="grupo" value="<?= $data->grupo ?>"></td></tr>
                             <td>Cliente</td>
-                            <td><input id="a2" readonly style="background-color:#03E7F7;" class="form-control" type="text" name="descripcion" value="<?= $data->cliente ?>"></td></tr>
+                            <td><input id="a2" readonly style="background-color:#03E7F7;" class="form-control" type="text" name="cliente" value="<?= $data->cliente ?>"></td></tr>
                             <tr>
                                 <td><br><br><br>Descripción</td>
                                 <td>
@@ -198,6 +229,29 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
                                     echo '<td><b> <label>Archivo</label> </b></td><td><font color="red">No tienes ningún archivo cargado</font><br><br>'
                                     . '<input type="file" name="archivo1"><br>';
                                 } else if (($data->archivo1 != null) && ($dataLevel == 'is_refacciones')) {
+                               
+                              echo '<tr>
+                                <td><label>Archivo</label>  </td><td><font color="#0B610B"><b>
+   
+     <a  title="Da clic para visualizar el archivo" href="' . base_url() . 'assets/bitacora_refacciones/' . $data->archivo1 . '" target=”_blank” rel=”nofollow”> Da clic para visualizar el archivo</a><br>
+                           </font><br>
+</b>
+                                </font><br>
+                       <br> <font color="red">Cambiar tu archivo</font>
+                             <input type="file" name="archivo1"><br>
+                             
+                                </td>
+                                </tr>';
+                                }
+                                ?>
+
+                                
+                                
+                                <?php
+                                if (($data->archivo1 == null) && ($dataLevel == 'is_freelance')) {
+                                    echo '<td><b> <label>Archivo</label> </b></td><td><font color="red">No tienes ningún archivo cargado</font><br><br>'
+                                    . '<input type="file" name="archivo1"><br>';
+                                } else if (($data->archivo1 != null) && ($dataLevel == 'is_freelance')) {
                                
                               echo '<tr>
                                 <td><label>Archivo</label>  </td><td><font color="#0B610B"><b>
@@ -295,3 +349,7 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
 </body>
+
+
+
+

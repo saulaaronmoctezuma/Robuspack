@@ -1,4 +1,5 @@
 
+ <div class="container" style="margin-top:1px;">
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -34,10 +35,10 @@
           </div>
         <?php endif; ?>
 
-        <?php if(in_array('createStore', $user_permission)): ?>
+        <?php /*if(in_array('createStore', $user_permission)):*/ ?>
           <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Agregar</button>
           <br /> <br />
-        <?php endif; ?>
+        <?php /*endif;*/ ?>
 
         <div class="box">
           <div class="box-header">
@@ -50,9 +51,9 @@
               <tr>
                 <th>Nombre</th>
                 <th>Estatus</th>
-                <?php if(in_array('updateStore', $user_permission) || in_array('deleteStore', $user_permission)): ?>
+                <?php /*if(in_array('updateStore', $user_permission) || in_array('deleteStore', $user_permission)):*/ ?>
                   <th>Acción</th>
-                <?php endif; ?>
+                <?php /*endif;*/ ?>
               </tr>
               </thead>
 
@@ -69,10 +70,10 @@
 
   </section>
   <!-- /.content -->
-</div>
+</div></div>
 <!-- /.content-wrapper -->
 
-<?php if(in_array('createStore', $user_permission)): ?>
+<?php /*if(in_array('createStore', $user_permission)):*/ ?>
 <!-- create brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="addModal">
   <div class="modal-dialog" role="document">
@@ -88,7 +89,7 @@
 
           <div class="form-group">
             <label for="brand_name">Nombre</label>
-            <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Enter store name" autocomplete="off">
+            <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Escribe un nombre de almacén" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="active">Estatus</label>
@@ -110,9 +111,9 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php endif; ?>
+<?php /*endif;*/ ?>
 
-<?php if(in_array('updateStore', $user_permission)): ?>
+<?php /*if(in_array('updateStore', $user_permission)):*/ ?>
 <!-- edit brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
   <div class="modal-dialog" role="document">
@@ -129,7 +130,7 @@
 
           <div class="form-group">
             <label for="edit_brand_name">Nombre</label>
-            <input type="text" class="form-control" id="edit_store_name" name="edit_store_name" placeholder="Enter store name" autocomplete="off">
+            <input type="text" class="form-control" id="edit_store_name" name="edit_store_name" placeholder="Escribe un nombre de almacen" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="edit_active">Estatus</label>
@@ -141,8 +142,8 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
 
       </form>
@@ -151,25 +152,28 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php endif; ?>
+<?php /*endif;*/ ?>
 
-<?php if(in_array('deleteStore', $user_permission)): ?>
+<?php /*if(in_array('deleteStore', $user_permission)):*/ ?>
 <!-- remove brand modal -->
+
+ <div class="container" style="margin-top:1px;">
+
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Remove Store</h4>
+        <h4 class="modal-title">Eliminar Almacén</h4>
       </div>
 
       <form role="form" action="<?php echo base_url('stores/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
-          <p>Do you really want to remove?</p>
+          <p>¿Realmente deseas eliminar?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Confirmar</button>
         </div>
       </form>
 
@@ -177,7 +181,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php endif; ?>
+<?php /*endif;*/ ?>
 
 
 

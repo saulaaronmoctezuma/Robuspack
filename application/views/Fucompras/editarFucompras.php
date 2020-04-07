@@ -440,7 +440,7 @@ function filter(__val__){
 
 
 </tr> -->
- <input id="cantidad_registros" class="form-control" type="hidden" name="ref" value="<?= $data->cantidad_registros ?>">
+ <input id="cantidad_registros" class="form-control" type="hidden" name="cantidad_registros" value="<?= $data->cantidad_registros ?>">
 
                             <tr>
                                 <td><b>Ref</b></td>

@@ -136,6 +136,88 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                         
                     <!--<input type="file" name="fotopost">';
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '
+                    <label>No Máquina</label><br>
+                    <input type="text" style="width: 270px; height: 35px" name="no_maqui" value="' . $data->no_maqui . '"><br><br>
+                     
+                    <label>Modelo</label><br>
+                    <input type="text" style="width: 270px; height: 35px" name="modelo" value="' . $data->modelo . '"><br><br>
+                              
+                    <!--<label>Empresa</label><br>
+                    <input type="text" style="width: 270px; height: 35px" name="empresa" value="' . $data->empresa . '"><br><br>-->';
+                        ?>
+                        <label>Empresa</label><br>
+                        <SELECT name="empresa" class="form-control " style="width: 270px; height:45px"> 
+                            <optgroup label="Selecciona una opción">
+                                <option value="" <?php
+                                if ($data->empresa == "") {
+                                    echo "Selected";
+                                }
+                                ?>>Selecciona una opción</option>
+
+                                <option value="ROBUSPACK S DE RL DE CV" <?php
+                                if ($data->empresa == "ROBUSPACK S DE RL DE CV") {
+                                    echo "Selected";
+                                }
+                                ?>>ROBUSPACK S DE RL DE CV</option>
+                                <option value="MAKBOX S DE RL DE CV" <?php
+                                if ($data->empresa == "MAKBOX S DE RL DE CV") {
+                                    echo "Selected";
+                                }
+                                ?>>MAKBOX S DE RL DE CV</option>
+
+                            </optgroup>
+                        </SELECT><br>
+
+
+                        <?php echo '
+                        
+                        
+                    <label>Serie</label><br>
+                    <input type="text" style="width: 270px; height: 35px"  style="width: 270px; height: 35px" name="serie" value="' . $data->serie . '"><br><br>';
+                        ?>
+                        <!--  <label>Cliente</label><br>
+                      <select id="a3" class="form-control " style="width: 270px; height:45px" name="cliente"   <?php echo form_dropdown('clienteCombo', $clienteCombo, $data->cliente, '#', 'id="clienteCombo"'); ?> </select></td>
+                        <BR>
+                        -->
+
+
+
+                        <label>Cliente</label><br>
+                        <input type="text" style="width: 270px; height: 35px" name="cliente" value="<?= $data->cliente ?>"><br><br>
+
+
+                        <!--<label>Cliente No Registrados</label><br>
+                        <input type="text" style="width: 270px; height: 35px" name="cliente_temporal" value="' . $data->cliente_temporal . '"><br><br>
+                        --> <?php
+                        if ($data->cliente_temporal != null) {
+                            echo '
+                    <label>Cliente No Registrado</label><br>
+                    <input type="text" style="width: 270px; height: 35px" name="cliente_temporal" value="' . $data->cliente_temporal . '"><br><br>
+                                 ';
+                        } else if ($data->cliente_temporal == null) {
+                            
+                        }
+                        ?>
+                        
+
+                        <?php
+                        echo '
+                  
+                    <input type="hidden" style="width: 270px; height: 35px" name="pedimento" value="' . $data->pedimento . '">
+                        
+                    <label>Num. Factura</label><br>
+                    <input type="text"  style="width: 270px; height: 35px"name="num_factura" value="' . $data->num_factura . '"><br><br>
+                        
+                    
+
+                    
+
+
+
+                        
+                    <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_editor') {
                         echo '
                     <label>No Máquina</label><br>
@@ -313,7 +395,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">
                     <input type="hidden" name="fotopost"  value="' . $data->foto . '">
                     <input type="hidden" name="fotopostpdf" value="' . $data->factura . '">
-                    
+                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
                         
                     <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_jefe_mantenimiento') {
@@ -465,6 +547,29 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
                     }
                     ?>
+                    
+                    
+                    <?php
+                    if (($data->foto == null) && ($dataLevel == 'is_Gerente_Ventas')) {
+                        echo ' <label>Foto Placa</label><br>
+                             <input type="file" name="fotopost"><br>';
+                    } else if (($data->foto != null) && ($dataLevel == 'is_Gerente_Ventas')) {
+                        echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
+                        
+                    }
+                    ?>
+                    
+                    <?php
+                    if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<input type="hidden" name="factura" value="' . $data->factura . '">';
+                         echo '<input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '" >';
+                                   echo '<input type="hidden" name="pedimento" value="' . $data->pedimento . '" >';
+                                      echo '<input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '" >';
+                                       echo '<input type="hidden" name="refacciones" value="' . $data->refacciones . '" >';
+                    } 
+                    ?>
+                    
+                    
 
                     <?php
                     if (($data->foto == null) && ($dataLevel == 'is_mantenimiento')) {
@@ -598,8 +703,49 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     }
                     ?>  
 
+                   
+                       <!-- <label>Comentario</label><br>
+                        <input type="text" style="width: 270px; height: 35px" name="comentario" value=<?= $data->comentario ?>><br>-->
+                           
+                          <?php
+                    if  ($dataLevel == 'is_admin'){
+                        ?>
+                        <td><b>Comentario</b></td>
+                                <td colspan="3">
+                                   <textarea  style="width: 270px; " name="comentario" class="form-control input-sm"  rows="7" cols="80"><?= $data->comentario ?></textarea>
 
+                                </td>
+                                <br>
+                       <?php
+                        
+                    } else if ($dataLevel == 'is_editor') {
+                          ?>
+                        <td><b>Comentario</b></td>
+                                <td colspan="3">
+                                    <textarea  style="width: 270px; " name="comentario" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
 
+                                </td>
+                                <br>
+                       <?php
+                    }else
+                    {
+                             ?>
+                        <td><b>Comentario</b></td>
+                                <td colspan="3">
+                                    <textarea  name="comentario" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
+
+                                </td>
+                                <br>
+                       <?php 
+                    }
+                    ?> 
+                       
+                    
+                                
+                                
+                                
+                                
+                                
                     <!-- file lama -->
                     <input type="hidden" name="id" value="<?= $data->id_verificacion ?>">
                     <!-- ID -->

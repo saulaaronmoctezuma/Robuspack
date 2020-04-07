@@ -225,7 +225,7 @@ th, td {
 
             echo '
 <div class="divTableRow">
-<div class="divTableCell">Martín</div>
+<div class="divTableCell">Dulce</div>
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroBitacoraElvira as $fila) {
@@ -310,7 +310,7 @@ th, td {
 
             echo '
 <div class="divTableRow">
-<div class="divTableCell">Martín</div>
+<div class="divTableCell">Dulce</div>
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroBitacoraElvira as $fila) {
@@ -382,12 +382,12 @@ th, td {
                             
                            
                         } else if ($dataLevel == 'is_editor') {
-
+         echo '<th class="header" >Observación</th>';
                             echo '<th class="header">Usuario</th>';
                             echo '<th class="header">Fecha de Inserción</th>';
                             echo '<th class="header">Fecha de Modificación</th>';
-                           
-                            
+                              
+                             echo '<th class="header" >Observación</th>';
                             
                             
                             
@@ -407,17 +407,20 @@ th, td {
 
                             echo '<th class="header" >Acción</th>';
                         } else if ($dataLevel == 'is_refacciones') {
-echo '<th class="header">Observación</th>';
+echo '<th class="header"></th>';
 
                             echo '<th class="header" style="text-align: center">Acción</th>';
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
- echo '<th class="header">Observación</th>';
+ echo '<th class="header"></th>';
                             echo '<th class="header">Fecha De Inserción</th>';
                             echo '<th class="header">Fecha de Modificación</th>';
-                            echo '<th class="header" >Retroalimentación</th>';
+                            echo '<th class="header" >Observación</th>';
                           
+                        } else if ($dataLevel == 'is_freelance') {
+                             echo '<th class="header" >Observación</th>';
+                            echo '<th class="header">Acción</th>';
                         } else {
-                            
+                             
                         }
                         ?>
 
@@ -453,12 +456,58 @@ echo '<th class="header">Observación</th>';
                         '</td>';
                         
                         
-                                          if (($obj->getDescripcion() == null)) {
+                                     /*     if (($obj->getDescripcion() == null)) {
         echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getDescripcion() != null)) {
         echo '<td title="'. $obj->getDescripcion() .
         '"><center><i class="fa fa-align-justify" aria-hidden="true"></center></i></td>';
-    }
+    */
+                        
+                              ?>
+                    
+                    
+                    
+                    
+                    
+                          <?php
+            
+                 if (($obj->getDescripcion() == null)) {
+            echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getDescripcion() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver la descripción" data-toggle="modal" data-target="#myModalC1<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+
+     <div class="modal fade" id="myModalC1<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraRefacciones">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo $obj->getDescripcion() ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraRefacciones">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+           
+         
+                    <?php
+                    
+                    }
+                    
             
 
 
@@ -469,7 +518,7 @@ echo '<th class="header">Observación</th>';
                             echo '<td><font color="red">Sin Archivo</td></font>';
                         }
 
-                         if (($dataLevel == 'is_admin') &&   ($obj->getObservacion() != null)) {
+                       /*  if (($dataLevel == 'is_admin') &&   ($obj->getObservacion() != null)) {
                             echo '<td>'. $obj->getObservacion() .'</td>';
                         } else if ($dataLevel == 'is_admin' and $obj->getObservacion() == null){
                             echo '<td><font color="red">Sin Observación</font></td>';
@@ -481,7 +530,11 @@ echo '<th class="header">Observación</th>';
                             echo '<td><font color="red">Sin Observación</font></td>';
                         }
                         
-                        
+                           if (($dataLevel == 'is_editor') &&   ($obj->getObservacion() != null)) {
+                            echo '<td>'. $obj->getObservacion() .'</td>';
+                        } else if ($dataLevel == 'is_editor' and $obj->getObservacion() == null){
+                            echo '<td><font color="red">Sin Observación</font></td>';
+                        }
                          
                          if (($dataLevel == 'is_refacciones') &&   ($obj->getObservacion() != null)) {
                             echo '<td>'. $obj->getObservacion() .'</td>';
@@ -490,6 +543,57 @@ echo '<th class="header">Observación</th>';
                         }
                         
                         
+                          if (($dataLevel == 'is_freelance') &&   ($obj->getObservacion() != null)) {
+                            echo '<td>'. $obj->getObservacion() .'</td>';
+                        } else if ($dataLevel == 'is_freelance' and $obj->getObservacion() == null){
+                            echo '<td><font color="red">Sin Observación</font></td>';
+                        }
+                        */ 
+                        ?>
+                    
+                    
+                    
+                    
+                    
+                          <?php
+            
+                 if (($obj->getObservacion() == null)) {
+            echo '<td title="Sin observacion"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getObservacion() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver la observación" data-toggle="modal" data-target="#myModalObservacion<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments"></i></center>
+
+     <div class="modal fade" id="myModalObservacion<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraRefacciones">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo $obj->getObservacion() ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraRefacciones">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+           
+         
+                    <?php
+                    
+                    }
+                    
                         
                        
                         if ($dataLevel == 'is_admin') {
@@ -543,13 +647,13 @@ echo '<th class="header">Observación</th>';
                         if ($dataLevel == 'is_admin') {
                             echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'BitacoraRefacciones/eliminar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-comment"></button></a></td>';
-                        } else if ($dataLevel == 'is_editor') {
-                            
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-comment"><span class="glyphicon glyphicon-comment"></button></a></td>';
                         } else if ($dataLevel == 'is_director') {
                             
-                        } else {
+                        } else if ($dataLevel == 'is_editor') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-comment"><span class="glyphicon glyphicon-comment"></button></a></td>';
+                        }  else {
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                         }
                     }

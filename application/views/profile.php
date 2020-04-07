@@ -162,7 +162,11 @@ transform: rotate(360deg);
                         ?>
                         <center><img src="<?php echo base_url(); ?>assets/fotos_perfil/silo.jpeg" height="150px"  class="perfil"  width="150px" border="none" /></center>
                         <?php
-                    } else {
+                    }else if ($dataLevel_id == 36) {
+                        ?>
+                        <center><img src="<?php echo base_url(); ?>assets/fotos_perfil/sin_foto.png" height="150px"  width="150px" border="none" /></center>
+                        <?php
+                    }  else {
                         
                     }
                     ?>

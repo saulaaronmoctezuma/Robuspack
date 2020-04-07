@@ -766,6 +766,8 @@ th, td {
                             <?php
                             if ($dataLevel == 'is_servicio_a_clientes') {
                                
+                            }else if ($dataLevel == 'is_refacciones') {
+                               
                             } else {
                                 echo '<th class="header" colspan="2" style="text-align: center" >Acción</th>';
 
@@ -784,6 +786,8 @@ th, td {
                                 echo '<th class="header">Usuario</th>';
 
                                 
+                            }else if ($dataLevel == 'is_refacciones') {
+                                echo '<th class="header">Usuario</th>';
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<th class="header">Usuario</th>';
                             }
@@ -869,6 +873,10 @@ th, td {
                                 echo '<td>'
                                 . $obj->getFirst_name() .
                                 '</td>';
+                            }else if ($dataLevel == 'is_refacciones') {
+                                echo '<td>'
+                                . $obj->getFirst_name() .
+                                '</td>';
                             };
                             echo '<td>' . $obj->getPlanta() .
                             '</td>'
@@ -947,7 +955,7 @@ th, td {
                             '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
     }
                             
-                             if (($obj->getRef_recomen1() == null)) {
+                          /*   if (($obj->getRef_recomen1() == null)) {
         echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getRef_recomen1() != null)) {
         echo '<td title="'
@@ -982,7 +990,111 @@ th, td {
                             . $obj->getRef_recomen30() .
                             
           '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
-    }
+    }*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                              ?>
+                    
+                    
+                    
+                    
+                    
+                          <?php
+            
+                 if (($obj->getRef_recomen1() == null)) {
+            echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getRef_recomen1() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver la descripción" data-toggle="modal" data-target="#myModalC1<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+
+     <div class="modal fade" id="myModalC1<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo  $obj->getRef_recomen1() . ' '
+                            . $obj->getRef_recomen2() . ', '
+                            . $obj->getRef_recomen3() . ' ,'
+                            . $obj->getRef_recomen4() . ', '
+                            . $obj->getRef_recomen5() . ', '
+                            . $obj->getRef_recomen6() . ' '
+                            . $obj->getRef_recomen7() . ' '
+                            . $obj->getRef_recomen8() . ' '
+                            . $obj->getRef_recomen9() . ' '
+                            . $obj->getRef_recomen10() . ' '
+                            . $obj->getRef_recomen11() . ' '
+                            . $obj->getRef_recomen12() . ' '
+                            . $obj->getRef_recomen13() . ' '
+                            . $obj->getRef_recomen14() . ' '
+                            . $obj->getRef_recomen15() . ' '
+                            . $obj->getRef_recomen16() . ' '
+                            . $obj->getRef_recomen18() . ' '
+                            . $obj->getRef_recomen19() . ' '
+                            . $obj->getRef_recomen20() . ' '
+                            . $obj->getRef_recomen21() . ' '
+                            . $obj->getRef_recomen22() . ' '
+                            . $obj->getRef_recomen23() . ' '
+                            . $obj->getRef_recomen24() . ' '
+                            . $obj->getRef_recomen25() . ' '
+                            . $obj->getRef_recomen26() . ' '
+                            . $obj->getRef_recomen27() . ' '
+                            . $obj->getRef_recomen28() . ' '
+                            . $obj->getRef_recomen29() . ' '
+                            . $obj->getRef_recomen30()  ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+           
+         
+                    <?php
+                    
+                    }
+                    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
                             echo '<td>'
                             . nl2br($obj->getCapacitacion()) .
                             '</td>'
@@ -993,12 +1105,64 @@ th, td {
                             
                             
                              
-                             if (($obj->getRecomendaciones() == null)) {
+                  /*           if (($obj->getRecomendaciones() == null)) {
         echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getRecomendaciones() != null)) {
         echo '<td title="'. $obj->getRecomendaciones() .
         '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
-    }
+    }*/
+                            
+                            
+                            
+              
+                              ?>
+                    
+                    
+                    
+                    
+                    
+                          <?php
+            
+                 if (($obj->getRecomendaciones() == null)) {
+            echo '<td title="Sin recomendaciones"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getRecomendaciones() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver las recomendaciones" data-toggle="modal" data-target="#myModalC1<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+
+     <div class="modal fade" id="myModalC1<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMtto">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelMtto">Comentario</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo $obj->getRecomendaciones() ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+           
+         
+                    <?php
+                    
+                    }
+                    
+                          
+                            
+                            
     
     
     

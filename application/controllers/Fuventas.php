@@ -80,7 +80,7 @@ class Fuventas extends CI_Controller {
             $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('Fuventas/listarFuventas', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_logistica") {
+        }else if ($dataLevel == "is_refacciones") {
             $data['fuventas'] = $this->FuventasModelo->query();
             //$data['totalRegistros'] = $this->FuventasModelo->totalRegistro(1);
             $this->load->view('header', $data);
@@ -88,7 +88,15 @@ class Fuventas extends CI_Controller {
             $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('Fuventas/listarFuventas', $data);
             $this->load->view('footer');
-        } else if ($dataLevel == "is_Gerente_Ventas") {
+        }  else if ($dataLevel == "is_logistica") {
+            $data['fuventas'] = $this->FuventasModelo->query();
+            //$data['totalRegistros'] = $this->FuventasModelo->totalRegistro(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
+            $this->load->view('Fuventas/listarFuventas', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_Gerente_Ventas") {
             $data['fuventas'] = $this->FuventasModelo->query();
             //$data['totalRegistros'] = $this->FuventasModelo->totalRegistro(1);
             $this->load->view('header', $data);
@@ -126,7 +134,7 @@ class Fuventas extends CI_Controller {
         $config['base_url'] = base_url() . 'index.php/home/?cari=' . $cari;
         // $config['total_rows'] = $this->modelcrud->jumlah_row($search);
 
-
+       
 
         $this->pagination->initialize($config);
         $data['pagination'] = $this->pagination->create_links();
@@ -161,31 +169,27 @@ class Fuventas extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
+            //$data['clienteCombo'] = $this->VerificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuventas/agregarFuventas');
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuventas/agregarFuventas');
             $this->load->view('footer');
         } else if ($dataLevel == "is_servicio_a_clientes") {
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuventas/agregarFuventas');
             $this->load->view('footer');
         } else if ($dataLevel == "is_credito ") {
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuventas/agregarFuventas');
             $this->load->view('footer');
         } else if ($dataLevel == "is_logistica1") {
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuventas/agregarFuventas');
@@ -195,16 +199,18 @@ class Fuventas extends CI_Controller {
         }
     }
 
+    
+
     public function insertdata() {
 
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
-
+        $cantidad_registros = $this->input->post('cantidad_registros');
+        
         $ref = $this->input->post('ref');
         $cliente = $this->input->post('cliente');
         $direccion = $this->input->post('direccion');
-        $referencia = $this->input->post('referencia');
         $codigo = $this->input->post('codigo');
         $tipo_de_prod = $this->input->post('tipo_de_prod');
         $rfc = $this->input->post('rfc');
@@ -256,10 +262,10 @@ class Fuventas extends CI_Controller {
 
          */
         $data = array(
+           'cantidad_registros' => $cantidad_registros,
             'ref' => $ref,
             'cliente' => $cliente,
             'direccion' => $direccion,
-            'referencia' => $referencia,
             'codigo' => $codigo,
             'tipo_de_prod' => $tipo_de_prod,
             'rfc' => $rfc,
@@ -287,11 +293,11 @@ class Fuventas extends CI_Controller {
             'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
 
-
+        
         //facturapdf
         $this->upload->do_upload('facturapdf');
         $facturapdf = $this->upload->data();
-
+        
         if (!empty($_FILES['facturapdf']['name'])) {
             $data['facturapdf'] = $facturapdf['file_name'];
         }
@@ -339,14 +345,11 @@ class Fuventas extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-
-
+            //se trae los datos de la consulta del modelo
+            //$data['clienteCombo'] = $this->VerificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            //se trae los datos de la consulta del modelo
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             //se trae el id del  modelo ClientesRefaccionesModelo
-
             $kondisi = array('id_fuventas' => $id);
             $data['data'] = $this->FuventasModelo->get_by_id($kondisi);
             return $this->load->view('Fuventas/editarFuventa', $data);
@@ -354,9 +357,6 @@ class Fuventas extends CI_Controller {
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            //se trae los datos de la consulta del modelo
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
-
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuventas' => $id);
             $data['data'] = $this->FuventasModelo->get_by_id($kondisi);
@@ -365,7 +365,6 @@ class Fuventas extends CI_Controller {
         } else if ($dataLevel == "is_servicio_a_clientes") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuventas' => $id);
             $data['data'] = $this->FuventasModelo->get_by_id($kondisi);
@@ -374,17 +373,14 @@ class Fuventas extends CI_Controller {
         } else if ($dataLevel == "is_credito") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuventas' => $id);
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $data['data'] = $this->FuventasModelo->get_by_id($kondisi);
             return $this->load->view('Fuventas/editarFuventa', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_logistica1") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuventas' => $id);
             $data['data'] = $this->FuventasModelo->get_by_id($kondisi);
@@ -395,12 +391,14 @@ class Fuventas extends CI_Controller {
         }
     }
 
-    public function updatedata() {
+   
 
+
+    public function updatedata() {
+$cantidad_registros = $this->input->post('cantidad_registros');
         $ref = $this->input->post('ref');
         $cliente = $this->input->post('cliente');
         $direccion = $this->input->post('direccion');
-        $referencia = $this->input->post('referencia');
         $codigo = $this->input->post('codigo');
         $tipo_de_prod = $this->input->post('tipo_de_prod');
         $rfc = $this->input->post('rfc');
@@ -453,11 +451,10 @@ class Fuventas extends CI_Controller {
 
 
 
-
+$data['cantidad_registros'] = $cantidad_registros;
         $data['ref'] = $ref;
         $data['cliente'] = $cliente;
         $data['direccion'] = $direccion;
-        $data['referencia'] = $referencia;
         $data['codigo'] = $codigo;
         $data['tipo_de_prod'] = $tipo_de_prod;
         $data['rfc'] = $rfc;
@@ -465,11 +462,11 @@ class Fuventas extends CI_Controller {
         //facturapdf
         $this->upload->do_upload('facturapdf');
         $facturapdf = $this->upload->data();
-
+        
         if (!empty($_FILES['facturapdf']['name'])) {
             $data['facturapdf'] = $facturapdf['file_name'];
         }
-
+        
         $data['remision'] = $remision;
         $data['fecha_de_remision'] = $fecha_de_remision;
         $data['orden_compra'] = $orden_compra;
@@ -491,7 +488,7 @@ class Fuventas extends CI_Controller {
         $data['vendedor'] = $vendedor;
         $data['fecha_de_cobro_de_comisiones'] = $fecha_de_cobro_de_comisiones;
 
-
+      
 
 
         // hapus foto pada direktori

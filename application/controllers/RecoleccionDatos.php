@@ -130,7 +130,22 @@ class RecoleccionDatos extends CI_Controller {
 
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
-        } else {
+        }  else if ($dataLevel == "is_freelance") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['recolecciondatos'] = $this->RecoleccionDatosModelo->query();
+            $data['totalRegistroEmpresaAlethia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlethia(1);
+            $data['totalRegistroEmpresaBerenice'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaBerenice(1);
+            $data['totalRegistroEmpresaOscar'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaOscar(1);
+            $data['totalRegistroEmpresaAldo'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAldo(1);
+            $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
+            $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
+            $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+             $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+
+            $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        }else {
             redirect(site_url() . 'main/');
         }
     }
@@ -198,6 +213,11 @@ class RecoleccionDatos extends CI_Controller {
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_freelance") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('RecoleccionDatos/agregarRecoleccionDatos', $data);
@@ -351,7 +371,15 @@ class RecoleccionDatos extends CI_Controller {
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
-        } else {
+            }else if ($dataLevel == "is_freelance") {
+                $this->load->view('header', $data);
+
+                $this->load->view('navbar', $data);
+                $data = array();
+                $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
+                $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
+                $this->load->view('footer');
+            }  else {
             redirect(site_url() . 'main/');
         }
     }

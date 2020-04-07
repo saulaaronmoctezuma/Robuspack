@@ -59,6 +59,8 @@
                         $rolename = "Logistica";
                     }elseif($row->role == 14){
                         $rolename = "Servicio a Clientes";
+                    }elseif($row->role == 15){
+                        $rolename = "Freelance";
                     }
                     ?>
                     <tbody id="myTable">

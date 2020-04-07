@@ -31,8 +31,8 @@
             '11' => 'Mantenimiento',
             '12' => 'Jefe de Mantenimiento',
             '13' => 'Logística',
-            '14' => 'Servicio a Clientes'
-            
+            '14' => 'Servicio a Clientes',
+            '15' => 'Freelance',
         );
         $dd_name = "level";
         echo form_dropdown($dd_name, $dd_list, set_value($dd_name), 'class = "form-control" id="level"');

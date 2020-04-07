@@ -48,15 +48,15 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Numero</th>
+                <th>No Factura</th>
                 <th>Nombre del Cliente</th>
-                <th>Telefono</th>
-                <th>Fehca</th>
+                <!--<th>Telefono</th>-->
+                <th>Fecha</th>
                 <th>Total Refacciones</th>
                 <th>Cantidad Total</th>
                 <!--<th>Estatus Pagado</th>-->
                
-                  <th>Accion</th>
+                  <th>Acción</th>
               
               </tr>
               </thead>
@@ -83,16 +83,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Remove Order</h4>
+        <h4 class="modal-title">Eliminar Orden</h4>
       </div>
 
       <form role="form" action="<?php echo base_url('orders/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
-          <p>Do you really want to remove?</p>
+          <p>Realmente tu quieres eliminar la orden?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Eliminar</button>
         </div>
       </form>
 

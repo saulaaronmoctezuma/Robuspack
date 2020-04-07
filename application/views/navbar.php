@@ -1,4 +1,4 @@
-<!--
+    <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
@@ -204,7 +204,8 @@ $site_title = $result->site_title;
 
 
 </style>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -240,7 +241,7 @@ $site_title = $result->site_title;
                                 <li><a href="' . site_url() . 'main/changelevel">Rol</a></li> 
                               </ul>
                             </li>
-                           
+                                
                            
                          <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC <span class="caret"></span></a>
@@ -298,7 +299,11 @@ $site_title = $result->site_title;
                                       <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
                                       <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
                                       <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
-                                           <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
+                                      <li><a href="' . site_url() . 'Stores/">Almacen</a></li>
+                                      <li><a href="' . site_url() . 'Products">Refacciones</a></li>
+                                      <li><a href="' . site_url() . 'Orders">Ordenes Refacciones</a></li>
+                                          <li><a href="' . site_url() . 'Devolucion">Devolucion</a></li>
+                                      
                               </ul>
                             </li>
                            
@@ -536,6 +541,118 @@ $site_title = $result->site_title;
 
 
 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    if ($dataLevel == 'is_freelance') {
+                        echo'
+                           
+                           
+                           
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                 <li><a href="' . site_url() . 'ClienteRefacciones">Control SIC</a></li>
+                                 <li><a href="' . site_url() . 'TotSic">Total SIC</a></li>
+                                <li><a href="' . site_url() . 'BitacoraRefacciones">Bitácora</a></li>
+                                 <li><a href="' . site_url() . 'TotBit">Total Registros Bitácora</a></li>
+                                <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
+                                <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                <li><a href="' . site_url() . 'MaximoMinimo">Reporte Máximo Mínimo</a></li>
+                                 <li><a href="' . site_url() . 'ReporteMaximoMinimo">Reporte Rotación de Inventario</a></li>
+                               
+                                  <li><a href="' . site_url() . 'CliVen">Clientes por Vendedor</a></li>
+                                <li><a href="' . site_url() . 'MaqCli">Máquinas por Clientes</a></li>
+                                <li><a href="' . site_url() . 'MaqVen">Máquinas por Vendedor</a></li>
+                                
+                                 
+                              </ul>
+                            </li>
+                            
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i> Control SIM  <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . 'ClienteSeguimiento">Control SIM</a></li>
+                                    <li><a href="' . site_url() . 'Bitacora">Bitácora</a></li>
+                              </ul>
+                            </li>
+                            
+                            
+
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Control Mtto <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="' . site_url() . 'BitacoraMtto">Bitácora</a></li>
+                                
+                              </ul>
+                            </li>
+
+
+
+                              <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . 'CatalogoVenTec">Vendedores y Técnicos</a></li>
+                                   <li><a href="' . site_url() . 'Cliente">Clientes</a></li>
+                                    <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                     
+                                      <li><a href="' . site_url() . 'verificacion">Control de Maquinaria</a></li>
+                                      <li><a href="' . site_url() . 'RecoleccionDatos">BD Validada</a></li>
+                                         <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
+                                      <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
+                                          <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
+                                              <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
+                              </ul>
+                            </li>
+                           
+
+                            
+                            
+                         
+                            ';
+                    }
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
 
 
@@ -694,6 +811,7 @@ $site_title = $result->site_title;
                                       <li><a href="' . site_url() . 'RecoleccionDatos">BD Validada</a></li>
                                               <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
                                       <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
+                                           <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
                               </ul>
                             </li>
                            
@@ -1416,7 +1534,12 @@ $site_title = $result->site_title;
                         <a href="<?php echo site_url(); ?>main/profile/">  
                             <img class="circular--square" id="foto" src="<?php echo base_url(); ?>assets/fotos_perfil/silo.jpeg" height="45px"  width="45px" border="none" /></a>
                         <?php
-                    } else {
+                    }else if ($dataLevel_id == 36) {
+    ?>
+                        <a href="<?php echo site_url(); ?>main/profile/">  
+                            <img class="circular--square" id="foto" src="<?php echo base_url(); ?>assets/fotos_perfil/sin_foto.png" height="45px"  width="45px" border="none" /></a>
+    <?php
+} else {
                         
                     }
                     ?>
@@ -1485,4 +1608,4 @@ if ($dataLevel == 'is_admin') {
         </div><!-- /.container-fluid -->
     </div>
 </nav>
-<br><br>
+<br><br>    

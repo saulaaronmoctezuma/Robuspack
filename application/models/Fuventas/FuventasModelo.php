@@ -67,8 +67,20 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
     }
 
     public function insert($data) {
-        $this->db->insert('fuventas', $data);
-        return TRUE;
+       /* $this->db->insert('fuventas', $data);
+        return TRUE;*/
+        
+        $registros = $this->input->post('cantidad_registros');
+         $i = 0;
+         while ($i < $registros)
+             {
+           $this->db->insert('fuventas', $data);
+            
+            $i++;
+          
+            } 
+        
+          return TRUE;
     }
 
     public function delete($where) {
@@ -96,10 +108,10 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
         foreach ($query->result() as $key => $value) {
             $objeto = new FuventasPojo(
                     $value->id_fuventas,
+                     $value->cantidad_registros, 
                     $value->ref,
                     $value->cliente,
                     $value->direccion, 
-                     
                     $value->codigo,
                     $value->tipo_de_prod,
                     $value->rfc,

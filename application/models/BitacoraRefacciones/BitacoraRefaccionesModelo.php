@@ -187,6 +187,38 @@ class BitacoraRefaccionesModelo extends CI_Model {
             }
 
             return $colBitacora;
+        } else if ($dataLevel == "is_freelance") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+            );
+            /* Para traerse el id del usuario */
+
+            //consulta la tabla venta
+            $this->db->select('bitacora_refacciones.id_bitacora,bitacora_refacciones.grupo,bitacora_refacciones.grupo, bitacora_refacciones.cliente, bitacora_refacciones.descripcion, bitacora_refacciones.archivo1,bitacora_refacciones.observacion, bitacora_refacciones.fecha_insercion, bitacora_refacciones.fecha_modificar, users.first_name');
+            $this->db->from('bitacora_refacciones');
+            $this->db->join('users', 'bitacora_refacciones.id=users.id');
+
+
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            $query = $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->order_by("id_bitacora", "desc");
+
+            //tree los datos de la consulta
+            $query = $this->db->get();
+            /*$data = $query->result_array();*/
+
+            $colBitacora = array();
+
+            foreach ($query->result() as $key => $value) {
+                $objeto = new BitacoraRefaccionesPojo($value->id_bitacora, $value->grupo, $value->cliente, $value->descripcion, $value->archivo1, $value->observacion, $value->fecha_insercion, $value->fecha_modificar, $value->first_name
+                );
+                array_push($colBitacora, $objeto);
+            }
+
+            return $colBitacora;
         } else if ($dataLevel == "is_director") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -373,7 +405,7 @@ class BitacoraRefaccionesModelo extends CI_Model {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('bitacora_refacciones');
-           $this->db->where('bitacora_refacciones.id= ', 33);
+           $this->db->where('bitacora_refacciones.id= ', 36);
             $query = $this->db->get();
              return $query->result();
         }

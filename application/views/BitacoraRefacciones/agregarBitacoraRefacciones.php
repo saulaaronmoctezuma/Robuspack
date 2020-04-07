@@ -108,6 +108,145 @@
             <div class="form-group">
                 <input type="hidden" class="form-control" id="id_maquinaria"  name="id_bitacora">
             </div>
+           
+           
+           
+           <?php
+                        if ($dataLevel == 'is_freelance') {
+                          
+           ?>
+           
+            <div class="jumbotron">
+               
+             
+
+
+                   
+                    
+                      <div class="row">
+                    
+                    
+                    
+                    
+                    
+                   <div class="form-group col-xs-6" id="contentempresa" style="display: block;">
+                    <label for="nombre">Cliente</label>
+                    <!--<select required id="cliente_combo" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>-->
+                         <input id="cliente"  type="text" class="form-control input-sm"  name="cliente" placeholder="Ingresa el nombre del Cliente" require>
+                                
+                   </div>
+                    </div>
+                    
+                    
+              
+
+  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                   <div class="row">
+                    
+                    
+                    
+                    
+                    
+                   <div class="form-group col-xs-6" id="div_combo_grupo" style="display: block;">
+                    <label for="nombre">Grupo</label>
+                     <!-- <select required id="grupo_combo"  class="form-control input-sm"  name="grupo"  <?php echo form_dropdown('grupoCombo', $grupoCombo, '#', 'id="grupoCombo"'); ?> </select>
+                        -->  
+                         <input id="grupo" min="0" type="text" class="form-control input-sm"  name="grupo" placeholder="Ingresa el nombre del Grupo" require>
+                          </div>
+                    </div>
+          
+
+  
+                      
+                    
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                <div class="row">
+
+                    <div class="form-group col-xs-6">
+                        <label for="nombre">Descripcion</label>
+                             <textarea name="descripcion" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa una descripcion" require></textarea>
+                   
+                    </div>
+
+   
+                    </div>
+
+
+                
+                <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label for="nombre">Archivo</label>
+                        
+                        <input id="a4" type="file" name="archivo1" class="form-control">
+                    </div>
+                    
+                </div>
+                
+                 
+                  <input id="a4" type="hidden" name="observacion" class="form-control">  
+                
+                 <!--<div class="row">
+
+                    <div class="form-group col-xs-6">
+                        <label for="nombre">Observacion</label>
+                             <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa una nota" require></textarea>
+                   
+                    </div>
+
+   
+                    </div>
+-->
+
+                <?php
+                    
+                    } else {
+                    ?>
+           
             <div class="jumbotron">
                
               <!--  <div class="row">
@@ -275,9 +414,12 @@
    
                     </div>
 -->
-                
 
+                <?php
+                    }
+                    
 
+?>
                 
               
             <center>

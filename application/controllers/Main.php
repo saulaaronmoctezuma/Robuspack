@@ -533,7 +533,7 @@ class Main extends CI_Controller {
         $this->load->view('header', $data);
         $this->load->view('container');
         $this->load->view('register-info');
-        $this->load->view('footer');
+        //$this->load->view('footer');
     }
 
     //if success after set password
@@ -543,7 +543,7 @@ class Main extends CI_Controller {
         $this->load->view('header', $data);
         $this->load->view('container');
         $this->load->view('reset-pass-info');
-        $this->load->view('footer');
+        //$this->load->view('footer');
     }
 
     protected function _islocal(){

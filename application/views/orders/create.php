@@ -1,4 +1,4 @@
-
+    
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -57,16 +57,49 @@
                   <div class="form-group">
                     <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">No Factura</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="bill_no   " name="bill_no" placeholder="bill_no" autocomplete="off" />
+                        <input type="text" class="form-control" id="bill_no" name="bill_no" placeholder="No Factura" required autocomplete="off" />
                     </div>
                   </div>  
                     
-                  <div class="form-group">
+                  <div class="form-group">  
                     <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Nombre del Cliente</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Escribe el nombre del Cliente" autocomplete="off" />
+                     <!--<input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Escribe el nombre del Cliente" autocomplete="off" />-->
+                    <select required id="cliente" class="form-control input-sm"  name="customer_name" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+            
+                    
                     </div>
+                    
+                      
+                    
+
                   </div>
+                    
+                            <script type="text/javascript">
+function ShowSelected()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("product_1").value;
+alert(cod);
+ 
+/* Para obtener el texto */
+var combo = document.getElementById("product_1");
+var selected = combo.options[combo.selectedIndex].text;
+alert(selected);
+}
+
+function myFunction() {
+ 
+        if(document.getElementById("product_1").text===" ")
+        {alert("Debe de ingresar un sku");
+       }else
+       {
+           
+       }
+}   
+</script> 
+
+
 
                   <!--<div class="form-group">
                     <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Dirección del Cliente</label>
@@ -82,7 +115,7 @@
                     </div>
                   </div>-->
                 </div>
-                   <input type="hidden" class="form-control input-sm"  id="customer_address" name="customer_address">
+                   <input type="hidden" class="form-control input-sm"  id="customer_address" name="customer_address" >
                 
                    <input type="hidden" class="form-control input-sm"  id="customer_phone" name="customer_phone">
                 
@@ -91,17 +124,18 @@
                 <table class="table table-bordered" id="product_info_table">
                   <thead>
                     <tr>
-                      <th style="width:50%">Producto</th>
-                      <th style="width:10%">Cantidad</th>
-                      <th style="width:10%">Rate</th>
-                      <th style="width:20%">Cantidad</th>
-                      <th style="width:10%"><button type="button" id="add_row" class="btn btn-default"><i class="fa fa-plus"></i></button></th>
+                      <th style="width:50%">Refacción</th>
+                      <th style="width:10%">Piezas</th>
+                      <th style="width:10%">Precio</th>
+                      <th style="width:20%">Importe</th>
+                      <th style="width:10%"><button type="button" id="add_row" class="btn btn-default" onclick="myFunction()"><i class="fa fa-plus"></i></button></th>
                     </tr>
                   </thead>
 
                    <tbody>
                      <tr id="row_1">
                        <td>
+                           
                         <select class="form-control select_group product" data-row-id="row_1" id="product_1" name="product[]" style="width:100%;" onchange="getProductData(1)" required>
                             <option value=""></option>
                             <?php foreach ($products as $k => $v): ?>
@@ -109,7 +143,7 @@
                             <?php endforeach ?>
                           </select>
                         </td>
-                        <td><input type="text" name="qty[]" id="qty_1" class="form-control" required onkeyup="getTotal(1)"></td>
+                        <td><input type="number" min="1" name="qty[]" id="qty_1" class="form-control" required onkeyup="getTotal(1)" onchange="getTotal(1)"></td>
                         <td>
                           <input type="text" name="rate[]" id="rate_1" class="form-control" disabled autocomplete="off">
                           <input type="hidden" name="rate_value[]" id="rate_value_1" class="form-control" autocomplete="off">
@@ -128,7 +162,7 @@
                 <div class="col-md-6 col-xs-12 pull pull-right">
 
                   <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label">Cantidad</label>
+                    <label for="gross_amount" class="col-sm-5 control-label">Total</label>
                     <div class="col-sm-7">
                       <input type="text" class="form-control" id="gross_amount" name="gross_amount" disabled autocomplete="off">
                       <input type="hidden" class="form-control" id="gross_amount_value" name="gross_amount_value" autocomplete="off">
@@ -167,7 +201,7 @@
                       <input type="hidden" class="form-control" id="net_amount_value" name="net_amount_value" autocomplete="off">
                     </div>
                   </div>-->
-  <input type="hidden" class="form-control" id="net_amount" name="net_amount" >
+                  <input type="hidden" class="form-control" id="net_amount_value" name="net_amount_value" autocomplete="off"value="0">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -175,8 +209,8 @@
               <div class="box-footer">
                 <input type="hidden" name="service_charge_rate" value="<?php echo $company_data['service_charge_value'] ?>" autocomplete="off">
                 <input type="hidden" name="vat_charge_rate" value="<?php echo $company_data['vat_charge_value'] ?>" autocomplete="off">
-                <button type="submit" class="btn btn-primary">Create Order</button>
-                <a href="<?php echo base_url('orders/') ?>" class="btn btn-warning">Back</a>
+                <button type="submit" class="btn btn-primary">Crear Orden</button>
+                <a href="<?php echo base_url('orders/') ?>" class="btn btn-warning">Regresar</a>
               </div>
             </form>
           <!-- /.box-body -->
@@ -223,15 +257,15 @@
               // console.log(reponse.x);
                var html = '<tr id="row_'+row_id+'">'+
                    '<td>'+ 
-                    '<select class="form-control select_group product" data-row-id="'+row_id+'" id="product_'+row_id+'" name="product[]" style="width:100%;" onchange="getProductData('+row_id+')">'+
+                    '<select required class="form-control select_group product" data-row-id="'+row_id+'" id="product_'+row_id+'" name="product[]" style="width:100%;" onchange="getProductData('+row_id+')">'+
                         '<option value=""></option>';
                         $.each(response, function(index, value) {
-                          html += '<option value="'+value.id+'">'+value.name+'</option>';             
+                          html += '<option value="'+value.id+'">'+value.sku+'</option>';             
                         });
                         
                       html += '</select>'+
                     '</td>'+ 
-                    '<td><input type="number" name="qty[]" id="qty_'+row_id+'" class="form-control" onkeyup="getTotal('+row_id+')"></td>'+
+                    '<td><input type="number" name="qty[]" id="qty_'+row_id+'" class="form-control" min="1" onchange="getTotal('+row_id+')" onkeyup="getTotal('+row_id+')"></td>'+
                     '<td><input type="text" name="rate[]" id="rate_'+row_id+'" class="form-control" disabled><input type="hidden" name="rate_value[]" id="rate_value_'+row_id+'" class="form-control"></td>'+
                     '<td><input type="text" name="amount[]" id="amount_'+row_id+'" class="form-control" disabled><input type="hidden" name="amount_value[]" id="amount_value_'+row_id+'" class="form-control"></td>'+
                     '<td><button type="button" class="btn btn-default" onclick="removeRow(\''+row_id+'\')"><i class="fa fa-close"></i></button></td>'+

@@ -138,7 +138,7 @@ class Attributes extends Admin_Controller
 	        	$update = $this->model_attributes->update($data, $id);
 	        	if($update == true) {
 	        		$response['success'] = true;
-	        		$response['messages'] = 'Succesfully updated';
+	        		$response['messages'] = 'Actualizado correctamente';
 	        	}
 	        	else {
 	        		$response['success'] = false;
@@ -176,7 +176,7 @@ class Attributes extends Admin_Controller
 			$delete = $this->model_attributes->remove($attribute_id);
 			if($delete == true) {
 				$response['success'] = true;
-				$response['messages'] = "Successfully removed";	
+				$response['messages'] = "Eliminado correctamente";	
 			}
 			else {
 				$response['success'] = false;
@@ -307,11 +307,11 @@ class Attributes extends Admin_Controller
 	        	$update = $this->model_attributes->updateValue($data, $id);
 	        	if($update == true) {
 	        		$response['success'] = true;
-	        		$response['messages'] = 'Succesfully updated';
+	        		$response['messages'] = 'Actualizado correctamente';
 	        	}
 	        	else {
 	        		$response['success'] = false;
-	        		$response['messages'] = 'Error in the database while updated the brand information';			
+	        		$response['messages'] = 'Error al actualizar';			
 	        	}
 	        }
 	        else {
@@ -342,7 +342,7 @@ class Attributes extends Admin_Controller
 			$delete = $this->model_attributes->removeValue($attribute_value_id);
 			if($delete == true) {
 				$response['success'] = true;
-				$response['messages'] = "Successfully removed";	
+				$response['messages'] = "Eliminado correctamente";	
 			}
 			else {
 				$response['success'] = false;

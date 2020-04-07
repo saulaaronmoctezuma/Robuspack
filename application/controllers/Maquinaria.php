@@ -247,7 +247,7 @@ Class Maquinaria extends CI_Controller {
     
     
     
-    public function actualiza($id_maquinaria) {
+    public function actualiza($id) {
         $this->load->model('Maquinaria/MaquinariaModelo');
 
 
@@ -272,14 +272,14 @@ Class Maquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             //agregar para el select de refacción de tabla maquinaria        
             $data = array();
-            $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+            $data = $this->MaquinariaModelo->obtener($id);
             $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data = array();
-            $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+            $data = $this->MaquinariaModelo->obtener($id);
             $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
             $this->load->view('footer');
         } else {

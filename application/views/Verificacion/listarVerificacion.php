@@ -49,7 +49,7 @@
     <BR>
     <!--<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">-->
     <div class="container">
-        <center>  <h1> Verificación de Placas</h1></center>
+        <center>  <h1> Control de Maquinaria</h1></center>
         <BR>
         <div class="alert alert-info alert-warning">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -110,6 +110,12 @@ if ($dataLevel == 'is_admin') {
         <a  class="btn btn-success" href="' . base_url('verificacion/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar Nuevo Registro</a>
 
     </div>';
+}else if ($dataLevel == 'is_Gerente_Ventas') {
+
+    echo '<div class="text-center">
+        <a  class="btn btn-success" href="' . base_url('verificacion/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Catálogo">Agregar Nuevo Registro</a>
+
+    </div>';
 } else if ($dataLevel == 'is_credito') {
     
 } else if ($dataLevel == 'is_refacciones') {
@@ -146,8 +152,16 @@ foreach ($totalRegistroPlacas as $fila) {
             <MARQUEE SCROLLDELAY =200> </MARQUEE>
             <thead>
                 <tr>
-
-                    <th style="text-align: center">No Máquina</th>
+<?php
+if ($dataLevel == 'is_Gerente_Ventas') {
+   
+}  else {
+     echo '   ';
+}
+?>
+                    
+                    
+                 <th style="text-align: center">No Máquina</th>
                     <th  style="text-align: center">Modelo</th>
                     <th  style="text-align: center">Empresa</th>
                     <th  style="text-align: center">Serie</th>
@@ -172,7 +186,7 @@ if ($dataLevel == 'is_admin') {
     
 }
 ?>
-
+   <th  style="text-align: center">Comentario </th>
 
 
                     <?php
@@ -215,10 +229,14 @@ if ($dataLevel == 'is_admin') {
     echo '<th>Refacciones</th>';
 } else if ($dataLevel == 'is_jefe_mantenimiento') {
     echo '<th>Refacciones</th>';
-} else {
+}else if ($dataLevel == 'is_Gerente_Ventas') {
+     echo ' <th>No Factura</th><th>Factura</th>';
+}  else {
     
 }
 ?>
+                    
+                    
 
 
                     <?php
@@ -238,10 +256,13 @@ if ($dataLevel == 'is_admin') {
                         echo '<th class="header" colspan="1" align="center" >Modificar</th>';
                     } else if ($dataLevel == 'is_editor') {
                         echo '<th class="header" colspan="2" style="text-align: center">Eliminar</th><th class="header" colspan="2" align="center" >Modificar</th>';
-                    } else {
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<th class="header" colspan="1" align="center" >Modificar</th>';
+                    }  else {
                         
                     }
                     ?>
+
 
 
                 </tr>
@@ -251,11 +272,18 @@ if ($dataLevel == 'is_admin') {
 foreach ($placa as $obj) {
     echo '<tr>';
 
-
-    echo '<td>';
+    
+    if ($dataLevel == 'is_Gerente_Ventas') {
+      
+    } else {
+       
+    
+        ; 
+    }
+   echo '<td>';
     echo $obj->getNo_maqui() .
-    '</td>'
-    . '<td>'
+    '</td>';
+    echo  '<td>'
     . $obj->getModelo() .
     '</td>'
     . '<td>'
@@ -306,8 +334,62 @@ foreach ($placa as $obj) {
     }
 
 
+               
+          
 
+    
+    
+    
+    
+    
+    ?>
+            
+            
+            <?php
+            
+                 if (($obj->getComentario() == null)) {
+            echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getComentario() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver el comentario" data-toggle="modal" data-target="#myModalC1<?php echo $obj->getId() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments"></i></center>
 
+     <div class="modal fade" id="myModalC1<?php echo $obj->getId() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>verificacion">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo $obj->getComentario() ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>verificacion">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+            <?php
+    }
+            
+            
+          
+    
+    
+    
+    
+    
+    
+    
     //Pedimento PDF
 
     if (($obj->getPedimentoodf() == null) && ($dataLevel == 'is_admin')) {
@@ -388,6 +470,11 @@ foreach ($placa as $obj) {
         . $obj->getNum_factura() .
         '</td>'
         ;
+    }else if ($dataLevel == 'is_Gerente_Ventas') {
+        echo '<td>'
+        . $obj->getNum_factura() .
+        '</td>'
+        ;
     } else if ($dataLevel == 'is_mantenimiento') {
         
     } else if ($dataLevel == 'is_jefe_mantenimiento') {
@@ -419,6 +506,12 @@ foreach ($placa as $obj) {
     if (($obj->getFactura() == null) && ($dataLevel == 'is_credito')) {
         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
     } else if (($obj->getFactura() != null) && ($dataLevel == 'is_credito')) {
+        echo '<td style="text-align: center;"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+    }
+    
+     if (($obj->getFactura() == null) && ($dataLevel == 'is_Gerente_Ventas')) {
+        echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
+    } else if (($obj->getFactura() != null) && ($dataLevel == 'is_Gerente_Ventas')) {
         echo '<td style="text-align: center;"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getFactura() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
     }
 
@@ -458,6 +551,12 @@ foreach ($placa as $obj) {
         echo '<td style="text-align: center;"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getRefacciones() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
     }
 
+ 
+    
+    
+    
+    
+        
 
     //Permisos para agregar y modificar
     if ($dataLevel == 'is_admin') {
@@ -477,7 +576,9 @@ foreach ($placa as $obj) {
         echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
     } else if ($dataLevel == 'is_jefe_mantenimiento') {
         echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
-    }
+    }else if ($dataLevel == 'is_Gerente_Ventas') {
+        echo '<td style="text-align: center;"><a title="Da clic para modificar el registro" href="' . base_url() . 'verificacion/actualizar/' . $obj->getId() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+    } 
 
     ;
 }
@@ -512,7 +613,7 @@ if ($dataLevel == 'is_admin') {
     
 }
 ?>
-
+<th>
 
 
                     <?php
@@ -558,7 +659,7 @@ if ($dataLevel == 'is_admin') {
 } else {
     
 }
-?>
+?> 
 
 
                     <?php
@@ -578,6 +679,8 @@ if ($dataLevel == 'is_admin') {
                         echo '<th class="header" colspan="1" align="center" >Modificar</th>';
                     } else if ($dataLevel == 'is_editor') {
                         echo '<th class="header" colspan="2" style="text-align: center">Eliminar</th><th class="header" colspan="2" align="center" >Modificar</th>';
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<th class="header" colspan="1" align="center" >Modificar</th>';
                     } else {
                         
                     }
@@ -601,6 +704,3 @@ if ($dataLevel == 'is_admin') {
  
      </div>-->
 </div>
-</body>
-</html>
-

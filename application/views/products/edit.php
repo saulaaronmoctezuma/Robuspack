@@ -93,6 +93,18 @@ $(document).ready(function() {
                   <label for="price">Precio Venta</label>
                   <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
                 </div>
+                
+                
+                 <div class="form-group">
+                  <label for="min">min</label>
+                  <input type="text" class="form-control" id="min" name="min" placeholder="Enter min" value="<?php echo $product_data['min']; ?>" autocomplete="off" />
+                </div>
+                
+                <div class="form-group">
+                  <label for="max">max</label>
+                  <input type="text" class="form-control" id="max" name="max" placeholder="Enter max" value="<?php echo $product_data['max']; ?>" autocomplete="off" />
+                </div>
+
 
                 <div class="form-group">
                   <label for="qty">Cantidad</label>
@@ -103,7 +115,44 @@ $(document).ready(function() {
                   <label for="location">Ubicación</label>
                   <input type="text" class="form-control" id="location" name="location" placeholder="Ubicacion" value="<?php echo $product_data['location']; ?>" autocomplete="off" />
                 </div>
-
+                
+                
+                <!--<div class="form-group">
+                  <label for="area">Area</label>
+                  <input type="text" class="form-control" id="area" name="area" placeholder="Area" value="<?php echo $product_data['area']; ?>" autocomplete="off" />
+                </div>-->
+                
+                
+                  <div class="form-group">
+                    <label for="Corrugados">Area</label>
+                    
+                    
+                    
+                    <SELECT name="area" id="tipo_entrega" class="form-control input-sm"> 
+                                    <optgroup label="Selecciona una opción">
+                                       
+                                        
+                                        <option value="" <?php
+                                        if ($product_data['area'] == "") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Selecciona una opción</option>
+                                        <option value="Conversión" <?php
+                                        if ($product_data['area'] == "Conversión") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Conversión</option>
+                                        <option value="Corrugados" <?php
+                                        if ($product_data['area'] == "Corrugados") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Corrugados</option>
+                                    </optgroup>
+                                </SELECT>
+                    
+                  </div>
+                
+                
                 <!--<div class="form-group">
                   <label for="description">Descripción</label>
                   <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
@@ -167,7 +216,7 @@ $(document).ready(function() {
                   </select>
                 </div>-->
 
- <input type="hidden" class="form-control input-sm"  id="availability" name="availability" >
+ <input type="hidden" class="form-control input-sm"  id="availability" name="availability" value="<?php echo $product_data['availability']; ?>" >
 
               </div>
               <!-- /.box-body -->
