@@ -206,6 +206,12 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                              <textarea name="comentario" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un comentario" require></textarea>
                    
                     </div>
+                    
+                     <div class="form-group col-xs-4">
+                        <label for="nombre">Observación</label>
+                             <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un obsrvación" require></textarea>
+                   
+                    </div>
                     </div>
                     <?php
                     
@@ -425,6 +431,13 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                              <textarea name="comentario" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa un comentario" require></textarea>
                    
                     </div>
+                  
+                    
+                      <div class="form-group col-xs-4">
+                        <label for="nombre">Observación</label>
+                             <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un obsrvación" require></textarea>
+                   
+                    </div>
                     </div>
                     
                     <?php
@@ -516,11 +529,20 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                          <div class="form-group col-xs-4">
                         <label>Foto</label><br>
                         <input type="file" name="fotopost"><br>
-                         </div></div>
+                         </div>
                         <input type="hidden" name="num_factura">
                         <input type="hidden" name="factura">
                         <input type="hidden" name="refacciones">
                         ';
+                        ?>
+                         
+                        <div class="form-group col-xs-4">
+                        <label for="nombre">Observación</label>
+                             <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un obsrvación" require></textarea>
+                   
+                    </div>
+                         </div>
+                         <?php
                 } else if ($dataLevel == 'is_credito') {
                     echo '
                         <label>Factura</label><br>

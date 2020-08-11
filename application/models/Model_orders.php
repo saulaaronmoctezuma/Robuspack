@@ -61,6 +61,7 @@ class Model_orders extends CI_Model {
         //$bill_no = 'ROBUSPACK-' . strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 25));
         $data = array(
             //'bill_no' => $bill_no,
+            'tipo_de_documento' => $this->input->post('tipo_de_documento'),
             'bill_no' => $this->input->post('bill_no'),
             'customer_name' => $this->input->post('customer_name'),
             'customer_address' => $this->input->post('customer_address'),
@@ -107,12 +108,20 @@ class Model_orders extends CI_Model {
         return ($order_id) ? $order_id : false;
     }
 
-    public function countOrderItem($order_id) {
-        if ($order_id) {
-            $sql = "SELECT * FROM orders_item WHERE order_id = ?";
-            $query = $this->db->query($sql, array($order_id));
-            return $query->num_rows();
-        }
+   public function countOrderItem($order_id)
+	{
+		if($order_id) {
+			$sql = "SELECT * FROM orders_item WHERE order_id = ?";
+			$query = $this->db->query($sql, array($order_id));
+			return $query->num_rows();
+		}
+	}
+     public function totalRegistroBitacoraMantenimientoAlejandro() {
+        $this->db->select('COUNT(*) as total_registros_alejandro');
+        $this->db->from('bitacora_mtto');
+        $this->db->where('bitacora_mtto.id= ', 24);
+        $query = $this->db->get();
+        return $query->result();
     }
 
     public function update($id) {
@@ -200,7 +209,8 @@ class Model_orders extends CI_Model {
         return $query->num_rows();
     }
     
-    function getCliente() {
+    //
+function getCliente() {
           $grupo = $this->db->select('id_cliente, cliente')->where('id_cliente <> 248')->order_by("cliente", "asc")
                 ->get('cliente')
                 ->result();
@@ -218,8 +228,70 @@ class Model_orders extends CI_Model {
 
         return $options_arr;
     }
-     
     
-    
+     function getProducts(){
+
+    $this->db->select('clave');
+    $records = $this->db->get('clientes_robuspack');
+        $users = $records->result_array();
+    return $users;
+  }
+  function getProductsDetails($postData=array()){
+ 
+    $response = array();
+ 
+    if(isset($postData['clave']) ){
+ 
+      // Select record
+      $this->db->select('*');
+      $this->db->where('clave', $postData['clave']);
+      $records = $this->db->get('clientes_robuspack');
+      $response = $records->result_array();
+ 
+    }
+ 
+    return $response;
+  }
+  
+  
+  
+      
+        function getUsernames(){
+
+    $this->db->select('numero');
+    $records = $this->db->get('pedimento');
+    $users = $records->result_array();
+    return $users;
+  }
+  function getUserDetails($postData=array()){
+ 
+    $response = array();
+ 
+    if(isset($postData['numero']) ){
+ 
+      // Select record
+      $this->db->select('*');
+      $this->db->where('numero', $postData['numero']);
+      $records = $this->db->get('pedimento');
+      $response = $records->result_array();
+ 
+    }
+ 
+    return $response;
+  }
+  
+  
+function get_category(){
+		$query = $this->db->get('products');
+		return $query;	
+	}
+
+	function get_sub_category($category_id){
+		$query = $this->db->order_by('numero', 'desc')->get_where('pedimento', array('id_producto' => $category_id ));
+		return $query;
+	}
+        
+        
+        
 
 }

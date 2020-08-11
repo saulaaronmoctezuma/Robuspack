@@ -133,14 +133,18 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
             $this->db->order_by('verificacion.no_maqui', 'desc');
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
             // $this->db->where('users.id= ', $dataLevel);
-            $this->db->where('verificacion.empresa= ', 'MAKBOX S DE RL DE CV');
+            
+            /*este solo cuando se quiera mostrar una condicion
+             * $this->db->where('verificacion.empresa= ', 'MAKBOX S DE RL DE CV');
+             */
             $query = $this->db->get();
             
         $colPlaca = array();
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
-                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , $value->comentario 
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones ,
+                    $value->comentario ,$value->observacion
             );
 
             array_push($colPlaca, $objeto);
@@ -168,7 +172,8 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
-                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , $value->comentario 
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , 
+                    $value->comentario, $value->observacion
             );
 
             array_push($colPlaca, $objeto);

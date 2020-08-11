@@ -126,6 +126,7 @@ $theme = $result->theme;
 
 p, h1, h2, h3, h4, h5, table{
 font-family: 'Montserrat', sans-serif;
+color: #09E562;
 }
 
 
@@ -167,11 +168,13 @@ $(document).ready(function(){
   });
 });
 </script>
+
+<!--
 <div class="btn_whatsapp">
 <a href="https://wa.link/0E6H" target="_blank">
 <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
 </a>
-</div>
+</div>-->
 
 
 

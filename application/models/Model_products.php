@@ -85,14 +85,39 @@ class Model_products extends CI_Model  implements IModeloAbstracto {
 
     
      
-    public function actualizar($data) {
+    public function actualizar() {
+        
+         $data = array(
+            'sku' => $_POST['sku'],
+            'qty' => $_POST['qty'],
+              'tipo_de_documento' => $_POST['tipo_de_documento'],
+               'numero_documento' => $_POST['numero_documento']  
+        );
+
+        
+        
         $registros = $this->input->post('sku');
         $this->db->where('sku',$registros);
-        return $this->db->update('products',$data);
+        $this->db->update('products',$data);
+        
+        
+        
+     
+                $pedimentos = array(
+                        
+                'numero' => $this->input->post('pedimento'),
+                'cantidad' => $this->input->post('multiplicador'),
+                'activo' => 'Activo',
+                'id_producto' => $this->input->post('sidproducto')
+               
+                              
+            );
+                $this->db->insert('pedimento',$pedimentos);
+           
     }  
     
     
-     public function obtener($id_products) {
+     public function obtenerNofunciona($id_products) {
         $objj = $this->db->query(" Select * From products where id=$id_products");
         $obj = $objj->row();
         $dp = array('id' => $obj->id,
@@ -134,29 +159,8 @@ class Model_products extends CI_Model  implements IModeloAbstracto {
         
     }
 
-  function getUsernames(){
 
-    $this->db->select('email');
-    $records = $this->db->get('users');
-    $users = $records->result_array();
-    return $users;
-  }
-  function getUserDetails($postData=array()){
  
-    $response = array();
- 
-    if(isset($postData['email']) ){
- 
-      // Select record
-      $this->db->select('*');
-      $this->db->where('email', $postData['email']);
-      $records = $this->db->get('users');
-      $response = $records->result_array();
- 
-    }
- 
-    return $response;
-  }
   
   
   
@@ -164,11 +168,11 @@ class Model_products extends CI_Model  implements IModeloAbstracto {
 
     $this->db->select('sku');
     $records = $this->db->get('products');
-    $users = $records->result_array();
+        $users = $records->result_array();
     return $users;
   }
   function getProductsDetails($postData=array()){
- 
+      
     $response = array();
  
     if(isset($postData['sku']) ){
@@ -184,4 +188,41 @@ class Model_products extends CI_Model  implements IModeloAbstracto {
     return $response;
   }
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        function getUsernames(){
+
+    $this->db->select('numero');
+    $records = $this->db->get('pedimento');
+    $users = $records->result_array();
+    return $users;
+  }
+  function getUserDetails($postData=array()){
+ 
+    $response = array();
+ 
+    if(isset($postData['numero']) ){
+ 
+      // Select record
+      $this->db->select('*');
+      $this->db->where('numero', $postData['numero']);
+      $records = $this->db->get('pedimento');
+      $response = $records->result_array();
+ 
+    }
+ 
+    return $response;
+  }
 }

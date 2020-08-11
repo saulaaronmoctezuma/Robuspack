@@ -1,12 +1,12 @@
-
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Administrar
-      <small>Orden</small>
+
+      Administrar Órdenes
+
+      <small></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -22,22 +22,22 @@
 
         <div id="messages"></div>
 
-        <?php if($this->session->flashdata('success')): ?>
+        <?php if ($this->session->flashdata('success')) : ?>
           <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <?php echo $this->session->flashdata('success'); ?>
           </div>
-        <?php elseif($this->session->flashdata('error')): ?>
+        <?php elseif ($this->session->flashdata('error')) : ?>
           <div class="alert alert-error alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <?php echo $this->session->flashdata('error'); ?>
           </div>
         <?php endif; ?>
 
-        
-          <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
-          <br /> <br />
-        
+
+        <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
+        <br /> <br />
+
 
         <div class="box">
           <div class="box-header">
@@ -47,18 +47,18 @@
           <div class="box-body">
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
-              <tr>
-                <th>No Factura</th>
-                <th>Nombre del Cliente</th>
-                <!--<th>Telefono</th>-->
-                <th>Fecha</th>
-                <th>Total Refacciones</th>
-                <th>Cantidad Total</th>
-                <!--<th>Estatus Pagado</th>-->
-               
+                <tr>
+                  <th>No Factura</th>
+                  <th>Nombre del Cliente</th>
+                  <!--<th>Telefono</th>-->
+                  <th>Fecha</th>
+                  <th>Total Refacciones</th>
+                  <!-- rod  <th>Cantidad Total</th> -->
+                  <!--<th>Estatus Pagado</th>-->
+
                   <th>Acción</th>
-              
-              </tr>
+
+                </tr>
               </thead>
 
             </table>
@@ -70,7 +70,7 @@
       <!-- col-md-12 -->
     </div>
     <!-- /.row -->
-    
+
 
   </section>
   <!-- /.content -->
@@ -100,70 +100,69 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-    
+
 
 
 
 <script type="text/javascript">
-var manageTable;
-var base_url = "<?php echo base_url(); ?>";
+  var manageTable;
+  var base_url = "<?php echo base_url(); ?>";
 
-$(document).ready(function() {
+  $(document).ready(function() {
 
-  $("#mainOrdersNav").addClass('active');
-  $("#manageOrdersNav").addClass('active');
+    $("#mainOrdersNav").addClass('active');
+    $("#manageOrdersNav").addClass('active');
 
-  // initialize the datatable 
-  manageTable = $('#manageTable').DataTable({
-    'ajax': base_url + 'orders/fetchOrdersData',
-    'order': []
+    // initialize the datatable 
+    manageTable = $('#manageTable').DataTable({
+      'ajax': base_url + 'orders/fetchOrdersData',
+      'order': []
+    });
+
   });
 
-});
+  // remove functions 
+  function removeFunc(id) {
+    if (id) {
+      $("#removeForm").on('submit', function() {
 
-// remove functions 
-function removeFunc(id)
-{
-  if(id) {
-    $("#removeForm").on('submit', function() {
+        var form = $(this);
 
-      var form = $(this);
+        // remove the text-danger
+        $(".text-danger").remove();
 
-      // remove the text-danger
-      $(".text-danger").remove();
+        $.ajax({
+          url: form.attr('action'),
+          type: form.attr('method'),
+          data: {
+            order_id: id
+          },
+          dataType: 'json',
+          success: function(response) {
 
-      $.ajax({
-        url: form.attr('action'),
-        type: form.attr('method'),
-        data: { order_id:id }, 
-        dataType: 'json',
-        success:function(response) {
+            manageTable.ajax.reload(null, false);
 
-          manageTable.ajax.reload(null, false); 
+            if (response.success === true) {
+              $("#messages").html('<div class="alert alert-success alert-dismissible" role="alert">' +
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                '<strong> <span class="glyphicon glyphicon-ok-sign"></span> </strong>' + response.messages +
+                '</div>');
 
-          if(response.success === true) {
-            $("#messages").html('<div class="alert alert-success alert-dismissible" role="alert">'+
-              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
-              '<strong> <span class="glyphicon glyphicon-ok-sign"></span> </strong>'+response.messages+
-            '</div>');
+              // hide the modal
+              $("#removeModal").modal('hide');
 
-            // hide the modal
-            $("#removeModal").modal('hide');
+            } else {
 
-          } else {
-
-            $("#messages").html('<div class="alert alert-warning alert-dismissible" role="alert">'+
-              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
-              '<strong> <span class="glyphicon glyphicon-exclamation-sign"></span> </strong>'+response.messages+
-            '</div>'); 
+              $("#messages").html('<div class="alert alert-warning alert-dismissible" role="alert">' +
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+                '<strong> <span class="glyphicon glyphicon-exclamation-sign"></span> </strong>' + response.messages +
+                '</div>');
+            }
           }
-        }
-      }); 
+        });
 
-      return false;
-    });
+        return false;
+      });
+    }
   }
-}
-
-
 </script>

@@ -1,10 +1,8 @@
 <?php
 /**
  * Send Mail
- * Create by Karen Y saul
- * http://abedputra.com
- * Github: https://github.com/abedputra
- * 2017
+ * Create by Karen & saul
+
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 

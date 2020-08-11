@@ -216,7 +216,7 @@ $site_title = $result->site_title;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="<?php echo site_url(); ?>main/">   <img class="scr" id="scr" src="<?php echo base_url(); ?>assets/images/scr_01.png" border="none" />
+                <a href="<?php echo site_url(); ?>main/">   <img  width="130px" height="55" class="scr" id="scr" src="<?php echo base_url(); ?>assets/images/scr_01.png" border="none" />
                 </a>
                  <!--  <img src="http://anfec.org.mx/wp-content/uploads/2018/05/rrp.png" border="0" width="80" height="60">-->
                  <!--<a class="navbar-brand" href="<?php echo site_url(); ?>main/"><?php echo $site_title; ?></a>-->
@@ -286,27 +286,26 @@ $site_title = $result->site_title;
                             </li>
 
 
-
-                              <li class="dropdown">
+    <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                     <li><a href="' . site_url() . 'CatalogoVenTec">Vendedores y Técnicos</a></li>
-                                   <li><a href="' . site_url() . 'Cliente">Clientes</a></li>
-                                    <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                   <li><a href="' . site_url() . 'Cliente">Cliente Makbox</a></li>
+                                    <li><a href="' . site_url() . 'Empresa">Empresas No Validadas</a></li>
                                      
                                       <li><a href="' . site_url() . 'verificacion">Control de Maquinaria</a></li>
                                       <li><a href="' . site_url() . 'RecoleccionDatos">BD Validada</a></li>
-                                      <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
+                                     <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
                                       <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
-                                      <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
-                                      <li><a href="' . site_url() . 'Stores/">Almacen</a></li>
-                                      <li><a href="' . site_url() . 'Products">Refacciones</a></li>
-                                      <li><a href="' . site_url() . 'Orders">Ordenes Refacciones</a></li>
-                                          <li><a href="' . site_url() . 'Devolucion">Devolucion</a></li>
-                                      
+                                       <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
+                                      <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
+                                      <li><a href="' . site_url() . 'Products">Productos</a></li>  
+                                      <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
+                                      <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
+                                      <li><a href="' . site_url() . 'stores/">Almacen</a></li>
+                                   
                               </ul>
                             </li>
-                           
 
                             
                             
@@ -526,6 +525,10 @@ $site_title = $result->site_title;
                                       <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
                                           <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
                                               <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
+                                                   <li><a href="' . site_url() . 'Products">Productos</a></li>  
+                                      <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
+                                      <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
+                                      <li><a href="' . site_url() . 'Stores">Almacen</a></li>
                               </ul>
                             </li>
                            
@@ -1393,7 +1396,7 @@ $site_title = $result->site_title;
                     <?php
                     if ($dataLevel_id == 1) {
                         ?>
-                        <a href="<?php echo site_url(); ?>main/profile/">   <img class="circular--square" id="foto" src="<?php echo base_url(); ?>assets/fotos_perfil/saul.jpg" height="45px"  width="45px" border="none" /> </a> 
+                        <a href="<?php echo site_url(); ?>main/profile/">   <img class="circular--square" id="foto" src="<?php echo base_url(); ?>assets/fotos_perfil/admin.png" height="45px"  width="45px" border="none" /> </a> 
 
                         </a>  <?php
                 } else if ($dataLevel_id == 2) {

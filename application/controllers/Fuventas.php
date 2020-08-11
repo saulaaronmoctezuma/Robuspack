@@ -221,6 +221,7 @@ class Fuventas extends CI_Controller {
         $orden_compra = $this->input->post('orden_compra');
         $cantidad = $this->input->post('cantidad');
         $pu_usd = $this->input->post('pu_usd');
+        $descuento = $this->input->post('descuento');
         $subtotal = $this->input->post('subtotal');
         $iva = $this->input->post('iva');
         $total_usd = $this->input->post('total_usd');
@@ -235,7 +236,7 @@ class Fuventas extends CI_Controller {
         $nueva = $this->input->post('nueva');
         $observaciones = $this->input->post('observaciones');
         $vendedor = $this->input->post('vendedor');
-        $fecha_de_cobro_de_comisiones = $this->input->post('fecha_de_cobro_de_comisiones');
+        
 
 
 
@@ -275,6 +276,7 @@ class Fuventas extends CI_Controller {
             'orden_compra' => $orden_compra,
             'cantidad' => $cantidad,
             'pu_usd' => $pu_usd,
+            'descuento' => $descuento,
             'subtotal' => $subtotal,
             'iva' => $iva,
             'total_usd' => $total_usd,
@@ -289,7 +291,7 @@ class Fuventas extends CI_Controller {
             'nueva' => $nueva,
             'observaciones' => $observaciones,
             'vendedor' => $vendedor,
-            'fecha_de_cobro_de_comisiones' => $fecha_de_cobro_de_comisiones,
+            
             'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
 
@@ -409,6 +411,7 @@ $cantidad_registros = $this->input->post('cantidad_registros');
         $orden_compra = $this->input->post('orden_compra');
         $cantidad = $this->input->post('cantidad');
         $pu_usd = $this->input->post('pu_usd');
+         $descuento = $this->input->post('descuento');
         $subtotal = $this->input->post('subtotal');
         $iva = $this->input->post('iva');
         $total_usd = $this->input->post('total_usd');
@@ -423,7 +426,7 @@ $cantidad_registros = $this->input->post('cantidad_registros');
         $nueva = $this->input->post('nueva');
         $observaciones = $this->input->post('observaciones');
         $vendedor = $this->input->post('vendedor');
-        $fecha_de_cobro_de_comisiones = $this->input->post('fecha_de_cobro_de_comisiones');
+      
         $path = './assets/verificacion/';
         $id = $this->input->post('id');
         $kondisi = array('id_fuventas' => $id);
@@ -472,6 +475,7 @@ $data['cantidad_registros'] = $cantidad_registros;
         $data['orden_compra'] = $orden_compra;
         $data['cantidad'] = $cantidad;
         $data['pu_usd'] = $pu_usd;
+        $data['descuento'] = $descuento;
         $data['subtotal'] = $subtotal;
         $data['iva'] = $iva;
         $data['total_usd'] = $total_usd;
@@ -486,7 +490,7 @@ $data['cantidad_registros'] = $cantidad_registros;
         $data['nueva'] = $nueva;
         $data['observaciones'] = $observaciones;
         $data['vendedor'] = $vendedor;
-        $data['fecha_de_cobro_de_comisiones'] = $fecha_de_cobro_de_comisiones;
+       
 
       
 

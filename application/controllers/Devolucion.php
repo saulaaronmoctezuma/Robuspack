@@ -1,3 +1,4 @@
+
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -58,7 +59,7 @@ class Devolucion extends Admin_Controller
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+         //   $this->load->view('navbar', $data);
 		$this->data['page_title'] = 'Manage Devolución';
 		$this->render_template('devolucion/index', $this->data);		
 	}
@@ -85,7 +86,9 @@ class Devolucion extends Admin_Controller
 			$buttons = '';
 
 			/*if(in_array('viewOrder', $this->permission)) {*/
-				$buttons .= '<a target="__blank" href="'.base_url('devolucion/printDiv/'.$value['id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+                        
+                        
+				/*$buttons .= '<a target="__blank" href="'.base_url('devolucion/printDiv/'.$value['id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';*/
 			/*}*/
 
 			/*if(in_array('updateOrder', $this->permission)) {*/
@@ -109,7 +112,7 @@ class Devolucion extends Admin_Controller
 				//$value['customer_phone'],
 				$date_time,
 				$count_total_item,
-				$value['net_amount'],
+				//$value['net_amount'],
 				//$paid_status,
 				$buttons
 			);
@@ -180,7 +183,7 @@ class Devolucion extends Admin_Controller
                 $data['clienteCombo'] = $this->model_devolucion->getCliente();
                 
                 $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+          //  navbar de master anterior     $this->load->view('navbar', $data);
             $this->render_template('devolucion/create', $this->data);
         }	
 	}
@@ -289,7 +292,7 @@ class Devolucion extends Admin_Controller
         	$this->data['products'] = $this->model_products->getActiveProductData();      	
 
                     $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            //$this->load->view('navbar', $data);
             
             $this->render_template('devolucion/edit', $this->data);
         }

@@ -5,6 +5,7 @@
  * class @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 02/09/2019 Hora 11:14 am
  *  Fecha : Ultimo Cambio 12/09/2019 Hora 9:00 am
+ *  Fecha : Ultimo Cambio 16/04/2020 Hora 5:19 pm
  */
 
 class FuventasPojo {
@@ -31,6 +32,7 @@ class FuventasPojo {
     private $orden_compra;
     private $cantidad;
     private $pu_usd;
+     private $descuento;
     private $subtotal;
     private $iva;
     private $total_usd;
@@ -47,8 +49,7 @@ class FuventasPojo {
     private $vendedor;
     private $fecha_de_cobro_de_comisiones;
 
-   
-    function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $pu_usd, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
+    function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $pu_usd, $descuento, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
         $this->id_fuventas = $id_fuventas;
         $this->cantidad_registros = $cantidad_registros;
         $this->ref = $ref;
@@ -64,6 +65,7 @@ class FuventasPojo {
         $this->orden_compra = $orden_compra;
         $this->cantidad = $cantidad;
         $this->pu_usd = $pu_usd;
+        $this->descuento = $descuento;
         $this->subtotal = $subtotal;
         $this->iva = $iva;
         $this->total_usd = $total_usd;
@@ -80,6 +82,9 @@ class FuventasPojo {
         $this->vendedor = $vendedor;
         $this->fecha_de_cobro_de_comisiones = $fecha_de_cobro_de_comisiones;
     }
+
+
+    
     public function getId_fuventas() {
         return $this->id_fuventas;
     }
@@ -138,6 +143,10 @@ class FuventasPojo {
 
     public function getPu_usd() {
         return $this->pu_usd;
+    }
+
+    public function getDescuento() {
+        return $this->descuento;
     }
 
     public function getSubtotal() {
@@ -258,6 +267,10 @@ class FuventasPojo {
 
     public function setPu_usd($pu_usd) {
         $this->pu_usd = $pu_usd;
+    }
+
+    public function setDescuento($descuento) {
+        $this->descuento = $descuento;
     }
 
     public function setSubtotal($subtotal) {

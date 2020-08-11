@@ -72,7 +72,7 @@
             
         } else if ($dataLevel == 'is_admin') {
             echo '<left> <h1>Buscar</h1> </left>
-        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+        <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
         ';
         } else if ($dataLevel == 'is_logistica') {
             
@@ -159,7 +159,7 @@
 
 
 
-            <table id="example2"  border="1" class="tablas table-bordered table-striped">
+            <table id="example"  border="1" class="tablas table-bordered table-striped">
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
                 <thead>
                     <tr>
@@ -185,7 +185,6 @@
                         <th style="text-align: center" class="static" scope="col" width="5" heigth="5">Ref</th>
                         <th  style="text-align: center" class="first-col" scope="col">Cliente</th>
                         <th  style="text-align: center" scope="th">Dirección</th>
-                        
                         <th  style="text-align: center" scope="th">Código</th>
                         <th  style="text-align: center" scope="th">Tipo de Producto </th>
                         <th  style="text-align: center" scope="th">Descripcion del Producto </th>
@@ -195,6 +194,7 @@
                         <th  style="text-align: center" scope="th">Orden de compra </th>
                         <th  style="text-align: center" scope="th">Cantidad </th>
                         <th  style="text-align: center" scope="th">Pu USD </th>
+                        <th  style="text-align: center" scope="th">Descuento </th>
                         <th  style="text-align: center" scope="th">Subtotal </th>
                         <th  style="text-align: center"scope="th">IVA </th>
                         <th  style="text-align: center"scope="th">Total USD </th>
@@ -228,14 +228,14 @@
 
                     </tr>
                 </thead>
-
+   <tbody id="myTable">
                 <?php
                 foreach ($fuventas as $obj) {
                     echo '<tr>';
 //compara si es administrador
                     if ($dataLevel == 'is_admin') {
-                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Fuventas/eliminar/' . $obj->getId_fuventas() . '"><button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
-                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Fuventas/actualizar/' . $obj->getId_fuventas() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Fuventas/eliminar/' . $obj->getId_fuventas() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Fuventas/actualizar/' . $obj->getId_fuventas() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                     } else if ($dataLevel == 'is_editor') {
                         
                     } else if ($dataLevel == 'is_credito') {
@@ -260,7 +260,6 @@
                     . '<td>'
                     . $obj->getDireccion() .
                     '</td>'
-                    
                     . '<td>'
                     . $obj->getCodigo() .
                     '</td>' .
@@ -308,7 +307,15 @@
                         . $obj->getPu_usd() .
                         '</td>';
                     }
-
+                    
+                    
+                    if ($obj->getDescuento() > 0) {
+                        echo '<td>'
+                        . $obj->getDescuento() .
+                        '%</td>';
+                    } else  {
+                        echo '<td>N/A</td>';
+                    } 
 
 
 

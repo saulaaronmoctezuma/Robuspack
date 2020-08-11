@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html>
  <head>
    <title>Entrada </title>
@@ -9,8 +9,46 @@
      
    
     <script>
+        
+        function showInp() {
+            getSelectValue = document.getElementById("tipo_documento").value;
+            if (getSelectValue === "") {
+                document.getElementById("vacio").style.display = "inline-block";
+                document.getElementById("vale_garantia").style.display = "none";
+                document.getElementById("bill_no").disabled = true;
+                document.getElementById("factura").style.display = "none"
+                document.getElementById("factura").disabled = true;
+                
+            } else if (getSelectValue === "Compra") {
+                document.getElementById("factura").disabled = false;
+                document.getElementById("vale_garantia").disabled = true;
+                document.getElementById("factura").style.display = "inline-block";
+                document.getElementById("vacio").style.display = "none";
+                document.getElementById("vale_garantia").style.display = "none";
+                
+            } else if (getSelectValue === "Devolución") {
+                document.getElementById("factura").disabled = true;
+                document.getElementById("vale_garantia").disabled = false;
+                document.getElementById("vacio").style.display = "none";       
+                document.getElementById("factura").style.display = "none";
+                document.getElementById("vale_garantia").style.display = "inline-block";
+                
+            } else if (getSelectValue === "Préstamo") {
+                document.getElementById("vacio").style.display = "none";
+                document.getElementById("factura").disabled = true;
+                document.getElementById("vale_garantia").disabled = true;
+                document.getElementById("factura").style.display = "none";
+                document.getElementById("vale_garantia").style.display = "none";
+             
+            }
+
+            
+
+        }
+        
+        
 function sumar(){
-	m1 = document.getElementById("semail").innerText;
+	m1 = document.getElementById("sstock").innerText;
 	m2 = document.getElementById("multiplicador").value;
 	r = parseInt(m1)+ parseInt(m2);
 	document.getElementById("qty").value = r;
@@ -24,7 +62,7 @@ function sumar(){
                 document.getElementById("qty").value = " ";
             }
             
-            if(document.getElementById("semail").innerText===" "){
+            if(document.getElementById("sstock").innerText===" "){
                  document.getElementById("multiplicador").readOnly = false;
             }
             
@@ -36,10 +74,27 @@ function sumar(){
 
 </script>
 <form action="<?= base_url('Products/productModificar') ?>" method="post" align="center" onsubmit="return vali()">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+
 
     <br>
-    <br><br>    
-Selecciona un SKU  : <select id='sku'class="select_group" name="sku" class="form-control select_group"  onkeypress="sumar()" onChange="document.getElementById('multiplicador').value = '';document.getElementById('qty').value = ''" onselect="sumar()">
+    <br><br>  
+    <center>
+        
+        <style>
+            td{
+                font-size: 150%;
+            }
+            
+        </style>  
+        <h1>Entrada a  Inventario</h1>
+    <table border="1" class="tablas table-bordered table-striped">
+        <tr><td>
+                Selecciona un SKU  :</td><td> <select required id='sku' data-live-search="true" data-live-search-style="startsWith" class="form-control selectpicker"  name="sku" class="form-control select_group"  onkeypress="sumar()" onChange="document.getElementById('multiplicador').value = '';document.getElementById('qty').value = ''" onselect="sumar()">
      <?php
      
      echo '<option>Selecciona una SKU</option>';
@@ -49,20 +104,44 @@ Selecciona un SKU  : <select id='sku'class="select_group" name="sku" class="form
      }
      ?>
   </select>
-
+            </td></tr>
   <!-- User details -->
   <div >
-   Descripcion : <span id='suname'></span><br/>
-   Precio : <span id='sname'></span><br/>
-   Stock Existente  : <span id='semail' onkeypress="sumar()" onChange="sumar()" onselect="sumar()"></span><br/>
+      
+       <input type="hidden" name="sidproducto" id='sidproducto'>
+      <tr>  <td> Descripcion :</td><td> <span id='sdescripcion'></span><br/></td></tr>
+   <tr> <td>Precio : </td><td><span id='sprecio'></span><br/></td></tr>
+   <tr> <td>Stock Existente  :</td> <td><span id='sstock' onkeypress="sumar()" onChange="sumar()" onselect="sumar()"></span></td><br/></tr>
    
       
   </div>
 
 
   
-  Nuevas Piezas : <input type="number" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="1"  max="5000" maxlength="4" id="multiplicador" name="multiplicador" onkeyup="sumar();" onChange="sumar();"> <br/><br>
-  Total de Piezas : <input type="text" name="qty" style="background-color:#03E7F7;" readonly id="qty"><br><br>
+  <tr><td> Nuevas Piezas :</td> <td  ><input required type="number" class="form-control" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="1"  max="5000" maxlength="4" id="multiplicador" name="multiplicador" onkeyup="sumar();" onChange="sumar();"> </td><br/><br></tr>
+  <tr> <td>Total de Piezas :</td><td> <input type="text" class="form-control" name="qty" style="background-color:#03E7F7;" readonly id="qty"></td></tr>
+   <tr><td> Pedimento PROCESO :</td> <td  ><input class="form-control"   maxlength="20" id="" name="pedimento" onkeyup="();" onChange="();"> </td><br/><br></tr>
+  <tr><td> <select name="tipo_de_documento" id="tipo_documento" required onchange="showInp()">
+                                        <option value="">Tipo de documento</option>
+                                        <option value="Compra">Compra</option>
+                                        
+                                        <option value="Devolución">Devolución</option> 
+          </select> </td> <td> <input class="form-control" id="vacio" type="text"  disabled />
+                                        <input class="form-control" id="factura" type="text" style="display: none" required name="numero_documento" placeholder="No Factura"/>
+                                           <input class="form-control" id="vale_garantia" type="text" style="display: none" required  name="bill_no"  placeholder="No Vale ó Garantía"/>
+                                        
+  
+  
+ 
+
+                                  
+
+                                   
+                                        
+                                  
+    </table>
+    </center>
+  <br><br>
  <input class="btn btn-success" type="submit" title="Da clic para guardar los datos" value="Guardar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos de la venta">
 
 
@@ -83,16 +162,20 @@ Selecciona un SKU  : <select id='sku'class="select_group" name="sku" class="form
      dataType: 'json',
      success: function(response){
        var len = response.length;
-       $('#suname,#sname,#semail').text('');
+       $('#sidproducto,#sdescripcion,#sprecio,#sstock').text('');
        if(len > 0){
          // Read values
-         var uname = response[0].name;
-         var name = response[0].price;
-         var email = response[0].qty;
+           var idproducto = response[0].id;
+         var descripcion = response[0].description;
+         var precio = response[0].price;
+         var stock = response[0].qty;
  
-         $('#suname').text(uname);
-         $('#sname').text(name);
-         $('#semail').text(email);
+ 
+ 
+         $('#sidproducto').val(idproducto);
+         $('#sdescripcion').text(descripcion);
+         $('#sprecio').text(precio);
+         $('#sstock').text(stock);
  
        }
  

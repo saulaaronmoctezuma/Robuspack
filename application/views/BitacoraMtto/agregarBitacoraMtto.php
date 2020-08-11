@@ -54,7 +54,7 @@
 
                 <div class="form-group col-xs-3">
                     <label for="nombre">Cliente</label>
-                    <select required id="cliente" class="form-control input-sm"  name="planta" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+                    <select required id="cliente" class="form-control input-sm select_group"  name="planta" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
                 </div>
 
 

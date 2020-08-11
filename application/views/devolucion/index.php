@@ -6,7 +6,7 @@
   <section class="content-header">
     <h1>
       Administrar
-      <small>Orden</small>
+      <small>Devolución</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -38,7 +38,7 @@
           <a href="<?php echo base_url('devolucion/create') ?>" class="btn btn-primary">Agregar</a>
           <br /> <br />
         
-          <h1>Devolucion</h1>
+          <h1>Devolución</h1>
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Administrar</h3>
@@ -53,7 +53,7 @@
                 <!--<th>Telefono</th>-->
                 <th>Fecha</th>
                 <th>Total Refacciones</th>
-                <th>Cantidad Total</th>
+                <!-- rod <th>Cantidad Total</th>-->
                 <!--<th>Estatus Pagado</th>-->
                
                   <th>Acción</th>

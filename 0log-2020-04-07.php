@@ -24,3 +24,8 @@ WHERE `id_verificacion` = '587'
 ERROR - 2020-04-07 13:27:22 --> Severity: Notice --> Undefined index: id C:\xampp\htdocs\master\application\controllers\Verificacion.php 800
 ERROR - 2020-04-07 13:27:22 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`master`.`verificacion`, CONSTRAINT `verificacion_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`)) - Invalid query: UPDATE `verificacion` SET `id` = 0
 WHERE `id_verificacion` = '1'
+ERROR - 2020-04-07 16:42:08 --> Página no encontrada: Assets/login
+ERROR - 2020-04-07 16:42:08 --> Página no encontrada: Assets/login
+ERROR - 2020-04-07 16:42:08 --> Página no encontrada: Assets/login
+ERROR - 2020-04-07 16:42:08 --> Página no encontrada: Assets/login
+ERROR - 2020-04-07 17:06:42 --> Página no encontrada: Assets/plugins

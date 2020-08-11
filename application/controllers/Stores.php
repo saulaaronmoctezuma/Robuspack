@@ -38,12 +38,16 @@ class Stores extends Admin_Controller
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            //$this->load->view('navbar', $data);
            $this->render_template('stores/index', $this->data);	
             /* } */
-        
-		
-	}
+        	
+	}else if ($dataLevel == "is_editor") {
+            $this->load->view('header', $data);
+            //$this->load->view('navbar', $data);
+           $this->render_template('stores/index', $this->data);	
+            /* } */
+        }
         }
 	/*
 	* It retrieve the specific store information via a store id

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -58,10 +58,15 @@ class Orders extends Admin_Controller
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            //$this->load->view('navbar', $data);
 		$this->data['page_title'] = 'Manage Orders';
 		$this->render_template('orders/index', $this->data);		
-	}
+	}else if ($dataLevel == "is_editor") {
+             $this->load->view('header', $data);
+            //$this->load->view('navbar', $data);
+		$this->data['page_title'] = 'Manage Orders';
+		$this->render_template('orders/index', $this->data);	
+        }
         }
 	/*
 	* Fetches the orders data from the orders table 
@@ -85,7 +90,7 @@ class Orders extends Admin_Controller
 			$buttons = '';
 
 			/*if(in_array('viewOrder', $this->permission)) {*/
-				$buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+				/*$buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
 			/*}*/
 
 			/*if(in_array('updateOrder', $this->permission)) {*/
@@ -109,7 +114,7 @@ class Orders extends Admin_Controller
 				//$value['customer_phone'],
 				$date_time,
 				$count_total_item,
-				$value['net_amount'],
+				//$value['net_amount'],
 				//$paid_status,
 				$buttons
 			);
@@ -140,7 +145,7 @@ class Orders extends Admin_Controller
         	
         	if($order_id) {
         		$this->session->set_flashdata('success', 'Creado Correctamente');
-        		//redirect('orders/update/'.$order_id, 'refresh');
+        		//redirect('orders/update/'.$order_id, 'ref resh');
                         redirect('orders/', 'refresh');
         	}
         	else {
@@ -168,7 +173,8 @@ class Orders extends Admin_Controller
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-         
+       $data['category'] = $this->model_orders->get_category()->result();
+		
             // false case
         	$company = $this->model_company->getCompanyData(1);
         	$this->data['company_data'] = $company;
@@ -178,9 +184,29 @@ class Orders extends Admin_Controller
         	$this->data['products'] = $this->model_products->getActiveProductData();      	
            
                 $data['clienteCombo'] = $this->model_orders->getCliente();
-                
+                $users = $this->model_orders->getProducts();
+
+                $data['users'] = $users;
                 $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            //$this->load->view('navbar', $data);
+            $this->render_template('orders/create', $this->data);
+        }else if ($dataLevel == "is_editor") {
+            $data['category'] = $this->model_orders->get_category()->result();
+		
+            // false case
+        	$company = $this->model_company->getCompanyData(1);
+        	$this->data['company_data'] = $company;
+        	$this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+        	$this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+   
+        	$this->data['products'] = $this->model_products->getActiveProductData();      	
+           
+                $data['clienteCombo'] = $this->model_orders->getCliente();
+                $users = $this->model_orders->getProducts();
+
+                $data['users'] = $users;
+                $this->load->view('header', $data);
+            //$this->load->view('navbar', $data);
             $this->render_template('orders/create', $this->data);
         }	
 	}
@@ -289,9 +315,39 @@ class Orders extends Admin_Controller
         	$this->data['products'] = $this->model_products->getActiveProductData();      	
 
                     $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            //$this->load->view('navbar', $data);
             
             $this->render_template('orders/edit', $this->data);
+        }else if ($dataLevel == "is_editor") {
+                    
+            
+           //este es para que se lleve el valor del select que esta seleciconado
+            $data['clienteCombo'] = $this->model_orders->getCliente();
+            
+            // false case
+        	$company = $this->model_company->getCompanyData(1);
+        	$this->data['company_data'] = $company;
+        	$this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+        	$this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
+        	$result = array();
+        	$orders_data = $this->model_orders->getOrdersData($id);
+
+    		$result['order'] = $orders_data;
+    		$orders_item = $this->model_orders->getOrdersItemData($orders_data['id']);
+
+    		foreach($orders_item as $k => $v) {
+    			$result['order_item'][] = $v;
+    		}
+
+    		$this->data['order_data'] = $result;
+
+        	$this->data['products'] = $this->model_products->getActiveProductData();      	
+
+                    $this->load->view('header', $data);
+            //$this->load->view('navbar', $data);
+            
+            $this->render_template('orders/edit', $this->data); 
         }
         }
 	}
@@ -476,4 +532,45 @@ class Orders extends Admin_Controller
 		}
 	}
 
+         public function productsDetails() {
+        // POST data
+        $postData = $this->input->post();
+
+        // get data
+        $data = $this->model_orders->getProductsDetails($postData);
+
+        echo json_encode($data);
+    }
+    
+    
+    public function userDetails(){
+    // POST data
+    $postData = $this->input->post();
+
+    // get data
+    $data = $this->model_orders->getUserDetails($postData);
+
+    echo json_encode($data);
+  }
+  
+  
+// get sub category by category_id
+	function get_sub_category(){
+		$category_id = $this->input->post('id_input',TRUE);
+		$data = $this->model_orders->get_sub_category($category_id)->result();
+		echo json_encode($data);
+	}
+/*
+	function ajaxResta(){
+		$totalresta  = 100;
+		$compra = 10;
+
+		$valor = $totalresta - $compra;
+		$html = '<h1>hola mundo</h1>';
+		$html.= '<input type="text">';
+		$html.= '<input type="text" value="'.$valor.'">';
+
+		echo $html;
+	}
+	*/
 }

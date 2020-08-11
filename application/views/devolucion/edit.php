@@ -1,14 +1,35 @@
- <script>
-function sumar(){
-	m1 = document.getElementById("qty_1").value;
-	m2 = document.getElementById("suma_1").value;
-	r = m1*m2;
-	document.getElementById("resultado_1").value
-        
-        
+|z<style>/* Add your styles here */
 
-</script>
+select[readonly]
+{
+    pointer-events: none;
+}
 
+
+/* irrelevent styling */
+
+*
+{
+  box-sizing: border-box;
+}
+
+*[readonly]
+{
+  background: #fafafa;
+  border: 1px solid #ccc;
+  color: #555;
+}
+
+input, select
+{
+  display:block;
+  width: 20rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}</style>
+  
+ 
+  
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -43,11 +64,12 @@ function sumar(){
           </div>
         <?php endif; ?>
 
-
+        <style>select[readonly]{ background: #eee; cursor:no-drop; } select[readonly] option{ display:none; } </style>
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Editar</h3>
           </div>
+
           <!-- /.box-header -->
           <form role="form" action="<?php base_url('devolucion/create') ?>" method="post" class="form-horizontal">
               <div class="box-body">
@@ -66,16 +88,16 @@ function sumar(){
                    <div class="form-group">
                     <label for="bill_no" class="col-sm-5 control-label" style="text-align:left;">No Factura</label>
                     <div class="col-sm-7">
-                      <input type="text" style="background-color:#03E7F7;" readonly class="form-control" id="bill_no" name="bill_no" placeholder="Escribe el numero de Factura" value="<?php echo $order_data['order']['bill_no'] ?>" autocomplete="off"/>
+                        <input type="text" class="form-control" readonly style="background-color:#03E7F7;" id="bill_no" name="bill_no" placeholder="Escribe el numero de Factura" value="<?php echo $order_data['order']['bill_no'] ?>" autocomplete="off"/>
                     </div>
                   </div>
                     
                   <div class="form-group">
                     <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Nombre del Cliente</label>
                     <div class="col-sm-7">
-                     <input type="text" style="background-color:#03E7F7;" readonly class="form-control" id="customer_name" name="customer_name" placeholder="Escribe el mombre del cliente" value="<?php echo $order_data['order']['customer_name'] ?>" autocomplete="off"/>
-                    <!--        <select id="a3" class="form-control input-sm" name="customer_name"   <?php echo form_dropdown('clienteCombo', $clienteCombo, $order_data['order']['customer_name'] , '#', 'id="customer_name"'); ?> </select>
-                 -->
+                   <!--          <select id="a3" style="background-color:#03E7F7;" class="form-control input-sm" name="customer_name"   <?php echo form_dropdown('clienteCombo', $clienteCombo, $order_data['order']['customer_name'] , '#', 'id="customer_name"'); ?> </select>
+                      --><input type="text" class="form-control" readonly style="background-color:#03E7F7;" id="customer_name" name="customer_name" value="<?php echo $order_data['order']['customer_name'] ?>" autocomplete="off"/>
+                   
                     </div>
                   </div>
 
@@ -99,29 +121,16 @@ function sumar(){
                 <table class="table table-bordered" id="product_info_table">
                   <thead>
                     <tr>
-                      <th style="width:30%">Refacción</th>
-                      <th style="width:10%">Piezas</th>
+                        <th style="width:10%">Código</th>
+                        <th style="width:30%">Descripción</th>
+                       <th style="width:10%">Piezas</th>
                       <th style="width:10%">Devolver</th>
-                      <th style="width:10%">Restan</th>
-                      <th style="width:10%">Precio</th>
-                      <th style="width:20%">Importe</th>
+                      <th style="width:10%">total</th>
+                      <th style="width:10%">Stock</th>
                       
-
                       <!--<th style="width:10%"><button type="button" id="add_row" class="btn btn-default"><i class="fa fa-plus"></i></button></th>-->
                     </tr>
                   </thead>
-<script>
-function multiplicar(){
-	m1 = document.getElementById("qty_1").value;
-	m2 = document.getElementById("suma_1").value;
-	r = m1*m2;
-	document.getElementById("resultado_1").value = r;
-	}
-</script>
-
-  <input type="text" id="qty_1" onChange="multiplicar();"> 
-  <input type="text" id="suma_1" onChange="multiplicar();"> 
-  <input type="text" id="resultado_1">
 
                    <tbody>
 
@@ -131,30 +140,58 @@ function multiplicar(){
                         <?php //print_r($v); ?>
                        <tr id="row_<?php echo $x; ?>">
                          <td>
-                             
-                             <select disabled class="form-control select_group product" data-row-id="row_<?php echo $x; ?>" id="product_<?php echo $x; ?>" name="product[]" style="width:100%;" onchange="getProductData(<?php echo $x; ?>)" required>
+                             <script>
+function multiplicar(){
+        
+	q1 = document.getElementById("qty_1").value;
+	m1 = document.getElementById("menos_1").value;
+	r1 = q1-m1;
+	document.getElementById("resultado1").value = r1;
+	}
+        
+        function multiplicar2(){
+	q2 = document.getElementById("qty_2").value;
+	m2 = document.getElementById("menos_2").value;
+	r2 = q2-m2;
+	document.getElementById("resultado2").value = r2;
+	}
+        
+         function multiplicar3(){
+	q3 = document.getElementById("qty_3").value;
+	m3 = document.getElementById("menos_3").value;
+	r3 = q3-m3;
+	document.getElementById("resultado3").value = r3;
+	}
+</script>
+                             <script type="text/javascript">
+                                 
+$('#product_<?php echo $x; ?> option:not(:selected)').attr('disabled',true);
+</script>
+                          <select  readonly class="product" data-row-id="row_<?php echo $x; ?>" id="product_<?php echo $x; ?>" name="product[]" style="width:100%;" onchange="getProductData(<?php echo $x; ?>)" >
                               <option value=""></option>
                               <?php foreach ($products as $k => $v): ?>
                                 <option value="<?php echo $v['id'] ?>" <?php if($val['product_id'] == $v['id']) { echo "selected='selected'"; } ?>><?php echo $v['sku'] ?></option>
-                              <?php endforeach ?>
+                        
+ <?php endforeach ?>
                             </select>
-                  
                           </td>
-                          <td><input type="number"  id="qty_1"   onchange="sumar()" onkeyup="sumar()" ></td>
-                                  <td><input type="number" id="suma_1" class="form-control"  onchange="sumar()" onkeyup="sumar()"></td>
-                             <td><input    type="text" id="resultado_1" ></td>
+                          <td> <input type="text" name="rate_value[]"  value="<?php echo $v['description'] ?>"  id="rate_value_1" class="form-control" disabled autocomplete="off"></td>
+                          <td><input style="background-color:#03E7F7;" disabled readonly oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="1"  max="5000" maxlength="4" type="number" name="qty[]" id="qty_<?php echo $x; ?>" class="form-control"  onchange="getTotal(<?php echo $x; ?>);multiplicar();multiplicar2();multiplicar3();" onkeyup="getTotal(<?php echo $x; ?>)" value="<?php echo $val['qty'] ?>" autocomplete="off"></td>
                           
+                          
+                          
+                          <td><input  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="0"  max="<?php echo $val['qty'] ?>" maxlength="4" type="number" name="qty[]" id="menos_<?php echo $x; ?>" class="form-control"  onchange="getTotal(<?php echo $x; ?>);multiplicar();multiplicar2();multiplicar3();" onkeyup="getTotal(<?php echo $x; ?>)" value="<?php echo $val['qty'] ?>" autocomplete="off"></td>
+                       <td>  <input type="text" id="resultado<?php echo $x; ?>" class="form-control">   </td>
                           <td>
-                            <input type="text" name="rate[]" id="rate_<?php echo $x; ?>" class="form-control" disabled value="<?php echo $val['rate'] ?>" autocomplete="off">
+                            <input type="text" name="rate[]" id="rate_<?php echo $x; ?>" class="form-control" disabled value="<?php echo $order_data['order']['customer_address'] ?>" autocomplete="off">
                             <input type="hidden" name="rate_value[]" id="rate_value_<?php echo $x; ?>" class="form-control" value="<?php echo $val['rate'] ?>" autocomplete="off">
                           </td>
                           <td>
-                            <input type="text" name="amount[]" id="amount_<?php echo $x; ?>" class="form-control" disabled value="<?php echo $val['amount'] ?>" autocomplete="off">
+                            <input type="hidden" name="amount[]" id="amount_<?php echo $x; ?>" class="form-control" disabled value="<?php echo $val['amount'] ?>" autocomplete="off">
                             <input type="hidden" name="amount_value[]" id="amount_value_<?php echo $x; ?>" class="form-control" value="<?php echo $val['amount'] ?>" autocomplete="off">
                           </td>
-                  
-                         <!-- <td><button type="button" class="btn btn-default" onclick="removeRow('<?php echo $x; ?>')"><i class="fa fa-close"></i></button></td>
-                      --> </tr>
+                         <!-- <td><button type="button" class="btn btn-default" onclick="removeRow('<?php echo $x; ?>')"><i class="fa fa-close"></i></button></td>-->
+                       </tr>
                        <?php $x++; ?>
                      <?php endforeach; ?>
                    <?php endif; ?>
@@ -166,9 +203,9 @@ function multiplicar(){
                 <div class="col-md-6 col-xs-12 pull pull-right">
 
                   <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label">Total</label>
+                    <label for="gross_amount" class="col-sm-5 control-label"></label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="gross_amount" name="gross_amount" disabled value="<?php echo $order_data['order']['gross_amount'] ?>" autocomplete="off">
+                      <input type="hidden" class="form-control" id="gross_amount" name="gross_amount" disabled value="<?php echo $order_data['order']['gross_amount'] ?>" autocomplete="off">
                       <input type="hidden" class="form-control" id="gross_amount_value" name="gross_amount_value" value="<?php echo $order_data['order']['gross_amount'] ?>" autocomplete="off">
                     </div>
                   </div>
@@ -226,7 +263,7 @@ function multiplicar(){
                 <input type="hidden" name="service_charge_rate" value="<?php echo $company_data['service_charge_value'] ?>" autocomplete="off">
                 <input type="hidden" name="vat_charge_rate" value="<?php echo $company_data['vat_charge_value'] ?>" autocomplete="off">
 
-                <a target="__blank" href="<?php echo base_url() . 'devolucion/printDiv/'.$order_data['order']['id'] ?>" class="btn btn-default" >Imprimir</a>
+                  <!--<a target="__blank" href="<?php echo base_url() . 'devolucion/printDiv/'.$order_data['order']['id'] ?>" class="btn btn-default" >Imprimir</a>-->
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <a href="<?php echo base_url('devolucion/') ?>" class="btn btn-warning">Regresar</a>
               </div>
@@ -286,7 +323,7 @@ function multiplicar(){
       var row_id = count_table_tbody_tr + 1;
 
       $.ajax({
-          url: base_url + 'orders/getTableProductRow/',
+          url: base_url + 'devolucion/getTableProductRow/',
           type: 'post',
           dataType: 'json',
           success:function(response) {
@@ -355,7 +392,7 @@ function multiplicar(){
 
     } else {
       $.ajax({
-        url: base_url + 'orders/getProductValueById',
+        url: base_url + 'devolucion/getProductValueById',
         type: 'post',
         data: {product_id : product_id},
         dataType: 'json',
@@ -363,7 +400,7 @@ function multiplicar(){
           // setting the rate value into the rate input field
           
           $("#rate_"+row_id).val(response.price);
-          $("#rate_value_"+row_id).val(response.price);
+          $("#rate_value"+row_id).val(response.description);
 
           $("#qty_"+row_id).val(1);
           $("#qty_value_"+row_id).val(1);

@@ -4,70 +4,52 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
           <link rel="icon" href="<?= base_url('assets/images/robuspack_icon.png') ?>">
     </head>
+    <style>
+        body, html { 
+  margin; 
+  padding; 
+  height:100%; 
+} 
+#wrapper { 
+  min-height:100%; 
+  position:relative; 
+} 
+#header-zone { 
+  padding:10px; 
+  height: 50px; 
+  background:red; 
+} 
+#middle-zone { 
+  padding-bottom:100px; 
+} 
+#footer-zone { 
+  height: 50px; 
+  background:black; 
+  width:100%; 
+  position:absolute; 
+  
+}
+        
+    </style>
     <body>
         <div class="container box">
             <br />
-            <h3 align="rigth">Ficha Técnica del Cliente</h3>
+            <h3 align="rigth"><center><b>Reporte de Refacción</b>   </center></h3>
             <br />
             <?php
-            if (isset($customer_data)) {
+            if (isset($sku_detalles)) {
                 ?>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered" border>
-                        <tr>
-                             <th>Id</th>
-                <th>Grupo</th>
-                <th>Cliente</th>
-                <th>Cliente SAE</th>
-                <th>Razón Social</th>
-                <th>RFC</th>
-                <th>Dirección</th>
-                <th style="text-align: center">Teléfono Celular</th>
-               
-                <th>Extensión</th>
-                <th>Correo</th>
-                 <th style="text-align: center">Moneda</th>
-                <th style="text-align: center">Cuenta Bancaria</th>
-                <th style="text-align: center">Vendedor Refacciones</th>
-                <th style="text-align: center" >Vendedor Maquinaria</th>
-                            <th>Ver</th>
-                            <th>Ver en PDF</th>
-                        </tr>
-                        <?php
-                        foreach ($customer_data->result() as $row) {
-                            echo '
-				<tr>
-					<td>' . $row->id_cliente . '</td>
-					<td>' . $row->grupo . '</td>
-                                        <td>' . $row->cliente . '</td>
-                                        <td>' . $row->cliente_sae . '</td>
-                                        <td>' . $row->razon_soc . '</td>
-                                        <td>' . $row->rfc . '</td>
-                                        <td>' . $row->direccion . '</td>
-                                        <td>' . $row->tel_cel . '</td>
-                                        <td>' . $row->extension . '</td>
-                                        <td>' . $row->correo . '</td>     
-                                        <td>' . $row->moneda . '</td>
-                                        <td>' . $row->cta_banc . '</td>
-                                        <td>' . $row->vendedor_refacciones . '</td>
-                                        <td>' . $row->vendedor_maquinaria . '</td>
-					<td><a href="' . base_url() . 'htmltopdf/details/' . $row->id_cliente . '">Ver solo este</a></td>
-					<td><a target="_blank" href="' . base_url() . 'htmltopdf/pdfdetails/' . $row->id_cliente . '">Ver en pdf</a></td>
-				</tr>
-				';
-                        }
-                        ?>
-                    </table>
-                </div>
+              
                 <?php
             }
-            if (isset($customer_details)) {
-                echo $customer_details;
+            if (isset($sku_detalles)) {
+                echo $sku_detalles;
             }
             ?>
         </div>
+        
     </body>
 </html>

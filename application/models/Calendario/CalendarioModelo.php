@@ -25,10 +25,6 @@ class CalendarioModelo extends CI_Model {
     }
 
     Public function getEvents() {
-
-
-
-
         $data['css'] = $this->css;
         $data['base'] = $this->base;
 
@@ -60,7 +56,15 @@ class CalendarioModelo extends CI_Model {
             $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
             return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
 
-        } else {
+        }else if ($dataLevel == "is_mantenimiento") {
+            $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
+            return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
+
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+            $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
+            return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
+
+        }  else {
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -86,15 +90,33 @@ class CalendarioModelo extends CI_Model {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-            $sql = "INSERT INTO events (title,events.start,events.end,description, color) VALUES (?,?,?,?,?)";
+                   $user_id = $this->session->userdata('id');
+            $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
             $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
             return ($this->db->affected_rows() != 1) ? false : true;
         } else if ($dataLevel == "is_editor") {
-            $sql = "INSERT INTO events (title,events.start,events.end,description, color) VALUES (?,?,?,?,?)";
+              $user_id = $this->session->userdata('id');
+            $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
             $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
             return ($this->db->affected_rows() != 1) ? false : true;
         } else if ($dataLevel == "is_refacciones") {
-            $sql = "INSERT INTO events (title,events.start,events.end,description, color) VALUES (?,?,?,?,?)";
+             $user_id = $this->session->userdata('id');
+            $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
+            $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+             $user_id = $this->session->userdata('id');
+            $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
+            $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else if ($dataLevel == "is_mantenimiento") {
+             $user_id = $this->session->userdata('id');
+            $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
+            $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+             $user_id = $this->session->userdata('id');
+            $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
             $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }else {
@@ -123,18 +145,36 @@ class CalendarioModelo extends CI_Model {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ?";
+            $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? ";
             $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         } else if ($dataLevel == "is_editor") {
+             $user_id = $this->session->userdata('id');
             $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ?";
             $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }else if ($dataLevel == "is_refacciones") {
-            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ?";
+              $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? and id_usuario=$user_id";
             $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
-        }  else {
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+               $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? and id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        } else if ($dataLevel == "is_mantenimiento") {
+               $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? and id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+               $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? and id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }   else {
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -194,19 +234,34 @@ class CalendarioModelo extends CI_Model {
         if (empty($data['role'])) {
             redirect(site_url() . 'main/login/');
         }
+       
         $dataLevel = $this->userlevel->checkLevel($data['role']);
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
-            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ?";
+              $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         } else if ($dataLevel == "is_editor") {
-            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ?";
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }  else if ($dataLevel == "is_refacciones") {
-            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ?";
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+              $user_id = $this->session->userdata('id');
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else if ($dataLevel == "is_mantenimiento") {
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and  id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }else {

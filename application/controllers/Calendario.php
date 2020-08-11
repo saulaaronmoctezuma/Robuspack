@@ -32,10 +32,6 @@ class Calendario extends CI_Controller {
         $this->load->model('Calendario/CalendarioModelo');
 
 
-
-
-
-
         //user data from session
         $data = $this->session->userdata;
         /* if (empty($data)) {
@@ -51,22 +47,26 @@ class Calendario extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
-
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
-
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         } else if ($dataLevel == "is_refacciones") {
             $this->load->view('header', $data);
-
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         } else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
-
+            $this->load->view('navbar', $data);
+            $this->load->view('Calendario/calendario');
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('Calendario/calendario');
+        }else if ($dataLevel == "is_mantenimiento") {
+            $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         }else {
@@ -113,6 +113,15 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_refacciones") {
             $result = $this->CalendarioModelo->addEvent();
             echo $result;
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            $result = $this->CalendarioModelo->addEvent();
+            echo $result;
+        } else if ($dataLevel == "is_mantenimiento") {
+            $result = $this->CalendarioModelo->addEvent();
+            echo $result;
+        } else if ($dataLevel == "is_jefe_mantenimiento") {
+            $result = $this->CalendarioModelo->addEvent();
+            echo $result;
         }  else {
             redirect(site_url() . 'Calendario/');
         }
@@ -152,7 +161,14 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_Gerente_Ventas") {
             $result = $this->CalendarioModelo->updateEvent();
             echo $result;
-        }  else {
+        }else if ($dataLevel == "is_mantenimiento") {
+            $result = $this->CalendarioModelo->updateEvent();
+            echo $result;
+        }else if ($dataLevel == "is_jefe_mantenimiento") {
+            $result = $this->CalendarioModelo->updateEvent();
+            echo $result;
+        } 
+        else {
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -225,7 +241,16 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_refacciones") {
             $result = $this->CalendarioModelo->dragUpdateEvent();
             echo $result;
-        }  else {
+        }else if ($dataLevel == "is_mantenimiento") {
+            $result = $this->CalendarioModelo->dragUpdateEvent();
+            echo $result;
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $result = $this->CalendarioModelo->dragUpdateEvent();
+            echo $result;
+        } else if ($dataLevel == "is_jefe_mantenimiento") {
+            $result = $this->CalendarioModelo->dragUpdateEvent();
+            echo $result;
+        }   else {
             redirect(site_url() . 'Calendario/');
         }
     }

@@ -25,21 +25,23 @@
         ?>
     </head>
     
-    
-        <script language=javascript type=text/javascript>
+    <script language=javascript type=text/javascript>
             function stopRKey(evt) {
                 var evt = (evt) ? evt : ((event) ? event : null);
                 var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
-                if ((evt.keyCode == 13) && (node.type == "text")) {
+                if ((evt.keyCode === 13) && (node.type == "text")) {
                     return false;
                 }
             }
             document.onkeypress = stopRKey;
-       
+
             function calcularSubtotal() {
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
-                r = m1 * m2;
+                m3 = document.getElementById("descuento").value;
+                sub = (m1 * m2) ;
+                des = ((m3*sub)/(100));
+                r = (sub - des).toFixed(2);
                 document.getElementById("subtotal").value = r;
 
 
@@ -51,15 +53,39 @@
                     document.getElementById("subtotal").value = " ";
                 }
             }
-
-            function calcularIva() {
+            
+            
+           function descuento() {
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
-                iva = 0.16;
-                r = (m1 * m2 * iva).toFixed(2);
-                
-             
+                m3 = document.getElementById("descuento").value;
+                sub = (m1 * m2) ;
+                r = ((m3*sub)/(100));
                
+                document.getElementById("descuento_cantidad").value = r;
+
+
+
+                if (document.getElementById("descuento_cantidad").value === "Infinity") {
+                    document.getElementById("descuento_cantidad").value = " ";
+                }
+                if (document.getElementById("descuento_cantidad").value === "NaN") {
+                    document.getElementById("descuento_cantidad").value = " ";
+                }
+            }
+
+            function calcularIva() {
+                 m1 = document.getElementById("cantidad").value;
+                m2 = document.getElementById("pu_usd").value;
+                m3 = document.getElementById("descuento").value;
+                sub = (m1 * m2) ;
+                des = ((m3*sub)/(100));
+                subtotal = sub - des ;
+                iva = 0.16;
+                r = (subtotal * iva).toFixed(2);
+
+
+
                 document.getElementById("iva").value = r;
 
 
@@ -74,41 +100,46 @@
 
 
 
-         
-        function calcularTotal() {
-            m1 = document.getElementById("cantidad").value;
-            m2 = document.getElementById("pu_usd").value;
-            iva = 0.16;
-            r = parseFloat(m1) * parseFloat(m2);
-            r1 = parseFloat(m1) * parseFloat(m2) * (iva);
-            r2 = r + parseFloat(r1)
+            function calcularTotal() {
+                m1 = document.getElementById("cantidad").value;
+                m2 = document.getElementById("pu_usd").value;
+                m3 = document.getElementById("descuento").value;
+                sub = (m1 * m2) ;
+                des = ((m3*sub)/(100));
+                
+                
+                
+                
+                subtotal = sub - des ;
+                iva = 0.16;
+                r2 = ((subtotal )+(subtotal * iva)).toFixed(2);
 
-            document.getElementById("total").value = r2;
+                document.getElementById("total").value = r2;
 
 
 
 
-            if (document.getElementById("total").value === "Infinity") {
-                document.getElementById("total").value = " ";
+                if (document.getElementById("total").value === "Infinity") {
+                    document.getElementById("total").value = " ";
+                }
+                if (document.getElementById("total").value === "NaN") {
+                    document.getElementById("total").value = " ";
+                }
             }
-            if (document.getElementById("total").value === "NaN") {
-                document.getElementById("total").value = " ";
-            }
-        }
 
 
 
 
 
 
-     
+
             function calcularFechaVencimiento() {
                 num = document.getElementById("dias_de_credito").value;
                 f = document.getElementById("fecha").value;
-                
+
 
                 // pasaremos la fecha a formato mm/dd/yyyy 
-               f = f.split('/');
+                f = f.split('/');
                 f = f[1] + '/' + f[0] + '/' + f[2];
                 // 
                 hoy = new Date(f);
@@ -123,7 +154,8 @@
 
 
                 if (document.getElementById("fecha_vencimiento").value === "NaN/NaN/NaN") {
-                    document.getElementById("fecha_vencimiento").value = "El formato de la fecha es incorrecto";
+                    document.getElementById("fecha_vencimiento").value = "";
+                    document.getElementById("fecha_vencimiento").placeholder = "El formato de la fecha es incorrecto";
                     document.getElementById("fecha_vencimiento").style.backgroundColor = "red";
                     document.getElementById("fecha_vencimiento").style.color = "white";
 
@@ -136,8 +168,52 @@
 
 
             }
-        </script> 
 
+            function esfechavalida() {
+                var fecha = document.getElementById("fecha").value;
+
+                // La longitud de la fecha debe tener exactamente 10 caracteres
+                if (fecha.length !== 10)
+                    error = true;
+
+                // Primero verifica el patron
+                if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(fecha))
+                    error = true;
+
+                // Mediante el delimitador "/" separa dia, mes y año
+                var fecha = fecha.split("/");
+                var day = parseInt(fecha[0]);
+                var month = parseInt(fecha[1]);
+                var year = parseInt(fecha[2]);
+
+                // Verifica que dia, mes, año, solo sean numeros
+                error = (isNaN(day) || isNaN(month) || isNaN(year));
+
+                // Lista de dias en los meses, por defecto no es año bisiesto
+                var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                if (month === 1 || month > 2)
+                    if (day > ListofDays[month - 1] || day < 0 || ListofDays[month - 1] === undefined)
+                        error = true;
+
+                // Detecta si es año bisiesto y asigna a febrero 29 dias
+                if (month === 2) {
+                    var lyear = ((!(year % 4) && year % 100) || !(year % 400));
+                    if (lyear === false && day >= 29)
+                        error = true;
+                    if (lyear === true && day > 29)
+                        error = true;
+                }
+
+                if (error === true) {
+                    alert("Fecha Inválida: * La Fecha debe tener el formato: dd/mm/aaaa.\n");
+                    return false;
+                }
+                else
+                    return true;
+            }
+
+
+ //--></script>
     <body>
         <div id="maquinaria">
             <form action="<?= base_url() ?>Fuventas/updatedata" method="post" enctype="multipart/form-data">
@@ -283,9 +359,9 @@
                             
                              <tr>
                                 <td><b>Cantidad</b></td>
-                                <td >
+                                <td >,
                                     <input id="cantidad" onkeyup="calcularSubtotal();calcularIva();calcularTotal();"
-                                    onchange="calcularSubtotal();calcularIva();calcularTotal();" min="0" class="form-control" type="number" name="cantidad" value="<?= $data->cantidad ?>">
+                                    onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" min="0" class="form-control" type="number" name="cantidad" value="<?= $data->cantidad ?>">
                                   
                                 </td>
                             </tr>
@@ -295,7 +371,16 @@
                              <tr>
                                 <td><b>Pu USD</b></td>
                                 <td >
-                                   <input id="pu_usd" onkeyup="calcularSubtotal();calcularIva();calcularTotal();" onchange="calcularSubtotal();calcularIva();calcularTotal();" class="form-control" min="0"  type="text" name="pu_usd" value="<?= $data->pu_usd ?>">
+                                   <input id="pu_usd" onkeyup="calcularSubtotal();calcularIva();calcularTotal();" onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" class="form-control" min="0"  type="text" name="pu_usd" value="<?= $data->pu_usd ?>">
+                                  
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><b>Descuento</b></td>
+                                <td >
+                                   <input id="descuento" onkeyup="calcularSubtotal();calcularIva();calcularTotal();;if(parseInt(this.value)>100){ this.value =100; return false; }"
+                                    onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" class="form-control" max="100"  oninput="if(parseInt(this.value)>100){ this.value =100; return false; }"  min="0" type="text" name="descuento" value="<?= $data->descuento ?>">
                                   
                                 </td>
                             </tr>
@@ -304,7 +389,7 @@
                              <tr>
                                 <td><b>Subtotal</b></td>
                                 <td >
-                                   <input id="subtotal" title="Cantidad * PU USD" style="background-color:#03E7F7;" class="form-control" type="number" name="subtotal" value="<?= $data->subtotal ?>">
+                                   <input id="subtotal" title="Cantidad * PU USD" style="background-color:#03E7F7;" class="form-control" type="text" name="subtotal" value="<?= $data->subtotal ?>">
                                   
                                 </td>
                             </tr>
@@ -333,7 +418,8 @@
                              <tr>
                                 <td><b>Fecha Elaboración Factura(dd/mm/aaaa):</b></td>
                                 <td >
-                                    <input id="fecha" title="Ingresa la fecha en el formato indicado"  min="00/00/0000" placeholder="dd/mm/aaaa" onkeyup="calcularFechaVencimiento();"  class="form-control" type="text" name="fecha" value="<?= $data->fecha ?>">
+                                    <input id="fecha" title="Ingresa la fecha en el formato indicado"  min="00/00/0000" placeholder="dd/mm/aaaa" onkeyup="calcularFechaVencimiento();" 
+                                       onchange="return esfechavalida();"  class="form-control" type="text" name="fecha" value="<?= $data->fecha ?>">
                                   
                                 </td>
                             </tr>
@@ -363,7 +449,7 @@
                              <tr>
                                 <td><b>Días de crédito</b></td>
                                 <td >
-                                   <input id="a2" class="form-control" onkeyup="calcularFechaVencimiento();" min="0"  type="number"  name="dias_de_credito" value="<?= $data->dias_de_credito ?>">
+                                   <input id="dias_de_credito" class="form-control" onkeyup="calcularFechaVencimiento();" onchange="calcularFechaVencimiento();" min="0"  type="number"  name="dias_de_credito" value="<?= $data->dias_de_credito ?>">
                                   
                                 </td>
                             </tr>

@@ -865,7 +865,7 @@ encoontrado
             'firstName'=> $user_info->first_name,
             'email'=>$user_info->email,
             //'user_id'=>$user_info->id,
-            'token'=>$this->base64url_encode($token)
+            'token'=>$this->bzase64url_encode($token)
         );
 
         $data['title'] = "Restablecer la contraseña";

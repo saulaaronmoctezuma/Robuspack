@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -22,32 +22,29 @@ class Products extends Admin_Controller {
      * It only redirects to the manage product page
      */
 
-    
-    
-    public function ejemplo(){
-    $users = $this->model_products->getUsernames();
+    public function ejemplo() {
+        $users = $this->model_products->getUsernames();
 
-    $data['users'] = $users;
+        $data['users'] = $users;
 
-    $this->load->view('user_view',$data);
-  }
+        $this->load->view('user_view', $data);
+    }
 
-  public function userDetails(){
-    // POST data
-    $postData = $this->input->post();
+    public function userDetails() {
+        // POST data
+        $postData = $this->input->post();
 
-    // get data
-    $data = $this->model_products->getUserDetails($postData);
+        // get data
+        $data = $this->model_products->getUserDetails($postData);
 
-    echo json_encode($data);
-  }
-    
-    
-  public function agregar(){
-      
-      
-      
-      
+        echo json_encode($data);
+    }
+
+    public function agregar() {
+
+
+
+
         //user data from session
         $data = $this->session->userdata;
         if (empty($data)) {
@@ -64,39 +61,44 @@ class Products extends Admin_Controller {
         if ($dataLevel == "is_admin") {
             //se trae los datos de la consulta del modelo
             $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            // $this->load->view('navbar', $data);
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/header_menu', $data);
 
-          $users = $this->model_products->getProducts();
+            $this->load->view('templates/side_menubar', $data);
+            $users = $this->model_products->getProducts();
 
-    $data['users'] = $users;
+            $data['users'] = $users;
 
-    $this->load->view('products/entrada',$data);  
+            $this->load->view('products/entrada', $data);
+            $this->load->view('footer');
+        }else if ($dataLevel == "is_editor") {
+              //se trae los datos de la consulta del modelo
+            $this->load->view('header', $data);
+            // $this->load->view('navbar', $data);
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/header_menu', $data);
+
+            $this->load->view('templates/side_menubar', $data);
+            $users = $this->model_products->getProducts();
+
+            $data['users'] = $users;
+
+            $this->load->view('products/entrada', $data);
             $this->load->view('footer');
         }
-      
-      
-      
-      
-   
-    
-    
-  }
+    }
 
-  
-   public function productsDetails(){
-    // POST data
-    $postData = $this->input->post();
+    public function productsDetails() {
+        // POST data
+        $postData = $this->input->post();
 
-    // get data
-    $data = $this->model_products->getProductsDetails($postData);
+        // get data
+        $data = $this->model_products->getProductsDetails($postData);
 
-    echo json_encode($data);
-  }
-  
+        echo json_encode($data);
+    }
 
-    
-  
-     
     public function obtener($id_cliente) {
         $this->load->model('Model_products');
 
@@ -136,7 +138,7 @@ class Products extends Admin_Controller {
             $this->load->view('Cliente/modificarCliente', $data);
 
             $this->load->view('footer');
-        }else if ($dataLevel == "is_editor") {
+        } else if ($dataLevel == "is_editor") {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -148,7 +150,7 @@ class Products extends Admin_Controller {
             $this->load->view('Cliente/modificarCliente', $data);
 
             $this->load->view('footer');
-        }else if ($dataLevel == "is_servicio_a_clientes") {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -160,35 +162,19 @@ class Products extends Admin_Controller {
             $this->load->view('Cliente/modificarCliente', $data);
 
             $this->load->view('footer');
-        }else {
+        } else {
             redirect(site_url() . 'main/');
         }
     }
 
-    
-        public function productModificar() {
-        $data = array(
-            
-            'sku' => $_POST['sku'],
-           
-            'qty' => $_POST['qty']
-           
-        );
+    public function productModificar() {
 
         $this->load->model('Model_products');
-        $this->Model_products->actualizar($data);
+        $this->Model_products->actualizar();
         redirect('Products');
     }
-    
 
-
-
-
-
-
-
-
-  public function index() {
+    public function index() {
         /* {
           if(!in_array('viewProduct', $this->permission)) {
           redirect('dashboard', 'refresh');
@@ -211,9 +197,13 @@ class Products extends Admin_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
+            //$this->load->view('navbar', $data);
             $this->render_template('products/index', $this->data);
             /* } */
+        }else if ($dataLevel == "is_editor") {
+             $this->load->view('header', $data);
+            //$this->load->view('navbar', $data);
+            $this->render_template('products/index', $this->data);
         }
     }
 
@@ -254,10 +244,11 @@ class Products extends Admin_Controller {
 
 
             $result['data'][$key] = array(
-                $img,
+                //mostrar imagen $img,
                 $value['sku'],
+                $value['description'],
                 $value['name'],
-                    $value['price'],
+                $value['price'],
                 $value['qty'] . ' ' . $qty_status,
                 $store_data['name'],
                 $value['area'],
@@ -295,13 +286,13 @@ class Products extends Admin_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
 
-            /*$this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
-            $this->form_validation->set_rules('sku', 'SKU', 'trim|required');
-            $this->form_validation->set_rules('price', 'Price', 'trim|required');
-            $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
-            $this->form_validation->set_rules('store', 'Store', 'trim|required');*/
+            /* $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
+              $this->form_validation->set_rules('sku', 'SKU', 'trim|required');
+              $this->form_validation->set_rules('price', 'Price', 'trim|required');
+              $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
+              $this->form_validation->set_rules('store', 'Store', 'trim|required'); */
             $this->form_validation->set_rules('sku', 'Sku', 'trim|is_unique[products.sku]');
-     
+
             //$this->form_validation->set_rules('availability', 'Availability', 'trim|required');
 
 
@@ -313,6 +304,8 @@ class Products extends Admin_Controller {
                     'name' => $this->input->post('product_name'),
                     'sku' => $this->input->post('sku'),
                     'price' => $this->input->post('price'),
+                    'price2' => $this->input->post('price2'),
+                    'price3' => $this->input->post('price3'),
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -325,6 +318,16 @@ class Products extends Admin_Controller {
                     'category_id' => json_encode($this->input->post('category')),
                     'store_id' => $this->input->post('store'),
                     'availability' => $this->input->post('availability'),
+                    'linea' => $this->input->post('linea'),
+                    'tiempo_surtido' => $this->input->post('tiempo_surtido'),
+                    'fecha_ultima_venta' => $this->input->post('fecha_ultima_venta'),
+                    'traduccion' => $this->input->post('traduccion'),
+                    'medidas_caracteristicas' => $this->input->post('medidas_caracteristicas'),
+                    'serie_maquina' => $this->input->post('serie_maquina'),
+                    'modelo_maquina' => $this->input->post('modelo_maquina'),
+                    'modulo' => $this->input->post('modulo'),
+                    'proveedor_principal' => $this->input->post('proveedor_principal'),
+                    'proveedor_secundario' => $this->input->post('proveedor_secundario')
                 );
 
                 $create = $this->model_products->create($data);
@@ -356,11 +359,102 @@ class Products extends Admin_Controller {
 
 
                 $this->load->view('header', $data);
-                $this->load->view('navbar', $data);
+                //$this->load->view('navbar', $data);
                 $this->render_template('products/create', $this->data);
 
                 /* } */
             }
+        }
+        
+        
+        else if ($dataLevel == "is_editor") {
+            //*editor//
+            
+               /* $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
+              $this->form_validation->set_rules('sku', 'SKU', 'trim|required');
+              $this->form_validation->set_rules('price', 'Price', 'trim|required');
+              $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
+              $this->form_validation->set_rules('store', 'Store', 'trim|required'); */
+            $this->form_validation->set_rules('sku', 'Sku', 'trim|is_unique[products.sku]');
+
+            //$this->form_validation->set_rules('availability', 'Availability', 'trim|required');
+
+
+            if ($this->form_validation->run() == TRUE) {
+                // true case
+                $upload_image = $this->upload_image();
+
+                $data = array(
+                    'name' => $this->input->post('product_name'),
+                    'sku' => $this->input->post('sku'),
+                    'price' => $this->input->post('price'),
+                    'price2' => $this->input->post('price2'),
+                    'price3' => $this->input->post('price3'),
+                    'min' => $this->input->post('min'),
+                    'max' => $this->input->post('max'),
+                    'qty' => $this->input->post('qty'),
+                    'image' => $upload_image,
+                    'description' => $this->input->post('description'),
+                    'location' => $this->input->post('location'),
+                    'area' => $this->input->post('area'),
+                    'attribute_value_id' => json_encode($this->input->post('attributes_value_id')),
+                    'brand_id' => json_encode($this->input->post('brands')),
+                    'category_id' => json_encode($this->input->post('category')),
+                    'store_id' => $this->input->post('store'),
+                    'availability' => $this->input->post('availability'),
+                    'linea' => $this->input->post('linea'),
+                    'tiempo_surtido' => $this->input->post('tiempo_surtido'),
+                    'fecha_ultima_venta' => $this->input->post('fecha_ultima_venta'),
+                    'traduccion' => $this->input->post('traduccion'),
+                    'medidas_caracteristicas' => $this->input->post('medidas_caracteristicas'),
+                    'serie_maquina' => $this->input->post('serie_maquina'),
+                    'modelo_maquina' => $this->input->post('modelo_maquina'),
+                    'modulo' => $this->input->post('modulo'),
+                    'proveedor_principal' => $this->input->post('proveedor_principal'),
+                    'proveedor_secundario' => $this->input->post('proveedor_secundario')
+                );
+
+                $create = $this->model_products->create($data);
+                if ($create == true) {
+                    $this->session->set_flashdata('success', 'Successfully created');
+                    redirect('products/', 'refresh');
+                } else {
+                    $this->session->set_flashdata('errors', 'Error occurred!!');
+                    redirect('products/create', 'refresh');
+                }
+            } else {
+                // false case
+                // attributes 
+                $attribute_data = $this->model_attributes->getActiveAttributeData();
+
+                $attributes_final_data = array();
+                foreach ($attribute_data as $k => $v) {
+                    $attributes_final_data[$k]['attribute_data'] = $v;
+
+                    $value = $this->model_attributes->getAttributeValueData($v['id']);
+
+                    $attributes_final_data[$k]['attribute_value'] = $value;
+                }
+
+                $this->data['attributes'] = $attributes_final_data;
+                $this->data['brands'] = $this->model_brands->getActiveBrands();
+                $this->data['category'] = $this->model_category->getActiveCategroy();
+                $this->data['stores'] = $this->model_stores->getActiveStore();
+
+
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('products/create', $this->data);
+
+                /* } */
+            }
+            
+            
+            
+               //*editor//
+            
+            
+            
         }
     }
 
@@ -409,12 +503,12 @@ class Products extends Admin_Controller {
         }
 
         $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
-        $this->form_validation->set_rules('sku', 'SKU', 'trim|required');
+        //$this->form_validation->set_rules('sku', 'SKU', 'trim|required');
         $this->form_validation->set_rules('price', 'Price', 'trim|required');
-        $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
+        // $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
         $this->form_validation->set_rules('store', 'Store', 'trim|required');
-        
-        
+
+
         // $this->form_validation->set_rules('availability', 'Availability', 'trim|required');
 
         if ($this->form_validation->run() == TRUE) {
@@ -424,6 +518,8 @@ class Products extends Admin_Controller {
                 'name' => $this->input->post('product_name'),
                 'sku' => $this->input->post('sku'),
                 'price' => $this->input->post('price'),
+                'price2' => $this->input->post('price2'),
+                'price3' => $this->input->post('price3'),
                 'qty' => $this->input->post('qty'),
                 'min' => $this->input->post('min'),
                 'max' => $this->input->post('max'),
@@ -435,15 +531,25 @@ class Products extends Admin_Controller {
                 'category_id' => json_encode($this->input->post('category')),
                 'store_id' => $this->input->post('store'),
                 'availability' => $this->input->post('availability'),
+                'linea' => $this->input->post('linea'),
+                'tiempo_surtido' => $this->input->post('tiempo_surtido'),
+                'fecha_ultima_venta' => $this->input->post('fecha_ultima_venta'),
+                'traduccion' => $this->input->post('traduccion'),
+                'medidas_caracteristicas' => $this->input->post('medidas_caracteristicas'),
+                'serie_maquina' => $this->input->post('serie_maquina'),
+                'modelo_maquina' => $this->input->post('modelo_maquina'),
+                'modulo' => $this->input->post('modulo'),
+                'proveedor_principal' => $this->input->post('proveedor_principal'),
+                'proveedor_secundario' => $this->input->post('proveedor_secundario')
             );
 
+//para subir imagenes
+            /* if ($_FILES['product_image']['size'] > 0) {
+              $upload_image = $this->upload_image();
+              $upload_image = array('image' => $upload_image);
 
-            if ($_FILES['product_image']['size'] > 0) {
-                $upload_image = $this->upload_image();
-                $upload_image = array('image' => $upload_image);
-
-                $this->model_products->update($upload_image, $product_id);
-            }
+              $this->model_products->update($upload_image, $product_id);
+              } */
 
             $update = $this->model_products->update($data, $product_id);
             if ($update == true) {
@@ -466,137 +572,126 @@ class Products extends Admin_Controller {
                 $attributes_final_data[$k]['attribute_value'] = $value;
             }
 
-            
-            
-            
-            
-              $this->load->model('Model_products');
-        $data['title'] = 'Refacciones';
-        //user data from session
-        $data = $this->session->userdata;
-        if (empty($data)) {
-            redirect(site_url() . 'main/login/');
-        }
-        //check user level
-        if (empty($data['role'])) {
-            redirect(site_url() . 'main/login/');
-        }
-        $dataLevel = $this->userlevel->checkLevel($data['role']);
-        //check user level
-        $data['title'] = "Robuspack";
-        if ($dataLevel == "is_admin") {
-           
-           
-            /* } */
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            // false case
-            $this->data['attributes'] = $attributes_final_data;
-            $this->data['brands'] = $this->model_brands->getActiveBrands();
-            $this->data['category'] = $this->model_category->getActiveCategroy();
-            $this->data['stores'] = $this->model_stores->getActiveStore();
 
-            $product_data = $this->model_products->getProductData($product_id);
-            $this->data['product_data'] = $product_data;
+
+
+
+            $this->load->model('Model_products');
+            $data['title'] = 'Refacciones';
+            //user data from session
+            $data = $this->session->userdata;
+            if (empty($data)) {
+                redirect(site_url() . 'main/login/');
+            }
+            //check user level
+            if (empty($data['role'])) {
+                redirect(site_url() . 'main/login/');
+            }
+            $dataLevel = $this->userlevel->checkLevel($data['role']);
+            //check user level
+            $data['title'] = "Robuspack";
+            if ($dataLevel == "is_admin") {
+
+
+                /* } */
+
+
+
+
+
+                // false case
+                $this->data['attributes'] = $attributes_final_data;
+                $this->data['brands'] = $this->model_brands->getActiveBrands();
+                $this->data['category'] = $this->model_category->getActiveCategroy();
+                $this->data['stores'] = $this->model_stores->getActiveStore();
+
+                $product_data = $this->model_products->getProductData($product_id);
+                $this->data['product_data'] = $product_data;
+
+
+
+
+
+
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('products/edit', $this->data);
+            }
             
-            
-            
-            
-            
-            
-             $this->load->view('header', $data);
-            $this->load->view('navbar', $data);
-            $this->render_template('products/edit', $this->data);
-            
+            else if ($dataLevel == "is_editor") {
+                $this->data['attributes'] = $attributes_final_data;
+                $this->data['brands'] = $this->model_brands->getActiveBrands();
+                $this->data['category'] = $this->model_category->getActiveCategroy();
+                $this->data['stores'] = $this->model_stores->getActiveStore();
+
+                $product_data = $this->model_products->getProductData($product_id);
+                $this->data['product_data'] = $product_data;
+
+
+
+
+
+
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('products/edit', $this->data);
             }
         }
     }
-    
-    
-  	/*
-    * If the validation is not valid, then it provides the validation error on the json format
-    * If the validation for each input is valid then it updates the data into the database and 
-    returns a n appropriate message in the json format.
-    */
-    
-    
-    public function fetchProductDataById($id) 
-	{
-		if($id) {
-			$data = $this->model_products->getProductData($id);
-			echo json_encode($data);
-		}
-	}
-        
-        
-	public function updateStock($id)
-	{
-		/*if(!in_array('updateStore', $this->permission)) {
-			redirect('dashboard', 'refresh');
-		}*/
 
-		$response = array();
+    /*
+     * If the validation is not valid, then it provides the validation error on the json format
+     * If the validation for each input is valid then it updates the data into the database and 
+      returns a n appropriate message in the json format.
+     */
 
-		if($id) {
-			$this->form_validation->set_rules('edit_store_name', 'Store name', 'trim|required');
-			$this->form_validation->set_rules('edit_active', 'Active', 'trim|required');
+    public function fetchProductDataById($id) {
+        if ($id) {
+            $data = $this->model_products->getProductData($id);
+            echo json_encode($data);
+        }
+    }
 
-			$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
+    public function updateStock($id) {
+        /* if(!in_array('updateStore', $this->permission)) {
+          redirect('dashboard', 'refresh');
+          } */
 
-	        if ($this->form_validation->run() == TRUE) {
-	        	$data = array(
-	        		'name' => $this->input->post('edit_store_name'),
-	        		'active' => $this->input->post('edit_active'),	
-	        	);
+        $response = array();
 
-	        	$update = $this->model_stores->update($data, $id);
-	        	if($update == true) {
-	        		$response['success'] = true;
-	        		$response['messages'] = 'Actualizado correctamente';
-	        	}
-	        	else {
-	        		$response['success'] = false;
-	        		$response['messages'] = 'Error al actualizar';			
-	        	}
-	        }
-	        else {
-	        	$response['success'] = false;
-	        	foreach ($_POST as $key => $value) {
-	        		$response['messages'][$key] = form_error($key);
-	        	}
-	        }
-		}
-		else {
-			$response['success'] = false;
-    		$response['messages'] = 'Error please refresh the page again!!';
-		}
+        if ($id) {
+            $this->form_validation->set_rules('edit_store_name', 'Store name', 'trim|required');
+            $this->form_validation->set_rules('edit_active', 'Active', 'trim|required');
 
-		echo json_encode($response);
-	}
+            $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 
+            if ($this->form_validation->run() == TRUE) {
+                $data = array(
+                    'name' => $this->input->post('edit_store_name'),
+                    'active' => $this->input->post('edit_active'),
+                );
+
+                $update = $this->model_stores->update($data, $id);
+                if ($update == true) {
+                    $response['success'] = true;
+                    $response['messages'] = 'Actualizado correctamente';
+                } else {
+                    $response['success'] = false;
+                    $response['messages'] = 'Error al actualizar';
+                }
+            } else {
+                $response['success'] = false;
+                foreach ($_POST as $key => $value) {
+                    $response['messages'][$key] = form_error($key);
+                }
+            }
+        } else {
+            $response['success'] = false;
+            $response['messages'] = 'Error please refresh the page again!!';
+        }
+
+        echo json_encode($response);
+    }
 
     /*
      * It removes the data from the database
@@ -627,21 +722,17 @@ class Products extends Admin_Controller {
 
         echo json_encode($response);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
+    /*
 
+      public function userDetails(){
+      // POST data
+      $postData = $this->input->post();
 
-    
+      // get data
+      $data = $this->model_products->getUserDetails($postData);
 
+      echo json_encode($data);
+      }
+     */
 }

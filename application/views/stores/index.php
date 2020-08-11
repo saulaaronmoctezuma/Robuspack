@@ -49,12 +49,12 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Nombre</th>
-                <th>Estatus</th>
-                <?php /*if(in_array('updateStore', $user_permission) || in_array('deleteStore', $user_permission)):*/ ?>
-                  <th>Acción</th>
-                <?php /*endif;*/ ?>
-              </tr>
+                    <th>Nombre</th>
+                    <th>Estatus</th>
+                    <?php /*if(in_array('updateStore', $user_permission) || in_array('deleteStore', $user_permission)):*/ ?>
+                      <th>Acción</th>
+                    <?php /*endif;*/ ?>
+                  </tr>
               </thead>
 
             </table>

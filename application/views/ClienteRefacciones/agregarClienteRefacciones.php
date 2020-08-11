@@ -1,6 +1,7 @@
 <!--
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 16/11/2018 Hora 2:34 pm
+ Ultimo Cambio 07/08/2019 Hora 3:44 pm
  * Sistema de Control Robuspack
  */
 -->
@@ -49,22 +50,185 @@
             if (document.getElementById("res_costo_juego").value === "NaN") {
                 document.getElementById("res_costo_juego").value = " ";
             }
+            
 
         }
 
         function divJuegosMensuales() {
-            cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
-            piezas_juego = document.getElementById("mulpiezas_juego").value;
-            juegos_mensuales = ((cantidad_maxima) / (piezas_juego)).toFixed(2);
-            document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+         
+            
+            
+            
+            
+            
+            
+            getSelectValue = document.getElementById("periodo_surtimiento").value;
+            if (getSelectValue === "") {
+                
+                                document.getElementById("res_juegos_mensuales").value = null;
+            } else if (getSelectValue === "Semanal") {
+                
+                                cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = (4)*((cantidad_maxima) / (piezas_juego)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
 
 
-            if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
-                document.getElementById("res_juegos_mensuales").value = " ";
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+            
+            } else if (getSelectValue === "Quincenal") {
+                                 cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = (2)*((cantidad_maxima) / (piezas_juego)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+
+
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+            } else if (getSelectValue === "Mensual") {
+                                 cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = ((cantidad_maxima) / (piezas_juego)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+
+
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+            }else if (getSelectValue === "Bimestral") {
+                             cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = (((cantidad_maxima) / (piezas_juego))/(2)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+
+
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+            } else if (getSelectValue === "Trimestral") {
+               cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = (((cantidad_maxima) / (piezas_juego))/(3)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+
+
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+            } else if (getSelectValue === "Semestral") {
+                    cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = (((cantidad_maxima) / (piezas_juego))/(6)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+
+
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+            }else if (getSelectValue === "Anual") {
+                                cantidad_maxima = document.getElementById("div_cantidad_maxima").value;
+                                piezas_juego = document.getElementById("mulpiezas_juego").value;
+                                juegos_mensuales = (((cantidad_maxima) / (piezas_juego))/(12)).toFixed(2);
+                                document.getElementById("res_juegos_mensuales").value = juegos_mensuales;
+
+
+                                if (document.getElementById("res_juegos_mensuales").value === "Infinity") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+                                if (document.getElementById("res_juegos_mensuales").value === "NaN") {
+                                    document.getElementById("res_juegos_mensuales").value = " ";
+                                }
+
+
+                                if (document.getElementById("res_costo_juego").value === "Infinity") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
+                                if (document.getElementById("res_costo_juego").value === "NaN") {
+                                    document.getElementById("res_costo_juego").value = " ";
+                                }
             }
-            if (document.getElementById("res_juegos_mensuales").value === "NaN") {
-                document.getElementById("res_juegos_mensuales").value = " ";
-            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         function opeBeneficioGolpes() {
@@ -165,9 +329,9 @@
         function comprobarOption() {
             var opcion = document.getElementById("periodo_surtimiento").value;
             if (opcion === "Anual")
-                document.getElementById("div_cantidad_maxima").disabled = false;
+                document.getElementById("div_cantidad_maxima").disabled = FALSE;
             else
-                document.getElementById("div_cantidad_maxima").disabled = true;
+                document.getElementById("div_cantidad_maxima").disabled = TRUE;
         }
 
     </script>
@@ -483,7 +647,7 @@
                     </div>
                     <div class="row">
 
-                        <div class="row">
+                   
                             <div class="form-group col-xs-4">
                                 <label for="nombre">Grupo</label>
                                 <select required id="grupo"  class="form-control input-sm"  name="grupo"  <?php echo form_dropdown('grupoCombo', $grupoCombo, '#', 'id="grupoCombo"'); ?> </select>
@@ -502,7 +666,7 @@
 
                         <br>
 
-
+  <div class="row">
                         <div class="form-group col-xs-4">
                             <label for="nombre">Cantidad máxima</label>
                             <input id="div_cantidad_maxima" min="0" onkeyup="divJuegosMensuales();
@@ -513,18 +677,18 @@
                             <input id="mulprecio_unitario" min="0" onkeyup="multCostoJuego();" type="number" class="form-control input-sm"  name="precio_unitario" placeholder="Ingresa el precio unitario " require>
                         </div>
                         <div class="form-group col-xs-4">
-                            <label for="nombre">Vida Util en Dias</label>
+                            <label for="nombre">Vida util en dias</label>
                             <input id="res_vida_util_dias"  type="number" readonly="readonly" min="0" style="background-color:#03E7F7;" title="Campo Autocompletable" class="form-control input-sm"  name="vida_util_dias" placeholder=" "  require>
                         </div>
-                        <div>
+                        </div>
                             <br>
-                            <br>  <br>     <br>
+                          
 
                             <div class="row">
                                 <div class="form-group col-xs-4">
                                     <label>Periodo surtimiento</label>
 
-                                    <select name="periodo_surtimiento" id="periodo_surtimiento" class="form-control input-sm" require>
+                                    <select name="periodo_surtimiento" id="periodo_surtimiento" class="form-control input-sm"  onchange="divJuegosMensuales()"require>
                                         <option  value="">Selecciona una opción</option>
                                         <OPTION VALUE="Semanal">Semanal</OPTION>
                                         <OPTION VALUE="Quincenal">Quincenal</OPTION>
@@ -561,7 +725,8 @@
                                         <OPTION VALUE="Estafeta">Estafeta</OPTION>
                                         <OPTION VALUE="Flecha Amarilla">Flecha amarilla</OPTION>
                                         <OPTION VALUE="Castores">Castores</OPTION>
-
+      <OPTION VALUE="Entrega Personal Robuspack">Entrega Personal Robuspack</OPTION>
+      <OPTION VALUE="Recolección en bodega">Recolección en bodega</OPTION>
                                     </select>
 
 
@@ -648,14 +813,14 @@
                             <div class="row">
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Costo por juego</label>
-                                    <input style="background-color:#03E7F7;" id="res_costo_juego" onkeyup="divPrecio_golpe();" readonly="readonly " type="text" class="form-control input-sm"  name="costo_juego" title="Campo Autocompletable">
+                                    <input style="background-color:#03E7F7;" id="res_costo_juego" onkeyup="divPrecio_golpe();" readonly="readonly " type="text" class="form-control input-sm"  name="costo_juego" title="Precio_unitario * piezas por juego">
                                 </div>
 
 
 
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Juegos mensuales</label>
-                                    <input style="background-color:#03E7F7;"  id="res_juegos_mensuales" type="text" readonly="readonly" class="form-control input-sm"  name="juego_mensuales" title="Campo Autocompletable"   >
+                                    <input style="background-color:#03E7F7;"  id="res_juegos_mensuales" type="text" readonly="readonly" class="form-control input-sm"  name="juego_mensuales" title="((cantidad_maxima) / (piezas_juego))"   >
                                 </div>
                                 <div class="form-group col-xs-4">
                                     <label for="nombre">Golpes promedio vida util competencia</label>
@@ -726,16 +891,20 @@
                                         <OPTION VALUE="LATITUD">LATITUD</OPTION>
                                         <OPTION VALUE="MARTIN">MARTIN</OPTION>
 
-                                       
+                                        
                                         <OPTION VALUE="STALEY">STALEY</OPTION>
-                                         <OPTION VALUE="SRPACK">SRPACK</OPTION>
+                                        <OPTION VALUE="SRPACK">SRPACK</OPTION>
                                         <OPTION VALUE="TECASA">TECASA</OPTION>
                                         <OPTION VALUE="WARD">WARD</OPTION>
                                         <OPTION VALUE="WARD III">WARD III</OPTION>
                                         <OPTION VALUE="WARD IV">WARD IV</OPTION>
                                         <OPTION VALUE="WARD V">WARD V</OPTION>
-
-
+                                        
+                                           <OPTION VALUE="MARQUIP">MARQUIP</OPTION>
+                                           <OPTION VALUE="HUALI">HUALI</OPTION>
+                                           <OPTION VALUE="HEBEI">HEBEI</OPTION>
+                                           <OPTION VALUE="NAVIC">NAVIC</OPTION>
+                                            <OPTION VALUE="KESHENGLON">KESHENGLON</OPTION>
                                     </select>
                                 </div>
 
@@ -760,20 +929,21 @@
                                         <OPTION VALUE="Midline NT/ RS">Midline NT/ RS</OPTION>
                                         <OPTION VALUE="Miniline">Miniline</OPTION> 
                                         <OPTION VALUE="Miniline RS">Miniline RS</OPTION> 
-                                        
+                                       
                                         <OPTION VALUE="TECASA">TECASA</OPTION> 
                                         <OPTION VALUE="Transline">Transline</OPTION> 
                                         <OPTION VALUE="Transline RS">Transline RS</OPTION>
                                         <OPTION VALUE="Transline NT/ RS">Transline NT/ RS</OPTION> 
-                                       
                                         
-                                        <OPTION VALUE="INOVA">INOVA</OPTION> 
+                                        
+                                         <OPTION VALUE="INOVA">INOVA</OPTION> 
                                         <OPTION VALUE="PRIMA">PRIMA</OPTION> 
                                         <OPTION VALUE="NOVO">NOVO</OPTION> 
                                         <OPTION VALUE="NOVA">NOVA</OPTION> 
                                         <OPTION VALUE="BPSD">BPSD</OPTION> 
                                         <OPTION VALUE="BP">BP</OPTION> 
                                         <OPTION VALUE="ASPF">ASPF</OPTION>  
+                                        <OPTION VALUE="LKYS">LKYS</OPTION>  
 
 
 
@@ -965,7 +1135,7 @@
                                         <OPTION VALUE="Consignación">Consignación</OPTION>
                                         <OPTION VALUE="Orden de Compra">Orden de Compra</OPTION>
                                         <OPTION VALUE="Sin Pedido">Sin Pedido</OPTION>
-                                         <OPTION VALUE="No Aplica">No Aplica</OPTION>
+                                        <!-- <OPTION VALUE="No Aplica">No Aplica</OPTION>-->
 
                                     </select>
 
@@ -1009,4 +1179,4 @@
 
                 </body>
 
-                </html>
+                </html> x

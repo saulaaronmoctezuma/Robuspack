@@ -25,10 +25,10 @@ class verificacionPojo {
     private $factura;
     private $refacciones;
     private $comentario;
+    private $observacion;
     
     
-    
-    function __construct($id, $no_maqui, $modelo, $empresa, $serie, $cliente, $cliente_temporal, $pedimento, $pedimentoodf, $placa, $num_factura, $factura, $refacciones, $comentario) {
+    function __construct($id, $no_maqui, $modelo, $empresa, $serie, $cliente, $cliente_temporal, $pedimento, $pedimentoodf, $placa, $num_factura, $factura, $refacciones, $comentario, $observacion) {
         $this->id = $id;
         $this->no_maqui = $no_maqui;
         $this->modelo = $modelo;
@@ -43,8 +43,11 @@ class verificacionPojo {
         $this->factura = $factura;
         $this->refacciones = $refacciones;
         $this->comentario = $comentario;
+        $this->observacion = $observacion;
     }
 
+
+    
     public function getId() {
         return $this->id;
     }
@@ -99,6 +102,10 @@ class verificacionPojo {
 
     public function getComentario() {
         return $this->comentario;
+    }
+
+    public function getObservacion() {
+        return $this->observacion;
     }
 
     public function setId($id) {
@@ -157,9 +164,11 @@ class verificacionPojo {
         $this->comentario = $comentario;
     }
 
+    public function setObservacion($observacion) {
+        $this->observacion = $observacion;
+    }
 
-    
-    
+
 
     
 

@@ -42,6 +42,7 @@
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
+            $id_usuario = $this->userlevel->id($id);
 
         $site_title = $result->site_title;
         //check user level
@@ -49,47 +50,7 @@
     <BR>
     <!--<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">-->
     <div class="container">
-        <center>  <h1> Control de Maquinaria</h1></center>
-        <BR>
-        <div class="alert alert-info alert-warning">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
-        </div>
-
-
-
-
-
-
-        <?php
-        if ($dataLevel == 'is_editor') {
-            
-        } else if ($dataLevel == 'is_admin') {
-               echo '<left> <h1>Buscar</h1> </left>
-        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
-        ';
-        } else if ($dataLevel == 'is_logistica') {
-            
-        } else if ($dataLevel == 'is_refacciones') {
-            
-        } else {
-         
-        }
-        ?>
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    <br> 
+       
 
 <?php
 if ($dataLevel == 'is_admin') {
@@ -132,6 +93,49 @@ if ($dataLevel == 'is_admin') {
 
         </div>
 
+
+
+
+
+        <?php
+        if ($dataLevel == 'is_editor') {
+            
+        } else if ($dataLevel == 'is_admin') {
+               echo '<left> <h1>Buscar</h1> </left>
+        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+        ';
+        } else if ($dataLevel == 'is_logistica') {
+            
+        } else if ($dataLevel == 'is_refacciones') {
+            
+        } else {
+         
+        }
+        ?>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <br> 
+
+
+    <div class="container" style="margin-top:1px;" >
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped"  >
+
+        </div>
+
         Total de Registros:
 
 <?php
@@ -148,7 +152,7 @@ foreach ($totalRegistroPlacas as $fila) {
 
 
 
-        <table id="example"  border="1" class="table table-bordered table-striped">
+        <table id="example2"  border="1" class="table table-bordered table-striped">
             <MARQUEE SCROLLDELAY =200> </MARQUEE>
             <thead>
                 <tr>
@@ -172,9 +176,9 @@ if ($dataLevel == 'is_Gerente_Ventas') {
 
 
 <?php
-if ($dataLevel == 'is_admin') {
+if (($dataLevel == 'is_admin')&&(($id_usuario == 3))) {
     echo '<th>No Pedimento</th>';
-} else if ($dataLevel == 'is_editor') {
+} else if (($dataLevel == 'is_admin')&&(($id_usuario == 3))) {
     echo '<th>No Pedimento</th>';
 } else if ($dataLevel == 'is_logistica') {
     echo '<th>No Pedimento</th>';
@@ -186,18 +190,19 @@ if ($dataLevel == 'is_admin') {
     
 }
 ?>
-   <th  style="text-align: center">Comentario </th>
-
+   
+<th  style="text-align: center">Observación </th>
+<th  style="text-align: center">Comentario </th>
 
                     <?php
                     if ($dataLevel == 'is_admin') {
                         echo ' <th>Pedimento PDF</th>';
-                    } else if ($dataLevel == 'is_editor') {
+                    } else if (($dataLevel == 'is_editor')&&($id_usuario == 3)) {
                         echo ' <th>Pedimento PDF</th>';
                     } else if ($dataLevel == 'is_logistica') {
                         echo ' <th>Pedimento PDF</th>';
                     } else if ($dataLevel == 'is_credito') {
-                        echo ' <th  style="text-align: center">Pedimento PDF</th>';
+                            echo ' <th  style="text-align: center">Pedimento PDF</th>';
                     } else if ($dataLevel == 'is_refacciones') {
                         
                     } else {
@@ -301,7 +306,7 @@ foreach ($placa as $obj) {
 
     //Numero de Pedimento
 
-    if ($dataLevel == 'is_admin') {
+  /*  if ($dataLevel == 'is_admin') {
         echo
         '<td>'
         . $obj->getPedimento() .
@@ -333,10 +338,81 @@ foreach ($placa as $obj) {
         
     }
 
+*/
+    
+    if (($obj->getPedimento() == "CANCELADA") && ($dataLevel == 'is_admin')&&($id_usuario == 3)) {
+                        echo '<td bgcolor="red"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }else if (($obj->getPedimento() == "cancelada") && ($dataLevel == 'is_admin') && ($id_usuario == 3)) {
+                        echo '<td bgcolor="red"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }else if (($obj->getPedimento() == "Cancelada") && ($dataLevel == 'is_admin') && ($id_usuario == 3)) {
+                        echo '<td bgcolor="red"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }else if (($obj->getPedimento() == "NACIONAL") && ($dataLevel == 'is_admin') && ($id_usuario == 3)) {
+                        echo '<td bgcolor="#34E53C"><font color="black">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }
+                    elseif (($obj->getPedimento() != "NACIONAL") &&($obj->getPedimento() != "CANCELADA") && ($obj->getPedimento() != "cancelada")&&($id_usuario == 3)  && ($dataLevel == 'is_admin') && ($obj->getPedimento() != "Cancelada")) {
+                        echo '<td>'
+                        . $obj->getPedimento() .
+                        '</td>';
+                    }
+                    
+                    
 
-               
-          
-
+                                 
+                    
+                    
+                    
+                    if (($obj->getPedimento() == "CANCELADA") && ($dataLevel == 'is_logistica')) {
+                        echo '<td bgcolor="red"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }else if (($obj->getPedimento() == "cancelada") && ($dataLevel == 'is_logistica')) {
+                        echo '<td bgcolor="red"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }else if (($obj->getPedimento() == "Cancelada") && ($dataLevel == 'is_logistica')) {
+                        echo '<td bgcolor="red"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }else if (($obj->getPedimento() == "NACIONAL") && ($dataLevel == 'is_logistica')) {
+                        echo '<td bgcolor="#34E53C"><font color="white">'
+                        . $obj->getPedimento() .
+                        '</font></td>';
+                    }
+                    elseif (($obj->getPedimento() != "NACIONAL") &&($obj->getPedimento() != "CANCELADA") && ($obj->getPedimento() != "cancelada") && ($dataLevel == 'is_logistica') && ($obj->getPedimento() != "Cancelada")) {
+                        echo '<td>'
+                        . $obj->getPedimento() .
+                        '</td>';
+                    }
+                    
+                    
+                    
+                    
+                    
+ if (($dataLevel == 'is_editor')&&($id_usuario == 3)) {
+        echo
+        '<td>'
+        . $obj->getPedimento() .
+        '</td>'
+        ;
+    } else if ($dataLevel == 'is_credito1') {
+        echo
+        '<td>'
+        . $obj->getPedimento() .
+        '</td>'
+        ;
+    } else if ($dataLevel == 'is_refacciones') {
+        
+    }  else {
+        
+    }
     
     
     
@@ -346,6 +422,46 @@ foreach ($placa as $obj) {
             
             
             <?php
+            
+            
+                 if (($obj->getObservacion() == null)) {
+            echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getObservacion() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver la observación" data-toggle="modal" data-target="#myModalComentario<?php echo $obj->getId() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments"></i></center>
+
+     <div class="modal fade" id="myModalComentario<?php echo $obj->getId() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelComentario">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>verificacion">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelComentario">Observación</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo $obj->getObservacion() ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>verificacion">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+            <?php
+    }
+        
+            
+            
+            
+            
             
                  if (($obj->getComentario() == null)) {
             echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
@@ -398,9 +514,9 @@ foreach ($placa as $obj) {
         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getPedimentoodf() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
     }
 
-    if (($obj->getPedimentoodf() == null) && ($dataLevel == 'is_editor')) {
+    if (($obj->getPedimentoodf() == null) && ($dataLevel == 'is_editor') &&($id_usuario == 3)) {
         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
-    } else if (($obj->getPedimentoodf() != null) && ($dataLevel == 'is_editor')) {
+    } else if (($obj->getPedimentoodf() != null) && ($dataLevel == 'is_editor')&&($id_usuario == 3)) {
         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getPedimentoodf() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
     }
 
@@ -410,9 +526,9 @@ foreach ($placa as $obj) {
         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getPedimentoodf() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
     }
 
-    if (($obj->getPedimentoodf() == null) && ($dataLevel == 'is_credito')) {
+    if (($obj->getPedimentoodf() == null) && ($dataLevel == 'is_credito1')) {
         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
-    } else if (($obj->getPedimentoodf() != null) && ($dataLevel == 'is_credito')) {
+    } else if (($obj->getPedimentoodf() != null) && ($dataLevel == 'is_credito1')) {
         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/verificacion/' . $obj->getPedimentoodf() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
     }
 
@@ -601,7 +717,7 @@ foreach ($placa as $obj) {
 <?php
 if ($dataLevel == 'is_admin') {
     echo '<th>No Pedimento</th>';
-} else if ($dataLevel == 'is_editor') {
+} else if (($dataLevel == 'is_editor') &&($id_usuario == 3)){
     echo '<th>No Pedimento</th>';
 } else if ($dataLevel == 'is_logistica') {
     echo '<th>No Pedimento</th>';
@@ -619,11 +735,11 @@ if ($dataLevel == 'is_admin') {
                     <?php
                     if ($dataLevel == 'is_admin') {
                         echo ' <th>Pedimento PDF</th>';
-                    } else if ($dataLevel == 'is_editor') {
+                    } else if (($dataLevel == 'is_editor')&&($id_usuario == 3)) {
                         echo ' <th>Pedimento PDF</th>';
                     } else if ($dataLevel == 'is_logistica') {
                         echo ' <th>Pedimento PDF</th>';
-                    } else if ($dataLevel == 'is_credito') {
+                    } else if ($dataLevel == 'is_credito1') {
                         echo ' <th  style="text-align: center">Pedimento PDF</th>';
                     } else if ($dataLevel == 'is_refacciones') {
                         

@@ -122,6 +122,7 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
                     $value->orden_compra,
                     $value->cantidad, 
                     $value->pu_usd,
+                    $value->descuento,
                     $value->subtotal,
                     $value->iva,
                     $value->total_usd,

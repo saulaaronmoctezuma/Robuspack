@@ -1,275 +1,362 @@
 <script type="text/javascript">
-$(document).ready(function() {
-    $("form").keypress(function(e) {
-        if (e.which == 13) {
-            return false;
-        }
-    });
-});
+
 </script>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Administrar 
-      <small>Refacciones</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Refacciones</li>
-    </ol>
-  </section>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Administrar
+            <small>Refacciones</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Refacciones</li>
+        </ol>
+    </section>
 
-  <!-- Main content -->
-  <section class="content">
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
-      <div class="col-md-12 col-xs-12">
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
 
-        <div id="messages"></div>
+                <div id="messages"></div>
 
-        <?php if($this->session->flashdata('success')): ?>
-          <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <?php echo $this->session->flashdata('success'); ?>
-          </div>
-        <?php elseif($this->session->flashdata('error')): ?>
-          <div class="alert alert-error alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <?php echo $this->session->flashdata('error'); ?>
-          </div>
-        <?php endif; ?>
-
-
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title">Editar</h3>
-          </div>
-          <!-- /.box-header -->
-          <form role="form" action="<?php base_url('users/update') ?>" method="post" enctype="multipart/form-data">
-              <div class="box-body">
-
-                <?php echo validation_errors(); ?>
-
-                <div class="form-group">
-                  <label>Imagen Previa</label>
-                  <img src="<?php echo base_url() . $product_data['image'] ?>" width="150" height="150" class="img-circle">
-                </div>
-
-                <div class="form-group">
-                  <label for="product_image">Actualizar Imagen</label>
-                  <div class="kv-avatar">
-                      <div class="file-loading">
-                          <input id="product_image" name="product_image" type="file">
-                      </div>
-                  </div>
-                </div>
-                
-                <input type="hidden" class="form-control input-sm"  id="product_image" name="product_image" >
-
-   
-                
-                 <div class="form-group">
-                  <label for="sku">SKU</label>
-                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter sku" value="<?php echo $product_data['sku']; ?>" autocomplete="off" />
-                </div> 
-                 
-                <div class="form-group">
-                  <label for="description">Descripción</label>
-                  <input type="text" class="form-control" id="description1" name="description" placeholder="description" value="<?php echo $product_data['description']; ?>" autocomplete="off" />
-                </div>
-                  
-                  
-                <div class="form-group">
-                  <label for="product_name">Precio Costo</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name" value="<?php echo $product_data['name']; ?>"  autocomplete="off"/>
-                </div>
-
-               
-
-                <div class="form-group">
-                  <label for="price">Precio Venta</label>
-                  <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
-                </div>
-                
-                
-                 <div class="form-group">
-                  <label for="min">min</label>
-                  <input type="text" class="form-control" id="min" name="min" placeholder="Enter min" value="<?php echo $product_data['min']; ?>" autocomplete="off" />
-                </div>
-                
-                <div class="form-group">
-                  <label for="max">max</label>
-                  <input type="text" class="form-control" id="max" name="max" placeholder="Enter max" value="<?php echo $product_data['max']; ?>" autocomplete="off" />
-                </div>
-
-
-                <div class="form-group">
-                  <label for="qty">Cantidad</label>
-                  <input type="text" class="form-control" id="qty" name="qty" placeholder="Enter Qty" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
-                </div>
-                  
-                 <div class="form-group">
-                  <label for="location">Ubicación</label>
-                  <input type="text" class="form-control" id="location" name="location" placeholder="Ubicacion" value="<?php echo $product_data['location']; ?>" autocomplete="off" />
-                </div>
-                
-                
-                <!--<div class="form-group">
-                  <label for="area">Area</label>
-                  <input type="text" class="form-control" id="area" name="area" placeholder="Area" value="<?php echo $product_data['area']; ?>" autocomplete="off" />
-                </div>-->
-                
-                
-                  <div class="form-group">
-                    <label for="Corrugados">Area</label>
-                    
-                    
-                    
-                    <SELECT name="area" id="tipo_entrega" class="form-control input-sm"> 
-                                    <optgroup label="Selecciona una opción">
-                                       
-                                        
-                                        <option value="" <?php
-                                        if ($product_data['area'] == "") {
-                                            echo "Selected";
-                                        }
-                                        ?>>Selecciona una opción</option>
-                                        <option value="Conversión" <?php
-                                        if ($product_data['area'] == "Conversión") {
-                                            echo "Selected";
-                                        }
-                                        ?>>Conversión</option>
-                                        <option value="Corrugados" <?php
-                                        if ($product_data['area'] == "Corrugados") {
-                                            echo "Selected";
-                                        }
-                                        ?>>Corrugados</option>
-                                    </optgroup>
-                                </SELECT>
-                    
-                  </div>
-                
-                
-                <!--<div class="form-group">
-                  <label for="description">Descripción</label>
-                  <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
-                  description" autocomplete="off">
-                    <?php echo $product_data['description']; ?>
-                  </textarea>
-                </div>-->
-                
-                
-                
-                
-
-                <?php $attribute_id = json_decode($product_data['attribute_value_id']); ?>
-                <?php if($attributes): ?>
-                  <?php foreach ($attributes as $k => $v): ?>
-                    <div class="form-group">
-                      <label for="groups"><?php echo $v['attribute_data']['name'] ?></label>
-                      <select class="form-control select_group" id="attributes_value_id" name="attributes_value_id[]" multiple="multiple">
-                        <?php foreach ($v['attribute_value'] as $k2 => $v2): ?>
-                          <option value="<?php echo $v2['id'] ?>" <?php if(in_array($v2['id'], $attribute_id)) { echo "selected"; } ?>><?php echo $v2['value'] ?></option>
-                        <?php endforeach ?>
-                      </select>
-                    </div>    
-                  <?php endforeach ?>
+                <?php if ($this->session->flashdata('success')) : ?>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php elseif ($this->session->flashdata('error')) : ?>
+                    <div class="alert alert-error alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <?php echo $this->session->flashdata('error'); ?>
+                    </div>
                 <?php endif; ?>
 
-               <!-- <div class="form-group">
-                  <label for="brands">Etiquetas</label>
-                  <?php $brand_data = json_decode($product_data['brand_id']); ?>
-                  <select class="form-control select_group" id="brands" name="brands[]" multiple="multiple">
-                    <?php foreach ($brands as $k => $v): ?>
-                      <option value="<?php echo $v['id'] ?>" <?php if(in_array($v['id'], $brand_data)) { echo 'selected="selected"'; } ?>><?php echo $v['name'] ?></option>
-                    <?php endforeach ?>
-                  </select>
-                </div>-->   
 
-                <!--<div class="form-group">
-                  <label for="category">Categorias</label>
-                  <?php $category_data = json_decode($product_data['category_id']); ?>
-                  <select class="form-control select_group" id="category" name="category[]" multiple="multiple">
-                    <?php foreach ($category as $k => $v): ?>
-                      <option value="<?php echo $v['id'] ?>" <?php if(in_array($v['id'], $category_data)) { echo 'selected="selected"'; } ?>><?php echo $v['name'] ?></option>
-                    <?php endforeach ?>
-                  </select>
-                </div>-->
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Editar</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <form role="form" action="<?php base_url('users/update') ?>" method="post" enctype="multipart/form-data">
+                        <div class="box-body">
 
-                <div class="form-group">
-                  <label for="store">Almacen</label>
-                  <select class="form-control select_group" id="store" name="store">
-                    <?php foreach ($stores as $k => $v): ?>
-                      <option value="<?php echo $v['id'] ?>" <?php if($product_data['store_id'] == $v['id']) { echo "selected='selected'"; } ?> ><?php echo $v['name'] ?></option>
-                    <?php endforeach ?>
-                  </select>
+                            <?php echo validation_errors(); ?>
+
+                            <!--  <div class="form-group">
+                                <label>Imagen Previa</label>
+                                <img src="<?php echo base_url() . $product_data['image'] ?>" width="150" height="150" class="img-circle">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product_image">Actualizar Imagen</label>
+                                <div class="kv-avatar">
+                                    <div class="file-loading">
+                                        <input id="product_image" name="product_image" type="file">
+                                    </div>
+                                </div>
+                            </div>-->
+
+                            <input type="hidden" class="form-control input-sm" id="product_image" name="product_image">
+
+
+
+                            <div class="form-group">
+                                <label for="sku">Sku</label>
+                                <input type="text" class="form-control" id="sku" name="sku" placeholderr="Enter sku" value="<?php echo $product_data['sku']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Descripción</label>
+                                <input type="text" class="form-control" id="description1" name="description" placeholderr="description" value="<?php echo $product_data['description']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="product_name">Precio Costo</label>
+                                <input type="text" class="form-control" id="product_name" name="product_name" placeholderr="Enter product name" value="<?php echo $product_data['name']; ?>" autocomplete="off" />
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="price">Precio Venta 1</label>
+                                <input type="text" class="form-control" id="price" name="price" placeholderr="Enter price" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="price2">Precio Venta 2 </label>
+                                <input type="text" class="form-control" id="price2" name="price2" placeholderr="Enter price2" value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="price2">Precio Venta 3</label>
+                                <input type="text" class="form-control" id="price2" name="price3" placeholderr="Enter price3" value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="min">Cantidad Mínima</label>
+                                <input type="text" class="form-control" id="min" name="min" value="<?php echo $product_data['min']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="max">Cantidad Máxima</label>
+                                <input type="text" class="form-control" id="max" name="max" value="<?php echo $product_data['max']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="qty">Stock</label>
+                                <input type="text" class="form-control" id="qty" name="qty" placeholderr="Enter Qty" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Ubicación</label>
+                                <input type="text" class="form-control" id="location" name="location" placeholderr="Ubicacion" value="<?php echo $product_data['location']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <!--<div class="form-group">
+                              <label for="area">Area</label>
+                              <input type="text" class="form-control" id="area" name="area" placeholder="Area" value="<?php echo $product_data['area']; ?>" autocomplete="off" />
+                            </div>-->
+
+
+                            <div class="form-group">
+                                <label for="Corrugados">Área</label>
+
+
+
+                                <SELECT name="area" id="tipo_entrega" class="form-control input-sm">
+                                    <optgroup label="Selecciona una opción">
+
+
+                                        <option value="" <?php
+                                                            if ($product_data['area'] == "") {
+                                                                echo "Selected";
+                                                            }
+                                                            ?>>Selecciona una opción</option>
+                                        <option value="Conversión" <?php
+                                                                    if ($product_data['area'] == "Conversión") {
+                                                                        echo "Selected";
+                                                                    }
+                                                                    ?>>Conversión</option>
+                                        <option value="Corrugados" <?php
+                                                                    if ($product_data['area'] == "Corrugados") {
+                                                                        echo "Selected";
+                                                                    }
+                                                                    ?>>Corrugados</option>
+                                    </optgroup>
+                                </SELECT>
+
+                            </div>
+
+
+                            <!--<div class="form-group">
+                              <label for="description">Descripción</label>
+                              <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
+                              description" autocomplete="off">
+                            <?php echo $product_data['description']; ?>
+                              </textarea>
+                            </div>-->
+
+
+
+
+
+                            <?php $attribute_id = json_decode($product_data['attribute_value_id']); ?>
+                            <?php if ($attributes) : ?>
+                                <?php foreach ($attributes as $k => $v) : ?>
+                                    <div class="form-group">
+                                        <label for="groups"><?php echo $v['attribute_data']['name'] ?></label>
+                                        <select class="form-control select_group" id="attributes_value_id" name="attributes_value_id[]" multiple="multiple">
+                                            <?php foreach ($v['attribute_value'] as $k2 => $v2) : ?>
+                                                <option value="<?php echo $v2['id'] ?>" <?php if (in_array($v2['id'], $attribute_id)) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?php echo $v2['value'] ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
+                                <?php endforeach ?>
+                            <?php endif; ?>
+
+                            <!-- <div class="form-group">
+                               <label for="brands">Etiquetas</label>
+                            <?php $brand_data = json_decode($product_data['brand_id']); ?>
+                               <select class="form-control select_group" id="brands" name="brands[]" multiple="multiple">
+                            <?php foreach ($brands as $k => $v) : ?>
+                                       <option value="<?php echo $v['id'] ?>" <?php if (in_array($v['id'], $brand_data)) {
+                                                                                    echo 'selected="selected"';
+                                                                                } ?>><?php echo $v['name'] ?></option>
+<?php endforeach ?>
+                               </select>
+                             </div>-->
+
+                            <!--<div class="form-group">
+                              <label for="category">Categorias</label>
+                            <?php $category_data = json_decode($product_data['category_id']); ?>
+                              <select class="form-control select_group" id="category" name="category[]" multiple="multiple">
+<?php foreach ($category as $k => $v) : ?>
+                                      <option value="<?php echo $v['id'] ?>" <?php if (in_array($v['id'], $category_data)) {
+                                                                                    echo 'selected="selected"';
+                                                                                } ?>><?php echo $v['name'] ?></option>
+                                    <?php endforeach ?>
+                              </select>
+                            </div>-->
+
+                            <div class="form-group">
+                                <label for="store">Almacén</label>
+                                <select class="form-control select_group" id="store" name="store">
+                                    <?php foreach ($stores as $k => $v) : ?>
+                                        <option value="<?php echo $v['id'] ?>" <?php if ($product_data['store_id'] == $v['id']) {
+                                                                                    echo "selected='selected'";
+                                                                                } ?>><?php echo $v['name'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+
+                            <!--<div class="form-group">
+                              <label for="store">Disponibilidad</label>
+                              <select class="form-control" id="availability" name="availability">
+                                <option value="1" <?php if ($product_data['availability'] == 1) {
+                                                        echo "selected='selected'";
+                                                    } ?>>Si</option>
+                                <option value="2" <?php if ($product_data['availability'] != 1) {
+                                                        echo "selected='selected'";
+                                                    } ?>>No</option>
+                              </select>
+                            </div>-->
+
+                            <input type="hidden" class="form-control input-sm" id="availability" name="availability" value="<?php echo $product_data['availability']; ?>">
+                            <div class="form-group">
+                                <label for="linea">Linea</label>
+                                <input type="text" class="form-control" id="linea" name="linea" placeholderr="Linea" value="<?php echo $product_data['linea']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="linea">Tiempo Surtido</label>
+                                <input type="text" class="form-control" id="tiempo_surtido" name="tiempo_surtido" placeholderr="tiempo_surtido" value="<?php echo $product_data['tiempo_surtido']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="linea">Fecha Ultima Venta</label>
+                                <input type="date" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholderr="fecha_ultima_venta" value="<?php echo $product_data['fecha_ultima_venta']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="linea">Traducción</label>
+                                <input type="text" class="form-control" id="traduccion" name="traduccion" placeholderr="traduccion" value="<?php echo $product_data['traduccion']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="linea">Medidas / Caracteristicas</label>
+                                <input type="text" class="form-control" id="medidas_caracteristicas" name="medidas_caracteristicas" placeholderr="medidas_caracteristicas" value="<?php echo $product_data['medidas_caracteristicas']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="serie_maquina">Serie de Máquina</label>
+                                <input type="text" class="form-control" id="serie_maquina" name="serie_maquina" placeholderr="serie_maquina" value="<?php echo $product_data['serie_maquina']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="modelo_maquina">Modelo de Máquina</label>
+                                <input type="text" class="form-control" id="modelo_maquina" name="modelo_maquina" placeholderr="modelo_maquina" value="<?php echo $product_data['modelo_maquina']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="modulo">Módulo</label>
+                                <input type="text" class="form-control" id="modulo" name="modulo" placeholderr="modelo_maquina" value="<?php echo $product_data['modulo']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="proveedor_principal">Proveedor Principal</label>
+                                <input type="text" class="form-control" id="proveedor_principal" name="proveedor_principal" placeholderr="proveedor_principal" value="<?php echo $product_data['proveedor_principal']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="proveedor_secundario">Proveedor Secundario</label>
+                                <input type="text" class="form-control" id="proveedor_secundario" name="proveedor_secundario" placeholderr="proveedor_secundario" value="<?php echo $product_data['proveedor_secundario']; ?>" autocomplete="off" />
+                            </div>
+
+
+
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <!-- <a href="<?php echo base_url('users/') ?>" class="btn btn-warning"></a>-->
+                            <a class="btn btn-warning" href="javascript:history.back(1)">Regresar</a>
+                        </div>
+                    </form>
+                    <!-- /.box-body -->
                 </div>
-
-                <!--<div class="form-group">
-                  <label for="store">Disponibilidad</label>
-                  <select class="form-control" id="availability" name="availability">
-                    <option value="1" <?php if($product_data['availability'] == 1) { echo "selected='selected'"; } ?>>Si</option>
-                    <option value="2" <?php if($product_data['availability'] != 1) { echo "selected='selected'"; } ?>>No</option>
-                  </select>
-                </div>-->
-
- <input type="hidden" class="form-control input-sm"  id="availability" name="availability" value="<?php echo $product_data['availability']; ?>" >
-
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-               <!-- <a href="<?php echo base_url('users/') ?>" class="btn btn-warning"></a>-->  
-                 <a class="btn btn-warning" href="javascript:history.back(1)">Regresar</a>
-              </div>
-            </form>
-          <!-- /.box-body -->
+                <!-- /.box -->
+            </div>
+            <!-- col-md-12 -->
         </div>
-        <!-- /.box -->
-      </div>
-      <!-- col-md-12 -->
-    </div>
-    <!-- /.row -->
-    
+        <!-- /.row -->
 
-  </section>
-  <!-- /.content -->
+
+    </section>
+    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
 <script type="text/javascript">
-  
-  $(document).ready(function() {
-    $(".select_group").select2();
-    $("#description").wysihtml5();
+    $(document).ready(function() {
+        $(".select_group").select2();
+        $("#description").wysihtml5();
 
-    $("#mainProductNav").addClass('active');
-    $("#manageProductNav").addClass('active');
-    
-    var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' + 
-        'onclick="alert(\'Call your custom code here.\')">' +
-        '<i class="glyphicon glyphicon-tag"></i>' +
-        '</button>'; 
-    $("#product_image").fileinput({
-        overwriteInitial: true,
-        maxFileSize: 1500,
-        showClose: false,
-        showCaption: false,
-        browseLabel: '',
-        removeLabel: '',
-        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
-        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
-        removeTitle: 'Cancel or reset changes',
-        elErrorContainer: '#kv-avatar-errors-1',
-        msgErrorClass: 'alert alert-block alert-danger',
-        // defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar">',
-        layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
-        allowedFileExtensions: ["jpg", "png", "gif"]
+        $("#mainProductNav").addClass('active');
+        $("#manageProductNav").addClass('active');
+
+        var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
+            'onclick="alert(\'Call your custom code here.\')">' +
+            '<i class="glyphicon glyphicon-tag"></i>' +
+            '</button>';
+        $("#product_image").fileinput({
+            overwriteInitial: true,
+            maxFileSize: 1500,
+            showClose: false,
+            showCaption: false,
+            browseLabel: '',
+            removeLabel: '',
+            browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+            removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+            removeTitle: 'Cancel or reset changes',
+            elErrorContainer: '#kv-avatar-errors-1',
+            msgErrorClass: 'alert alert-block alert-danger',
+            // defaultPreviewContent: '<img src="/uploads/default_avatar_male.jpg" alt="Your Avatar">',
+            layoutTemplates: {
+                main2: '{preview} ' + btnCust + ' {remove} {browse}'
+            },
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+
     });
 
-  });
+
+
+    $(document).ready(function() {
+        $("form").keypress(function(e) {
+            if (e.which == 13) {
+                return false;
+            }
+        });
+    });
 </script>

@@ -1,4 +1,4 @@
-<!--
+z<!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
@@ -67,7 +67,7 @@
 
 
 </style>
-<body data-vide-bg="<?php echo base_url(); ?>assets/login/marzo2020.mp4">
+<body data-vide-bg="<?php echo base_url(); ?>assets/login/virus.mp4">
 
 
 

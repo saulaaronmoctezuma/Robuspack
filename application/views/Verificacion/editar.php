@@ -136,7 +136,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                         
                     <!--<input type="file" name="fotopost">';
-                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
                         echo '
                     <label>No Máquina</label><br>
                     <input type="text" style="width: 270px; height: 35px" name="no_maqui" value="' . $data->no_maqui . '"><br><br>
@@ -200,7 +200,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                             
                         }
                         ?>
-                        
+
 
                         <?php
                         echo '
@@ -505,7 +505,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                              <input type="file" name="pedimentopdf"><br>';
                     } else if (($data->pedimentopdf != null) && ($dataLevel == 'is_logistica')) {
                         //echo '<input class="form-control" type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">';
-                             echo '<font color="red">Ya tienes un archivo cargado</font><br>
+                        echo '<font color="red">Ya tienes un archivo cargado</font><br>
                         <label>Pedimento PDF</label><br>
                              <input type="file" name="pedimentopdf"><br>';
                     }
@@ -547,29 +547,28 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
                     }
                     ?>
-                    
-                    
+
+
                     <?php
                     if (($data->foto == null) && ($dataLevel == 'is_Gerente_Ventas')) {
                         echo ' <label>Foto Placa</label><br>
                              <input type="file" name="fotopost"><br>';
                     } else if (($data->foto != null) && ($dataLevel == 'is_Gerente_Ventas')) {
                         echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
-                        
                     }
                     ?>
-                    
+
                     <?php
                     if ($dataLevel == 'is_Gerente_Ventas') {
                         echo '<input type="hidden" name="factura" value="' . $data->factura . '">';
-                         echo '<input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '" >';
-                                   echo '<input type="hidden" name="pedimento" value="' . $data->pedimento . '" >';
-                                      echo '<input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '" >';
-                                       echo '<input type="hidden" name="refacciones" value="' . $data->refacciones . '" >';
-                    } 
+                        echo '<input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '" >';
+                        echo '<input type="hidden" name="pedimento" value="' . $data->pedimento . '" >';
+                        echo '<input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '" >';
+                        echo '<input type="hidden" name="refacciones" value="' . $data->refacciones . '" >';
+                    }
                     ?>
-                    
-                    
+
+
 
                     <?php
                     if (($data->foto == null) && ($dataLevel == 'is_mantenimiento')) {
@@ -594,8 +593,8 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Foto Placa</label><br>
                              <input type="file" name="fotopost"><br>';
                     } else if (($data->foto != null) && ($dataLevel == 'is_logistica')) {
-                       // echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
-                         echo '<font color="red">Ya tienes un archivo cargado</font><br>
+                        // echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
+                        echo '<font color="red">Ya tienes un archivo cargado</font><br>
                         <label>Foto Placa</label><br>
                              <input type="file" name="fotopost"><br>';
                     }
@@ -703,51 +702,86 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     }
                     ?>  
 
-                   
-                       <!-- <label>Comentario</label><br>
-                        <input type="text" style="width: 270px; height: 35px" name="comentario" value=<?= $data->comentario ?>><br>-->
-                           
-                          <?php
-                    if  ($dataLevel == 'is_admin'){
+
+                    <!-- <label>Comentario</label><br>
+                     <input type="text" style="width: 270px; height: 35px" name="comentario" value=<?= $data->comentario ?>><br>-->
+
+                    <?php
+                    if ($dataLevel == 'is_admin') {
                         ?>
                         <td><b>Comentario</b></td>
-                                <td colspan="3">
-                                   <textarea  style="width: 270px; " name="comentario" class="form-control input-sm"  rows="7" cols="80"><?= $data->comentario ?></textarea>
+                        <td colspan="3">
+                            <textarea  style="width: 270px; " name="comentario" class="form-control input-sm"  rows="7" cols="80"><?= $data->comentario ?></textarea>
 
-                                </td>
-                                <br>
-                       <?php
-                        
+                        </td>
+                        <br>
+
+                        <td><b>Observación</b></td>
+                        <td colspan="3">
+                            <textarea  style="width: 270px; " name="observacion" class="form-control input-sm"  rows="7" cols="80"><?= $data->observacion ?></textarea>
+
+                        </td>
+                        <br>
+                        <?php
                     } else if ($dataLevel == 'is_editor') {
-                          ?>
+                        ?>
                         <td><b>Comentario</b></td>
-                                <td colspan="3">
-                                    <textarea  style="width: 270px; " name="comentario" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
+                        <td colspan="3">
+                            <textarea  style="width: 28%; " name="comentario" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
 
-                                </td>
-                                <br>
-                       <?php
-                    }else
-                    {
-                             ?>
+                        </td>
+                        <br>
+
+                        <td><b>Observación</b></td>
+                        <td colspan="3">
+                            <textarea  style="width:28%; " name="observacion" class="form-control input-sm"  rows="7" cols="80"><?= $data->observacion ?></textarea>
+
+                        </td>
+                        <br>
+                            <?php
+                        } else if ($dataLevel == 'is_logistica') {
+                            ?>
                         <td><b>Comentario</b></td>
-                                <td colspan="3">
-                                    <textarea  name="comentario" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
+                        <td colspan="3">
+                            <textarea  name="comentario" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
 
-                                </td>
-                                <br>
-                       <?php 
-                    }
-                    ?> 
-                       
-                    
-                                
-                                
-                                
-                                
-                                
+                        </td>
+                        <br>
+
+                        <td><b>Observación</b></td>
+                        <td colspan="3">
+                            <textarea  style="width: 28%; " name="observacion" class="form-control input-sm"  rows="7" cols="80"><?= $data->observacion ?></textarea>
+
+                        </td>
+                        <br>
+    <?php
+} else {
+    ?>
+                        <td><b>Comentario</b></td>
+                        <td colspan="3">
+                            <textarea  name="comentario" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
+
+                        </td>
+                        <br>
+                         <td><b>Observación</b></td>
+                        <td colspan="3">
+                            <textarea  name="observacion" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->observacion ?></textarea>
+
+                        </td>
+                        <br>
+
+
+    <?php
+}
+?> 
+
+
+
+
+
+
                     <!-- file lama -->
-                    <input type="hidden" name="id" value="<?= $data->id_verificacion ?>">
+                    <input type="hidden" name="id" value="<?= $id ?>">
                     <!-- ID -->
                     <input type="hidden" name="id" value="<?= $data->id_verificacion ?>">
 

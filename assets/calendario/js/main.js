@@ -137,7 +137,7 @@ $(function(){
         // Set input values
         $('#title').val(data.event ? data.event.title : '');        
         $('#description').val(data.event ? data.event.description : '');
-        $('#color').val(data.event ? data.event.color : '#de1802');
+        $('#color').val(data.event ? data.event.color : '');
         // Create Butttons
         $.each(data.buttons, function(index, button){
             $('.modal-footer').prepend('<button type="button" id="' + button.id  + '" class="btn ' + button.css + '">' + button.label + '</button>')
@@ -210,7 +210,7 @@ $(function(){
             if($.trim($('#' + element).val()) == '') errors++;
         });
         if(errors) {
-            $('.error').html('Ingresa el titulo y la descripión');
+            $('.error').html('Ingresa el color y la descripión');
             return false;
         }
         return true;

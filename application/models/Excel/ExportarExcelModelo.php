@@ -421,7 +421,8 @@ f.fecha_modificacion,f.id from fuventas f");
             /* Para traerse el id del usuario */
 
             //consulta de los datos que va a descargar en excel
-            $query = $this->db->select('*')->from('cliente')->get();
+            $query = $this->db->select('*')->from('cliente')->order_by('cliente.grupo','asc')->get();
+             /* $query = $this->db->query('SELECT * from Cliente');*/
             return $query->result();
         }
         //condicions que realice la consulta solo si es refacciones

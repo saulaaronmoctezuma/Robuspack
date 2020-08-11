@@ -87,6 +87,28 @@ class Reporte extends CI_Controller {
             redirect(site_url() . 'main/');
         }
     }
+    
+    
+    public function almacen() {
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+     
+            if ($this->uri->segment(3)) {
+                $id_venta = $this->uri->segment(3);
+                $data['sku_detalles'] = $this->htmltopdf_model->buscar_detalles_individuales_por_sku($id_venta);
+                $this->load->view('Reporte/almacen', $data);
+            
+        } 
+    }
 
     public function pdf() {
         $data = $this->session->userdata;
