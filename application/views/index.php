@@ -156,7 +156,14 @@ document.getElementById("flk"+i).style.left=(xp[i]+am[i]*Math.sin(dx[i]))+"px";
 }
 }
 </script>-->
+      
+      
        <h4> <center>👋 Hola <?php echo $first_name; ?> ¡Qué bueno volverte a ver  !</h4></center>
+       
+       <h1 class="subtitle is-2 has-text-weight-light">
+	                            <strong><span class="txt-rotate" data-period="200" data-rotate='[ "Bienvenido !", "Welcome !" ]'></span></strong>
+	                            <i class="em em-smile"></i>
+	                        </h1>
            <svg viewbox="0 0 100 20">
   <defs>
     <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">

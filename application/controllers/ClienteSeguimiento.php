@@ -64,27 +64,34 @@ class ClienteSeguimiento extends CI_Controller {
             $this->load->view('ClienteSeguimiento/listarClienteSeguimiento', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
-    $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
+            $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('ClienteSeguimiento/listarClienteSeguimiento', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_director") {
-           $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
+            $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('ClienteSeguimiento/listarClienteSeguimiento', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
-           $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
+            $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('ClienteSeguimiento/listarClienteSeguimiento', $data);
             $this->load->view('footer');
-        }  else {
+        } else if ($dataLevel == "is_refacciones") {
+            $data['clienteseguimiento'] = $this->ClienteSeguimientoModelo->query();
+            //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('ClienteSeguimiento/listarClienteSeguimiento', $data);
+            $this->load->view('footer');
+        } else {
             redirect(site_url() . 'main/');
         }
 
@@ -184,13 +191,13 @@ class ClienteSeguimiento extends CI_Controller {
             $this->load->view('ClienteSeguimiento/agregar');
             $this->load->view('footer');
         } else if ($dataLevel == "is_maquinaria") {
-           $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('ClienteSeguimiento/agregar');
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
-           $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
 
@@ -202,13 +209,19 @@ class ClienteSeguimiento extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('ClienteSeguimiento/agregar');
             $this->load->view('footer');
-        }  else if ($dataLevel == "is_Gerente_Ventas") {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
             $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('ClienteSeguimiento/agregar');
             $this->load->view('footer');
-        }  else {
+        } else if ($dataLevel == "is_refacciones") {
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('ClienteSeguimiento/agregar');
+            $this->load->view('footer');
+        } else {
             redirect(site_url() . 'main/');
         }
     }
@@ -255,41 +268,119 @@ class ClienteSeguimiento extends CI_Controller {
         /* Para traerse el id del usuario */
 
         $cliente = $this->input->post('cliente');
+       // $cliente_temporal = $this->input->post('cliente_temporal');
         $nivel = $this->input->post('nivel');
         $necesidad = $this->input->post('necesidad');
         $compromiso = $this->input->post('compromiso');
         $notas = $this->input->post('notas');
+        $modelo_maquina = $this->input->post('modelo_maquina');
+        $numero_maquina = $this->input->post('numero_maquina');
+        $valor_cotizacion = $this->input->post('valor_cotizacion');
+        $fecha_ultima_visita = $this->input->post('fecha_ultima_visita');
+
+
         $cotizacion = $this->input->post('cotizacion');
         $pedido = $this->input->post('pedido');
         $contrato = $this->input->post('contrato');
+        
+        $fecha_prospeccion = $this->input->post('fecha_prospeccion');
+        $llamadas_cliente = $this->input->post('llamadas_cliente');
+        $fecha_contacto_cliente = $this->input->post('fecha_contacto_cliente');
+        $llamdas_hechas = $this->input->post('llamdas_hechas');
+        $fecha_ult_llamada = $this->input->post('fecha_ult_llamada');
+        $numero_visitas = $this->input->post('numero_visitas');
+       // $fecha_ult_visita = $this->input->post('fecha_ult_visita');
+        //$monto_cotizado = $this->input->post('monto_cotizado');
+       // $modelo_cotizado = $this->input->post('modelo_cotizado');
+        $ventas_cerrada = $this->input->post('ventas_cerrada');
+        $cliente_asignado = $this->input->post('cliente_asignado');
+        $cliente_nuevo = $this->input->post('cliente_nuevo');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
         // get foto
         $config['upload_path'] = './assets/clienteseguimiento';
         $config['allowed_types'] = '*';
         $config['overwrite'] = TRUE;
-        /*$config['file_name'] = $_FILES['cotizacion']['name'];
-        $config['file_name'] = $_FILES['pedido']['name'];
-        $config['file_name'] = $_FILES['contrato']['name'];*/
+        /* $config['file_name'] = $_FILES['cotizacion']['name'];
+          $config['file_name'] = $_FILES['pedido']['name'];
+          $config['file_name'] = $_FILES['contrato']['name']; */
 
         /* $config['max_size'] = '2048';  //2MB max
           $config['max_width'] = '4480'; // pixel
           $config['max_height'] = '4480'; // pixel */
         $this->upload->initialize($config);
-        
+
         $this->upload->do_upload('cotizacion');
         $cotizacion = $this->upload->data();
-             $data = array(
-                'cliente' => $cliente,
-                 'nivel' => $nivel,
-                'necesidad' => $necesidad,
-                'compromiso' => $compromiso,
-                'notas' => $notas,
-                'id' => $dataLevel = $this->userlevel->id($data['id'])
-                
-            );
-             
+        $data = array(
+            'cliente' => $cliente,
+            // 'cliente_temporal' => $cliente_temporal,
+            'nivel' => $nivel,
+            'necesidad' => $necesidad,
+            'compromiso' => $compromiso,
+            'notas' => $notas,
+            'modelo_maquina' => $modelo_maquina,
+            'numero_maquina' => $numero_maquina,
+            'valor_cotizacion' => $valor_cotizacion,
+            'fecha_ultima_visita' => $fecha_ultima_visita,
+            'id' => $dataLevel = $this->userlevel->id($data['id']),
             
-         if (!empty($_FILES['cotizacion']['name'])) {
+            'fecha_prospeccion' => $fecha_prospeccion,
+            'llamadas_cliente' => $llamadas_cliente,
+            'fecha_contacto_cliente' => $fecha_contacto_cliente,
+            'llamdas_hechas' => $llamdas_hechas,
+            'fecha_ult_llamada' => $fecha_ult_llamada,
+            'numero_visitas' => $numero_visitas,
+           // 'fecha_ult_visita' => $fecha_ult_visita,
+            //'monto_cotizado' => $monto_cotizado,
+           // 'modelo_cotizado' => $modelo_cotizado,
+            'ventas_cerrada' => $ventas_cerrada,
+            'cliente_asignado' => $cliente_asignado,
+            'cliente_nuevo' => $cliente_nuevo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        );
+
+
+        if (!empty($_FILES['cotizacion']['name'])) {
             $data['cotizacion'] = $cotizacion['file_name'];
         }
 
@@ -301,10 +392,10 @@ class ClienteSeguimiento extends CI_Controller {
         if (!empty($_FILES['pedido']['name'])) {
             $data['pedido'] = $pedido['file_name'];
         }
-        
-        
-        
-        
+
+
+
+
         $this->upload->do_upload('contrato');
         $contrato = $this->upload->data();
 
@@ -314,84 +405,84 @@ class ClienteSeguimiento extends CI_Controller {
             $data['contrato'] = $contrato['file_name'];
         }
 
-       
+
         /*
-        if ($this->upload->do_upload('cotizacion')) {
-            $cotizacion = $this->upload->data();
-            $data = array(
-                'cliente' => $cliente,
-                'necesidad' => $necesidad,
-                'compromiso' => $compromiso,
-                'notas' => $notas,
-                'cotizacion' => $cotizacion['file_name'],
-                'pedido' => "",
-                'contrato' => "",
-                'id' => $dataLevel = $this->userlevel->id($data['id'])
-            );
-            $this->ClienteSeguimientoModelo->insert($data);
-            redirect('ClienteSeguimiento');
-        } else if ($this->upload->do_upload('pedido')) {
+          if ($this->upload->do_upload('cotizacion')) {
+          $cotizacion = $this->upload->data();
+          $data = array(
+          'cliente' => $cliente,
+          'necesidad' => $necesidad,
+          'compromiso' => $compromiso,
+          'notas' => $notas,
+          'cotizacion' => $cotizacion['file_name'],
+          'pedido' => "",
+          'contrato' => "",
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->ClienteSeguimientoModelo->insert($data);
+          redirect('ClienteSeguimiento');
+          } else if ($this->upload->do_upload('pedido')) {
 
-            $pedido = $this->upload->data();
-            $data = array(
-                'cliente' => $cliente,
-                'necesidad' => $necesidad,
-                'compromiso' => $compromiso,
-                'notas' => $notas,
-                'cotizacion' => "",
-                'pedido' => $pedido['file_name'],
-                'contrato' => "",
-                'id' => $dataLevel = $this->userlevel->id($data['id'])
-            );
-            $this->ClienteSeguimientoModelo->insert($data);
-            redirect('Verificacion');
-        } else if ($this->upload->do_upload('contrato')) {
+          $pedido = $this->upload->data();
+          $data = array(
+          'cliente' => $cliente,
+          'necesidad' => $necesidad,
+          'compromiso' => $compromiso,
+          'notas' => $notas,
+          'cotizacion' => "",
+          'pedido' => $pedido['file_name'],
+          'contrato' => "",
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->ClienteSeguimientoModelo->insert($data);
+          redirect('Verificacion');
+          } else if ($this->upload->do_upload('contrato')) {
 
-            $contrato = $this->upload->data();
-            $data = array(
-                'cliente' => $cliente,
-                'necesidad' => $necesidad,
-                'compromiso' => $compromiso,
-                'notas' => $notas,
-                'cotizacion' => "",
-                'pedido' => "",
-                'contrato' => $contrato['file_name'],
-                'id' => $dataLevel = $this->userlevel->id($data['id'])
-            );
-            $this->ClienteSeguimientoModelo->insert($data);
-            redirect('ClienteSeguimiento');
-        } else if ($this->upload->do_upload('contrato')) {
+          $contrato = $this->upload->data();
+          $data = array(
+          'cliente' => $cliente,
+          'necesidad' => $necesidad,
+          'compromiso' => $compromiso,
+          'notas' => $notas,
+          'cotizacion' => "",
+          'pedido' => "",
+          'contrato' => $contrato['file_name'],
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->ClienteSeguimientoModelo->insert($data);
+          redirect('ClienteSeguimiento');
+          } else if ($this->upload->do_upload('contrato')) {
 
-            $contrato = $this->upload->data();
-            $data = array(
-                'cliente' => $cliente,
-                'necesidad' => $necesidad,
-                'compromiso' => $compromiso,
-                'notas' => $notas,
-                'cotizacion' => "",
-                'pedido' => "",
-                'contrato' => $contrato['file_name'],
-                'id' => $dataLevel = $this->userlevel->id($data['id'])
-            );
-            $this->ClienteSeguimientoModelo->insert($data);
-            redirect('ClienteSeguimiento');
-        } else {
+          $contrato = $this->upload->data();
+          $data = array(
+          'cliente' => $cliente,
+          'necesidad' => $necesidad,
+          'compromiso' => $compromiso,
+          'notas' => $notas,
+          'cotizacion' => "",
+          'pedido' => "",
+          'contrato' => $contrato['file_name'],
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->ClienteSeguimientoModelo->insert($data);
+          redirect('ClienteSeguimiento');
+          } else {
 
 
-            $data = array(
-                'cliente' => $cliente,
-                'necesidad' => $necesidad,
-                'compromiso' => $compromiso,
-                'notas' => $notas,
-                'cotizacion' => "",
-                'pedido' => "",
-                'contrato' => "",
-                'id' => $dataLevel = $this->userlevel->id($data['id'])
-            );
-            $this->ClienteSeguimientoModelo->insert($data);
-            redirect('ClienteSeguimiento');
-        }
-*/
+          $data = array(
+          'cliente' => $cliente,
+          'necesidad' => $necesidad,
+          'compromiso' => $compromiso,
+          'notas' => $notas,
+          'cotizacion' => "",
+          'pedido' => "",
+          'contrato' => "",
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->ClienteSeguimientoModelo->insert($data);
+          redirect('ClienteSeguimiento');
+          }
+         */
 
 
 
@@ -452,7 +543,6 @@ class ClienteSeguimiento extends CI_Controller {
             $data['data'] = $this->ClienteSeguimientoModelo->get_by_id($kondisi);
             return $this->load->view('ClienteSeguimiento/editar', $data);
             $this->load->view('footer');
-            
         } else if ($dataLevel == "is_maquinaria") {
 
 
@@ -464,18 +554,18 @@ class ClienteSeguimiento extends CI_Controller {
             $data['data'] = $this->ClienteSeguimientoModelo->get_by_id($kondisi);
             return $this->load->view('ClienteSeguimiento/editar', $data);
             $this->load->view('footer');
-        }  else if ($dataLevel == "is_director") {
+        } else if ($dataLevel == "is_director") {
 
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             //se trae el id del  modelo ClientesRefaccionesModelo
-           $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
             $kondisi = array('id_clienteseguimiento' => $id);
             $data['data'] = $this->ClienteSeguimientoModelo->get_by_id($kondisi);
             return $this->load->view('ClienteSeguimiento/editar', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_editor") {
+        } else if ($dataLevel == "is_editor") {
 
 
             $this->load->view('header', $data);
@@ -497,7 +587,18 @@ class ClienteSeguimiento extends CI_Controller {
             $data['data'] = $this->ClienteSeguimientoModelo->get_by_id($kondisi);
             return $this->load->view('ClienteSeguimiento/editar', $data);
             $this->load->view('footer');
-        }  else {
+        } else if ($dataLevel == "is_refacciones") {
+
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+            $data['clienteCombo'] = $this->ClienteSeguimientoModelo->getCliente();
+            $kondisi = array('id_clienteseguimiento' => $id);
+            $data['data'] = $this->ClienteSeguimientoModelo->get_by_id($kondisi);
+            return $this->load->view('ClienteSeguimiento/editar', $data);
+            $this->load->view('footer');
+        } else {
             redirect(site_url() . 'main/');
         }
     }
@@ -552,13 +653,71 @@ class ClienteSeguimiento extends CI_Controller {
     public function updatedata() {
 
         $cliente = $this->input->post('cliente');
-         $nivel = $this->input->post('nivel');
+        //$cliente_temporal = $this->input->post('cliente_temporal');
+        
+        $nivel = $this->input->post('nivel');
         $necesidad = $this->input->post('necesidad');
         $compromiso = $this->input->post('compromiso');
+
         $notas = $this->input->post('notas');
+        $modelo_maquina = $this->input->post('modelo_maquina');
+        $numero_maquina = $this->input->post('numero_maquina');
+        $valor_cotizacion = $this->input->post('valor_cotizacion');
+        $fecha_ultima_visita = $this->input->post('fecha_ultima_visita');
         $cotizacion = $this->input->post('cotizacion');
         $pedido = $this->input->post('pedido');
         $contrato = $this->input->post('contrato');
+        
+$fecha_prospeccion = $this->input->post('fecha_prospeccion');
+$llamadas_cliente = $this->input->post('llamadas_cliente');
+$fecha_contacto_cliente = $this->input->post('fecha_contacto_cliente');
+$llamdas_hechas = $this->input->post('llamdas_hechas');
+$fecha_ult_llamada = $this->input->post('fecha_ult_llamada');
+$numero_visitas = $this->input->post('numero_visitas');
+//$fecha_ult_visita = $this->input->post('fecha_ult_visita');
+//$monto_cotizado = $this->input->post('monto_cotizado');
+//$modelo_cotizado = $this->input->post('modelo_cotizado');
+$ventas_cerrada = $this->input->post('ventas_cerrada');
+$cliente_asignado = $this->input->post('cliente_asignado');
+$cliente_nuevo = $this->input->post('cliente_nuevo');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
 
 
         $path = './assets/clienteseguimiento/';
@@ -572,16 +731,16 @@ class ClienteSeguimiento extends CI_Controller {
         /* $config['max_size'] = '2048';  //2MB max
           $config['max_width'] = '4480'; // pixel
           $config['max_height'] = '4480'; // pixel */
-          
-          
-        /*$config['file_name'] = $_FILES['cotizacion']['name'];
-        $config['file_name'] = $_FILES['pedido']['name'];
-        $config['file_name'] = $_FILES['contrato']['name'];*/
-        
-        
-        
-        
-        
+
+
+        /* $config['file_name'] = $_FILES['cotizacion']['name'];
+          $config['file_name'] = $_FILES['pedido']['name'];
+          $config['file_name'] = $_FILES['contrato']['name']; */
+
+
+
+
+
 
         $this->upload->initialize($config);
         $this->upload->do_upload('cotizacion');
@@ -594,10 +753,16 @@ class ClienteSeguimiento extends CI_Controller {
 
 
         $data['cliente'] = $cliente;
-         $data['nivel'] = $nivel;
+          //   $data['cliente_temporal'] = $cliente_temporal;
+        $data['nivel'] = $nivel;
         $data['necesidad'] = $necesidad;
         $data['compromiso'] = $compromiso;
         $data['notas'] = $notas;
+        $data['modelo_maquina'] = $modelo_maquina;
+        $data['numero_maquina'] = $numero_maquina;
+        $data['valor_cotizacion'] = $valor_cotizacion;
+        $data['fecha_ultima_visita'] = $fecha_ultima_visita;
+
 
 
         if (!empty($_FILES['cotizacion']['name'])) {
@@ -621,6 +786,39 @@ class ClienteSeguimiento extends CI_Controller {
             $data['contrato'] = $contrato['file_name'];
         }
 
+        
+        
+         $data['fecha_prospeccion'] = $fecha_prospeccion;
+ $data['llamadas_cliente'] = $llamadas_cliente;
+ $data['fecha_contacto_cliente'] = $fecha_contacto_cliente;
+ $data['llamdas_hechas'] = $llamdas_hechas;
+ $data['fecha_ult_llamada'] = $fecha_ult_llamada;
+ $data['numero_visitas'] = $numero_visitas;
+ //$data['fecha_ult_visita'] = $fecha_ult_visita;
+ //$data['monto_cotizado'] = $monto_cotizado;
+// $data['modelo_cotizado'] = $modelo_cotizado;
+ $data['ventas_cerrada'] = $ventas_cerrada;
+ $data['cliente_asignado'] = $cliente_asignado;
+ $data['cliente_nuevo'] = $cliente_nuevo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // hapus foto pada direktori
         @unlink($path . $this->input->post('filelama'));
         $this->ClienteSeguimientoModelo->update($data, $kondisi);
@@ -628,6 +826,7 @@ class ClienteSeguimiento extends CI_Controller {
     }
 
 }
+
 //
 //// end class
 //<?php

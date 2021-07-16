@@ -1,3 +1,37 @@
+    
+<?php
+//check user level
+$dataLevel = $this->userlevel->checkLevel($role);
+
+$dataLevel_id = $this->userlevel->id($id);
+$result = $this->User_model->getAllSettings();
+$site_title = $result->site_title;
+//check user level
+?>
+
+
+<style>
+    
+ 
+.modal-content { 
+      
+      background-color: #BFB8B8; 
+    }
+    
+</style>
+
+<script>
+    
+    function mayus(e) {
+    e.value = e.value.toUpperCase();
+}
+    </script>
+
+
+<!--
+<script serc="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
  <div class="container" style="margin-top:1px;">
 
@@ -7,11 +41,11 @@
   <section class="content-header">
     <h1>
       Administrar
-      <small>Almacenes</small>
+      <small>Clientes</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Almacen</li>
+      <li class="active">Clientes</li>
     </ol>
   </section>
 
@@ -36,8 +70,19 @@
         <?php endif; ?>
 
         <?php /*if(in_array('createStore', $user_permission)):*/ ?>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Agregar</button>
-          <br /> <br />
+        
+           <?php
+                                if ($dataLevel == 'is_almacen') {
+                                    
+                                }else
+                                {
+                                    echo'<button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Agregar</button>
+          <br /> <br />' ;
+                                }
+                      
+                      
+                   ?>
+          
         <?php /*endif;*/ ?>
 
         <div class="box">
@@ -49,11 +94,25 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                    <th>Nombre</th>
-                    <th>Estatus</th>
+                    <th>Clave</th>
+                    <th>Cliente</th>
                     <?php /*if(in_array('updateStore', $user_permission) || in_array('deleteStore', $user_permission)):*/ ?>
-                      <th>Acción</th>
-                    <?php /*endif;*/ ?>
+                    
+                    
+                    
+                    
+               
+                      <?php
+                                if ($dataLevel == 'is_almacen') {
+                                    
+                                }else
+                                {
+                                    echo'       <th>Acción</th>'
+                                    ;
+                                }
+                      
+                      
+                   ?>
                   </tr>
               </thead>
 
@@ -75,7 +134,9 @@
 
 <?php /*if(in_array('createStore', $user_permission)):*/ ?>
 <!-- create brand modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="addModal">
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="addModal" >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -83,20 +144,26 @@
         <h4 class="modal-title">Agregar </h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('stores/create') ?>" method="post" id="createForm">
+      <form role="form" action="<?php echo base_url('clientesrefa/create') ?>" method="post" id="createForm">
 
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="brand_name">Nombre</label>
-            <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Escribe un nombre de almacén" autocomplete="off">
+            <label for="clave">Clave</label>
+            <input type="number" min="0" class="form-control" id="clave" name="clave" placeholder="Escribe una clave" autocomplete="off">
           </div>
+            
+            <!--
           <div class="form-group">
             <label for="active">Estatus</label>
-            <select class="form-control" id="active" name="active">
+            <select class="form-control" id="nombre" name="nombre">
               <option value="1">Activo</option>
               <option value="2">Desactivado</option>
             </select>
+          </div>-->
+             <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" onkeyup="mayus(this);" name="nombre" placeholder="Escribe un nombre" autocomplete="off">
           </div>
         </div>
 
@@ -123,22 +190,33 @@
         <h4 class="modal-title">Editar</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('stores/update') ?>" method="post" id="updateForm">
+      <form role="form" action="<?php echo base_url('clientesrefa/update') ?>" method="post" id="updateForm">
 
         <div class="modal-body">
           <div id="messages"></div>
 
           <div class="form-group">
-            <label for="edit_brand_name">Nombre</label>
-            <input type="text" class="form-control" id="edit_store_name" name="edit_store_name" placeholder="Escribe un nombre de almacen" autocomplete="off">
+            <label for="clave">Clave</label>
+            <input type="number" class="form-control" id="edit_clave" name="edit_clave" placeholder="Escribe una clave" autocomplete="off">
           </div>
+          
+          
+          
+          
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" onkeyup="mayus(this);" onkeyup="mayus(this);" id="edit_nombre" name="edit_nombre" placeholder="Escribe un nombre" autocomplete="off">
+          </div>
+          
+          
+          <!--
           <div class="form-group">
             <label for="edit_active">Estatus</label>
             <select class="form-control" id="edit_active" name="edit_active">
               <option value="1">Activo</option>
               <option value="2">Desactivado</option>
             </select>
-          </div>
+          </div>-->
         </div>
 
         <div class="modal-footer">
@@ -164,10 +242,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Eliminar Almacén</h4>
+        <h4 class="modal-title">Eliminar Cliente</h4>
       </div>
 
-      <form role="form" action="<?php echo base_url('stores/remove') ?>" method="post" id="removeForm">
+      <form role="form" action="<?php echo base_url('clientesrefa/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
           <p>¿Realmente deseas eliminar?</p>
         </div>
@@ -266,8 +344,8 @@ function editFunc(id)
     dataType: 'json',
     success:function(response) {
 
-      $("#edit_store_name").val(response.name);
-      $("#edit_active").val(response.active);
+      $("#edit_clave").val(response.clave);
+      $("#edit_nombre").val(response.nombre);
 
       // submit the edit from 
       $("#updateForm").unbind('submit').bind('submit', function() {

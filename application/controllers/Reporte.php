@@ -90,18 +90,18 @@ class Reporte extends CI_Controller {
     
     
     public function almacen() {
-        $data = $this->session->userdata;
+       /* $data = $this->session->userdata;
         if (empty($data)) {
             redirect(site_url() . 'main/login/');
         }
-        //check user level
+        
         if (empty($data['role'])) {
             redirect(site_url() . 'main/login/');
         }
         $dataLevel = $this->userlevel->checkLevel($data['role']);
-        //check user level
+        
         $data['title'] = "Robuspack";
-     
+     */
             if ($this->uri->segment(3)) {
                 $id_venta = $this->uri->segment(3);
                 $data['sku_detalles'] = $this->htmltopdf_model->buscar_detalles_individuales_por_sku($id_venta);
@@ -161,6 +161,147 @@ class Reporte extends CI_Controller {
                 $this->pdf->loadHtml($html_content);
                 $this->pdf->render();
                 $this->pdf->stream("Robuspack_" . $id_cliente . ".pdf", array("Attachment" => 0));
+            }
+        }else {
+            redirect(site_url() . 'main/');
+        }
+    }
+    
+     public function entradaAlmacen() {
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Entrada a almacén</h3>';
+
+                $html_content .= $this->htmltopdf_model->entradaInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        } else  if ($dataLevel == "is_almacen") {
+            if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Entrada a almacén</h3>';
+
+                $html_content .= $this->htmltopdf_model->entradaInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        }else if ($dataLevel == "is_editor") {
+             if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Entrada a almacén</h3>';
+
+                $html_content .= $this->htmltopdf_model->entradaInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+               if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Entrada a almacén</h3>';
+
+                $html_content .= $this->htmltopdf_model->entradaInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+              if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Entrada a almacén</h3>';
+
+                $html_content .= $this->htmltopdf_model->entradaInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        }else {
+            redirect(site_url() . 'main/');
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public function orders() {
+        $data = $this->session->userdata;
+        if (empty($data)) {
+            redirect(site_url() . 'main/login/');
+        }
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Orden</h3>';
+
+                $html_content .= $this->htmltopdf_model->ordenesInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        }else  if ($dataLevel == "is_almacen") {
+            if ($this->uri->segment(3)) {
+                $id_entrada = $this->uri->segment(3);
+                $html_content = '<center> </center>  <br><h3 align="center">Orden</h3>';
+
+                $html_content .= $this->htmltopdf_model->ordenesInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        } else if ($dataLevel == "is_credito") {
+            if ($this->uri->segment(3)) {
+                $html_content = '<center> </center>  <br><h3 align="center">Orden</h3>';
+
+                $html_content .= $this->htmltopdf_model->ordenesInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            if ($this->uri->segment(3)) {
+              $html_content = '<center> </center>  <br><h3 align="center">Orden</h3>';
+
+                $html_content .= $this->htmltopdf_model->ordenesInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
+            }
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+            if ($this->uri->segment(3)) {
+                $html_content = '<center> </center>  <br><h3 align="center">Orden</h3>';
+
+                $html_content .= $this->htmltopdf_model->ordenesInventario($id_entrada);
+                $this->pdf->loadHtml($html_content);
+                $this->pdf->render();
+                $this->pdf->stream("Entrada_" . $id_entrada . ".pdf", array("Attachment" => 0));
             }
         }else {
             redirect(site_url() . 'main/');

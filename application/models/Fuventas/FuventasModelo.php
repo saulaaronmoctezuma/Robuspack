@@ -66,7 +66,11 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
         return $query->row();
     }
 
-    public function insert($data) {
+    /*public function insert($data) {
+        $this->db->insert('fuventas', $data);
+        return TRUE;
+    }*/
+     public function insert($data) {
        /* $this->db->insert('fuventas', $data);
         return TRUE;*/
         
@@ -108,7 +112,7 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
         foreach ($query->result() as $key => $value) {
             $objeto = new FuventasPojo(
                     $value->id_fuventas,
-                     $value->cantidad_registros, 
+                    $value->cantidad_registros, 
                     $value->ref,
                     $value->cliente,
                     $value->direccion, 
@@ -120,7 +124,8 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
                     $value->remision, 
                     $value->fecha_de_remision,
                     $value->orden_compra,
-                    $value->cantidad, 
+                    $value->cantidad,
+                    $value->tipo_de_precio, 
                     $value->pu_usd,
                     $value->descuento,
                     $value->subtotal,

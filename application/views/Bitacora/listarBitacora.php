@@ -109,7 +109,7 @@ th, td {
 
 
         <div class="table-responsive">
-            <center>  <h1>Bitácora Maquinaria</h1></center>
+            <center>  <h1>Bitácora</h1><h4>Actividades del día a día</h4></center>
 
             <div class="alert alert-info alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -353,14 +353,82 @@ th, td {
                         . '<td>'
                         . $obj->getCliente() .
                         '</td>'
-                        . '<td>'
-                        . $obj->getDescripcion() .
-                        '</td>'
+                   //  . '<td>'
+                    //    . $obj->getDescripcion() .
+                      //  '</td>'
 
                                     
 
                         ;
 
+                        
+                        
+                        
+                           ?>
+
+
+
+
+                            <!--Inicio Modal modalNecesidad --> 
+
+                            <?php
+                            if (($obj->getDescripcion() == null)) {
+                                echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+                            } else if (($obj->getDescripcion() != null)) {
+                                ?>
+
+                            <td>
+                            <center> <a title="Da clic para ver la necesidad" data-toggle="modal" data-target="#modalNecesidad<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+
+                            <div class="modal fade" id="modalNecesidad<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="modalNecesidad">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>Bitacora">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                </a></center>
+
+                                            <h4 class="modal-title" id="modalNecesidad">Descripción</h4>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <?php echo $obj->getDescripcion() ?>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>Bitacora">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+                                                </a></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            </td>
+
+
+                            <?php
+                        }
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
 
 
                         if ($obj->getArchivo1() != null) {

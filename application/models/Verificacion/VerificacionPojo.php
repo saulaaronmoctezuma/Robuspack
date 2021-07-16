@@ -1,14 +1,13 @@
 <?php
 
 /**
-<!--
+  <!--
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 26/03/2018 Hora 10:15 pm
  * Fecha : Ultimo Cambio 03/0/2019 Hora 10:36 pm
  * Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
  * Sistema de Control Robuspack
  */
-
 class verificacionPojo {
 
     private $id;
@@ -26,9 +25,9 @@ class verificacionPojo {
     private $refacciones;
     private $comentario;
     private $observacion;
-    
-    
-    function __construct($id, $no_maqui, $modelo, $empresa, $serie, $cliente, $cliente_temporal, $pedimento, $pedimentoodf, $placa, $num_factura, $factura, $refacciones, $comentario, $observacion) {
+    private $contrato;
+
+    function __construct($id, $no_maqui, $modelo, $empresa, $serie, $cliente, $cliente_temporal, $pedimento, $pedimentoodf, $placa, $num_factura, $factura, $refacciones, $comentario, $observacion, $contrato) {
         $this->id = $id;
         $this->no_maqui = $no_maqui;
         $this->modelo = $modelo;
@@ -44,8 +43,8 @@ class verificacionPojo {
         $this->refacciones = $refacciones;
         $this->comentario = $comentario;
         $this->observacion = $observacion;
+        $this->contrato = $contrato;
     }
-
 
     
     public function getId() {
@@ -108,6 +107,10 @@ class verificacionPojo {
         return $this->observacion;
     }
 
+    public function getContrato() {
+        return $this->contrato;
+    }
+
     public function setId($id) {
         $this->id = $id;
     }
@@ -168,8 +171,10 @@ class verificacionPojo {
         $this->observacion = $observacion;
     }
 
+    public function setContrato($contrato) {
+        $this->contrato = $contrato;
+    }
 
 
-    
 
 }

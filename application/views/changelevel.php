@@ -33,6 +33,7 @@
             '13' => 'Logística',
             '14' => 'Servicio a Clientes',
             '15' => 'Freelance',
+            '16' => 'Almacen'
         );
         $dd_name = "level";
         echo form_dropdown($dd_name, $dd_list, set_value($dd_name), 'class = "form-control" id="level"');

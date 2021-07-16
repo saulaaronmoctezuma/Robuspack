@@ -40,8 +40,8 @@
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
                 m3 = document.getElementById("descuento").value;
-                sub = (m1 * m2) ;
-                des = ((m3*sub)/(100));
+                sub = (m1 * m2);
+                des = ((m3 * sub) / (100));
                 r = (sub - des).toFixed(2);
                 document.getElementById("subtotal").value = r;
 
@@ -54,15 +54,15 @@
                     document.getElementById("subtotal").value = " ";
                 }
             }
-            
-            
-           function descuento() {
+
+
+            function descuento() {
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
                 m3 = document.getElementById("descuento").value;
-                sub = (m1 * m2) ;
-                r = ((m3*sub)/(100));
-               
+                sub = (m1 * m2);
+                r = ((m3 * sub) / (100));
+
                 document.getElementById("descuento_cantidad").value = r;
 
 
@@ -76,12 +76,12 @@
             }
 
             function calcularIva() {
-                 m1 = document.getElementById("cantidad").value;
+                m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
                 m3 = document.getElementById("descuento").value;
-                sub = (m1 * m2) ;
-                des = ((m3*sub)/(100));
-                subtotal = sub - des ;
+                sub = (m1 * m2);
+                des = ((m3 * sub) / (100));
+                subtotal = sub - des;
                 iva = 0.16;
                 r = (subtotal * iva).toFixed(2);
 
@@ -105,15 +105,15 @@
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
                 m3 = document.getElementById("descuento").value;
-                sub = (m1 * m2) ;
-                des = ((m3*sub)/(100));
-                
-                
-                
-                
-                subtotal = sub - des ;
+                sub = (m1 * m2);
+                des = ((m3 * sub) / (100));
+
+
+
+
+                subtotal = sub - des;
                 iva = 0.16;
-                r2 = ((subtotal )+(subtotal * iva)).toFixed(2);
+                r2 = ((subtotal) + (subtotal * iva)).toFixed(2);
 
                 document.getElementById("total").value = r2;
 
@@ -214,7 +214,7 @@
             }
 
 
- //--></script>
+            //--></script>
 
 
     </head>
@@ -242,12 +242,12 @@
                 <div class="jumbotron">
                     <div class="row">
 
-                 <div class="row">
-<div class="form-group col-xs-1">
+                        <div class="row">
+                            <div class="form-group col-xs-1">
                                 <label>Cantidad Registros</label><br>
                                 <input class="form-control input-sm"  type="number" maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="1"  max="99" name="cantidad_registros" maxlength="2" value="1"><br>
                             </div>
-</div>
+                        </div>
 
                         <div class="row">
                             <div class="form-group col-xs-4">
@@ -344,10 +344,11 @@
                             <div class="form-group col-xs-4">
                                 <label>Cantidad</label><br>
                                 <input id="cantidad" onkeyup="calcularSubtotal();
-                                            calcularIva();
-                                            calcularTotal();" onchange="calcularSubtotal();
-                                            calcularIva();
-                                            calcularTotal();descuento();" min="0" type="number" class="form-control input-sm" name="cantidad">
+                                        calcularIva();
+                                        calcularTotal();" onchange="calcularSubtotal();
+                                                calcularIva();
+                                                calcularTotal();
+                                                descuento();" min="0" type="number" class="form-control input-sm" name="cantidad">
                             </div> 
 
 
@@ -359,40 +360,54 @@
 
                         <div class="row">
 
+                            <div class="form-group col-xs-4">
+                                <label> Tipo de precio </label><br>
+                              <!--  <input type="text" class="form-control input-sm" name="tipo_de_prod"> -->
+
+                                <select name="tipo_de_precio"  class="form-control input-sm" require>
+                                    <option  value="" >Selecciona una opción</option>
+                                    <OPTION VALUE="Lista de precios">Lista de precios</OPTION>
+                                    <OPTION VALUE="Precio por promoción">Precio por promoción</OPTION>
+                                </select>
+                            </div> 
 
                             <div class="form-group col-xs-4">
                                 <label>PU USD</label><br>
 
                                 <input id="pu_usd" onkeyup="calcularSubtotal();
-                                            calcularIva();
-                                            calcularTotal();descuento();" onchange="calcularSubtotal();
-                                            calcularIva();
-                                            calcularTotal();descuento();" min="0" type="text" class="form-control input-sm" name="pu_usd">
+                                        calcularIva();
+                                        calcularTotal();
+                                        descuento();" onchange="calcularSubtotal();
+                                                calcularIva();
+                                                calcularTotal();
+                                                descuento();" min="0" type="text" class="form-control input-sm" name="pu_usd">
                             </div> 
-                            
-                            
-                             <div class="form-group col-xs-4">
+
+
+                            <div class="form-group col-xs-4">
                                 <label>Descuento %</label><br>
 
                                 <input id="descuento" onchange="calcularSubtotal();
-                                            calcularIva();
-                                            calcularTotal();descuento()"
-                                            
+                                        calcularIva();
+                                        calcularTotal();
+                                        descuento()"
+
                                        onkeyup="calcularSubtotal();
-                                            calcularIva();
-                                            calcularTotal();descuento();if(parseInt(this.value)>100){ this.value =100; return false; }" max="100"  oninput="if(parseInt(this.value)>100){ this.value =100; return false; }"  min="0"  value="0"  type="number" class="form-control input-sm" name="descuento">
-                            </div>
-                            
-                           
-                          
-
-                            <div class="form-group col-xs-4">
-                                <label>Subtotal</label><br>
-                                <input id="subtotal" title="Cantidad * PU USD" style="background-color:#03E7F7;" readonly  type="text" class="form-control input-sm" name="subtotal">
+                                               calcularIva();
+                                               calcularTotal();
+                                               descuento();
+                                               if (parseInt(this.value) > 100) {
+                                                   this.value = 100;
+                                                   return false;
+                                               }" max="100"  oninput="if(parseInt(this.value)>100){ this.value =100; return false; }"  min="0"  value="0"  type="number" class="form-control input-sm" name="descuento">
                             </div>
 
 
-                           
+                            <br>
+
+
+
+
 
 
 
@@ -403,8 +418,14 @@
 
 
                         <div class="row">
-                            
-                             <div class="form-group col-xs-4">
+
+                            <div class="form-group col-xs-4">
+                                <label>Subtotal</label><br>
+                                <input id="subtotal" title="Cantidad * PU USD" style="background-color:#03E7F7;" readonly  type="text" class="form-control input-sm" name="subtotal">
+                            </div>
+
+
+                            <div class="form-group col-xs-4">
                                 <label>IVA</label><br>
                                 <input title="PU USD * 16%"  style="background-color:#03E7F7;" id="iva" readonly type="text" class="form-control input-sm" name="iva">
                             </div> 
@@ -415,6 +436,21 @@
                                 <input title="Subtotal  + IVA" readonly style="background-color:#03E7F7;"  id="total" type="text" class="form-control input-sm" name="total_usd">
                             </div> 
 
+
+
+
+
+
+
+
+                        </div><br> 
+
+
+
+
+
+                        <div class="row">
+
                             <div class="form-group col-xs-4">
                                 <label>Fecha Elaboración Factura(dd/mm/aaaa):</label><br>
                                 <input id="fecha" title="Ingresa la fecha en el formato indicado"  min="00/00/0000" placeholder="dd/mm/aaaa" onkeyup="calcularFechaVencimiento();" 
@@ -424,23 +460,11 @@
                             </div>
 
 
-                            
-
-
-
-
-                        </div><br> 
-
-
-
-
-
-                        <div class="row">
                             <div class="form-group col-xs-4">
                                 <label>Pedimento</label><br>
                                 <input type="text" class="form-control input-sm" name="pedimento">
                             </div> 
-                            
+
 
                             <div class="form-group col-xs-4">
                                 <label>Fecha Pedimento</label><br>
@@ -448,19 +472,22 @@
                             </div> 
 
 
-                            <div class="form-group col-xs-4">
-                                <label>Días de crédito</label><br>
-                                <input id="dias_de_credito"  onkeyup="calcularFechaVencimiento();" onchange="calcularFechaVencimiento();" min="0"  type="number" class="form-control input-sm" name="dias_de_credito">
-                            </div> 
 
-                          
+
 
 
                         </div><br> 
 
 
                         <div class="row">
-  <div class="form-group col-xs-4">
+
+                            <div class="form-group col-xs-4">
+                                <label>Días de crédito</label><br>
+                                <input id="dias_de_credito"  onkeyup="calcularFechaVencimiento();" onchange="calcularFechaVencimiento();" min="0"  type="number" class="form-control input-sm" name="dias_de_credito">
+                            </div> 
+
+
+                            <div class="form-group col-xs-4">
                                 <label>Fecha de Vencimiento</label><br>
                                 <input id="fecha_vencimiento" title="Fecha de Elaboración de Factura + Días de crédito" readonly style="background-color:#03E7F7;"  type="text" class="form-control input-sm" name="fecha_vencimiento">
                             </div> 
@@ -476,7 +503,19 @@
                             </div>-->
 
 
-                            <div class="form-group col-xs-4">
+                          
+
+
+
+
+
+                        </div><br> 
+
+
+                        <div class="row">
+
+                            
+                              <div class="form-group col-xs-4">
                                 <label>Status de Pago</label><br>
 
                                 <select name="status_de_pago"  class="form-control input-sm" require>
@@ -486,35 +525,19 @@
                                 </select>
                             </div> 
 
-
-                          
-
-
-
-                        </div><br> 
-
-
-                        <div class="row">
-
-
-  <div class="form-group col-xs-4">
+                            
+                            <div class="form-group col-xs-4">
                                 <label>Refacturación</label><br>
                                 <input type="text" class="form-control input-sm" name="refacturacion">
                             </div> 
 
-                            
+
                             <div class="form-group col-xs-4">
                                 <label>Nueva Fecha de Factura</label><br>
                                 <input type="text" class="form-control input-sm" name="nueva">
                             </div> 
 
-                            <div class="form-group col-xs-4">
-                                <label>Observacion</label><br>
-                                <input type="text" class="form-control input-sm" name="observaciones">
-                            </div>
-
-
-                            
+                        
 
 
 
@@ -525,6 +548,14 @@
                         <div class="row">
 
                             
+                                <div class="form-group col-xs-4">
+                                <label>Observacion</label><br>
+                                <input type="text" class="form-control input-sm" name="observaciones">
+                            </div>
+
+
+
+                            
                             <div class="form-group col-xs-4">
                                 <label>Vendedor</label><br>
                                 <!--
@@ -532,19 +563,19 @@
                                 <select name="vendedor"  class="form-control input-sm" require>
                                     <option  value="" >Selecciona una opción</option>
                                     <OPTION VALUE="Aldo Guillén">Aldo Guillén</OPTION>
-                                     <OPTION VALUE="Benjamin López">Benjamin López</OPTION>
+                                    <OPTION VALUE="Benjamin López">Benjamin López</OPTION>
                                     <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
-                                     <OPTION VALUE="Jorge González">Jorge González</OPTION>
+                                    <OPTION VALUE="Jorge González">Jorge González</OPTION>
                                     <!--<OPTION VALUE="Cesar Cantú">Cesar Cantú</OPTION>-->
                                     <OPTION VALUE="Gerardo Lopéz">Gerardo Lopéz</OPTION>
-                                   <!-- <OPTION VALUE="Martín Sena">Martín Sena</OPTION>-->
+                                    <!-- <OPTION VALUE="Martín Sena">Martín Sena</OPTION>-->
                                     <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
 
 
                                 </select>
                             </div> 
-                            
-                            
+
+
                             <div class="form-group col-xs-4">
                                 <label>Fecha de cobro de comisiones</label><br>
                                 <input type="date" class="form-control input-sm" name="fecha_de_cobro_de_comisiones">

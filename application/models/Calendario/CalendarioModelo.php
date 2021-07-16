@@ -240,7 +240,7 @@ class CalendarioModelo extends CI_Model {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
               $user_id = $this->session->userdata('id');
-            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? or id_usuario=$user_id";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         } else if ($dataLevel == "is_editor") {
@@ -248,7 +248,7 @@ class CalendarioModelo extends CI_Model {
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }  else if ($dataLevel == "is_refacciones") {
-            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? or id_usuario=$user_id";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }else if ($dataLevel == "is_jefe_mantenimiento") {

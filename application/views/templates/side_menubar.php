@@ -1,3 +1,24 @@
+<style type="text/css">
+    /* cambiar tipo de letra */
+    nav.navbar ul.nav li {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    /* cambiar el color de fondo a la barra */
+    nav.navbar {
+        background-color: #FB723B;
+    }
+
+    .navbar-inverse .nav li a{
+        color: rgb(255, 255, 255);
+    }
+
+    /*Mouse encima*/
+    .navbar-inverse .nav li a:hover{
+        color: rgb(47, 35, 224);
+    }
+</style>
+
 <aside class="main-sidebar position-fixed">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -123,11 +144,17 @@
             </li>
 
 
-            <li id="storeNav">
+            <!--<li id="storeNav">
                 <a href="<?php echo base_url('stores/') ?>">
                     <i class="fa fa-files-o"></i> <span>Almacenes</span>
                 </a>
-            </li>
+            </li>-->
+
+
+
+
+
+
             <!--<li id="attributeNav">
               <a href="<?php echo base_url('attributes/') ?>">
                 <i class="fa fa-files-o"></i> <span>Atributos</span>
@@ -143,10 +170,10 @@
                 </a>
                 <ul class="treeview-menu">
 
-                    <li id="addProductNav"><a href="<?php echo base_url('products/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>
+                    <!--<li id="addProductNav"><a href="<?php echo base_url('products/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>-->
                     <li id="manageProductNav"><a href="<?php echo base_url('products/agregar') ?>"><i class="fa fa-circle-o"></i> Actualizar Inventario</a></li>
-                    <li id="manageProductNav"><a href="<?php echo base_url('products') ?>"><i class="fa fa-circle-o"></i> Administrar</a></li>
-
+                    <li id="manageProductNav"><a href="<?php echo base_url('products') ?>"><i class="fa fa-circle-o"></i> Refacciones</a></li>
+                    <li id="manageProductNav"><a href="<?php echo base_url('cubierta') ?>"><i class="fa fa-circle-o"></i> Cubierta</a></li>
                 </ul>
             </li>
             <li class="treeview" id="mainOrdersNav">
@@ -158,16 +185,30 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li id="addOrderNav"><a href="<?php echo base_url('orders/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>
+                   <!-- <li id="addOrderNav"><a href="<?php echo base_url('orders/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>-->
                     <li id="manageOrdersNav"><a href="<?php echo base_url('orders') ?>"><i class="fa fa-circle-o"></i> Administrar</a></li>
                 </ul>
             </li>
             
-                <li id="storeNav">
-                <a href="<?php echo base_url('Devolucion') ?>">
-                    <i class="fa fa-files-o"></i> <span>Devolución</span>
+            
+                 <li class="treeview" id="mainOrdersNav">
+                <a href="#">
+                    <i class="fa fa-dollar"></i>
+                    <span>Entradas a almacén</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
+                <ul class="treeview-menu">
+                   <!-- <li id="addOrderNav"><a href="<?php echo base_url('orders/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>-->
+                    <li id="manageOrdersNav"><a href="<?php echo base_url('inventory') ?>"><i class="fa fa-circle-o"></i> Administrar</a></li>
+                </ul>
             </li>
+            <!-- <li id="storeNav">
+             <a href="<?php echo base_url('Devolucion') ?>">
+                 <i class="fa fa-files-o"></i> <span>Devolución</span>
+             </a>
+         </li>-->
 
             <!-- <li id="reportNav">
                 <a href="<?php echo base_url('reports/') ?>">

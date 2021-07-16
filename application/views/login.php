@@ -67,7 +67,7 @@ z<!--
 
 
 </style>
-<body data-vide-bg="<?php echo base_url(); ?>assets/login/virus.mp4">
+<body data-vide-bg="<?php echo base_url(); ?>assets/login/octubre2020.mp4">
 
 
 
@@ -76,7 +76,7 @@ z<!--
     
     
    <div class="col-md-4">
-        <img width="100%" height="100%" style="float:right;" class="profile-img img-responsive logo" src="<?php echo base_url(); ?>assets/login/quedateen           casa.png" id="bgvid" playsinline autoplay muted loop>
+        <img width="100%" height="100%" style="float:right;" class="profile-img img-responsive logo" src="<?php echo base_url(); ?>assets/login/quedateencasa.png" id="bgvid" playsinline autoplay muted loop>
     </div>
     <div class="col-md-4 "></div>
     <div class="col-md-4 ">
@@ -85,8 +85,7 @@ z<!--
        
     
  
-    
-    
+ 
     
     
  <script>
@@ -225,7 +224,7 @@ html { background: url(https://thenewcode.com/assets/images/polina.jpg) #94250D 
 
 
     </script>
-</script>
+
 <br>
 <br>
 <br>
@@ -333,7 +332,10 @@ html { background: url(https://thenewcode.com/assets/images/polina.jpg) #94250D 
 
         <a title="Da clic para recuperar tu contraseña" style="color:#000000" href="<?php echo site_url(); ?>main/forgot"> ¿Olvidaste tu contraseña? </a></p></center>
     <br> 
-
+       
+  <img  <a href='https://scrobuspack.com/apk/scr.apk'>Descargar Aplicación</a>
+  
+ 
 </div>
 <!--abajo-->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

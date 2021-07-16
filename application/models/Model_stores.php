@@ -38,21 +38,21 @@ class Model_stores extends CI_Model
 	/* get the active store data */
 	public function getActiveStore()
 	{
-		$sql = "SELECT * FROM stores WHERE active = ?";
+		$sql = "SELECT * FROM clientes_robuspack";
 		$query = $this->db->query($sql, array(1));
 		return $query->result_array();
 	}
 
             /* get the brand data */
-	public function getStoresData($id = null)
+	public function getStoresData($id_cliente = null)
 	{
-		if($id) {
-			$sql = "SELECT * FROM stores where id = ?";
-			$query = $this->db->query($sql, array($id));
+		if($id_cliente) {
+			$sql = "SELECT * FROM clientes_robuspack where id_cliente = ?";
+			$query = $this->db->query($sql, array($id_cliente));
 			return $query->row_array();
 		}
 
-		$sql = "SELECT * FROM stores";
+		$sql = "SELECT * FROM clientes_robuspack";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -60,7 +60,7 @@ class Model_stores extends CI_Model
 	public function create($data)
 	{
 		if($data) {
-			$insert = $this->db->insert('stores', $data);
+			$insert = $this->db->insert('clientes_robuspack', $data);
 			return ($insert == true) ? true : false;
 		}
 	}
@@ -68,8 +68,8 @@ class Model_stores extends CI_Model
 	public function update($data, $id)
 	{
 		if($data && $id) {
-			$this->db->where('id', $id);
-			$update = $this->db->update('stores', $data);
+			$this->db->where('id_cliente', $id);
+			$update = $this->db->update('clientes_robuspack', $data);
 			return ($update == true) ? true : false;
 		}
 	}
@@ -77,15 +77,15 @@ class Model_stores extends CI_Model
 	public function remove($id)
 	{
 		if($id) {
-			$this->db->where('id', $id);
-			$delete = $this->db->delete('stores');
+			$this->db->where('id_cliente', $id);
+			$delete = $this->db->delete('clientes_robuspack');
 			return ($delete == true) ? true : false;
 		}
 	}
 
 	public function countTotalStores()
 	{
-		$sql = "SELECT * FROM stores WHERE active = ?";
+		$sql = "SELECT * FROM clientes_robuspack";
 		$query = $this->db->query($sql, array(1));
 		return $query->num_rows();
 	}
@@ -94,8 +94,8 @@ class Model_stores extends CI_Model
           public function updateStock($data, $id)
 	{
 		if($data && $id) {
-			$this->db->where('id', $id);
-			$update = $this->db->update('products', $data);
+			$this->db->where('id_cliente', $id);
+			$update = $this->db->update('clientes_robuspack', $data);
 			return ($update == true) ? true : false;
 		}
 	}

@@ -769,8 +769,10 @@ th, td {
                             }else if ($dataLevel == 'is_refacciones') {
                                
                             } else {
-                                echo '<th class="header" colspan="2" style="text-align: center" >Acción</th>';
+                                echo '<th class="header" style="text-align: center" >eliminar</th>';
+  echo '<th class="header" style="text-align: center" >modificaer</th>';
 
+                                
                                 
                              
                                 
@@ -1018,9 +1020,9 @@ th, td {
       ?>
          
             <td>
-            <center> <a title="Da clic para ver la descripción" data-toggle="modal" data-target="#myModalC1<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+            <center> <a title="Da clic para ver la descripción" data-toggle="modal" data-target="#myModalC1Ref<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
 
-     <div class="modal fade" id="myModalC1<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
+     <div class="modal fade" id="myModalC1Ref<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -1105,40 +1107,31 @@ th, td {
                             
                             
                              
-                  /*           if (($obj->getRecomendaciones() == null)) {
+                         /*  if (($obj->getRecomendaciones() == null)) {
         echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getRecomendaciones() != null)) {
         echo '<td title="'. $obj->getRecomendaciones() .
         '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
-    }*/
+    }
+                    */        
                             
                             
-                            
-              
-                              ?>
-                    
-                    
-                    
-                    
-                    
-                          <?php
-            
-                 if (($obj->getRecomendaciones() == null)) {
+              if (($obj->getRecomendaciones() == null)) {
             echo '<td title="Sin recomendaciones"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getRecomendaciones() != null)) {
       ?>
          
             <td>
-            <center> <a title="Da clic para ver las recomendaciones" data-toggle="modal" data-target="#myModalC1<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+            <center> <a title="Da clic para ver las recomendaciones" data-toggle="modal" data-target="#myModalRecomendaciones<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
 
-     <div class="modal fade" id="myModalC1<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMtto">
+     <div class="modal fade" id="myModalRecomendaciones<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMtto">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
     <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </a></center>
             
-            <h4 class="modal-title" id="myModalLabelMtto">Comentario</h4>
+            <h4 class="modal-title" id="myModalLabelMtto">Recomendaciones</h4>
           </div>
           <div class="modal-body">
            
@@ -1159,21 +1152,63 @@ th, td {
                     <?php
                     
                     }
+                      
+                       
                     
+                    
+                    
+                     
                           
                             
                             
+           
+            
+                 if (($obj->getProxima_inter() == null)) {
+            echo '<td title="Sin recomendaciones"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getProxima_inter() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver las recomendaciones" data-toggle="modal" data-target="#myModalC1Proxima_inter<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+
+     <div class="modal fade" id="myModalC1Proxima_inter<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMtto">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelMtto">Próxima Fecha de Intervención</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo $obj->getProxima_inter() ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
     
     
+    </td>
+           
+         
+                    <?php
+                    
+                    }
+                    
     
-               if (($obj->getProxima_inter() == null)) {
+    
+             /*  if (($obj->getProxima_inter() == null)) {
         echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getProxima_inter() != null)) {
         echo '<td title="'. $obj->getProxima_inter() .
         '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
     }
-                            
-                            
+              */               
                             if (($obj->getFoto() == null)) {
         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
     } else if (($obj->getFoto() != null)) {

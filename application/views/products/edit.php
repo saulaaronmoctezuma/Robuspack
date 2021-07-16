@@ -1,6 +1,166 @@
-<script type="text/javascript">
+    <script type="text/javascript">
 
-</script>
+
+
+
+        function filterFloat(evt,input){
+        // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+        var key = window.Event ? evt.which : evt.keyCode;    
+        var chark = String.fromCharCode(key);
+        var tempValue = input.value+chark;
+        if(key >= 48 && key <= 57){
+            if(filter(tempValue)=== false){
+                return false;
+            }else{       
+                return true;
+            }
+        }else{
+              if(key == 8 || key == 13 || key == 0) {     
+                  return true;              
+              }else if(key == 46){
+                    if(filter(tempValue)=== false){
+                        return false;
+                    }else{       
+                        return true;
+                    }
+              }else{
+                  return false;
+              }
+        }
+    }
+    function filter(__val__){
+        var preg = /^([0-9]+\.?[0-9]{0,2})$/; 
+        if(preg.test(__val__) === true){
+            return true;
+        }else{
+           return false;
+        }
+
+    }
+
+
+
+
+        function PrecioEnAlmacen() {
+            existencias = document.getElementById("qty").value;
+            precio_compra = document.getElementById("precio_de_compra").value;
+            valor_almacen1 = (existencias * precio_compra).toFixed(2);
+            document.getElementById("valor_almacen").value = valor_almacen1;
+            // alert ("hola");
+            if (document.getElementById("valor_almacen").value === "Infinity") {
+                document.getElementById("valor_almacen").value = " ";
+            }
+            if (document.getElementById("valor_almacen").value === "NaN") {
+                document.getElementById("valor_almacen").value = " ";
+            }
+        }
+
+
+        function Precio1() {
+            precio_compra = document.getElementById("precio_de_compra").value;
+            precio1 = Math.round((
+                             (
+                                Number(precio_compra) + 
+                                (
+                                    (
+                                    Number(precio_compra) * 0.23
+                                    )
+                                  +
+                                    (
+                                    Number(precio_compra) * 0.075
+                                    )
+                                )
+                             )
+
+
+                            / (0.83)
+
+
+                    ));
+
+            //precio1=5;
+            document.getElementById("price1").value = precio1;
+           // alert("hola");
+            if (document.getElementById("price1").value === "Infinity") {
+                document.getElementById("price1").value = " ";
+            }
+            if (document.getElementById("price1").value === "NaN") {
+                document.getElementById("price1").value = " ";
+            }
+        }
+
+
+
+
+        function Precio2() {
+            precio_compra = document.getElementById("precio_de_compra").value;
+            precio2 = Math.round((
+                             (
+                                Number(precio_compra) + 
+                                (
+                                    (
+                                    Number(precio_compra) * 0.23
+                                    )
+                                  +
+                                    (
+                                    Number(precio_compra) * 0.075
+                                    )
+                                )
+                             )
+
+
+                            / (0.75)
+
+
+                    ));
+
+            //precio1=5;
+            document.getElementById("price2").value = precio2;
+           // alert("hola");
+            if (document.getElementById("price2").value === "Infinity") {
+                document.getElementById("price2").value = " ";
+            }
+            if (document.getElementById("price2").value === "NaN") {
+                document.getElementById("price2").value = " ";
+            }
+        }
+
+          function Precio3() {
+            precio_compra = document.getElementById("precio_de_compra").value;
+            precio3 = Math.round((
+                             (
+                                Number(precio_compra) + 
+                                (
+                                    (
+                                    Number(precio_compra) * 0.23
+                                    )
+                                  +
+                                    (
+                                    Number(precio_compra) * 0.075
+                                    )
+                                )
+                             )
+
+
+                            / (0.65)
+
+
+                    ));
+
+
+            document.getElementById("price3").value = precio3;
+
+            if (document.getElementById("price3").value === "Infinity") {
+                document.getElementById("price3").value = " ";
+            }
+            if (document.getElementById("price3").value === "NaN") {
+                document.getElementById("price3").value = " ";
+            }
+        }
+
+
+
+    </script>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -75,30 +235,98 @@
                                 <input type="text" class="form-control" id="description1" name="description" placeholderr="description" value="<?php echo $product_data['description']; ?>" autocomplete="off" />
                             </div>
 
+                            <div class="form-group">
+                                <label for="traduccion">Traducción</label>
+                                <input type="text" class="form-control" id="traduccion" name="traduccion" placeholderr="traduccion" value="<?php echo $product_data['traduccion']; ?>" autocomplete="off" />
+                            </div>
 
                             <div class="form-group">
-                                <label for="product_name">Precio Costo</label>
-                                <input type="text" class="form-control" id="product_name" name="product_name" placeholderr="Enter product name" value="<?php echo $product_data['name']; ?>" autocomplete="off" />
+                                <label for="serie_maquina">Serie de Máquina</label>
+                                <input type="text" class="form-control" id="serie_maquina" name="serie_maquina" placeholderr="serie_maquina" value="<?php echo $product_data['serie_maquina']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="medida_maquina">Medida de Máquina</label>
+                                <input type="text" class="form-control" id="medida_maquina" name="medida_maquina" placeholderr="medida_maquina" value="<?php echo $product_data['medida_maquina']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="modulo">Módulo</label>
+                                <input type="text" class="form-control" id="modulo" name="modulo" placeholderr="modulo" value="<?php echo $product_data['modulo']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tipo_maquina">Tipo de máquina</label>
+                                <input type="text" class="form-control" id="tipo_maquina" name="tipo_maquina" placeholderr="tipo de máquina" value="<?php echo $product_data['tipo_maquina']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="medidas_caracteristicas">Medidas / Caracteristicas</label>
+                                <input type="text" class="form-control" id="medidas_caracteristicas" name="medidas_caracteristicas" placeholderr="medidas caracteristicas" value="<?php echo $product_data['medidas_caracteristicas']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="linea">Linea</label>
+                                <input type="text" class="form-control" id="linea" name="linea" placeholderr="Linea" value="<?php echo $product_data['linea']; ?>" autocomplete="off" />
                             </div>
 
 
 
                             <div class="form-group">
-                                <label for="price">Precio Venta 1</label>
-                                <input type="text" class="form-control" id="price" name="price" placeholderr="Enter price" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+                                <label for="refacciones_consumibles">Refacciones Consumibles</label>
+                                <input type="text" class="form-control" id="refacciones_consumibles" name="refacciones_consumibles" placeholderr="Refacciones / Consumibles" value="<?php echo $product_data['refacciones_consumibles']; ?>" autocomplete="off" />
                             </div>
 
+                            <div class="form-group">
+                                <label for="tiempo_surtido">Tiempo Surtido</label>
+                                <input type="text" class="form-control" id="tiempo_surtido" name="tiempo_surtido" placeholderr="Tiempo Surtido" value="<?php echo $product_data['tiempo_surtido']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fecha_ultima_venta">Fecha Ultima Venta</label>
+                                <input type="date" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholderr="Fecha Ultima Venta" value="<?php echo $product_data['fecha_ultima_venta']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="dias_ultima_venta">Dias Última Venta</label>
+                                <input type="text" class="form-control" id="dias_ultima_venta" name="dias_ultima_venta" placeholderr="Días ultima venta" value="<?php echo $product_data['dias_ultima_venta']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="qty">Existencias</label>
+                                <input type="text" onkeyup="PrecioEnAlmacen();" onchange="PrecioEnAlmacen();" class="form-control" readonly id="qty" name="qty" placeholderr="Escribe la cantidad" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
+                            </div>
+
+
+
+                            <input type="hidden" class="form-control" id="price" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+
+
+
+                            <div class="form-group">
+                                <label for="price2">Precio Venta 1 </label>
+                                <input type="text" class="form-control" id="price1" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+                            </div>
 
                             <div class="form-group">
                                 <label for="price2">Precio Venta 2 </label>
-                                <input type="text" class="form-control" id="price2" name="price2" placeholderr="Enter price2" value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
+                                <input type="text" class="form-control" id="price2" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price2" placeholderr="Escribe el precio 2" value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
                             </div>
 
 
                             <div class="form-group">
                                 <label for="price2">Precio Venta 3</label>
-                                <input type="text" class="form-control" id="price2" name="price3" placeholderr="Enter price3" value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
+                                <input type="text" class="form-control" id="price3" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price3" placeholderr="Escribe el precio 3" value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
                             </div>
+
+
+
+
+
+
+
 
 
 
@@ -113,10 +341,7 @@
                             </div>
 
 
-                            <div class="form-group">
-                                <label for="qty">Stock</label>
-                                <input type="text" class="form-control" id="qty" name="qty" placeholderr="Enter Qty" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
-                            </div>
+
 
                             <div class="form-group">
                                 <label for="location">Ubicación</label>
@@ -140,20 +365,20 @@
 
 
                                         <option value="" <?php
-                                                            if ($product_data['area'] == "") {
-                                                                echo "Selected";
-                                                            }
-                                                            ?>>Selecciona una opción</option>
+                                        if ($product_data['area'] == " ") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Selecciona una opción</option>
                                         <option value="Conversión" <?php
-                                                                    if ($product_data['area'] == "Conversión") {
-                                                                        echo "Selected";
-                                                                    }
-                                                                    ?>>Conversión</option>
+                                        if ($product_data['area'] == "Conversión") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Conversión</option>
                                         <option value="Corrugados" <?php
-                                                                    if ($product_data['area'] == "Corrugados") {
-                                                                        echo "Selected";
-                                                                    }
-                                                                    ?>>Corrugados</option>
+                                        if ($product_data['area'] == "Corrugados") {
+                                            echo "Selected";
+                                        }
+                                        ?>>Corrugados</option>
                                     </optgroup>
                                 </SELECT>
 
@@ -179,10 +404,12 @@
                                         <label for="groups"><?php echo $v['attribute_data']['name'] ?></label>
                                         <select class="form-control select_group" id="attributes_value_id" name="attributes_value_id[]" multiple="multiple">
                                             <?php foreach ($v['attribute_value'] as $k2 => $v2) : ?>
-                                                <option value="<?php echo $v2['id'] ?>" <?php if (in_array($v2['id'], $attribute_id)) {
-                                                                                            echo "selected";
-                                                                                        } ?>><?php echo $v2['value'] ?></option>
-                                            <?php endforeach ?>
+                                                <option value="<?php echo $v2['id'] ?>" <?php
+                                                if (in_array($v2['id'], $attribute_id)) {
+                                                    echo "selected";
+                                                }
+                                                ?>><?php echo $v2['value'] ?></option>
+                                                    <?php endforeach ?>
                                         </select>
                                     </div>
                                 <?php endforeach ?>
@@ -193,10 +420,12 @@
                             <?php $brand_data = json_decode($product_data['brand_id']); ?>
                                <select class="form-control select_group" id="brands" name="brands[]" multiple="multiple">
                             <?php foreach ($brands as $k => $v) : ?>
-                                       <option value="<?php echo $v['id'] ?>" <?php if (in_array($v['id'], $brand_data)) {
-                                                                                    echo 'selected="selected"';
-                                                                                } ?>><?php echo $v['name'] ?></option>
-<?php endforeach ?>
+                                                   <option value="<?php echo $v['id'] ?>" <?php
+                                if (in_array($v['id'], $brand_data)) {
+                                    echo 'selected="selected"';
+                                }
+                                ?>><?php echo $v['name'] ?></option>
+                            <?php endforeach ?>
                                </select>
                              </div>-->
 
@@ -204,81 +433,70 @@
                               <label for="category">Categorias</label>
                             <?php $category_data = json_decode($product_data['category_id']); ?>
                               <select class="form-control select_group" id="category" name="category[]" multiple="multiple">
-<?php foreach ($category as $k => $v) : ?>
-                                      <option value="<?php echo $v['id'] ?>" <?php if (in_array($v['id'], $category_data)) {
-                                                                                    echo 'selected="selected"';
-                                                                                } ?>><?php echo $v['name'] ?></option>
-                                    <?php endforeach ?>
+                            <?php foreach ($category as $k => $v) : ?>
+                                                  <option value="<?php echo $v['id'] ?>" <?php
+                                if (in_array($v['id'], $category_data)) {
+                                    echo 'selected="selected"';
+                                }
+                                ?>><?php echo $v['name'] ?></option>
+                            <?php endforeach ?>
                               </select>
                             </div>-->
 
+
+                            <!--
+                            NO BORRAR  NO BORRAR  NO BORRAR  
                             <div class="form-group">
-                                <label for="store">Almacén</label>
-                                <select class="form-control select_group" id="store" name="store">
-                                    <?php foreach ($stores as $k => $v) : ?>
-                                        <option value="<?php echo $v['id'] ?>" <?php if ($product_data['store_id'] == $v['id']) {
-                                                                                    echo "selected='selected'";
-                                                                                } ?>><?php echo $v['name'] ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
+                                  <label for="store">Almacén</label>
+                                  <select class="form-control select_group" id="store" name="store">
+                            <?php foreach ($stores as $k => $v) : ?>
+                                              <option value="<?php echo $v['id'] ?>" <?php
+                                if ($product_data['store_id'] == $v['id']) {
+                                    echo "selected='selected'";
+                                }
+                                ?>><?php echo $v['name'] ?></option>
+                            <?php endforeach ?>
+                                  </select>
+                              </div>-->
+
+                            <input type="hidden" class="form-control input-sm" id="store" name="store" value="<?php echo $product_data['store_id']; ?>">
+
+
 
                             <!--<div class="form-group">
                               <label for="store">Disponibilidad</label>
                               <select class="form-control" id="availability" name="availability">
-                                <option value="1" <?php if ($product_data['availability'] == 1) {
-                                                        echo "selected='selected'";
-                                                    } ?>>Si</option>
-                                <option value="2" <?php if ($product_data['availability'] != 1) {
-                                                        echo "selected='selected'";
-                                                    } ?>>No</option>
+                                <option value="1" <?php
+                            if ($product_data['availability'] == 1) {
+                                echo "selected='selected'";
+                            }
+                            ?>>Si</option>
+                                <option value="2" <?php
+                            if ($product_data['availability'] != 1) {
+                                echo "selected='selected'";
+                            }
+                            ?>>No</option>
                               </select>
                             </div>-->
 
                             <input type="hidden" class="form-control input-sm" id="availability" name="availability" value="<?php echo $product_data['availability']; ?>">
-                            <div class="form-group">
-                                <label for="linea">Linea</label>
-                                <input type="text" class="form-control" id="linea" name="linea" placeholderr="Linea" value="<?php echo $product_data['linea']; ?>" autocomplete="off" />
-                            </div>
 
 
-                            <div class="form-group">
-                                <label for="linea">Tiempo Surtido</label>
-                                <input type="text" class="form-control" id="tiempo_surtido" name="tiempo_surtido" placeholderr="tiempo_surtido" value="<?php echo $product_data['tiempo_surtido']; ?>" autocomplete="off" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="linea">Fecha Ultima Venta</label>
-                                <input type="date" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholderr="fecha_ultima_venta" value="<?php echo $product_data['fecha_ultima_venta']; ?>" autocomplete="off" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="linea">Traducción</label>
-                                <input type="text" class="form-control" id="traduccion" name="traduccion" placeholderr="traduccion" value="<?php echo $product_data['traduccion']; ?>" autocomplete="off" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="linea">Medidas / Caracteristicas</label>
-                                <input type="text" class="form-control" id="medidas_caracteristicas" name="medidas_caracteristicas" placeholderr="medidas_caracteristicas" value="<?php echo $product_data['medidas_caracteristicas']; ?>" autocomplete="off" />
-                            </div>
 
 
-                            <div class="form-group">
-                                <label for="serie_maquina">Serie de Máquina</label>
-                                <input type="text" class="form-control" id="serie_maquina" name="serie_maquina" placeholderr="serie_maquina" value="<?php echo $product_data['serie_maquina']; ?>" autocomplete="off" />
-                            </div>
+                            <!--<label for="product_name">Precio Costo</label>-->
+                            <input type="hidden" class="form-control" id="product_name" name="product_name" placeholderr="Escribe el precio del costo" value="<?php echo $product_data['name']; ?>" autocomplete="off" />
 
 
-                            <div class="form-group">
-                                <label for="modelo_maquina">Modelo de Máquina</label>
-                                <input type="text" class="form-control" id="modelo_maquina" name="modelo_maquina" placeholderr="modelo_maquina" value="<?php echo $product_data['modelo_maquina']; ?>" autocomplete="off" />
-                            </div>
 
 
-                            <div class="form-group">
-                                <label for="modulo">Módulo</label>
-                                <input type="text" class="form-control" id="modulo" name="modulo" placeholderr="modelo_maquina" value="<?php echo $product_data['modulo']; ?>" autocomplete="off" />
-                            </div>
+
+
+
+
+
+
+
 
 
                             <div class="form-group">
@@ -291,6 +509,45 @@
                                 <label for="proveedor_secundario">Proveedor Secundario</label>
                                 <input type="text" class="form-control" id="proveedor_secundario" name="proveedor_secundario" placeholderr="proveedor_secundario" value="<?php echo $product_data['proveedor_secundario']; ?>" autocomplete="off" />
                             </div>
+
+
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <label for="precio_de_compra">Precio de compra</label>
+                                <input type="text" class="form-control" onkeyup="PrecioEnAlmacen();Precio1();Precio2();Precio3();" onkeypress="return filterFloat(event,this);" onchange="PrecioEnAlmacen();Precio1();Precio2();Precio3();" id="precio_de_compra" name="precio_de_compra" placeholderr="precio_de_compra" value="<?php echo $product_data['precio_de_compra']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="valor_almacen">Valor Almacén</label>
+                                <input type="text" class="form-control" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" id="valor_almacen" name="valor_almacen" placeholderr="valor_almacen" value="<?php echo $product_data['valor_almacen']; ?>" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="indice_abc">Indice ABC</label>
+                                <input type="text" class="form-control" id="indice_abc" name="indice_abc" placeholderr="indice_abc" value="<?php echo $product_data['indice_abc']; ?>" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad_sugerida_a_solicitar">Cantidad Sugeridad a Solicitar</label>
+                                <input type="text" class="form-control" id="cantidad_sugerida_a_solicitar" name="cantidad_sugerida_a_solicitar" placeholderr="cantidad_sugerida_a_solicitar" value="<?php echo $product_data['cantidad_sugerida_a_solicitar']; ?>" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="condicion">CondiciÓn</label>
+                                <input type="text" class="form-control" id="condicion" name="condicion" placeholderr="condicion" value="<?php echo $product_data['condicion']; ?>" autocomplete="off" />
+                            </div>
+
+
+                            <input type="hidden"  id="circunferencia" name="circunferencia" value="<?php echo $product_data['circunferencia']; ?>">
+                            <input type="hidden"  id="ancho" name="ancho" value="<?php echo $product_data['ancho']; ?>">
+                            <input type="hidden" id="espesor" name="espesor" value="<?php echo $product_data['espesor']; ?>">
+                            <input type="hidden"  id="cue" name="cue" value="<?php echo $product_data['cue']; ?>">
+                            <input type="hidden"  id="dicar" name="dicar" value="<?php echo $product_data['dicar']; ?>">
+
+
 
 
 
@@ -326,9 +583,9 @@
         $("#manageProductNav").addClass('active');
 
         var btnCust = '<button type="button" class="btn btn-secondary" title="Add picture tags" ' +
-            'onclick="alert(\'Call your custom code here.\')">' +
-            '<i class="glyphicon glyphicon-tag"></i>' +
-            '</button>';
+                'onclick="alert(\'Call your custom code here.\')">' +
+                '<i class="glyphicon glyphicon-tag"></i>' +
+                '</button>';
         $("#product_image").fileinput({
             overwriteInitial: true,
             maxFileSize: 1500,

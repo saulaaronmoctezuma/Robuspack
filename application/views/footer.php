@@ -98,7 +98,7 @@ if ($dataLevel == 'is_admin') {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 
 
 <span id="liveclock" style="position:absolute;left:0;top:0;"></span>
@@ -166,10 +166,9 @@ $(document).ready(function() {
 
 </script>
 
-
-
+ 
 <script>
-   
+     
     
    $('#example2').DataTable( {
         scrollY:        490,
@@ -179,10 +178,42 @@ $(document).ready(function() {
         fixedColumns:   true,
         select:         true,
          "language": {
-            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json",
+            
+          
 
         }
     } );
+
+</script>
+
+<script>
+$('#mydatatable tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Filtrar.." />' );
+    } );
+
+    var table = $('#mydatatable').DataTable({
+        "dom": 'B<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
+        "responsive": false,
+        "language": {
+            "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+        },
+        "order": [[ 0, "desc" ]],
+        "initComplete": function () {
+            this.api().columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                        }
+                });
+            })
+        }
+    });
 
 </script>
 
@@ -225,6 +256,11 @@ $(document).ready(function() {
       </div>
     </div>
  
+ 
+ 
+ <!-- Start of HubSpot Embed Code 
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/19997234.js"></script>
+ End of HubSpot Embed Code -->
   <!-- Modal -->
   
 <!--  

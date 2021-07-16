@@ -35,7 +35,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
     <script type="text/javascript">
         function showContent() {
             element = document.getElementById("content");
-            elementempresa = document.getElementById("contentempresa");
+            elementempresa = document.getElementById("content");
             check = document.getElementById("check");
             if (check.checked) {
 
@@ -199,7 +199,13 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         
                         ';
                         ?>
-                     </div>
+                     
+                
+                  <div class="form-group col-xs-4">
+                        <label>Contrato</label><br>
+                        <input type="file" name="contrato"><br>
+                        </div>
+                        </div>
                 <div class="row">
                           <div class="form-group col-xs-4">
                         <label for="nombre">Comentario</label>
@@ -424,6 +430,8 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <input type="file" name="refacciones"><br>
                         
                         </div>
+                        
+
                         ';
                     ?>
                      <div class="form-group col-xs-4">
@@ -438,6 +446,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                              <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un obsrvación" require></textarea>
                    
                     </div>
+                    
+                    <div class="form-group col-xs-4">
+                        <label>Contrato</label><br>
+                        <input type="file" name="contrato"><br>
+                        </div>
                     </div>
                     
                     <?php

@@ -27,14 +27,12 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
         $this->status = $this->config->item('status');
         $this->roles = $this->config->item('roles');
         $this->load->library('userlevel');
-        
     }
 
     public function getAllSettings() {
         $this->db->select('*');
         $this->db->from('settings');
         return $this->db->get()->row();
-        
     }
 
     public function getUsers() {
@@ -50,18 +48,17 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
     public function delete($id) {
         $this->db->delete('venta', array('id_venta' => $id));
     }
-        public function Mayor1()
-        {
-            $this->db->query("call Mayor1()"); 
 
-            
-        }
+    public function Mayor1() {
+        $this->db->query("call Mayor1()");
+    }
+
     public function query() {
 
 
         //user data from session
         $data = $this->session->userdata;
-        
+
 
         //check user level
         if (empty($data['role'])) {
@@ -75,9 +72,9 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
             //$query = $this->db->query('SELECT * FROM Venta order by id_venta desc');
-            
-       
-            
+
+
+
             $this->db->select('*');
             $this->db->from('venta');
             $this->db->join('users', 'venta.id=users.id');
@@ -85,62 +82,88 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
             $query = $this->db->get();
             $data = $query->result_array();
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina,$value->formato,$value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra
-                        ,$value->fecha_ultima_factura,$value->consumo_real, $value->archivo
-                        ,$value->first_name);
+                        $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario, $value->vida_util_dias, $value->periodo_surtimiento, $value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas, $value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion, $value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->formato, $value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina, $value->confirmacion_orden_compra
+                        , $value->fecha_ultima_factura, $value->consumo_real, $value->archivo
+                        , $value->first_name, 
+                        $value->codigo_cuchilla, $value->cantidad_cuchilla, $value->precio_cuchilla, $value->codigo_cubierta,
+                        $value->cantidad_cubierta, $value->precio_cubierta, $value->codigo_llanta, $value->cantidad_rasqueta,
+                        $value->cantidad_llanta, $value->precio_llanta, $value->codigo_rasqueta, $value->precio_rasqueta, 
+                        $value->codigo_inserto, $value->cantidad_inserto, $value->precio_inserto, 
+                        
+                        
+                        $value->codigo_inserto_2,    $value->cantidad_inserto_2, $value->precio_inserto_2, $value->codigo_inserto_3, $value->cantidad_inserto_3, 
+                        $value->precio_inserto_3, $value->codigo_inserto_4, $value->cantidad_inserto_4, $value->precio_inserto_4, $value->codigo_cuchilla_2,
+                        $value->cantidad_cuchilla_2, $value->precio_cuchilla_2, $value->codigo_cuchilla_3, $value->cantidad_cuchilla_3, $value->precio_cuchilla_3,
+                        $value->codigo_cuchilla_4, $value->cantidad_cuchilla_4, $value->precio_cuchilla_4, $value->codigo_cuchilla_5, $value->cantidad_cuchilla_5,
+                        $value->precio_cuchilla_5, $value->codigo_cuchilla_6, $value->cantidad_cuchilla_6, $value->precio_cuchilla_6, $value->codigo_cuchilla_7,
+                        $value->cantidad_cuchilla_7, $value->precio_cuchilla_7, $value->codigo_cuchilla_8, $value->cantidad_cuchilla_8, $value->precio_cuchilla_8, 
+                        $value->codigo_cuchilla_9, $value->cantidad_cuchilla_9, $value->precio_cuchilla_9, $value->codigo_cuchilla_10, $value->cantidad_cuchilla_10,
+                        $value->precio_cuchilla_10, $value->codigo_cuchilla_11, $value->cantidad_cuchilla_11, $value->precio_cuchilla_11
+                );
 
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
-        }else if ($dataLevel == "is_editor") {
+        } else if ($dataLevel == "is_editor") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
             //$query = $this->db->query('SELECT * FROM Venta order by id_venta desc');
-            
-       
-            
+
+
+
             $this->db->select('*');
             $this->db->from('venta');
             $this->db->join('users', 'venta.id=users.id');
-            $this->db->order_by('venta.id_venta', 'asc');
+            $this->db->order_by('venta.id_venta', 'desc');
 
             $query = $this->db->get();
             $data = $query->result_array();
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina,$value->formato,$value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra
-                        ,$value->fecha_ultima_factura,$value->consumo_real, $value->archivo
-                        ,$value->first_name);
+                        $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario, $value->vida_util_dias, $value->periodo_surtimiento, $value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas, $value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion, $value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->formato, $value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina, $value->confirmacion_orden_compra
+                        , $value->fecha_ultima_factura, $value->consumo_real, $value->archivo
+                        , $value->first_name, $value->codigo_cuchilla, $value->cantidad_cuchilla, $value->precio_cuchilla, $value->codigo_cubierta, $value->cantidad_cubierta, $value->precio_cubierta, $value->codigo_llanta, $value->cantidad_llanta, $value->precio_llanta, $value->codigo_rasqueta, $value->cantidad_rasqueta, $value->precio_rasqueta, $value->codigo_inserto, $value->cantidad_inserto, $value->precio_inserto
+                        
+                           ,$value->codigo_inserto_2,    $value->cantidad_inserto_2, $value->precio_inserto_2, $value->codigo_inserto_3, $value->cantidad_inserto_3, 
+                        $value->precio_inserto_3, $value->codigo_inserto_4, $value->cantidad_inserto_4, $value->precio_inserto_4, $value->codigo_cuchilla_2,
+                        $value->cantidad_cuchilla_2, $value->precio_cuchilla_2, $value->codigo_cuchilla_3, $value->cantidad_cuchilla_3, $value->precio_cuchilla_3,
+                        $value->codigo_cuchilla_4, $value->cantidad_cuchilla_4, $value->precio_cuchilla_4, $value->codigo_cuchilla_5, $value->cantidad_cuchilla_5,
+                        $value->precio_cuchilla_5, $value->codigo_cuchilla_6, $value->cantidad_cuchilla_6, $value->precio_cuchilla_6, $value->codigo_cuchilla_7,
+                        $value->cantidad_cuchilla_7, $value->precio_cuchilla_7, $value->codigo_cuchilla_8, $value->cantidad_cuchilla_8, $value->precio_cuchilla_8, 
+                        $value->codigo_cuchilla_9, $value->cantidad_cuchilla_9, $value->precio_cuchilla_9, $value->codigo_cuchilla_10, $value->cantidad_cuchilla_10,
+                        $value->precio_cuchilla_10, $value->codigo_cuchilla_11, $value->cantidad_cuchilla_11, $value->precio_cuchilla_11
+                
+                        );
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
-        }else if ($dataLevel == "is_servicio_a_clientes") {
+        } else if ($dataLevel == "is_servicio_a_clientes") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
             //$query = $this->db->query('SELECT * FROM Venta order by id_venta desc');
-            
-       
-            
+
+
+
             $this->db->select('*');
             $this->db->from('venta');
             $this->db->join('users', 'venta.id=users.id');
@@ -148,19 +171,28 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
             $query = $this->db->get();
             $data = $query->result_array();
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina,$value->formato,$value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra
-                        ,$value->fecha_ultima_factura,$value->consumo_real, $value->archivo
-                        ,$value->first_name);
+                        $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario, $value->vida_util_dias, $value->periodo_surtimiento, $value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas, $value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion, $value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->formato, $value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina, $value->confirmacion_orden_compra
+                        , $value->fecha_ultima_factura, $value->consumo_real, $value->archivo, $value->codigo_cuchilla, $value->cantidad_cuchilla, $value->precio_cuchilla, $value->codigo_cubierta, $value->cantidad_cubierta, $value->precio_cubierta, $value->codigo_llanta, $value->cantidad_llanta, $value->precio_llanta, $value->codigo_rasqueta, $value->cantidad_rasqueta, $value->precio_rasqueta, $value->codigo_inserto, $value->cantidad_inserto, $value->precio_inserto
+                             ,$value->codigo_inserto_2,    $value->cantidad_inserto_2, $value->precio_inserto_2, $value->codigo_inserto_3, $value->cantidad_inserto_3, 
+                        $value->precio_inserto_3, $value->codigo_inserto_4, $value->cantidad_inserto_4, $value->precio_inserto_4, $value->codigo_cuchilla_2,
+                        $value->cantidad_cuchilla_2, $value->precio_cuchilla_2, $value->codigo_cuchilla_3, $value->cantidad_cuchilla_3, $value->precio_cuchilla_3,
+                        $value->codigo_cuchilla_4, $value->cantidad_cuchilla_4, $value->precio_cuchilla_4, $value->codigo_cuchilla_5, $value->cantidad_cuchilla_5,
+                        $value->precio_cuchilla_5, $value->codigo_cuchilla_6, $value->cantidad_cuchilla_6, $value->precio_cuchilla_6, $value->codigo_cuchilla_7,
+                        $value->cantidad_cuchilla_7, $value->precio_cuchilla_7, $value->codigo_cuchilla_8, $value->cantidad_cuchilla_8, $value->precio_cuchilla_8, 
+                        $value->codigo_cuchilla_9, $value->cantidad_cuchilla_9, $value->precio_cuchilla_9, $value->codigo_cuchilla_10, $value->cantidad_cuchilla_10,
+                        $value->precio_cuchilla_10, $value->codigo_cuchilla_11, $value->cantidad_cuchilla_11, $value->precio_cuchilla_11
+                
+                        , $value->first_name);
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
@@ -177,23 +209,30 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
             //consulta la tabla venta
             $this->db->select('*');
-             $this->db->from('venta');
+            $this->db->from('venta');
             $this->db->join('users', 'venta.id=users.id');
             $this->db->order_by('users.first_name', 'asc');
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
-           $this->db->where('users.id= ', $dataLevel);
+            $this->db->where('users.id= ', $dataLevel);
             //$query = $this->db->order_by("id_venta", "desc");
-
             //tree los datos de la consulta
             $query = $this->db->get();
 
 
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
-                 $objeto = new ClienteRefaccionesPojo(
-                $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina,$value->formato,$value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra
-                        ,$value->fecha_ultima_factura,$value->consumo_real, $value->archivo
-                        ,$value->first_name);
+                $objeto = new ClienteRefaccionesPojo(
+                        $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario, $value->vida_util_dias, $value->periodo_surtimiento, $value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas, $value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion, $value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->formato, $value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina, $value->confirmacion_orden_compra
+                        , $value->fecha_ultima_factura, $value->consumo_real, $value->archivo, $value->cantidad_cuchilla, $value->precio_cuchilla, $value->codigo_cubierta, $value->cantidad_cubierta, $value->precio_cubierta, $value->codigo_llanta, $value->cantidad_llanta, $value->precio_llanta, $value->codigo_rasqueta, $value->cantidad_rasqueta, $value->precio_rasqueta, $value->codigo_inserto, $value->cantidad_inserto, $value->precio_inserto
+                           ,$value->codigo_inserto_2,    $value->cantidad_inserto_2, $value->precio_inserto_2, $value->codigo_inserto_3, $value->cantidad_inserto_3, 
+                        $value->precio_inserto_3, $value->codigo_inserto_4, $value->cantidad_inserto_4, $value->precio_inserto_4, $value->codigo_cuchilla_2,
+                        $value->cantidad_cuchilla_2, $value->precio_cuchilla_2, $value->codigo_cuchilla_3, $value->cantidad_cuchilla_3, $value->precio_cuchilla_3,
+                        $value->codigo_cuchilla_4, $value->cantidad_cuchilla_4, $value->precio_cuchilla_4, $value->codigo_cuchilla_5, $value->cantidad_cuchilla_5,
+                        $value->precio_cuchilla_5, $value->codigo_cuchilla_6, $value->cantidad_cuchilla_6, $value->precio_cuchilla_6, $value->codigo_cuchilla_7,
+                        $value->cantidad_cuchilla_7, $value->precio_cuchilla_7, $value->codigo_cuchilla_8, $value->cantidad_cuchilla_8, $value->precio_cuchilla_8, 
+                        $value->codigo_cuchilla_9, $value->cantidad_cuchilla_9, $value->precio_cuchilla_9, $value->codigo_cuchilla_10, $value->cantidad_cuchilla_10,
+                        $value->precio_cuchilla_10, $value->codigo_cuchilla_11, $value->cantidad_cuchilla_11, $value->precio_cuchilla_11
+                , $value->first_name);
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
@@ -208,13 +247,12 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
             //consulta la tabla venta
             $this->db->select('*');
-             $this->db->from('venta');
+            $this->db->from('venta');
             $this->db->join('users', 'venta.id=users.id');
             $this->db->order_by('users.first_name', 'asc');
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
-           $this->db->where('users.id= ', $dataLevel);
+            $this->db->where('users.id= ', $dataLevel);
             //$query = $this->db->order_by("id_venta", "desc");
-
             //tree los datos de la consulta
             $query = $this->db->get();
 
@@ -222,7 +260,8 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                     $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra,$value->fecha_ultima_factura, $value->first_name);
+                        $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario, $value->vida_util_dias
+                        , $value->periodo_surtimiento, $value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas, $value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion, $value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina, $value->confirmacion_orden_compra, $value->fecha_ultima_factura, $value->cantidad_cuchilla, $value->precio_cuchilla, $value->codigo_cubierta, $value->cantidad_cubierta, $value->precio_cubierta, $value->codigo_llanta, $value->cantidad_llanta, $value->precio_llanta, $value->codigo_rasqueta, $value->cantidad_rasqueta, $value->precio_rasqueta, $value->codigo_inserto, $value->cantidad_inserto, $value->precio_inserto, $value->first_name);
 
                 array_push($colVentas, $objeto);
             }
@@ -238,13 +277,12 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
             //consulta la tabla venta
             $this->db->select('*');
-             $this->db->from('venta');
+            $this->db->from('venta');
             $this->db->join('users', 'venta.id=users.id');
             $this->db->order_by('users.first_name', 'asc');
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
-           //$this->db->where('users.id= ', $dataLevel);
+            //$this->db->where('users.id= ', $dataLevel);
             //$query = $this->db->order_by("id_venta", "desc");
-
             //tree los datos de la consulta
             $query = $this->db->get();
 
@@ -252,9 +290,9 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteRefaccionesPojo(
-                $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario,$value->vida_util_dias, $value->periodo_surtimiento,$value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas,$value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion,$value->marca_maquina, $value->contacto, $value->tipo_maquina,$value->formato,$value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina,$value->confirmacion_orden_compra
-                        ,$value->fecha_ultima_factura,$value->consumo_real, $value->archivo
-                        ,$value->first_name);
+                        $value->id_venta, $value->grupo, $value->cliente, $value->referencia, $value->cantidad_maxima, $value->precio_unitario, $value->vida_util_dias, $value->periodo_surtimiento, $value->periodo_surtimiento_vida_util, $value->cantidad_minima, $value->paqueteria, $value->tipo_entrega, $value->dias_credito, $value->pulgadas, $value->diametro_rod_ml, $value->maquina_cliente, $value->capacitacion, $value->capacitacion_fecha, $value->piezas_juego, $value->costo_juego, $value->juego_mensuales, $value->golpes_prom_comp, $value->golpes_prom_rodicut, $value->beneficio_golpes_prom, $value->tiempo_rot_com, $value->tiempo_rot_rodicut, $value->beneficio_rot_prom, $value->precio_golpe, $value->ciudad_planta, $value->observacion, $value->marca_maquina, $value->contacto, $value->tipo_maquina, $value->formato, $value->ancho, $value->troquel, $value->uso_de_cfdi, $value->metodo_pago, $value->fecha_visita, $value->fecha_seguimiento, $value->golpes_maquina, $value->confirmacion_orden_compra
+                        , $value->fecha_ultima_factura, $value->consumo_real, $value->archivo, $value->cantidad_cuchilla, $value->precio_cuchilla, $value->codigo_cubierta, $value->cantidad_cubierta, $value->precio_cubierta, $value->codigo_llanta, $value->cantidad_llanta, $value->precio_llanta, $value->codigo_rasqueta, $value->cantidad_rasqueta, $value->precio_rasqueta, $value->codigo_inserto, $value->cantidad_inserto, $value->precio_inserto
+                        , $value->first_name);
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
@@ -262,11 +300,6 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             redirect(site_url() . 'main/');
         }
     }
-    
-    
-    
-    
-    
 
     public function update($venta) {
         if ($venta instanceof ClienteRefaccionesPojo) {
@@ -301,7 +334,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
                 "precio_golpe" => $venta->getPrecio_golpe(),
                 "ciudad_planta" => $venta->getCiudad_planta(),
                 "observacion" => $venta->getObservacion(),
-                 "marca_maquina" => $venta->getMarca_maquina(),
+                "marca_maquina" => $venta->getMarca_maquina(),
                 "contacto" => $venta->getContacto(),
                 "tipo_maquina" => $venta->getTipo_maquina(),
                 "formato" => $venta->formato(),
@@ -315,8 +348,22 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
                 "confirmacion_orden_compra" => $venta->getConfirmacion_orden_compra(),
                 "fecha_ultima_factura" => $venta->getfecha_ultima_factura(),
                 "consumo_real" => $venta->getConsumo_real(),
-                "archivo" => $venta->getArchivo()
-                
+                "archivo" => $venta->getArchivo(),
+                "codigo_cuchilla" => getcodigo_cuchilla(),
+                "cantidad_cuchilla" => getcantidad_cuchilla(),
+                "precio_cuchilla" => getprecio_cuchilla(),
+                "codigo_cubierta" => getcodigo_cubierta(),
+                "cantidad_cubierta" => getcantidad_cubierta(),
+                "precio_cubierta" => getprecio_cubierta(),
+                "codigo_llanta" => getcodigo_llanta(),
+                "cantidad_llanta" => getcantidad_llanta(),
+                "precio_llanta" => getprecio_llanta(),
+                "codigo_rasqueta" => getcodigo_rasqueta(),
+                "cantidad_rasqueta" => getcantidad_rasqueta(),
+                "precio_rasqueta" => getprecio_rasqueta(),
+                "codigo_inserto" => getcodigo_inserto(),
+                "cantidad_inserto" => getcantidad_inserto(),
+                "precio_inserto" => getprecio_inserto(),
             );
             $this->db->where("id_venta", $venta->getId_venta());
             $this->db->update("venta", $datos);
@@ -359,7 +406,7 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             'marca_maquina' => $obj->marca_maquina,
             'contacto' => $obj->contacto,
             'tipo_maquina' => $obj->tipo_maquina,
-             'formato' => $obj->formato,
+            'formato' => $obj->formato,
             'ancho' => $obj->ancho,
             'troquel' => $obj->troquel,
             'uso_de_cfdi' => $obj->uso_de_cfdi,
@@ -370,8 +417,70 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
             'confirmacion_orden_compra' => $obj->confirmacion_orden_compra,
             'fecha_ultima_factura' => $obj->fecha_ultima_factura,
             'consumo_real' => $obj->consumo_real,
-            'archivo' => $obj->archivo
+            'archivo' => $obj->archivo,
+            'codigo_cuchilla' => $obj->codigo_cuchilla,
+            'cantidad_cuchilla' => $obj->cantidad_cuchilla,
+            'precio_cuchilla' => $obj->precio_cuchilla,
+            'codigo_cubierta' => $obj->codigo_cubierta,
+            'cantidad_cubierta' => $obj->cantidad_cubierta,
+            'precio_cubierta' => $obj->precio_cubierta,
+            'codigo_cuchilla_2' => $obj->codigo_cuchilla_2,
+'cantidad_cuchilla_2' => $obj->cantidad_cuchilla_2,
+'precio_cuchilla_2' => $obj->precio_cuchilla_2,
+'codigo_cuchilla_3' => $obj->codigo_cuchilla_3,
+'cantidad_cuchilla_3' => $obj->cantidad_cuchilla_3,
+'precio_cuchilla_3' => $obj->precio_cuchilla_3,
+'codigo_cuchilla_4' => $obj->codigo_cuchilla_4,
+'cantidad_cuchilla_4' => $obj->cantidad_cuchilla_4,
+'precio_cuchilla_4' => $obj->precio_cuchilla_4,
+'codigo_cuchilla_5' => $obj->codigo_cuchilla_5,
+'cantidad_cuchilla_5' => $obj->cantidad_cuchilla_5,
+'precio_cuchilla_5' => $obj->precio_cuchilla_5,
+'codigo_cuchilla_6' => $obj->codigo_cuchilla_6,
+'cantidad_cuchilla_6' => $obj->cantidad_cuchilla_6,
+'precio_cuchilla_6' => $obj->precio_cuchilla_6,
+'codigo_cuchilla_7' => $obj->codigo_cuchilla_7,
+'cantidad_cuchilla_7' => $obj->cantidad_cuchilla_7,
+'precio_cuchilla_7' => $obj->precio_cuchilla_7,
+'codigo_cuchilla_8' => $obj->codigo_cuchilla_8,
+'cantidad_cuchilla_8' => $obj->cantidad_cuchilla_8,
+'precio_cuchilla_8' => $obj->precio_cuchilla_8,
+'codigo_cuchilla_9' => $obj->codigo_cuchilla_9,
+'cantidad_cuchilla_9' => $obj->cantidad_cuchilla_9,
+'precio_cuchilla_9' => $obj->precio_cuchilla_9,
+'codigo_cuchilla_10' => $obj->codigo_cuchilla_10,
+'cantidad_cuchilla_10' => $obj->cantidad_cuchilla_10,
+'precio_cuchilla_10' => $obj->precio_cuchilla_10,
+'codigo_cuchilla_11' => $obj->codigo_cuchilla_11,
+'cantidad_cuchilla_11' => $obj->cantidad_cuchilla_11,
+'precio_cuchilla_11' => $obj->precio_cuchilla_11,
+
             
+            
+            
+            'codigo_llanta' => $obj->codigo_llanta,
+            'cantidad_llanta' => $obj->cantidad_llanta,
+            'precio_llanta' => $obj->precio_llanta,
+            'codigo_rasqueta' => $obj->codigo_rasqueta,
+            'cantidad_rasqueta' => $obj->cantidad_rasqueta,
+            'precio_rasqueta' => $obj->precio_rasqueta,
+            'codigo_inserto' => $obj->codigo_inserto,
+            'cantidad_inserto' => $obj->cantidad_inserto,
+            'precio_inserto' => $obj->precio_inserto,
+            
+              'codigo_inserto_2' => $obj->codigo_inserto_2,
+            'cantidad_inserto_2' => $obj->cantidad_inserto_2,
+            'precio_inserto_2' => $obj->precio_inserto_2,
+            
+            
+              'codigo_inserto_3' => $obj->codigo_inserto_3,
+            'cantidad_inserto_3' => $obj->cantidad_inserto_3,
+            'precio_inserto_3' => $obj->precio_inserto_3,
+            
+            
+              'codigo_inserto_4' => $obj->codigo_inserto_4,
+            'cantidad_inserto_4' => $obj->cantidad_inserto_4,
+            'precio_inserto_4' => $obj->precio_inserto_4,
         );
         return $dp;
     }
@@ -414,9 +523,8 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
         return $options_arr;
     }
-    
-           
-     //select grupo
+
+    //select grupo
     function getGrupo() {
         $grupo = $this->db->select('id_cliente, grupo')->order_by("grupo", "asc")
                 ->get('cliente')
@@ -435,20 +543,13 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
 
         return $options_arr;
     }
-    
+
     //select grupo
     function getCliente() {
-        $grupo = $this->db->select('id_cliente, cliente')->order_by("cliente", "asc")
-                ->get('cliente')
-                ->result();
+        $grupo = $this->db->select('id_cliente, cliente')->order_by("cliente", "asc")->get('cliente')->result();
 
         $options_arr;
-
-        // entre el arreglo va a ir el dato que se guarde en caso de que no seleccione nada
         $options_arr[' '] = 'Selecciona una opción';
-
-        // Formato para pasar a la función form_dropdown
-
         foreach ($grupo as $option) {
             $options_arr[$option->cliente] = $option->cliente;
         }
@@ -463,317 +564,217 @@ class ClienteRefaccionesModelo extends CI_Model implements IModeloAbstracto {
     public function querybusqueda() {
         
     }
-    
-    public function get_by_id($kondisi)
-  {
-      $this->db->from('venta');
-      $this->db->where($kondisi);
-      $query = $this->db->get();
-      return $query->row();
-  }
 
-    
-      public function modificarClienteRefacciones($data,$kondisi)
-  {
-      $this->db->update('venta',$data,$kondisi);
-      return TRUE;
-  }
-  
-  
-  
-  
-    
-      public function totalRegistroSicCarlos()
-    {
-            $this->db->select('COUNT(*) as total_registros_carlos');
-            $this->db->from('venta');
-           $this->db->where('venta.id= ', 4);
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicAldo()
-    {
-            $this->db->select('COUNT(*) as total_registros_aldo');
-            $this->db->from('venta');
-           $this->db->where('venta.id= ', 7);
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicElvira()
-    {
-            $this->db->select('COUNT(*) as total_registros_elvira');
-            $this->db->from('venta');
-           $this->db->where('venta.id= ',33);
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicJaime()
-    {
-            $this->db->select('COUNT(*) as total_registros_jaime');
-            $this->db->from('venta');
-           $this->db->where('venta.id= ', 28);
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicNoTroquelaCarlos()
-    {
-            $this->db->select('COUNT(*) as total_registros_carlos');
-            $this->db->from('venta');
-          $this->db->where('venta.id=4 and venta.troquel="No"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicNoTroquelaAldo()
-    {
-            $this->db->select('COUNT(*) as total_registros_aldo');
-            $this->db->from('venta');
-           $this->db->where('venta.id=7 and venta.troquel="No"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicNoTroquelaElvira()
-    {
-            $this->db->select('COUNT(*) as total_registros_elvira');
-            $this->db->from('venta');
-           $this->db->where('venta.id=33 and venta.troquel="No"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicNoTroquelaJaime()
-    {
-            $this->db->select('COUNT(*) as total_registros_jaime');
-            $this->db->from('venta');
-           $this->db->where('venta.id=28 and venta.troquel="No"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        public function totalRegistroSicConfirmacionCarlos()
-    {
-            $this->db->select('COUNT(*) as total_registros_carlos');
-            $this->db->from('venta');
-            $this->db->where('venta.id=4 and venta.confirmacion_orden_compra="Consignación"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicConfirmacionAldo()
-    {
-            $this->db->select('COUNT(*) as total_registros_aldo');
-            $this->db->from('venta');
-           $this->db->where('venta.id=7 and venta.confirmacion_orden_compra="Consignación"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicConfirmacionElvira()
-    {
-            $this->db->select('COUNT(*) as total_registros_elvira');
-            $this->db->from('venta');
-          $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Consignación"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicConfirmacionJaime()
-    {
-            $this->db->select('COUNT(*) as total_registros_jaime');
-            $this->db->from('venta');
-            $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Consignación"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-           public function totalRegistroSicOrdenCarlos()
-    {
-            $this->db->select('COUNT(*) as total_registros_carlos');
-            $this->db->from('venta');
-          $this->db->where('venta.id=4 and venta.confirmacion_orden_compra="Orden de Compra"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicOrdenAldo()
-    {
-            $this->db->select('COUNT(*) as total_registros_aldo');
-            $this->db->from('venta');
-           $this->db->where('venta.id=7 and venta.confirmacion_orden_compra="Orden de Compra"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicOrdenElvira()
-    {
-            $this->db->select('COUNT(*) as total_registros_elvira');
-            $this->db->from('venta');
-           $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Orden de Compra"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicOrdenJaime()
-    {
-            $this->db->select('COUNT(*) as total_registros_jaime');
-            $this->db->from('venta');
-           $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Orden de Compra"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-              
-           public function totalRegistroSicSinPedidoCarlos()
-    {
-            $this->db->select('COUNT(*) as total_registros_carlos');
-            $this->db->from('venta');
-          $this->db->where('venta.id=4 and venta.confirmacion_orden_compra="Sin Pedido"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicSinPedidoAldo()
-    {
-            $this->db->select('COUNT(*) as total_registros_aldo');
-            $this->db->from('venta');
-           $this->db->where('venta.id=7 and venta.confirmacion_orden_compra="Sin Pedido"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicSinPedidoElvira()
-    {
-            $this->db->select('COUNT(*) as total_registros_elvira');
-            $this->db->from('venta');
-           $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Sin Pedido"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicSinPedidoJaime()
-    {
-            $this->db->select('COUNT(*) as total_registros_jaime');
-            $this->db->from('venta');
-           $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Sin Pedido"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-               public function totalRegistroSic()
-        {
-            $this->db->select('COUNT(*) as total_registros_sic');
-            $this->db->from('venta');
-          $this->db->where('venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=28');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicNoTroquela()
-    {
-            $this->db->select('COUNT(*) as total_registros_no_troquela');
-            $this->db->from('venta');
-           $this->db->where('venta.troquel="No"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicSConsignacion()
-    {
-            $this->db->select('COUNT(*) as total_consignacion');
-            $this->db->from('venta');
-           $this->db->where('venta.confirmacion_orden_compra="Consignación"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-           public function totalRegistroSicOrdenCompra()
-    {
-            $this->db->select('COUNT(*) as total_registros_orden_compra');
-            $this->db->from('venta');
-           $this->db->where('venta.confirmacion_orden_compra="Orden de Compra"');
-            $query = $this->db->get();
-             return $query->result();
-        }
-        
-        
-           public function totalRegistroSicSinPedido()
-    {
-            $this->db->select('COUNT(*) as total_registros_sin_pedido');
-            $this->db->from('venta');
-           $this->db->where('venta.confirmacion_orden_compra="Sin Pedido"');
-            $query = $this->db->get();
-             return $query->result();
-        }
+    public function get_by_id($kondisi) {
+        $this->db->from('venta');
+        $this->db->where($kondisi);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function modificarClienteRefacciones($data, $kondisi) {
+        $this->db->update('venta', $data, $kondisi);
+        return TRUE;
+    }
+
+    public function totalRegistroSicCarlos() {
+        $this->db->select('COUNT(*) as total_registros_carlos');
+        $this->db->from('venta');
+        $this->db->where('venta.id= ', 4);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicAldo() {
+        $this->db->select('COUNT(*) as total_registros_aldo');
+        $this->db->from('venta');
+        $this->db->where('venta.id= ', 7);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicElvira() {
+        $this->db->select('COUNT(*) as total_registros_elvira');
+        $this->db->from('venta');
+        $this->db->where('venta.id= ', 33);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicJaime() {
+        $this->db->select('COUNT(*) as total_registros_jaime');
+        $this->db->from('venta');
+        $this->db->where('venta.id= ', 28);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicNoTroquelaCarlos() {
+        $this->db->select('COUNT(*) as total_registros_carlos');
+        $this->db->from('venta');
+        $this->db->where('venta.id=4 and venta.troquel="No"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicNoTroquelaAldo() {
+        $this->db->select('COUNT(*) as total_registros_aldo');
+        $this->db->from('venta');
+        $this->db->where('venta.id=7 and venta.troquel="No"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicNoTroquelaElvira() {
+        $this->db->select('COUNT(*) as total_registros_elvira');
+        $this->db->from('venta');
+        $this->db->where('venta.id=33 and venta.troquel="No"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicNoTroquelaJaime() {
+        $this->db->select('COUNT(*) as total_registros_jaime');
+        $this->db->from('venta');
+        $this->db->where('venta.id=28 and venta.troquel="No"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicConfirmacionCarlos() {
+        $this->db->select('COUNT(*) as total_registros_carlos');
+        $this->db->from('venta');
+        $this->db->where('venta.id=4 and venta.confirmacion_orden_compra="Consignación"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicConfirmacionAldo() {
+        $this->db->select('COUNT(*) as total_registros_aldo');
+        $this->db->from('venta');
+        $this->db->where('venta.id=7 and venta.confirmacion_orden_compra="Consignación"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicConfirmacionElvira() {
+        $this->db->select('COUNT(*) as total_registros_elvira');
+        $this->db->from('venta');
+        $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Consignación"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicConfirmacionJaime() {
+        $this->db->select('COUNT(*) as total_registros_jaime');
+        $this->db->from('venta');
+        $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Consignación"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicOrdenCarlos() {
+        $this->db->select('COUNT(*) as total_registros_carlos');
+        $this->db->from('venta');
+        $this->db->where('venta.id=4 and venta.confirmacion_orden_compra="Orden de Compra"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicOrdenAldo() {
+        $this->db->select('COUNT(*) as total_registros_aldo');
+        $this->db->from('venta');
+        $this->db->where('venta.id=7 and venta.confirmacion_orden_compra="Orden de Compra"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicOrdenElvira() {
+        $this->db->select('COUNT(*) as total_registros_elvira');
+        $this->db->from('venta');
+        $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Orden de Compra"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicOrdenJaime() {
+        $this->db->select('COUNT(*) as total_registros_jaime');
+        $this->db->from('venta');
+        $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Orden de Compra"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicSinPedidoCarlos() {
+        $this->db->select('COUNT(*) as total_registros_carlos');
+        $this->db->from('venta');
+        $this->db->where('venta.id=4 and venta.confirmacion_orden_compra="Sin Pedido"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicSinPedidoAldo() {
+        $this->db->select('COUNT(*) as total_registros_aldo');
+        $this->db->from('venta');
+        $this->db->where('venta.id=7 and venta.confirmacion_orden_compra="Sin Pedido"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicSinPedidoElvira() {
+        $this->db->select('COUNT(*) as total_registros_elvira');
+        $this->db->from('venta');
+        $this->db->where('venta.id=33 and venta.confirmacion_orden_compra="Sin Pedido"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicSinPedidoJaime() {
+        $this->db->select('COUNT(*) as total_registros_jaime');
+        $this->db->from('venta');
+        $this->db->where('venta.id=28 and venta.confirmacion_orden_compra="Sin Pedido"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSic() {
+        $this->db->select('COUNT(*) as total_registros_sic');
+        $this->db->from('venta');
+        $this->db->where('venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=28');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicNoTroquela() {
+        $this->db->select('COUNT(*) as total_registros_no_troquela');
+        $this->db->from('venta');
+        $this->db->where('venta.troquel="No"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicSConsignacion() {
+        $this->db->select('COUNT(*) as total_consignacion');
+        $this->db->from('venta');
+        $this->db->where('venta.confirmacion_orden_compra="Consignación"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicOrdenCompra() {
+        $this->db->select('COUNT(*) as total_registros_orden_compra');
+        $this->db->from('venta');
+        $this->db->where('venta.confirmacion_orden_compra="Orden de Compra"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function totalRegistroSicSinPedido() {
+        $this->db->select('COUNT(*) as total_registros_sin_pedido');
+        $this->db->from('venta');
+        $this->db->where('venta.confirmacion_orden_compra="Sin Pedido"');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 }

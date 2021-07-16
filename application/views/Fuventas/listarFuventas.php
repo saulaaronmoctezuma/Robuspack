@@ -193,6 +193,7 @@
                         <th  style="text-align: center" scope="th">Fecha de remisión </th>
                         <th  style="text-align: center" scope="th">Orden de compra </th>
                         <th  style="text-align: center" scope="th">Cantidad </th>
+                        <th  style="text-align: center" scope="th">Tipo de precio  </th>
                         <th  style="text-align: center" scope="th">Pu USD </th>
                         <th  style="text-align: center" scope="th">Descuento </th>
                         <th  style="text-align: center" scope="th">Subtotal </th>
@@ -297,7 +298,11 @@
                     . $obj->getCantidad() .
                     '</td>';
 
-
+                    
+                     echo '<td>'
+                    . $obj->getTipo_de_precio() .
+                    '</td>';
+                    
                     if ($obj->getPu_usd() != null) {
                         echo '<td>$'
                         . $obj->getPu_usd() .
@@ -308,6 +313,8 @@
                         '</td>';
                     }
                     
+                    
+
                     
                     if ($obj->getDescuento() > 0) {
                         echo '<td>'

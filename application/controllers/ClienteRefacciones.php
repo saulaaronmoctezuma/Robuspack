@@ -55,44 +55,7 @@ class ClienteRefacciones extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-           
-            
-            
-            $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
-            $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
-            $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
-            $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
 
-
-            $data['totalRegistroSicNoTroquelaCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaCarlos(1);
-            $data['totalRegistroSicNoTroquelaAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaAldo(1);
-            $data['totalRegistroSicNoTroquelaElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaElvira(1);
-            $data['totalRegistroSicNoTroquelaJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaJaime(1);
-
-
-            $data['totalRegistroSicConfirmacionCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionCarlos(1);
-            $data['totalRegistroSicConfirmacionAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionAldo(1);
-            $data['totalRegistroSicConfirmacionElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionElvira(1);
-            $data['totalRegistroSicConfirmacionJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionJaime(1);
-
-
-            $data['totalRegistroSicOrdenCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCarlos(1);
-            $data['totalRegistroSicOrdenAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenAldo(1);
-            $data['totalRegistroSicOrdenElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenElvira(1);
-            $data['totalRegistroSicOrdenJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenJaime(1);
-
-
-            $data['totalRegistroSicSinPedidoCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoCarlos(1);
-            $data['totalRegistroSicSinPedidoAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoAldo(1);
-            $data['totalRegistroSicSinPedidoElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoElvira(1);
-            $data['totalRegistroSicSinPedidoJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoJaime(1);
-
-
-            $data['totalRegistroSic'] = $this->ClienteRefaccionesModelo->totalRegistroSic(1);
-            $data['totalRegistroSicNoTroquela'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquela(1);
-            $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
-            $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
-            $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
 
 
             $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
@@ -131,8 +94,45 @@ class ClienteRefacciones extends CI_Controller {
             $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
             $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
 
- $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
-            
+
+            $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
+            $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
+            $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
+            $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
+
+
+            $data['totalRegistroSicNoTroquelaCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaCarlos(1);
+            $data['totalRegistroSicNoTroquelaAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaAldo(1);
+            $data['totalRegistroSicNoTroquelaElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaElvira(1);
+            $data['totalRegistroSicNoTroquelaJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquelaJaime(1);
+
+
+            $data['totalRegistroSicConfirmacionCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionCarlos(1);
+            $data['totalRegistroSicConfirmacionAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionAldo(1);
+            $data['totalRegistroSicConfirmacionElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionElvira(1);
+            $data['totalRegistroSicConfirmacionJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicConfirmacionJaime(1);
+
+
+            $data['totalRegistroSicOrdenCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCarlos(1);
+            $data['totalRegistroSicOrdenAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenAldo(1);
+            $data['totalRegistroSicOrdenElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenElvira(1);
+            $data['totalRegistroSicOrdenJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenJaime(1);
+
+
+            $data['totalRegistroSicSinPedidoCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoCarlos(1);
+            $data['totalRegistroSicSinPedidoAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoAldo(1);
+            $data['totalRegistroSicSinPedidoElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoElvira(1);
+            $data['totalRegistroSicSinPedidoJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedidoJaime(1);
+
+
+            $data['totalRegistroSic'] = $this->ClienteRefaccionesModelo->totalRegistroSic(1);
+            $data['totalRegistroSicNoTroquela'] = $this->ClienteRefaccionesModelo->totalRegistroSicNoTroquela(1);
+            $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
+            $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
+            $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
+
+            $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
+
 
 
             $this->load->view('footer');
@@ -141,8 +141,8 @@ class ClienteRefacciones extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
-            
-               $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
+
+            $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
             $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
             $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
             $data['totalRegistroSicJaime'] = $this->ClienteRefaccionesModelo->totalRegistroSicJaime(1);
@@ -317,7 +317,7 @@ class ClienteRefacciones extends CI_Controller {
             $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
             $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
             $this->load->view('footer');
-        }  else if ($dataLevel == "is_editor") {
+        } else if ($dataLevel == "is_editor") {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -335,7 +335,7 @@ class ClienteRefacciones extends CI_Controller {
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
-
+        $_POST = $this->input->post();
         $data = array(
             'grupo' => $_POST['grupo'],
             'cliente' => $_POST['cliente'],
@@ -381,6 +381,81 @@ class ClienteRefacciones extends CI_Controller {
             'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
             'consumo_real' => $_POST['consumo_real'],
             'archivo' => $_POST['archivo'],
+            'codigo_cuchilla' => $_POST['codigo_cuchilla'],
+            'cantidad_cuchilla' => $_POST['cantidad_cuchilla'],
+            'precio_cuchilla' => $_POST['precio_cuchilla'],
+            
+            'codigo_cuchilla_2' => $_POST['codigo_cuchilla_2'],
+            'cantidad_cuchilla_2' => $_POST['cantidad_cuchilla_2'],
+            'precio_cuchilla_2' => $_POST['precio_cuchilla_2'],
+            'codigo_cuchilla_3' => $_POST['codigo_cuchilla_3'],
+            'cantidad_cuchilla_3' => $_POST['cantidad_cuchilla_3'],
+            'precio_cuchilla_3' => $_POST['precio_cuchilla_3'],
+            'codigo_cuchilla_4' => $_POST['codigo_cuchilla_4'],
+            'cantidad_cuchilla_4' => $_POST['cantidad_cuchilla_4'],
+            'precio_cuchilla_4' => $_POST['precio_cuchilla_4'],
+            'codigo_cuchilla_5' => $_POST['codigo_cuchilla_5'],
+            'cantidad_cuchilla_5' => $_POST['cantidad_cuchilla_5'],
+            'precio_cuchilla_5' => $_POST['precio_cuchilla_5'],
+            'codigo_cuchilla_6' => $_POST['codigo_cuchilla_6'],
+            'cantidad_cuchilla_6' => $_POST['cantidad_cuchilla_6'],
+            'precio_cuchilla_6' => $_POST['precio_cuchilla_6'],
+            'codigo_cuchilla_7' => $_POST['codigo_cuchilla_7'],
+            'cantidad_cuchilla_7' => $_POST['cantidad_cuchilla_7'],
+            'precio_cuchilla_7' => $_POST['precio_cuchilla_7'],
+            'codigo_cuchilla_8' => $_POST['codigo_cuchilla_8'],
+            'cantidad_cuchilla_8' => $_POST['cantidad_cuchilla_8'],
+            'precio_cuchilla_8' => $_POST['precio_cuchilla_8'],
+            'codigo_cuchilla_9' => $_POST['codigo_cuchilla_9'],
+            'cantidad_cuchilla_9' => $_POST['cantidad_cuchilla_9'],
+            'precio_cuchilla_9' => $_POST['precio_cuchilla_9'],
+            'codigo_cuchilla_10' => $_POST['codigo_cuchilla_10'],
+            'cantidad_cuchilla_10' => $_POST['cantidad_cuchilla_10'],
+            'precio_cuchilla_10' => $_POST['precio_cuchilla_10'],
+            'codigo_cuchilla_11' => $_POST['codigo_cuchilla_11'],
+            'cantidad_cuchilla_11' => $_POST['cantidad_cuchilla_11'],
+            'precio_cuchilla_11' => $_POST['precio_cuchilla_11'],
+
+            
+            
+            'codigo_cubierta' => $_POST['codigo_cubierta'],
+            'cantidad_cubierta' => $_POST['cantidad_cubierta'],
+            'precio_cubierta' => $_POST['precio_cubierta'],
+            
+            
+       
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            'codigo_llanta' => $_POST['codigo_llanta'],
+            'cantidad_llanta' => $_POST['cantidad_llanta'],
+            'precio_llanta' => $_POST['precio_llanta'],
+            'codigo_rasqueta' => $_POST['codigo_rasqueta'],
+            'cantidad_rasqueta' => $_POST['cantidad_rasqueta'],
+            'precio_rasqueta' => $_POST['precio_rasqueta'],
+            'codigo_inserto' => $_POST['codigo_inserto'],
+            'cantidad_inserto' => $_POST['cantidad_inserto'],
+            'precio_inserto' => $_POST['precio_inserto'],
+            'codigo_inserto_2' => $_POST['codigo_inserto_2'],
+            'cantidad_inserto_2' => $_POST['cantidad_inserto_2'],
+            'precio_inserto_2' => $_POST['precio_inserto_2'],
+            'codigo_inserto_3' => $_POST['codigo_inserto_3'],
+            'cantidad_inserto_3' => $_POST['cantidad_inserto_3'],
+            'precio_inserto_3' => $_POST['precio_inserto_3'],
+            'codigo_inserto_4' => $_POST['codigo_inserto_4'],
+            'cantidad_inserto_4' => $_POST['cantidad_inserto_4'],
+            'precio_inserto_4' => $_POST['precio_inserto_4'],
             /* Es para traerse el id del usuario */
             'id' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
@@ -599,7 +674,69 @@ class ClienteRefacciones extends CI_Controller {
             'confirmacion_orden_compra' => $_POST['confirmacion_orden_compra'],
             'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
             'consumo_real' => $_POST['consumo_real'],
-            'archivo' => $_POST['archivo']
+            'archivo' => $_POST['archivo'],
+            'codigo_cuchilla' => $_POST['codigo_cuchilla'],
+            'cantidad_cuchilla' => $_POST['cantidad_cuchilla'],
+            'precio_cuchilla' => $_POST['precio_cuchilla'],
+            'codigo_cuchilla_2' => $_POST['codigo_cuchilla_2'],
+'cantidad_cuchilla_2' => $_POST['cantidad_cuchilla_2'],
+'precio_cuchilla_2' => $_POST['precio_cuchilla_2'],
+'codigo_cuchilla_3' => $_POST['codigo_cuchilla_3'],
+'cantidad_cuchilla_3' => $_POST['cantidad_cuchilla_3'],
+'precio_cuchilla_3' => $_POST['precio_cuchilla_3'],
+'codigo_cuchilla_4' => $_POST['codigo_cuchilla_4'],
+'cantidad_cuchilla_4' => $_POST['cantidad_cuchilla_4'],
+'precio_cuchilla_4' => $_POST['precio_cuchilla_4'],
+'codigo_cuchilla_5' => $_POST['codigo_cuchilla_5'],
+'cantidad_cuchilla_5' => $_POST['cantidad_cuchilla_5'],
+'precio_cuchilla_5' => $_POST['precio_cuchilla_5'],
+'codigo_cuchilla_6' => $_POST['codigo_cuchilla_6'],
+'cantidad_cuchilla_6' => $_POST['cantidad_cuchilla_6'],
+'precio_cuchilla_6' => $_POST['precio_cuchilla_6'],
+'codigo_cuchilla_7' => $_POST['codigo_cuchilla_7'],
+'cantidad_cuchilla_7' => $_POST['cantidad_cuchilla_7'],
+'precio_cuchilla_7' => $_POST['precio_cuchilla_7'],
+'codigo_cuchilla_8' => $_POST['codigo_cuchilla_8'],
+'cantidad_cuchilla_8' => $_POST['cantidad_cuchilla_8'],
+'precio_cuchilla_8' => $_POST['precio_cuchilla_8'],
+'codigo_cuchilla_9' => $_POST['codigo_cuchilla_9'],
+'cantidad_cuchilla_9' => $_POST['cantidad_cuchilla_9'],
+'precio_cuchilla_9' => $_POST['precio_cuchilla_9'],
+'codigo_cuchilla_10' => $_POST['codigo_cuchilla_10'],
+'cantidad_cuchilla_10' => $_POST['cantidad_cuchilla_10'],
+'precio_cuchilla_10' => $_POST['precio_cuchilla_10'],
+'codigo_cuchilla_11' => $_POST['codigo_cuchilla_11'],
+'cantidad_cuchilla_11' => $_POST['cantidad_cuchilla_11'],
+'precio_cuchilla_11' => $_POST['precio_cuchilla_11'],
+
+            
+            
+            
+            'codigo_cubierta' => $_POST['codigo_cubierta'],
+            'cantidad_cubierta' => $_POST['cantidad_cubierta'],
+            'precio_cubierta' => $_POST['precio_cubierta'],
+            
+            
+            'codigo_llanta' => $_POST['codigo_llanta'],
+            'cantidad_llanta' => $_POST['cantidad_llanta'],
+            'precio_llanta' => $_POST['precio_llanta'],
+            'codigo_rasqueta' => $_POST['codigo_rasqueta'],
+            'cantidad_rasqueta' => $_POST['cantidad_rasqueta'],
+            'precio_rasqueta' => $_POST['precio_rasqueta'],
+            'codigo_inserto' => $_POST['codigo_inserto'],
+            'cantidad_inserto' => $_POST['cantidad_inserto'],
+            'precio_inserto' => $_POST['precio_inserto']
+            ,
+            'codigo_inserto_2' => $_POST['codigo_inserto_2'],
+            'cantidad_inserto_2' => $_POST['cantidad_inserto_2'],
+            'precio_inserto_2' => $_POST['precio_inserto_2'],
+            'codigo_inserto_3' => $_POST['codigo_inserto_3'],
+            'cantidad_inserto_3' => $_POST['cantidad_inserto_3'],
+            'precio_inserto_3' => $_POST['precio_inserto_3'],
+            'codigo_inserto_4' => $_POST['codigo_inserto_4'],
+            'cantidad_inserto_4' => $_POST['cantidad_inserto_4'],
+             'precio_inserto_4' => $_POST['precio_inserto_4'],
+            
         );
         $this->load->model('ClienteRefacciones/ClienteRefaccionesModelo');
         $this->ClienteRefaccionesModelo->actualizar($data);
@@ -654,7 +791,79 @@ class ClienteRefacciones extends CI_Controller {
         $fecha_ultima_factura = $this->input->post('fecha_ultima_factura');
         $consumo_real = $this->input->post('consumo_real');
 
+
+
+        $codigo_cuchilla = $this->input->post('codigo_cuchilla');
+        $cantidad_cuchilla = $this->input->post('cantidad_cuchilla');
+        $precio_cuchilla = $this->input->post('precio_cuchilla');
         
+        $codigo_cuchilla_2 = $this->input->post('codigo_cuchilla_2');
+$cantidad_cuchilla_2 = $this->input->post('cantidad_cuchilla_2');
+$precio_cuchilla_2 = $this->input->post('precio_cuchilla_2');
+$codigo_cuchilla_3 = $this->input->post('codigo_cuchilla_3');
+$cantidad_cuchilla_3 = $this->input->post('cantidad_cuchilla_3');
+$precio_cuchilla_3 = $this->input->post('precio_cuchilla_3');
+$codigo_cuchilla_4 = $this->input->post('codigo_cuchilla_4');
+$cantidad_cuchilla_4 = $this->input->post('cantidad_cuchilla_4');
+$precio_cuchilla_4 = $this->input->post('precio_cuchilla_4');
+$codigo_cuchilla_5 = $this->input->post('codigo_cuchilla_5');
+$cantidad_cuchilla_5 = $this->input->post('cantidad_cuchilla_5');
+$precio_cuchilla_5 = $this->input->post('precio_cuchilla_5');
+$codigo_cuchilla_6 = $this->input->post('codigo_cuchilla_6');
+$cantidad_cuchilla_6 = $this->input->post('cantidad_cuchilla_6');
+$precio_cuchilla_6 = $this->input->post('precio_cuchilla_6');
+$codigo_cuchilla_7 = $this->input->post('codigo_cuchilla_7');
+$cantidad_cuchilla_7 = $this->input->post('cantidad_cuchilla_7');
+$precio_cuchilla_7 = $this->input->post('precio_cuchilla_7');
+$codigo_cuchilla_8 = $this->input->post('codigo_cuchilla_8');
+$cantidad_cuchilla_8 = $this->input->post('cantidad_cuchilla_8');
+$precio_cuchilla_8 = $this->input->post('precio_cuchilla_8');
+$codigo_cuchilla_9 = $this->input->post('codigo_cuchilla_9');
+$cantidad_cuchilla_9 = $this->input->post('cantidad_cuchilla_9');
+$precio_cuchilla_9 = $this->input->post('precio_cuchilla_9');
+$codigo_cuchilla_10 = $this->input->post('codigo_cuchilla_10');
+$cantidad_cuchilla_10 = $this->input->post('cantidad_cuchilla_10');
+$precio_cuchilla_10 = $this->input->post('precio_cuchilla_10');
+$codigo_cuchilla_11 = $this->input->post('codigo_cuchilla_11');
+$cantidad_cuchilla_11 = $this->input->post('cantidad_cuchilla_11');
+$precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
+
+        
+        $codigo_cubierta = $this->input->post('codigo_cubierta');
+        $cantidad_cubierta = $this->input->post('cantidad_cubierta');
+        $precio_cubierta = $this->input->post('precio_cubierta');
+       
+        
+        
+        
+        
+        
+        $codigo_llanta = $this->input->post('codigo_llanta');
+        $cantidad_llanta = $this->input->post('cantidad_llanta');
+        $precio_llanta = $this->input->post('precio_llanta');
+        $codigo_rasqueta = $this->input->post('codigo_rasqueta');
+        $cantidad_rasqueta = $this->input->post('cantidad_rasqueta');
+        $precio_rasqueta = $this->input->post('precio_rasqueta');
+        $codigo_inserto = $this->input->post('codigo_inserto');
+        $cantidad_inserto = $this->input->post('cantidad_inserto');
+        $precio_inserto = $this->input->post('precio_inserto');
+
+
+
+        $codigo_inserto_2 = $this->input->post('codigo_inserto_2');
+        $cantidad_inserto_2 = $this->input->post('cantidad_inserto_2');
+        $precio_inserto_2 = $this->input->post('precio_inserto_2');
+        $codigo_inserto_3 = $this->input->post('codigo_inserto_3');
+        $cantidad_inserto_3 = $this->input->post('cantidad_inserto_3');
+        $precio_inserto_3 = $this->input->post('precio_inserto_3');
+        $codigo_inserto_4 = $this->input->post('codigo_inserto_4');
+        $cantidad_inserto_4 = $this->input->post('cantidad_inserto_4');
+        $precio_inserto_4 = $this->input->post('precio_inserto_4');
+
+
+
+
+
         $archivo = $this->input->post('archivo');
 
         $path = './assets/ClienteRefacciones/';
@@ -730,6 +939,74 @@ class ClienteRefacciones extends CI_Controller {
         $data['confirmacion_orden_compra'] = $confirmacion_orden_compra;
         $data['fecha_ultima_factura'] = $fecha_ultima_factura;
         $data['consumo_real'] = $consumo_real;
+
+        $data['codigo_cuchilla'] = $codigo_cuchilla;
+        $data['cantidad_cuchilla'] = $cantidad_cuchilla;
+        $data['precio_cuchilla'] = $precio_cuchilla;
+        
+        
+        $data['codigo_cubierta'] = $codigo_cubierta;
+        $data['cantidad_cubierta'] = $cantidad_cubierta;
+        $data['precio_cubierta'] = $precio_cubierta;
+        
+          $data['codigo_cuchilla_2'] = $codigo_cuchilla_2;
+ $data['cantidad_cuchilla_2'] = $cantidad_cuchilla_2;
+ $data['precio_cuchilla_2'] = $precio_cuchilla_2;
+ $data['codigo_cuchilla_3'] = $codigo_cuchilla_3;
+ $data['cantidad_cuchilla_3'] = $cantidad_cuchilla_3;
+ $data['precio_cuchilla_3'] = $precio_cuchilla_3;
+ $data['codigo_cuchilla_4'] = $codigo_cuchilla_4;
+ $data['cantidad_cuchilla_4'] = $cantidad_cuchilla_4;
+ $data['precio_cuchilla_4'] = $precio_cuchilla_4;
+ $data['codigo_cuchilla_5'] = $codigo_cuchilla_5;
+ $data['cantidad_cuchilla_5'] = $cantidad_cuchilla_5;
+ $data['precio_cuchilla_5'] = $precio_cuchilla_5;
+ $data['codigo_cuchilla_6'] = $codigo_cuchilla_6;
+ $data['cantidad_cuchilla_6'] = $cantidad_cuchilla_6;
+ $data['precio_cuchilla_6'] = $precio_cuchilla_6;
+ $data['codigo_cuchilla_7'] = $codigo_cuchilla_7;
+ $data['cantidad_cuchilla_7'] = $cantidad_cuchilla_7;
+ $data['precio_cuchilla_7'] = $precio_cuchilla_7;
+ $data['codigo_cuchilla_8'] = $codigo_cuchilla_8;
+ $data['cantidad_cuchilla_8'] = $cantidad_cuchilla_8;
+ $data['precio_cuchilla_8'] = $precio_cuchilla_8;
+ $data['codigo_cuchilla_9'] = $codigo_cuchilla_9;
+ $data['cantidad_cuchilla_9'] = $cantidad_cuchilla_9;
+ $data['precio_cuchilla_9'] = $precio_cuchilla_9;
+ $data['codigo_cuchilla_10'] = $codigo_cuchilla_10;
+ $data['cantidad_cuchilla_10'] = $cantidad_cuchilla_10;
+ $data['precio_cuchilla_10'] = $precio_cuchilla_10;
+ $data['codigo_cuchilla_11'] = $codigo_cuchilla_11;
+ $data['cantidad_cuchilla_11'] = $cantidad_cuchilla_11;
+ $data['precio_cuchilla_11'] = $precio_cuchilla_11;
+
+                
+                
+                
+                
+                
+        $data['codigo_llanta'] = $codigo_llanta;
+        $data['cantidad_llanta'] = $cantidad_llanta;
+        $data['precio_llanta'] = $precio_llanta;
+        $data['codigo_rasqueta'] = $codigo_rasqueta;
+        $data['cantidad_rasqueta'] = $cantidad_rasqueta;
+        $data['precio_rasqueta'] = $precio_rasqueta;
+        $data['codigo_inserto'] = $codigo_inserto;
+        $data['cantidad_inserto'] = $cantidad_inserto;
+        $data['precio_inserto'] = $precio_inserto;
+
+        $data['codigo_inserto_2'] = $codigo_inserto_2;
+        $data['cantidad_inserto_2'] = $cantidad_inserto_2;
+        $data['precio_inserto_2'] = $precio_inserto_2;
+        $data['codigo_inserto_3'] = $codigo_inserto_3;
+        $data['cantidad_inserto_3'] = $cantidad_inserto_3;
+        $data['precio_inserto_3'] = $precio_inserto_3;
+        $data['codigo_inserto_4'] = $codigo_inserto_4;
+        $data['cantidad_inserto_4'] = $cantidad_inserto_4;
+        $data['precio_inserto_4'] = $precio_inserto_4;
+       
+
+
         //pedimento
         //refacciones
         /* $this->upload->do_upload('consumo_real');
@@ -741,7 +1018,7 @@ class ClienteRefacciones extends CI_Controller {
           } */
 
 
-       
+
         //$data['archivo'] = $archivo;
 
         $this->upload->do_upload('archivo');

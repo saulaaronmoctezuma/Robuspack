@@ -31,6 +31,7 @@ class FuventasPojo {
     private $fecha_de_remision;
     private $orden_compra;
     private $cantidad;
+    private $tipo_de_precio;
     private $pu_usd;
      private $descuento;
     private $subtotal;
@@ -49,7 +50,8 @@ class FuventasPojo {
     private $vendedor;
     private $fecha_de_cobro_de_comisiones;
 
-    function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $pu_usd, $descuento, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
+
+    function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $tipo_de_precio, $pu_usd, $descuento, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
         $this->id_fuventas = $id_fuventas;
         $this->cantidad_registros = $cantidad_registros;
         $this->ref = $ref;
@@ -64,6 +66,7 @@ class FuventasPojo {
         $this->fecha_de_remision = $fecha_de_remision;
         $this->orden_compra = $orden_compra;
         $this->cantidad = $cantidad;
+        $this->tipo_de_precio = $tipo_de_precio;
         $this->pu_usd = $pu_usd;
         $this->descuento = $descuento;
         $this->subtotal = $subtotal;
@@ -84,7 +87,6 @@ class FuventasPojo {
     }
 
 
-    
     public function getId_fuventas() {
         return $this->id_fuventas;
     }
@@ -139,6 +141,10 @@ class FuventasPojo {
 
     public function getCantidad() {
         return $this->cantidad;
+    }
+
+    public function getTipo_de_precio() {
+        return $this->tipo_de_precio;
     }
 
     public function getPu_usd() {
@@ -263,6 +269,10 @@ class FuventasPojo {
 
     public function setCantidad($cantidad) {
         $this->cantidad = $cantidad;
+    }
+
+    public function setTipo_de_precio($tipo_de_precio) {
+        $this->tipo_de_precio = $tipo_de_precio;
     }
 
     public function setPu_usd($pu_usd) {

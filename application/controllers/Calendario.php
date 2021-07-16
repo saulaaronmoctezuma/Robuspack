@@ -211,7 +211,7 @@ class Calendario extends CI_Controller {
         }
     }
 
-    Public function dragUpdateEvent() {
+        Public function dragUpdateEvent() {
 
 
 

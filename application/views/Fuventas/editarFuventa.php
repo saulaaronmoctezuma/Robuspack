@@ -25,23 +25,24 @@
         ?>
     </head>
     
-    <script language=javascript type=text/javascript>
+    
+        <script language=javascript type=text/javascript>
             function stopRKey(evt) {
                 var evt = (evt) ? evt : ((event) ? event : null);
                 var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
-                if ((evt.keyCode === 13) && (node.type == "text")) {
+                if ((evt.keyCode == 13) && (node.type == "text")) {
                     return false;
                 }
             }
             document.onkeypress = stopRKey;
-
+       
             function calcularSubtotal() {
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
                 m3 = document.getElementById("descuento").value;
                 sub = (m1 * m2) ;
                 des = ((m3*sub)/(100));
-                r = (sub - des).toFixed(2);
+                r = (sub - des).toFixed(2) ;
                 document.getElementById("subtotal").value = r;
 
 
@@ -54,8 +55,7 @@
                 }
             }
             
-            
-           function descuento() {
+             function descuento() {
                 m1 = document.getElementById("cantidad").value;
                 m2 = document.getElementById("pu_usd").value;
                 m3 = document.getElementById("descuento").value;
@@ -73,6 +73,7 @@
                     document.getElementById("descuento_cantidad").value = " ";
                 }
             }
+           
 
             function calcularIva() {
                  m1 = document.getElementById("cantidad").value;
@@ -131,15 +132,14 @@
 
 
 
-
-
+     
             function calcularFechaVencimiento() {
                 num = document.getElementById("dias_de_credito").value;
                 f = document.getElementById("fecha").value;
-
+                
 
                 // pasaremos la fecha a formato mm/dd/yyyy 
-                f = f.split('/');
+               f = f.split('/');
                 f = f[1] + '/' + f[0] + '/' + f[2];
                 // 
                 hoy = new Date(f);
@@ -154,8 +154,7 @@
 
 
                 if (document.getElementById("fecha_vencimiento").value === "NaN/NaN/NaN") {
-                    document.getElementById("fecha_vencimiento").value = "";
-                    document.getElementById("fecha_vencimiento").placeholder = "El formato de la fecha es incorrecto";
+                    document.getElementById("fecha_vencimiento").value = "El formato de la fecha es incorrecto";
                     document.getElementById("fecha_vencimiento").style.backgroundColor = "red";
                     document.getElementById("fecha_vencimiento").style.color = "white";
 
@@ -168,52 +167,8 @@
 
 
             }
+        </script> 
 
-            function esfechavalida() {
-                var fecha = document.getElementById("fecha").value;
-
-                // La longitud de la fecha debe tener exactamente 10 caracteres
-                if (fecha.length !== 10)
-                    error = true;
-
-                // Primero verifica el patron
-                if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(fecha))
-                    error = true;
-
-                // Mediante el delimitador "/" separa dia, mes y año
-                var fecha = fecha.split("/");
-                var day = parseInt(fecha[0]);
-                var month = parseInt(fecha[1]);
-                var year = parseInt(fecha[2]);
-
-                // Verifica que dia, mes, año, solo sean numeros
-                error = (isNaN(day) || isNaN(month) || isNaN(year));
-
-                // Lista de dias en los meses, por defecto no es año bisiesto
-                var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-                if (month === 1 || month > 2)
-                    if (day > ListofDays[month - 1] || day < 0 || ListofDays[month - 1] === undefined)
-                        error = true;
-
-                // Detecta si es año bisiesto y asigna a febrero 29 dias
-                if (month === 2) {
-                    var lyear = ((!(year % 4) && year % 100) || !(year % 400));
-                    if (lyear === false && day >= 29)
-                        error = true;
-                    if (lyear === true && day > 29)
-                        error = true;
-                }
-
-                if (error === true) {
-                    alert("Fecha Inválida: * La Fecha debe tener el formato: dd/mm/aaaa.\n");
-                    return false;
-                }
-                else
-                    return true;
-            }
-
-
- //--></script>
     <body>
         <div id="maquinaria">
             <form action="<?= base_url() ?>Fuventas/updatedata" method="post" enctype="multipart/form-data">
@@ -359,22 +314,35 @@
                             
                              <tr>
                                 <td><b>Cantidad</b></td>
-                                <td >,
+                                <td>
                                     <input id="cantidad" onkeyup="calcularSubtotal();calcularIva();calcularTotal();"
                                     onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" min="0" class="form-control" type="number" name="cantidad" value="<?= $data->cantidad ?>">
                                   
                                 </td>
                             </tr>
                             
-                            
-                            
-                             <tr>
+                                  <tr>
                                 <td><b>Pu USD</b></td>
                                 <td >
                                    <input id="pu_usd" onkeyup="calcularSubtotal();calcularIva();calcularTotal();" onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" class="form-control" min="0"  type="text" name="pu_usd" value="<?= $data->pu_usd ?>">
                                   
                                 </td>
                             </tr>
+                            
+                            
+                            
+                              <tr>
+                         <td><b>Tipo de precio</b></td>
+                        <td> <SELECT name="tipo_de_precio" class="form-control " > 
+                            
+                                 <option value="" <?php if ($data->tipo_de_precio == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="Lista de precios" <?php if ($data->tipo_de_precio == "Lista de precios") {echo "Selected"; } ?>>Lista de precios</option>
+                                <option value="Precio por promoción" <?php if ($data->tipo_de_precio == "Precio por promoción") {  echo "Selected";} ?>>Precio por promoción</option>
+                               
+                          
+                           </SELECT></td>
+                    </tr>
                             
                             <tr>
                                 <td><b>Descuento</b></td>
@@ -418,8 +386,7 @@
                              <tr>
                                 <td><b>Fecha Elaboración Factura(dd/mm/aaaa):</b></td>
                                 <td >
-                                    <input id="fecha" title="Ingresa la fecha en el formato indicado"  min="00/00/0000" placeholder="dd/mm/aaaa" onkeyup="calcularFechaVencimiento();" 
-                                       onchange="return esfechavalida();"  class="form-control" type="text" name="fecha" value="<?= $data->fecha ?>">
+                                    <input id="fecha" title="Ingresa la fecha en el formato indicado"  min="00/00/0000" placeholder="dd/mm/aaaa" onkeyup="calcularFechaVencimiento();"  class="form-control" type="text" name="fecha" value="<?= $data->fecha ?>">
                                   
                                 </td>
                             </tr>
@@ -449,7 +416,7 @@
                              <tr>
                                 <td><b>Días de crédito</b></td>
                                 <td >
-                                   <input id="dias_de_credito" class="form-control" onkeyup="calcularFechaVencimiento();" onchange="calcularFechaVencimiento();" min="0"  type="number"  name="dias_de_credito" value="<?= $data->dias_de_credito ?>">
+                                   <input id="dias_de_credito" class="form-control" onkeyup="calcularFechaVencimiento();" min="0"  type="number"  name="dias_de_credito" value="<?= $data->dias_de_credito ?>">
                                   
                                 </td>
                             </tr>

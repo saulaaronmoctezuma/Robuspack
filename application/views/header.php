@@ -45,6 +45,8 @@ $theme = $result->theme;
        <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
         <!--https://datatables.net/extensions/fixedcolumns/examples/integration/select.html-->
+
+        
     <style>
       body {
         font-family: 'Montserrat', serif;
@@ -138,9 +140,9 @@ color: #09E562;
    <body>
    <!--<center>  <a name="arriba"></a></center>-->
       
-       <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+      
     <!-- Latest compiled and minified CSS -->
-  	
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
   	
       <script type="text/javascript">
         $(document).ready(function () {
@@ -157,7 +159,7 @@ color: #09E562;
       </script> 
       
       
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {

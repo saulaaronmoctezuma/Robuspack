@@ -17,9 +17,7 @@ $site_title = $result->site_title;
 ?>
 
 <!--Para Buscar-->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.2.1/jquery.quicksearch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.2.1/jquery.quicksearch.js"></script>
 <script>
     $(function () {
         $('#buscandoIguales').quicksearch('table tbody tr');
@@ -205,6 +203,56 @@ $site_title = $result->site_title;
 
 </style>
 
+     <script type="text/javascript">
+
+        $(document).ready(function() {
+            // Variable global que nos dirá si hemos dado un click al botón
+            var clicando = false;
+
+// Evento de click del primer botón
+            $("#btn-dobleclick").click(function() {
+                // Mostramos el Alert
+                alert("Handler for dobleclick.click() called.");
+            });
+
+// Evento del segundo boton
+            $("#btn-unSoloClick").click(function() {
+                // Si ha sido clicado
+                if (clicando) {
+                    // Mostramos que ya se ha clicado, y no puede clicarse de nuevo
+                    //  alert( "Que ya he realizado un click." );
+                    // Si no ha sido clicado
+                } else {
+                    // Le decimos que ha sido clicado
+                    clicando = true;
+                    // Mostramos el mensaje de que ha sido clicado
+                    //alert("Guardando Informacion");
+                }
+            });
+      // Evento del segundo boton
+            $("#botonOrden").click(function() {
+                // Si ha sido clicado
+                if (clicando) {
+                    // Mostramos que ya se ha clicado, y no puede clicarse de nuevo
+                    //  alert( "Que ya he realizado un click." );
+                    // Si no ha sido clicado
+                } else {
+                    // Le decimos que ha sido clicado
+                    clicando = true;
+                    // Mostramos el mensaje de que ha sido clicado
+                    //alert("Guardando Informacion");
+                }
+            });
+       });
+        
+    </script>
+
+           
+           
+           
+           
+           
+           
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="container-fluid">
@@ -269,6 +317,7 @@ $site_title = $result->site_title;
                               <ul class="dropdown-menu">
                                     <li><a href="' . site_url() . 'ClienteSeguimiento">Control SIM</a></li>
                                     <li><a href="' . site_url() . 'Bitacora">Bitácora</a></li>
+                                         <li><a href="' . site_url() . 'CensoMaquinaria">Censo Maquinaria</a></li>
                               </ul>
                             </li>
                             
@@ -299,10 +348,17 @@ $site_title = $result->site_title;
                                       <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
                                        <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
                                       <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
-                                      <li><a href="' . site_url() . 'Products">Productos</a></li>  
-                                      <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
-                                      <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
-                                      <li><a href="' . site_url() . 'stores/">Almacen</a></li>
+                                      <li><a href="' . site_url() . 'Products">Con Inv Refacciones</a></li>
+                                          
+                                      <li><a href="' . site_url() . 'Cubierta">Con Inv Cubiertas</a></li> 
+                                      <li><a href="' . site_url() . 'Orders">Salidas</a></li>  
+                                      <!--<li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
+                                      --><li><a href="' . site_url() . 'inventory">Actualizar Inventario v2</a></li> 
+                                      
+                                       <li><a href="' . site_url() . 'stores/">Almacen</a></li>
+                                           <li><a href="' . site_url() . 'ClientesRefa/">Clientes Refacciones</a></li>
+                                    
+                                     
                                    
                               </ul>
                             </li>
@@ -359,6 +415,7 @@ $site_title = $result->site_title;
                               <ul class="dropdown-menu">
                                     <li><a href="' . site_url() . 'ClienteSeguimiento">Control SIM</a></li>
                                     <li><a href="' . site_url() . 'Bitacora">Bitácora</a></li>
+                                        <li><a href="' . site_url() . 'CensoMaquinaria">Censo Maquinaria</a></li>
                               </ul>
                             </li>
                             
@@ -452,6 +509,10 @@ $site_title = $result->site_title;
                                       <li><a href="' . site_url() . '">Control de Maquinaria</a></li>
                                       <li><a href="' . site_url() . '">BD Validada</a></li>
                                           <li><a href="' . site_url() . '">FU Ventas</a></li>
+                                                     <li><a href="' . site_url() . 'Products">Productos</a></li>  
+                                      <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
+                                      <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
+                                      <li><a href="' . site_url() . 'stores/">Almacen</a></li>
                               </ul>
                             </li>
                            
@@ -462,6 +523,91 @@ $site_title = $result->site_title;
 
 
                     if ($dataLevel == 'is_editor') {
+                        echo'
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Usuarios <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                             <li><a href="' . site_url() . 'Usuario">Últimas Conexiones</a></li>
+                                
+                              </ul>
+                            </li>
+                           
+                           
+                         <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-tasks" aria-hidden="true"></i> Control SIC <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                 <li><a href="' . site_url() . 'ClienteRefacciones">Control SIC</a></li>
+                                 <li><a href="' . site_url() . 'TotSic">Total SIC</a></li>
+                                <li><a href="' . site_url() . 'BitacoraRefacciones">Bitácora</a></li>
+                                 <li><a href="' . site_url() . 'TotBit">Total Registros Bitácora</a></li>
+                                <li><a href="' . site_url() . 'Maquinaria">Lista de Precios Cubiertas</a></li>
+                                <li><a href="' . site_url() . '">Lista de Precios Cuchillas</a></li>
+                                <li><a href="' . site_url() . 'MaximoMinimo">Reporte Máximo Mínimo</a></li>
+                                 <li><a href="' . site_url() . 'ReporteMaximoMinimo">Reporte Rotación de Inventario</a></li>
+                               
+                                  <li><a href="' . site_url() . 'CliVen">Clientes por Vendedor</a></li>
+                                <li><a href="' . site_url() . 'MaqCli">Máquinas por Clientes</a></li>
+                                <li><a href="' . site_url() . 'MaqVen">Máquinas por Vendedor</a></li>
+                                
+                                 
+                              </ul>
+                            </li>
+                            
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i> Control SIM  <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . 'ClienteSeguimiento">Control SIM</a></li>
+                                    <li><a href="' . site_url() . 'Bitacora">Bitácora</a></li>
+                                        <li><a href="' . site_url() . 'CensoMaquinaria">Censo Maquinaria</a></li>
+                              </ul>
+                            </li>
+                            
+                            
+
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Control Mtto <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="' . site_url() . 'BitacoraMtto">Bitácora</a></li>
+                                
+                              </ul>
+                            </li>
+
+
+
+                              <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-book" aria-hidden="true"></i> Catálogos<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                    <li><a href="' . site_url() . 'CatalogoVenTec">Vendedores y Técnicos</a></li>
+                                   <li><a href="' . site_url() . 'Cliente">Clientes</a></li>
+                                    <li><a href="' . site_url() . 'Empresa">Empresas</a></li>
+                                     
+                                      <li><a href="' . site_url() . 'verificacion">Control de Maquinaria</a></li>
+                                      <li><a href="' . site_url() . 'RecoleccionDatos">BD Validada</a></li>
+                                         <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
+                                      <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
+                                          <li><a href="' . site_url() . 'Fucompras">FU Compras</a></li>
+                                              <li><a href="' . site_url() . 'Calendario">Agenda</a></li>
+                                                   <li><a href="' . site_url() . 'Products">Productos</a></li>  
+                                      <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
+                                      <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
+                                      <li><a href="' . site_url() . 'stores/">Almacen</a></li>
+                              </ul>
+                            </li>
+                           
+
+                            
+                            
+                         
+                            ';
+                    }
+
+
+
+
+
+
+                    
+                    if ($dataLevel == 'is_almacen') {
                         echo'
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Usuarios <span class="caret"></span></a>
@@ -528,7 +674,7 @@ $site_title = $result->site_title;
                                                    <li><a href="' . site_url() . 'Products">Productos</a></li>  
                                       <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
                                       <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
-                                      <li><a href="' . site_url() . 'Stores">Almacen</a></li>
+                                      <li><a href="' . site_url() . '/stores">Almacen</a></li>
                               </ul>
                             </li>
                            
@@ -539,13 +685,6 @@ $site_title = $result->site_title;
                             ';
                     }
 
-
-
-
-
-
-                    
-                    
                     
                     
                     
@@ -725,6 +864,10 @@ $site_title = $result->site_title;
                                       <li><a href="' . site_url() . 'RecoleccionDatos">BD Validada</a></li>
                                            <li><a href="' . site_url() . 'Fuventas">FU V Refacciones</a></li>
                                       <li><a href="' . site_url() . 'Fuvservicio">FU V Servicio</a></li>
+                                          <li><a href="' . site_url() . 'Products">Productos</a></li>  
+                                      <li><a href="' . site_url() . 'Orders">Ordenes</a></li>  
+                                      <li><a href="' . site_url() . 'products/agregar">Actualizar Inventario</a></li> 
+                                      <li><a href="' . site_url() . 'stores/">Almacen</a></li>
                               </ul>
                             </li>
 
@@ -788,6 +931,7 @@ $site_title = $result->site_title;
                               <ul class="dropdown-menu">
                                     <li><a href="' . site_url() . 'ClienteSeguimiento">Control SIM</a></li>
                                     <li><a href="' . site_url() . '">Bitácora</a></li>
+                                        <li><a href="' . site_url() . 'CensoMaquinaria">Censo Maquinaria</a></li>
                               </ul>
                             </li>
                             
@@ -944,6 +1088,7 @@ $site_title = $result->site_title;
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-wrench" aria-hidden="true"></i> Control Mtto <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="' . site_url() . 'BitacoraMtto">Bitácora</a></li>
+                                    <li><a href="' . site_url() . 'CensoMaquinaria">Censo Maquinaria</a></li>
                                 
                               </ul>
                             </li>
@@ -1612,3 +1757,52 @@ if ($dataLevel == 'is_admin') {
     </div>
 </nav>
 <br><br>    
+
+   <script type="text/javascript">
+
+        $(document).ready(function() {
+            // Variable global que nos dirá si hemos dado un click al botón
+            var clicando = false;
+
+// Evento de click del primer botón
+            $("#btn-dobleclick").click(function() {
+                // Mostramos el Alert
+                alert("Handler for dobleclick.click() called.");
+            });
+
+// Evento del segundo boton
+            $("#btn-unSoloClick").click(function() {
+                // Si ha sido clicado
+                if (clicando) {
+                    // Mostramos que ya se ha clicado, y no puede clicarse de nuevo
+                    //  alert( "Que ya he realizado un click." );
+                    // Si no ha sido clicado
+                } else {
+                    // Le decimos que ha sido clicado
+                    clicando = true;
+                    // Mostramos el mensaje de que ha sido clicado
+                    //alert("Guardando Informacion");
+                }
+            });
+
+        
+        
+        
+         $("#botonOrden").click(function() {
+                // Si ha sido clicado
+                if (clicando) {
+                    // Mostramos que ya se ha clicado, y no puede clicarse de nuevo
+                    //  alert( "Que ya he realizado un click." );
+                    // Si no ha sido clicado
+                } else {
+                    // Le decimos que ha sido clicado
+                    clicando = true;
+                    // Mostramos el mensaje de que ha sido clicado
+                   // alert("Guardando Informacion");
+                }
+            });
+
+        });
+
+
+    </script>

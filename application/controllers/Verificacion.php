@@ -396,6 +396,14 @@ class Verificacion extends CI_Controller {
 
 
 
+          //contrato
+        $this->upload->do_upload('contrato');
+        $contrato = $this->upload->data();
+
+
+        if (!empty($_FILES['contrato']['name'])) {
+            $data['contrato'] = $contrato['file_name'];
+        }
 
 
 
@@ -797,6 +805,18 @@ class Verificacion extends CI_Controller {
 
         $data['comentario'] = $comentario;
         $data['observacion'] = $observacion;
+        
+        
+        
+        //contrato
+        $this->upload->do_upload('contrato');
+        $contrato = $this->upload->data();
+
+
+        if (!empty($_FILES['contrato']['name'])) {
+            $data['contrato'] = $contrato['file_name'];
+        }
+
 
        /* /* Para traerse el id del usuario 
         $data = $this->session->userdata;

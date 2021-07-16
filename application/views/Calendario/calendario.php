@@ -47,12 +47,12 @@
                     <form class="form-horizontal" id="crud-form">
                         <input type="hidden" id="start">
                         <input type="hidden" id="end">
-                       <!-- <div class="form-group">
-                            <label class="col-md-4 control-label" for="title">Titulo</label>
-                            <div class="col-md-4">-->
-                                <input id="title" name="title" type="hidden" class="form-control input-md" />
-                           <!--  </div>
-                        </div>        -->                    
+                        <!-- <div class="form-group">
+                             <label class="col-md-4 control-label" for="title">Titulo</label>
+                             <div class="col-md-4">-->
+                        <input id="title" name="title" type="hidden" class="form-control input-md" />
+                        <!--  </div>
+                     </div>        -->                    
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="description">Descripción</label>
                             <div class="col-md-4">
@@ -61,21 +61,21 @@
                         </div>
                         <script type="text/javascript">
 
-function GuardarNombre()
-{
-/* Para obtener el valor */
-var cod = document.getElementById("color").value;
+                            function GuardarNombre()
+                            {
+                                /* Para obtener el valor */
+                                var cod = document.getElementById("color").value;
 //alert(cod);
 
-/* Para obtener el texto */
-var combo = document.getElementById("color");
-var selected = combo.options[combo.selectedIndex].text;
+                                /* Para obtener el texto */
+                                var combo = document.getElementById("color");
+                                var selected = combo.options[combo.selectedIndex].text;
 
 
-     document.getElementById("title").value = selected;
+                                document.getElementById("title").value = selected;
 //alert(selected);
-}
-</script>
+                            }
+                        </script>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="color">Nombre</label>
                             <!--<div class="col-md-4">
@@ -95,23 +95,11 @@ var selected = combo.options[combo.selectedIndex].text;
 //compara si es administrador
                             if ($id_del_usuario == 1) {
                                 ?>
-                                    <div class="col-md-4">
-                                    <select name="color" id="color"  class="form-control" required onchange="GuardarNombre();">
-                                        <option value="">Selecciona</option> 
-                                        <option value="#80E52C">Rodrigo Islas</option>
-                                        <option value="#26f522">Aldo</option> 
-                                        <option value="#2CE1E5">Edson</option> 
-                                        <option value="#2C95E5">Rodrigo Santos</option>
-                                        <option value="#5C2CE5">Jorge Zarazua</option>
-                                        <option value="#E52C50">Alejandro</option>
-                                        <option value="#74AEB6">Miguel</option>
-                                        <option value="#C6EC18">Jorge</option>
-                                        <option value="#9E92A5">Isael</option>
-                                        <option value="#B441CF">Noe</option> 
-
-                                    </select></div>             
-
-                                <?php
+                                            
+                            <input value='B441CF' type="text" readonly="">
+                                <?
+                                
+                                
                             } else if ($id_del_usuario == 2) {
                                 ?>
                                 <div class="col-md-4">
@@ -130,7 +118,7 @@ var selected = combo.options[combo.selectedIndex].text;
                                     </select>
                                 </div>             
                                 <?php
-                            }  else if ($id_del_usuario == 4) {
+                            } else if ($id_del_usuario == 4) {
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
@@ -138,8 +126,8 @@ var selected = combo.options[combo.selectedIndex].text;
                                         <option value="#80E52C">Rodrigo</option> 
                                     </select>
                                 </div>       
-                            
-                            
+
+
                                 <?php
                             } else if ($id_del_usuario == 7) {
                                 ?>
@@ -156,6 +144,18 @@ var selected = combo.options[combo.selectedIndex].text;
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
                                         <option value="#2CE1E5">Edson</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 12) {
+                                ?>
+                                <div class="col-md-4">
+                                    <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
+                                        <option value="">Selecciona</option> 
+                                        <option value="#029E7F">Alejandra</option>
+                                        <option value="#B6DA13">Álvaro</option>
+                                        <option value="#5DFF1E">Aldo</option>
+                                        <option value="#33FFD8">Reyna</option> 
                                     </select>
                                 </div>             
                                 <?php
@@ -219,6 +219,24 @@ var selected = combo.options[combo.selectedIndex].text;
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
                                         <option value="#B441CF">Noe</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 41) {
+                                ?>
+                                <div class="col-md-4">
+                                    <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
+                                        <option value="">Selecciona</option> 
+                                        <option value="#33FFD8 ">Reyna</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 42) {
+                                ?>
+                                <div class="col-md-4">
+                                    <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
+                                        <option value="">Selecciona</option> 
+                                        <option value="#B6DA13">Álvaro</option> 
                                     </select>
                                 </div>             
                                 <?php

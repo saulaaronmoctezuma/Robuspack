@@ -1,16 +1,25 @@
+   <!-- Para traerse el rol que esta registrado-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+        
+        //check user level
+        ?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
 
-      Administrar Órdenes
+      Administrar Salidas
 
       <small></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Orders</li>
+      <li class="active">Salidas</li>
     </ol>
   </section>
 
@@ -34,8 +43,27 @@
           </div>
         <?php endif; ?>
 
-
-        <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
+              <?php
+        if ($dataLevel == 'is_admin') {
+           ?>
+          <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
+              <?php
+        }else if(($dataLevel == 'is_editor')){
+           ?>
+                    <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
+               <?php  
+        }else if(($dataLevel == 'is_almacen')){
+           ?>
+                    <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
+               <?php  
+        }else if(($dataLevel == 'is_servicio_a_clientes')){
+           ?>
+                    <a href="<?php echo base_url('orders/create') ?>" class="btn btn-primary">Agregar</a>
+               <?php  
+        }
+                       
+        ?>  
+        
         <br /> <br />
 
 
@@ -45,24 +73,25 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body">
+             
+                      <div id="div1">
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>No Factura</th>
+                  <th>Tipo de Salida</th>
+                  <th>No </th>
                   <th>Nombre del Cliente</th>
                   <!--<th>Telefono</th>-->
                   <th>Fecha</th>
-                  <th>Total Refacciones</th>
+                  <th>Acción</th>
                   <!-- rod  <th>Cantidad Total</th> -->
                   <!--<th>Estatus Pagado</th>-->
-
-                  <th>Acción</th>
-
-                </tr>
+       
+              </tr>
               </thead>
-
             </table>
           </div>
+                     </div>
           <!-- /.box-body -->
         </div>
         <!-- /.box -->

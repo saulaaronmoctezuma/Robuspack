@@ -144,7 +144,7 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
                     $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones ,
-                    $value->comentario ,$value->observacion
+                    $value->comentario ,$value->observacion,$value->contrato
             );
 
             array_push($colPlaca, $objeto);
@@ -173,7 +173,8 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
                     $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , 
-                    $value->comentario, $value->observacion
+                    $value->comentario, $value->observacion ,$value->contrato
+            
             );
 
             array_push($colPlaca, $objeto);

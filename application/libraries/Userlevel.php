@@ -73,6 +73,10 @@ class UserLevel{
             {
                 $userLevel = 'is_freelance';
             }
+             elseif($role == 16)
+            {
+                $userLevel = 'is_almacen';
+            }
             
             
         }else{

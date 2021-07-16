@@ -80,7 +80,7 @@ class Fuventas extends CI_Controller {
             $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('Fuventas/listarFuventas', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_refacciones") {
+        } else if ($dataLevel == "is_refacciones") {
             $data['fuventas'] = $this->FuventasModelo->query();
             //$data['totalRegistros'] = $this->FuventasModelo->totalRegistro(1);
             $this->load->view('header', $data);
@@ -88,7 +88,7 @@ class Fuventas extends CI_Controller {
             $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('Fuventas/listarFuventas', $data);
             $this->load->view('footer');
-        }  else if ($dataLevel == "is_logistica") {
+        } else if ($dataLevel == "is_logistica") {
             $data['fuventas'] = $this->FuventasModelo->query();
             //$data['totalRegistros'] = $this->FuventasModelo->totalRegistro(1);
             $this->load->view('header', $data);
@@ -96,7 +96,7 @@ class Fuventas extends CI_Controller {
             $data['clienteCombo'] = $this->FuventasModelo->getCliente();
             $this->load->view('Fuventas/listarFuventas', $data);
             $this->load->view('footer');
-        }else if ($dataLevel == "is_Gerente_Ventas") {
+        } else if ($dataLevel == "is_Gerente_Ventas") {
             $data['fuventas'] = $this->FuventasModelo->query();
             //$data['totalRegistros'] = $this->FuventasModelo->totalRegistro(1);
             $this->load->view('header', $data);
@@ -134,7 +134,7 @@ class Fuventas extends CI_Controller {
         $config['base_url'] = base_url() . 'index.php/home/?cari=' . $cari;
         // $config['total_rows'] = $this->modelcrud->jumlah_row($search);
 
-       
+
 
         $this->pagination->initialize($config);
         $data['pagination'] = $this->pagination->create_links();
@@ -199,15 +199,14 @@ class Fuventas extends CI_Controller {
         }
     }
 
-    
-
     public function insertdata() {
 
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
+
         $cantidad_registros = $this->input->post('cantidad_registros');
-        
+
         $ref = $this->input->post('ref');
         $cliente = $this->input->post('cliente');
         $direccion = $this->input->post('direccion');
@@ -220,6 +219,7 @@ class Fuventas extends CI_Controller {
         $fecha_de_remision = $this->input->post('fecha_de_remision');
         $orden_compra = $this->input->post('orden_compra');
         $cantidad = $this->input->post('cantidad');
+        $tipo_de_precio = $this->input->post('tipo_de_precio');
         $pu_usd = $this->input->post('pu_usd');
         $descuento = $this->input->post('descuento');
         $subtotal = $this->input->post('subtotal');
@@ -236,7 +236,7 @@ class Fuventas extends CI_Controller {
         $nueva = $this->input->post('nueva');
         $observaciones = $this->input->post('observaciones');
         $vendedor = $this->input->post('vendedor');
-        
+        $fecha_de_cobro_de_comisiones = $this->input->post('fecha_de_cobro_de_comisiones');
 
 
 
@@ -263,7 +263,7 @@ class Fuventas extends CI_Controller {
 
          */
         $data = array(
-           'cantidad_registros' => $cantidad_registros,
+            'cantidad_registros' => $cantidad_registros,
             'ref' => $ref,
             'cliente' => $cliente,
             'direccion' => $direccion,
@@ -275,6 +275,7 @@ class Fuventas extends CI_Controller {
             'fecha_de_remision' => $fecha_de_remision,
             'orden_compra' => $orden_compra,
             'cantidad' => $cantidad,
+            'tipo_de_precio' => $tipo_de_precio,
             'pu_usd' => $pu_usd,
             'descuento' => $descuento,
             'subtotal' => $subtotal,
@@ -291,15 +292,15 @@ class Fuventas extends CI_Controller {
             'nueva' => $nueva,
             'observaciones' => $observaciones,
             'vendedor' => $vendedor,
-            
+            'fecha_de_cobro_de_comisiones' => $fecha_de_cobro_de_comisiones,
             'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
 
-        
+
         //facturapdf
         $this->upload->do_upload('facturapdf');
         $facturapdf = $this->upload->data();
-        
+
         if (!empty($_FILES['facturapdf']['name'])) {
             $data['facturapdf'] = $facturapdf['file_name'];
         }
@@ -393,11 +394,8 @@ class Fuventas extends CI_Controller {
         }
     }
 
-   
-
-
     public function updatedata() {
-$cantidad_registros = $this->input->post('cantidad_registros');
+        $cantidad_registros = $this->input->post('cantidad_registros');
         $ref = $this->input->post('ref');
         $cliente = $this->input->post('cliente');
         $direccion = $this->input->post('direccion');
@@ -410,8 +408,9 @@ $cantidad_registros = $this->input->post('cantidad_registros');
         $fecha_de_remision = $this->input->post('fecha_de_remision');
         $orden_compra = $this->input->post('orden_compra');
         $cantidad = $this->input->post('cantidad');
+        $tipo_de_precio = $this->input->post('tipo_de_precio');
         $pu_usd = $this->input->post('pu_usd');
-         $descuento = $this->input->post('descuento');
+        $descuento = $this->input->post('descuento');
         $subtotal = $this->input->post('subtotal');
         $iva = $this->input->post('iva');
         $total_usd = $this->input->post('total_usd');
@@ -426,7 +425,7 @@ $cantidad_registros = $this->input->post('cantidad_registros');
         $nueva = $this->input->post('nueva');
         $observaciones = $this->input->post('observaciones');
         $vendedor = $this->input->post('vendedor');
-      
+        $fecha_de_cobro_de_comisiones = $this->input->post('fecha_de_cobro_de_comisiones');
         $path = './assets/verificacion/';
         $id = $this->input->post('id');
         $kondisi = array('id_fuventas' => $id);
@@ -454,7 +453,7 @@ $cantidad_registros = $this->input->post('cantidad_registros');
 
 
 
-$data['cantidad_registros'] = $cantidad_registros;
+        $data['cantidad_registros'] = $cantidad_registros;
         $data['ref'] = $ref;
         $data['cliente'] = $cliente;
         $data['direccion'] = $direccion;
@@ -465,15 +464,16 @@ $data['cantidad_registros'] = $cantidad_registros;
         //facturapdf
         $this->upload->do_upload('facturapdf');
         $facturapdf = $this->upload->data();
-        
+
         if (!empty($_FILES['facturapdf']['name'])) {
             $data['facturapdf'] = $facturapdf['file_name'];
         }
-        
+
         $data['remision'] = $remision;
         $data['fecha_de_remision'] = $fecha_de_remision;
         $data['orden_compra'] = $orden_compra;
         $data['cantidad'] = $cantidad;
+        $data['tipo_de_precio'] = $tipo_de_precio;
         $data['pu_usd'] = $pu_usd;
         $data['descuento'] = $descuento;
         $data['subtotal'] = $subtotal;
@@ -490,9 +490,9 @@ $data['cantidad_registros'] = $cantidad_registros;
         $data['nueva'] = $nueva;
         $data['observaciones'] = $observaciones;
         $data['vendedor'] = $vendedor;
-       
+        $data['fecha_de_cobro_de_comisiones'] = $fecha_de_cobro_de_comisiones;
 
-      
+
 
 
         // hapus foto pada direktori

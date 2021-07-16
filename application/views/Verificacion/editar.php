@@ -333,7 +333,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <input type="text" style="width: 270px; height: 35px"  name="pedimento" value="' . $data->pedimento . '"><br><br>
                        
                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
-
+                    <input type="hidden" name="contrato" value="' . $data->contrato . '">    
                     <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_credito') {
                         echo '
@@ -366,7 +366,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     
                     <label>No. Factura</label><br>
                     <input type="text" style="width: 270px; height: 35px"  name="num_factura" value="' . $data->num_factura . '"><br><br>
-
+                        <input type="hidden" name="contrato" value="' . $data->contrato . '">
                     <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_refacciones') {
                         echo '
@@ -396,6 +396,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <input type="hidden" name="fotopost"  value="' . $data->foto . '">
                     <input type="hidden" name="fotopostpdf" value="' . $data->factura . '">
                      <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
+                     <input type="hidden" name="contrato" value="' . $data->contrato . '">
                         
                     <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_jefe_mantenimiento') {
@@ -422,7 +423,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                    <input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">
                   
                     <input type="hidden" name="fotopostpdf" value="' . $data->factura . '">
-                    
+                    <input type="hidden" name="contrato" value="' . $data->contrato . '">
                     <!--<input type="file" name="fotopost">-->';
                     } else if ($dataLevel == 'is_mantenimiento') {
                         echo '
@@ -701,6 +702,41 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo '<input class="form-control" type="hidden" name="fatura" value="' . $data->refacciones . '">';
                     }
                     ?>  
+                    
+                    
+                    
+                    
+                    
+                    <!--Contrato PDF-->
+                    <?php
+                    if (($data->contrato == null) && ($dataLevel == 'is_admin')) {
+                        echo ' <label>Contrato</label><br>
+                             <input type="file" name="contrato"><br><br>';
+                    } else if (($data->contrato != null) && ($dataLevel == 'is_admin')) {
+                        echo "<font color='red'><a  title='Da clic para descargar el archivo' href='../../assets/verificacion/$data->contrato' target=”_blank” rel=”nofollow”>Ya tienes un archivo cargado</font><br>
+                        <label>Contrato</label><br>
+                             <input type='file' name='contrato'><br>";
+                    }
+                    ?>
+                    
+                    
+                    
+                    
+                    
+                       <!--Contrato PDF-->
+                    <?php
+                    if (($data->contrato == null) && ($dataLevel == 'is_editor')) {
+                        echo ' <label>Contrato</label><br>
+                             <input type="file" name="contrato"><br><br>';
+                    } else if (($data->contrato != null) && ($dataLevel == 'is_editor')) {
+                        echo "<font color='red'><a  title='Da clic para descargar el archivo' href='../../assets/verificacion/$data->contrato' target=”_blank” rel=”nofollow”>Ya tienes un archivo cargado</font><br>
+                        <label>Contrato</label><br>
+                             <input type='file' name='contrato'><br>";
+                    }
+                    ?>
+
+
+
 
 
                     <!-- <label>Comentario</label><br>

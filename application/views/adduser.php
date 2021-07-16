@@ -35,8 +35,8 @@
             '12' => 'Jefe de Mantenimiento',
             '13' => 'Logística',
             '14' => 'Servicio a Clientes',
-             '15' => 'Freelance',
-            
+            '15' => 'Freelance',
+            '16' => 'Almacen',
         );
         $dd_name = "role";
         echo form_dropdown($dd_name, $dd_list, set_value($dd_name), 'class = "form-control" id="role"');

@@ -10,7 +10,7 @@ var base_url = "<?php echo base_url(); ?>";
   //         var mywindow = window.open('', 'new div', 'height=400,width=600');
   //         // mywindow.document.write('<html><head><title></title>');
   //         // mywindow.document.write('<link rel="stylesheet" href="<?php //echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css') 
-                                                                      ?>" type="text/css" />');
+                                                                     // ?>" type="text/css" />');
   //         // mywindow.document.write('</head><body >');
   //         mywindow.document.write(response);
   //         // mywindow.document.write('</body></html>');

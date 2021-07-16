@@ -30,41 +30,36 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
         $this->load->library('userlevel');
     }
 
-   public function insert($data)
-  {
-      $this->db->insert('cliente_seguimiento',$data);
-      return TRUE;
-  }
-  public function delete($where)
-  {
-      $this->db->where($where);
-      $this->db->delete('cliente_seguimiento');
-      return TRUE;
-  }
-    
-    public function get($batas=NULL,$offset=NULL,$cari=NULL)
-  {
-      if ($batas != NULL) {
-        $this->db->limit($batas,$offset);
-      }
-      if ($cari != NULL) {
-          $this->db->or_like($cari);
-      }
-      $this->db->from('cliente_seguimiento');
-      $query = $this->db->get();
-      return $query->result();
-  }
-  public function jumlah_row($search)
-  {
-    $this->db->or_like($search);
-    $query = $this->db->get('cliente_seguimiento');
+    public function insert($data) {
+        $this->db->insert('cliente_seguimiento', $data);
+        return TRUE;
+    }
 
-    return $query->num_rows();
-  }
+    public function delete($where) {
+        $this->db->where($where);
+        $this->db->delete('cliente_seguimiento');
+        return TRUE;
+    }
 
+    public function get($batas = NULL, $offset = NULL, $cari = NULL) {
+        if ($batas != NULL) {
+            $this->db->limit($batas, $offset);
+        }
+        if ($cari != NULL) {
+            $this->db->or_like($cari);
+        }
+        $this->db->from('cliente_seguimiento');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
+    public function jumlah_row($search) {
+        $this->db->or_like($search);
+        $query = $this->db->get('cliente_seguimiento');
 
- 
+        return $query->num_rows();
+    }
+
     public function query() {
 
         //user data from session
@@ -74,24 +69,45 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
             redirect(site_url() . 'main/login/');
         }
         $dataLevel = $this->userlevel->checkLevel($data['role']);
+        $id_usuario = $this->userlevel->checkLevel($data['id']);
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_editor") {
-             /* Para traerse el id del usuario */
+            /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
             //consulta la tabla venta
-            $this->db->select('cliente_seguimiento.id_clienteseguimiento,
-               
+            $this->db->select('
+                
+                        cliente_seguimiento.id_clienteseguimiento,
                         cliente_seguimiento.cliente, 
                         cliente_seguimiento.nivel,
-                         cliente_seguimiento.necesidad, 
+                        cliente_seguimiento.modelo_maquina,
+                        cliente_seguimiento.numero_maquina,
+                        cliente_seguimiento.valor_cotizacion,
+                        cliente_seguimiento.fecha_ultima_visita,
+                        cliente_seguimiento.necesidad, 
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                          cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name,  cliente_seguimiento.fecha_prospeccion,cliente_seguimiento.fecha_prospeccion,
+                                             cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo
+
+                        
+
+');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             //$query = $this->db->where('users.id= ', $dataLevel);
@@ -108,17 +124,7 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, $value->modelo_maquina, $value->numero_maquina, $value->valor_cotizacion, $value->fecha_ultima_visita, $value->cotizacion, $value->pedido, $value->contrato, $value->first_name
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
@@ -136,10 +142,27 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
                          cliente_seguimiento.necesidad, 
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
+                         cliente_seguimiento.modelo_maquina,
+                          cliente_seguimiento.numero_maquina,
+                          cliente_seguimiento.valor_cotizacion,
+                          cliente_seguimiento.fecha_ultima_visita,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                          cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name,
+                        cliente_seguimiento.fecha_prospeccion,
+                        cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo
+');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             //$query = $this->db->where('users.id= ', $dataLevel);
@@ -156,24 +179,48 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, 
+                        
+                        $value->modelo_maquina, $value->numero_maquina, $value->valor_cotizacion, $value->fecha_ultima_visita, $value->cotizacion, 
+                        $value->pedido, $value->contrato, $value->first_name
+                         ,$value->fecha_prospeccion,
+                            $value->llamadas_cliente,
+                            $value->fecha_contacto_cliente,
+                            $value->llamdas_hechas,
+                            $value->fecha_ult_llamada,
+                            $value->numero_visitas,
+                            $value->fecha_ult_visita,
+                            $value->monto_cotizado,
+                            $value->modelo_cotizado,
+                            $value->ventas_cerrada,
+                            $value->cliente_asignado,
+                            $value->cliente_nuevo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
             }
             return $colClienteSeguimiento;
         } else if ($dataLevel == "is_refacciones") {
-           $data = $this->session->userdata;
+            $data = $this->session->userdata;
             $data = array(
                 //se lleva el valor del id del usuario
                 $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
@@ -184,13 +231,30 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
             $this->db->select('cliente_seguimiento.id_clienteseguimiento,
                         cliente_seguimiento.cliente, 
                          cliente_seguimiento.nivel,
+                          cliente_seguimiento.modelo_maquina,
+                          cliente_seguimiento.numero_maquina,
+                          cliente_seguimiento.valor_cotizacion,
+                          cliente_seguimiento.fecha_ultima_visita,
                         cliente_seguimiento.necesidad,
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                         cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name, cliente_seguimiento.fecha_prospeccion,
+                        cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo                        
+
+');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             $query = $this->db->where('users.id= ', $dataLevel);
@@ -206,19 +270,9 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             $colClienteSeguimiento = array();
 
-              foreach ($query->result() as $key => $value) {
+            foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, $value->modelo_maquina, $value->numero_maquina, $value->valor_cotizacion, $value->fecha_ultima_visita, $value->cotizacion, $value->pedido, $value->contrato, $value->first_name
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
@@ -226,7 +280,7 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
             return $colClienteSeguimiento;
         }
         //condicions que realice la consulta solo si es refacciones
-        else if ($dataLevel == "is_maquinaria")   { /* Para traerse el id del usuario */
+        else if ($dataLevel == "is_maquinaria") { /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             $data = array(
                 //se lleva el valor del id del usuario
@@ -238,13 +292,28 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
             $this->db->select('cliente_seguimiento.id_clienteseguimiento,
                         cliente_seguimiento.cliente, 
                          cliente_seguimiento.nivel,
+                          cliente_seguimiento.modelo_maquina,
+                          cliente_seguimiento.numero_maquina,
+                          cliente_seguimiento.valor_cotizacion,
+                          cliente_seguimiento.fecha_ultima_visita,
                         cliente_seguimiento.necesidad,
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                         cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name, cliente_seguimiento.fecha_prospeccion,
+                                                cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             $query = $this->db->where('users.id= ', $dataLevel);
@@ -260,27 +329,16 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             $colClienteSeguimiento = array();
 
-              foreach ($query->result() as $key => $value) {
+            foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, $value->modelo_maquina, $value->numero_maquina, $value->valor_cotizacion, $value->fecha_ultima_visita, $value->cotizacion, $value->pedido, $value->contrato, $value->first_name
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
             }
             return $colClienteSeguimiento;
-        }
-        else if ($dataLevel == "is_maquinaria_refacciones") {
-             $data = $this->session->userdata;
+        } else if ($dataLevel == "is_maquinaria_refacciones") {
+            $data = $this->session->userdata;
             $data = array(
                 //se lleva el valor del id del usuario
                 $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
@@ -291,13 +349,27 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
             $this->db->select('cliente_seguimiento.id_clienteseguimiento,
                         cliente_seguimiento.cliente, 
                          cliente_seguimiento.nivel,
+                          cliente_seguimiento.modelo_maquina,
+                          cliente_seguimiento.numero_maquina,
+                          cliente_seguimiento.valor_cotizacion,
+                          cliente_seguimiento.fecha_ultima_visita,
                         cliente_seguimiento.necesidad,
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                         cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name,   cliente_seguimiento.fecha_prospeccion,                      cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             $query = $this->db->where('users.id= ', $dataLevel);
@@ -313,27 +385,16 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             $colClienteSeguimiento = array();
 
-              foreach ($query->result() as $key => $value) {
+            foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, $value->modelo_maquina, $value->numero_maquina, $value->cotizacion, $value->pedido, $value->contrato, $value->first_name
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
             }
             return $colClienteSeguimiento;
-        
-        } else  if ($dataLevel == "is_Gerente_Ventas") {
-          $data = $this->session->userdata;
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $data = $this->session->userdata;
             $data = array(
                 //se lleva el valor del id del usuario
                 $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
@@ -344,13 +405,28 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
             $this->db->select('cliente_seguimiento.id_clienteseguimiento,
                         cliente_seguimiento.cliente, 
                          cliente_seguimiento.nivel,
+                          cliente_seguimiento.modelo_maquina,
+                          cliente_seguimiento.numero_maquina,
+                          cliente_seguimiento.valor_cotizacion,
+                          cliente_seguimiento.fecha_ultima_visita,
                         cliente_seguimiento.necesidad,
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                         cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name, cliente_seguimiento.fecha_prospeccion,
+                                                cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             $query = $this->db->where('users.id= ', $dataLevel);
@@ -366,33 +442,16 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             $colClienteSeguimiento = array();
 
-              foreach ($query->result() as $key => $value) {
+            foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, $value->modelo_maquina, $value->numero_maquina, $value->valor_cotizacion, $value->fecha_ultima_visita, $value->cotizacion, $value->pedido, $value->contrato, $value->first_name
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
             }
             return $colClienteSeguimiento;
-        }
-        
-        
-        
-        
-        
-        
-        else  if ($dataLevel == "is_director") {
-             /* Para traerse el id del usuario */
+        } else if ($dataLevel == "is_director") {
+            /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
             //consulta la tabla venta
@@ -400,13 +459,25 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
                
                         cliente_seguimiento.cliente, 
                         cliente_seguimiento.nivel,
+                         cliente_seguimiento.modelo_maquina,
+                          cliente_seguimiento.numero_maquina,
                          cliente_seguimiento.necesidad, 
                         cliente_seguimiento.compromiso,
                         cliente_seguimiento.notas,
                         cliente_seguimiento.cotizacion,
                         cliente_seguimiento.pedido,
                          cliente_seguimiento.contrato,
-                        users.first_name');
+                        users.first_name,     cliente_seguimiento.fecha_prospeccion,                    cliente_seguimiento.llamadas_cliente,
+                        cliente_seguimiento.fecha_contacto_cliente,
+                        cliente_seguimiento.llamdas_hechas,
+                        cliente_seguimiento.fecha_ult_llamada,
+                        cliente_seguimiento.numero_visitas,
+                        cliente_seguimiento.fecha_ult_visita,
+                        cliente_seguimiento.monto_cotizado,
+                        cliente_seguimiento.modelo_cotizado,
+                        cliente_seguimiento.ventas_cerrada,
+                        cliente_seguimiento.cliente_asignado,
+                        cliente_seguimiento.cliente_nuevo');
             $this->db->from('cliente_seguimiento');
             $this->db->join('users', 'cliente_seguimiento.id=users.id');
             //$query = $this->db->where('users.id= ', $dataLevel);
@@ -423,63 +494,30 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
             foreach ($query->result() as $key => $value) {
                 $objeto = new ClienteSeguimientoPojo(
-                        $value->id_clienteseguimiento, 
-                        $value->cliente,
-                        $value->nivel,
-                        $value->necesidad,
-                       
-                        $value->compromiso,
-                        $value->notas, 
-                        $value->cotizacion,
-                        $value->pedido,
-                        $value->contrato,
-                        $value->first_name
+                        $value->id_clienteseguimiento, $value->cliente, $value->nivel, $value->necesidad, $value->compromiso, $value->notas, $value->modelo_maquina, $value->numero_maquina, $value->cotizacion, $value->pedido, $value->contrato, $value->first_name
                 );
 
                 array_push($colClienteSeguimiento, $objeto);
             }
             return $colClienteSeguimiento;
-        }
-      
-        else {
+        } else {
             redirect(site_url() . 'main/');
         }
     }
 
-    
-     public function get_by_id($kondisi)
-  {
-      $this->db->from('cliente_seguimiento');
-      $this->db->where($kondisi);
-      $query = $this->db->get();
-      return $query->row();
-  }
-
-    
-    public function update($data,$kondisi)
-  {
-      $this->db->update('cliente_seguimiento',$data,$kondisi);
-      return TRUE;
-  }
-    //select referencia
-    function getOptions() {
-        $options = $this->db->select('id_maquinaria, referencia')->order_by("referencia", "asc")
-                ->get('maquinaria')
-                ->result();
-
-        $options_arr;
-
-        // entre el arreglo va a ir el dato que se guarde en caso de que no seleccione nada
-        $options_arr[' '] = 'Selecciona una opción';
-
-        // Formato para pasar a la función form_dropdown
-
-        foreach ($options as $option) {
-            $options_arr[$option->referencia] = $option->referencia;
-        }
-
-        return $options_arr;
+    public function get_by_id($kondisi) {
+        $this->db->from('cliente_seguimiento');
+        $this->db->where($kondisi);
+        $query = $this->db->get();
+        return $query->row();
     }
+
+    public function update($data, $kondisi) {
+        $this->db->update('cliente_seguimiento', $data, $kondisi);
+        return TRUE;
+    }
+
+    //select referencia
 
     public function getAllSettings() {
         $this->db->select('*');
@@ -492,12 +530,12 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
         $this->db->from('users');
         return $this->db->get()->row();
     }
- 
+
     function save_upload($title, $cliente, $prioridad, $estatus, $necesidad, $fecha_cotizacion, $image, $fecha_contactar, $compromiso, $notas) {
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
-        $data = array(  
+        $data = array(
             'grupo' => $title,
             'cliente' => $cliente,
             'prioridad' => $prioridad,
@@ -527,8 +565,38 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
     public function refacciones() {
         
     }
+/*
+    function getCliente() {
+        
+        
+        
+        $data = $this->session->userdata;
+        $data = array(
+            //se lleva el valor del id del usuario
+            $dataLevel = $this->userlevel->id($data['id']) 
+        );
+
+        $grupo = $this->db->select('empresa')
+                ->where('id_usuario=' . $dataLevel)
+                ->order_by("empresa", "asc")
+                ->get('censo_maquinaria')
+                ->result();
+
+        $options_arr;
+
+        // entre el arreglo va a ir el dato que se guarde en caso de que no seleccione nada
+        $options_arr[' '] = 'Selecciona una opción';
+
+        // Formato para pasar a la función form_dropdown
+
+        foreach ($grupo as $option) {
+            $options_arr[$option->empresa] = $option->empresa;
+        }
+
+        return $options_arr;
+    }*/
     
-     function getCliente() {
+      function getCliente() {
           $grupo = $this->db->select('nombre_empresa')
                   //->where('')
                   ->order_by("nombre_empresa", "asc")
@@ -548,6 +616,5 @@ class ClienteSeguimientoModelo extends CI_Model implements IModeloAbstracto {
 
         return $options_arr;
     }
-    
 
 }

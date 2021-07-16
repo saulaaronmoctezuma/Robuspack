@@ -37,7 +37,12 @@ class Main extends CI_Controller {
 	    
         if(empty($this->session->userdata['email'])){
             redirect(site_url().'main/login/');
-        }else{
+        }
+        
+        /*else if ($dataLevel == "is_almacen") {
+              redirect(site_url().'orders/');
+        }*/
+        else{
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('container');
@@ -616,6 +621,10 @@ class Main extends CI_Controller {
             $this->load->library('recaptcha');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('password', 'Password', 'required');
+            
+             $this->form_validation->set_message('required','El campo es obligatorio');
+             $this->form_validation->set_message('valid_email','Verifica que la dirección de correo electrónico sea válida y/o no tenga espacio al final de este');
+             
             
             $data['title'] = "Sistema de Control Robuspack";
             
