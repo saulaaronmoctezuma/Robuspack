@@ -776,7 +776,11 @@ class Style
      * For easier finding all assignments, attempted to allowing only explicite assignment:
      * Very many uses, e.g. AbstractFrameReflower.php -> for now leave as it is
      * function __set($prop, $val) {
+<<<<<<< HEAD
      *   throw new Exception("Implicite replacement of assignment by __set.  Not good.");
+=======
+     *   throw new Exception("Implicit replacement of assignment by __set.  Not good.");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * }
      * function props_set($prop, $val) { ... }
      *
@@ -1590,7 +1594,11 @@ class Style
      Only for combined attributes extra treatment needed. See below.
 
      div { border: 1px red; }
+<<<<<<< HEAD
      div { border: solid; } // Not combined! Only one occurence of same style per context
+=======
+     div { border: solid; } // Not combined! Only one occurrence of same style per context
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      //
      div { border: 1px red; }
      div a { border: solid; } // Adding to border style ok by inheritance
@@ -1608,13 +1616,21 @@ class Style
      At individual property like border-top-width need to check whether overriding value is also !important.
      Also store the !important condition for later overrides.
      Since not known who is initiating the override, need to get passed !important as parameter.
+<<<<<<< HEAD
      !important Paramter taken as in the original style in the css file.
+=======
+     !important Parameter taken as in the original style in the css file.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      When property border !important given, do not mark subsets like border_style as important. Only
      individual properties.
 
      Note:
      Setting individual property directly from css with e.g. set_border_top_style() is not needed, because
+<<<<<<< HEAD
      missing set funcions handled by a generic handler __set(), including the !important.
+=======
+     missing set functions handled by a generic handler __set(), including the !important.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      Setting individual property of as sub-property is handled below.
 
      Implementation see at _set_style_side_type()
@@ -1969,7 +1985,11 @@ class Style
      *
      * Other than with border and list, existing partial attributes should
      * reset when starting here, even when not mentioned.
+<<<<<<< HEAD
      * If individual attribute is !important and explicite or implicite replacement is not,
+=======
+     * If individual attribute is !important and explicit or implicit replacement is not,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * keep individual attribute
      *
      * require whitespace as delimiters for single value attributes
@@ -1978,7 +1998,11 @@ class Style
      * font-style, font-variant, font-weight, font-size, line-height, font-family
      *
      * missing font-size and font-family might be not allowed, but accept it here and
+<<<<<<< HEAD
      * use default (medium size, enpty font name)
+=======
+     * use default (medium size, empty font name)
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      *
      * @link http://www.w3.org/TR/CSS21/generate.html#propdef-list-style
      * @param $val
@@ -2172,7 +2196,11 @@ class Style
 
         // FIXME: handle partial values
 
+<<<<<<< HEAD
         //For consistency of individal and combined properties, and with ie8 and firefox3
+=======
+        //For consistency of individual and combined properties, and with ie8 and firefox3
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //reset all attributes, even if only partially given
         $this->_set_style_side_type('border', $side, '_style', self::$_defaults['border_' . $side . '_style'], $important);
         $this->_set_style_side_type('border', $side, '_width', self::$_defaults['border_' . $side . '_width'], $important);
@@ -2544,7 +2572,11 @@ class Style
 
             //On setting or merging or inheriting list_style_image as well as list_style_type,
             //and url exists, then url has precedence, otherwise fall back to list_style_type
+<<<<<<< HEAD
             //Firefox is wrong here (list_style_image gets overwritten on explicite list_style_type)
+=======
+            //Firefox is wrong here (list_style_image gets overwritten on explicit list_style_type)
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //Internet Explorer 7/8 and dompdf is right.
 
             if (mb_substr($value, 0, 3) === "url") {

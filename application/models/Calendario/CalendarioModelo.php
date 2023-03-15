@@ -25,10 +25,13 @@ class CalendarioModelo extends CI_Model {
     }
 
     Public function getEvents() {
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['css'] = $this->css;
         $data['base'] = $this->base;
 
@@ -68,6 +71,7 @@ class CalendarioModelo extends CI_Model {
             $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
             return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
 
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
             $sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
             return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
@@ -78,6 +82,9 @@ class CalendarioModelo extends CI_Model {
             return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
 
         }   else {
+=======
+        }  else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -132,6 +139,7 @@ class CalendarioModelo extends CI_Model {
             $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
             $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
             return ($this->db->affected_rows() != 1) ? false : true;
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
              $user_id = $this->session->userdata('id');
             $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
@@ -142,6 +150,8 @@ class CalendarioModelo extends CI_Model {
             $sql = "INSERT INTO events (title,events.start,events.end,description, color,id_usuario) VALUES (?,?,?,?,?,$user_id)";
             $this->db->query($sql, array($_POST['title'], $_POST['start'], $_POST['end'], $_POST['description'], $_POST['color']));
             return ($this->db->affected_rows() != 1) ? false : true;
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else {
             redirect(site_url() . 'Calendario/');
         }
@@ -197,6 +207,7 @@ class CalendarioModelo extends CI_Model {
             $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? and id_usuario=$user_id";
             $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
+<<<<<<< HEAD
         } else if ($dataLevel == "is_logistica") {
                $user_id = $this->session->userdata('id');
             $sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ? and id_usuario=$user_id";
@@ -208,6 +219,9 @@ class CalendarioModelo extends CI_Model {
             $this->db->query($sql, array($_POST['title'], $_POST['description'], $_POST['color'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }  else {
+=======
+        }   else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -240,7 +254,11 @@ class CalendarioModelo extends CI_Model {
             $sql = "DELETE FROM events WHERE id = ?";
             $this->db->query($sql, array($_GET['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
+<<<<<<< HEAD
         } else if ($dataLevel == "is_jefe_mantenimiento") {
+=======
+        } else if ($dataLevel == "is_refacciones") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $sql = "DELETE FROM events WHERE id = ?";
             $this->db->query($sql, array($_GET['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
@@ -273,13 +291,18 @@ class CalendarioModelo extends CI_Model {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
               $user_id = $this->session->userdata('id');
+<<<<<<< HEAD
             $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ?";
+=======
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? or id_usuario=$user_id";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         } else if ($dataLevel == "is_editor") {
             $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
+<<<<<<< HEAD
         }  
         
         
@@ -296,6 +319,12 @@ class CalendarioModelo extends CI_Model {
             
             
             
+=======
+        }  else if ($dataLevel == "is_refacciones") {
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? or id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else if ($dataLevel == "is_jefe_mantenimiento") {
               $user_id = $this->session->userdata('id');
             $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
@@ -306,6 +335,7 @@ class CalendarioModelo extends CI_Model {
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }else if ($dataLevel == "is_Gerente_Ventas") {
+<<<<<<< HEAD
             $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ?";
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
@@ -320,6 +350,12 @@ class CalendarioModelo extends CI_Model {
             $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
             return ($this->db->affected_rows() != 1) ? false : true;
         }  else {
+=======
+            $sql = "UPDATE events SET  events.start = ? ,events.end = ?  WHERE id = ? and id_usuario=$user_id";
+            $this->db->query($sql, array($_POST['start'], $_POST['end'], $_POST['id']));
+            return ($this->db->affected_rows() != 1) ? false : true;
+        }else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }

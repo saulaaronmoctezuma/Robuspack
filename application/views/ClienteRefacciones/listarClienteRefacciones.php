@@ -30,6 +30,31 @@
                     return false
                 }
             }
+<<<<<<< HEAD
+=======
+
+            function disableIE() {
+                if (document.all) {
+                    return false;
+                }
+            }
+            function disableNS(e) {
+                if (document.layers || (document.getElementById && !document.all)) {
+                    if (e.which == 2 || e.which == 3) {
+                        return false;
+                    }
+                }
+            }
+            if (document.layers) {
+                document.captureEvents(Event.MOUSEDOWN);
+                document.onmousedown = disableNS;
+            }
+            else {
+                document.onmouseup = disableNS;
+                document.oncontextmenu = disableIE;
+            }
+            document.oncontextmenu = new Function("return false");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </script>
 
 
@@ -42,6 +67,7 @@
         //check user level
         ?>
 
+<<<<<<< HEAD
  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(document).ready(function() {
@@ -101,11 +127,32 @@
 
     </head>
 
+=======
+
+
+    </head>
+    <style>
+        /* para 980px o menos */
+        @media screen and (max-width:980px) {
+            div#ocultar {
+                display:none;
+                width: 100%;
+            }
+            div#agregar {
+                width: 30%;
+            }div#exportar {
+                width: 30%;
+            }
+
+        }
+    </style>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
     <div class="container" style="margin-top:1px;">
 
         <center>  <h1>Control SIC</h1></center>
 
+<<<<<<< HEAD
         <div class="alert alert-info alert-info">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
@@ -130,6 +177,33 @@
 
 
             </div><BR>
+=======
+        <div class="alert alert-info alert-info" id="ocultar">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-4" id="buscar">
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control btn-xs" style="width : 80%;" />
+                </div>
+            </div>
+            <div class="form-group col-xs-4" id="agregar">
+
+                <form method="post" action="<?php echo base_url(); ?>ClienteRefacciones/agregar">
+                    <input type="submit" name="agregar"  title="Da clic para agregar un nuevo registro" style="width : 80%;"  class="btn btn-success" value="Nuevo Registro" />
+                </form>
+            </div> 
+            <div class="form-group col-xs-4" id="exportar">
+                <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelRefacciones">
+
+                    <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="width : 80%;font-size:16px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+                </form>   
+            </div>
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </div>
     </div>
 
@@ -148,15 +222,114 @@
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".hidediv").click(function() {
+                $(".divdemo").hide("slow");
+            });
+
+            $(".showdiv").click(function() {
+                $(".divdemo").show(2000);
+            });
+
+        });
+
+    </script>
+    <style>
+        .divTable,divTableBody{
+
+            background-color:#0780BA;
+            color:#fff;
+            padding:100px;
+            font-size:25px;
+        }
+        /* DivTable.com */
+        .divTable{
+            display: table;
+            width: 100%;
+        }
+        .divTableRow {
+            display: table-row;
+        }
+        .divTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+        }
+        .divTableCell, .divTableHead {
+            border: 1px solid #999999;
+            display: table-cell;
+            padding: 3px 10px;
+        }
+        .divTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+            font-weight: bold;
+        }
+        .divTableFoot {
+            background-color: #EEE;
+            display: table-footer-group;
+            font-weight: bold;
+        }
+        .divTableBody {
+            display: table-row-group;
+        }
+        table{
+            table-layout: fixed;
+            width: 250px;
+        }
+
+        th, td {
+            border: 1px solid blue;
+            width: 100px;
+            word-wrap: break-word;
+        }
+
+
+        .fullscreen-modal .modal-dialog {
+            margin: 0;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .fullscreen-modal .modal-dialog {
+                width: 750px;
+            }
+        }
+        @media (min-width: 992px) {
+            .fullscreen-modal .modal-dialog {
+                width: 970px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .fullscreen-modal .modal-dialog {
+                width: 1170px;
+            }
+        }     
+
+        @media screen and (max-width: 320px) {
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+
+    </style>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
 
     <div class="container" style="margin-top:1px;">
+<<<<<<< HEAD
 
 
 
@@ -166,6 +339,9 @@
 
 
 <?php
+=======
+        <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         if ($dataLevel == 'is_admin') {
             echo '
     <p><button class="hidediv">Ocultar Registros</button>
@@ -178,8 +354,13 @@
 <div class="divTableRow">
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Vendedor</p></strong></div>
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Registros</p></strong></div>
+<<<<<<< HEAD
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>No Troquela</p></strong></div>
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Consignación</p></strong></div>
+=======
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>NO Troquela</p></strong></div>
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Consiganación</p></strong></div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>OC</p></strong></div>
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Sin Pedido</p></strong></div>
 </div>
@@ -269,15 +450,25 @@
 
 
 
+<<<<<<< HEAD
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
 
 
+<<<<<<< HEAD
         
 
 echo '
+=======
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         
 <div class="divTableRow">
 <div class="divTableCell">Aldo</div>
@@ -366,12 +557,21 @@ echo '
 
 
 
+<<<<<<< HEAD
         
 
 
         
 
 echo '
+=======
+
+
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         
 <div class="divTableRow">
 <div class="divTableCell">Martín</div>
@@ -455,10 +655,17 @@ echo '
             echo '</div>
                      
 </div>';
+<<<<<<< HEAD
                   echo '</div></div>
         ';  
         } else if ($dataLevel == 'is_editor') {
          echo '
+=======
+            echo '</div></div>
+        ';
+        } else if ($dataLevel == 'is_editor') {
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <p><button class="hidediv">Ocultar Registros</button>
 <button class="showdiv">Mostrar Registros</button>
 </p>    
@@ -469,8 +676,13 @@ echo '
 <div class="divTableRow">
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Vendedor</p></strong></div>
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Registros</p></strong></div>
+<<<<<<< HEAD
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>No Troquela</p></strong></div>
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Consignación</p></strong></div>
+=======
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>NO Troquela</p></strong></div>
+<div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Consiganación</p></strong></div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>OC</p></strong></div>
 <div class="divTableCell" style="background-color:#17202A;"><strong><p style="color:#FFFFFF";>Sin Pedido</p></strong></div>
 </div>
@@ -560,15 +772,25 @@ echo '
 
 
 
+<<<<<<< HEAD
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
 
 
+<<<<<<< HEAD
         
 
 echo '
+=======
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         
 <div class="divTableRow">
 <div class="divTableCell">Aldo</div>
@@ -657,12 +879,21 @@ echo '
 
 
 
+<<<<<<< HEAD
         
 
 
         
 
 echo '
+=======
+
+
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         
 <div class="divTableRow">
 <div class="divTableCell">Martín</div>
@@ -746,12 +977,18 @@ echo '
             echo '</div>
                      
 </div>';
+<<<<<<< HEAD
                   echo '</div></div>
         ';  
+=======
+            echo '</div></div>
+        ';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
         ?>
 
 
+<<<<<<< HEAD
 
 
 
@@ -775,6 +1012,8 @@ echo '
 
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <div class="table-responsive">
 
 
@@ -784,11 +1023,18 @@ echo '
             <?php
             if ($dataLevel == 'is_servicio_a_clientes') {
                 echo '<table class=" table table-hover table-bordered table-striped" >';
+<<<<<<< HEAD
             }
             else if ($dataLevel == 'is_refacciones') {
                 echo '<table class=" table table-hover table-bordered table-striped" >';
             }else {
                 echo '<table class=" table table-hover table-bordered table-striped" id="example" >';
+=======
+            } else if ($dataLevel == 'is_refacciones') {
+                echo '<table class=" table table-hover table-bordered table-striped" >';
+            } else {
+                echo '<table class=" table table-hover table-bordered table-striped" id="sic" >';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
             ?>
 
@@ -807,12 +1053,18 @@ echo '
 
                     <?php
                     if ($dataLevel == 'is_admin') {
+<<<<<<< HEAD
                         echo '<th class="header" colspan="2" style="text-align: center">Modificar</th>';
                         
                     } else if ($dataLevel == 'is_Gerente_Ventas') {
                         echo '<th class="header" colspan="1" style="text-align: center">Eliminar</th>';
                         echo '<th class="header" colspan="1" style="text-align: center">Modificar</th>';
                         echo '<th class="header" colspan="1" style="text-align: center">Eliminar</th>';
+=======
+                        echo '<th class="header" colspan="3" style="text-align: center">Modificar</th>';
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<th class="header" colspan="2" style="text-align: center">Modificar</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else if ($dataLevel == 'is_refacciones') {
                         echo '<th class="header" colspan="1" align="center" >Modificar</th>';
                     } else if ($dataLevel == 'is_maquinaria_refacciones') {
@@ -834,12 +1086,19 @@ echo '
 
                         echo '<th class="header">Usuario</th>';
                         ;
+<<<<<<< HEAD
                     }else if ($dataLevel == 'is_editor') {
                          echo '<th class="header">Usuario</th>';
                     }
                     
                     else if ($dataLevel == 'is_servicio_a_clientes') {
                          echo '<th class="header">Usuario</th>';
+=======
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '<th class="header">Usuario</th>';
+                    } else if ($dataLevel == 'is_servicio_a_clientes') {
+                        echo '<th class="header">Usuario</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else {
                         
                     }
@@ -848,13 +1107,18 @@ echo '
 
                     <?php
                     if ($dataLevel == 'is_admin') {
+<<<<<<< HEAD
                         
                         echo '<th class="header" width="50" height="16">Fecha Última Factura</th>';
+=======
+                        echo '<th class="header" width="50" height="16">Fecha_Última_Factura</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo '<th class="header" width="50" height="16">Consumo Real</th>';
                         echo '<th class="header" width="50" height="16">Archivo</th>';
                     } else if ($dataLevel == 'is_servicio_a_clientes') {
                         echo '<th class="header" width="50" height="16">Fecha_Última&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Factura</th>';
                         echo '<th class="header" width="50" height="16">Consumo Real</th>';
+<<<<<<< HEAD
                          echo '<th class="header" width="50" height="16">Archivo</th>';
                     } else if ($dataLevel == 'is_editor') {
                         echo '<th class="header" width="50" height="16">Fecha_Última Factura</th>';
@@ -862,6 +1126,12 @@ echo '
                     } else if ($dataLevel == 'is_Gerente_Ventas') {
                         echo '<th class="header" width="50" height="16">Fecha_Última Factura</th>';
                         echo '<th class="header" width="50" height="16">Consumo Real</th>';
+=======
+                        echo '<th class="header" width="50" height="16">Archivo</th>';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '<th class="header" width="50" height="16">Fecha_Última Factura</th>';
+                        echo '<th class="header" width="50" height="16">Consumo Real</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else {
                         
                     }
@@ -870,6 +1140,7 @@ echo '
 
                     <th class="header" style="text-align: center">Grupo</th>
                     <th class="header" style="text-align: center">Cliente</th>
+<<<<<<< HEAD
                          <th class="header" style="text-align: center">Consumibles</th>
                     <th class="header" style="text-align: center">Código</th>
                     
@@ -881,6 +1152,12 @@ echo '
                     
                     
                      <!--<th class="header" style="text-align: center">Código cuchilla</th>
+=======
+                    <th class="header" style="text-align: center">Consumibles</th>
+                    
+                    <th class="header" style="text-align: center">Código</th>
+                    <th class="header" style="text-align: center">Código cuchilla</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <th class="header" style="text-align: center">Cantidad cuchilla</th>
                     <th class="header" style="text-align: center">Precio cuchilla </th>
                     <th class="header" style="text-align: center">Código cubierta </th>
@@ -894,7 +1171,19 @@ echo '
                     <th class="header" style="text-align: center">Precio rasqueta</th>
                     <th class="header" style="text-align: center">Código inserto </th>
                     <th class="header" style="text-align: center">Cantidad inserto</th>
+<<<<<<< HEAD
                     <th class="header" style="text-align: center">Precio inserto </th>  -->
+=======
+                    <th class="header" style="text-align: center">Precio inserto </th>
+
+
+
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <th class="header" style="text-align: center">Cantidad máxima</th>
                     <th class="header" style="text-align: center">Precio unitario</th>
                     <th class="header" style="text-align: center">Vida Util Dias</th>
@@ -957,6 +1246,7 @@ echo '
 
                     //compara si es administrador
                     if ($dataLevel == 'is_admin') {
+<<<<<<< HEAD
                         echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/actualizar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-file"></button></a></td>';
                              echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
@@ -974,13 +1264,34 @@ echo '
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                     } else if ($dataLevel == 'is_servicio_a_clientes') {
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/actualizar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+=======
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger w"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/actualizar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-file"></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger btn-xs "><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_refacciones') {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_maquinaria_refacciones') {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                    } else if ($dataLevel == 'is_servicio_a_clientes') {
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/actualizar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }
 
 
 
 
                     if ($dataLevel == 'is_admin') {
+<<<<<<< HEAD
                         echo '<td>';
+=======
+                        echo '</td><td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo $obj->getFirst_name() .
                         '</td>'
 
@@ -997,14 +1308,22 @@ echo '
                         '</td>'
 
                         ;
+<<<<<<< HEAD
                     }
                     else if ($dataLevel == 'is_editor') {
+=======
+                    } else if ($dataLevel == 'is_editor') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo '</td><td>';
                         echo $obj->getFirst_name() .
                         '</td>'
 
                         ;
+<<<<<<< HEAD
                     }else {
+=======
+                    } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         
                     }
 
@@ -1024,6 +1343,7 @@ echo '
                         echo '<td>';
                         echo $obj->getConsumo_real() .
                         '</td>';
+<<<<<<< HEAD
                     } else if ($dataLevel == 'is_Gerente_Ventas') {
                         echo '<td>';
                         echo $obj->getFecha_ultima_factura() .
@@ -1031,6 +1351,8 @@ echo '
                         echo '<td>';
                         echo $obj->getConsumo_real() .
                         '</td>';
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else if ($dataLevel == 'is_editor') {
                         echo '<td>';
                         echo $obj->getFecha_ultima_factura() .
@@ -1041,6 +1363,7 @@ echo '
                         '</td>';
                     }
 
+<<<<<<< HEAD
                     
                     //archivo subido en SIC
                     if (($obj->getArchivo() == null) && ($dataLevel == 'is_admin')) {
@@ -1056,6 +1379,23 @@ echo '
                         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $obj->getArchivo() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                     }
                     
+=======
+
+                    //archivo subido en SIC
+                    if (($obj->getArchivo() == null) && ($dataLevel == 'is_admin')) {
+                        echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
+                    } else if (($obj->getArchivo() != null) && ($dataLevel == 'is_admin')) {
+                        echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $obj->getArchivo() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+                    }
+
+
+                    if (($obj->getArchivo() == null) && ($dataLevel == 'is_servicio_a_clientes')) {
+                        echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
+                    } else if (($obj->getArchivo() != null) && ($dataLevel == 'is_servicio_a_clientes')) {
+                        echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $obj->getArchivo() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
+                    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     echo '<td>';
 
@@ -1063,6 +1403,7 @@ echo '
                     '</td>'
                     . '<td>'
                     . $obj->getCliente() .
+<<<<<<< HEAD
                     '</td>' 
                    /* . '<td>'
                     . $obj->getReferencia() .
@@ -1093,6 +1434,30 @@ echo '
             ?>
             
             <?php
+=======
+                    '</td>';
+                    /* . '<td>'
+                      . $obj->getReferencia() .
+                      '</td>' */
+                    ?>
+
+
+
+
+
+
+                    <!--Inicio Modal consumibles
+                    
+                    getCodigo_cubierta
+                    getCodigo_llanta
+                    getCodigo_rasqueta
+                    getCodigo_inserto
+                    
+                    
+                    --> 
+
+    <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     if (($obj->getCodigo_cuchilla() == null)&&($obj->getCodigo_cubierta() == null)&&($obj->getCodigo_llanta() == null)&&($obj->getCodigo_rasqueta() == null)&&($obj->getCodigo_inserto() == null)) {
         echo '<td title="Sin datos"sin datos><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else  {
@@ -1205,9 +1570,15 @@ echo '
 
                                         <tr id="1" onmouseover=uno('1'); onmouseout=dos('1');>
                                             <td> Cuchilla </td>
+<<<<<<< HEAD
                                             <td><?php echo $obj->getCodigo_cuchilla() ?></td>
                                             <td><?php echo $obj->getCantidad_cuchilla() ?></td>
                                             <td><?php echo $obj->getPrecio_cuchilla() ?></td>
+=======
+                                            <td>1 <?php echo $obj->getCodigo_cuchilla() ?></td>
+                                            <td>1 <?php echo $obj->getCantidad_cuchilla() ?></td>
+                                            <td> 1<?php echo $obj->getPrecio_cuchilla() ?></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                         </tr>
 
@@ -1531,6 +1902,7 @@ echo '
         <?php
     }
 
+<<<<<<< HEAD
             
             
                     
@@ -1653,16 +2025,160 @@ echo '
                     . '<td>'
                     . $obj->getConfirmacion_orden_compra() .
                     '</td>'
+=======
 
 
 
 
+
+    echo  '<td>'
+                      . $obj->getReferencia() .
+                      '</td>'.'<td>' .
+    $obj->getCodigo_cuchilla() . '</td>'
+    . '<td>' . $obj->getCantidad_cuchilla() . '</td>'
+    . '<td>' . $obj->getPrecio_cuchilla() . '</td>'
+    . '<td>' . $obj->getCodigo_cubierta() . '</td>'
+    . '<td>' . $obj->getCantidad_cubierta() . '</td>'
+    . '<td>' . $obj->getPrecio_cubierta() . '</td>'
+    . '<td>' . $obj->getCodigo_llanta() . '</td>'
+    . '<td>' . $obj->getCantidad_llanta() . '</td>'
+    . '<td>' . $obj->getPrecio_llanta() . '</td>'
+    . '<td>' . $obj->getCodigo_rasqueta() . '</td>'
+    . '<td>' . $obj->getCantidad_rasqueta() . '</td>'
+    . '<td>' . $obj->getPrecio_rasqueta() . '</td>'
+    . '<td>' . $obj->getCodigo_inserto() . '</td>'
+    . '<td>' . $obj->getCantidad_inserto() . '</td>'
+    . '<td>' . $obj->getPrecio_inserto() . '</td>'
+    . '<td>'
+    . $obj->getCantidad_maxima() .
+    '</td>'
+    . '<td>'
+    . $obj->getPrecio_unitario() .
+    '</td>'
+    . '<td>'
+    . $obj->getVida_util_dias() .
+    '</td>'
+    . '<td>'
+    . $obj->getPeriodo_surtimiento() .
+    '</td>'
+    . '<td>'
+    . $obj->getPeriodo_surtimiento_vida_util() .
+    '</td>'
+    . '<td>'
+    . $obj->getCantidad_minima() .
+    '</td>'
+    . '<td>'
+    . $obj->getPaqueteria() .
+    '</td>'
+    . '<td>'
+    . $obj->getTipo_entrega() .
+    '</td>'
+    . '<td>'
+    . $obj->getDias_credito() .
+    '</td>'
+    . '<td>'
+    . $obj->getPulgadas() .
+    '</td>'
+    . '<td>'
+    . $obj->getDiametro_rod_ml() .
+    '</td>'
+    . '<td>'
+    . $obj->getMaquina_cliente() .
+    '</td>'
+    . '<td>'
+    . $obj->getCapacitacion() .
+    '</td>'
+    . '<td>'
+    . $obj->getCapacitacion_fecha() .
+    '</td>'
+    . '<td>'
+    . $obj->getPiezas_juego() .
+    '</td>'
+    . '<td>'
+    . $obj->getCosto_juego() .
+    '</td>'
+    . '<td>'
+    . $obj->getJuego_mensuales() .
+    '</td>'
+    . '<td>'
+    . $obj->getGolpes_prom_comp() .
+    '</td>'
+    . '<td>'
+    . $obj->getGolpes_prom_rodicut() .
+    '</td>'
+    . '<td>'
+    . $obj->getBeneficio_golpes_prom() .
+    '</td>'
+    . '<td>'
+    . $obj->getTiempo_rot_com() .
+    '</td>'
+    . '<td>'
+    . $obj->getTiempo_rot_rodicut() .
+    '</td>'
+    . '<td>'
+    . $obj->getBeneficio_rot_prom() .
+    '</td>'
+    . '<td>'
+    . $obj->getPrecio_golpe() .
+    '</td>'
+    . '<td>'
+    . $obj->getCiudad_planta() .
+    '</td>'
+    . '<td>'
+    . $obj->getObservacion() .
+    '</td>'
+    . '<td>'
+    . $obj->getMarca_maquina() .
+    '</td>'
+    . '<td>'
+    . $obj->getContacto() .
+    '</td>'
+    . '<td>'
+    . $obj->getTipo_maquina() .
+    '</td>'
+    . '<td>'
+    . $obj->getFormato() .
+    '</td>'
+    . '<td>'
+    . $obj->getAncho() .
+    '</td>'
+    . '<td>'
+    . $obj->getTroquel() .
+    '</td>'
+    . '<td>'
+    . $obj->getUso_de_cfdi() .
+    '</td>'
+    . '<td>'
+    . $obj->getMetodo_pago() .
+    '</td>'
+    . '<td>'
+    . $obj->getFecha_visita() .
+    '</td>'
+    . '<td>'
+    . $obj->getFecha_seguimiento() .
+    '</td>'
+    . '<td>'
+    . $obj->getGolpes_maquina() .
+    '</td>'
+    . '<td>'
+    . $obj->getConfirmacion_orden_compra() .
+    '</td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
+
+
+
+
+<<<<<<< HEAD
                     ;
+=======
+    ;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
 
 
+<<<<<<< HEAD
                     /*
                       if($obj->getFirst_name() == 'César Alberto') {Sí			2019-06-01	2019-06-06	0
                       Saúl Aarón "Prueba"	0000-00-00		Acer	Acer Hidalgo	r54213	0	0		Semanal		0	Tres guerras	Domicilio prepagado	Ninguno	0	0.00	24	0	0000-00-00	0	0	0	0	0	0	0	0	0	0.00	36	anncho	WARD V	Transline NT/ RS	RDC	616		Sí
@@ -1675,6 +2191,20 @@ echo '
                 }
                 ?>
                 </tr >
+=======
+    /*
+      if($obj->getFirst_name() == 'César Alberto') {Sí			2019-06-01	2019-06-06	0
+      Saúl Aarón "Prueba"	0000-00-00		Acer	Acer Hidalgo	r54213	0	0		Semanal		0	Tres guerras	Domicilio prepagado	Ninguno	0	0.00	24	0	0000-00-00	0	0	0	0	0	0	0	0	0	0.00	36	anncho	WARD V	Transline NT/ RS	RDC	616		Sí
+      echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+      } else {
+      echo '<td>No puede Modificar</td>';
+      }
+
+     */
+}
+?>
+            </tr >
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             </tbody>
             </table>
 

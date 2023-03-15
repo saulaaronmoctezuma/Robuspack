@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 defined('BASEPATH') OR exit('No direct script access allowed');
+=======
+defined('BASEPATH') or exit('No direct script access allowed');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 /*
 | -------------------------------------------------------------------
@@ -76,10 +80,18 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+<<<<<<< HEAD
 	'hostname' => 'mysql.hostinger.mx',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'scrobuspack',
+=======
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'prueba_inv',
+	//'port' => 3306,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -47,12 +47,21 @@
                     <form class="form-horizontal" id="crud-form">
                         <input type="hidden" id="start">
                         <input type="hidden" id="end">
+<<<<<<< HEAD
                        <!-- <div class="form-group">
                             <label class="col-md-4 control-label" for="title">Titulo</label>
                             <div class="col-md-4">-->
                                 <input id="title" name="title" type="hidden" class="form-control input-md" />
                            <!--  </div>
                         </div>        -->                    
+=======
+                        <!-- <div class="form-group">
+                             <label class="col-md-4 control-label" for="title">Titulo</label>
+                             <div class="col-md-4">-->
+                        <input id="title" name="title" type="hidden" class="form-control input-md" />
+                        <!--  </div>
+                     </div>        -->                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="description">Descripción</label>
                             <div class="col-md-4">
@@ -61,6 +70,7 @@
                         </div>
                         <script type="text/javascript">
 
+<<<<<<< HEAD
 function GuardarNombre()
 {
 /* Para obtener el valor */
@@ -76,6 +86,23 @@ var selected = combo.options[combo.selectedIndex].text;
 //alert(selected);
 }
 </script>
+=======
+                            function GuardarNombre()
+                            {
+                                /* Para obtener el valor */
+                                var cod = document.getElementById("color").value;
+//alert(cod);
+
+                                /* Para obtener el texto */
+                                var combo = document.getElementById("color");
+                                var selected = combo.options[combo.selectedIndex].text;
+
+
+                                document.getElementById("title").value = selected;
+//alert(selected);
+                            }
+                        </script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="color">Nombre</label>
                             <!--<div class="col-md-4">
@@ -95,6 +122,7 @@ var selected = combo.options[combo.selectedIndex].text;
 //compara si es administrador
                             if ($id_del_usuario == 1) {
                                 ?>
+<<<<<<< HEAD
                                     <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" required onchange="GuardarNombre();">
                                         <option value="" selected>Selecciona</option> 
@@ -114,11 +142,19 @@ var selected = combo.options[combo.selectedIndex].text;
                                     </select></div>             
 
                                 <?php
+=======
+                                            
+                            <input value='B441CF' type="text" readonly="">
+                                <?
+                                
+                                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             } else if ($id_del_usuario == 2) {
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();" >
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                      <option value="#80E52C">Rodrigo Islas</option>
                                         <option value="#5DFF1E">Aldo</option> 
                                         <option value="#2CE1E5">Edson</option> 
@@ -152,15 +188,39 @@ var selected = combo.options[combo.selectedIndex].text;
                                 </div>             
                                 <?php
                             }   else if ($id_del_usuario == 4) {
+=======
+                                        <option value="#80E52C">Rodrigo Islas</option>
+                                        <option value="#26f522">Aldo</option> 
+                                        <option value="#2CE1E5">Edson</option> 
+                                        <option value="#2C95E5">Rodrigo Santos</option>
+                                        <option value="#5C2CE5">Jorge Zarazua</option>
+                                        <option value="#E52C50">Alejandro</option>
+                                        <option value="#74AEB6">Miguel</option>
+                                        <option value="#C6EC18">Jorge</option>
+                                        <option value="#9E92A5">Isael</option>
+                                        <option value="#B441CF">Noe</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 4) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#80E52C">Rodrigo Islas</option> 
                                     </select>
                                 </div>       
                             
                             
+=======
+                                        <option value="#80E52C">Rodrigo</option> 
+                                    </select>
+                                </div>       
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <?php
                             } else if ($id_del_usuario == 7) {
                                 ?>
@@ -171,10 +231,23 @@ var selected = combo.options[combo.selectedIndex].text;
                                     </select>
                                 </div>             
                                 <?php
+<<<<<<< HEAD
+=======
+                            } else if ($id_del_usuario == 20) {
+                                ?>
+                                <div class="col-md-4">
+                                    <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
+                                        <option value="">Selecciona</option> 
+                                        <option value="#2CE1E5">Edson</option> 
+                                    </select>
+                                </div>             
+                                <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             } else if ($id_del_usuario == 12) {
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
+<<<<<<< HEAD
                                       <option value="#80E52C">Rodrigo Islas</option>
                                         <option value="#5DFF1E">Aldo</option> 
                                         <option value="#2CE1E5">Edson</option> 
@@ -192,10 +265,22 @@ var selected = combo.options[combo.selectedIndex].text;
                                 </div>             
                                 <?php
                             }else if ($id_del_usuario == 20) {
+=======
+                                        <option value="">Selecciona</option> 
+                                        <option value="#029E7F">Alejandra</option>
+                                        <option value="#B6DA13">Álvaro</option>
+                                        <option value="#5DFF1E">Aldo</option>
+                                        <option value="#33FFD8">Reyna</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 22) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#80E52C">Rodrigo Islas</option>
                                         <option value="#5DFF1E">Aldo</option> 
                                         <option value="#2CE1E5">Edson</option> 
@@ -211,10 +296,18 @@ var selected = combo.options[combo.selectedIndex].text;
                                 </div>             
                                 <?php
                             }else if ($id_del_usuario == 55) {
+=======
+                                        <option value="#2C95E5">Rodrigo</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 23) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#80E52C">Rodrigo Islas</option>
                                         <option value="#5DFF1E">Aldo</option> 
                                         <option value="#2CE1E5">Edson</option> 
@@ -230,10 +323,18 @@ var selected = combo.options[combo.selectedIndex].text;
                                 </div>             
                                 <?php
                             } else if ($id_del_usuario == 6) {//6 
+=======
+                                        <option value="#5C2CE5">Jorge</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 24) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#2C95E5">Carlos Hernández</option> 
                                     </select>
                                 </div>             
@@ -257,6 +358,13 @@ var selected = combo.options[combo.selectedIndex].text;
                                 </div>             
                                 <?php
                             } else if ($id_del_usuario == 26) {//26
+=======
+                                        <option value="#E52C50">Alejandro</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 26) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
@@ -265,47 +373,84 @@ var selected = combo.options[combo.selectedIndex].text;
                                     </select>
                                 </div>             
                                 <?php
+<<<<<<< HEAD
                             } else if ($id_del_usuario == 64) {//36
+=======
+                            } else if ($id_del_usuario == 36) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#C6EC18">Orlando Bello</option> 
                                     </select>
                                 </div>             
                                 <?php
                             } else if ($id_del_usuario == 54) {//37
+=======
+                                        <option value="#C6EC18">Jorge</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 37) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#9E92A5">Gustavo López</option> 
                                     </select>
                                 </div>             
                                 <?php
                             } else if ($id_del_usuario == 21) {//38
+=======
+                                        <option value="#9E92A5">Isael</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 38) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#B441CF">Verónica Hernández</option> 
                                     </select>
                                 </div>             
                                 <?php
                             }else if ($id_del_usuario == 67) {
+=======
+                                        <option value="#B441CF">Noe</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 41) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#33FFD8 ">Alejandra Reyes</option> 
                                     </select>
                                 </div>             
                                 <?php
                             } else if ($id_del_usuario == 44) {
+=======
+                                        <option value="#33FFD8 ">Reyna</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else if ($id_del_usuario == 42) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
                                 <div class="col-md-4">
                                     <select name="color" id="color"  class="form-control" onchange="GuardarNombre();">
                                         <option value="">Selecciona</option> 
+<<<<<<< HEAD
                                         <option value="#B6DA13">Ignacio Hernández</option> 
                                     </select>
                                 </div>             
@@ -331,6 +476,13 @@ var selected = combo.options[combo.selectedIndex].text;
                                 </div>             
                                 <?php
                             }  else {
+=======
+                                        <option value="#B6DA13">Álvaro</option> 
+                                    </select>
+                                </div>             
+                                <?php
+                            } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 ?>
 
                                 <?php
@@ -351,4 +503,7 @@ var selected = combo.options[combo.selectedIndex].text;
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

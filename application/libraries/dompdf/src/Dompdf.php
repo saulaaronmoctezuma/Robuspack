@@ -107,7 +107,11 @@ class Dompdf
     /**
      * Desired paper size ('letter', 'legal', 'A4', etc.)
      *
+<<<<<<< HEAD
      * @var string
+=======
+     * @var string|array
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      */
     private $paperSize;
 
@@ -273,6 +277,14 @@ class Dompdf
     {
         mb_internal_encoding('UTF-8');
 
+<<<<<<< HEAD
+=======
+        if (version_compare(PHP_VERSION, '7.0.0') >= 0)
+        {
+            ini_set('pcre.jit', 0);
+        }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         if (isset($options) && $options instanceof Options) {
             $this->setOptions($options);
         } elseif (is_array($options)) {
@@ -368,7 +380,11 @@ class Dompdf
 
             $ext = strtolower(pathinfo($realfile, PATHINFO_EXTENSION));
             if (!in_array($ext, $this->allowedLocalFileExtensions)) {
+<<<<<<< HEAD
                 throw new Exception("Permission denied on $file.");
+=======
+                throw new Exception("Permission denied on $file. This file extension is forbidden");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
 
             if (!$realfile) {
@@ -397,8 +413,13 @@ class Dompdf
     }
 
     /**
+<<<<<<< HEAD
      * @param $str
      * @param null $encoding
+=======
+     * @param string $str
+     * @param string $encoding
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * @deprecated
      */
     public function load_html($str, $encoding = 'UTF-8')
@@ -607,7 +628,11 @@ class Dompdf
                             if (!$accept) {
                                 //found at least one mediatype, but none of the accepted ones
                                 //Skip this css file.
+<<<<<<< HEAD
                                 continue;
+=======
+                                break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             }
                         }
 
@@ -628,7 +653,11 @@ class Dompdf
                         ($media = $tag->getAttribute("media")) &&
                         !in_array($media, $acceptedmedia)
                     ) {
+<<<<<<< HEAD
                         continue;
+=======
+                        break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }
 
                     $css = "";
@@ -945,7 +974,11 @@ class Dompdf
      *
      * @param array $options options (see above)
      *
+<<<<<<< HEAD
      * @return string
+=======
+     * @return string|null
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      */
     public function output($options = array())
     {
@@ -1030,7 +1063,11 @@ class Dompdf
     /**
      * Sets the paper size & orientation
      *
+<<<<<<< HEAD
      * @param string $size 'letter', 'legal', 'A4', etc. {@link Dompdf\Adapter\CPDF::$PAPER_SIZES}
+=======
+     * @param string|array $size 'letter', 'legal', 'A4', etc. {@link Dompdf\Adapter\CPDF::$PAPER_SIZES}
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * @param string $orientation 'portrait' or 'landscape'
      * @return $this
      */

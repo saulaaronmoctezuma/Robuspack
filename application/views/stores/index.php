@@ -7,11 +7,19 @@
   <section class="content-header">
     <h1>
       Administrar
+<<<<<<< HEAD
       <small>Almacenes</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li class="active">Almacen</li>
+=======
+      <small>Clientes</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Clientes</li>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     </ol>
   </section>
 
@@ -49,8 +57,13 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
+<<<<<<< HEAD
                     <th>Nombre</th>
                     <th>Estatus</th>
+=======
+                    <th>Clave</th>
+                    <th>Cliente</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <?php /*if(in_array('updateStore', $user_permission) || in_array('deleteStore', $user_permission)):*/ ?>
                       <th>Acción</th>
                     <?php /*endif;*/ ?>
@@ -88,6 +101,7 @@
         <div class="modal-body">
 
           <div class="form-group">
+<<<<<<< HEAD
             <label for="brand_name">Nombre</label>
             <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Escribe un nombre de almacén" autocomplete="off">
           </div>
@@ -97,6 +111,23 @@
               <option value="1">Activo</option>
               <option value="2">Desactivado</option>
             </select>
+=======
+            <label for="clave">Clave</label>
+            <input type="text" class="form-control" id="clave" name="clave" placeholder="Escribe una clave" autocomplete="off">
+          </div>
+            
+            <!--
+          <div class="form-group">
+            <label for="active">Estatus</label>
+            <select class="form-control" id="nombre" name="nombre">
+              <option value="1">Activo</option>
+              <option value="2">Desactivado</option>
+            </select>
+          </div>-->
+             <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe un nombre" autocomplete="off">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           </div>
         </div>
 
@@ -129,16 +160,37 @@
           <div id="messages"></div>
 
           <div class="form-group">
+<<<<<<< HEAD
             <label for="edit_brand_name">Nombre</label>
             <input type="text" class="form-control" id="edit_store_name" name="edit_store_name" placeholder="Escribe un nombre de almacen" autocomplete="off">
           </div>
+=======
+            <label for="clave">Clave</label>
+            <input type="text" class="form-control" id="edit_clave" name="edit_clave" placeholder="Escribe una clave" autocomplete="off">
+          </div>
+          
+          
+          
+          
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="edit_nombre" name="edit_nombre" placeholder="Escribe un nombre" autocomplete="off">
+          </div>
+          
+          
+          <!--
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           <div class="form-group">
             <label for="edit_active">Estatus</label>
             <select class="form-control" id="edit_active" name="edit_active">
               <option value="1">Activo</option>
               <option value="2">Desactivado</option>
             </select>
+<<<<<<< HEAD
           </div>
+=======
+          </div>-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </div>
 
         <div class="modal-footer">
@@ -164,7 +216,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<<<<<<< HEAD
         <h4 class="modal-title">Eliminar Almacén</h4>
+=======
+        <h4 class="modal-title">Eliminar Cliente</h4>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
       </div>
 
       <form role="form" action="<?php echo base_url('stores/remove') ?>" method="post" id="removeForm">
@@ -266,8 +322,13 @@ function editFunc(id)
     dataType: 'json',
     success:function(response) {
 
+<<<<<<< HEAD
       $("#edit_store_name").val(response.name);
       $("#edit_active").val(response.active);
+=======
+      $("#edit_clave").val(response.clave);
+      $("#edit_nombre").val(response.nombre);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
       // submit the edit from 
       $("#updateForm").unbind('submit').bind('submit', function() {

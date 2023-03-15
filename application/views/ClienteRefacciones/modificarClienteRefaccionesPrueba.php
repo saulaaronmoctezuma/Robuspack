@@ -44,18 +44,31 @@
                         
                         
                          <?php
+<<<<<<< HEAD
                     if (($data->archivo == null) && ($dataLevel == 'is_admin')) {
+=======
+                    if (($data->archivo == null)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo '    <tr>
                             <td bgcolor="#b0aeae">Archivo</td>
                             <td bgcolor="#b0aeae"><font color="red">No tienes ningún archivo cargado</font><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;"  id="archivo"  class="form-control" type="file"  name="archivo"></td>
                         </tr>';
+<<<<<<< HEAD
                     } else if (($data->archivo != null) && ($dataLevel == 'is_admin')) {
+=======
+                    } else if (($data->archivo != null)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo '
                             <tr>
                             <td bgcolor="#b0aeae">Archivo</td>
                             <td bgcolor="#b0aeae"><font color="red">
                            <a  title="Da clic para visualizar el archivo" href="' . base_url() . 'assets/ClienteRefacciones/' . $data->archivo . '" target=”_blank” rel=”nofollow”> Ya tienes un archivo cargado</a><br>
+<<<<<<< HEAD
                            </font><br><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;" size="10" maxlength="30 id="archivo"  class="form-control" type="file"  name="archivo"></td>
+=======
+                           </font><br><input STYLE="color: #FFFFFF; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #72A4D2;" size="10" maxlength="30 id="archivo"  class="form-control" type="file"  name="archivo">
+                           </td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </tr>';
                     }
                     ?>
@@ -339,6 +352,7 @@
                        
                       
                         
+<<<<<<< HEAD
  <input id="codigo_cuchilla" type="hidden" class="form-control input-sm"  name="codigo_cuchilla" value="<?= $data->codigo_cuchilla ?>">
                         <input id="cantidad_cuchilla" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla" value="<?= $data->cantidad_cuchilla ?>">
                         <input id="precio_cuchilla" type="hidden" class="form-control input-sm"  name="precio_cuchilla" value="<?= $data->precio_cuchilla ?>">
@@ -420,6 +434,89 @@
 
 
                        
+=======
+                        <input id="codigo_cuchilla" type="hidden" class="form-control input-sm"  name="codigo_cuchilla" value="<?= $codigo_cuchilla ?>">
+                        <input id="cantidad_cuchilla" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla" value="<?= $cantidad_cuchilla ?>">
+                        <input id="precio_cuchilla" type="hidden" class="form-control input-sm"  name="precio_cuchilla" value="<?= $precio_cuchilla ?>">
+                        <input id="codigo_cubierta" type="hidden" class="form-control input-sm"  name="codigo_cubierta" value="<?= $codigo_cubierta ?>">
+                        <input id="cantidad_cubierta" type="hidden" class="form-control input-sm"  name="cantidad_cubierta" value="<?= $cantidad_cubierta ?>">
+                        <input id="precio_cubierta" type="hidden" class="form-control input-sm"  name="precio_cubierta" value="<?= $precio_cubierta ?>">
+                        <input id="codigo_llanta" type="hidden" class="form-control input-sm"  name="codigo_llanta" value="<?= $codigo_llanta ?>">
+                        <input id="precio_llanta" type="hidden" class="form-control input-sm"  name="precio_llanta" value="<?= $precio_llanta ?>">
+                        <input id="codigo_rasqueta" type="hidden" class="form-control input-sm"  name="codigo_rasqueta" value="<?= $codigo_rasqueta ?>">
+                        <input id="cantidad_rasqueta" type="hidden" class="form-control input-sm"  name="cantidad_rasqueta" value="<?= $cantidad_rasqueta ?>">
+                        <input id="precio_rasqueta" type="hidden" class="form-control input-sm"  name="precio_rasqueta" value="<?= $precio_rasqueta ?>">
+                        <input id="codigo_inserto" type="hidden" class="form-control input-sm"  name="codigo_inserto" value="<?= $codigo_inserto ?>">
+                        <input id="cantidad_inserto" type="hidden" class="form-control input-sm"  name="cantidad_inserto" value="<?= $cantidad_inserto ?>" >
+                        <input id="precio_inserto" type="hidden" class="form-control input-sm"  name="precio_inserto" value="<?= $precio_inserto ?>">
+
+                        <input id="codigo_inserto_2" type="hidden" class="form-control input-sm"  name="codigo_inserto_2" value="<?= $codigo_inserto_2 ?>">
+                        <input id="cantidad_inserto_2" type="hidden" class="form-control input-sm"  name="cantidad_inserto_2" value="<?= $cantidad_inserto_2 ?>" >
+                        <input id="precio_inserto_2" type="hidden" class="form-control input-sm"  name="precio_inserto_2" value="<?= $precio_inserto_2 ?>">
+
+                         <input id="codigo_inserto_3" type="hidden" class="form-control input-sm"  name="codigo_inserto_3" value="<?= $codigo_inserto_3 ?>">
+                        <input id="cantidad_inserto_3" type="hidden" class="form-control input-sm"  name="cantidad_inserto_3" value="<?= $cantidad_inserto_3 ?>" >
+                        <input id="precio_inserto_3" type="hidden" class="form-control input-sm"  name="precio_inserto_3" value="<?= $precio_inserto_3 ?>">
+
+                       
+                        <input id="codigo_inserto_4" type="hidden" class="form-control input-sm"  name="codigo_inserto_4" value="<?= $codigo_inserto_4 ?>">
+                        <input id="cantidad_inserto_4" type="hidden" class="form-control input-sm"  name="cantidad_inserto_4" value="<?= $cantidad_inserto_4 ?>" >
+                        <input id="precio_inserto_4" type="hidden" class="form-control input-sm"  name="precio_inserto_4" value="<?= $precio_inserto_4 ?>">
+                        
+                        <input id="codigo_cuchilla_2" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_2" value="<?= $codigo_cuchilla_2 ?>">
+                        <input id="cantidad_cuchilla_2" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_2" value="<?= $cantidad_cuchilla_2 ?>">
+                        <input id="precio_cuchilla_2" type="hidden" class="form-control input-sm"  name="precio_cuchilla_2" value="<?= $precio_cuchilla_2 ?>">
+                        
+                        <input id="codigo_cuchilla_3" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_3" value="<?= $codigo_cuchilla_3 ?>">
+                        <input id="cantidad_cuchilla_3" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_3" value="<?= $cantidad_cuchilla_3 ?>">
+                        <input id="precio_cuchilla_3" type="hidden" class="form-control input-sm"  name="precio_cuchilla_3" value="<?= $precio_cuchilla_3 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_4" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_4" value="<?= $codigo_cuchilla_4 ?>">
+                        <input id="cantidad_cuchilla_4" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_4" value="<?= $cantidad_cuchilla_4 ?>">
+                        <input id="precio_cuchilla_4" type="hidden" class="form-control input-sm"  name="precio_cuchilla_4" value="<?= $precio_cuchilla_4 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_5" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_5" value="<?= $codigo_cuchilla_5 ?>">
+                        <input id="cantidad_cuchilla_5" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_5" value="<?= $cantidad_cuchilla_5 ?>">
+                        <input id="precio_cuchilla_5" type="hidden" class="form-control input-sm"  name="precio_cuchilla_5" value="<?= $precio_cuchilla_5 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_6" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_6" value="<?= $codigo_cuchilla_6 ?>">
+                        <input id="cantidad_cuchilla_6" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_6" value="<?= $cantidad_cuchilla_6 ?>">
+                        <input id="precio_cuchilla_6" type="hidden" class="form-control input-sm"  name="precio_cuchilla_6" value="<?= $precio_cuchilla_6 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_7" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_7" value="<?= $codigo_cuchilla_7 ?>">
+                        <input id="cantidad_cuchilla_7" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_7" value="<?= $cantidad_cuchilla_7 ?>">
+                        <input id="precio_cuchilla_7" type="hidden" class="form-control input-sm"  name="precio_cuchilla_7" value="<?= $precio_cuchilla_7 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_8" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_8" value="<?= $codigo_cuchilla_8 ?>">
+                        <input id="cantidad_cuchilla_8" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_8" value="<?= $cantidad_cuchilla_8?>">
+                        <input id="precio_cuchilla_8" type="hidden" class="form-control input-sm"  name="precio_cuchilla_8" value="<?= $precio_cuchilla_8 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_9" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_9" value="<?= $codigo_cuchilla_9 ?>">
+                        <input id="cantidad_cuchilla_9" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_9" value="<?= $cantidad_cuchilla_9 ?>">
+                        <input id="precio_cuchilla_9" type="hidden" class="form-control input-sm"  name="precio_cuchilla_9" value="<?= $precio_cuchilla_9 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_10" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_10" value="<?= $codigo_cuchilla_10 ?>">
+                        <input id="cantidad_cuchilla_10" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_10" value="<?= $cantidad_cuchilla_10 ?>">
+                        <input id="precio_cuchilla_10" type="hidden" class="form-control input-sm"  name="precio_cuchilla_10" value="<?= $precio_cuchilla_10 ?>">
+                        
+                        
+                        <input id="codigo_cuchilla_11" type="hidden" class="form-control input-sm"  name="codigo_cuchilla_11" value="<?= $codigo_cuchilla_11 ?>">
+                        <input id="cantidad_cuchilla_11" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla_11" value="<?= $cantidad_cuchilla_11 ?>">
+                        <input id="precio_cuchilla_11" type="hidden" class="form-control input-sm"  name="precio_cuchilla_11" value="<?= $precio_cuchilla_11 ?>">
+                        
+                        
+                        
+                        
+                        
+                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                      </tbody>
         </div>
                 

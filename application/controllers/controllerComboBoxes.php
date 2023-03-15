@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 
 /*
@@ -8,6 +9,8 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
  
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class controllerComboBoxes extends CI_Controller{
     //put your code here    
     public function fillCiudades() {

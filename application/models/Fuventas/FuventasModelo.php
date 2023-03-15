@@ -142,6 +142,7 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
                     $value->nueva,
                     $value->observaciones, 
                     $value->vendedor,
+<<<<<<< HEAD
                     $value->fecha_de_cobro_de_comisiones,
                     $value->tipo_de_cambio,
                     $value->precio_mxn,
@@ -151,6 +152,10 @@ class FuventasModelo extends CI_Model implements IModeloAbstracto {
                     $value->total_mxn 
             );
            
+=======
+                    $value->fecha_de_cobro_de_comisiones
+            );
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             array_push($colFuCompras, $objeto);
         }

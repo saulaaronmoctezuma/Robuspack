@@ -47,7 +47,14 @@
 
         <center>  <h1>Total de Registros Bitácora</h1></center>
 
+<<<<<<< HEAD
 
+=======
+  <div class="alert alert-info alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>SCR</strong>
+        </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
@@ -150,7 +157,11 @@
 
 
                     <tr>
+<<<<<<< HEAD
                         <td>Jaime</td>
+=======
+                        <td>Orlene</td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <td>
                             <?php
                             foreach ($totalRegistroBitacoraOrlene as $fila) {

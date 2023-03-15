@@ -134,7 +134,11 @@ class ListBullet extends AbstractRenderer
     function render(Frame $frame)
     {
         $style = $frame->get_style();
+<<<<<<< HEAD
         $font_size = $style->get_font_size();
+=======
+        $font_size = $style->font_size;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $line_height = (float)$style->length_in_pt($style->line_height, $frame->get_containing_block("h"));
 
         $this->_set_opacity($frame->get_opacity($style->opacity));

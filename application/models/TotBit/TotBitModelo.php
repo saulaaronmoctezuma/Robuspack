@@ -2,11 +2,15 @@
 
 
 require 'IModeloAbstracto.php';
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 class TotBitModelo extends CI_Model implements IModeloAbstracto {
 
@@ -95,7 +99,11 @@ class TotBitModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_orlene');
             $this->db->from('bitacora_refacciones');
+<<<<<<< HEAD
            $this->db->where('bitacora_refacciones.id= ', 28);
+=======
+           $this->db->where('bitacora_refacciones.id= ', 9);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $query = $this->db->get();
              return $query->result();
         }

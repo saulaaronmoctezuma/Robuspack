@@ -68,7 +68,11 @@ https://github.com/dompdf/dompdf/wiki/Requirements
 PDF documents internally support the following fonts: Helvetica, Times-Roman,
 Courier, Zapf-Dingbats, & Symbol. These fonts only support Windows ANSI
 encoding. In order for a PDF to display characters that are not available in
+<<<<<<< HEAD
 Windows ANSI you must supply an external font. Dompdf will embed any referenced
+=======
+Windows ANSI, you must supply an external font. Dompdf will embed any referenced
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 font in the PDF so long as it has been pre-loaded or is accessible to dompdf and
 reference in CSS @font-face rules. See the
 [font overview](https://github.com/dompdf/dompdf/wiki/About-Fonts-and-Character-Encoding)

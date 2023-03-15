@@ -1,10 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 Class TotBit extends CI_Controller {
 
@@ -28,6 +32,7 @@ Class TotBit extends CI_Controller {
         $data ['base'] = $this->base;
         $this->load->model('TotBit/TotBitModelo');
         $data['title'] = "Robuspack";
+<<<<<<< HEAD
         
         
         
@@ -111,6 +116,24 @@ Class TotBit extends CI_Controller {
             
             
     	$this->load->library('user_agent');
+=======
+
+
+        $data = $this->session->userdata;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+	$this->load->library('user_agent');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $browser = $this->agent->browser();
         $os = $this->agent->platform();
         $getip = $this->input->ip_address();
@@ -118,9 +141,15 @@ Class TotBit extends CI_Controller {
         $result = $this->User_model->getAllSettings();
         $stLe = $result->site_title;
         date_default_timezone_set("America/Mexico_City");
+<<<<<<< HEAD
     	$tz = $result->timezone;
 	    
 	    $now = new DateTime();
+=======
+	$tz = $result->timezone;
+	    
+	$now = new DateTime();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $now->setTimezone(new DateTimezone($tz));
         $dTod =  $now->format('Y-m-d');
         $dTim =  $now->format('H:i:s');
@@ -140,6 +169,7 @@ Class TotBit extends CI_Controller {
             $this->load->library("email");
             $this->load->library('sendmail');
             $bUrl = base_url();
+<<<<<<< HEAD
         //    $message = $this->sendmail->secureMail('saulaaron@hotmail.com',$data['last_name'],$data['email'],$dTod,$dTim,$stLe,$browser,$os,$getip,$bUrl);
         
             $message = $this->sendmail->ejemploDeCorreo();
@@ -148,14 +178,77 @@ Class TotBit extends CI_Controller {
             $this->email->to($to_email);
             $this->email->cc('tareasutng@gmail.com');
             $this->email->subject('Correo por totbit '.$browser.'');
+=======
+            $message = $this->sendmail->secureMail($data['first_name'],$data['last_name'],$data['email'],$dTod,$dTim,$stLe,$browser,$os,$getip,$bUrl);
+            $to_email = 'saulaaronmoctezuma@hotmail.com';
+            $this->email->from($this->config->item('register'), 'New sign-in! from '.$browser.'');
+            $this->email->to($to_email);
+            $this->email->subject('New sign-in! from '.$browser.'');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->email->message($message);
             $this->email->set_mailtype("html");
             $this->email->send();
             
             $this->input->set_cookie($setLogin, TRUE);
+<<<<<<< HEAD
            // redirect(site_url().'main/');
         
             
+=======
+            redirect(site_url().'main/');
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //check user level
+        if (empty($data['role'])) {
+            redirect(site_url() . 'main/login/');
+        }
+        $dataLevel = $this->userlevel->checkLevel($data['role']);
+        //check user level
+        $data['title'] = "Robuspack";
+        if ($dataLevel == "is_admin") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $data['maximominimo'] = $this->TotBitModelo->query();
+            $data['totalRegistroBitacoraCarlos'] = $this->TotBitModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->TotBitModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->TotBitModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->TotBitModelo->totalRegistroBitacoraOrlene(1);
+            $this->load->view('TotBit/listarTotBit', $data);
+            $this->load->view('footer');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);

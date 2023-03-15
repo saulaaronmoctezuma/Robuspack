@@ -42,8 +42,12 @@ Class MaqCli extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['resumen'] = $this->MaqCliModelo->query();
+<<<<<<< HEAD
              $data['totalRegistroMaquinaPorCliente'] = $this->MaqCliModelo->totalRegistroMaquinaPorCliente(1);
             
+=======
+            $data['totalRegistroMaquinaPorCliente'] = $this->MaqCliModelo->totalRegistroMaquinaPorCliente(1);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('MaqCli/listarMaqCli', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
@@ -53,8 +57,12 @@ Class MaqCli extends CI_Controller {
              $data['totalRegistroMaquinaPorCliente'] = $this->MaqCliModelo->totalRegistroMaquinaPorCliente(1);
             $this->load->view('MaqCli/listarMaqCli', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         } 
          else if ($dataLevel == "is_Gerente_Ventas") {
+=======
+        }else if ($dataLevel == "is_Gerente_Ventas") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['resumen'] = $this->MaqCliModelo->query();

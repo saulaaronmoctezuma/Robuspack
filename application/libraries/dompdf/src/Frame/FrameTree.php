@@ -22,7 +22,11 @@ use Dompdf\Frame;
  *
  * The FrameTree consists of {@link Frame} objects each tied to specific
  * DOMNode objects in a specific DomDocument.  The FrameTree has the same
+<<<<<<< HEAD
  * structure as the DomDocument, but adds additional capabalities for
+=======
+ * structure as the DomDocument, but adds additional capabilities for
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  * styling and layout.
  *
  * @package dompdf
@@ -90,7 +94,11 @@ class FrameTree
     }
 
     /**
+<<<<<<< HEAD
      * Returns the DOMDocument object representing the curent html document
+=======
+     * Returns the DOMDocument object representing the current html document
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      *
      * @return DOMDocument
      */

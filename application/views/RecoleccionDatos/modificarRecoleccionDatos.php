@@ -146,9 +146,12 @@
                                ;
                          
                         
+<<<<<<< HEAD
                     }else if ($dataLevel == 'is_freelance') {
                          echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
                              
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }else if ($dataLevel == 'is_logistica') {
                           ?>
                         <tr>
@@ -159,6 +162,10 @@
                                 
                                 <option value="Benjamín Lopéz Gamboa" <?php if ($vendedor == "Benjamín Lopéz Gamboa") {echo "Selected"; } ?>>Benjamín Lopéz Gamboa</option>
                                 <option value="Gerardo López Martinez" <?php if ($vendedor == "Gerardo López Martinez") {  echo "Selected";} ?>>Gerardo López Martinez</option>
+<<<<<<< HEAD
+=======
+                                 <option value="Sergio Peñafiel Soto" <?php if ($vendedor == "Sergio Peñafiel Soto") {  echo "Selected";} ?>>Sergio Peñafiel Soto</option>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 
                             </optgroup>
                            </SELECT></td>
@@ -177,12 +184,24 @@
                     
                            
                          
+<<<<<<< HEAD
+=======
+                    }else if ($dataLevel == 'is_freelance') {
+                         echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                             
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }else if ($dataLevel == 'is_refacciones') {
                          echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
                              
                     }else if ($dataLevel == 'is_Gerente_Ventas') {
                          echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
                              
+<<<<<<< HEAD
+=======
+                    }else if ($dataLevel == 'is_Gerente_Ventas') {
+                         echo '<input id="a3" class="form-control" type="hidden" name="vendedor"  value="'.$vendedor.'" >';
+                             
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }else {
                         
                     }
@@ -211,6 +230,7 @@
                            </SELECT></td>
                     </tr>
                       <?php
+<<<<<<< HEAD
                     } else if ($dataLevel == 'is_Gerente_Ventas') {
                        ?> <tr>
                         <td>Identificador</td>
@@ -235,11 +255,18 @@
                        ?> <tr>
                         <td>Identificador</td>
                         <td> <SELECT name="identificador" class="form-control " > 
+=======
+                    } else if (($dataLevel == 'is_consultor') && ($identificador == 'Información compartida'))  {
+                       ?> <tr>
+                        <td>Identificador</td>
+                       <!-- <td> <SELECT name="identificador" class="form-control " > 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <optgroup label="Selecciona una opción">
                                 
                                 <option value="Información compartida" <?php if ($identificador == "Información compartida") {echo "Selected"; } ?>>Información compartida</option>
                                
                             </optgroup>
+<<<<<<< HEAD
                            </SELECT></td>
                     </tr>
                       <?php
@@ -259,6 +286,19 @@
                     
                     
                     
+=======
+                           </SELECT></td>-->
+                           
+                           
+                                 <td>  <input class="form-control" type="text" readonly="readonly"  style="background-color:#03E7F7;"name="identificador" value="<?= $identificador ?>"> </td>
+                       
+                    </tr>
+                      <?php
+                    }else if($dataLevel == 'is_freelance'){
+                        
+                        echo '<input id="a3" class="form-control" type="hidden" name="identificador"  value="'.$identificador .'" >';
+                    }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     else {
                       echo ' <tr>
                         <td>Identificador</td>
@@ -305,6 +345,7 @@
                               <option value="Aguascalientes" <?php if ($estado == "Aguascalientes") {echo "Selected"; } ?>>Aguascalientes</option>
                                 <option value="Baja California" <?php if ($estado == "Baja California") {  echo "Selected";} ?>>Baja California</option>
                                 <option value="Baja California Sur" <?php if ($estado == "Baja California Sur") {echo "Selected"; } ?>>Baja California Sur</option>
+<<<<<<< HEAD
                                 
                                 
                                 
@@ -312,6 +353,9 @@
                                 
                                 <option value="CDMX" <?php if ($estado == "CDMX") {  echo "Selected";} ?>>CDMX</option>
                                 
+=======
+                                <option value="Campeche" <?php if ($estado == "Campeche") {  echo "Selected";} ?>>Campeche</option>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <option value="Chihuahua" <?php if ($estado == "Chihuahua") {echo "Selected"; } ?>>Chihuahua</option>
                                 <option value="Chiapas" <?php if ($estado == "Chiapas") {  echo "Selected";} ?>>Chiapas</option>
                                 <option value="Coahuila" <?php if ($estado == "Coahuila") {echo "Selected"; } ?>>Coahuila</option>

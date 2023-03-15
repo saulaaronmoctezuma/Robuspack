@@ -64,7 +64,11 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
+<<<<<<< HEAD
             $query = $this->db->query('SELECT * FROM maquinas_por_cliente ORDER BY cliente');
+=======
+            $query = $this->db->query('SELECT * FROM maquinas_por_cliente ORDER BY grupo,cliente');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
            
         $colMaqCli = array();
@@ -80,6 +84,29 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
         }
         return $colMaqCli;
         
+<<<<<<< HEAD
+=======
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            
+            $query = $this->db->query('SELECT * FROM maquinas_por_cliente ORDER BY grupo,cliente');
+
+
+
+           $colMaqCli = array();
+
+        foreach ($query->result() as $key => $value) {
+            $objeto = new MaqCliPojo(
+                    $value->grupo, 
+                    $value->cliente,
+                    $value->maquinas_por_cliente
+                    );
+            
+            array_push($colMaqCli, $objeto);
+        }
+        return $colMaqCli;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else if ($dataLevel == "is_editor") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -105,6 +132,7 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
             array_push($colMaqCli, $objeto);
         }
         return $colMaqCli;
+<<<<<<< HEAD
         }
         else if ($dataLevel == "is_Gerente_Ventas") {
             /* Para traerse el id del usuario */
@@ -129,6 +157,9 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
         }
         
         else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
         
@@ -147,7 +178,11 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
     public function refacciones() {
     }
     
+<<<<<<< HEAD
     public function totalRegistroMaquinaPorCliente() {
+=======
+     public function totalRegistroMaquinaPorCliente() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->db->select('sum(maquinas_por_cliente) as total_registros');
         $this->db->from('maquinas_por_cliente');
        // $this->db->where('bitacora_mtto.id= ', 24);
@@ -155,4 +190,8 @@ class MaqCliModelo extends CI_Model implements IModeloAbstracto {
         return $query->result();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

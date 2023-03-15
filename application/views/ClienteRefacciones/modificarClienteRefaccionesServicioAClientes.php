@@ -424,10 +424,20 @@
         <body onclick="habilitar(this.form)">
 
 
+<<<<<<< HEAD
             <form name="formulario" id="formal" role="form" action="<?= base_url('ClienteRefacciones/clienteRefaccionesModificar') ?>" method="post" align="center">
                 <h1>Actualizar datos</h1>
                 <MARQUEE SCROLLDELAY =200>Actualizando sus datos</MARQUEE>
                 <div class="container" >
+=======
+            <form name="formulario" id="formal" role="form"  action="<?= base_url() ?>verificacion/updatedata" method="post" enctype="multipart/form-data" align="center">
+                <h1>Actualizar datos</h1>
+                <MARQUEE SCROLLDELAY =200>Actualizando sus datos</MARQUEE>
+                <div class="container" >
+                    
+                    
+                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <table class="table table-bordered table-striped">
                         <tbody>
                             <tr>
@@ -677,7 +687,45 @@
                         </tr>
                        
                       
+<<<<<<< HEAD
                          <input id="codigo_cuchilla" type="hidden" class="form-control input-sm"  name="codigo_cuchilla" value="<?= $codigo_cuchilla ?>">
+=======
+                        
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                     
+                        <input id="codigo_cuchilla" type="hidden" class="form-control input-sm"  name="codigo_cuchilla" value="<?= $codigo_cuchilla ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <input id="cantidad_cuchilla" type="hidden" class="form-control input-sm"  name="cantidad_cuchilla" value="<?= $cantidad_cuchilla ?>">
                         <input id="precio_cuchilla" type="hidden" class="form-control input-sm"  name="precio_cuchilla" value="<?= $precio_cuchilla ?>">
                         <input id="codigo_cubierta" type="hidden" class="form-control input-sm"  name="codigo_cubierta" value="<?= $codigo_cubierta ?>">
@@ -754,12 +802,23 @@
                         <input id="precio_cuchilla_11" type="hidden" class="form-control input-sm"  name="precio_cuchilla_11" value="<?= $precio_cuchilla_11 ?>">
                         
                         
+<<<<<<< HEAD
                         
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                        
                         </tbody>
 
                     </table>
                 </div>
             </form>
+<<<<<<< HEAD
+=======
+                    
+        <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+        <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </body>
 </php>

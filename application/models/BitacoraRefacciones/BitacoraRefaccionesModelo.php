@@ -88,10 +88,14 @@ class BitacoraRefaccionesModelo extends CI_Model {
             $this->db->order_by("id_bitacora", "desc");
             $this->db->join('users', 'bitacora_refacciones.id=users.id');*/
             
+<<<<<<< HEAD
             $query = $this->db->query('SELECT b.id_bitacora,b.grupo,b.cliente,b.descripcion, b.archivo1, b.observacion, DATE_ADD(b.fecha_insercion, INTERVAL -6 HOUR) as fecha_insercion , DATE_ADD(b.fecha_modificar, INTERVAL -6 HOUR) as fecha_modificar , u.first_name FROM bitacora_refacciones AS b INNER JOIN users u ON u.id=b.id Where u.id=7 or u.id=17 or u.id=6 or u.id=39 or u.id=4 order by b.fecha_insercion desc');
             
             
             /*query = $this->db->query('SELECT b.id_bitacora,b.grupo,b.cliente,b.descripcion, b.archivo1, b.observacion, DATE_ADD(b.fecha_insercion, INTERVAL -5 HOUR) as fecha_insercion , DATE_ADD(b.fecha_modificar, INTERVAL -5 HOUR) as fecha_modificar , u.first_name FROM bitacora_refacciones AS b INNER JOIN users u ON u.id=b.id Where u.id=6 or u.id=7 or u.id=28 or u.id=33 or u.id=5 or u.id=17 or u.id=36 or u.id=39 order by b.id_bitacora desc');*/
+=======
+            $query = $this->db->query('SELECT b.id_bitacora,b.grupo,b.cliente,b.descripcion, b.archivo1, b.observacion, DATE_ADD(b.fecha_insercion, INTERVAL -5 HOUR) as fecha_insercion , DATE_ADD(b.fecha_modificar, INTERVAL -5 HOUR) as fecha_modificar , u.first_name FROM bitacora_refacciones AS b INNER JOIN users u ON u.id=b.id Where u.id=6 or u.id=7 or u.id=28 or u.id=32 or u.id=5 order by b.id_bitacora desc');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
            // $query = $this->db->get();
             $data = $query->result_array();
@@ -106,15 +110,21 @@ class BitacoraRefaccionesModelo extends CI_Model {
             }
             return $colBitacora;
         
+<<<<<<< HEAD
         }
         
         
         else if ($dataLevel == "is_editor") {
            /* Para traerse el id del usuario */
+=======
+        } else if ($dataLevel == "is_editor") {
+            /* Para traerse el id del usuario */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
             // $query = $this->db->query('SELECT * FROM listaclientes order by id_bitacora desc');
 
+<<<<<<< HEAD
             /*$this->db->select('bitacora_refacciones.id_bitacora,bitacora_refacciones.grupo,bitacora_refacciones.grupo, bitacora_refacciones.cliente, bitacora_refacciones.descripcion, bitacora_refacciones.archivo1,bitacora_refacciones.observacion, bitacora_refacciones.fecha_insercion, bitacora_refacciones.fecha_modificar, users.first_name');
             $this->db->from('bitacora_refacciones');
            // $this->db->where("users.id='11'  OR users.id='12'  OR users.id='13'");
@@ -124,6 +134,15 @@ class BitacoraRefaccionesModelo extends CI_Model {
             $query = $this->db->query('SELECT b.id_bitacora,b.grupo,b.cliente,b.descripcion, b.archivo1, b.observacion, DATE_ADD(b.fecha_insercion, INTERVAL -6 HOUR) as fecha_insercion , DATE_ADD(b.fecha_modificar, INTERVAL -6 HOUR) as fecha_modificar , u.first_name FROM bitacora_refacciones AS b INNER JOIN users u ON u.id=b.id Where u.id=7 or u.id=36 or u.id=39 or u.id=4 order by b.id_bitacora desc');
 
            // $query = $this->db->get();
+=======
+            $this->db->select('bitacora_refacciones.id_bitacora,bitacora_refacciones.grupo,bitacora_refacciones.grupo, bitacora_refacciones.cliente, bitacora_refacciones.descripcion, bitacora_refacciones.archivo1,bitacora_refacciones.observacion, bitacora_refacciones.fecha_insercion, bitacora_refacciones.fecha_modificar, users.first_name');
+            $this->db->from('bitacora_refacciones');
+           // $this->db->where("users.id='11'  OR users.id='12'  OR users.id='13'");
+            $this->db->order_by("id_bitacora", "desc");
+            $this->db->join('users', 'bitacora_refacciones.id=users.id');
+
+            $query = $this->db->get();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data = $query->result_array();
 
             $colBitacora = array();
@@ -136,6 +155,7 @@ class BitacoraRefaccionesModelo extends CI_Model {
             }
             return $colBitacora;
         }
+<<<<<<< HEAD
         
         
         
@@ -143,6 +163,37 @@ class BitacoraRefaccionesModelo extends CI_Model {
         
         else if ($dataLevel == "is_freelance") {
           /* Para traerse el id del usuario */
+=======
+
+
+        //condicions que realice la consulta solo si es refacciones
+        else if ($dataLevel == "is_Gerente_Ventas") {
+               /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+            /* Para traerse el id del usuario */
+            // $query = $this->db->query('SELECT * FROM listaclientes order by id_bitacora desc');
+
+            $this->db->select('bitacora_refacciones.id_bitacora,bitacora_refacciones.grupo,bitacora_refacciones.grupo, bitacora_refacciones.cliente, bitacora_refacciones.descripcion, bitacora_refacciones.archivo1,bitacora_refacciones.observacion, bitacora_refacciones.fecha_insercion, bitacora_refacciones.fecha_modificar, users.first_name');
+            $this->db->from('bitacora_refacciones');
+           // $this->db->where("users.id='11'  OR users.id='12'  OR users.id='13'");
+            $this->db->order_by("id_bitacora", "desc");
+            $this->db->join('users', 'bitacora_refacciones.id=users.id');
+
+            $query = $this->db->get();
+            $data = $query->result_array();
+
+            $colBitacora = array();
+
+            foreach ($query->result() as $key => $value) {
+                $objeto = new BitacoraRefaccionesPojo(
+                        $value->id_bitacora, $value->grupo, $value->cliente, $value->descripcion, $value->archivo1, $value->observacion, $value->fecha_insercion, $value->fecha_modificar, $value->first_name
+                );
+                array_push($colBitacora, $objeto);
+            }
+            return $colBitacora;
+        } else if ($dataLevel == "is_refacciones") {
+            /* Para traerse el id del usuario */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data = $this->session->userdata;
             $data = array(
                 //se lleva el valor del id del usuario
@@ -173,6 +224,7 @@ class BitacoraRefaccionesModelo extends CI_Model {
             }
 
             return $colBitacora;
+<<<<<<< HEAD
         }
         
         
@@ -211,6 +263,9 @@ class BitacoraRefaccionesModelo extends CI_Model {
             }
             return $colBitacora;
         } else if ($dataLevel == "is_refacciones") {
+=======
+        } else if ($dataLevel == "is_freelance") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             $data = array(
@@ -227,7 +282,11 @@ class BitacoraRefaccionesModelo extends CI_Model {
 
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
             $query = $this->db->where('users.id= ', $dataLevel);
+<<<<<<< HEAD
             $query = $this->db->order_by("fecha_insercion", "desc");
+=======
+            $query = $this->db->order_by("id_bitacora", "desc");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             //tree los datos de la consulta
             $query = $this->db->get();
@@ -258,7 +317,11 @@ class BitacoraRefaccionesModelo extends CI_Model {
 
 
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+<<<<<<< HEAD
             $this->db->where("users.id='7' OR  users.id='36' OR users.id='39'");
+=======
+            $this->db->where("users.id='11' OR  users.id='12' OR users.id='13'");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             $this->db->order_by("id_bitacora", "desc");
 
@@ -400,12 +463,21 @@ class BitacoraRefaccionesModelo extends CI_Model {
         }
 
         return $options_arr;
+<<<<<<< HEAD
     }
     
     
     
     
      public function totalRegistroBitacoraCarlos()
+=======
+    
+        
+        
+    }
+    
+      public function totalRegistroBitacoraCarlos()
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     {
             $this->db->select('COUNT(*) as total_registros_carlos');
             $this->db->from('bitacora_refacciones');
@@ -428,7 +500,11 @@ class BitacoraRefaccionesModelo extends CI_Model {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('bitacora_refacciones');
+<<<<<<< HEAD
            $this->db->where('bitacora_refacciones.id= ', 39);
+=======
+           $this->db->where('bitacora_refacciones.id= ', 36);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $query = $this->db->get();
              return $query->result();
         }
@@ -442,4 +518,9 @@ class BitacoraRefaccionesModelo extends CI_Model {
              return $query->result();
         }
 
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

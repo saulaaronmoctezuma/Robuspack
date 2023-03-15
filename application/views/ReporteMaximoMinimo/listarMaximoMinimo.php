@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -6,6 +7,8 @@
  */
 -->
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <html lang="es-mx">
 
     <head>
@@ -61,6 +64,7 @@
 
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+<<<<<<< HEAD
             <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
         </div>
 
@@ -68,6 +72,15 @@
             <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelRotacionInventario">
                 <input type="submit" title="Da clic para exportar los datos a Excel" name="export" class="btn btn-success" value="Exportar a excel" />
             </form>-->
+=======
+            <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+        </div>
+
+        <div class="text-center">
+            <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelRotacionInventario">
+                <input type="submit" title="Da clic para exportar los datos a Excel" name="export" class="btn btn-success" value="Exportar a excel" />
+            </form>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </div>
     </div>
  <div class="container" style="margin-top:1px;">
@@ -81,12 +94,20 @@
                 <tr>
 
 
+<<<<<<< HEAD
 
                     <th class="header" style="text-align: center">Código</th>
                     <th class="header" style="text-align: center">Fecha_Corte de Rotación</th>
                     <th class="header" style="text-align: center">Fecha_Último Consumo</th>
                     <th class="header" style="text-align: center">Fecha_Requiere Piezas</th>
                     <th class="header" style="text-align: center">Pedido Inteligente</th>
+=======
+                    <th class="header" style="text-align: center">Código</th>
+                    <th class="header" style="text-align: center"> <a href="http://localhost/master/Maquinaria/actualiza/1">Fecha_Corte de Rotación</th>
+                    <th class="header" style="text-align: center">Fecha_Último Consumo</th>
+                    <th class="header" style="text-align: center">Fecha_Requiere Piezas</th>
+                    <th class="header" style="text-align: center">Pedido_Inteligente</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <th class="header" style="text-align: center">Total Req. Mensual</th>
                     <th class="header" style="text-align: center">Total Req. Trimestral</th>
                     <th class="header" style="text-align: center">Total Req. Mensual con Oc y Cons</th>
@@ -112,7 +133,11 @@
                 </tr>
             </thead>
 
+<<<<<<< HEAD
             <tbody align="center" id="myTable">
+=======
+            <tbody align="center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 <?php
                 foreach ($maximominimo as $obj) {
@@ -179,20 +204,32 @@
                 ?>
 
                 </tr>
+<<<<<<< HEAD
 <!--
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <tr>
                     <td colspan="5"></td> 
 
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalRequeridoMensual as $fila) {
+=======
+                        foreach ($totalRequeridoMensual as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->total_requerido_mensual ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
@@ -200,13 +237,21 @@
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalRequeridoTrimestrual as $fila) {
+=======
+                        foreach ($totalRequeridoTrimestrual as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->total_requerido_trimestral ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
@@ -215,51 +260,83 @@
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalRequeridoMensualOcyCons as $fila) {
+=======
+                        foreach ($totalRequeridoMensualOcyCons as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->total_requerido_mensual_con_or_cons ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalRequeridoTrimestrualOcyCons as $fila) {
+=======
+                        foreach ($totalRequeridoTrimestrualOcyCons as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->total_requerido_trimestral_con_or_cons ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalInventario as $fila) {
+=======
+                        foreach ($totalInventario as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->inventario ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalPiezasRecibir as $fila) {
+=======
+                        foreach ($totalPiezasRecibir as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->piezas_a_recibir ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
@@ -267,26 +344,42 @@
 
                     <td>
                         <?php
+<<<<<<< HEAD
                        # foreach ($totalDisponibilidadTotal as $fila) {
+=======
+                        foreach ($totalDisponibilidadTotal as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->disponibilidad_total ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
 
                     <td>
                         <?php
+<<<<<<< HEAD
                         #foreach ($totalPiezasSolicitar as $fila) {
+=======
+                        foreach ($totalPiezasSolicitar as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                             <div>
                                 Total:<div><?= $fila->piezas_a_solicitar ?></div>
                             </div>
                             <?php
+<<<<<<< HEAD
                         #}
+=======
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         ?>
                     </td>
 
@@ -294,7 +387,11 @@
                     <td colspan="3"></td> 
 
 
+<<<<<<< HEAD
                 </tr>-->
+=======
+                </tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             </tbody>
         </table>
 

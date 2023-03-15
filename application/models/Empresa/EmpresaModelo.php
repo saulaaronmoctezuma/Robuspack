@@ -4,16 +4,26 @@ require 'EmpresaPojo.php';
 require 'IModeloAbstracto.php';
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 
 /**
  * Description of EmpresaModelo
  *
+<<<<<<< HEAD
  * @author Desarrollo
+=======
+ * @author Desarrollo.robus
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 class EmpresaModelo extends CI_Model implements IModeloAbstracto {
     
@@ -48,11 +58,19 @@ class EmpresaModelo extends CI_Model implements IModeloAbstracto {
     }
     
     public function add($data) {
+<<<<<<< HEAD
         $this->db->insert('empresa', $data);
     }
 
     public function delete($id) {
         $this->db->delete('empresa', array('id_empresa' => $id));
+=======
+        $this->db->insert('Empresa', $data);
+    }
+
+    public function delete($id) {
+        $this->db->delete('Empresa', array('id_empresa' => $id));
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     public function query() {
@@ -114,7 +132,11 @@ class EmpresaModelo extends CI_Model implements IModeloAbstracto {
                
             );
             $this->db->where("id_empresa", $empresa->getId_empresa());
+<<<<<<< HEAD
             $this->db->update("empresa", $datos);
+=======
+            $this->db->update("Empresa", $datos);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
     }
 
@@ -157,7 +179,15 @@ class EmpresaModelo extends CI_Model implements IModeloAbstracto {
 
     public function actualizar($data) {
         $this->db->where('id_empresa', $data['id_empresa']);
+<<<<<<< HEAD
         return $this->db->update('empresa', $data);
+=======
+        return $this->db->update('Empresa', $data);
+    }
+
+    public function refacciones() {
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
 }

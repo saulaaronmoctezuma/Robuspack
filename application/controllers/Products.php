@@ -10,7 +10,13 @@ class Products extends Admin_Controller {
         $this->not_logged_in();
 
         $this->data['page_title'] = 'Refacciones';
+<<<<<<< HEAD
 
+=======
+        $this->load->model('model_orders');
+        $this->load->model('model_products');
+        $this->load->model('model_company');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->load->model('model_products');
         $this->load->model('model_brands');
         $this->load->model('model_category');
@@ -69,11 +75,106 @@ class Products extends Admin_Controller {
         echo json_encode($data);
     }
 
+<<<<<<< HEAD
     public function agregar() {
+=======
+    /* public function agregar() {
 
 
 
 
+      //user data from session
+      $data = $this->session->userdata;
+      if (empty($data)) {
+      redirect(site_url() . 'main/login/');
+      }
+
+      //check user level
+      if (empty($data['role'])) {
+      redirect(site_url() . 'main/login/');
+      }
+      $dataLevel = $this->userlevel->checkLevel($data['role']);
+      //check user level
+      $data['title'] = "Robuspack";
+      if ($dataLevel == "is_admin") {
+      //se trae los datos de la consulta del modelo
+      $this->load->view('header', $data);
+      // $this->load->view('navbar', $data);
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/header_menu', $data);
+
+      $this->load->view('templates/side_menubar', $data);
+      $users = $this->model_products->getProducts();
+
+      $data['users'] = $users;
+
+      $this->load->view('products/entrada', $data);
+      $this->load->view('footer');
+      } else if ($dataLevel == "is_editor") {
+      //se trae los datos de la consulta del modelo
+      $this->load->view('header', $data);
+      // $this->load->view('navbar', $data);
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/header_menu', $data);
+
+      $this->load->view('templates/side_menubar', $data);
+      $users = $this->model_products->getProducts();
+
+      $data['users'] = $users;
+
+      $this->load->view('products/entrada', $data);
+      $this->load->view('footer');
+      } else if ($dataLevel == "is_almacen") {
+      //se trae los datos de la consulta del modelo
+      $this->load->view('header', $data);
+      // $this->load->view('navbar', $data);
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/header_menu', $data);
+
+      $this->load->view('templates/side_menubar', $data);
+      $users = $this->model_products->getProducts();
+
+      $data['users'] = $users;
+
+      $this->load->view('products/entrada', $data);
+      $this->load->view('footer');
+      } else {
+      redirect(site_url() . 'orders/');
+      }
+      }
+     */
+
+    public function agregar() {
+        /* if(!in_array('createOrder', $this->permission)) {
+          redirect('dashboard', 'refresh');
+          } */
+
+        $this->data['page_title'] = 'Agregar Orden';
+
+        $this->form_validation->set_rules('sku[]', 'sku', 'trim|required');
+
+
+        if ($this->form_validation->run() == TRUE) {
+            
+            //$this->load->model('model_orders');
+            
+            $id_entrada = $this->model_products->entradaInventario();
+
+            if ($id_entrada) {
+                $this->session->set_flashdata('success', 'Creado Correctamente');
+                //redirect('orders/update/'.$order_id, 'ref resh');
+                redirect('products/', 'refresh');
+            } else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
+                redirect('products/agregar/', 'refresh');
+            }
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
+
+
+
+
+<<<<<<< HEAD
         //user data from session
         $data = $this->session->userdata;
         if (empty($data)) {
@@ -129,6 +230,89 @@ class Products extends Admin_Controller {
 
             $this->load->view('products/entrada', $data);
             $this->load->view('footer');
+=======
+            $this->load->model('Model_products');
+            $data['title'] = 'Refacciones';
+            //user data from session
+            $data = $this->session->userdata;
+            if (empty($data)) {
+                redirect(site_url() . 'main/login/');
+            }
+            //check user level
+            if (empty($data['role'])) {
+                redirect(site_url() . 'main/login/');
+            }
+            $dataLevel = $this->userlevel->checkLevel($data['role']);
+            //check user level
+            $data['title'] = "Robuspack";
+            if ($dataLevel == "is_admin") {
+                $data['category'] = $this->model_orders->get_category()->result();
+
+                // false case
+                $company = $this->model_company->getCompanyData(1);
+
+                $this->data['products'] = $this->model_products->getActiveProductData();
+
+                $data['clienteCombo'] = $this->model_orders->getCliente();
+                $users = $this->model_orders->getProducts();
+
+                $data['users'] = $users;
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('products/entrada', $this->data);
+            } else if ($dataLevel == "is_editor") {
+                $data['category'] = $this->model_orders->get_category()->result();
+
+
+                $this->data['products'] = $this->model_products->getActiveProductData();
+
+                $data['clienteCombo'] = $this->model_orders->getCliente();
+                $users = $this->model_orders->getProducts();
+
+                $data['users'] = $users;
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('orders/create', $this->data);
+            } else if ($dataLevel == "is_almacen") {
+                $data['category'] = $this->model_orders->get_category()->result();
+
+                // false case
+                $company = $this->model_company->getCompanyData(1);
+                $this->data['company_data'] = $company;
+                $this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+                $this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
+                $this->data['products'] = $this->model_products->getActiveProductData();
+
+                $data['clienteCombo'] = $this->model_orders->getCliente();
+                $users = $this->model_orders->getProducts();
+
+                $data['users'] = $users;
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('orders/create', $this->data);
+            } else if ($dataLevel == "is_servicio_a_clientes") {
+                $data['category'] = $this->model_orders->get_category()->result();
+
+                // false case
+                $company = $this->model_company->getCompanyData(1);
+                $this->data['company_data'] = $company;
+                $this->data['is_vat_enabled'] = ($company['vat_charge_value'] > 0) ? true : false;
+                $this->data['is_service_enabled'] = ($company['service_charge_value'] > 0) ? true : false;
+
+                $this->data['products'] = $this->model_products->getActiveProductData();
+
+                $data['clienteCombo'] = $this->model_orders->getCliente();
+                $users = $this->model_orders->getProducts();
+
+                $data['users'] = $users;
+                $this->load->view('header', $data);
+                //$this->load->view('navbar', $data);
+                $this->render_template('orders/create', $this->data);
+            } else {
+                redirect(site_url() . 'products/');
+            }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
     }
 
@@ -275,7 +459,11 @@ class Products extends Admin_Controller {
             $this->load->view('header', $data);
             //$this->load->view('navbar', $data);
             $this->render_template('products/index', $this->data);
+<<<<<<< HEAD
         }else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/login/');
         }
     }
@@ -312,6 +500,7 @@ class Products extends Admin_Controller {
                 $buttons .= '<a href="' . base_url('products/update/' . $value['id']) . '" class="btn btn-default"><i class="fa fa-pencil"></i></a>';
 
                 $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
+<<<<<<< HEAD
             } else if ($dataLevel == "is_mantenimiento") {
                 $buttons = '';
             } else if ($dataLevel == "is_servicio_a_clientes") {
@@ -320,6 +509,12 @@ class Products extends Admin_Controller {
                 $buttons .= '<a href="' . base_url('products/update/' . $value['id']) . '" class="btn btn-default"><i class="fa fa-pencil"></i></a>';
 
                 
+=======
+            } elseif ($dataLevel == "is_mantenimiento") {
+                $buttons = '';
+            } elseif ($dataLevel == "is_servicio_a_clientes") {
+                $buttons = '';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             } elseif ($dataLevel == "is_jefe_mantenimiento") {
                 $buttons = '';
             } elseif ($dataLevel == "is_maquinaria") {
@@ -341,6 +536,24 @@ class Products extends Admin_Controller {
             } else if ($value['qty'] <= 0) {
                 $qty_status = '<!--<span class="label label-danger">Out of stock !</span>-->';
             }
+<<<<<<< HEAD
+=======
+            
+            
+            $q11 = '';
+              if($value['linea'] == "MEC") {
+                       
+               $q11 =       '<span class="label label-warning">Low !</span>';
+                           
+           
+            } else if ($value['linea'] === "MANU") {
+               
+          $q11 =       '<span class="label label-warning">Low !</span>';
+                           
+                           
+                             
+            }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             $data = $this->session->userdata;
             if (empty($data)) {
@@ -354,13 +567,19 @@ class Products extends Admin_Controller {
             if ($dataLevel == "is_admin") {
                 $result['data'][$key] = array(
                     //mostrar imagen $img,
+<<<<<<< HEAD
                     $value['sku'],
                     $value['description'],
                      $value['qty'] . ' ' . $qty_status,
+=======
+                     $value['sku'],
+                    $value['description'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['traduccion'],
                     $value['serie_maquina'],
                     $value['tipo_maquina'],
                     $value['modulo'],
+<<<<<<< HEAD
                    
                     $value['medidas_caracteristicas'],
                     $value['medida_maquina'],
@@ -374,6 +593,20 @@ class Products extends Admin_Controller {
                    '<center>$'. $value['price2']  .'</center>',
                    '<center>$'. $value['price3'] .'</center>',
                    $value['fecha_actualizacion_precio'],
+=======
+                    $value['qty'] . ' ' . $qty_status,
+                    $value['medidas_caracteristicas'],
+                    $value['medida_maquina'],
+                    //$store_data['name'],
+                    $value['linea']. ' ' . $q11,
+                    $value['refacciones_consumibles'],
+                    $value['fecha_ultima_venta'],
+                   '<center>$'. $value['precio_de_compra'] .'</center>',
+                   '<center>$'. $value['valor_almacen'].'</center>',
+                   '<center>$'. $value['price'].'</center>',
+                   '<center>$'. $value['price2'].'</center>',
+                   '<center>$'. $value['price3'].'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['tiempo_surtido'],
                     $value['indice_abc'],
                     $value['min'],
@@ -389,6 +622,7 @@ class Products extends Admin_Controller {
             } else if ($dataLevel == "is_editor") {
                 $result['data'][$key] = array(
                     //mostrar imagen $img,
+<<<<<<< HEAD
                     $value['sku'],
                     $value['description'],
                     $value['traduccion'],
@@ -409,6 +643,27 @@ class Products extends Admin_Controller {
                  '<center>$'.    $value['price3']  .'</center>',
                   $value['fecha_actualizacion_precio'],
                     $value['tiempo_surtido'],  
+=======
+                   $value['sku'],
+                    $value['description'],
+                    $value['traduccion'],
+                    $value['serie_maquina'],
+                    $value['medida_maquina'],
+                    $value['modulo'],
+                    $value['tipo_maquina'],
+                    $value['medidas_caracteristicas'],
+                    $value['linea'],
+                    $value['refacciones_consumibles'],
+                    $value['fecha_ultima_venta'],
+                    $value['qty'] . ' ' . $qty_status,
+                  '<center>$'.	  $value['precio_de_compra'] .'</center>',
+                   '<center>$'.	 $value['valor_almacen'] .'</center>',
+                   '<center>$'.	 $value['price'] .'</center>',
+                   '<center>$'.	 $value['price2'] .'</center>',
+                   '<center>$'.	 $value['price3'] .'</center>',
+                    $value['tiempo_surtido'],
+                    //$store_data['name'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['indice_abc'],
                     $value['min'],
                     $value['max'],
@@ -440,9 +695,14 @@ class Products extends Admin_Controller {
                     //  $value['precio_de_compra'],
                     //$value['valor_almacen'],
                     //$value['price'],
+<<<<<<< HEAD
                     $value['price2'],
                     $value['price3'],
                      $value['fecha_actualizacion_precio'],
+=======
+                  '<center>$'.	  $value['price2'] .'</center>',
+                  '<center>$'.	  $value['price3'] .'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['tiempo_surtido'],
                     $value['indice_abc'],
                     $value['min'],
@@ -460,6 +720,7 @@ class Products extends Admin_Controller {
                     $value['sku'],
                     $value['description'],
                     $value['traduccion'],
+<<<<<<< HEAD
                      $value['qty'] . ' ' . $qty_status,
                       $value['price'],
                     $value['price2'],
@@ -469,15 +730,29 @@ class Products extends Admin_Controller {
                     $value['tipo_maquina'],
                     $value['modulo'],
                    
+=======
+                    $value['serie_maquina'],
+                    $value['tipo_maquina'],
+                    $value['modulo'],
+                    $value['qty'] . ' ' . $qty_status,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['medidas_caracteristicas'],
                     $value['medida_maquina'],
                     //$store_data['name'],
                     $value['linea'],
                     $value['refacciones_consumibles'],
                     $value['fecha_ultima_venta'],
+<<<<<<< HEAD
                      $value['precio_de_compra'],
                     //$value['valor_almacen'],
                    
+=======
+                    //  $value['precio_de_compra'],
+                    //$value['valor_almacen'],
+                    //$value['price'],
+                 '<center>$'.	   $value['price2'] .'</center>',
+                 '<center>$'.	   $value['price3'] .'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['tiempo_surtido'],
                     //$value['indice_abc'],
                     //$value['min'],
@@ -509,9 +784,14 @@ class Products extends Admin_Controller {
                     //  $value['precio_de_compra'],
                     //$value['valor_almacen'],
                     //$value['price'],
+<<<<<<< HEAD
                     $value['price2'],
                     $value['price3'],
                      $value['fecha_actualizacion_precio'],
+=======
+                 '<center>$'.	   $value['price2'] .'</center>',
+                 '<center>$'.	   $value['price3'] .'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     // $value['tiempo_surtido'],
                     //$value['indice_abc'],
                     //$value['min'],
@@ -543,9 +823,14 @@ class Products extends Admin_Controller {
                     //  $value['precio_de_compra'],
                     //$value['valor_almacen'],
                     //$value['price'],
+<<<<<<< HEAD
                     $value['price2'],
                     $value['price3'],
                      $value['fecha_actualizacion_precio'],
+=======
+                   '<center>$'.	 $value['price2'] .'</center>',
+                   '<center>$'.	 $value['price3'] .'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     // $value['tiempo_surtido'],
                     //$value['indice_abc'],
                     //$value['min'],
@@ -577,9 +862,14 @@ class Products extends Admin_Controller {
                     //  $value['precio_de_compra'],
                     //$value['valor_almacen'],
                     //$value['price'],
+<<<<<<< HEAD
                     $value['price2'],
                     $value['price3'],
                      $value['fecha_actualizacion_precio'],
+=======
+                   '<center>$'.	 $value['price2'].'</center>',
+                   '<center>$'.	 $value['price3'].'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['tiempo_surtido'],
                     $value['indice_abc'],
                     //$value['min'],
@@ -611,9 +901,14 @@ class Products extends Admin_Controller {
                     //  $value['precio_de_compra'],
                     //$value['valor_almacen'],
                     //$value['price'],
+<<<<<<< HEAD
                     $value['price2'],
                     $value['price3'],
                      $value['fecha_actualizacion_precio'],
+=======
+                  '<center>$'.	  $value['price2'].'</center>',
+                  '<center>$'.	  $value['price3'].'</center>',
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['tiempo_surtido'],
                     $value['indice_abc'],
                     //$value['min'],
@@ -626,8 +921,13 @@ class Products extends Admin_Controller {
                     //$availability,
                     $buttons
                 );
+<<<<<<< HEAD
             }else if ($dataLevel == "is_Gerente_Ventas") {
                   $result['data'][$key] = array(
+=======
+            } else if ($dataLevel == "is_Gerente_Ventas") {
+                $result['data'][$key] = array(
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     //mostrar imagen $img,
                     $value['sku'],
                     $value['description'],
@@ -644,10 +944,16 @@ class Products extends Admin_Controller {
                     $value['fecha_ultima_venta'],
                     //  $value['precio_de_compra'],
                     //$value['valor_almacen'],
+<<<<<<< HEAD
                     $value['price'],
                     $value['price2'],
                     $value['price3'],
                      $value['fecha_actualizacion_precio'],
+=======
+                  '<center>$'.	  $value['price'].'</center>',
+                  '<center>$'.	  $value['price2'].'</center>',
+                  '<center>$'.	  $value['price3']  .'</center>',		 	
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value['tiempo_surtido'],
                     $value['indice_abc'],
                     //$value['min'],
@@ -659,9 +965,12 @@ class Products extends Admin_Controller {
                     $value['location'],
                     //$availability,
                     $buttons
+<<<<<<< HEAD
                 
                           
                           
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 );
             }
         } // /foreach
@@ -700,12 +1009,16 @@ class Products extends Admin_Controller {
               $this->form_validation->set_rules('price', 'Price', 'trim|required');
               $this->form_validation->set_rules('qty', 'Qty', 'trim|required');
               $this->form_validation->set_rules('store', 'Store', 'trim|required'); */
+<<<<<<< HEAD
             $this->form_validation->set_rules('sku', 'Sku', 'trim|required|is_unique[products.sku]');
             
             
               $this->form_validation->set_message('required','<font size="4" color="red">El campo %s es obligatorio</font>');
             $this->form_validation->set_message('is_unique','<font size="4" color="red">Ya existe este sku registrado</font>');
 
+=======
+            $this->form_validation->set_rules('sku', 'Sku', 'trim|is_unique[products.sku]');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             //$this->form_validation->set_rules('availability', 'Availability', 'trim|required');
 
@@ -713,7 +1026,11 @@ class Products extends Admin_Controller {
             if ($this->form_validation->run() == TRUE) {
                 // true case
                 $upload_image = $this->upload_image();
+<<<<<<< HEAD
 
+=======
+            $user_id = $this->session->userdata('id');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $data = array(
                     'name' => $this->input->post('product_name'),
                     'sku' => $this->input->post('sku'),
@@ -721,7 +1038,10 @@ class Products extends Admin_Controller {
                     'price2' => $this->input->post('price2'),
                     'price3' => $this->input->post('price3'),
                     'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                      'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -757,10 +1077,18 @@ class Products extends Admin_Controller {
                     'indice_abc' => $this->input->post('indice_abc'),
                     'cantidad_sugerida_a_solicitar' => $this->input->post('cantidad_sugerida_a_solicitar'),
                     'condicion' => $this->input->post('condicion'),
+<<<<<<< HEAD
                     
                         /* Es para traerse el id del usuario */
                      'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
+=======
+                        /* Es para traerse el id del usuario */
+                     'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
+                /* Es para traerse el id del usuario */
+                        
+                       // 'id_users' => $user_id,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 );
 
                 $create = $this->model_products->create($data);
@@ -797,6 +1125,7 @@ class Products extends Admin_Controller {
 
                 /* } */
             }
+<<<<<<< HEAD
         }else if ($dataLevel == "is_servicio_a_clientes") {
 
             /* $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
@@ -902,6 +1231,9 @@ class Products extends Admin_Controller {
                 /* } */
             }
         }  else if ($dataLevel == "is_editor") {
+=======
+        } else if ($dataLevel == "is_editor") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //*editor//
 
             /* $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
@@ -925,7 +1257,10 @@ class Products extends Admin_Controller {
                     'price2' => $this->input->post('price2'),
                     'price3' => $this->input->post('price3'),
                     'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                      'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -962,9 +1297,13 @@ class Products extends Admin_Controller {
                     'indice_abc' => $this->input->post('indice_abc'),
                     'cantidad_sugerida_a_solicitar' => $this->input->post('cantidad_sugerida_a_solicitar'),
                     'condicion' => $this->input->post('condicion'),
+<<<<<<< HEAD
                         /* Es para traerse el id del usuario */
                      'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
+=======
+                     'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 );
 
                 $create = $this->model_products->create($data);
@@ -1029,7 +1368,10 @@ class Products extends Admin_Controller {
                     'price2' => $this->input->post('price2'),
                     'price3' => $this->input->post('price3'),
                     'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                      'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -1066,9 +1408,13 @@ class Products extends Admin_Controller {
                     'indice_abc' => $this->input->post('indice_abc'),
                     'cantidad_sugerida_a_solicitar' => $this->input->post('cantidad_sugerida_a_solicitar'),
                     'condicion' => $this->input->post('condicion'),
+<<<<<<< HEAD
                         /* Es para traerse el id del usuario */
                      'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
+=======
+                     'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 );
 
                 $create = $this->model_products->create($data);
@@ -1175,7 +1521,10 @@ class Products extends Admin_Controller {
                 'price2' => $this->input->post('price2'),
                 'price3' => $this->input->post('price3'),
                 'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                  'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 'qty' => $this->input->post('qty'),
                 'min' => $this->input->post('min'),
                 'max' => $this->input->post('max'),
@@ -1310,6 +1659,7 @@ class Products extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('products/edit', $this->data);
+<<<<<<< HEAD
             }else if ($dataLevel == "is_servicio_a_clientes") {
                 $this->data['attributes'] = $attributes_final_data;
                 $this->data['brands'] = $this->model_brands->getActiveBrands();
@@ -1322,6 +1672,8 @@ class Products extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('products/edit', $this->data);
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
         }
     }

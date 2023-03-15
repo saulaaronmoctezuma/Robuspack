@@ -3,13 +3,21 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
+<<<<<<< HEAD
            Con Inv Cubierta
+=======
+            Cubierta
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <small></small>
         </h1>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<<<<<<< HEAD
             <li class="active">Con Inv Cubierta</li>
+=======
+            <li class="active">Cubierta</li>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </ol>
     </section>
 
@@ -65,11 +73,14 @@
                     <a href="<?php echo base_url('cubierta/create') ?>" class="btn btn-primary">Agregar Cubierta</a>
                     <a href="<?php echo base_url('products/agregar') ?>" class="btn btn-foursquare">Actualizar Inventario</a>
                     <?php
+<<<<<<< HEAD
                 } else if (($dataLevel == 'is_servicio_a_clientes')) {
                     ?>
                     <a href="<?php echo base_url('cubierta/create') ?>" class="btn btn-primary">Agregar Cubierta</a>
                     <!--<a href="<?php echo base_url('products/agregar') ?>" class="btn btn-foursquare">Actualizar Inventario</a>-->
                     <?php
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 }
                 ?>
                 <br /> <br />
@@ -85,9 +96,16 @@
                         <div id="div1">
                             <table id="manageTable" class="table table-bordered table-striped">
                                 <thead>
+<<<<<<< HEAD
                                     <tr bgcolor="#76DDFD">
 
                                         
+=======
+                                    <tr bgcolor="#0D9ECB">
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                         <?php
                                         if ($dataLevel == 'is_admin') {
                                             ?>
@@ -104,7 +122,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                               <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -130,7 +151,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -156,7 +180,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -171,7 +198,11 @@
 
                                             <th>SKU</th>
                                             <th>Descripción</th>
+<<<<<<< HEAD
                                            <!-- <th>Línea</th>-->
+=======
+                                            <th>Línea</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Maquina</th>
                                             <th>Tiempo de surtido</th>
                                             <th>Fecha de última venta </th>
@@ -179,8 +210,11 @@
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
+<<<<<<< HEAD
                                              <th>Precio 5</th>
                                              <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -203,7 +237,10 @@
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -227,7 +264,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                              <th>Precio 5</th>
+<<<<<<< HEAD
                                              <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -251,7 +291,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                               <th>Precio 5</th>
+<<<<<<< HEAD
                                               <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -265,18 +308,28 @@
                                             ?>
                                             <th>SKU</th>
                                             <th>Descripción</th>
+<<<<<<< HEAD
                                             <th>Stock</th>
                                             <th>Precio 1</th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                            <!-- <th>Línea</th>-->
                                             <th>Maquina</th>
                                             <th>Tiempo de surtido</th>
                                             <th>Fecha de última venta </th>
+<<<<<<< HEAD
                                              
+=======
+                                            <th>Stock</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -284,7 +337,11 @@
                                             <th>Equivalencias Cue</th>
                                             <th>Equivalencias Dicar</th>
                                             <th>Ubicación</th>
+<<<<<<< HEAD
 <th>Acción</th>
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                             <?php
                                         } else if (($dataLevel == 'is_Gerente_Ventas')) {
@@ -302,7 +359,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -339,9 +399,14 @@
                                             <th>Precio 1</th>
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
+<<<<<<< HEAD
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
                                            <th>Fecha actualizacion precio </th>
+=======
+                                            <th>Precio 5</th>
+                                            <th>Precio </th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -367,7 +432,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -393,7 +461,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -408,7 +479,11 @@
 
                                             <th>SKU</th>
                                             <th>Descripción</th>
+<<<<<<< HEAD
                                            <!-- <th>Línea</th>-->
+=======
+                                            <th>Línea</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Maquina</th>
                                             <th>Tiempo de surtido</th>
                                             <th>Fecha de última venta </th>
@@ -416,8 +491,11 @@
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
+<<<<<<< HEAD
                                              <th>Precio 5</th>
                                              <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -440,7 +518,10 @@
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
+<<<<<<< HEAD
                                             <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -464,7 +545,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                              <th>Precio 5</th>
+<<<<<<< HEAD
                                              <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -488,7 +572,10 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                              <th>Precio 5</th>
+<<<<<<< HEAD
                                              <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -502,18 +589,28 @@
                                             ?>
                                             <th>SKU</th>
                                             <th>Descripción</th>
+<<<<<<< HEAD
                                              <th>Stock</th>
                                               <th>Precio 1</th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                            <!-- <th>Línea</th>-->
                                             <th>Maquina</th>
                                             <th>Tiempo de surtido</th>
                                             <th>Fecha de última venta </th>
+<<<<<<< HEAD
                                            
+=======
+                                            <th>Stock</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Precio 2</th>
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                              <th>Precio 5</th>
+<<<<<<< HEAD
                                              <th>Fecha actualizacion precio </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -521,7 +618,11 @@
                                             <th>Equivalencias Cue</th>
                                             <th>Equivalencias Dicar</th>
                                             <th>Ubicación</th>
+<<<<<<< HEAD
 <th>Acción</th>
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                             <?php
                                         } else if (($dataLevel == 'is_Gerente_Ventas')) {
@@ -539,7 +640,11 @@
                                             <th>Precio 3</th>
                                             <th>Precio 4</th>
                                             <th>Precio 5</th>
+<<<<<<< HEAD
                                         <th>Fecha actualizacion precio </th>
+=======
+                                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th>Circunferencia</th>
                                             <th>Id mm</th>
                                             <th>Ancho mm</th>
@@ -552,11 +657,18 @@
                                         }
                                         ?>  
 
+<<<<<<< HEAD
 
                                    </tr>
                                      
                                     
                                 </tfoot>    
+=======
+                                    </tr>
+
+
+                                </tfoot>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </table>
                         </div>
@@ -649,6 +761,7 @@
 
 <script type="text/javascript">
 
+<<<<<<< HEAD
 
     // para hacer filtros en tfoot
     $('#manageTable tfoot th').each(function() {
@@ -657,12 +770,23 @@
         //$(this).html('<input type="text" placeholder="Buscar" />')
     });
 
+=======
+    // para hacer filtros en tfoot
+    $('#manageTable tfoot th').each(function() {
+        var title = $(this).text();
+        //$(this).html('<input type="text" placeholder="Buscar ' + title + '" />');
+        $(this).html('<input type="text" placeholder="Buscar" />')
+    });
+
+    // para hacer filtros en tfoot
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     var manageTable;
     var base_url = "<?php echo base_url(); ?>";
     $(document).ready(function() {
 
         $("#mainProductNav").addClass('active');
         // initialize the datatable 
+<<<<<<< HEAD
          manageTable = $('#manageTable').DataTable({
             'ajax': base_url + 'cubierta/fetchProductData',
             'order': []
@@ -701,6 +825,36 @@
         } // para hacer filtros en tfoot
 
         });
+=======
+        manageTable = $('#manageTable').DataTable({
+            'ajax': base_url + 'cubierta/fetchProductData',
+            'order': []
+            ,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+            },
+            // para hacer filtros en tfoot
+            "initComplete": function() {
+                this.api().columns().every(function() {
+                    var that = this;
+
+                    $('input', this.footer()).on('keyup change', function() {
+                        if (that.search() !== this.value) {
+                            that
+                                    .search(this.value)
+                                    .draw();
+                        }
+                    });
+                });
+            } // para hacer filtros en tfoot
+
+        });
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     });
     // remove functions 
     function removeFunc(id) {

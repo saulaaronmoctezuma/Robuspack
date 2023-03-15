@@ -148,7 +148,11 @@ class Frame
     protected $_is_cache = array();
 
     /**
+<<<<<<< HEAD
      * Tells wether the frame was already pushed to the next page
+=======
+     * Tells whether the frame was already pushed to the next page
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      *
      * @var bool
      */
@@ -160,7 +164,11 @@ class Frame
     public $_float_next_line = false;
 
     /**
+<<<<<<< HEAD
      * Tells wether the frame was split
+=======
+     * Tells whether the frame was split
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      *
      * @var bool
      */

@@ -176,6 +176,10 @@
                 // La longitud de la fecha debe tener exactamente 10 caracteres
                 if (fecha.length !== 10)
                     error = true;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 // Primero verifica el patron
                 if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(fecha))
                     error = true;
@@ -211,6 +215,7 @@
                 else
                     return true;
             }
+<<<<<<< HEAD
             
              function precioMxn(){
                 m1 = document.getElementById("tipo_de_cambio").value;
@@ -322,6 +327,10 @@
 
             
 
+=======
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //--></script>
 
 
@@ -453,10 +462,17 @@
                                 <label>Cantidad</label><br>
                                 <input id="cantidad" onkeyup="calcularSubtotal();
                                         calcularIva();
+<<<<<<< HEAD
                                         calcularTotal();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn();" onchange="calcularSubtotal();
                                                 calcularIva();
                                                 calcularTotal();
                                                 descuento();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn();" min="0" type="number" class="form-control input-sm" name="cantidad">
+=======
+                                        calcularTotal();" onchange="calcularSubtotal();
+                                                calcularIva();
+                                                calcularTotal();
+                                                descuento();" min="0" type="number" class="form-control input-sm" name="cantidad">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div> 
 
 
@@ -485,10 +501,17 @@
                                 <input id="pu_usd" onkeyup="calcularSubtotal();
                                         calcularIva();
                                         calcularTotal();
+<<<<<<< HEAD
                                         descuento();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn()" onchange="calcularSubtotal();
                                                 calcularIva();
                                                 calcularTotal();
                                                 descuento();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn()" min="0" type="text" class="form-control input-sm" name="pu_usd">
+=======
+                                        descuento();" onchange="calcularSubtotal();
+                                                calcularIva();
+                                                calcularTotal();
+                                                descuento();" min="0" type="text" class="form-control input-sm" name="pu_usd">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div> 
 
 
@@ -554,6 +577,7 @@
                         </div><br> 
 
 
+<<<<<<< HEAD
   
                         <div class="row">
                             <div class="form-group col-xs-4">
@@ -592,6 +616,8 @@
                             </div>
                         </div>
 <br> 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -710,6 +736,7 @@
                                     <option  value="" >Selecciona una opción</option>
                                     <OPTION VALUE="Aldo Guillén">Aldo Guillén</OPTION>
                                     <OPTION VALUE="Benjamin López">Benjamin López</OPTION>
+<<<<<<< HEAD
                                    <!-- <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
                                     <OPTION VALUE="Rodrigo López">Rodrigo López</OPTION>
                                     <OPTION VALUE="Carlos Hernández">Carlos Hernández</OPTION>
@@ -720,6 +747,15 @@
                                     <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
                                      <OPTION VALUE="Alejandra Reyes">Alejandra Reyes</OPTION>
                                      <OPTION VALUE="Carlos Altamar">Carlos Altamar</OPTION>
+=======
+                                    <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
+                                    <OPTION VALUE="Jorge González">Jorge González</OPTION>
+                                    <!--<OPTION VALUE="Cesar Cantú">Cesar Cantú</OPTION>-->
+                                    <OPTION VALUE="Gerardo Lopéz">Gerardo Lopéz</OPTION>
+                                    <!-- <OPTION VALUE="Martín Sena">Martín Sena</OPTION>-->
+                                    <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </select>
                             </div> 
@@ -736,7 +772,11 @@
 
 
 
+<<<<<<< HEAD
                         <center><input class="btn btn-success" type="submit" value="Agregar" id="botonOrden" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+=======
+                        <center><input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
                         </center>

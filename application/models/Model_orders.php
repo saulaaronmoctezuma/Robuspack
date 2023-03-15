@@ -35,12 +35,17 @@ class Model_orders extends CI_Model {
 
     public function getOrdersData($id = null) {
         if ($id) {
+<<<<<<< HEAD
         $sql = "SELECT * FROM orders o  INNER JOIN clientes_robuspack c ON c.clave=o.customer_address  WHERE o.id = ?";
+=======
+            $sql = "SELECT * FROM orders o  INNER JOIN clientes_robuspack c ON c.clave=o.customer_address  WHERE o.id = ?";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //    $sql = "SELECT * FROM orders WHERE id = ?";
             $query = $this->db->query($sql, array($id));
             return $query->row_array();
         }
 
+<<<<<<< HEAD
        // $sql = "SELECT * FROM orders ORDER BY id DESC";
       //$sql = "SELECT * FROM orders o INNER JOIN clientes_robuspack c ON c.clave=o.customer_name ORDER BY id DESC";
       
@@ -49,6 +54,17 @@ class Model_orders extends CI_Model {
         
         
         
+=======
+        // $sql = "SELECT * FROM orders ORDER BY id DESC";
+        //$sql = "SELECT * FROM orders o INNER JOIN clientes_robuspack c ON c.clave=o.customer_name ORDER BY id DESC";
+        //$sql ="SELECT * FROM orders as o INNER JOIN orders_item as oi ON o.id=oi.order_id INNER JOIN products p ON oi.product_id=p.id INNER JOIN clientes_robuspack c ON c.clave=o.customer_address ORDER BY o.id desc";
+
+
+        $sql = "SELECT * FROM orders as o INNER JOIN orders_item as oi ON o.id=oi.order_id INNER JOIN clientes_robuspack c ON c.clave=o.customer_address group by oi.order_id ORDER BY o.id desc";
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -84,7 +100,11 @@ class Model_orders extends CI_Model {
             'discount' => $this->input->post('discount'),
             'paid_status' => 2,
             'user_id' => $user_id,
+<<<<<<< HEAD
              'consecutivo' => $this->input->post('consecutivo')
+=======
+            'consecutivo' => $this->input->post('consecutivo')
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         );
 
         $insert = $this->db->insert('orders', $data);
@@ -95,6 +115,7 @@ class Model_orders extends CI_Model {
         $count_product = count($this->input->post('product'));
         for ($x = 0; $x < $count_product; $x++) {
             $items = array(
+<<<<<<< HEAD
                     'order_id' => $order_id,
                 'product_id' => $this->input->post('product')[$x],
                 'qty' => $this->input->post('qty')[$x],
@@ -104,6 +125,14 @@ class Model_orders extends CI_Model {
                   'piezas_salientes' => $this->input->post('qty')[$x],
                 'stock' => $this->input->post('rate')[$x] ,
                 'total_de_piezas_restantes' => $this->input->post('rate')[$x] -$this->input->post('qty')[$x]
+=======
+                'order_id' => $order_id,
+                'product_id' => $this->input->post('product')[$x],
+                'qty' => $this->input->post('qty')[$x],
+                'rate' => $this->input->post('sub_category')[$x],
+                'amount' => $this->input->post('amount_value')[$x],
+                'pedimento' => $this->input->post('sub_category')[$x],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             );
 
             $this->db->insert('orders_item', $items);
@@ -113,6 +142,7 @@ class Model_orders extends CI_Model {
             $qty = (int) $product_data['qty'] - (int) $this->input->post('qty')[$x];
 
             $update_product = array('qty' => $qty);
+<<<<<<< HEAD
             $this->model_products->update($update_product, $this->input->post('product')[$x]);
             
             
@@ -121,11 +151,21 @@ class Model_orders extends CI_Model {
             
             
               // actualizamos el valor en almacen
+=======
+
+
+            $this->model_products->update($update_product, $this->input->post('product')[$x]);
+
+
+
+            // actualizamos el valor en almacen
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $product_data = $this->model_products->getProductData($this->input->post('product')[$x]);
             $valor_almacen = (float) $product_data['precio_de_compra'] * (int) $product_data['qty'];
 
             $product_data = array('valor_almacen' => $valor_almacen);
             $this->model_products->update($product_data, $this->input->post('product')[$x]);
+<<<<<<< HEAD
             // actualizamos el valor en almacen
 
             
@@ -134,6 +174,17 @@ class Model_orders extends CI_Model {
             
             // actualizamos $fecha_ultima_venta
             // nos traemos el dia con horario de mexico city
+=======
+
+
+
+
+
+
+
+
+            // actualizamos el valor de la fecha de ultima venta
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $result = $this->User_model->getAllSettings();
             date_default_timezone_set("America/Mexico_City");
             $tz = $result->timezone;
@@ -149,17 +200,21 @@ class Model_orders extends CI_Model {
 
 
             $this->model_products->update($product_data, $this->input->post('product')[$x]);
+<<<<<<< HEAD
             
             
             
             
             
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
 
         return ($order_id) ? $order_id : false;
     }
 
+<<<<<<< HEAD
    public function countOrderItem($order_id)
 	{
 		if($order_id) {
@@ -169,6 +224,17 @@ class Model_orders extends CI_Model {
 		}
 	}
      public function totalRegistroBitacoraMantenimientoAlejandro() {
+=======
+    public function countOrderItem($order_id) {
+        if ($order_id) {
+            $sql = "SELECT * FROM orders_item WHERE order_id = ?";
+            $query = $this->db->query($sql, array($order_id));
+            return $query->num_rows();
+        }
+    }
+
+    public function totalRegistroBitacoraMantenimientoAlejandro() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->db->select('COUNT(*) as total_registros_alejandro');
         $this->db->from('bitacora_mtto');
         $this->db->where('bitacora_mtto.id= ', 24);
@@ -260,10 +326,17 @@ class Model_orders extends CI_Model {
         $query = $this->db->query($sql, array(1));
         return $query->num_rows();
     }
+<<<<<<< HEAD
     
     //
 function getCliente() {
           $grupo = $this->db->select('id_cliente, cliente')->where('id_cliente <> 248')->order_by("cliente", "asc")
+=======
+
+    //
+    function getCliente() {
+        $grupo = $this->db->select('id_cliente, cliente')->where('id_cliente <> 248')->order_by("cliente", "asc")
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 ->get('cliente')
                 ->result();
 
@@ -280,6 +353,7 @@ function getCliente() {
 
         return $options_arr;
     }
+<<<<<<< HEAD
     
      function getProducts(){
 
@@ -361,4 +435,135 @@ function get_category(){
                 
                 $query = $this->db->query("SELECT * FROM pedimento pe inner join products pro on pro.id=pe.id_producto where pe.id_producto = $category_id and pe.cantidad > $nulo");
 		return $query; */
+=======
+
+    function getProducts() {
+
+        $this->db->select('clave');
+        $records = $this->db->get('clientes_robuspack');
+        $users = $records->result_array();
+        return $users;
+    }
+
+    function getProductsDetails($postData = array()) {
+
+        $response = array();
+
+        if (isset($postData['clave'])) {
+
+            // Select record
+            $this->db->select('*');
+            $this->db->where('clave', $postData['clave']);
+            $records = $this->db->get('clientes_robuspack');
+            $response = $records->result_array();
+        }
+
+        return $response;
+    }
+
+    function getUsernames() {
+
+        $this->db->select('numero');
+        $records = $this->db->get('pedimento');
+        $users = $records->result_array();
+        return $users;
+    }
+
+    function getUserDetails($postData = array()) {
+
+        $response = array();
+
+        if (isset($postData['numero'])) {
+
+            // Select record
+            $this->db->select('*');
+            $this->db->join('products', 'pedimento.id_producto=products.id');
+            $this->db->where('pedimento.numero', $postData['numero']);
+            $this->db->where('products.sku', $postData['sku']);
+            $this->db->order_by('products.id', 'asc');
+            //$this->db->where('id_producto','SELECT id FROM products WHERE products.sku'.$postData['id_sku'].')');
+            $records = $this->db->get('pedimento');
+            $response = $records->result_array();
+            
+            /*// Select record
+            $this->db->distinct();
+            $this->db->select('DISTINCT pedimento.id_pedimento, pedimento.numero,sum(pedimento.cantidad) as cantidad, pedimento.activo,pedimento.fecha_aduana, pedimento.fecha_ultimo_movimiento,pedimento.id_producto,pedimento.id_entradas, pedimento.fecha_insercion, pedimento.fecha_modificacion');
+            $this->db->join('products', 'pedimento.id_producto=products.id');
+            $this->db->where('pedimento.numero', $postData['numero']);
+            $this->db->where('products.sku', $postData['sku']);
+            $this->db->group_by('pedimento.id_producto');
+             $this->db->group_by('pedimento.numero');
+            $this->db->order_by('products.id', 'asc');
+            //$this->db->where('id_producto','SELECT id FROM products WHERE products.sku'.$postData['id_sku'].')');
+            $records = $this->db->get('pedimento');
+            $response = $records->result_*/
+        }
+
+        return $response;
+    }
+
+    function get_category() {
+        //$query = $this->db->get('products');
+        $query = $this->db->query("SELECT * FROM products where qty > 0 order by id asc");
+        return $query;
+    }
+
+    function get_sub_category($category_id) {
+        $nulo = 0;
+        $query = $this->db->order_by('numero', 'asc')->get_where('pedimento', array('id_producto =' => $category_id, 'cantidad >' => $nulo));
+        return $query;
+    }
+
+    /*
+      $nulo = 0;
+      //$query = $this->db->order_by('numero', 'asc')->get_where('pedimento', array('id_producto =' =>  $category_id, 'cantidad >' => $nulo  ));
+      $registros = $this->input->post('sku');
+
+      $query = $this->db->query("SELECT * FROM pedimento pe inner join products pro on pro.id=pe.id_producto where pe.id_producto = $category_id and pe.cantidad > $nulo");
+      return $query; */
+
+    public function entradaInventario() {
+        $user_id = $this->session->userdata('id');
+        //$bill_no = 'ROBUSPACK-' . strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 25));
+        $data = array(
+            //'bill_no' => $bill_no,
+
+            'numero_documento' => $this->input->post('bill_no'),
+            'tipo_de_documento' => $this->input->post('tipo_de_documento'),
+            // 'customer_name' => $this->input->post('customer_name'),
+            'id_users' => $user_id,
+        );
+
+        $insert = $this->db->insert('entrada', $data);
+        $id_entrada = $this->db->insert_id();
+
+        $this->load->model('model_products');
+        $this->load->model('model_orders');
+
+
+        $count_sku = count($this->input->post('sku'));
+        for ($x = 0; $x < $count_sku; $x++) {
+            $items = array(
+                'id_entradas' => $id_entrada,
+                //'id_product' => $_POST['sku'][$x],
+                'id_product' => $count_sku,
+                'stock' => $this->input->post('rate')[$x],
+                'pieza_nuevas' => $this->input->post('nuevas_piezas')[$x],
+                'total_de_piezas' => $this->input->post('total_de_piezas')[$x],
+                'pedimento' => $this->input->post('pedimento_')[$x]
+            );
+
+            $this->db->insert('entradas_por_producto', $items);
+
+            // now decrease the stock from the product
+            //$product_data = $this->model_products->getProductData($this->input->post('product')[$x]);
+            //$qty = (int) $product_data['qty'] - (int) $this->input->post('qty')[$x];
+            // $update_product = array('sku' => $qty);
+            //$this->model_products->update($update_product, $this->input->post('product')[$x]);
+        }
+
+        return ($id_entrada) ? $id_entrada : false;
+    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

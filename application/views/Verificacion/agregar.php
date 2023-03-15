@@ -35,7 +35,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
     <script type="text/javascript">
         function showContent() {
             element = document.getElementById("content");
+<<<<<<< HEAD
             elementempresa = document.getElementById("contentempresa");
+=======
+            elementempresa = document.getElementById("content");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             check = document.getElementById("check");
             if (check.checked) {
 
@@ -64,10 +68,14 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
 
 
+<<<<<<< HEAD
  
     <!-- Select2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
        
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </head>
 
 
@@ -111,11 +119,18 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                        
                         <div class="form-group col-xs-4">
                         <label>Empresa</label><br>
+<<<<<<< HEAD
                         <select  name="empresa" class="form-control input-sm"  id="empresa" required>
                         <option  value="">Selecciona una opción</option>
                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
                             <OPTION VALUE="CARTONPACK S DE RL DE CV" selected>CARTONPACK S DE RL DE CV</OPTION>
+=======
+                        <select  name="empresa" class="form-control input-sm"  id="empresa" require>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
+                        <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </select><br>
                         </div>
                         </div>
@@ -131,7 +146,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                             <div class="form-group col-xs-4" id="contentempresa" style="display: block;">
                                 <label for="nombre">Cliente</label>
+<<<<<<< HEAD
                                 <select required id="cliente" onChange="habilitar(this.form)" class="form-control input-sm select2"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+=======
+                                <select required id="cliente" onChange="habilitar(this.form)" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
 
@@ -162,7 +181,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <div class="row">
                             <div class="form-group col-xs-4 "></div>
                             <div class="form-group col-xs-4"> <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+<<<<<<< HEAD
                                 <label><p style="color:red;font-size:14px;">  &nbsp;Selecciona la casilla si no aparece el cliente</p></label>
+=======
+                                <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
                         </div>
                         <?php
@@ -200,6 +223,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <label>Refacciones</label><br>
                         <input type="file" name="refacciones"><br>
                         </div>
+<<<<<<< HEAD
                       
                         ';
                         
@@ -207,14 +231,29 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                          ?>
                          
                            
+=======
+                        
+                        ';
+                        ?>
+                     
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                   <div class="form-group col-xs-4">
                         <label>Contrato</label><br>
                         <input type="file" name="contrato"><br>
                         </div>
+<<<<<<< HEAD
                          
                           <div class="form-group col-xs-4">
                         <label for="nombre">Comentario</label>
                              <textarea name="comentario" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa un comentario" require></textarea>
+=======
+                        </div>
+                <div class="row">
+                          <div class="form-group col-xs-4">
+                        <label for="nombre">Comentario</label>
+                             <textarea name="comentario" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un comentario" require></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                    
                     </div>
                     
@@ -225,10 +264,15 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     </div>
                     </div>
                     <?php
+<<<<<<< HEAD
                         
                         
                         
                     }else if ($dataLevel == 'is_Gerente_Ventas') {
+=======
+                    
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             echo '
                             
                          <div class="row">
@@ -280,7 +324,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                             
                                 <input type="hidden" class="form-control input-sm" name="pedimento"><br>
+<<<<<<< HEAD
                              <input type="hidden" class="form-control input-sm" name="comentario">
+=======
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 <div class="form-group col-xs-4">
@@ -305,7 +353,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                 
                
                         <input type="hidden" name="refacciones"><br>
+<<<<<<< HEAD
                         
+=======
+                       <input type="hidden" class="form-control input-sm" name="comentario">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <?php
                         echo '
@@ -331,7 +383,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                
                         ';
+<<<<<<< HEAD
                     } else if ($dataLevel == 'is_editor') {
+=======
+                    }else if ($dataLevel == 'is_editor') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo '
                             
                           <div class="row">
@@ -351,7 +407,10 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <option  value="">Selecciona una opción</option>
                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+<<<<<<< HEAD
                           <OPTION VALUE="CARTONPACK S DE RL DE CV">CARTONPACK S DE RL DE CV</OPTION>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </select><br>
                         </div>
                         </div>
@@ -399,7 +458,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <div class="form-group col-xs-4"></div>
                         <div class="form-group col-xs-4"> <input type="checkbox" name="check" id="check" value="1" onchange="javascript
                                 :showContent()" />
+<<<<<<< HEAD
                             <label><p style="color:red;font-size:14px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+=======
+                            <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
                     </div>
                     <?php
@@ -436,6 +499,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                          <div class="form-group col-xs-4">
                         <label>Refacciones</label><br>
                         <input type="file" name="refacciones"><br>
+<<<<<<< HEAD
                         </div>
                        
                         ';
@@ -443,22 +507,45 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         
                          ?>
                           <div class="form-group col-xs-4">
+=======
+                        
+                        </div>
+                        
+
+                        ';
+                    ?>
+                     <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <label for="nombre">Comentario</label>
                              <textarea name="comentario" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa un comentario" require></textarea>
                    
                     </div>
+<<<<<<< HEAD
                     
                     <div class="form-group col-xs-4">
+=======
+                  
+                    
+                      <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <label for="nombre">Observación</label>
                              <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un obsrvación" require></textarea>
                    
                     </div>
                     
+<<<<<<< HEAD
                      <div class="form-group col-xs-4">
+=======
+                    <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <label>Contrato</label><br>
                         <input type="file" name="contrato"><br>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <?php
                 } else if ($dataLevel == 'is_logistica') {
                     echo '
@@ -480,7 +567,10 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <option  value="">Selecciona una opción</option>
                         <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
                         <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+<<<<<<< HEAD
                          <OPTION VALUE="CARTONPACK S DE RL DE CV">CARTONPACK S DE RL DE CV</OPTION>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </select><br>
                         </div>
                         </div>
@@ -530,6 +620,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                                 <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
                             </div>
                         </div>
+<<<<<<< HEAD
+=======
+                        
+                         <input type="hidden" class="form-control input-sm" name="comentario">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <?php
                         echo '
                         <!--<label>Cliente</label><br>
@@ -551,23 +646,39 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <input type="hidden" name="num_factura">
                         <input type="hidden" name="factura">
                         <input type="hidden" name="refacciones">
+<<<<<<< HEAD
                          <input type="hidden" name="comentario">
                         ';
                         
                          ?>
+=======
+                        ';
+                        ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                          
                         <div class="form-group col-xs-4">
                         <label for="nombre">Observación</label>
                              <textarea name="observacion" class="form-control input-sm"  rows="6" cols="80" placeholder="Ingresa un obsrvación" require></textarea>
                    
                     </div>
+<<<<<<< HEAD
                                         </div>
                         
+=======
+                         </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                          <?php
                 } else if ($dataLevel == 'is_credito') {
                     echo '
                         <label>Factura</label><br>
                         <input type="file" name="fotopostpdf"><br>';
+<<<<<<< HEAD
+=======
+                    
+                    ?>
+                             <input type="hidden" class="form-control input-sm" name="comentario">
+                         <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 } else if ($dataLevel == 'is_refacciones') {
                     echo '
                         <label>Foto</label><br>
@@ -583,8 +694,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <center><input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
 
                     <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
@@ -596,6 +710,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
     <!-- END KONTEN UTAMA -->
 
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+<<<<<<< HEAD
     
        <!-- Select2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
@@ -606,6 +721,8 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
       });
       
     </script>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 </body>
 </html>

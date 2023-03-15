@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -5,6 +6,8 @@
 
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <!-- Content Wrapper. Contains page content -->
 
 
@@ -102,7 +105,11 @@ pedimento.value='';
                 <div class="box">
 
                     <!-- /.box-header -->
+<<<<<<< HEAD
                     <form role="form" action="<?php base_url('orders/create') ?>" method="post" class="form-horizontal">
+=======
+                    <form role="form" action="<?php base_url('orders/create') ?>" id="myform" method="post" class="form-horizontal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="box-body">
 
                             <?php echo validation_errors(); ?>
@@ -201,7 +208,10 @@ pedimento.value='';
                                         <option value="">Tipo de entrada</option>
                                         <option value="Compra">Compra</option>
                                         <option value="Devolución">Devolución</option>
+<<<<<<< HEAD
                                         <option value="Por ajuste">Por ajuste</option>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                     </select>
                   </center>
@@ -209,8 +219,13 @@ pedimento.value='';
                                         <div class="col-sm-6">
                                                <input class="form-control" id="vacio" type="text" disabled />
                                         <input class="form-control" id="factura" type="text" style="display: none" required name="numero_documento" disabled placeholder="No Factura" />
+<<<<<<< HEAD
                                         <input class="form-control" id="remision" type="text" style="display: none" required name="numero_documento" disabled placeholder="No Vale ó Garantía" />
                                         <input class="form-control" id="ajuste" type="text" style="display: none" required name="numero_documento" disabled placeholder="Escribe una observación" />
+=======
+                                        <input class="form-control" id="remision" type="text" style="display: none" required name="numero_documento" disabled placeholder="No Vale o Garantia" />
+                                   
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                         </div>
                                     </div>
               
@@ -242,7 +257,11 @@ pedimento.value='';
                                             <th>Descripción</th>
                                             <th>Cantidad</th>
                                             <th>Stock</th>
+<<<<<<< HEAD
                                             <th>Total de Stock</th>
+=======
+                                            <th>Total de Stodck</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <th><button type="button" id="add_row" class="btn btn-default"><i class="fa fa-plus"></i></button></th>
                                         </tr>
                                     </thead>
@@ -255,7 +274,11 @@ pedimento.value='';
 
 
 
+<<<<<<< HEAD
                                                 <select style="width:170px;"  class="form-control desabilitar  select_group product" name="product[]" id="category-1" required>
+=======
+                                                <select style="width:170px;" required  class="form-control desabilitar  select_group product" name="product[]" id="category-1" required>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <option value="Null">Seleccione</option>
                                                     <?php foreach ($category as $row) : ?>
                                                         <option value="<?php echo $row->id; ?>"><?php echo $row->sku; ?></option>
@@ -353,7 +376,19 @@ pedimento.value='';
     </section>
     <!-- /.content -->
 </div>
+<<<<<<< HEAD
 <!-- /.con
+=======
+<!-- /.content-wrapper -->
+
+
+
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -388,7 +423,13 @@ pedimento.value='';
 
 
 <script type="text/javascript">
+<<<<<<< HEAD
                                             $(document).ready(function() {
                                                 $(".select_group").select2();
                                             });
+=======
+                                    $(document).ready(function() {
+                                        $(".select_group").select2();
+                                    });
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </script>

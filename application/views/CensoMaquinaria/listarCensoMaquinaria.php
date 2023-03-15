@@ -13,10 +13,17 @@
         $result = $this->User_model->getAllSettings();
         $theme = $result->theme;
         ?>
+<<<<<<< HEAD
        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
 -->
+=======
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo $theme; ?>">
+        <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -70,6 +77,7 @@
                  <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
              </div>-->
 
+<<<<<<< HEAD
  <div class="row">
             <?php
             if ($dataLevel == 'is_admin') {
@@ -79,10 +87,22 @@
             } else if ($dataLevel == 'is_editor') {
                 echo ' <div class="form-group col-xs-4">';
                 echo '<td><a  class="btn btn-success" href="CensoMaquinaria/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
+=======
+
+            <?php
+            if ($dataLevel == 'is_admin') {
+                echo '<div class="text-center">';
+                echo '<td><a  class="btn btn-success" href="CensoMaquinaria/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
+                echo '</div>';
+            } else if ($dataLevel == 'is_editor') {
+                echo '<div class="text-center">';
+                echo '<td><a  class="btn btn-success" href="ClienteSeguimiento/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 echo '</div>';
             } else if ($dataLevel == 'is_director') {
                 
             } else {
+<<<<<<< HEAD
                 echo ' <div class="form-group col-xs-4">';
                 echo '<td><a  class="btn btn-success" href="CensoMaquinaria/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
                 echo '</div>';
@@ -90,10 +110,20 @@
             ?>
           
             <div class="form-group col-xs-4">
+=======
+                echo '<div class="text-center">';
+                echo '<td><a  class="btn btn-success" href="ClienteSeguimiento/agregar") data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos del Seguimiento">Agregar Nuevo Registro</a></td>';
+                echo '</div>';
+            }
+            ?>
+            <br>
+            <div class="text-center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelCensoMaquinaria">
 
+<<<<<<< HEAD
                     <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:16px;color:white"><font color="white">Exportar Contactos</font> <i class="fa fa-file-excel-o"></i></button>
                 </form>   
           
@@ -126,6 +156,11 @@
               
             }
             ?>
+=======
+                    <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:16px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+                </form>   
+            </div> 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         </div>
@@ -474,10 +509,13 @@
                     });
 
 
+<<<<<<< HEAD
 function eliminarStyle()
 {
  $(".borrarStyle").removeAttr("style");
 }
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -492,7 +530,11 @@ function eliminarStyle()
 
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<<<<<<< HEAD
                  <style>
+=======
+                 <style type="text/css">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             .fullscreen-modal .modal-dialog {
                                 margin: 0;
@@ -527,7 +569,11 @@ function eliminarStyle()
                         </style>
 
 
+<<<<<<< HEAD
                 <table id="example1"  border="0" class="table table-bordered table-striped">
+=======
+                <table  border="0" class="table table-bordered table-striped">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <MARQUEE SCROLLDELAY =200> </MARQUEE>
 
 
@@ -542,9 +588,15 @@ function eliminarStyle()
                                 echo '<th class="header">Usuario</th>';
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<th class="header">Usuario</th>';
+<<<<<<< HEAD
                             } else if ($dataLevel == 'asdsad') {
                                 
                             } else if ($dataLevel == 'is_Gerente_Ventas') {
+=======
+                            } else if ($dataLevel == 'is_Gerente_Ventas') {
+                                
+                            } else if ($dataLevel == 'is_director') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 echo '<th class="header">Usuario</th>';
                             } else {
                                 
@@ -555,9 +607,115 @@ function eliminarStyle()
                             <td colspan="4" bgcolor="#1DDDFF" class="td_empresa">
 
                     <center>  Empresa  </center>
+<<<<<<< HEAD
                                
                     </td>
 
+=======
+                               <!-- <button style="display: none;" type="button" id="mostrar" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>-->
+                    </td>
+
+                           <!-- <td colspan="1" class="td_dueno">
+
+                                Dueño
+                                <button  style="display: none;" type="button" id="mostrar_dueno" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_dueno" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+                            </td>
+
+                            <td colspan="1" class="td_ceo">
+
+
+                                Ceo
+
+                                <button  style="display: none;" type="button" id="mostrar_ceo" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_ceo" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+                            </td>
+
+                            <td colspan="1" class="td_gerente">
+
+                                Gerente
+
+                                <button  style="display: none;" type="button" id="mostrar_gerente" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_gerente" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+
+
+                            </td>
+
+                            <td colspan="1" class="td_produccion">
+
+                                Produccion
+
+                                <button  style="display: none;" type="button" id="mostrar_produccion" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_produccion" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+
+
+                            </td>
+
+                            <td colspan="1" class="td_mtto">
+
+                                Mtto
+
+
+                                <button  style="display: none;" type="button" id="mostrar_mtto" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_mtto" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+
+                            </td>
+
+                            <td colspan="1" class="td_compras">
+
+                                Compras
+
+
+                                <button  style="display: none;" type="button" id="mostrar_compras" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_compras" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+
+                            </td>
+
+                            <td colspan="1" class="td_ventas">
+
+                                Ventas
+
+                                <button  style="display: none;" type="button" id="mostrar_ventas" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_ventas" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+
+
+                            </td>
+
+                            <td colspan="1" class="td_otros">
+
+                                Otros
+
+                                <button  style="display: none;" type="button" id="mostrar_otros" class="btn btn-default btn-xs"><i class="fa fa-window-close"></i></button>
+
+                                <button type="button" id="ocultar_otros" class="btn btn-default btn-xs"><i class="fa fa-check-square-o"></i></button>
+
+
+
+                            </td>
+                    -->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     <td class="td_generales" bgcolor="#1DFF8B" colspan="1">
                     <center>Generales
@@ -598,9 +756,15 @@ function eliminarStyle()
                                 echo '<th class="header">Usuario</th>';
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<th class="header">Usuario</th>';
+<<<<<<< HEAD
                             } else if ($dataLevel == 'is_fafa1') {
                                 
                             } else if ($dataLevel == 'is_Gerente_Ventas') {
+=======
+                            } else if ($dataLevel == 'is_Gerente_Ventas') {
+                                
+                            } else if ($dataLevel == 'is_director') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 echo '<th class="header">Usuario</th>';
                             } else {
                                 
@@ -636,7 +800,50 @@ function eliminarStyle()
                         <th class="estado">Estado</th>
                         <th class="ciudad_municipio">Ciudad municipio</th>
 
+<<<<<<< HEAD
                            
+=======
+                            <!--<th class="nombre_dueno">nombre_dueno</th>
+                            <th class="celular_dueno" style="display: none;">celular_dueno</th>
+                            <th class="correo_empresarial_dueno" style="display: none;">correo_empresarial_dueno</th>
+                            <th class="correo_personal_dueno" style="display: none;">correo_personal_dueno</th>
+
+                            <th class="nombre_ceo">nombre_ceo</th>
+                            <th class="celular_ceo"  style="display: none;">celular_ceo</th>
+                            <th class="correo_empresarial_ceo"  style="display: none;">correo_empresarial_ceo</th>
+                            <th class="correo_personal_ceo"  style="display: none;">correo_personal_ceo</th>
+
+                            <th class="nombre_gerente">nombre_gerente</th>
+                            <th class="celular_gerente"  style="display: none;">celular_gerente</th>
+                            <th class="correo_empresarial_gerente"  style="display: none;">correo_empresarial_gerente</th>
+                            <th class="correo_personal_gerente"  style="display: none;">correo_personal_gerente</th>
+
+                            <th class="nombre_produccion">nombre_produccion</th>
+                            <th class="celular_produccion"  style="display: none;">celular_produccion</th>
+                            <th class="correo_empresarial_produccion" style="display: none;">correo_empresarial_produccion</th>
+                            <th class="correo_personal_produccion"  style="display: none;">correo_personal_produccion</th>
+
+                            <th class="nombre_mtto">nombre_mtto</th>
+                            <th class="celular_mtto" style="display: none;">celular_mtto</th>
+
+                            <th class="correo_empresarial_mmto" style="display: none;">correo_empresarial_mmto</th>
+                            <th class="correo_personal_mtto" style="display: none;">correo_personal_mtto</th>
+
+                            <th class="nombre_compras">nombre_compras</th>
+                            <th class="celular_compras" style="display: none;">celular_compras</th>
+                            <th class="correo_empresarial_compras" style="display: none;">correo_empresarial_compras</th>
+                            <th class="correo_personal_compras" style="display: none;">correo_personal_compras</th>
+
+                            <th class="nombre_ventas">nombre_ventas</th>
+                            <th class="celular_ventas" style="display: none;">celular_ventas</th>
+                            <th class="correo_empresarial_ventas" style="display: none;">correo_empresarial_ventas</th>
+                            <th class="correo_personal_ventas" style="display: none;">correo_personal_ventas</th>
+
+                            <th class="nombre_otros">nombre_otros</th>
+                            <th class="celular_otros" style="display: none;">celular_otros</th>
+                            <th class="correo_empresarial_otros" style="display: none;">correo_empresarial_otros</th>
+                            <th class="correo_personal_otros" style="display: none;">correo_personal_otros</th>-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <th class="tipo_de_cliente">Tipo de cliente</th>
                         <th class="asesor" style="display: none;">Asesor</th>
@@ -666,8 +873,13 @@ function eliminarStyle()
                                 echo ' <td class="eliminar">Eliminar</td>
                         <td class="modificar">Modificar</td>';
                             } else if ($dataLevel == 'is_editor') {
+<<<<<<< HEAD
                                // echo ' <td class="eliminar">Eliminar</td>
                       echo '  <td class="modificar">Modificar</td>';
+=======
+                                echo ' <td class="eliminar">Eliminar</td>
+                        <td class="modificar">Modificar</td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             } else {
                                 echo '
                         <td colpan="2" class="modificar">Modificar</td>';
@@ -697,7 +909,13 @@ function eliminarStyle()
                                 $obj->getFirst_name() .
                                 '</td>';
                             } else if ($dataLevel == 'is_Gerente_Ventas') {
+<<<<<<< HEAD
                                  echo '<td>' .
+=======
+                                
+                            } else if ($dataLevel == 'is_director') {
+                                echo '<td>' .
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 $obj->getFirst_name() .
                                 '</td>';
                             } else {
@@ -723,6 +941,7 @@ function eliminarStyle()
 
                         <!--Inicio Modal modalNecesidad --> 
 
+<<<<<<< HEAD
    <?php
     if (($obj->getEmpresa() == null)&&($obj->getEmpresa_temporal() == null)) {
         echo '<td title="Sin Empresa"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
@@ -732,19 +951,37 @@ function eliminarStyle()
     
     
     else {
+=======
+    <?php
+    if (($obj->getEmpresa() == null)) {
+        echo '<td title="Sin Empresa"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getEmpresa() != null)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         ?>
 
                             <td>
                             <center> 
+<<<<<<< HEAD
                                 <a onclick="eliminarStyle()" title="Da clic para ver los contactos" data-toggle="modal" data-target="#modalNecesidad<?php echo $obj->getId_censomaquinaria() ?>">
         <?php
         echo '<font color="black">' . ' ' .$obj->getEmpresa() . '</font><b><font face="verdana" color="red">' . ' ' . $obj->getEmpresa_temporal() . '</font></b>';
+=======
+                                <a title="Da clic para ver los contactos" data-toggle="modal" data-target="#modalNecesidad<?php echo $obj->getId_censomaquinaria() ?>">
+        <?php
+        echo $obj->getEmpresa() . '<b><font face="verdana" color="red">' . ' ' . $obj->getEmpresa_temporal() . '</font></b>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         ?>
 
                             </center>
 
 
+<<<<<<< HEAD
                           
+=======
+                            <script>
+
+                            </script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="modal bs-example-modal-lg fade modal fullscreen-modal fade" id="modalNecesidad<?php echo $obj->getId_censomaquinaria() ?>" tabindex="-1" role="dialog" aria-labelledby="modalNecesidad">
                                 <div class="modal-dialog modal-xlg" role="document" >
                                     <div class="modal-content">
@@ -754,11 +991,19 @@ function eliminarStyle()
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                 </a></center>
 
+<<<<<<< HEAD
                                             <h4 class="modal-title" id="modalNecesidad">Empresa :  <?php echo $obj->getEmpresa() ?>  <?php echo $obj->getEmpresa_temporal() ?> <br> Grupo :  <?php echo $obj->getGrupo() ?>  <?php echo $obj->getGrupo_temporal() ?> </h4>
                                         </div>
                                         <div class="modal-body">
                                            <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.css"/>
                                             <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.js"></script>-->
+=======
+                                            <h4 class="modal-title" id="modalNecesidad">Empresa :  <?php echo $obj->getEmpresa() ?> <br> Grupo :  <?php echo $obj->getGrupo() ?> </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.css"/>
+                                            <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                             <script>
                             function uno(src)
                             {
@@ -826,7 +1071,11 @@ function eliminarStyle()
 
                                             <table border="1" class="table dataTables">
 
+<<<<<<< HEAD
                                                 <tr bgcolor="red"  class="borrarStyle">
+=======
+                                                <tr bgcolor="red">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td bgcolor="#1DDDFF">Puesto</td>
                                                     <td bgcolor="#1DDDFF">Nombre</td>
                                                     <td bgcolor="#1DDDFF">Celular</td>
@@ -834,7 +1083,11 @@ function eliminarStyle()
                                                     <td bgcolor="#1DDDFF">Correo empresarial </th>
                                                     <td bgcolor="#1DDDFF">Correo Personal </th>
                                                 </tr>
+<<<<<<< HEAD
                                                 <tr id="1" class="borrarStyle" onmouseover=uno('1'); onmouseout=dos('1');>
+=======
+                                                <tr id="1" onmouseover=uno('1'); onmouseout=dos('1');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Dueño </td>
                                                     <td> <?php echo $obj->getNombre_dueno() ?></td>
                                                     <td> <?php echo $obj->getCelular_dueno() ?></td>
@@ -845,7 +1098,11 @@ function eliminarStyle()
                                                 </tr>
 
 
+<<<<<<< HEAD
                                                 <tr id="2" class="borrarStyle" onmouseover=uno('2'); onmouseout=dos('2');>
+=======
+                                                <tr id=2 onmouseover=uno('2'); onmouseout=dos('2');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Ceo </td>
                                                     <td> <?php echo $obj->getNombre_ceo() ?></td>
                                                     <td> <?php echo $obj->getCelular_ceo() ?></td>
@@ -856,7 +1113,11 @@ function eliminarStyle()
                                                 </tr>
 
 
+<<<<<<< HEAD
                                                 <tr id="3" class="borrarStyle" onmouseover=uno('3'); onmouseout=dos('3');>
+=======
+                                                <tr id=3 onmouseover=uno('3'); onmouseout=dos('3');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Gerente </td>
                                                     <td> <?php echo $obj->getNombre_gerente() ?></td>
                                                     <td> <?php echo $obj->getCelular_gerente() ?></td>
@@ -866,7 +1127,11 @@ function eliminarStyle()
 
                                                 </tr>
 
+<<<<<<< HEAD
                                                 <tr id="4" class="borrarStyle" onmouseover=uno('4'); onmouseout=dos('4');>
+=======
+                                                <tr id=4 onmouseover=uno('4'); onmouseout=dos('4');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Producción </td>
                                                     <td> <?php echo $obj->getNombre_produccion() ?></td>
                                                     <td> <?php echo $obj->getCelular_produccion() ?></td>
@@ -877,7 +1142,11 @@ function eliminarStyle()
                                                 </tr>
 
 
+<<<<<<< HEAD
                                                 <tr id="5" class="borrarStyle" onmouseover=uno('5'); onmouseout=dos('5');>
+=======
+                                                <tr id=5 onmouseover=uno('5'); onmouseout=dos('5');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Mantenimiento </td>
                                                     <td> <?php echo $obj->getNombre_mtto() ?></td>
                                                     <td> <?php echo $obj->getCelular_mtto() ?></td>
@@ -888,7 +1157,11 @@ function eliminarStyle()
                                                 </tr>
 
 
+<<<<<<< HEAD
                                                 <tr id="6" class="borrarStyle" onmouseover=uno('6'); onmouseout=dos('6');>
+=======
+                                                <tr id=6 onmouseover=uno('6'); onmouseout=dos('6');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Compras </td>
                                                     <td> <?php echo $obj->getNombre_compras() ?></td>
                                                     <td> <?php echo $obj->getCelular_compras() ?></td>
@@ -899,7 +1172,11 @@ function eliminarStyle()
                                                 </tr>
 
 
+<<<<<<< HEAD
                                                 <tr id="7" class="borrarStyle" onmouseover=uno('7'); onmouseout=dos('7');>
+=======
+                                                <tr id=7 onmouseover=uno('7'); onmouseout=dos('7');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Ventas </td>
                                                     <td> <?php echo $obj->getNombre_ventas() ?></td>
                                                     <td> <?php echo $obj->getCelular_ventas() ?></td>
@@ -909,7 +1186,11 @@ function eliminarStyle()
 
                                                 </tr>
 
+<<<<<<< HEAD
                                                 <tr id="8" class="borrarStyle" onmouseover=uno('8'); onmouseout=dos('8');>
+=======
+                                                <tr id=8 onmouseover=uno('8'); onmouseout=dos('8');>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                                     <td> Otros </td>
                                                     <td> <?php echo $obj->getNombre_otros() ?></td>
                                                     <td> <?php echo $obj->getCelular_otros() ?></td>
@@ -951,7 +1232,42 @@ function eliminarStyle()
 
     echo '<td class="estado" >' . $obj->getEstado() . '</td>'
     . '<td class="ciudad_municipio" >' . $obj->getCiudad_municipio() . '</td>'
+<<<<<<< HEAD
   
+=======
+    /* . '<td class="nombre_dueno">' . $obj->getNombre_dueno() . '</td>'
+      . '<td class="celular_dueno" style="display: none;">' . $obj->getCelular_dueno() . '</td>'
+      . '<td class="correo_empresarial_dueno" style="display: none;">' . $obj->getCorreo_empresarial_dueno() . '</td>'
+      . '<td class="correo_personal_dueno" style="display: none;">' . $obj->getCorreo_personal_dueno() . '</td>'
+      . '<td class="nombre_ceo" >' . $obj->getNombre_ceo() . '</td>'
+      . '<td class="celular_ceo"  style="display: none;">' . $obj->getCelular_ceo() . '</td>'
+      . '<td class="correo_empresarial_ceo"  style="display: none;">' . $obj->getCorreo_empresarial_ceo() . '</td>'
+      . '<td class="correo_personal_ceo"  style="display: none;">' . $obj->getCorreo_personal_ceo() . '</td>'
+      . '<td class="nombre_gerente">' . $obj->getNombre_gerente() . '</td>'
+      . '<td class="celular_gerente"  style="display: none;">' . $obj->getCelular_gerente() . '</td>'
+      . '<td class="correo_empresarial_gerente"  style="display: none;">' . $obj->getCorreo_empresarial_gerente() . '</td>'
+      . '<td class="correo_personal_gerente"  style="display: none;">' . $obj->getCorreo_personal_gerente() . '</td>'
+      . '<td class="nombre_produccion">' . $obj->getNombre_produccion() . '</td>'
+      . '<td class="celular_produccion" style="display: none;">' . $obj->getCelular_produccion() . '</td>'
+      . '<td class="correo_empresarial_produccion" style="display: none;">' . $obj->getCorreo_empresarial_produccion() . '</td>'
+      . '<td class="correo_personal_produccion" style="display: none;">' . $obj->getCorreo_personal_produccion() . '</td>'
+      . '<td class="nombre_mtto">' . $obj->getNombre_mtto() . '</td>'
+      . '<td class="celular_mtto" style="display: none;">' . $obj->getCelular_mtto() . '</td>'
+      . '<td class="correo_empresarial_mmto" style="display: none;">' . $obj->getCorreo_empresarial_mmto() . '</td>'
+      . '<td class="correo_personal_mtto" style="display: none;">' . $obj->getCorreo_personal_mtto() . '</td>'
+      . '<td class="nombre_compras">' . $obj->getNombre_compras() . '</td>'
+      . '<td class="celular_compras" style="display: none;">' . $obj->getCelular_compras() . '</td>'
+      . '<td class="correo_empresarial_compras" style="display: none;">' . $obj->getCorreo_empresarial_compras() . '</td>'
+      . '<td class="correo_personal_compras" style="display: none;">' . $obj->getCorreo_personal_compras() . '</td>'
+      . '<td class="nombre_ventas">' . $obj->getNombre_ventas() . '</td>'
+      . '<td class="celular_ventas" style="display: none;">' . $obj->getCelular_ventas() . '</td>'
+      . '<td class="correo_empresarial_ventas" style="display: none;">' . $obj->getCorreo_empresarial_ventas() . '</td>'
+      . '<td class="correo_personal_ventas" style="display: none;">' . $obj->getCorreo_personal_ventas() . '</td>'
+      . '<td class="nombre_otros">' . $obj->getNombre_otros() . '</td>'
+      . '<td class="celular_otros" style="display: none;">' . $obj->getCelular_otros() . '</td>'
+      . '<td class="correo_empresarial_otros" style="display: none;">' . $obj->getCorreo_empresarial_otros() . '</td>'
+      . '<td class="correo_personal_otros" style="display: none;">' . $obj->getCorreo_personal_otros() . '</td>' */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     . '<td class="tipo_de_cliente">' . $obj->getTipo_de_cliente() . '</td>'
     . '<td class="asesor" style="display: none;">' . $obj->getAsesor() . '</td>'
     . '<td class="estatus_cliente" style="display: none;">' . $obj->getEstatus_cliente() . '</td>'
@@ -979,7 +1295,11 @@ function eliminarStyle()
         echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'CensoMaquinaria/eliminar/' . $obj->getId_censomaquinaria() . '"><button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'CensoMaquinaria/actualizar/' . $obj->getId_censomaquinaria() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
     } else if ($dataLevel == 'is_editor') {
+<<<<<<< HEAD
         /*echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'CensoMaquinaria/eliminar/' . $obj->getId_censomaquinaria() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';*/
+=======
+        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'CensoMaquinaria/eliminar/' . $obj->getId_censomaquinaria() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'CensoMaquinaria/actualizar/' . $obj->getId_censomaquinaria() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
     } else if ($dataLevel == 'is_Gerente_Ventas') {
         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'CensoMaquinaria/actualizar/' . $obj->getId_censomaquinaria() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';

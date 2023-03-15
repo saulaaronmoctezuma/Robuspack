@@ -1227,8 +1227,12 @@ class CI_Form_validation {
 	 * @param	string
 	 * @return	bool
 	 */
+<<<<<<< HEAD
 /*	
 public function valid_email($str)
+=======
+	/*public function valid_email1($str)
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 	{
 		if (function_exists('idn_to_ascii') && preg_match('#\A([^@]+)@(.+)\z#', $str, $matches))
 		{
@@ -1237,6 +1241,7 @@ public function valid_email($str)
 
 		return (bool) filter_var($str, FILTER_VALIDATE_EMAIL);
 	}
+<<<<<<< HEAD
 	
 	
 	*/
@@ -1249,6 +1254,14 @@ public function valid_email($str)
 	
 	 
         public  function  valid_email( $email ) 
+=======
+*/
+        
+        
+        
+        
+       public  function  valid_email( $email ) 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 	{ 
 if ( function_exists ( ' idn_to_ascii ' ) && defined 
         ( ' INTL_IDNA_VARIANT_UTS46 ' ) && $atpos
@@ -1259,6 +1272,7 @@ if ( function_exists ( ' idn_to_ascii ' ) && defined
 
 		return ( bool ) filter_var ( $email , FILTER_VALIDATE_EMAIL ); 
 	}
+<<<<<<< HEAD
 	
 	
 	
@@ -1276,6 +1290,8 @@ if ( function_exists ( ' idn_to_ascii ' ) && defined
 	
 	
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 	// --------------------------------------------------------------------
 
 	/**

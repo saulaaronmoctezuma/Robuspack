@@ -61,6 +61,10 @@ class Model_inventory extends CI_Model {
 
     public function create() {
         $user_id = $this->session->userdata('id');
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //$bill_no = 'ROBUSPACK-' . strtoupper(substr(md5(uniqid(mt_rand(), true)), 0, 25));
         $data = array(
             //'bill_no' => $bill_no,
@@ -79,6 +83,10 @@ class Model_inventory extends CI_Model {
               'discount' => $this->input->post('discount'),
               'paid_status' => 2, */
             'id_users' => $user_id,
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'consecutivo' => $this->input->post('consecutivo'),
         );
 
@@ -390,7 +398,11 @@ class Model_inventory extends CI_Model {
         return $response;
     }
 
+<<<<<<< HEAD
      function get_category() {
+=======
+    function get_category() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //$query = $this->db->get('products');
         $query = $this->db->query("SELECT * FROM products order by id asc");
         return $query;

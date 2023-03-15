@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -7,6 +8,10 @@
 -->
 <!DOCTYPE html>
 <html lang="es-mx">
+=======
+<!DOCTYPE html>
+<html lang="en">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <head>
         <meta charset="utf-8">
         <title>robuspack</title>
@@ -14,7 +19,11 @@
     </head>
     <body>
         <div class="container">
+<<<<<<< HEAD
             <center>   <h1>Control SIC</h1><br></center>
+=======
+            <center>   <h1>Cliente Seguimiento</h1><br></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <div class="col-sm-8 col-md-offset-2">
 
                 <form class="form-horizontal" id="submit">
@@ -120,7 +129,11 @@
                                         success: function (data) {
                                             // alert("Upload Image Successful.");
                                            
+<<<<<<< HEAD
                                             location.href =" https://scrobuspack.com/ClienteSeguimiento";
+=======
+                                            location.href =" http://localhost/master/ClienteSeguimiento";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                         }
                                     });
                                 });

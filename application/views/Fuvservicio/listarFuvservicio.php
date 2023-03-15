@@ -71,7 +71,11 @@
             
         } else if ($dataLevel == 'is_admin') {
                echo '<left> <h1>Buscar</h1> </left>
+<<<<<<< HEAD
         <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         ';
         } else if ($dataLevel == 'is_logistica') {
             
@@ -182,6 +186,10 @@
                         <th style="text-align: center" class="static" scope="col" width="5" heigth="5">Ref</th>
                         <th  style="text-align: center" class="first-col" scope="col">Cliente</th>
                         <th  style="text-align: center" scope="th">Dirección</th>
+<<<<<<< HEAD
+=======
+                        <th  style="text-align: center" scope="th">Referencia</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <th  style="text-align: center" scope="th">Código</th>
                         <th  style="text-align: center" scope="th">Tipo de Producto </th>
                         <th  style="text-align: center" scope="th">Descripcion del Producto </th>
@@ -224,7 +232,11 @@
 
                     </tr>
                 </thead>
+<<<<<<< HEAD
    <tbody id="myTable">
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <?php
                 foreach ($Fuvservicio as $obj) {
                     echo '<tr>';
@@ -254,6 +266,12 @@
                     . '<td>'
                     . $obj->getDireccion() .
                     '</td>'
+<<<<<<< HEAD
+=======
+                     . '<td>'
+                    . $obj->getReferencia() .
+                    '</td>'     
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . '<td>'
                     . $obj->getCodigo() .
                     '</td>' .
@@ -285,7 +303,12 @@
                     if ($obj->getPu_usd() != null) {
                           echo '<td>$'
                     . $obj->getPu_usd() .
+<<<<<<< HEAD
                     '</td>';} else {
+=======
+                    '</td>';} 
+                    else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             echo '<td>'
                     . $obj->getPu_usd() .
                     '</td>';

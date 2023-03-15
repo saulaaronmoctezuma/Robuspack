@@ -1,10 +1,14 @@
 <?php
+<<<<<<< HEAD
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
  */
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 class ExportarClienteRefaccionesmodelo extends CI_Model {
 
@@ -28,7 +32,13 @@ class ExportarClienteRefaccionesmodelo extends CI_Model {
         
     }
 
+<<<<<<< HEAD
     
+=======
+    //El señor Benjamin le dijo Ale apoco estos muchachos son mentirosos por que fueron a decir a la Lic que usted no quiere hacer nada
+    //y ale le contesto no se crea solo eso me dice la Lic pero los niños no dicen nada
+    //entonces dijo Benjamin ah ya me habia espantado que van a contar chismes de mas y es peligroso
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     // get employee list
     public function ListaClienteRefacciones() {
  
@@ -54,6 +64,7 @@ class ExportarClienteRefaccionesmodelo extends CI_Model {
             
              /*Para traerse el id del usuario*/
                $query =$this->db->select([  'grupo', 'cliente', 'referencia', 'cantidad_maxima',
+<<<<<<< HEAD
 'precio_unitario', 'periodo_surtimiento', 'cantidad_minima', 'paqueteria', 
 'tipo_entrega', 'dias_credito', 'pulgadas', 'maquina_cliente', 'capacitacion', 
 'capacitacion_fecha', 'piezas_juego', 'costo_juego', 'juego_mensuales', 
@@ -62,6 +73,14 @@ class ExportarClienteRefaccionesmodelo extends CI_Model {
 'precio_golpe', 'ciudad_planta', 'observacion', 'contacto', 'tipo_maquina',
 'troquel','uso_de_cfdi', 'metodo_pago', 'forma_pago', 'fecha_visita',
 'fecha_seguimiento', 'golpes_maquina'
+=======
+            'capacitacion_fecha', 'piezas_juego', 'costo_juego', 'juego_mensuales', 
+            'golpes_prom_comp', 'golpes_prom_rodicut', 'beneficio_golpes_prom', 
+            'tiempo_rot_com', 'tiempo_rot_rodicut', 'beneficio_rot_prom',
+            'precio_golpe', 'ciudad_planta', 'observacion', 'contacto', 'tipo_maquina',
+            'troquel','uso_de_cfdi', 'metodo_pago', 'forma_pago', 'fecha_visita',
+            'fecha_seguimiento', 'golpes_maquina'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
             ])
                  ->from('venta')

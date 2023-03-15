@@ -50,7 +50,11 @@ class Fuvservicio extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $data['Fuvservicio'] = $this->FuvservicioModelo->query();
+<<<<<<< HEAD
             //$data['totalRegistros'] = $this->FuvservicioModelo->totalRegistro(1);
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
@@ -58,7 +62,11 @@ class Fuvservicio extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $data['Fuvservicio'] = $this->FuvservicioModelo->query();
+<<<<<<< HEAD
             //$data['totalRegistros'] = $this->FuvservicioModelo->totalRegistro(1);
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
@@ -66,7 +74,11 @@ class Fuvservicio extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_servicio_a_clientes") {
             $data['Fuvservicio'] = $this->FuvservicioModelo->query();
+<<<<<<< HEAD
             //$data['totalRegistros'] = $this->FuvservicioModelo->totalRegistro(1);
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
@@ -74,7 +86,11 @@ class Fuvservicio extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_credito") {
             $data['Fuvservicio'] = $this->FuvservicioModelo->query();
+<<<<<<< HEAD
             //$data['totalRegistros'] = $this->FuvservicioModelo->totalRegistro(1);
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
@@ -82,7 +98,11 @@ class Fuvservicio extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_logistica") {
             $data['Fuvservicio'] = $this->FuvservicioModelo->query();
+<<<<<<< HEAD
             //$data['totalRegistros'] = $this->FuvservicioModelo->totalRegistro(1);
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
@@ -90,7 +110,11 @@ class Fuvservicio extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
             $data['Fuvservicio'] = $this->FuvservicioModelo->query();
+<<<<<<< HEAD
             //$data['totalRegistros'] = $this->FuvservicioModelo->totalRegistro(1);
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
@@ -161,27 +185,47 @@ class Fuvservicio extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
+<<<<<<< HEAD
             //$data['clienteCombo'] = $this->VerificacionModelo->getCliente();
+=======
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuvservicio/agregarFuvservicio');
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
+<<<<<<< HEAD
+=======
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuvservicio/agregarFuvservicio');
             $this->load->view('footer');
         } else if ($dataLevel == "is_servicio_a_clientes") {
+<<<<<<< HEAD
+=======
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuvservicio/agregarFuvservicio');
             $this->load->view('footer');
         } else if ($dataLevel == "is_credito ") {
+<<<<<<< HEAD
+=======
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuvservicio/agregarFuvservicio');
             $this->load->view('footer');
         } else if ($dataLevel == "is_logistica1") {
+<<<<<<< HEAD
+=======
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Fuvservicio/agregarFuvservicio');
@@ -200,6 +244,10 @@ class Fuvservicio extends CI_Controller {
         $ref = $this->input->post('ref');
         $cliente = $this->input->post('cliente');
         $direccion = $this->input->post('direccion');
+<<<<<<< HEAD
+=======
+        $referencia = $this->input->post('referencia');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $codigo = $this->input->post('codigo');
         $tipo_de_prod = $this->input->post('tipo_de_prod');
         $rfc = $this->input->post('rfc');
@@ -214,8 +262,13 @@ class Fuvservicio extends CI_Controller {
         $iva = $this->input->post('iva');
         $total_usd = $this->input->post('total_usd');
         $fecha = $this->input->post('fecha');
+<<<<<<< HEAD
        // $pedimento = $this->input->post('pedimento');
        // $fecha_pedimento = $this->input->post('fecha_pedimento');
+=======
+        // $pedimento = $this->input->post('pedimento');
+        // $fecha_pedimento = $this->input->post('fecha_pedimento');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $dias_de_credito = $this->input->post('dias_de_credito');
         $fecha_vencimiento = $this->input->post('fecha_vencimiento');
         $fecha_de_pago = $this->input->post('fecha_de_pago');
@@ -254,12 +307,21 @@ class Fuvservicio extends CI_Controller {
             'ref' => $ref,
             'cliente' => $cliente,
             'direccion' => $direccion,
+<<<<<<< HEAD
+=======
+              'referencia' => $referencia,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'codigo' => $codigo,
             'tipo_de_prod' => $tipo_de_prod,
             'rfc' => $rfc,
             'factura' => $factura,
+<<<<<<< HEAD
           //  'remision' => $remision,
            // 'fecha_de_remision' => $fecha_de_remision,
+=======
+            //  'remision' => $remision,
+            // 'fecha_de_remision' => $fecha_de_remision,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'orden_compra' => $orden_compra,
             'cantidad' => $cantidad,
             'pu_usd' => $pu_usd,
@@ -267,8 +329,13 @@ class Fuvservicio extends CI_Controller {
             'iva' => $iva,
             'total_usd' => $total_usd,
             'fecha' => $fecha,
+<<<<<<< HEAD
            // 'pedimento' => $pedimento,
            // 'fecha_pedimento' => $fecha_pedimento,
+=======
+            // 'pedimento' => $pedimento,
+            // 'fecha_pedimento' => $fecha_pedimento,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'dias_de_credito' => $dias_de_credito,
             'fecha_vencimiento' => $fecha_vencimiento,
             'fecha_de_pago' => $fecha_de_pago,
@@ -284,11 +351,19 @@ class Fuvservicio extends CI_Controller {
         //facturapdf
         $this->upload->do_upload('facturapdf');
         $facturapdf = $this->upload->data();
+<<<<<<< HEAD
         
         if (!empty($_FILES['facturapdf']['name'])) {
             $data['facturapdf'] = $facturapdf['file_name'];
         }
         
+=======
+
+        if (!empty($_FILES['facturapdf']['name'])) {
+            $data['facturapdf'] = $facturapdf['file_name'];
+        }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->FuvservicioModelo->insert($data);
         redirect('Fuvservicio');
     }
@@ -333,10 +408,19 @@ class Fuvservicio extends CI_Controller {
         //check user level
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
+<<<<<<< HEAD
             //se trae los datos de la consulta del modelo
             //$data['clienteCombo'] = $this->VerificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+=======
+
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //se trae los datos de la consulta del modelo
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuvservicio' => $id);
             $data['data'] = $this->FuvservicioModelo->get_by_id($kondisi);
@@ -345,6 +429,12 @@ class Fuvservicio extends CI_Controller {
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
+=======
+            //se trae los datos de la consulta del modelo
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuvservicio' => $id);
             $data['data'] = $this->FuvservicioModelo->get_by_id($kondisi);
@@ -353,6 +443,12 @@ class Fuvservicio extends CI_Controller {
         } else if ($dataLevel == "is_servicio_a_clientes") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
+=======
+            //se trae los datos de la consulta del modelo
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuvservicio' => $id);
             $data['data'] = $this->FuvservicioModelo->get_by_id($kondisi);
@@ -361,6 +457,12 @@ class Fuvservicio extends CI_Controller {
         } else if ($dataLevel == "is_credito") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
+=======
+            //se trae los datos de la consulta del modelo
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_Fuvservicio' => $id);
             $data['data'] = $this->FuvservicioModelo->get_by_id($kondisi);
@@ -369,6 +471,12 @@ class Fuvservicio extends CI_Controller {
         } else if ($dataLevel == "is_logistica1") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
+=======
+            //se trae los datos de la consulta del modelo
+            $data['clienteCombo'] = $this->FuvservicioModelo->getCliente();
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //se trae el id del  modelo ClientesRefaccionesModelo
             $kondisi = array('id_fuvservicio' => $id);
             $data['data'] = $this->FuvservicioModelo->get_by_id($kondisi);
@@ -384,13 +492,21 @@ class Fuvservicio extends CI_Controller {
         $ref = $this->input->post('ref');
         $cliente = $this->input->post('cliente');
         $direccion = $this->input->post('direccion');
+<<<<<<< HEAD
+=======
+        $referencia = $this->input->post('referencia');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $codigo = $this->input->post('codigo');
         $tipo_de_prod = $this->input->post('tipo_de_prod');
         $rfc = $this->input->post('rfc');
         $factura = $this->input->post('factura');
         $facturapdf = $this->input->post('facturapdf');
         //$remision = $this->input->post('remision');
+<<<<<<< HEAD
        // $fecha_de_remision = $this->input->post('fecha_de_remision');
+=======
+        // $fecha_de_remision = $this->input->post('fecha_de_remision');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $orden_compra = $this->input->post('orden_compra');
         $cantidad = $this->input->post('cantidad');
         $pu_usd = $this->input->post('pu_usd');
@@ -440,6 +556,10 @@ class Fuvservicio extends CI_Controller {
         $data['ref'] = $ref;
         $data['cliente'] = $cliente;
         $data['direccion'] = $direccion;
+<<<<<<< HEAD
+=======
+        $data['referencia'] = $referencia;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['codigo'] = $codigo;
         $data['tipo_de_prod'] = $tipo_de_prod;
         $data['rfc'] = $rfc;
@@ -447,6 +567,7 @@ class Fuvservicio extends CI_Controller {
         //facturapdf
         $this->upload->do_upload('facturapdf');
         $facturapdf = $this->upload->data();
+<<<<<<< HEAD
         
         if (!empty($_FILES['facturapdf']['name'])) {
             $data['facturapdf'] = $facturapdf['file_name'];
@@ -454,6 +575,15 @@ class Fuvservicio extends CI_Controller {
         
        // $data['remision'] = $remision;
        // $data['fecha_de_remision'] = $fecha_de_remision;
+=======
+
+        if (!empty($_FILES['facturapdf']['name'])) {
+            $data['facturapdf'] = $facturapdf['file_name'];
+        }
+
+        // $data['remision'] = $remision;
+        // $data['fecha_de_remision'] = $fecha_de_remision;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['orden_compra'] = $orden_compra;
         $data['cantidad'] = $cantidad;
         $data['pu_usd'] = $pu_usd;
@@ -461,8 +591,13 @@ class Fuvservicio extends CI_Controller {
         $data['iva'] = $iva;
         $data['total_usd'] = $total_usd;
         $data['fecha'] = $fecha;
+<<<<<<< HEAD
        // $data['pedimento'] = $pedimento;
        // $data['fecha_pedimento'] = $fecha_pedimento;
+=======
+        // $data['pedimento'] = $pedimento;
+        // $data['fecha_pedimento'] = $fecha_pedimento;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['dias_de_credito'] = $dias_de_credito;
         $data['fecha_vencimiento'] = $fecha_vencimiento;
         $data['fecha_de_pago'] = $fecha_de_pago;

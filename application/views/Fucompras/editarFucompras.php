@@ -440,12 +440,20 @@ function filter(__val__){
 
 
 </tr> -->
+<<<<<<< HEAD
 
+=======
+ <input id="cantidad_registros" class="form-control" type="hidden" name="cantidad_registros" value="<?= $data->cantidad_registros ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <tr>
                                 <td><b>Ref</b></td>
                                 <td>
+<<<<<<< HEAD
                                     <input id="ref" class="form-control" type="text" name="ref" value="<?= $data->ref ?>">
+=======
+                                    <input maxlength="8" id="ref" class="form-control" type="text" name="ref" value="<?= $data->ref ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                </td>
                             </tr>
 
@@ -453,6 +461,10 @@ function filter(__val__){
                            <!-- <tr>
                                 <td><b>Estatus</b></td>
                                 <td >
+<<<<<<< HEAD
+=======
+                           
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                     <input id="estatus" class="form-control" type="text" name="estatus" value="<?= $data->estatus ?>">
                               </td>
                             </tr>-->
@@ -589,7 +601,11 @@ function filter(__val__){
                              <tr>
                                 <td><b>Qty</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="qty" min="0" onchange="calcularTotalUSD();calcularImpx_unidad();calcularCosto_unitario_compra_usd_lab_qro();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularTotalUSD();calcularImpx_unidad();calcularCosto_unitario_compra_usd_lab_qro();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="qty" value="<?= $data->qty ?>">
+=======
+                                   <input id="qty" min="0" onchange="calcularTotalUSD();calcularImpx_unidad();calcularCosto_unitario_compra_usd_lab_qro();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularTotalUSD();calcularImpx_unidad();calcularCosto_unitario_compra_usd_lab_qro();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="number" name="qty" value="<?= $data->qty ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                   
                                 </td>
                             </tr>
@@ -597,14 +613,22 @@ function filter(__val__){
                              <tr>
                                 <td><b>Pu usd</b></td>
                                 <td >
+<<<<<<< HEAD
                                     <input id="pu_usd" min="0" onchange="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularCm_c()"  onkeyup="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="number" name="pu_usd" value="<?= $data->pu_usd ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                      <input  id="pu_usd" min="0" onchange="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularCm_c()"  onkeyup="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="TEXT" onkeypress="return filterFloat(event,this);" name="pu_usd" value="<?= $data->pu_usd ?>">
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                               <tr>
                                 <td><b>Total USD</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input readonly="readonly" min="0" title="Pu USD * Qty" style="background-color:#03E7F7;" onkeyup="calcularCosto_total_compra_usd_lab_qro();" id="total_usd" class="form-control" type="text" name="total_usd" value="<?= $data->total_usd ?>">
                                   
                                 </td>
@@ -614,6 +638,36 @@ function filter(__val__){
                                 <td><b>Tipo de embarque</b></td>
                                 <td >
                                    <input id="tipo_de_embarque" class="form-control" type="text" name="tipo_de_embarque" value="<?= $data->tipo_de_embarque ?>">
+=======
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                      <input readonly="readonly" min="0" title="Pu USD * Qty" style="background-color:#03E7F7;" onkeyup="calcularCosto_total_compra_usd_lab_qro();" id="total_usd" class="form-control" type="text" name="total_usd" value="<?= $data->total_usd ?>">
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            
+                            
+                            
+                               
+                              
+                             <tr>
+                                <td><b>Tipo de embarque</b></td>
+                                <td >
+                                    
+                                    <SELECT name="tipo_de_embarque" class="form-control " > 
+                            
+                                 <option value="" <?php if ($data->tipo_de_embarque == "") {echo "Selected"; } ?>>Selecciona una opción</option>
+                                
+                                <option value="AEREO" <?php if ($data->tipo_de_embarque == "AEREO") {echo "Selected"; } ?>>AEREO</option>
+                                <option value="LOCAL" <?php if ($data->tipo_de_embarque == "LOCAL") {  echo "Selected";} ?>>LOCAL</option>
+                                <option value="MARITIMO" <?php if ($data->tipo_de_embarque == "MARITIMO") {echo "Selected"; } ?>>MARITIMO</option>
+                                <option value="TERRESTRE" <?php if ($data->tipo_de_embarque == "TERRESTRE") {  echo "Selected";} ?>>TERRESTRE</option>
+                               
+                          
+                           </SELECT>
+                                  <!-- <input id="tipo_de_embarque" class="form-control" type="text" name="tipo_de_embarque" value="<?= $data->tipo_de_embarque ?>">-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                   
                                 </td>
                             </tr>
@@ -621,16 +675,30 @@ function filter(__val__){
                              <tr>
                                 <td><b>Tc pedimento</b></td>
                                 <td>
+<<<<<<< HEAD
                                    <input id="tc_pedimento" min="0" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control" type="text" name="tc_pedimento" value="<?= $data->tc_pedimento ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                    <input onkeypress="return filterFloat(event,this);" id="tc_pedimento" min="0" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control" type="text" name="tc_pedimento" value="<?= $data->tc_pedimento ?>">
+                                 </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Importación por partida pz mxn</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input min="0" title="Arancel + Dta + Costo del Flete Mx + Honorarios Courier" id="importacion_por_partida_pz_mxn" readonly="readonly" style="background-color:#03E7F7;" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="importacion_por_partida_pz_mxn" value="<?= $data->importacion_por_partida_pz_mxn ?>">
                                   
+=======
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                  <input min="0" title="Arancel + Dta + Costo del Flete Mx + Honorarios Courier" id="importacion_por_partida_pz_mxn" readonly="readonly" style="background-color:#03E7F7;" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="importacion_por_partida_pz_mxn" value="<?= $data->importacion_por_partida_pz_mxn ?>">
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
@@ -640,32 +708,60 @@ function filter(__val__){
                               <tr>
                                 <td><b>Importación por partida pz usd</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input readonly="readonly" min="0" title="Importación por partida pz mx / Tc Pedimento"  style="background-color:#03E7F7;" onkeyup="calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();"  id="importacion_por_partida_pz_usd" class="form-control" type="text" name="importacion_por_partida_pz_usd" value="<?= $data->importacion_por_partida_pz_usd ?>">
                                   
+=======
+                                 <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                   <input readonly="readonly" min="0" title="Importación por partida pz mx / Tc Pedimento"  style="background-color:#03E7F7;" onkeyup="calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();"  id="importacion_por_partida_pz_usd" class="form-control" type="text" name="importacion_por_partida_pz_usd" value="<?= $data->importacion_por_partida_pz_usd ?>">
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Impx unidad</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="impx_unidad" title="Importación Por Partida Pz USD / Qty" style="background-color:#03E7F7;" readonly="readonly" class="form-control" type="text" name="impx_unidad" value="<?= $data->impx_unidad ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                  <input id="impx_unidad" title="Importación Por Partida Pz USD / Qty" style="background-color:#03E7F7;" readonly="readonly" class="form-control" type="text" name="impx_unidad" value="<?= $data->impx_unidad ?>">
+                                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Costo total compra usd lab qro</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="costo_total_compra_usd_lab_qro"  readonly="readonly" min="0" title="Importación Por Partida Pz Usd + Total USD" style="background-color:#03E7F7;" onkeyup="calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control" type="text" name="costo_total_compra_usd_lab_qro" value="<?= $data->costo_total_compra_usd_lab_qro ?>">
                                   
+=======
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                  <input id="costo_total_compra_usd_lab_qro"  readonly="readonly" min="0" title="Importación Por Partida Pz Usd + Total USD" style="background-color:#03E7F7;" onkeyup="calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control" type="text" name="costo_total_compra_usd_lab_qro" value="<?= $data->costo_total_compra_usd_lab_qro ?>">
+                                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Costo unitario compra usd lab qro</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="costo_unitario_compra_usd_lab_qro" title="Costo Total Compra Usd Lab Qro / Qty" style="background-color:#03E7F7;" readonly="readonly" class="form-control" type="text" name="costo_unitario_compra_usd_lab_qro" value="<?= $data->costo_unitario_compra_usd_lab_qro ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                  <input id="costo_unitario_compra_usd_lab_qro" title="Costo Total Compra Usd Lab Qro / Qty" style="background-color:#03E7F7;" readonly="readonly" class="form-control" type="text" name="costo_unitario_compra_usd_lab_qro" value="<?= $data->costo_unitario_compra_usd_lab_qro ?>">
+                                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
@@ -676,24 +772,46 @@ function filter(__val__){
                               <tr>
                                 <td><b>Com</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="com" min="0" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="com" value="<?= $data->com ?>">
                                   
+=======
+                                  <div class="input-group">
+                                        <input id="com" onkeypress="return filterFloat(event,this);" type="text" min="0" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="com">
+                                  <span class="input-group-addon">
+                                      %
+                                  </span> </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Cm</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input title="Pv extra bajo ref x pz + Com" onkeyup="calcularCm_c();" readonly="readonly" min="0" style="background-color:#03E7F7;" id="cm" class="form-control" type="text" name="cm" value="<?= $data->cm ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                    <input title="Pv extra bajo ref x pz + Com" onkeyup="calcularCm_c();" readonly="readonly" min="0" style="background-color:#03E7F7;" id="cm" class="form-control" type="text" name="cm" value="<?= $data->cm ?>">
+                                   </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Cm c</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="cm_c" readonly="readonly" min="0" title="Costo Unitario Compra Usd Lab Qro + Cm" style="background-color:#03E7F7;"  class="form-control" type="text" name="cm_c" value="<?= $data->cm_c ?>">
                                   
+=======
+                                 <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                   <input id="cm_c" readonly="readonly" min="0" title="Costo Unitario Compra Usd Lab Qro + Cm" style="background-color:#03E7F7;"  class="form-control" type="text" name="cm_c" value="<?= $data->cm_c ?>">
+                                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
@@ -726,16 +844,33 @@ function filter(__val__){
                              <tr>
                                 <td><b>Valor aduana</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="valor_aduana"  onchange="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="valor_aduana" value="<?= $data->valor_aduana ?>">
                                   
+=======
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                  <input  onkeypress="return filterFloat(event,this);" id="valor_aduana"  onchange="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="valor_aduana" value="<?= $data->valor_aduana ?>">
+                                    </div>
+                                </td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Arancel igi</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input onkeyup="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" id="arancel_igi" class="form-control" type="text" name="arancel_igi" value="<?= $data->arancel_igi ?>">
                                   
+=======
+                                  <div class="input-group">
+                                  <input onkeypress="return filterFloat(event,this);" onkeyup="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" id="arancel_igi" class="form-control" type="text" name="arancel_igi" value="<?= $data->arancel_igi ?>">
+                                   <span class="input-group-addon">
+                                      %
+                                  </span> 
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
@@ -744,33 +879,61 @@ function filter(__val__){
   <tr>
                                 <td><b>Arancel</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="a
                                           rancel"  title="Arancel Igi * Valor Aduana" readonly="readonly" min="0" style="background-color:#03E7F7;" onchange="calcularIvaPedimento();" onkeyup="calcularIvaPedimento();" class="form-control" type="text" name="arancel" value="<?= $data->arancel ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                  <input id="arancel"  title="Arancel Igi * Valor Aduana" readonly="readonly" min="0" style="background-color:#03E7F7;" onchange="calcularIvaPedimento();" onkeyup="calcularIvaPedimento();" class="form-control" type="text" name="arancel" value="<?= $data->arancel ?>">
+                                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Dta</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="dta" readonly="readonly" title="Valor Aduana * 0.008 " min="0" style="background-color:#03E7F7;" id="dta" type="text" onchange="calcularIvaPedimento();;" onkeyup="calcularIvaPedimento();" class="form-control" type="text" name="dta" value="<?= $data->dta ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                   <input id="dta" readonly="readonly" title="Valor Aduana * 0.008 " min="0" style="background-color:#03E7F7;" id="dta" type="text" onchange="calcularIvaPedimento();;" onkeyup="calcularIvaPedimento();" class="form-control" type="text" name="dta" value="<?= $data->dta ?>">
+                                   </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Iva del pedimento</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input readonly="readonly" title="((Valor Aduana + Arancel + Dta) * (0.008) )" min="0" style="background-color:#03E7F7;" id="iva_del_pedimento" id="iva_del_pedimento" class="form-control" type="text" name="iva_del_pedimento" value="<?= $data->iva_del_pedimento ?>">
                                   
+=======
+                                 <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                    <input readonly="readonly" title="((Valor Aduana + Arancel + Dta) * (0.008) )" min="0" style="background-color:#03E7F7;" id="iva_del_pedimento" id="iva_del_pedimento" class="form-control" type="text" name="iva_del_pedimento" value="<?= $data->iva_del_pedimento ?>">
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Costo del flete mxn</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input readonly="readonly" title="Costo del Flete Usd * Tc Pedimento" min="0" style="background-color:#03E7F7;" id="costo_del_flete_mxn" class="form-control" type="text" name="costo_del_flete_mxn" value="<?= $data->costo_del_flete_mxn ?>">
                                   
+=======
+                                 <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                   <input readonly="readonly" title="Costo del Flete Usd * Tc Pedimento" min="0" style="background-color:#03E7F7;" id="costo_del_flete_mxn" class="form-control" type="text" name="costo_del_flete_mxn" value="<?= $data->costo_del_flete_mxn ?>">
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
@@ -779,32 +942,60 @@ function filter(__val__){
   <tr>
                                 <td><b>Honorarios courier</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="honorarios_courier"  onkeyup="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="honorarios_courier" value="<?= $data->honorarios_courier ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                   <input onkeypress="return filterFloat(event,this);" id="honorarios_courier"  onkeyup="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="honorarios_courier" value="<?= $data->honorarios_courier ?>">
+                                  </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Costo del flete usd</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="costo_del_flete_usd" onkeyup="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="costo_del_flete_usd" value="<?= $data->costo_del_flete_usd ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                    <input onkeypress="return filterFloat(event,this);" id="costo_del_flete_usd" onkeyup="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="costo_del_flete_usd" value="<?= $data->costo_del_flete_usd ?>">
+                                 </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Pv extra bajo ref x pz</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="pv_extra_bajo_ref_x_pz" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="pv_extra_bajo_ref_x_pz" value="<?= $data->pv_extra_bajo_ref_x_pz ?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                 <input onkeypress="return filterFloat(event,this);" id="pv_extra_bajo_ref_x_pz" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control" type="text" name="pv_extra_bajo_ref_x_pz" value="<?= $data->pv_extra_bajo_ref_x_pz ?>">
+                                   </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
                              <tr>
                                 <td><b>Utilidad refx pz </b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input readonly="readonly" title="Pv Extra Bajo Ref x Pz  - Cm c" id="utilidad_refx_pz" style="background-color:#03E7F7;" class="form-control" type="text" name="utilidad_refx_pz" value="<?= $data->utilidad_refx_pz?>">
                                   
+=======
+                                  <div class="input-group">
+                                    <div class="input-group-addon"> $</div>
+                                 <input readonly="readonly" title="Pv Extra Bajo Ref x Pz  - Cm c" id="utilidad_refx_pz" style="background-color:#03E7F7;" class="form-control" type="text" name="utilidad_refx_pz" value="<?= $data->utilidad_refx_pz?>">
+                                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             
@@ -813,8 +1004,16 @@ function filter(__val__){
   <tr>
                                 <td><b>Utilidad</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="utilidad" readonly="readonly" title="1 - (Cm c / Pv Extra Bajo Ref X Pz)" min="0" style="background-color:#03E7F7;" class="form-control" type="text" name="utilidad" value="<?= $data->utilidad ?>">
                                   
+=======
+                                   <div class="input-group">
+                                   <input id="utilidad" readonly="readonly" title="1 - (Cm c / Pv Extra Bajo Ref X Pz)" min="0" style="background-color:#03E7F7;" class="form-control" type="text" name="utilidad" value="<?= $data->utilidad ?>">
+                                   <span class="input-group-addon">
+                                      %
+                                  </span> </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </td>
                             </tr>
                             

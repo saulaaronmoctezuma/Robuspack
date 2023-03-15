@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 <html lang="es-mx">
     <!-- Para traerse el rol que esta registrado-->
 
     <head>
         <title>Robuspack</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+=======
+<!doctype html>
+
+<html>
+ <title>Robuspack</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <meta charset="utf-8">
         <?php
         defined('BASEPATH') OR exit('No direct script access allowed');
@@ -39,11 +47,16 @@
         $site_title = $result->site_title;
         //check user level
         ?>
+<<<<<<< HEAD
 
 
     </head>
 
     <div class="container" style="margin-top:1px;">
+=======
+  <body>
+        <div class="container" style="margin-top:1px;">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         <center>  <h1>Total de Registros SIC</h1></center>
 
@@ -51,7 +64,11 @@
 
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+<<<<<<< HEAD
             <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+            <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </div>
 
         <!--<div class="text-center">
@@ -60,13 +77,18 @@
             </form>
         </div>-->
     </div>
+<<<<<<< HEAD
 
 
 
+=======
+      
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <div class="container" style="margin-top:1px;">
 
 
         <div class="table-responsive">
+<<<<<<< HEAD
 
 
 
@@ -79,11 +101,20 @@
                     <tr>
 
                         <th style="text-align: center">Vendedor</th>
+=======
+   
+
+<table class="table-bordered table pull-right" id="mytable" cellspacing="0" style="width: 100%;">
+ <thead>
+ <tr role="row">
+  <th style="text-align: center">Vendedor</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <th style="text-align: center">Total Registros</th>
                         <th style="text-align: center">No Troquela</th>
                         <th style="text-align: center">Consignación</th>
                         <th style="text-align: center">Orden de Compra</th>
                         <th style="text-align: center">Sin Pedido</th>
+<<<<<<< HEAD
 
 
 
@@ -107,6 +138,12 @@
 
                     </tr>
                     <tr>
+=======
+ </tr>
+ </thead>
+ <tbody>
+<tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <td>Carlos</td>
                         <td>
                             <?php
@@ -494,6 +531,7 @@
                             ?>
                         </td>
                     </tr>
+<<<<<<< HEAD
 
                     
                     
@@ -530,4 +568,29 @@
 
             </body>
         </div>
+=======
+ </tbody>
+</table>
+        </div></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+ // Write on keyup event of keyword input element
+ $(document).ready(function(){
+ $("#buscandoIguales").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+ $.each($("#mytable tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
+  </body>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </html>

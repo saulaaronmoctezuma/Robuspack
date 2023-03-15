@@ -28,6 +28,73 @@
         </script>
 
 
+<<<<<<< HEAD
+=======
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".hidediv").click(function() {
+                    $(".divdemo").hide("slow");
+                });
+
+                $(".showdiv").click(function() {
+                    $(".divdemo").show(2000);
+                });
+
+            });
+
+        </script>
+        <style>
+            .divTable,divTableBody{
+
+                background-color:#0780BA;
+                color:#fff;
+                padding:100px;
+                font-size:25px;
+            }
+            /* DivTable.com */
+            .divTable{
+                display: table;
+                width: 100%;
+            }
+            .divTableRow {
+                display: table-row;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+            }
+            .divTableCell, .divTableHead {
+                border: 1px solid #999999;
+                display: table-cell;
+                padding: 3px 10px;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+                font-weight: bold;
+            }
+            .divTableFoot {
+                background-color: #EEE;
+                display: table-footer-group;
+                font-weight: bold;
+            }
+            .divTableBody {
+                display: table-row-group;
+            }
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    border: 1px solid blue;
+    width: 100px;
+    word-wrap: break-word;
+}
+        </style>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <!-- Para traerse el rol que esta registrado-->
         <?php
         //check user level
@@ -45,7 +112,11 @@
 
 
         <div class="table-responsive">
+<<<<<<< HEAD
             <center>  <h1>Bitácora Maquinaria</h1></center>
+=======
+            <center>  <h1>Bitácora</h1><h4>Actividades del día a día</h4></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             <div class="alert alert-info alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -53,7 +124,11 @@
             </div>
             <div class="form-group input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+<<<<<<< HEAD
                 <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+                <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             </div>
 
             <div class="text-center">
@@ -209,6 +284,10 @@
 
         }
         ?>
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <BR>
             <table  border="0" class="table table-bordered table-striped">
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
@@ -252,12 +331,20 @@
                             
                             
                             
+<<<<<<< HEAD
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
 
                            
                             echo '<th class="header">Fecha De Inserción</th>';
                             echo '<th class="header">Fecha de Modificación</th>';
                              echo '<th class="header">Modificar</th>';
+=======
+                        } else if ($dataLevel == 'is_director') {
+
+                            echo '<th class="header">Usuario</th>';
+                            echo '<th class="header">Fecha De Inserción</th>';
+                            echo '<th class="header">Fecha de Modificación</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         } else if ($dataLevel == 'is_maquinaria') {
 
                             echo '<th class="header" colspan="2" >Acción</th>';
@@ -273,7 +360,11 @@
                     </tr>
                 </thead>
 
+<<<<<<< HEAD
                 <tbody align="center" id="myTable">
+=======
+                <tbody align="center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     <?php
                     foreach ($bitacora as $obj) {
@@ -288,6 +379,7 @@
                         '</td>'
                         . '<td>'
                         . $obj->getCliente() .
+<<<<<<< HEAD
                         '</td>';
                         
                         
@@ -316,6 +408,21 @@
             
             
                  ?>
+=======
+                        '</td>'
+                   //  . '<td>'
+                    //    . $obj->getDescripcion() .
+                      //  '</td>'
+
+                                    
+
+                        ;
+
+                        
+                        
+                        
+                           ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -362,6 +469,7 @@
                         
                         
                         
+<<<<<<< HEAD
             
             
             
@@ -377,6 +485,26 @@
             
             
 
+=======
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         if ($obj->getArchivo1() != null) {

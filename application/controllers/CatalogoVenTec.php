@@ -1,12 +1,26 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
  */
  
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of CatalogoVenTec
+ *
+ * @author Desarrollo.robus
+ */
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class CatalogoVenTec extends CI_Controller {
 
     function __construct() {
@@ -32,6 +46,14 @@ class CatalogoVenTec extends CI_Controller {
         $this->load->model('CatalogoVenTec/CatalogoVenTecModelo');
         $data['title'] = 'Lista de Catálogo Vendedor y Técnicos';
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //user data from session
         $data = $this->session->userdata;
         /* if (empty($data)) {
@@ -73,9 +95,12 @@ class CatalogoVenTec extends CI_Controller {
         $data['css'] = $this->css;
         $data['base'] = $this->base;
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //user data from session
         $data = $this->session->userdata;
         /* if (empty($data)) {
@@ -142,6 +167,12 @@ class CatalogoVenTec extends CI_Controller {
     public function obtener($id_catalogo) {
         $this->load->model('CatalogoVenTec/CatalogoVenTecModelo');
         
+<<<<<<< HEAD
+=======
+       
+        
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
          //user data from session
         $data = $this->session->userdata;
         /* if (empty($data)) {

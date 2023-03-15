@@ -604,7 +604,11 @@ class Block extends AbstractFrameReflower
                                 break;
 
                             case "text-top": // FIXME: this should be the height of the frame minus the height of the text
+<<<<<<< HEAD
                                 $y_offset = $height - (float)$style->length_in_pt($style->get_line_height(), $style->font_size);
+=======
+                                $y_offset = $height - (float)$style->length_in_pt($style->line_height, $style->font_size);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 break;
 
                             case "top":

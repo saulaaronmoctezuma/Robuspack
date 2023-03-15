@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,6 +6,8 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <html lang="es-mx">
     <head>
         <title>Robuspack</title>
@@ -17,9 +20,13 @@
     <body>
         <div class="container box">
             <br />
+<<<<<<< HEAD
             <h1 align="rigth">Ficha Técnica del Cliente</h1>
             
        
+=======
+            <h3 align="rigth">Ficha Técnica del Cliente</h3>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <br />
             <?php
             if (isset($customer_data)) {

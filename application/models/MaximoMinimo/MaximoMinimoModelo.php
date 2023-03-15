@@ -64,14 +64,22 @@ class MaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
 $query = $this->db->query("select r.codigo,
 DATE_FORMAT(r.fecha_corte_rotacion, '%d/%m/%Y') fecha_corte_rotacion
 ,
+<<<<<<< HEAD
 DATE_FORMAT(r.pedido_inteligente, '%d/%m/%Y') pedido_inteligente
+=======
+DATE_FORMAT(r.pedido_inteligente, '%d/%m%Y') pedido_inteligente
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 ,
 r.suma_total_requerido_mensual_con_oc_y_consignacion
 , r.suma_total_requerido_trimestral_con_oc_y_consignacion,
 r.inventario,r.piezas_a_recibir,
 r.piezas_requeridas_con_oc_consig_trimestral, 
 r.meses_cubiertos,
+<<<<<<< HEAD
 DATE_FORMAT(r.fecha_cubierta, '%d/%m/%Y' ) fecha_cubierta,
+=======
+DATE_FORMAT(r.fecha_cubierta, '%d/%m%Y' ) fecha_cubierta,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 r.total_mensual_sin_oc, r.informativo_prospectacion_mercado, r.pc_fob ,
 r.descripcion,r.grupo,r.cliente, r.cantidad_maxima,r.fecha_ultimo_consumo,
 
@@ -85,7 +93,11 @@ r.piezas_a_solicitar,
 r.vendedor,
 r.id_usuario, r.id_maquinaria
 
+<<<<<<< HEAD
 from maximo_minimo_r r");
+=======
+from max_min_prueba_beta_a_entregar r");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  
             $colMaximoMinimo = array();
 
@@ -125,7 +137,11 @@ from maximo_minimo_r r");
             }
             return $colMaximoMinimo;
         } else if ($dataLevel == "is_editor") {
+<<<<<<< HEAD
              /* Para traerse el id del usuario */
+=======
+              /* Para traerse el id del usuario */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
            //$query = $this->db->query('SELECT * from rotacion_inventario_rodrigo1 order by codigo asc');
@@ -133,14 +149,22 @@ from maximo_minimo_r r");
 $query = $this->db->query("select r.codigo,
 DATE_FORMAT(r.fecha_corte_rotacion, '%d/%m/%Y') fecha_corte_rotacion
 ,
+<<<<<<< HEAD
 DATE_FORMAT(r.pedido_inteligente, '%d/%m/%Y') pedido_inteligente
+=======
+DATE_FORMAT(r.pedido_inteligente, '%d/%m%Y') pedido_inteligente
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 ,
 r.suma_total_requerido_mensual_con_oc_y_consignacion
 , r.suma_total_requerido_trimestral_con_oc_y_consignacion,
 r.inventario,r.piezas_a_recibir,
 r.piezas_requeridas_con_oc_consig_trimestral, 
 r.meses_cubiertos,
+<<<<<<< HEAD
 DATE_FORMAT(r.fecha_cubierta, '%d/%m/%Y' ) fecha_cubierta,
+=======
+DATE_FORMAT(r.fecha_cubierta, '%d/%m%Y' ) fecha_cubierta,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 r.total_mensual_sin_oc, r.informativo_prospectacion_mercado, r.pc_fob ,
 r.descripcion,r.grupo,r.cliente, r.cantidad_maxima,r.fecha_ultimo_consumo,
 
@@ -154,7 +178,11 @@ r.piezas_a_solicitar,
 r.vendedor,
 r.id_usuario, r.id_maquinaria
 
+<<<<<<< HEAD
 from maximo_minimo_r r");
+=======
+from max_min_prueba_beta_a_entregar r");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  
             $colMaximoMinimo = array();
 
@@ -192,7 +220,11 @@ from maximo_minimo_r r");
 
                 array_push($colMaximoMinimo, $objeto);
             }
+<<<<<<< HEAD
             return $colMaximoMinimo;
+=======
+            return $colMaximoMinimo;    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else {
             redirect(site_url() . 'main/');
         }
@@ -208,7 +240,11 @@ from maximo_minimo_r r");
 
     public function totalRegistroCodigo() {
         $this->db->select('count(codigo) as  codigo');
+<<<<<<< HEAD
         $this->db->from('maximo_minimo_r');
+=======
+        $this->db->from('max_min_prueba_beta_a_entregar');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //$this->db->where('venta.id= ', 6);
         $query = $this->db->get();
         return $query->result();

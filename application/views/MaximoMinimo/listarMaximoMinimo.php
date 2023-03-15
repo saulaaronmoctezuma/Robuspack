@@ -15,7 +15,16 @@
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
 
+<<<<<<< HEAD
 
+=======
+        <style>
+            .sinbordefondo {
+                background-color: #eee;
+                border: 0;
+            }
+        </style>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         <!-- Pregunta al dar clic a eliminar-->
         <script type="text/javascript">
@@ -40,9 +49,76 @@
         //check user level
         ?>
 
+<<<<<<< HEAD
 
     </head>
 
+=======
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+document.getElementById("IDdeTabla").rows[i].cells[j].innerText  
+    <script>
+        
+          
+            $(document).ready(function() {
+                  
+                  
+               var total=0;
+ 
+//selector &gt;&gt;  $("#GridView1 tr").find('td:eq(1)')
+//De esta manera utilizando eq seleccionamos la segunda fila, ya que la primera es 0
+$("#miTabla tr").find('td:eq(1)').each(function () {
+ 
+ //obtenemos el valor de la celda
+  valor = $(this).html();
+ 
+ //sumamos, recordar parsear, si no se concatenara.
+ total += parseInt(valor)
+})
+ 
+//mostramos el total
+alert(total);
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+               
+              
+                
+                
+                
+
+
+
+
+    </script>
+    </head><br><br><br><br><br>
+<table id="miTabla">
+    <tr>
+        <td>pato</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>pato</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>pato</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>pato</td>
+        <td>16</td>
+    </tr>
+<table>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <div class="container" style="margin-top:1px;">
 
         <center>  <h1>Reporte Máximo Minimo</h1></center>
@@ -55,14 +131,22 @@
         </div>
 
         <div class="text-center">
+<<<<<<< HEAD
             <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelMaximoMinimo2">
+=======
+            <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelMaximoMinimoR">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <input type="submit" title="Da clic para exportar los datos a Excel" name="export" class="btn btn-success" value="Exportar a excel" />
             </form>
         </div>
     </div>
 
+<<<<<<< HEAD
 
 
+=======
+   
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <div class="container" style="margin-top:1px;">
 
 
@@ -73,7 +157,11 @@
 
 
 
+<<<<<<< HEAD
             <table id="example"  border="1" class="table table-bordered table-striped">
+=======
+            <table id="example1"  border="1" class="table table-bordered table-striped">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
                 <thead>
                     <tr>
@@ -99,8 +187,13 @@
                         <!--<th style="text-align: center">Piezas a solicitar</th>-->
                         <th style="text-align: center">Meses Cubiertos</th>
                         <th style="text-align: center">Fecha Cubierta</th>
+<<<<<<< HEAD
                          <th style="text-align: center">Total Mensual sin OC</th>
                           <th style="text-align: center">Prospectación Mercado Mensual</th>
+=======
+                        <th style="text-align: center">Total Mensual sin OC</th>
+                        <th style="text-align: center">Prospectación Mercado Mensual</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -121,13 +214,21 @@
 
                     <?php
                     foreach ($maximominimo as $obj) {
+<<<<<<< HEAD
                         echo '<tr><td>';
+=======
+                        echo '<tr class="suma"><td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo $obj->getVendedor() .
                         '</td>'
                         . '<td>' .
                         $obj->getDescripcion() .
                         '</td>'
+<<<<<<< HEAD
                         . '<td bgcolor="#00FF00">' .
+=======
+                        . '<td bgcolor="#00FF00" id="codigo">' .
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $obj->getCodigo() .
                         '</td>'
                         . '<td width="50" height="16">'
@@ -139,9 +240,15 @@
                         . '<td>'
                         . $obj->getCliente() .
                         '</td>'
+<<<<<<< HEAD
                         . '<td>'
                         . $obj->getCantidad_maxima() .
                         '</td>'
+=======
+                        . '<td id="cantidad_maxima">'
+                        . $obj->getCantidad_maxima()
+                        . ' </td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         . '<td>'
                         . $obj->getFecha_ultimo_consumo() .
                         '</td>'
@@ -154,12 +261,21 @@
                         . '<td >'
                         . $obj->getPedido_inteligente() .
                         '</td>'
+<<<<<<< HEAD
                         /*. '<td class="count-me1">'
                         . $obj->getSuma_total_requerido_mensual() .
                         '</td>'
                         . '<td>'
                         . $obj->getSuma_total_requerido_trimestral() .
                         '</td>'*/
+=======
+                        /* . '<td class="count-me1">'
+                          . $obj->getSuma_total_requerido_mensual() .
+                          '</td>'
+                          . '<td>'
+                          . $obj->getSuma_total_requerido_trimestral() .
+                          '</td>' */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         . '<td>'
                         . $obj->getSuma_total_requerido_mensual_con_oc_y_consignacion() .
                         '</td>'
@@ -175,9 +291,15 @@
                         . '<td>'
                         . $obj->getDisponibilidad_total() .
                         '</td>'
+<<<<<<< HEAD
                         /*. '<td bgcolor="yellow">'
                         . $obj->getPiezas_a_solicitar() .
                         '</td>'*/
+=======
+                        /* . '<td bgcolor="yellow">'
+                          . $obj->getPiezas_a_solicitar() .
+                          '</td>' */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         . '<td>'
                         . $obj->getMeses_cubiertos() .
                         '</td>'
@@ -195,6 +317,11 @@
 
                         ;
 
+<<<<<<< HEAD
+=======
+                        ;
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         if ($dataLevel == 'is_admin') {
                             
                         } else if ($dataLevel == 'is_editor') {
@@ -208,6 +335,7 @@
 
 
                     </tr>
+<<<<<<< HEAD
                     
                     <?php
                     
@@ -264,6 +392,95 @@ else
             }
             document.getElementById('countit').innerHTML += '<div>' + sum + '</div><div>total<div>';
         </script>
+=======
+                <tfoot>
+                    <tr class="total">
+                        <td >su total:</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr></tfoot>  
+                <?php
+                if ($dataLevel == 'is_admin') {
+                    echo '<tr>
+                        <td></td>
+                        <td></td>
+                        <td>';
+
+                    foreach ($totalRegistroCodigo as $fila) {
+
+                        echo ' <div class="grid_12" id="cuerpo">
+                                    Total:<div class="grid_1">' . $fila->codigo . '</div>
+                                </div>';
+                    }
+
+                    echo '</td>
+                        <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       <td></td>
+                       
+                       
+                       
+                       
+                       
+                       
+                    </tr>  ';
+                } else if ($dataLevel == 'is_editor') {
+                    
+                } else {
+                    
+                }
+
+
+                /* if ($this->db->simple_query('YOUR QUERY'))
+                  {
+                  echo "Success!";
+                  }
+                  else
+                  {
+                  echo "Query failed!";
+                  }
+                 */
+                ?>
+
+
+
+
+
+                </tbody>
+            </table>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -271,5 +488,10 @@ else
             </body>
         </div>
         <html>
+<<<<<<< HEAD
    
 </html>
+=======
+
+        </html>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

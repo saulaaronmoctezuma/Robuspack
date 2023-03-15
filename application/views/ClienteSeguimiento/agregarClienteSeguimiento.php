@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,6 +6,9 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+<?php ?>   
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <html lang="es-mx">
 <head>
 
@@ -86,7 +90,11 @@
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Bienvenido</strong> Agrega los datos segun corresponda
         </div>
+<<<<<<< HEAD
         <h1>Control SIC</h1>
+=======
+        <h1>Gestión del Seguimiento del cliente</h1>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <MARQUEE SCROLLDELAY =200></MARQUEE>
         <form name="formulario" id="formal" role="form" action="<?= base_url('ClienteSeguimiento/formularioAgregar') ?>" method="POST" onsubmit="return valida()">
 

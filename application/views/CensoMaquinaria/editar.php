@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 
+=======
+<!--
+ * @author  Saul González & Karen González
+ * Fecha : Ultimo Cambio 25/26/2019 Hora 10:32 am
+Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
+ * Sistema de Control Robuspack
+ */-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -16,6 +25,7 @@
         //check user level
         ?>
     </head>
+<<<<<<< HEAD
     
       <style>
                                                 
@@ -32,6 +42,8 @@
       }
                                             </style>
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
     <script type="text/javascript">
 
@@ -349,11 +361,15 @@
 
 
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         function agregarMaquina()
         {
             getSelectValue = document.getElementById("maquina").value;
             if (getSelectValue === "") {
+<<<<<<< HEAD
                 
                  document.getElementById("lbl_info_maquina_1").style.display = "none";
                 document.getElementById("info_maquina_1").style.display = "none";
@@ -470,12 +486,29 @@
                 document.getElementById("codigo_cubierta_maquina_7").style.display = "none";
                 document.getElementById("lbl_cliente_conoce_maquina_7").style.display = "none";
                 document.getElementById("cliente_conoce_maquina_7").style.display = "none";
+=======
+                document.getElementById("lbl_info_maquina_1").style.display = "none";
+                document.getElementById("info_maquina_1").style.display = "none";
+                document.getElementById("lbl_info_maquina_2").style.display = "none";
+                document.getElementById("info_maquina_2").style.display = "none";
+                document.getElementById("lbl_info_maquina_3").style.display = "none";
+                document.getElementById("info_maquina_3").style.display = "none";
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             } else if (getSelectValue === "1") {
                 // document.getElementById("nombre_dueno").disabled = true;
                 document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
                 document.getElementById("info_maquina_1").style.display = "inline-block";
+<<<<<<< HEAD
                 document.getElementById("lbl_maquina_1").style.display = "inline-block";
                 document.getElementById("lbl_modelo_maquina_1").style.display = "inline-block";
                 document.getElementById("modelo_maquina_1").style.display = "inline-block";
@@ -595,10 +628,26 @@
 
                 
 
+=======
+
+                document.getElementById("lbl_info_maquina_2").style.display = "none";
+                document.getElementById("info_maquina_2").style.display = "none";
+                document.getElementById("lbl_info_maquina_3").style.display = "none";
+                document.getElementById("info_maquina_3").style.display = "none";
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             } else if (getSelectValue === "2") {
 
+<<<<<<< HEAD
              
                   document.getElementById("lbl_info_maquina_1").style.display = "none";
                 document.getElementById("info_maquina_1").style.display = "none";
@@ -641,10 +690,17 @@
 
             
               
+=======
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 document.getElementById("lbl_info_maquina_3").style.display = "none";
                 document.getElementById("info_maquina_3").style.display = "none";
+<<<<<<< HEAD
                 document.getElementById("lbl_maquina_3").style.display = "none";
                 document.getElementById("lbl_modelo_maquina_3").style.display = "none";
                 document.getElementById("modelo_maquina_3").style.display = "none";
@@ -729,6 +785,16 @@
                 
                 
                
+=======
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             }
@@ -740,6 +806,7 @@
                 document.getElementById("info_maquina_2").style.display = "inline-block";
                 document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
                 document.getElementById("info_maquina_3").style.display = "inline-block";
+<<<<<<< HEAD
                 document.getElementById("lbl_maquina_3").style.display = "inline-block";
                 document.getElementById("lbl_tipo_maquina_3").style.display = "inline-block";
                 document.getElementById("tipo_maquina_3").style.display = "inline-block";
@@ -856,10 +923,22 @@
                 document.getElementById("codigo_cubierta_maquina_7").style.display = "none";
                 document.getElementById("lbl_cliente_conoce_maquina_7").style.display = "none";
                 document.getElementById("cliente_conoce_maquina_7").style.display = "none";
+=======
+
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             } else if (getSelectValue === "4") {
 
+<<<<<<< HEAD
                  document.getElementById("lbl_info_maquina_1").style.display = "none";
                 document.getElementById("info_maquina_1").style.display = "none";
                 document.getElementById("lbl_maquina_1").style.display = "none";
@@ -1101,10 +1180,41 @@
                 document.getElementById("codigo_cubierta_maquina_7").style.display = "none";
                 document.getElementById("lbl_cliente_conoce_maquina_7").style.display = "none";
                 document.getElementById("cliente_conoce_maquina_7").style.display = "none";
+=======
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+
+            } else if (getSelectValue === "5") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_5").style.display = "inline-block";
+                document.getElementById("info_maquina_5").style.display = "inline-block"
+
+
+
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             } else if (getSelectValue === "6") {
 
+<<<<<<< HEAD
                document.getElementById("lbl_info_maquina_1").style.display = "none";
                 document.getElementById("info_maquina_1").style.display = "none";
                 document.getElementById("lbl_maquina_1").style.display = "none";
@@ -1470,6 +1580,41 @@
             }
             
             
+=======
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_5").style.display = "inline-block";
+                document.getElementById("info_maquina_5").style.display = "inline-block"
+                document.getElementById("lbl_info_maquina_6").style.display = "inline-block";
+                document.getElementById("info_maquina_6").style.display = "inline-block"
+
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+
+            } else if (getSelectValue === "7") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_5").style.display = "inline-block";
+                document.getElementById("info_maquina_5").style.display = "inline-block"
+                document.getElementById("lbl_info_maquina_6").style.display = "inline-block";
+                document.getElementById("info_maquina_6").style.display = "inline-block"
+                document.getElementById("lbl_info_maquina_7").style.display = "inline-block";
+                document.getElementById("info_maquina_7").style.display = "inline-block"
+            } 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         }
@@ -1493,10 +1638,17 @@
                         <br>
                         <div class="row"> 
                             
+<<<<<<< HEAD
                     <!--          <input type="text" name="empresa_temporal" value="<?= $data->empresa_temporal ?>">
                 
                 <input type="text" name="grupo_temporal" value="<?= $data->grupo_temporal ?>">ID -->
 <!--
+=======
+                             <input type="hidden" name="empresa_temporal" value="<?= $data->empresa_temporal ?>">
+                <!-- ID -->
+                <input type="hidden" name="grupo_temporal" value="<?= $data->grupo_temporal ?>">
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-6">
 
 
@@ -1511,6 +1663,7 @@
                                 
                                 
                                 <input id="empresa" type="text" class="form-control" value="<?= $data->empresa ?>"  name="empresa" placeholder="Ingresa el nombre de la empresa">
+<<<<<<< HEAD
                             </div>-->
                             
                             
@@ -1711,6 +1864,9 @@
                 
                 
       
+=======
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -1744,6 +1900,7 @@
                         <div class="row">
 
 
+<<<<<<< HEAD
                           <!--  <div class="form-group col-xs-6">
                                 <label for="nombre">Tipo de Cliente </label>
                                 <input id="tipo_de_cliente" type="text" value="<?= $data->tipo_de_cliente ?>" class="form-control form-control-sm"  name="tipo_de_cliente" placeholder="Ingresa el tipo de cliente">
@@ -1776,6 +1933,12 @@
                             </div>
                             
                             
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Tipo de Cliente </label>
+                                <input id="tipo_de_cliente" type="text" value="<?= $data->tipo_de_cliente ?>" class="form-control form-control-sm"  name="tipo_de_cliente" placeholder="Ingresa el tipo de cliente">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group col-xs-6">
@@ -1793,6 +1956,7 @@
 
                         <div class="row">
 
+<<<<<<< HEAD
                             <!--<div class="form-group col-xs-6">
                                 <label for="nombre">Asesor </label>
                                 <input id="asesor"  readOnly type="text" value="<?= $data->asesor ?>" class="form-control form-control-sm"  name="asesor" placeholder="Ingresa el asesor">
@@ -1865,18 +2029,34 @@
                             
                          
 
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Asesor </label>
+                                <input id="asesor" type="text" value="<?= $data->asesor ?>" class="form-control form-control-sm"  name="asesor" placeholder="Ingresa el asesor">
+                            </div>
+
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Estatus Cliente </label>
+                                <input id="estatus_cliente" value="<?= $data->estatus_cliente ?>" type="text" class="form-control form-control-sm"  name="estatus_cliente" placeholder="Ingresa el estatus cliente">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         </div>
                         <br>
                         <div class="row">
 
+<<<<<<< HEAD
                             
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Estatus Cliente </label>
                                 <input id="estatus_cliente" value="<?= $data->estatus_cliente ?>" type="text" class="form-control form-control-sm"  name="estatus_cliente" placeholder="Ingresa el estatus cliente">
                             </div>
         
+=======
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Tipo Mercado </label>
@@ -1884,7 +2064,14 @@
                             </div>
 
 
+<<<<<<< HEAD
                            
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Volumen producccion </label>
+                                <input id="volumen_produccion" value="<?= $data->volumen_produccion ?>" type="text" class="form-control form-control-sm"  name="volumen_produccion" placeholder="Ingresa el volumen produccion">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         </div>
 
@@ -1892,12 +2079,18 @@
                         <br>
 
                         <div class="row">
+<<<<<<< HEAD
                              <div class="form-group col-xs-6">
                                 <label for="nombre">Volumen producccion </label>
                                 <input id="volumen_produccion" value="<?= $data->volumen_produccion ?>" type="text" class="form-control form-control-sm"  name="volumen_produccion" placeholder="Ingresa el volumen produccion">
                             </div>
 
     
+=======
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group col-xs-6">
@@ -1905,7 +2098,14 @@
                                 <input id="necesidad" type="text" value="<?= $data->necesidad ?>" class="form-control form-control-sm"  name="necesidad" placeholder="Ingresa la necesidad">
                             </div>
 
+<<<<<<< HEAD
                            
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Compromiso </label>
+                                <input id="compromiso" type="text" value="<?= $data->compromiso ?>" class="form-control form-control-sm"  name="compromiso" placeholder="Ingresa el compromiso">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         </div>
 
@@ -1915,10 +2115,14 @@
                         <div class="row">
 
 
+<<<<<<< HEAD
                              <div class="form-group col-xs-6">
                                 <label for="nombre">Compromiso </label>
                                 <input id="compromiso" type="text" value="<?= $data->compromiso ?>" class="form-control form-control-sm"  name="compromiso" placeholder="Ingresa el compromiso">
                             </div>
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group col-xs-6">
@@ -1926,7 +2130,14 @@
                                 <input id="notas" type="text" value="<?= $data->notas ?>" class="form-control form-control-sm"  name="notas" placeholder="Ingresa las notas">
                             </div>
 
+<<<<<<< HEAD
                            
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Refacciones </label>
+                                <input id="refacciones" type="text" value="<?= $data->refacciones ?>" class="form-control form-control-sm"  name="refacciones" placeholder="Ingresa la lista de refacciones">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         </div>
 
@@ -1934,10 +2145,14 @@
                         <br>
                         <div class="row">
 
+<<<<<<< HEAD
                              <div class="form-group col-xs-6">
                                 <label for="nombre">Refacciones </label>
                                 <input id="refacciones" type="text" value="<?= $data->refacciones ?>" class="form-control form-control-sm"  name="refacciones" placeholder="Ingresa la lista de refacciones">
                             </div>
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -1954,6 +2169,7 @@
                             </optgroup>
                            </SELECT>
                             </div>
+<<<<<<< HEAD
                            
                             
 
@@ -1973,6 +2189,10 @@
                             </div>
                           </div>   
                         
+=======
+
+                        </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                     </div>
@@ -2028,12 +2248,20 @@
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_dueno" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_dueno" value="<?= $data->nombre_dueno ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_dueno" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_dueno" value="<?= $data->nombre_dueno ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_dueno" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_dueno" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_dueno" value="<?= $data->celular_dueno ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_dueno" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_dueno" value="<?= $data->celular_dueno ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_dueno" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2046,12 +2274,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_dueno" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_dueno" value="<?= $data->correo_personal_dueno ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_dueno" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_dueno" value="<?= $data->correo_personal_dueno ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_dueno" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_dueno" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_dueno" value="<?= $data->correo_empresarial_dueno ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_dueno" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_dueno" value="<?= $data->correo_empresarial_dueno ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_dueno" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2068,12 +2304,20 @@
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_ceo" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_ceo" value="<?= $data->nombre_ceo ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_ceo" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_ceo" value="<?= $data->nombre_ceo ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_ceo" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_ceo" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_ceo" value="<?= $data->celular_ceo ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_ceo" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_ceo" value="<?= $data->celular_ceo ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_ceo" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2086,12 +2330,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_ceo" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_ceo" value="<?= $data->correo_personal_ceo ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_ceo" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_ceo" value="<?= $data->correo_personal_ceo ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_ceo" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_ceo" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_ceo" value="<?= $data->correo_empresarial_ceo ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_ceo" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_ceo" value="<?= $data->correo_empresarial_ceo ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_ceo" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2117,12 +2369,20 @@
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_gerente" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_gerente" value="<?= $data->correo_empresarial_gerente ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_gerente" placeholder1="1Ingresa el nombre">
+=======
+                                <input id="nombre_gerente" value="<?= $data->correo_empresarial_ceo ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_gerente" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_gerente" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_gerente" value="<?= $data->celular_gerente ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_gerente" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_gerente" value="<?= $data->celular_gerente ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_gerente" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2135,12 +2395,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_gerente" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_gerente" value="<?= $data->correo_personal_gerente ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_gerente" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_gerente" value="<?= $data->correo_personal_gerente ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_gerente" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_gerente" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_gerente" value="<?= $data->correo_empresarial_gerente ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_gerente" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_gerente" value="<?= $data->correo_empresarial_gerente ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_gerente" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2152,18 +2420,30 @@
                         <center> 
                             <label id="produccion" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE PRODUCCION
+=======
+                                    DATOS DEL PRODUCCION
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_produccion" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_produccion" value="<?= $data->nombre_produccion ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_produccion" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_produccion" value="<?= $data->correo_empresarial_gerente ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_produccion" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_produccion" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_produccion" value="<?= $data->celular_produccion ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_produccion" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_produccion" value="<?= $data->celular_produccion ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_produccion" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2176,12 +2456,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_produccion" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_produccion" value="<?= $data->correo_personal_produccion ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_produccion" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_produccion" value="<?= $data->correo_personal_produccion ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_produccion" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_produccion" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_produccion" value="<?= $data->correo_empresarial_produccion ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_produccion" placeholde1r="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_produccion" value="<?= $data->correo_empresarial_produccion ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_produccion" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2191,18 +2479,30 @@
                         <center> 
                             <label id="mtto" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DEL ENCARGADO DE MTTO
+=======
+                                    DATOS DEL MTTO
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_mtto" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_mtto" value="<?= $data->nombre_mtto ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_mtto" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_mtto" value="<?= $data->nombre_mtto ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_mtto" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_mtto" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_mtto" value="<?= $data->celular_mtto ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_mtto" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_mtto" value="<?= $data->celular_mtto ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_mtto" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2215,12 +2515,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_mtto" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_mtto" value="<?= $data->correo_personal_mtto ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_mtto" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_mtto" value="<?= $data->correo_personal_mtto ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_mtto" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_mtto" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_mtto" value="<?= $data->correo_empresarial_mtto ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_mtto" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_mtto" value="<?= $data->correo_empresarial_mtto ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_mtto" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2230,18 +2538,30 @@
                         <center> 
                             <label id="compras" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DEL ENCARGADO COMPRAS
+=======
+                                    DATOS DEL COMPRAS
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_compras" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_compras" value="<?= $data->nombre_compras ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_compras" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_compras" value="<?= $data->nombre_compras ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_compras" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_compras" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_compras" value="<?= $data->celular_compras ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_compras" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_compras" value="<?= $data->celular_compras ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_compras" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2254,12 +2574,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_compras" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_compras" value="<?= $data->correo_personal_compras ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_compras" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_compras" value="<?= $data->correo_personal_compras ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_compras" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_compras" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_compras" value="<?= $data->correo_empresarial_compras ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_compras" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_compras" value="<?= $data->correo_empresarial_compras ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_compras" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2269,18 +2597,30 @@
                         <center> 
                             <label id="ventas" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE ENCARGADO DE VENTAS
+=======
+                                    DATOS DEL VENTAS
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_ventas" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_ventas" value="<?= $data->nombre_ventas ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_ventas" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_ventas" value="<?= $data->nombre_ventas ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_ventas" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_ventas" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_ventas" value="<?= $data->celular_ventas ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_ventas" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_ventas" value="<?= $data->celular_ventas ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_ventas" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2293,12 +2633,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_ventas" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_ventas" value="<?= $data->correo_personal_ventas ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_ventas" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_ventas" value="<?= $data->correo_personal_ventas ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_ventas" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_ventas" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_ventas" value="<?= $data->correo_empresarial_ventas ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_ventas" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_ventas" value="<?= $data->correo_empresarial_ventas ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_ventas" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2308,18 +2656,30 @@
                         <center> 
                             <label id="otros" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE OTROS
+=======
+                                    DATOS DEL OTROS
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label id="lbl_nombre_otros" style="display: none">Nombre </label>
+<<<<<<< HEAD
                                 <input id="nombre_otros" value="<?= $data->nombre_otros ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_otros" placeholder1="Ingresa el nombre">
+=======
+                                <input id="nombre_otros" value="<?= $data->nombre_otros ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="nombre_otros" placeholder="Ingresa el nombre">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_celular_otros" style="display: none">Celular  </label>
+<<<<<<< HEAD
                                 <input id="celular_otros" value="<?= $data->celular_otros ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_otros" placeholder1="Ingresa el celular">
+=======
+                                <input id="celular_otros" value="<?= $data->celular_otros ?>" style="display: none" type="text" class="form-control form-control-sm bg-dark"  name="celular_otros" placeholder="Ingresa el celular">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2332,12 +2692,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_otros" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_otros" value="<?= $data->correo_personal_otros ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_otros" placeholder1="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_otros" value="<?= $data->correo_personal_otros ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_otros" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_otros" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_otros" value="<?= $data->correo_empresarial_otros ?>" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_otros" placeholder1="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_otros" value="<?= $data->correo_empresarial_otros ?>" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_otros" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2355,18 +2723,26 @@
                     </div>
 
 
+<<<<<<< HEAD
                     
 
                     <div class="jumbotron">
 
 
 <!--
+=======
+                    <div class="jumbotron">
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="row">
                             <div class="form-group col-xs-4"></div>
                             <div class="form-group col-xs-4">
                                 <label for="nombre">Máquinas a editar </label>
                                 <select name="maquina" id="maquina" class="form-control input-sm" onchange="agregarMaquina()">
                                     <option  value="">Selecciona una opción</option>
+<<<<<<< HEAD
                                     <OPTION VALUE="1">1 - <?= $data->info_maquina_1 ?></OPTION>
                                     <OPTION VALUE="2">2 - <?= $data->info_maquina_2 ?></OPTION>
                                     <OPTION VALUE="3">3 - <?= $data->info_maquina_3 ?> </OPTION>
@@ -2375,11 +2751,22 @@
                                     <OPTION VALUE="6">6 - <?= $data->info_maquina_6 ?></OPTION>
                                     <OPTION VALUE="7">7 - <?= $data->info_maquina_7 ?></OPTION>
                                     <OPTION VALUE="Todas">Todas</OPTION>
+=======
+                                    <OPTION VALUE="1">1</OPTION>
+                                    <OPTION VALUE="2">2</OPTION>
+                                    <OPTION VALUE="3">3</OPTION>
+                                    <OPTION VALUE="4">4</OPTION>
+                                    <OPTION VALUE="5">5</OPTION>
+                                    <OPTION VALUE="6">6</OPTION>
+                                    <OPTION VALUE="7">7</OPTION>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </select>
 
                             </div>
                             <div class="form-group col-xs-4"></div>
 
+<<<<<<< HEAD
                         </div>-->
 
                         
@@ -4331,33 +4718,72 @@
                             <div class="form-group col-xs-6"> 
                                 <label id="lbl_info_maquina_3" style="display: block">Maquina 3  </label>
                                 <textarea name="info_maquina_3"  id="info_maquina_3" class="form-control input-sm" rows="3" cols="80" style="resize:block;display: block" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_3 ?></textarea>
+=======
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_1" style="display: none">Maquina 1  </label>
+                                <textarea name="info_maquina_1"  id="info_maquina_1" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_1 ?></textarea>
+                            </div>
+
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_2" style="display: none">Maquina 2  </label>
+                                <textarea name="info_maquina_2" id="info_maquina_2" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_2 ?></textarea>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_3" style="display: none">Maquina 3  </label>
+                                <textarea name="info_maquina_3"  id="info_maquina_3" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_3 ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
 
                             <div class="form-group col-xs-6"> 
+<<<<<<< HEAD
                                 <label id="lbl_info_maquina_4" style="display: block">Maquina 4  </label>
                                 <textarea name="info_maquina_4"  id="info_maquina_4" class="form-control input-sm" rows="3" cols="80" style="resize:block;display: block" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_4 ?></textarea>
+=======
+                                <label id="lbl_info_maquina_4" style="display: none">Maquina 4  </label>
+                                <textarea name="info_maquina_4"  id="info_maquina_4" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_4 ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
                         </div>
 
 
                         <div class="row">
                             <div class="form-group col-xs-6"> 
+<<<<<<< HEAD
                                 <label id="lbl_info_maquina_5" style="display: block">Maquina 5 111  </label>
                                 <textarea name="info_maquina_5" id="info_maquina_5" class="form-control input-sm" rows="3" cols="80" style="resize:block;display: block" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_5 ?></textarea>
+=======
+                                <label id="lbl_info_maquina_5" style="display: none">Maquina 5  </label>
+                                <textarea name="info_maquina_5" id="info_maquina_5" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_5 ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
                             <div class="form-group col-xs-6"> 
+<<<<<<< HEAD
                                 <label id="lbl_info_maquina_6" style="display: block">Maquina 6  </label>
                                 <textarea name="info_maquina_6"  id="info_maquina_6" class="form-control input-sm" rows="3" cols="80" style="resize:block;display: block" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_6 ?></textarea>
+=======
+                                <label id="lbl_info_maquina_6" style="display: none">Maquina 6  </label>
+                                <textarea name="info_maquina_6"  id="info_maquina_6" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_6 ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
                         </div>
 
 
                         <div class="row">
                             <div class="form-group col-xs-6"> 
+<<<<<<< HEAD
                                 <label id="lbl_info_maquina_7" style="display: block">Maquina 7 </label>
                                 <textarea name="info_maquina_7"  id="info_maquina_7" class="form-control input-sm" rows="3" cols="80" style="resize:block;display: block"
                                           placeholder="Ingresa marca , modelo y medida de la máquina">
@@ -5194,6 +5620,17 @@
                         
                         
                    </div>-->
+=======
+                                <label id="lbl_info_maquina_7" style="display: none">Maquina 7 </label>
+                                <textarea name="info_maquina_7"  id="info_maquina_7" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"><?= $data->info_maquina_7 ?></textarea>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -5253,14 +5690,22 @@
            <td><b>Necesidad</b></td>
                       <td>
                        
+<<<<<<< HEAD
                        <textarea name="necesidad" class="form-control input-sm" style="resize:block;"><?= $data->necesidad ?></textarea>
+=======
+                       <textarea name="necesidad" class="form-control input-sm" style="resize:none;"><?= $data->necesidad ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                       </td>
        </tr>
        <tr>
            <td><b>Compromiso</b></td>
                          <td >
                              <input id="a2" class="form-control" type="text" name="compromiso" value="<?= $data->compromiso ?>">
+<<<<<<< HEAD
                          <textarea name="compromiso" class="form-control input-sm" style="resize:block;" rows="7" cols="80"><?= $data->compromiso ?></textarea>
+=======
+                         <textarea name="compromiso" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->compromiso ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                          
                          </td>
        </tr>
@@ -5268,7 +5713,11 @@
            <td><b>Notas</b></td>
                            <td >
                                <input id="a2" class="form-control" type="text" name="notas" value="<?= $data->notas ?>">
+<<<<<<< HEAD
                              <textarea name="notas" class="form-control input-sm" style="resize:block;" rows="7" cols="80"><?= $data->notas ?></textarea>
+=======
+                             <textarea name="notas" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->notas ?></textarea>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                            </td>
        </tr>
 
@@ -5289,8 +5738,12 @@
                                     
                             </table>-->
                 </div>
+<<<<<<< HEAD
     
         <!-- <input type="hidden" name="cliente_robuspack" value="<?= $data->cliente_robuspack ?>">-->
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <!-- file lama -->
                 <input type="hidden" name="id" value="<?= $data->id_censomaquinaria ?>">
                 <!-- ID -->

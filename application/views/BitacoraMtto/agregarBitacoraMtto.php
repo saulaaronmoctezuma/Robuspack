@@ -32,10 +32,14 @@
         
     </script>
 </head>
+<<<<<<< HEAD
  <!-- Select2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
        
     
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 <div id="maquinaria">
     <div class="container" >      
@@ -57,7 +61,11 @@
 
                 <div class="form-group col-xs-3">
                     <label for="nombre">Cliente</label>
+<<<<<<< HEAD
                     <select required id="cliente" class="form-control input-sm select2"  name="planta" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+=======
+                    <select required id="cliente" class="form-control input-sm select_group"  name="planta" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </div>
 
 
@@ -533,18 +541,26 @@
                 <label for="proxima_inter">Proxima Fecha de Intervención sugerida Robuspack </label>
                 <input id="a4" type="text" class="form-control input-sm"  name="proxima_inter" >
             </div>
+<<<<<<< HEAD
             <input type="hidden" class="form-control" id="foto"  name="foto">
             
             <br><br>
             <center>
 
                 <input class="btn btn-success" id="botonOrden" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+=======
+            <br><br>
+            <center>
+
+                <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <a title="Da clic para regresar" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
             </center>
 
     </div>
 </form>
 </div> 
+<<<<<<< HEAD
 
   <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -563,3 +579,9 @@
 </html>
 
 
+=======
+</body>
+</html>
+
+z
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

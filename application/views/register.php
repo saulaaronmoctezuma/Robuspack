@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -6,6 +7,8 @@
  */
 -->
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <style type="text/css">
     
 

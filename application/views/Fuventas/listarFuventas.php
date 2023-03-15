@@ -199,12 +199,15 @@
                         <th  style="text-align: center" scope="th">Subtotal </th>
                         <th  style="text-align: center"scope="th">IVA </th>
                         <th  style="text-align: center"scope="th">Total USD </th>
+<<<<<<< HEAD
                          <th  style="text-align: center" scope="th">Tipo de cambio </th>
                         <th  style="text-align: center" scope="th">Precio en mn </th>
                         <th  style="text-align: center" scope="th">Descuento en mn </th>
                         <th  style="text-align: center" scope="th">Subtotal en mn </th>
                         <th  style="text-align: center" scope="th">Iva en mn </th>
                         <th  style="text-align: center" scope="th">Total en mn </th>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <th  style="text-align: center"scope="th">Fecha </th>
                         <th  style="text-align: center" scope="th">Pedimento </th>
                         <th  style="text-align: center" scope="th">Fecha de pedimento </th>
@@ -258,6 +261,7 @@
                         
                     }
 
+<<<<<<< HEAD
                     /*echo '<td class="static" scope="th">';
                     echo $obj->getRef() .
                     '</td>';*/
@@ -271,6 +275,12 @@
                     }
                     
                     echo '<td class="first-th" scope="th">'
+=======
+                    echo '<td class="static" scope="th">';
+                    echo $obj->getRef() .
+                    '</td>'
+                    . '<td class="first-th" scope="th">'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . $obj->getCliente() .
                     '</td>'
                     . '<td>'
@@ -376,6 +386,7 @@
                         '</td>';
                     }
 
+<<<<<<< HEAD
                          echo 
                     '<td>'
                     . $obj->getTipo_de_cambio() .
@@ -406,6 +417,9 @@
                     . $obj->getTotal_mxn() .
                     '</td>'
                     ;
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     echo
                     '<td>'

@@ -72,7 +72,11 @@
 
                         <div class="form-group col-xs-4">
                             <label for="nombre">Teléfono Celular o Celular</label>
+<<<<<<< HEAD
                             <input id="a6" type="text" class="form-control input-sm"  name="tel_cel" placeholder="Introduce el télefono o celular" >
+=======
+                            <input id="a6" type="number" class="form-control input-sm"  name="tel_cel" placeholder="Introduce el télefono o celular" >
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
                     </div>
                     <br>
@@ -81,7 +85,11 @@
 
                         <div class="form-group col-xs-4">
                             <label for="nombre">Extensión</label>
+<<<<<<< HEAD
                             <input id="a8" type="text" class="form-control input-sm"  name="extension" placeholder="Introduce la extensión" >
+=======
+                            <input id="a8" type="number" class="form-control input-sm"  name="extension" placeholder="Introduce la extensión" >
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
                         <div class="form-group col-xs-4">
                             <label for="nombre">Correo Compras</label>
@@ -141,6 +149,7 @@
                             <select name="vendedor_refacciones" class="form-control input-sm" >
                                 <option   value="">Selecciona una opción</option>
                                 <OPTION VALUE="Carlos Hernández Maza">Carlos Hernández Maza</OPTION>
+<<<<<<< HEAD
                                 <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
                                 <OPTION VALUE="Josué Aldo Guillén Ortega">Josué Aldo Guillén Ortega</OPTION>
                                 <OPTION VALUE="Álvaro Avila">Álvaro Avila</OPTION>
@@ -149,6 +158,15 @@
                                  <OPTION VALUE="Orlando Bello">Orlando Bello</OPTION>
                                  <OPTION VALUE="Mauricio Ruiz">Mauricio Ruiz</OPTION>
                                  <OPTION VALUE="Miguel Bazán">Miguel Bazán</OPTION>
+=======
+                                <OPTION VALUE="Elvira Parreño Arango">Elvira Parreño Arango</OPTION>
+                                <OPTION VALUE="Ilse Alejandra Bazaldua Zúñiga">Ilse Alejandra Bazaldua Zúñiga</OPTION>
+                                <OPTION VALUE="Karen Orlene Hernández Villagrán">Karen Orlene Hernández Villagrán</OPTION>
+                                <OPTION VALUE="César Alberto Cantú Omaña">César Alberto Cantú Omaña</OPTION>
+                                <OPTION VALUE="Josué Aldo Guillén Ortega">Josué Aldo Guillén Ortega</OPTION>
+                                <OPTION VALUE="Martin Sena Cardona">Martin Sena Cardona</OPTION>
+                                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </select>
                         </div>
                     </div>
@@ -165,6 +183,7 @@
 
                             <select name="vendedor_maquinaria" class="form-control input-sm" >
                                 <option  value="">Selecciona una opción</option>
+<<<<<<< HEAD
                                  <OPTION VALUE="Ignacio Hernández">Ignacio Hernández</OPTION>
                                 <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
                                 <OPTION VALUE="Gerardo López Martínez">Gerardo López Martínez</OPTION>
@@ -173,6 +192,12 @@
                                  <OPTION VALUE="Alejandra de Jesús Maldonado Martínez">Alejandra de Jesús Maldonado Martínez</OPTION>
                                     <OPTION VALUE="Ricardo Ruiz Chavez">Ricardo Ruiz Chavez</OPTION>
                              
+=======
+                                <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+                                <OPTION VALUE="Gerardo López Martínez">Gerardo López Martínez</OPTION>
+                                <OPTION VALUE="Benjamín López Gamboa">Benjamín López Gamboa</OPTION>
+                                <OPTION VALUE="Alejandra de Jesús Maldonado Martínez">Alejandra de Jesús Maldonado Martínez</OPTION>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </select>
 
@@ -261,7 +286,10 @@
                                 <option  value="">Selecciona una opción</option>
                                 <OPTION VALUE="MAKBOX S DE RL DE CV">MAKBOX S DE RL DE CV</OPTION>
                                 <OPTION VALUE="ROBUSPACK S DE RL DE CV">ROBUSPACK S DE RL DE CV</OPTION>
+<<<<<<< HEAD
                                 <OPTION VALUE="ROBUSPACK REFACCIONES S DE RL DE CV">ROBUSPACK REFACCIONES S DE RL DE CV</OPTION>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </select>
                         </div>
 
@@ -270,7 +298,11 @@
         </div>
         <br>
         <center>
+<<<<<<< HEAD
             <input id="btn-unSoloClick"  title="Da clic para guardar los datos" class="btn btn-success" id="botonOrden" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+=======
+            <input title="Da clic para guardar los datos" class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
         </center>
 

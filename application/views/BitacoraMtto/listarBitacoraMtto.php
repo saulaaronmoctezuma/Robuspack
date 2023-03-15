@@ -34,6 +34,7 @@
         </script>
 
 
+<<<<<<< HEAD
         <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(document).ready(function() {
@@ -50,6 +51,10 @@
         </script>-->
         
          <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+=======
+       
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <script>
             $(document).ready(function() {
                 $(".hidediv").click(function() {
@@ -101,7 +106,20 @@
             .divTableBody {
                 display: table-row-group;
             }
+<<<<<<< HEAD
 
+=======
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    border: 1px solid blue;
+    width: 100px;
+    word-wrap: break-word;
+}
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </style>
 
 
@@ -110,7 +128,11 @@
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
+<<<<<<< HEAD
         $idSession = $this->session->userdata['id'];
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $site_title = $result->site_title;
         //check user level
         ?>
@@ -129,10 +151,17 @@
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
             </div>
+<<<<<<< HEAD
             <!--<div class="form-group input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                 <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
             </div>-->
+=======
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <input type="text" id="myInput" placeholder="Escribe para buscar..." style="left:inherit"  class="form-control btn btn-primary btn-sm" />
+            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -162,6 +191,14 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <?php
         if ($dataLevel == 'is_admin') {
             echo '
@@ -268,7 +305,11 @@
 
             echo '
 <div class="divTableRow">
+<<<<<<< HEAD
 <div class="divTableCell">Isael</div>
+=======
+<div class="divTableCell">Siloni</div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroBitacoraMantenimientoPablo as $fila) {
@@ -313,7 +354,11 @@
 
             echo '
 <div class="divTableRow">
+<<<<<<< HEAD
 <div class="divTableCell">Noé</div>
+=======
+<div class="divTableCell">Verónica</div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroBitacoraMantenimientoVeronica as $fila) {
@@ -654,7 +699,11 @@
 
             echo '
 <div class="divTableRow">
+<<<<<<< HEAD
 <div class="divTableCell">Isael</div>
+=======
+<div class="divTableCell">Siloni</div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroBitacoraMantenimientoPablo as $fila) {
@@ -758,17 +807,24 @@
 
                     <thead>
                         <tr>
+<<<<<<< HEAD
                             <th style="text-align: center">Visualizar PDF</th>
 
                             <!--<th class="header" colspan="2" style="text-align: center" >Acción</th>-->
                             
                             
                             
+=======
+                            <th style="text-align: center">Visualizar PDF </th>
+
+                           
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             
                             
                             <?php
                             if ($dataLevel == 'is_servicio_a_clientes') {
                                
+<<<<<<< HEAD
                             }else if ($dataLevel == 'is_mantenimiento') {
                                echo '<th class="header" colspan="1" style="text-align: center" >Modificar</th>';
 
@@ -781,13 +837,27 @@
                                  
 
                                 
+=======
+                            }else if ($dataLevel == 'is_refacciones') {
+                               
+                            } else {
+                                echo '<th class="header" style="text-align: center" >eliminar</th>';
+  echo '<th class="header" style="text-align: center" >modificaer</th>';
+
+                                
+                                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                              
                                 
                             }
                             ?>
+<<<<<<< HEAD
                             
                             
                             
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             
                             
                             <?php
@@ -797,6 +867,7 @@
                                 echo '<th class="header">Usuario</th>';
 
                                 
+<<<<<<< HEAD
                             } else if ($dataLevel == 'is_mantenimiento') {
                                 echo '<th class="header">Usuario</th>';
 
@@ -810,12 +881,28 @@
                             }else if ($dataLevel == 'is_refacciones') {
                                 echo '<th class="header">Usuario</th>';
                             }else {
+=======
+                            }else if ($dataLevel == 'is_refacciones') {
+                                echo '<th class="header">Usuario</th>';
+                            } else if ($dataLevel == 'is_editor') {
+                                echo '<th class="header">Usuario</th>';
+                            }
+                            else if ($dataLevel == 'is_servicio_a_clientes') {
+                                echo '<th class="header">Usuario</th>';
+                            }
+                            else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 
                             }
                             ?>
 
+<<<<<<< HEAD
                             <th style="text-align: center">Cliente</th>
                             <th style="text-align: center">Modelo</th>
+=======
+                            <th style="text-align: center">Cliente  </th>
+                            <th style="text-align: center">Modelo </th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <th style="text-align: center">Maquina</th>
                             <th style="text-align: center">Fecha</th>
                             <th style="text-align: center">Motivo de asistencia</th>
@@ -838,7 +925,11 @@
 
                         </tr>
                     </thead>
+<<<<<<< HEAD
                     <tbody align="center" id="myTable">
+=======
+                   <tbody id="myTable">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -850,13 +941,18 @@
 
                             echo '<tr>';
 
+<<<<<<< HEAD
                             echo '<td> <br>    <a target="_blank" title="Descargar la ficha técnica en PDF" href="' . base_url() . 'Reporte/pdfBitacoraMantenimiento/' . $obj->getId_bitacora() . '"  ><center><i style="font-size:18px;color:red" class="fa fa-file-pdf-o"></i><br>
                            <FONT COLOR="black"> '. $obj->getId_bitacora() .'</font>
                             </center></a></td>
+=======
+                            echo '<td>    <a target="_blank" title="Descargar la ficha técnica en PDF" href="' . base_url() . 'Reporte/pdfBitacoraMantenimiento/' . $obj->getId_bitacora() . '"  ><center><i style="font-size:18px;color:red" class="fa fa-file-pdf-o"></i></center></a></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 				
 				';
                             //compara si es administrador
                             if ($dataLevel == 'is_admin') {
+<<<<<<< HEAD
                                 echo '<td ><a  title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'BitacoraMtto/eliminar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                                 echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                             } else if ($dataLevel == 'is_jefe_mantenimiento') {
@@ -872,6 +968,17 @@
                             }
                             } else if ($dataLevel == 'is_maquinaria_refacciones') {
                                 echo '<td ><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+=======
+                                echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'BitacoraMtto/eliminar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                                echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                            } else if ($dataLevel == 'is_jefe_mantenimiento') {
+                                echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'BitacoraMtto/eliminar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                                echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                            } else if ($dataLevel == 'is_mantenimiento') {
+                                echo '<td colspan="2"><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                            } else if ($dataLevel == 'is_maquinaria_refacciones') {
+                                echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'BitacoraMtto/eliminar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                                 echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraMtto/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
@@ -886,14 +993,22 @@
                                 echo '<td>'
                                 . $obj->getFirst_name() .
                                 '</td>';
+<<<<<<< HEAD
                             } else if ($dataLevel == 'is_mantenimiento') {
                                  echo '<td>'
                                 . $obj->getFirst_name() .
                                 '</td>';
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             }else if ($dataLevel == 'is_servicio_a_clientes') {
                                 echo '<td>'
                                 . $obj->getFirst_name() .
                                 '</td>';
+<<<<<<< HEAD
+=======
+                            } else if ($dataLevel == 'is_mantenimiento') {
+                                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<td>'
                                 . $obj->getFirst_name() .
@@ -913,11 +1028,26 @@
                             '</td>'
                             . '<td>'
                             . $obj->getFecha() .
+<<<<<<< HEAD
                             '</td>'
                             . '<td>'
                             . $obj->getMotivo_asistencia() .
                             '</td>'
                             . '<td>'
+=======
+                            '</td>';
+                            
+                            
+                              if (($obj->getMotivo_asistencia() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getMotivo_asistencia() != null)) {
+        echo '<td title="'. $obj->getMotivo_asistencia() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></center></i></td>';
+    }
+                            
+                           
+                            echo '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             . $obj->getTipo() .
                             '</td>'
                             . '<td>'
@@ -935,7 +1065,16 @@
                             // . '<td>'
                             //. $obj->getDes_acti() .
                             // '</td>'
+<<<<<<< HEAD
                             echo '<td>'
+=======
+                            
+                            
+                                 if (($obj->getRef_usadas1() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getRef_usadas1() != null)) {
+        echo '<td title="'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             . $obj->getRef_usadas1() . ' ' .
                             $obj->getRef_usadas2() . ' ' .
                             $obj->getRef_usadas3() . ' ' .
@@ -965,8 +1104,18 @@
                             . $obj->getRef_usadas28() . ' '
                             . $obj->getRef_usadas29() . ' '
                             . $obj->getRef_usadas30() .
+<<<<<<< HEAD
                             '</td>'
                             . '<td>'
+=======
+                            '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }
+                            
+                          /*   if (($obj->getRef_recomen1() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getRef_recomen1() != null)) {
+        echo '<td title="'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             . $obj->getRef_recomen1() . ' '
                             . $obj->getRef_recomen2() . ' '
                             . $obj->getRef_recomen3() . ' '
@@ -996,12 +1145,124 @@
                             . $obj->getRef_recomen28() . ' '
                             . $obj->getRef_recomen29() . ' '
                             . $obj->getRef_recomen30() .
+<<<<<<< HEAD
                             '</td>'
                             . '<td>'
+=======
+                            
+          '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                              ?>
+                    
+                    
+                    
+                    
+                    
+                          <?php
+            
+                 if (($obj->getRef_recomen1() == null)) {
+            echo '<td title="Sin Comentario"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getRef_recomen1() != null)) {
+      ?>
+         
+            <td>
+            <center> <a title="Da clic para ver la descripción" data-toggle="modal" data-target="#myModalC1Ref<?php echo $obj->getId_bitacora() ?>"><i style="font-size:20px;color:#06A405" class="fa fa-comments-o    "></i></center>
+
+     <div class="modal fade" id="myModalC1Ref<?php echo $obj->getId_bitacora() ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabelC">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+    <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</a></center>
+            
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+          </div>
+          <div class="modal-body">
+           
+            <?php echo  $obj->getRef_recomen1() . ' '
+                            . $obj->getRef_recomen2() . ', '
+                            . $obj->getRef_recomen3() . ' ,'
+                            . $obj->getRef_recomen4() . ', '
+                            . $obj->getRef_recomen5() . ', '
+                            . $obj->getRef_recomen6() . ' '
+                            . $obj->getRef_recomen7() . ' '
+                            . $obj->getRef_recomen8() . ' '
+                            . $obj->getRef_recomen9() . ' '
+                            . $obj->getRef_recomen10() . ' '
+                            . $obj->getRef_recomen11() . ' '
+                            . $obj->getRef_recomen12() . ' '
+                            . $obj->getRef_recomen13() . ' '
+                            . $obj->getRef_recomen14() . ' '
+                            . $obj->getRef_recomen15() . ' '
+                            . $obj->getRef_recomen16() . ' '
+                            . $obj->getRef_recomen18() . ' '
+                            . $obj->getRef_recomen19() . ' '
+                            . $obj->getRef_recomen20() . ' '
+                            . $obj->getRef_recomen21() . ' '
+                            . $obj->getRef_recomen22() . ' '
+                            . $obj->getRef_recomen23() . ' '
+                            . $obj->getRef_recomen24() . ' '
+                            . $obj->getRef_recomen25() . ' '
+                            . $obj->getRef_recomen26() . ' '
+                            . $obj->getRef_recomen27() . ' '
+                            . $obj->getRef_recomen28() . ' '
+                            . $obj->getRef_recomen29() . ' '
+                            . $obj->getRef_recomen30()  ?>
+          </div>
+          <div class="modal-footer">
+              <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraMtto">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><font size="3">Cerrar</font></button>
+</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </td>
+           
+         
+                    <?php
+                    
+                    }
+                    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                            echo '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             . nl2br($obj->getCapacitacion()) .
                             '</td>'
                             . '<td>'
                             . nl2br($obj->getAceptacion_capacitacion()) .
+<<<<<<< HEAD
                             '</td>';
                             
                             
@@ -1017,6 +1278,23 @@
                             
                             
                            if (($obj->getRecomendaciones() == null)) {
+=======
+                            '</td>'
+                            ;
+                            
+                            
+                             
+                         /*  if (($obj->getRecomendaciones() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getRecomendaciones() != null)) {
+        echo '<td title="'. $obj->getRecomendaciones() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }
+                    */        
+                            
+                            
+              if (($obj->getRecomendaciones() == null)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             echo '<td title="Sin recomendaciones"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getRecomendaciones() != null)) {
       ?>
@@ -1064,7 +1342,11 @@
            
             
                  if (($obj->getProxima_inter() == null)) {
+<<<<<<< HEAD
             echo '<td title="No tiene agregado la Próxima Fecha de Intervención"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+=======
+            echo '<td title="Sin recomendaciones"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     } else if (($obj->getProxima_inter() != null)) {
       ?>
          
@@ -1099,6 +1381,7 @@
                     <?php
                     
                     }
+<<<<<<< HEAD
                            
                             
                             
@@ -1112,6 +1395,18 @@
                             
                             
                             
+=======
+                    
+    
+    
+             /*  if (($obj->getProxima_inter() == null)) {
+        echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+    } else if (($obj->getProxima_inter() != null)) {
+        echo '<td title="'. $obj->getProxima_inter() .
+        '"><center><i class="fa fa-align-justify" aria-hidden="true"></i></center></td>';
+    }
+              */               
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             if (($obj->getFoto() == null)) {
         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
     } else if (($obj->getFoto() != null)) {

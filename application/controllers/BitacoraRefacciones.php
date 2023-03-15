@@ -1,7 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+<<<<<<< HEAD
 /* * 
+=======
+/* * zz
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  * class @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 25/06/2019 Hora 10:26 am
  * Fecha : 
@@ -50,17 +55,23 @@ class BitacoraRefacciones extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+<<<<<<< HEAD
             
             
           
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
             $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
             $data['totalRegistroBitacoraElvira'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraElvira(1);
             $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
+<<<<<<< HEAD
             
             
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -68,6 +79,13 @@ class BitacoraRefacciones extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
             $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+<<<<<<< HEAD
+=======
+            $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -75,6 +93,7 @@ class BitacoraRefacciones extends CI_Controller {
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
              $data['bitacora'] = $this->BitacoraRefaccionesModelo->query();
+<<<<<<< HEAD
                
             $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
             $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
@@ -82,6 +101,12 @@ class BitacoraRefacciones extends CI_Controller {
             $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
             
             
+=======
+             $data['totalRegistroBitacoraCarlos'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraCarlos(1);
+            $data['totalRegistroBitacoraAldo'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraAldo(1);
+            $data['totalRegistroBitacoraElvira'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraElvira(1);
+            $data['totalRegistroBitacoraOrlene'] = $this->BitacoraRefaccionesModelo->totalRegistroBitacoraOrlene(1);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -108,7 +133,11 @@ class BitacoraRefacciones extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraRefacciones/listarBitacoraRefacciones', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }  else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
 
@@ -349,7 +378,11 @@ class BitacoraRefacciones extends CI_Controller {
         redirect('BitacoraRefacciones');
     }
 
+<<<<<<< HEAD
    public function eliminar($id) {
+=======
+    public function eliminar($id) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         $where = array('id_bitacora' => $id);
         $this->BitacoraRefaccionesModelo->delete($where);
@@ -432,7 +465,11 @@ class BitacoraRefacciones extends CI_Controller {
             $data['data'] = $this->BitacoraRefaccionesModelo->get_by_id($kondisi);
             return $this->load->view('BitacoraRefacciones/editarBitacoraRefacciones', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_freelance") {
+=======
+        } else if ($dataLevel == "is_freelance") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  
               $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -442,7 +479,11 @@ class BitacoraRefacciones extends CI_Controller {
             $data['data'] = $this->BitacoraRefaccionesModelo->get_by_id($kondisi);
             return $this->load->view('BitacoraRefacciones/editarBitacoraRefacciones', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }  else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }

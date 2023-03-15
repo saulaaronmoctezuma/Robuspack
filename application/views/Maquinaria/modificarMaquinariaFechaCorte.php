@@ -49,8 +49,11 @@ $theme = $result->theme;
                         
                         <input id="a4" class="form-control" type="hidden" name="precio5" value="<?= $precio5 ?>">
                     
+<<<<<<< HEAD
                         <input id="fecha_actualizacion_precio" class="form-control" type="hidden" name="fecha_actualizacion_precio" value="<?= $fecha_actualizacion_precio ?>">
                     
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         
                         <input id="a4" class="form-control" type="hidden" name="pcexwork" value="<?= $pcexwork ?>">
                     

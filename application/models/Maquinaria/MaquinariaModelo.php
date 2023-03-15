@@ -4,12 +4,19 @@ require 'MaquinariaPojo.php';
 require 'MaquinariaPojoCorteRotacion.php';
 require 'IModeloAbstracto.php';
 
+<<<<<<< HEAD
 
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma 
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 
 class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
@@ -32,9 +39,17 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
         $query = $this->db->get('maquinaria');
         $colMaquinarias = array();
 
+<<<<<<< HEAD
          foreach ($query->result() as $key => $value) {
             $objeto = new MaquinariaPojo($value->id_maquinaria, $value->referencia, $value->fecha
                     , $value->fabricante, $value->maquina, $value->precio1, $value->precio2, $value->precio3, $value->precio4, $value->precio5,$value->fecha_actualizacion_precio, $value->pcexwork, $value->pcfob, $value->pccif, $value->pccip, $value->ancho, $value->espesor, $value->diametro, $value->empresa_competencia_1, $value->empresa_competencia_2, $value->inventario,
+=======
+        foreach ($query->result() as $key => $value) {
+            $objeto = new MaquinariaPojo($value->id_maquinaria, $value->referencia, $value->fecha
+                    , $value->fabricante, $value->maquina, $value->precio1, $value->precio2, $value->precio3, $value->precio4, $value->precio5, 
+                    $value->pcexwork, $value->pcfob, $value->pccif, $value->pccip, $value->ancho, $value->espesor, $value->diametro, $value->empresa_competencia_1,
+                    $value->empresa_competencia_2, $value->inventario,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value->piezas_recibir,$value->fecha_corte_rotacion);
 
             array_push($colMaquinarias, $objeto);
@@ -54,7 +69,10 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
                 "precio3" => $maquinaria->getPrecio3(),
                 "precio4" => $maquinaria->getPrecio4(),
                 "precio5" => $maquinaria->getPrecio5(),
+<<<<<<< HEAD
                 "fecha_actualizacion_precio" => $maquinaria->getFecha_actualizacion_precio(),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 "pcexwork" => $maquinaria->getPcexwork(),
                 "pcfob" => $maquinaria->getPcfob(),
                 "pccif" => $maquinaria->getPccif(),
@@ -86,7 +104,10 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
             'precio3' => $obj->precio3,
             'precio4' => $obj->precio4,
             'precio5' => $obj->precio5,
+<<<<<<< HEAD
             'fecha_actualizacion_precio' => $obj->fecha_actualizacion_precio,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'pcexwork' => $obj->pcexwork,
             'pcfob' => $obj->pcfob,
             'pccif' => $obj->pccif,
@@ -97,7 +118,11 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
             'empresa_competencia_1' => $obj->empresa_competencia_1,
             'empresa_competencia_2' => $obj->empresa_competencia_2,
             'inventario' => $obj->inventario,
+<<<<<<< HEAD
              'piezas_recibir' => $obj->piezas_recibir,
+=======
+            'piezas_recibir' => $obj->piezas_recibir,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'fecha_corte_rotacion' => $obj->fecha_corte_rotacion
                 );
         return $dp;
@@ -108,9 +133,18 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
         $this->db->where('id_maquinaria', $data['id_maquinaria']);
         return $this->db->update('maquinaria', $data);
     }
+<<<<<<< HEAD
     
     
        public function querybusqueda() {
+=======
+
+    public function refacciones() {
+        
+    }
+    
+     public function querybusqueda() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         //user data from session
@@ -190,6 +224,7 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -223,6 +258,8 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
                 array_push($colVentas, $objeto);
             }
             return $colVentas;
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }  //condicions que realice la consulta solo si es refacciones
          else if ($dataLevel == "is_refacciones") {
             /* Para traerse el id del usuario */
@@ -242,6 +279,7 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
 
             $query = $this->db->get();
             $data = $query->result_array();
+<<<<<<< HEAD
             
             
             
@@ -249,6 +287,10 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
             
             
             
+=======
+           
+          
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $colVentas = array();
             foreach ($query->result() as $key => $value) {
                 $objeto = new MaquinariaPojoCorteRotacion(
@@ -326,8 +368,12 @@ class MaquinariaModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colVentas;
         }else {
+<<<<<<< HEAD
    
          redirect(site_url() . 'main/');
+=======
+            redirect(site_url() . 'main/');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
     }
 

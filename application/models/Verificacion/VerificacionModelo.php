@@ -127,6 +127,7 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             //$query = $this->db->get('verificacion');
+<<<<<<< HEAD
           /*  $this->db->select('*');
             $this->db->from('verificacion');
               
@@ -136,12 +137,30 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
             
                    $query = $this->db->query('SELECT * from verificacion v ORDER BY CAST(v.no_maqui AS UNSIGNED) DESC
 ');
+=======
+            $this->db->select('*');
+            $this->db->from('verificacion');
+              // $this->db->where('verificacion.empresa=' , 'CARTONPACK S DE RL DE CV');
+            $this->db->order_by('verificacion.no_maqui', 'desc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            // $this->db->where('users.id= ', $dataLevel);
+            
+            /*este solo cuando se quiera mostrar una condicion
+             * $this->db->where('verificacion.empresa= ', 'MAKBOX S DE RL DE CV');
+             */
+            $query = $this->db->get();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
         $colPlaca = array();
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
+<<<<<<< HEAD
                     $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones  , $value->comentario  ,$value->observacion,$value->contrato
+=======
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones ,
+                    $value->comentario ,$value->observacion,$value->contrato
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             );
 
             array_push($colPlaca, $objeto);
@@ -158,6 +177,7 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
             );
             
              //$query = $this->db->get('verificacion');
+<<<<<<< HEAD
            /* $this->db->select('*');
             $this->db->from('verificacion');
             $this->db->order_by('verificacion.no_maqui', 'desc');*/
@@ -169,12 +189,26 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
            
             // $this->db->where('users.id= ', $dataLevel);
           //  $query = $this->db->get();
+=======
+            $this->db->select('*');
+            $this->db->from('verificacion');
+            $this->db->order_by('verificacion.no_maqui', 'desc');
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+            // $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->get();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
         $colPlaca = array();
 
         foreach ($query->result() as $key => $value) {
             $objeto = new VerificacionPojo($value->id_verificacion, $value->no_maqui, $value->modelo,$value->empresa, $value->serie,
+<<<<<<< HEAD
                     $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones  , $value->comentario  ,$value->observacion,$value->contrato
+=======
+                    $value->cliente, $value->cliente_temporal, $value->pedimento, $value->pedimentopdf, $value->foto, $value->num_factura , $value->factura , $value->refacciones , 
+                    $value->comentario, $value->observacion ,$value->contrato
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             );
 
             array_push($colPlaca, $objeto);
@@ -229,6 +263,14 @@ class VerificacionModelo extends CI_Model implements IModeloAbstracto
           // $this->db->where('venta.id= ', 1);
             $query = $this->db->get();
              return $query->result();
+<<<<<<< HEAD
         }
 
 }
+=======
+            }
+
+            
+    
+    }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

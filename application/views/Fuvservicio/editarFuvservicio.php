@@ -172,7 +172,19 @@
                                     <input id="cliente" class="form-control" type="text" name="cliente" value="<?= $data->cliente ?>">
                               </td>
                             </tr>
+<<<<<<< HEAD
 
+=======
+                            
+                            
+                           <!-- <tr>
+                                <td><b>Cliente</b></td>
+                                <td>
+                                    <select id="a3" class="form-control input-sm" name="cliente"   <?php echo form_dropdown('clienteCombo', $clienteCombo, $data->cliente, '#', 'id="clienteCombo"'); ?> </select>
+                                </td>
+                            </tr>
+-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <tr>
                                 <td><b>Dirección</b></td>
@@ -181,6 +193,17 @@
                                   
                                 </td>
                             </tr>
+<<<<<<< HEAD
+=======
+                            
+                             <tr>
+                                <td><b>Referencia</b></td>
+                                <td >
+                                   <input id="direccion" class="form-control" type="text" name="referencia" value="<?= $data->referencia ?>">
+                                  
+                                </td>
+                            </tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             
                             <tr>

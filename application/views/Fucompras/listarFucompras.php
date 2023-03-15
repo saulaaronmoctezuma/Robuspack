@@ -43,12 +43,21 @@
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
+<<<<<<< HEAD
         
         
         //id del usuario
         $dataLevel_id = $this->userlevel->id($id);
         
         
+=======
+
+
+        //id del usuario
+        $dataLevel_id = $this->userlevel->id($id);
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $site_title = $result->site_title;
         //check user level
         ?>
@@ -76,7 +85,11 @@
             
         } else if ($dataLevel == 'is_admin') {
             echo '<left> <h1>Buscar</h1> </left>
+<<<<<<< HEAD
         <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+        <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         ';
         } else if ($dataLevel == 'is_logistica') {
             
@@ -108,8 +121,13 @@
         <a class="btn btn-success" href="' . base_url('Fucompras/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos">Agregar Nuevo Registro</a>
 
     </div>';
+<<<<<<< HEAD
     } else if (($dataLevel == 'is_editor')&& ($dataLevel_id == 4)) {
          echo '<div class="text-center">
+=======
+    } else if (($dataLevel == 'is_editor') && ($dataLevel_id == 4)) {
+        echo '<div class="text-center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <a class="btn btn-success" href="' . base_url('Fucompras/agregar') . '" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos">Agregar Nuevo Registro</a>
 
     </div>';
@@ -152,7 +170,13 @@
 
     <div class="container" style="margin-top:1px;" >
 
+<<<<<<< HEAD
 
+=======
+<?php
+/* echo $this->session->flashdata('msg');*/
+?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <div class="table-responsive">
 
 
@@ -163,7 +187,12 @@
 
 
 
+<<<<<<< HEAD
             <table id="example"  border="1" class="tablas table-bordered table-striped">
+=======
+
+            <table id="example2"  border="1" class="tablas table-bordered table-striped">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
                 <thead>
                     <tr>
@@ -173,14 +202,22 @@
                             echo '<th  style="text-align: center" scope="th">Eliminar</th>
                                   <th  style="text-align: center" scope="th">Modificar</th>';
                         } else if (($dataLevel == 'is_editor') && ($dataLevel_id == 4)) {
+<<<<<<< HEAD
                               echo '<th  style="text-align: center" scope="th">Eliminar</th>
+=======
+                            echo '<th  style="text-align: center" scope="th">Eliminar</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                   <th  style="text-align: center" scope="th">Modificar</th>';
                         } else if ($dataLevel == 'is_logistica') {
                             echo '<th  style="text-align: center" scope="th">Modificar</th>';
                         } else if ($dataLevel == 'is_credito') {
                             
                         } else if ($dataLevel == 'is_servicio_a_clientes') {
+<<<<<<< HEAD
                           
+=======
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         } else {
                             
                         }
@@ -199,7 +236,11 @@
                         <th  style="text-align: center" scope="th">Imn </th>
                         <th  style="text-align: center" scope="th">OC </th>
                         <th  style="text-align: center" scope="th">Qty </th>
+<<<<<<< HEAD
                        
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <th  style="text-align: center"scope="th">PU USD </th>
                         <th  style="text-align: center"scope="th">Total USD </th>
                         <th  style="text-align: center" scope="th">Tipo de embarque </th>
@@ -229,7 +270,11 @@
                         <th  style="text-align: center" scope="th">Observaciones </th>
                         <th  style="text-align: center" scope="th">Fecha pi </th>
                         <th  style="text-align: center" scope="th">Código arancelario </th>
+<<<<<<< HEAD
                        <th  style="text-align: center" scope="th">Factura proveedor </th>
+=======
+                        <th  style="text-align: center" scope="th">Factura proveedor </th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <th  style="text-align: center" scope="th">Pedimento pdf </th>
                         <th  style="text-align: center" scope="th">Honorarios importacion </th>
 
@@ -248,7 +293,11 @@
 
                     </tr>
                 </thead>
+<<<<<<< HEAD
    <tbody id="myTable">
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <?php
                 foreach ($fucompras as $obj) {
                     echo '<tr>';
@@ -256,16 +305,27 @@
                     if ($dataLevel == 'is_admin') {
                         echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Fucompras/eliminar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Fucompras/actualizar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+<<<<<<< HEAD
                     } else if (($dataLevel == 'is_editor') && ($dataLevel_id == 4)){
                             echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Fucompras/eliminar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Fucompras/actualizar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                     
+=======
+                    } else if (($dataLevel == 'is_editor') && ($dataLevel_id == 4)) {
+                        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'Fucompras/eliminar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Fucompras/actualizar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else if ($dataLevel == 'is_credito') {
                         
                     } else if ($dataLevel == 'is_logistica') {
                         echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'Fucompras/actualizar/' . $obj->getId_fucompras() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+<<<<<<< HEAD
                     
                     } else if ($dataLevel == 'is_servicio_a_clientes') {
+=======
+                    } else if ($dataLevel == 'is_servicio_a_clientes') {
+                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else if ($dataLevel == 'is_director') {
                         
                     } else {
@@ -275,8 +335,13 @@
                     echo '<td class="static" scope="th">';
                     echo $obj->getRef() .
                     '</td>';
+<<<<<<< HEAD
                     
                     
+=======
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     if ($obj->getEstatus() == "ENVIADO") {
                         echo '<td bgcolor="yellow"><font color="black">'
                         . $obj->getEstatus() .
@@ -293,6 +358,7 @@
                         echo '<td bgcolor="green"><font color="white">'
                         . $obj->getEstatus() .
                         '</font></td>';
+<<<<<<< HEAD
                     }else if ($obj->getEstatus() == "SE ENVIO DIRECTAMENTE AL CLIENTE") {
                         echo '<td>'
                         . $obj->getEstatus() .
@@ -309,12 +375,34 @@
                     echo
                       
                    '<td>'
+=======
+                    } else if ($obj->getEstatus() == "SE ENVIO DIRECTAMENTE AL CLIENTE") {
+                        echo '<td>'
+                        . $obj->getEstatus() .
+                        '</font></td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getEstatus() .
+                        '</font></td>';
+                    }
+
+
+
+                    echo
+
+                    '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . $obj->getCompania_importadora() .
                     '</td>'
                     . '<td>'
                     . $obj->getCliente_proveedor() .
+<<<<<<< HEAD
                     '</td>' 
                             . '<td>'
+=======
+                    '</td>'
+                    . '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . $obj->getAwb() .
                     '</td>' .
                     '<td>'
@@ -338,7 +426,11 @@
                       '</td>';
                       } */
 
+<<<<<<< HEAD
                     echo 
+=======
+                    echo
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     '<td>'
                     . $obj->getTipo_de_prod() .
                     '</td>'
@@ -409,6 +501,7 @@
                     '</td>'
                     . '<td>'
                     . $obj->getQty() .
+<<<<<<< HEAD
                     '</td>' .
                     '<td>'
                     . $obj->getPu_usd() .
@@ -474,6 +567,179 @@
                     . $obj->getCm_c() .
                     '</td>'
                     . '<td>'
+=======
+                    '</td>'
+
+                    ;
+
+
+
+
+                    if ($obj->getPu_usd() != null) {
+                        echo '<td>$'
+                        . $obj->getPu_usd() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getPu_usd() .
+                        '</td>';
+                    }
+
+
+                    if ($obj->getTotal_usd() != null) {
+                        echo '<td>$'
+                        . $obj->getTotal_usd() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getTotal_usd() .
+                        '</td>';
+                    }
+
+
+
+                    echo
+                    '<td>'
+                    . $obj->getTipo_de_embarque() .
+                    '</td>';
+
+                    if ($obj->getTc_pedimento() != null) {
+                        echo '<td>$'
+                        . $obj->getTc_pedimento() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getTc_pedimento() .
+                        '</td>';
+                    }
+
+                    /* /hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh* */
+
+                    if ($obj->getImportacion_por_partida_pz_mxn() != null) {
+                        echo '<td>$'
+                        . $obj->getImportacion_por_partida_pz_mxn() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getImportacion_por_partida_pz_mxn() .
+                        '</td>';
+                    }
+
+
+                    if ($obj->getImportacion_por_partida_pz_usd() != null) {
+                        echo '<td>$'
+                        . $obj->getImportacion_por_partida_pz_usd() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getImportacion_por_partida_pz_usd() .
+                        '</td>';
+                    }
+
+                    if ($obj->getImpx_unidad() != null) {
+                        echo '<td>$'
+                        . $obj->getImpx_unidad() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getImpx_unidad() .
+                        '</td>';
+                    }
+
+                    if ($obj->getCosto_total_compra_usd_lab_qro() != null) {
+                        echo '<td>$'
+                        . $obj->getCosto_total_compra_usd_lab_qro() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCosto_total_compra_usd_lab_qro() .
+                        '</td>';
+                    }
+
+
+                    if ($obj->getCosto_unitario_compra_usd_lab_qro() != null) {
+                        echo '<td>$'
+                        . $obj->getCosto_unitario_compra_usd_lab_qro() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCosto_unitario_compra_usd_lab_qro() .
+                        '</td>';
+                    }
+
+                    if ($obj->getCom() != null) {
+                        echo '<td>'
+                        . $obj->getCom() .
+                        '%</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCom() .
+                        '</td>';
+                    }
+
+                    if ($obj->getCm() == null) {
+                        echo '<td>'
+                        . $obj->getCm() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCm() .
+                        '$</td>';
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    if ($obj->getCm_c() != null) {
+                        echo '<td>$'
+                        . $obj->getCm_c() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCm_c() .
+                        '</td>';
+                    }
+
+
+
+
+
+
+
+                    echo '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . $obj->getEnt() .
                     '</td>'
                     . '<td>'
@@ -481,6 +747,7 @@
                     '</td>'
                     . '<td>'
                     . $obj->getFecha_pedimento() .
+<<<<<<< HEAD
                     '</td>'
                     . '<td>'
                     . $obj->getValor_aduana() .
@@ -519,12 +786,146 @@
                     . $obj->getObservaciones() .
                     '</td>'
                     
+=======
+                    '</td>';
+
+
+                    if ($obj->getValor_aduana() != null) {
+                        echo '<td>$'
+                        . $obj->getValor_aduana() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getValor_aduana() .
+                        '</td>';
+                    }
+
+
+                    if ($obj->getArancel_igi() != null) {
+                        echo '<td>'
+                        . $obj->getArancel_igi() .
+                        '%</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getArancel_igi() .
+                        '</td>';
+                    }
+
+                    
+                    /*dcsssssssssssss*/
+                    
+                    
+                     if ($obj->getArancel() != null) {
+                        echo '<td>$'
+                        . $obj->getArancel() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getArancel() .
+                        '</td>';
+                    }
+                    
+                    
+                     if ($obj->getDta() != null) {
+                        echo '<td>$'
+                        . $obj->getDta() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getDta() .
+                        '</td>';
+                    }
+
+                     if ($obj->getIva_del_pedimento() != null) {
+                        echo '<td>$'
+                        . $obj->getIva_del_pedimento() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getIva_del_pedimento() .
+                        '</td>';
+                    }
+
+                    
+                     if ($obj->getCosto_del_flete_mxn() != null) {
+                        echo '<td>$'
+                        . $obj->getCosto_del_flete_mxn() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCosto_del_flete_mxn() .
+                        '</td>';
+                    }
+
+                    
+                     if ($obj->getHonorarios_courier() != null) {
+                        echo '<td>$'
+                        . $obj->getHonorarios_courier() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getHonorarios_courier() .
+                        '</td>';
+                    }
+
+                    
+                     if ($obj->getCosto_del_flete_usd() != null) {
+                        echo '<td>$'
+                        . $obj->getCosto_del_flete_usd() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getCosto_del_flete_usd() .
+                        '</td>';
+                    }
+
+                     if ($obj->getPv_extra_bajo_ref_x_pz() != null) {
+                        echo '<td>$'
+                        . $obj->getPv_extra_bajo_ref_x_pz() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getPv_extra_bajo_ref_x_pz() .
+                        '</td>';
+                    }
+
+                    
+                     if ($obj->getUtilidad_refx_pz() != null) {
+                        echo '<td>$'
+                        . $obj->getUtilidad_refx_pz() .
+                        '</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getUtilidad_refx_pz() .
+                        '</td>';
+                    }
+
+                    
+                     if ($obj->getUtilidad() != null) {
+                        echo '<td>'
+                        . $obj->getUtilidad() .
+                        '%</td>';
+                    } else {
+                        echo '<td>'
+                        . $obj->getUtilidad() .
+                        '</td>';
+                    }
+
+                    
+
+
+                    echo
+                     '<td>'
+                    . $obj->getObservaciones() .
+                    '</td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . '<td>'
                     . $obj->getFecha_pi() .
                     '</td>'
                     . '<td>'
                     . $obj->getCodigo_arancelario() .
                     '</td>';
+<<<<<<< HEAD
                             /*
                     . '<td>'
                     . $obj->getFactura_proveedor() .
@@ -538,29 +939,56 @@
                     ;*/
                     
                      //getFactura_proveedor
+=======
+                    /*
+                      . '<td>'
+                      . $obj->getFactura_proveedor() .
+                      '</td>'
+                      . '<td>'
+                      . $obj->getPedimentopdf() .
+                      '</td>'
+                      . '<td>'
+                      . $obj->getHonorarios_importacion() .
+                      '</td>'
+                      ; */
+
+                    //getFactura_proveedor
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     if (($obj->getFactura_proveedor() == null)) {
                         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
                     } else if (($obj->getFactura_proveedor() != null)) {
                         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/fucompras/' . $obj->getFactura_proveedor() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                     }
+<<<<<<< HEAD
                     
                       //getPedimentopdf
+=======
+
+                    //getPedimentopdf
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     if (($obj->getPedimentopdf() == null)) {
                         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
                     } else if (($obj->getPedimentopdf() != null)) {
                         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/fucompras/' . $obj->getPedimentopdf() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                     }
+<<<<<<< HEAD
                     
                     
                       //getHonorarios_importacion
+=======
+
+
+                    //getHonorarios_importacion
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     if (($obj->getHonorarios_importacion() == null)) {
                         echo '<td style="text-align: center;color:#FF0000">Sin Archivo</td>';
                     } else if (($obj->getHonorarios_importacion() != null)) {
                         echo '<td style="text-align: center;color:#FF0000"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/fucompras/' . $obj->getHonorarios_importacion() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                     }
+<<<<<<< HEAD
                     
                     
                     
@@ -583,6 +1011,13 @@
                 
                 
                 
+=======
+                }
+                ?>
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 <tfoot>

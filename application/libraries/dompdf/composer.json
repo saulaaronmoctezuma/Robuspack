@@ -26,16 +26,30 @@
     },
     "require": {
         "php": ">=5.4.0",
+<<<<<<< HEAD
         "ext-gd": "*",
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         "ext-dom": "*",
         "ext-mbstring": "*",
         "phenx/php-font-lib": "0.5.*",
         "phenx/php-svg-lib": "0.3.*"
     },
     "require-dev": {
+<<<<<<< HEAD
         "phpunit/phpunit": "4.8.*",
         "squizlabs/php_codesniffer": "2.*"
     },
+=======
+        "phpunit/phpunit": "^4.8|^5.5|^6.5",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "suggest": {
+        "ext-gd": "Needed to process images",
+        "ext-imagick": "Improves image processing performance",
+        "ext-gmagick": "Improves image processing performance"
+    },
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     "extra": {
         "branch-alias": {
             "dev-develop": "0.7-dev"

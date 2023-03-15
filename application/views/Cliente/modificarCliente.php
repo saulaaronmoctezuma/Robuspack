@@ -37,11 +37,19 @@
                             </tr>
                             <tr>
                                 <td>Cliente SAE Pesos</td>
+<<<<<<< HEAD
                                 <td><input id="a3" class="form-control input-sm" type="text" name="cliente_sae"  value="<?= $cliente_sae ?>" ></td>
                             </tr>
                             <tr>
                                 <td>Cliente SAE Doláres</td>
                                 <td><input id="a3" class="form-control input-sm" type="text" name="cliente_sae_dolares"  value="<?= $cliente_sae_dolares ?>" ></td>
+=======
+                                <td><input id="a3" class="form-control input-sm" type="number" name="cliente_sae"  value="<?= $cliente_sae ?>" ></td>
+                            </tr>
+                            <tr>
+                                <td>Cliente SAE Doláres</td>
+                                <td><input id="a3" class="form-control input-sm" type="number" name="cliente_sae_dolares"  value="<?= $cliente_sae_dolares ?>" ></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </tr>
                             <tr>
                                 <td>Razón Social</td>
@@ -133,6 +141,7 @@
             echo "Selected";
         } ?>>Selecciona una opción</option>
 
+<<<<<<< HEAD
                                        
                                         
                                     
@@ -173,6 +182,31 @@
                           <option value="Miguel Bazán" <?php if ($vendedor_refacciones == "Miguel Bazán") {
             echo "Selected";
         } ?>>Miguel Bazán</option>
+=======
+         <option value="Carlos Hernández Maza" <?php if ($vendedor_refacciones == "Carlos Hernández Maza") {echo "Selected";} ?>>Carlos Hernández Maza</option>
+           <option value="Martin Sena Cardona" <?php if ($vendedor_refacciones == "Martin Sena Cardona") {echo "Selected";} ?>>Martin Sena Cardona</option>
+         
+         
+         
+                                        <option value="Elvira Parreño Arango" <?php if ($vendedor_refacciones == "Elvira Parreño Arango") {
+            echo "Selected";
+        } ?>>Elvira Parreño Arango</option>
+                                        <option value="Ilse Alejandra Bazaldua Zúñiga" <?php if ($vendedor_refacciones == "Ilse Alejandra Bazaldua Zúñiga") {
+            echo "Selected";
+        } ?>>Ilse Alejandra Bazaldua Zúñiga</option>
+                                        <option value="Karen Orlene Hernández Villagrán" <?php if ($vendedor_refacciones == "Karen Orlene Hernández Villagrán") {
+            echo "Selected";
+        } ?>>Karen Orlene Hernández Villagrán</option>
+                                        <option value="César Alberto Cantú Omaña" <?php if ($vendedor_refacciones == "César Alberto Cantú Omaña") {
+            echo "Selected";
+        } ?>>César Alberto Cantú Omaña</option>
+                                        <option value="Josué Aldo Guillén Ortega" <?php if ($vendedor_refacciones == "Josué Aldo Guillén Ortega") {
+            echo "Selected";
+        } ?>>Josué Aldo Guillén Ortega</option>
+                                        <option value="Casa Robuspack" <?php if ($vendedor_refacciones == "Casa Robuspack") {
+            echo "Selected";
+        } ?>>Casa Robuspack</option>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                                     </SELECT>
@@ -215,6 +249,7 @@
                                         <option value="Alejandra de Jesús Maldonado Martínez" <?php if ($vendedor_maquinaria == "Alejandra de Jesús Maldonado Martínez") {
                                                         echo "Selected";
                                                     } ?>>Alejandra de Jesús Maldonado Martínez</option>
+<<<<<<< HEAD
                                                     
                                                     
                                                     
@@ -230,6 +265,8 @@
                                                      <option value="Ricardo Ruiz Chavez" <?php if ($vendedor_maquinaria == "Ricardo Ruiz Chavez") {
                                                         echo "Selected";
                                                     } ?>>Ricardo Ruiz Chavez</option>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -476,12 +513,15 @@
                                                 echo "Selected";
                                             }
                                                     ?>>MAKBOX S DE RL DE CV</option>
+<<<<<<< HEAD
                                                     
                                          <option value="ROBUSPACK REFACCIONES S DE RL DE CV" <?php
                                             if ($empresa == "ROBUSPACK REFACCIONES S DE RL DE CV") {
                                                 echo "Selected";
                                             }
                                                     ?>>ROBUSPACK REFACCIONES S DE RL DE CV</option>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 <!--                                        </optgroup>-->
                                     </SELECT></td>

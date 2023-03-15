@@ -9,7 +9,11 @@
  */
 class ClienteRefaccionesPojo {
 
+<<<<<<< HEAD
  //Atributos
+=======
+    //Atributos
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $id_venta;
     private $grupo;
     private $cliente;

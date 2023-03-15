@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
             <url>application/views/MaximoMinimo/listarMaximoMinimo.php</url>
             <bookmark id="2">
                 <name/>
                 <line>120</line>
+=======
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+        <file>
+            <url>application/controllers/Bitacora.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>application/views/Fucompras/agregarFucompras.php</url>
+            <bookmark id="3">
+                <name/>
+                <line>584</line>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/master/application/libraries/Password.php</file>
             <file>file:/C:/xampp/htdocs/master/application/libraries/Sendmail.php</file>
             <file>file:/C:/xampp/htdocs/master/application/config/config.php</file>
+=======
+            <file>file:/C:/xampp/htdocs/master/application/models/ClienteRefacciones/IModeloAbstracto.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/views/ClienteRefacciones/modificarClienteRefacciones.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/views/ClienteRefacciones/modificarClienteRefaccionesPrueba.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/controllers/ClienteRefacciones.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/views/ClienteRefacciones/modificarClienteRefaccionesArchivo.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/models/ClienteRefacciones/ClienteRefaccionesPojo.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/views/ClienteRefacciones/listarClienteRefacciones.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/views/ClienteRefacciones/agregarClienteRefacciones.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/models/ClienteRefacciones/ClienteRefaccionesModelo.php</file>
+            <file>file:/C:/xampp/htdocs/master/application/views/ClienteRefacciones/modificarClienteRefaccionesServicioAClientes.php</file>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </group>
     </open-files>
 </project-private>

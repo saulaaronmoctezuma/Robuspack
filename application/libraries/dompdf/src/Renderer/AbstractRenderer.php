@@ -401,7 +401,11 @@ abstract class AbstractRenderer
             $this->_canvas->get_cpdf()->addImagePng($filedummy, $x, $this->_canvas->get_height() - $y - $height, $width, $height, $bg);
         } else {
             $tmp_dir = $this->_dompdf->getOptions()->getTempDir();
+<<<<<<< HEAD
             $tmp_name = tempnam($tmp_dir, "bg_dompdf_img_");
+=======
+            $tmp_name = @tempnam($tmp_dir, "bg_dompdf_img_");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             @unlink($tmp_name);
             $tmp_file = "$tmp_name.png";
 

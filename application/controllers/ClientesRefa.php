@@ -11,7 +11,11 @@ class ClientesRefa extends Admin_Controller {
 
         $this->data['page_title'] = 'Clientes Refacciones , Cubiertas y cuchillas';
 
+<<<<<<< HEAD
         $this->load->model('Model_clientesrefa');
+=======
+        $this->load->model('model_clientesrefa');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     /*
@@ -20,7 +24,11 @@ class ClientesRefa extends Admin_Controller {
 
     public function index() {
 
+<<<<<<< HEAD
         $this->load->model('Model_clientesrefa');
+=======
+        $this->load->model('model_clientesrefa');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['title'] = 'Refacciones';
         //user data from session
         $data = $this->session->userdata;
@@ -37,16 +45,25 @@ class ClientesRefa extends Admin_Controller {
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
             //$this->load->view('navbar', $data);
+<<<<<<< HEAD
             $this->render_template('ClientesRefa/index', $this->data);
+=======
+            $this->render_template('clientesrefa/index', $this->data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /* } */
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             //$this->load->view('navbar', $data);
+<<<<<<< HEAD
             $this->render_template('ClientesRefa/index', $this->data);
+=======
+            $this->render_template('clientesrefa/index', $this->data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /* } */
         } else if ($dataLevel == "is_almacen") {
             $this->load->view('header', $data);
             //$this->load->view('navbar', $data);
+<<<<<<< HEAD
             $this->render_template('ClientesRefa/index', $this->data);
             /* } */
         }else if ($dataLevel == "is_servicio_a_clientes") {
@@ -56,6 +73,10 @@ class ClientesRefa extends Admin_Controller {
             /* } */
         }else {
             redirect(site_url() . 'main/');
+=======
+            $this->render_template('clientesrefa/index', $this->data);
+            /* } */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
     }
 
@@ -66,7 +87,11 @@ class ClientesRefa extends Admin_Controller {
 
     public function fetchStoresDataById($id_cliente) {
         if ($id_cliente) {
+<<<<<<< HEAD
             $data = $this->Model_clientesrefa->getStoresData($id_cliente);
+=======
+            $data = $this->model_clientesrefa->getStoresData($id_cliente);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             echo json_encode($data);
         }
     }
@@ -80,7 +105,11 @@ class ClientesRefa extends Admin_Controller {
     public function fetchStoresData() {
         $result = array('data' => array());
 
+<<<<<<< HEAD
         $data = $this->Model_clientesrefa->getStoresData();
+=======
+        $data = $this->model_clientesrefa->getStoresData();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         foreach ($data as $key => $value) {
 
@@ -117,6 +146,7 @@ class ClientesRefa extends Admin_Controller {
                     $value['nombre'],
                     $buttons
                 );
+<<<<<<< HEAD
             }else if ($dataLevel == "is_servicio_a_clientes") {
                 $buttons = '';
                 $buttons = '<button type="button" class="btn btn-default" onclick="editFunc(' . $value['id_cliente'] . ')" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil"></i></button>';
@@ -126,6 +156,8 @@ class ClientesRefa extends Admin_Controller {
                     $value['nombre'],
                     $buttons
                 );
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             } else if ($dataLevel == "is_almacen") {
 
                 $result['data'][$key] = array(
@@ -166,14 +198,22 @@ class ClientesRefa extends Admin_Controller {
         $dataLevel = $this->userlevel->checkLevel($data['role']);
         //check user level
         $data['title'] = "Robuspack";
+<<<<<<< HEAD
         if ($dataLevel == "is_editor") {
             $response = array();
 
            // $this->form_validation->set_rules('clave', 'Clave', 'trim|required');
+=======
+        if ($dataLevel == "is_admin") {
+            $response = array();
+
+         //   $this->form_validation->set_rules('clave', 'Clave', 'trim|required');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->form_validation->set_rules('clave', 'Clave', 'trim|required|is_unique[clientes_robuspack.clave]');
             $this->form_validation->set_rules('nombre', 'Nombre', 'trim|required');
             $this->form_validation->set_message('required','El campo %s es obligatorio');
              $this->form_validation->set_message('is_unique','Ya esta registrado esa %s ');
+<<<<<<< HEAD
 
             $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 
@@ -186,6 +226,20 @@ class ClientesRefa extends Admin_Controller {
                 );
 
                 $create = $this->Model_clientesrefa->create($data);
+=======
+            $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+            
+            if ($this->form_validation->run() == TRUE) {
+                 $id_usuario = $this->session->userdata('id');
+                $data = array(
+                    'clave' => $this->input->post('clave'),
+                    'nombre' => $this->input->post('nombre'),
+                    'id_usuario' => $id_usuario,
+                    
+                );
+
+                $create = $this->model_clientesrefa->create($data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 if ($create == true) {
                     $response['success'] = true;
                     $response['messages'] = 'Creado correctamente';
@@ -201,6 +255,7 @@ class ClientesRefa extends Admin_Controller {
             }
 
             echo json_encode($response);
+<<<<<<< HEAD
         } else if ($dataLevel == "is_admin") {
                 $response = array();
 
@@ -209,10 +264,19 @@ class ClientesRefa extends Admin_Controller {
             $this->form_validation->set_rules('nombre', 'Nombre', 'trim|required');
             $this->form_validation->set_message('required','El campo %s es obligatorio');
              $this->form_validation->set_message('is_unique','Ya esta registrado esa %s ');
+=======
+        } else if ($dataLevel == "is_editor") {
+            $response = array();
+
+            $this->form_validation->set_rules('clave', 'Clave', 'trim|required');
+            $this->form_validation->set_rules('clave', 'clave', 'trim|is_unique[clientes_robuspack.clave]');
+            $this->form_validation->set_rules('nombre', 'Nombre', 'trim|required');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 
             if ($this->form_validation->run() == TRUE) {
+<<<<<<< HEAD
                    $id_usuario = $this->session->userdata('id');
                 $data = array(
                     'clave' => $this->input->post('clave'),
@@ -256,6 +320,16 @@ class ClientesRefa extends Admin_Controller {
                 );
 
                 $create = $this->Model_clientesrefa->create($data);
+=======
+                $id_usuario= $this->session->userdata('id');
+                $data = array(
+                    'clave' => $this->input->post('clave'),
+                    'nombre' => $this->input->post('nombre'),
+                    'id_usuario' => $id_usuario,
+                );
+
+                $create = $this->model_clientesrefa->create($data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 if ($create == true) {
                     $response['success'] = true;
                     $response['messages'] = 'Creado correctamente';
@@ -296,14 +370,22 @@ class ClientesRefa extends Admin_Controller {
             $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
 
             if ($this->form_validation->run() == TRUE) {
+<<<<<<< HEAD
                 $id_usuario = $this->session->userdata('id');
+=======
+                   $id_usuario= $this->session->userdata('id');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $data = array(
                     'clave' => $this->input->post('edit_clave'),
                     'nombre' => $this->input->post('edit_nombre'),
                     'id_usuario' => $id_usuario
                 );
 
+<<<<<<< HEAD
                 $update = $this->Model_clientesrefa->update($data, $id);
+=======
+                $update = $this->model_clientesrefa->update($data, $id);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 if ($update == true) {
                     $response['success'] = true;
                     $response['messages'] = 'Actualizado correctamente';
@@ -342,7 +424,11 @@ class ClientesRefa extends Admin_Controller {
 
         $response = array();
         if ($store_id) {
+<<<<<<< HEAD
             $delete = $this->Model_clientesrefa->remove($store_id);
+=======
+            $delete = $this->model_clientesrefa->remove($store_id);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             if ($delete == true) {
                 $response['success'] = true;
                 $response['messages'] = "Eliminado correctamente";

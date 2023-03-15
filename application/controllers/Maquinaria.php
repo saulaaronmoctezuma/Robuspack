@@ -1,6 +1,7 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
@@ -8,6 +9,15 @@
  */
 
 Class Maquinaria extends CI_Controller {
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+Class Maquinaria extends CI_Controller {
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public $status;
     public $roles;
 
@@ -70,16 +80,24 @@ Class Maquinaria extends CI_Controller {
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
+=======
+        }  else if ($dataLevel == "is_Gerente_Ventas") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+               $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_maquinaria_refacciones") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
             $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
             $data['maquinaria'] = $this->MaquinariaModelo->query();
             $this->load->view('Maquinaria/listarMaquinaria', $data);
@@ -99,6 +117,21 @@ Class Maquinaria extends CI_Controller {
             $this->load->view('Maquinaria/listarMaquinaria', $data);
             $this->load->view('footer');
         } else {
+=======
+               $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
+            $data['maquinaria'] = $this->MaquinariaModelo->query();
+            $this->load->view('Maquinaria/listarMaquinaria', $data);
+            $this->load->view('footer');
+        } 
+        else if ($dataLevel == "is_director") {
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+               $data['busqueda'] = $this->MaquinariaModelo->querybusqueda();
+            $data['maquinaria'] = $this->MaquinariaModelo->query();
+            $this->load->view('Maquinaria/listarMaquinaria', $data);
+            $this->load->view('footer');
+        }else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -136,11 +169,14 @@ Class Maquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Maquinaria/agregarMaquinaria', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Maquinaria/agregarMaquinaria', $data);
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else {
             redirect(site_url() . 'main/');
         }
@@ -161,7 +197,10 @@ Class Maquinaria extends CI_Controller {
             'precio3' => $_POST['precio3'],
             'precio4' => $_POST['precio4'],
             'precio5' => $_POST['precio5'],
+<<<<<<< HEAD
             'fecha_actualizacion_precio' => $_POST['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'pcexwork' => $_POST['pcexwork'],
             'pcfob' => $_POST['pcfob'],
             'pccif' => $_POST['pccif'],
@@ -173,7 +212,11 @@ Class Maquinaria extends CI_Controller {
             'empresa_competencia_2' => $_POST['empresa_competencia_2'],
             'inventario' => $_POST['inventario'],
             'piezas_recibir' => $_POST['piezas_recibir'],
+<<<<<<< HEAD
              'fecha_corte_rotacion' => $_POST['fecha_corte_rotacion'],
+=======
+            'fecha_corte_rotacion' => $_POST['fecha_corte_rotacion'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /* Es para traerse el id del usuario */
             'id' => $dataLevel = $this->userlevel->id($data['id'])
                 /* Es para traerse el id del usuario */
@@ -199,7 +242,10 @@ Class Maquinaria extends CI_Controller {
             $precio3 = $datos['precio3'];
             $precio4 = $datos['precio4'];
             $precio5 = $datos['precio5'];
+<<<<<<< HEAD
               $fecha_actualizacion_precio = $datos['fecha_actualizacion_precio'];
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $pcexwork = $datos['pcexwork'];
             $pcfob = $datos['pcfob'];
             $pccif = $datos['pccif'];
@@ -212,7 +258,11 @@ Class Maquinaria extends CI_Controller {
             $inventario = $datos['inventario'];
             $piezas_recibir = $datos['piezas_recibir'];
             $fecha_corte_rotacion = $datos['fecha_corte_rotacion'];
+<<<<<<< HEAD
             $this->MaquinariaModelo->actualizar($id_maquinaria, $referencia, $fecha, $fabricante, $maquina, $precio1, $precio2, $precio3, $precio4, $precio5,$fecha_actualizacion_precio, $pcexwork, $pcfob, $pccif, $pccip, $ancho, $espesor, $diametro, $empresa_competencia_1, $empresa_competencia_2, $inventario,$piezas_recibir,$fecha_corte_rotacion );
+=======
+            $this->MaquinariaModelo->actualizar($id_maquinaria, $referencia, $fecha, $fabricante, $maquina, $precio1, $precio2, $precio3, $precio4, $precio5, $pcexwork, $pcfob, $pccif, $pccip, $ancho, $espesor, $diametro, $empresa_competencia_1, $empresa_competencia_2, $inventario,$piezas_recibir,$fecha_corte_rotacion );
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect('');
             redirect('Maquinaria');
         }
@@ -253,6 +303,7 @@ Class Maquinaria extends CI_Controller {
             $data = $this->MaquinariaModelo->obtener($id_maquinaria);
             $this->load->view('Maquinaria/modificarMaquinaria', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -260,6 +311,8 @@ Class Maquinaria extends CI_Controller {
             $data = $this->MaquinariaModelo->obtener($id_maquinaria);
             $this->load->view('Maquinaria/modificarMaquinaria', $data);
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else {
             redirect(site_url() . 'main/');
         }
@@ -267,11 +320,22 @@ Class Maquinaria extends CI_Controller {
     
     
     
+<<<<<<< HEAD
     
      public function actualiza($id_maquinaria) {
         $this->load->model('Maquinaria/MaquinariaModelo');
 
 
+=======
+    public function actualiza($id) {
+        $this->load->model('Maquinaria/MaquinariaModelo');
+
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //user data from session
         $data = $this->session->userdata;
         if (empty($data)) {
@@ -289,13 +353,18 @@ Class Maquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             //agregar para el select de refacción de tabla maquinaria        
             $data = array();
+<<<<<<< HEAD
             $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+=======
+            $data = $this->MaquinariaModelo->obtener($id);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $data = array();
+<<<<<<< HEAD
             $data = $this->MaquinariaModelo->obtener($id_maquinaria);
             $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
             $this->load->view('footer');
@@ -304,6 +373,9 @@ Class Maquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             $data = array();
             $data = $this->MaquinariaModelo->obtener($id_maquinaria);
+=======
+            $data = $this->MaquinariaModelo->obtener($id);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('Maquinaria/modificarMaquinariaFechaCorte', $data);
             $this->load->view('footer');
         } else {
@@ -311,9 +383,15 @@ Class Maquinaria extends CI_Controller {
         }
     }
 
+<<<<<<< HEAD
 
 
  public function rotacion($id_maquinaria) {
+=======
+    
+    
+      public function rotacion($id_maquinaria) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->load->model('Maquinaria/MaquinariaModelo');
 
         //user data from session
@@ -347,7 +425,10 @@ Class Maquinaria extends CI_Controller {
             redirect(site_url() . 'main/');
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function maquinariaModificar() {
         $data = array(
             'id_maquinaria' => $_POST['id_maquinaria'],
@@ -360,7 +441,10 @@ Class Maquinaria extends CI_Controller {
             'precio3' => $_POST['precio3'],
             'precio4' => $_POST['precio4'],
             'precio5' => $_POST['precio5'],
+<<<<<<< HEAD
              'fecha_actualizacion_precio' => $_POST['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'pcexwork' => $_POST['pcexwork'],
             'pcfob' => $_POST['pcfob'],
             'pccif' => $_POST['pccif'],
@@ -380,8 +464,12 @@ Class Maquinaria extends CI_Controller {
     }
     
     
+<<<<<<< HEAD
     
     public function maquinariaModificarRotacion() {
+=======
+      public function maquinariaModificarRotacion() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data = array(
             'id_maquinaria' => $_POST['id_maquinaria'],
             'referencia' => $_POST['referencia'],
@@ -393,7 +481,10 @@ Class Maquinaria extends CI_Controller {
             'precio3' => $_POST['precio3'],
             'precio4' => $_POST['precio4'],
             'precio5' => $_POST['precio5'],
+<<<<<<< HEAD
             'fecha_actualizacion_precio' => $_POST['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'pcexwork' => $_POST['pcexwork'],
             'pcfob' => $_POST['pcfob'],
             'pccif' => $_POST['pccif'],
@@ -424,7 +515,10 @@ Class Maquinaria extends CI_Controller {
             'precio3' => $_POST['precio3'],
             'precio4' => $_POST['precio4'],
             'precio5' => $_POST['precio5'],
+<<<<<<< HEAD
             'fecha_actualizacion_precio' => $_POST['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'pcexwork' => $_POST['pcexwork'],
             'pcfob' => $_POST['pcfob'],
             'pccif' => $_POST['pccif'],

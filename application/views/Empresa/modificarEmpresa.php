@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,6 +6,9 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <html lang="es-mx">
     <title>Robuspack</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -316,7 +320,11 @@
                     <tr>
                     <td>
                         <input  class="btn btn-success" title="Da clic para guardar los datos" type="submit" value="Guardar" >
+<<<<<<< HEAD
                         <a title="Da clic para regresar al menú" href="../" class="btn btn-danger">Cancelar</a>
+=======
+                        <a title="Da clic para regresar al menú" href="../" class="btn btn-warning">Cancelar</a>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </td>
                 </tr>
                 </tbody>

@@ -81,7 +81,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
     {
             $this->db->select('COUNT(*) as total_registros_elvira');
             $this->db->from('venta');
+<<<<<<< HEAD
            $this->db->where('venta.id= ', 33);
+=======
+           $this->db->where('venta.id= ',33);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $query = $this->db->get();
              return $query->result();
         }
@@ -309,7 +313,11 @@ class TotSicModelo extends CI_Model implements IModeloAbstracto {
         {
             $this->db->select('COUNT(*) as total_registros_sic');
             $this->db->from('venta');
+<<<<<<< HEAD
           $this->db->where('venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=28 OR venta.id=33');
+=======
+          $this->db->where('venta.id=6 OR venta.id=7 OR venta.id=8 OR venta.id=28');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $query = $this->db->get();
              return $query->result();
         }

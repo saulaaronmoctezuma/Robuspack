@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .test1 {
+=======
+/*.test1 {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 	//gaga: hello;
 }
 
@@ -12,4 +16,8 @@
 	#hello: 1}
 
 #test2 {
+<<<<<<< HEAD
 	help: none;
+=======
+	help: none;**/
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

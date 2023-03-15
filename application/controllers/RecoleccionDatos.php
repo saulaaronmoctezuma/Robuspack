@@ -60,11 +60,15 @@ class RecoleccionDatos extends CI_Controller {
             $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
             $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
             $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+<<<<<<< HEAD
             
             
              $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
             
             
+=======
+            $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
         } else if ($dataLevel == "is_refacciones") {
@@ -114,7 +118,12 @@ class RecoleccionDatos extends CI_Controller {
             $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
             $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
             $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+<<<<<<< HEAD
              $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+=======
+            $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
@@ -129,7 +138,12 @@ class RecoleccionDatos extends CI_Controller {
             $data['totalRegistroEmpresaNadia'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaNadia(1);
             $data['totalRegistroEmpresaKaren'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaKaren(1);
             $data['totalRegistroEmpresaSaul'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaSaul(1);
+<<<<<<< HEAD
  $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+=======
+             $data['totalRegistroEmpresaAlethiaExistente'] = $this->RecoleccionDatosModelo->totalRegistroEmpresaAlehiaExistente(1);
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('RecoleccionDatos/listarRecoleccionDatos', $data);
             $this->load->view('footer');
         }  else if ($dataLevel == "is_freelance") {
@@ -373,6 +387,7 @@ class RecoleccionDatos extends CI_Controller {
             $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_freelance") {
             $this->load->view('header', $data);
 
@@ -382,6 +397,17 @@ class RecoleccionDatos extends CI_Controller {
             $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
             $this->load->view('footer');
         }  else {
+=======
+            }else if ($dataLevel == "is_freelance") {
+                $this->load->view('header', $data);
+
+                $this->load->view('navbar', $data);
+                $data = array();
+                $data = $this->RecoleccionDatosModelo->obtener($id_recoleccion_datos);
+                $this->load->view('RecoleccionDatos/modificarRecoleccionDatos', $data);
+                $this->load->view('footer');
+            }  else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }

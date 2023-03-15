@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -18,6 +19,11 @@ class ReporteMaximoMinimoPojo {
     
      
    private $codigo;
+=======
+class ReporteMaximoMinimoPojo {
+
+    private $codigo;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $fecha_corte_rotacion;
     private $fecha_ultimo_consumo;
     private $fecha_requiere_piezas;
@@ -192,5 +198,9 @@ class ReporteMaximoMinimoPojo {
     }
 
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+<<<<<<< HEAD
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -8,6 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * "Controlar la complejidad es la esencia de la programación"
  */
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class Main extends CI_Controller {
 
     public $status;
@@ -21,6 +24,10 @@ class Main extends CI_Controller {
         $this->status = $this->config->item('status');
         $this->roles = $this->config->item('roles');
         $this->load->library('userlevel');
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
             //Menu principal
@@ -43,7 +50,16 @@ class Main extends CI_Controller {
 	    
         if(empty($this->session->userdata['email'])){
             redirect(site_url().'main/login/');
+<<<<<<< HEAD
         }else{
+=======
+        }
+        
+        /*else if ($dataLevel == "is_almacen") {
+              redirect(site_url().'orders/');
+        }*/
+        else{
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('container');
@@ -67,6 +83,10 @@ class Main extends CI_Controller {
         
         $result = $this->User_model->getAllSettings();
         $stLe = $result->site_title;
+<<<<<<< HEAD
+=======
+        date_default_timezone_set("America/Mexico_City");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 	$tz = $result->timezone;
 	    
 	$now = new DateTime();
@@ -91,9 +111,15 @@ class Main extends CI_Controller {
             $bUrl = base_url();
             $message = $this->sendmail->secureMail($data['first_name'],$data['last_name'],$data['email'],$dTod,$dTim,$stLe,$browser,$os,$getip,$bUrl);
             $to_email = $data['email'];
+<<<<<<< HEAD
             $this->email->from($this->config->item('register'), 'Alerta de sesión del SCR '.$browser.'');
             $this->email->to($to_email);
             $this->email->subject('Alerta de sesión del SCR '.$browser.'');
+=======
+            $this->email->from($this->config->item('register'), 'New sign-in! from '.$browser.'');
+            $this->email->to($to_email);
+            $this->email->subject('New sign-in! from '.$browser.'');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->email->message($message);
             $this->email->set_mailtype("html");
             $this->email->send();
@@ -146,7 +172,11 @@ class Main extends CI_Controller {
             }else{
                 $post = $this->input->post(NULL, TRUE);
                 $cleanPost = $this->security->xss_clean($post);
+<<<<<<< HEAD
                 $cleanPost['id'] = $this->input->post('id');
+=======
+                //$cleanPost['id'] = $this->input->post('id');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $cleanPost['site_title'] = $this->input->post('site_title');
                 $cleanPost['timezone'] = $this->input->post('timezone');
                 $cleanPost['recaptcha'] = $this->input->post('recaptcha');
@@ -428,7 +458,11 @@ class Main extends CI_Controller {
     }
 
     //register new user from frontend
+<<<<<<< HEAD
     public function registerQUITARESTOCUANDOFUNCIONEREGISTAR()
+=======
+    public function register()
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     {
         $data['title'] = "Registrar para Administrador";
         $this->load->library('curl');
@@ -538,21 +572,32 @@ class Main extends CI_Controller {
         $this->load->view('header', $data);
         $this->load->view('container');
         $this->load->view('register-info');
+<<<<<<< HEAD
         $this->load->view('footer');
+=======
+        //$this->load->view('footer');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     //if success after set password
     public function successresetpassword()
     {
+<<<<<<< HEAD
         
       //  $dataLevel = $this->userlevel->checkLevel($data['role']);
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['title'] = "Cambio correctamente la contraseña";
         $this->load->view('header', $data);
         $this->load->view('container');
         $this->load->view('reset-pass-info');
+<<<<<<< HEAD
         //se quito por que el footer se lleva datalevel que es el rol de usuario cuando esta registrado,  y como no ha
         //iniciado sesión manda error de rol vacio
        // $this->load->view('footer');
+=======
+        //$this->load->view('footer');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     protected function _islocal(){
@@ -626,6 +671,13 @@ class Main extends CI_Controller {
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('password', 'Password', 'required');
             
+<<<<<<< HEAD
+=======
+             $this->form_validation->set_message('required','El campo es obligatorio');
+             $this->form_validation->set_message('valid_email','Verifica que la dirección de correo electrónico sea válida y/o no tenga espacio al final de este');
+             
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['title'] = "Sistema de Control Robuspack";
             
             $result = $this->User_model->getAllSettings();
@@ -635,11 +687,15 @@ class Main extends CI_Controller {
                 $this->load->view('header', $data);
                 $this->load->view('container');
                 $this->load->view('login');
+<<<<<<< HEAD
                 //$this->load->view('footer');
                 
                 
                 
                 
+=======
+               // $this->load->view('footer');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }else{
                 $post = $this->input->post();
                 $clean = $this->security->xss_clean($post);
@@ -653,7 +709,11 @@ class Main extends CI_Controller {
                     $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$key."&response=".$recaptchaResponse."&remoteip=".$userIp; //link
                     $response = $this->curl->simple_get($url);
                     $status= json_decode($response, true);
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     if(!$userInfo)
                     {
                         $this->session->set_flashdata('flash_message', 'La contraseña y/o correco electrónico son incorrectas');
@@ -692,7 +752,11 @@ class Main extends CI_Controller {
                     }
                     elseif($userInfo->banned_users == "ban")
                     {
+<<<<<<< HEAD
                         $this->session->set_flashdata('danger_message', 'No puedes acceder temporalmente al sistema');
+=======
+                        $this->session->set_flashdata('danger_message', 'No puedes acceder temporal');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         redirect(site_url().'main/login');
                     }
                     elseif($userInfo && $userInfo->banned_users == "unban") //recaptcha check, success login, ban or unban
@@ -718,6 +782,11 @@ class Main extends CI_Controller {
     {
         $this->session->sess_destroy();
         redirect(site_url().'main/login/');
+<<<<<<< HEAD
+=======
+        
+     
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     //forgot password
@@ -775,9 +844,15 @@ class Main extends CI_Controller {
                     
                     $message = $this->sendmail->sendForgot($this->input->post('lastname'),$this->input->post('email'),$link,$sTl);
                     $to_email = $this->input->post('email');
+<<<<<<< HEAD
                     $this->email->from($this->config->item('forgot'), 'Cambio de Contraseña SCR ' . $this->input->post('firstname') .' '. $this->input->post('lastname')); //from sender, title email
                     $this->email->to($to_email);
                     $this->email->subject('Cambio de Contraseña SCR');
+=======
+                    $this->email->from($this->config->item('forgot'), 'Reset Password! ' . $this->input->post('firstname') .' '. $this->input->post('lastname')); //from sender, title email
+                    $this->email->to($to_email);
+                    $this->email->subject('Reset Password');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $this->email->message($message);
                     $this->email->set_mailtype("html");
     
@@ -805,9 +880,15 @@ class Main extends CI_Controller {
                 
                 $message = $this->sendmail->sendForgot($this->input->post('lastname'),$this->input->post('email'),$link,$sTl);
                 $to_email = $this->input->post('email');
+<<<<<<< HEAD
                 $this->email->from($this->config->item('forgot'), 'Cambio de Contraseña SCR! ' . $this->input->post('firstname') .' '. $this->input->post('lastname')); //from sender, title email
                 $this->email->to($to_email);
                 $this->email->subject('Cambio de Contraseña SCR');
+=======
+                $this->email->from($this->config->item('forgot'), 'Reset Password! ' . $this->input->post('firstname') .' '. $this->input->post('lastname')); //from sender, title email
+                $this->email->to($to_email);
+                $this->email->subject('Reset Password');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $this->email->message($message);
                 $this->email->set_mailtype("html");
 
@@ -876,7 +957,11 @@ encoontrado
             'firstName'=> $user_info->first_name,
             'email'=>$user_info->email,
             //'user_id'=>$user_info->id,
+<<<<<<< HEAD
             'token'=>$this->base64url_encode($token)
+=======
+            'token'=>$this->bzase64url_encode($token)
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         );
 
         $data['title'] = "Restablecer la contraseña";
@@ -887,9 +972,13 @@ encoontrado
             $this->load->view('header', $data);
             $this->load->view('container');
             $this->load->view('reset_password', $data);
+<<<<<<< HEAD
             
             //se quito por que no se lleva ningun rol , ya que no ha iniciado sesión
             //$this->load->view('footer');
+=======
+            $this->load->view('footer');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else{
             $this->load->library('password');
             $post = $this->input->post(NULL, TRUE);

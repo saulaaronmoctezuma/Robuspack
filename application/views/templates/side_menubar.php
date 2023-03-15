@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+=======
+<style type="text/css">
+    /* cambiar tipo de letra */
+    nav.navbar ul.nav li {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    /* cambiar el color de fondo a la barra */
+    nav.navbar {
+        background-color: #FB723B;
+    }
+
+    .navbar-inverse .nav li a{
+        color: rgb(255, 255, 255);
+    }
+
+    /*Mouse encima*/
+    .navbar-inverse .nav li a:hover{
+        color: rgb(47, 35, 224);
+    }
+</style>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <aside class="main-sidebar position-fixed">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -77,8 +101,11 @@
                 <ul class="treeview-menu">
                     <li id="addGroupNav"><a href="<?php echo base_url('ClienteSeguimiento') ?>"><i class="fa fa-circle-o"></i> Control SIM</a></li>
                     <li id="manageGroupNav"><a href="<?php echo base_url('Bitacora') ?>"><i class="fa fa-circle-o"></i> Bitácora</a></li>
+<<<<<<< HEAD
                      <li id="manageGroupNav"><a href="<?php echo base_url('CensoMaquinaria') ?>"><i class="fa fa-circle-o"></i> Censo Maquinaria</a></li>
                     
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 </ul>
 
@@ -124,6 +151,7 @@
                 </a>
             </li>
 
+<<<<<<< HEAD
 <!--
             <li id="storeNav">
                 <a href="<?php echo base_url('stores/') ?>">
@@ -133,6 +161,20 @@
             
             -->
             
+=======
+
+            <!--<li id="storeNav">
+                <a href="<?php echo base_url('stores/') ?>">
+                    <i class="fa fa-files-o"></i> <span>Almacenes</span>
+                </a>
+            </li>-->
+
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <!--<li id="attributeNav">
               <a href="<?php echo base_url('attributes/') ?>">
                 <i class="fa fa-files-o"></i> <span>Atributos</span>
@@ -148,37 +190,60 @@
                 </a>
                 <ul class="treeview-menu">
 
+<<<<<<< HEAD
                     <!--<li id="addProductNav"><a href="<?php echo base_url('products/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>
                     <li id="manageProductNav"><a href="<?php echo base_url('products/agregar') ?>"><i class="fa fa-circle-o"></i> Actualizar Inventario</a></li>-->
                     <li id="manageProductNav"><a href="<?php echo base_url('products') ?>"><i class="fa fa-circle-o"></i>Con Inv Refacciones</a></li>
                     <li id="manageProductNav"><a href="<?php echo base_url('cubierta') ?>"><i class="fa fa-circle-o"></i>Con Inv Cubierta</a></li>
+=======
+                    <!--<li id="addProductNav"><a href="<?php echo base_url('products/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>-->
+                    <li id="manageProductNav"><a href="<?php echo base_url('products/agregar') ?>"><i class="fa fa-circle-o"></i> Actualizar Inventario</a></li>
+                    <li id="manageProductNav"><a href="<?php echo base_url('products') ?>"><i class="fa fa-circle-o"></i> Refacciones</a></li>
+                    <li id="manageProductNav"><a href="<?php echo base_url('cubierta') ?>"><i class="fa fa-circle-o"></i> Cubierta</a></li>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </ul>
             </li>
             <li class="treeview" id="mainOrdersNav">
                 <a href="#">
                     <i class="fa fa-dollar"></i>
+<<<<<<< HEAD
                     <span>Salidas</span>
+=======
+                    <span>Ordenes</span>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
+<<<<<<< HEAD
                     <li id="addOrderNav"><a href="<?php echo base_url('orders/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>
+=======
+                   <!-- <li id="addOrderNav"><a href="<?php echo base_url('orders/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <li id="manageOrdersNav"><a href="<?php echo base_url('orders') ?>"><i class="fa fa-circle-o"></i> Administrar</a></li>
                 </ul>
             </li>
             
             
+<<<<<<< HEAD
             
             <li class="treeview" id="mainOrdersNav">
                 <a href="#">
                     <i class="fa fa-dollar"></i>
                     <span>Entradas a Inventario</span>
+=======
+                 <li class="treeview" id="mainOrdersNav">
+                <a href="#">
+                    <i class="fa fa-dollar"></i>
+                    <span>Entradas a almacén</span>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
+<<<<<<< HEAD
                     <li id="addOrderNav"><a href="<?php echo base_url('inventory/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>
                     <li id="manageOrdersNav"><a href="<?php echo base_url('inventory') ?>"><i class="fa fa-circle-o"></i> Administrar</a></li>
                 </ul>
@@ -189,6 +254,17 @@
                     <i class="fa fa-files-o"></i> <span>Clientes Refacciones</span>
                 </a>
             </li>
+=======
+                   <!-- <li id="addOrderNav"><a href="<?php echo base_url('orders/create') ?>"><i class="fa fa-circle-o"></i> Agregar </a></li>-->
+                    <li id="manageOrdersNav"><a href="<?php echo base_url('inventory') ?>"><i class="fa fa-circle-o"></i> Administrar</a></li>
+                </ul>
+            </li>
+            <!-- <li id="storeNav">
+             <a href="<?php echo base_url('Devolucion') ?>">
+                 <i class="fa fa-files-o"></i> <span>Devolución</span>
+             </a>
+         </li>-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             <!-- <li id="reportNav">
                 <a href="<?php echo base_url('reports/') ?>">

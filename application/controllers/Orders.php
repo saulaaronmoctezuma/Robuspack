@@ -125,6 +125,7 @@ class Orders extends Admin_Controller {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
                 $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
+<<<<<<< HEAD
                 
                 
                   $buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
@@ -135,14 +136,25 @@ class Orders extends Admin_Controller {
                 // $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
                 
                   $buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+=======
+                 $buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+             
+                } else if ($dataLevel == "is_editor") {
+                $buttons = '';
+                $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
+                // $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             } elseif ($dataLevel == "is_mantenimiento") {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
             } elseif ($dataLevel == "is_servicio_a_clientes") {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
+<<<<<<< HEAD
                 
                   $buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             } elseif ($dataLevel == "is_jefe_mantenimiento") {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
@@ -155,9 +167,16 @@ class Orders extends Admin_Controller {
             } elseif ($dataLevel == "is_almacen") {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
+<<<<<<< HEAD
                 
                   $buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
             } elseif ($dataLevel == "is_Gerente_Ventas") {
+=======
+                 $buttons .= '<a target="__blank" href="'.base_url('orders/printDiv/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+              $buttons .= '<a target="__blank" href="'.base_url('Reporte/orders/'.$value['order_id']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+             
+                } elseif ($dataLevel == "is_Gerente_Ventas") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('orders/update/' . $value['order_id']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
             }
@@ -305,6 +324,7 @@ class Orders extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('orders/create', $this->data);
+<<<<<<< HEAD
             }
             
             
@@ -314,6 +334,9 @@ class Orders extends Admin_Controller {
             
             
             else if ($dataLevel == "is_servicio_a_clientes") {
+=======
+            }else if ($dataLevel == "is_servicio_a_clientes") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $data['category'] = $this->model_orders->get_category()->result();
 
                 // false case
@@ -331,6 +354,7 @@ class Orders extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('orders/create', $this->data);
+<<<<<<< HEAD
             } 
             
             
@@ -344,6 +368,10 @@ class Orders extends Admin_Controller {
             
             else {
                 redirect(site_url() . 'products/');
+=======
+            }  else {
+                redirect(site_url() . 'orders/');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
         }
     }
@@ -369,7 +397,19 @@ class Orders extends Admin_Controller {
      */
 
     public function getTableProductRow() {
+<<<<<<< HEAD
         $products = $this->model_products->getActiveProductData();
+=======
+        $sku = $this->input->post("sku"); 
+       // echo json_encode(["sku" =>  $sku]);
+         if(!is_null($sku)){
+            $products = $this->model_products->getActiveProductData($sku);
+
+        }else{
+            $products = $this->model_products->getActiveProductData();
+        }
+       
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         echo json_encode($products);
     }
 
@@ -768,8 +808,13 @@ class Orders extends Admin_Controller {
      * The order print logic is done here 
      */
 
+<<<<<<< HEAD
     /*public function printDiv($id) {
        
+=======
+    public function printDiv($id) {
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         if ($id) {
             $order_data = $this->model_orders->getOrdersData($id);
@@ -809,6 +854,7 @@ class Orders extends Admin_Controller {
 			      <!-- /.col -->
 			    </div>
 			    <!-- info row -->
+<<<<<<< HEAD
 			    <div class="row invoice-info">
 			      
 			      <div class="col-sm-4 invoice-col">
@@ -952,6 +998,8 @@ class Orders extends Admin_Controller {
 			      <!-- /.col -->
 			    </div>
 			    <!-- info row -->
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 			  <center> <h1>ORDEN ' . $order_data['consecutivo'] . '</h1></center>
 			        <b>No Factura:</b> ' . $order_data['bill_no'] . '<br>
 			        <b>Cliente</b> ' . $order_data['nombre'] . '<br>
@@ -1014,8 +1062,11 @@ class Orders extends Admin_Controller {
         }
     }
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function productsDetails() {
         // POST data
         $postData = $this->input->post();

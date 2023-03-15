@@ -70,6 +70,7 @@ Class Cliente extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Cliente/listarCliente', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_Gerente_Ventas") {
             $data['cliente'] = $this->ClienteModelo->query();
             $this->load->view('header', $data);
@@ -83,6 +84,9 @@ Class Cliente extends CI_Controller {
             $this->load->view('Cliente/listarCliente', $data);
             $this->load->view('footer');
         } else {
+=======
+        }  else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -136,12 +140,15 @@ Class Cliente extends CI_Controller {
 
             $this->load->view('Cliente/agregarCliente', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_Gerente_Ventas") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
 
             $this->load->view('Cliente/agregarCliente', $data);
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else {
             redirect(site_url() . 'main/');
         }
@@ -286,6 +293,7 @@ Class Cliente extends CI_Controller {
             $this->load->view('Cliente/modificarCliente', $data);
 
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_Gerente_Ventas") {
 
             $this->load->view('header', $data);
@@ -298,6 +306,8 @@ Class Cliente extends CI_Controller {
             $this->load->view('Cliente/modificarCliente', $data);
 
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else {
             redirect(site_url() . 'main/');
         }

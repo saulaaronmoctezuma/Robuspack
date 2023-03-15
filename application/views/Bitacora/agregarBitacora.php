@@ -14,8 +14,13 @@
 
         <!-- Bootstrap -->
 
+<<<<<<< HEAD
         <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
    <!-- Para traerse el rol que esta registrado-->
+=======
+   <!--     <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+    Para traerse el rol que esta registrado-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
@@ -88,7 +93,11 @@
                 <div class="row">
 
                     <div class="form-group col-xs-6">
+<<<<<<< HEAD
                         <label for="nombre">Descripcion</label>
+=======
+                        <label for="nombre">Descripción</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                              <textarea name="descripcion" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa una nota" require></textarea>
                    
                     </div>
@@ -127,7 +136,11 @@
                 
               
             <center>
+<<<<<<< HEAD
                 <input class="btn btn-success" type="submit" id="botonOrden" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+=======
+                <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 
                 <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a></center>
     </div>

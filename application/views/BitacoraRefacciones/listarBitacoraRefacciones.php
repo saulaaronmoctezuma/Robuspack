@@ -55,12 +55,81 @@ th, td {
 
 
 </style>
+<<<<<<< HEAD
+=======
+
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".hidediv").click(function() {
+                    $(".divdemo").hide("slow");
+                });
+
+                $(".showdiv").click(function() {
+                    $(".divdemo").show(2000);
+                });
+
+            });
+
+        </script>
+        <style>
+            .divTable,divTableBody{
+
+                background-color:#0780BA;
+                color:#fff;
+                padding:100px;
+                font-size:25px;
+            }
+            /* DivTable.com */
+            .divTable{
+                display: table;
+                width: 100%;
+            }
+            .divTableRow {
+                display: table-row;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+            }
+            .divTableCell, .divTableHead {
+                border: 1px solid #999999;
+                display: table-cell;
+                padding: 3px 10px;
+            }
+            .divTableHeading {
+                background-color: #EEE;
+                display: table-header-group;
+                font-weight: bold;
+            }
+            .divTableFoot {
+                background-color: #EEE;
+                display: table-footer-group;
+                font-weight: bold;
+            }
+            .divTableBody {
+                display: table-row-group;
+            }
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    border: 1px solid blue;
+    width: 100px;
+    word-wrap: break-word;
+}
+        </style>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     </head>
 
 
     <head>
     <div class="container" style="margin-top:1px;">
 
+<<<<<<< HEAD
 
 
 
@@ -97,6 +166,33 @@ th, td {
 
 
 
+=======
+        <br>    
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <div class="table-responsive">
             <center>  <h1>Bitácora Refacciones</h1></center>
 
@@ -106,15 +202,23 @@ th, td {
             </div>
             <div class="form-group input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+<<<<<<< HEAD
                 <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+                <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             </div>
 
             <div class="text-center">
                 <a  class="btn btn-success" href="<?= base_url('BitacoraRefacciones/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos de las Bitacoras">Agregar nuevo registro</a>
             </div>
             
+<<<<<<< HEAD
             
      <?php
+=======
+               <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         if ($dataLevel == 'is_admin') {
             echo '
     <p><button class="hidediv ">Ocultar Registros</button>
@@ -294,7 +398,12 @@ th, td {
 
         }
         ?>
+<<<<<<< HEAD
 
+=======
+        
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <BR>
             <table  border="2" class="table table-bordered table-striped" table="example" >
                 <MARQUEE SCROLLDELAY =200> </MARQUEE>
@@ -328,6 +437,7 @@ th, td {
                             
                            
                         } else if ($dataLevel == 'is_editor') {
+<<<<<<< HEAD
 echo '<th class="header" >Observación</th>';
                             echo '<th class="header">Usuario</th>';
                             echo '<th class="header">Fecha de Inserción</th>';
@@ -335,6 +445,14 @@ echo '<th class="header" >Observación</th>';
                             echo '<th class="header" >Observación</th>';
                             
                             
+=======
+         echo '<th class="header" >Observación</th>';
+                            echo '<th class="header">Usuario</th>';
+                            echo '<th class="header">Fecha de Inserción</th>';
+                            echo '<th class="header">Fecha de Modificación</th>';
+                              
+                             echo '<th class="header" >Observación</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             
                             
                             
@@ -354,11 +472,19 @@ echo '<th class="header" >Observación</th>';
 
                             echo '<th class="header" >Acción</th>';
                         } else if ($dataLevel == 'is_refacciones') {
+<<<<<<< HEAD
 echo '<th class="header">Observación</th>';
 
                             echo '<th class="header" style="text-align: center">Acción</th>';
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
  echo '<th class="header">Observación</th>';
+=======
+echo '<th class="header"></th>';
+
+                            echo '<th class="header" style="text-align: center">Acción</th>';
+                        } else if ($dataLevel == 'is_Gerente_Ventas') {
+ echo '<th class="header"></th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             echo '<th class="header">Fecha De Inserción</th>';
                             echo '<th class="header">Fecha de Modificación</th>';
                             echo '<th class="header" >Observación</th>';
@@ -366,8 +492,13 @@ echo '<th class="header">Observación</th>';
                         } else if ($dataLevel == 'is_freelance') {
                              echo '<th class="header" >Observación</th>';
                             echo '<th class="header">Acción</th>';
+<<<<<<< HEAD
                         }  else {
                             
+=======
+                        } else {
+                             
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         }
                         ?>
 
@@ -378,7 +509,11 @@ echo '<th class="header">Observación</th>';
                     </tr>
                 </thead>
 
+<<<<<<< HEAD
                 <tbody align="center" id="myTable">
+=======
+                <tbody align="center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     <?php
                     foreach ($bitacora as $obj) {
@@ -400,6 +535,7 @@ echo '<th class="header">Observación</th>';
                         '</td>'
                         . '<td>'
                         . $obj->getCliente() .
+<<<<<<< HEAD
                         '</td>'; 
                         
                         
@@ -410,15 +546,27 @@ echo '<th class="header">Observación</th>';
                              
                              
                              /* if (($obj->getDescripcion() == null)) {
+=======
+                        '</td>';
+                        
+                        
+                                     /*     if (($obj->getDescripcion() == null)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         echo '<td><center><i class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
     } else if (($obj->getDescripcion() != null)) {
         echo '<td title="'. $obj->getDescripcion() .
         '"><center><i class="fa fa-align-justify" aria-hidden="true"></center></i></td>';
+<<<<<<< HEAD
     }*/
     
     
     
          ?>
+=======
+    */
+                        
+                              ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     
                     
                     
@@ -441,7 +589,11 @@ echo '<th class="header">Observación</th>';
     <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraRefacciones">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </a></center>
             
+<<<<<<< HEAD
             <h4 class="modal-title" id="myModalLabelC">Descripción</h4>
+=======
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           </div>
           <div class="modal-body">
            
@@ -466,13 +618,21 @@ echo '<th class="header">Observación</th>';
             
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         if ($obj->getArchivo1() != null) {
                             echo '<td width="250px"><a  title="Da clic para descargar el archivo" href="' . base_url() . 'assets/bitacora_refacciones/' . $obj->getArchivo1() . '" target=”_blank” rel=”nofollow”> <button type="button" class="btn btn-sucess"><span class="glyphicon glyphicon-save"></button></a></td>';
                         } else {
                             echo '<td><font color="red">Sin Archivo</td></font>';
                         }
 
+<<<<<<< HEAD
                         /* if (($dataLevel == 'is_admin') &&   ($obj->getObservacion() != null)) {
+=======
+                       /*  if (($dataLevel == 'is_admin') &&   ($obj->getObservacion() != null)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             echo '<td>'. $obj->getObservacion() .'</td>';
                         } else if ($dataLevel == 'is_admin' and $obj->getObservacion() == null){
                             echo '<td><font color="red">Sin Observación</font></td>';
@@ -484,17 +644,38 @@ echo '<th class="header">Observación</th>';
                             echo '<td><font color="red">Sin Observación</font></td>';
                         }
                         
+<<<<<<< HEAD
                         
+=======
+                           if (($dataLevel == 'is_editor') &&   ($obj->getObservacion() != null)) {
+                            echo '<td>'. $obj->getObservacion() .'</td>';
+                        } else if ($dataLevel == 'is_editor' and $obj->getObservacion() == null){
+                            echo '<td><font color="red">Sin Observación</font></td>';
+                        }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                          
                          if (($dataLevel == 'is_refacciones') &&   ($obj->getObservacion() != null)) {
                             echo '<td>'. $obj->getObservacion() .'</td>';
                         } else if ($dataLevel == 'is_refacciones' and $obj->getObservacion() == null){
                             echo '<td><font color="red">Sin Observación</font></td>';
+<<<<<<< HEAD
                         }*/
                         
                         
                         
                           ?>
+=======
+                        }
+                        
+                        
+                          if (($dataLevel == 'is_freelance') &&   ($obj->getObservacion() != null)) {
+                            echo '<td>'. $obj->getObservacion() .'</td>';
+                        } else if ($dataLevel == 'is_freelance' and $obj->getObservacion() == null){
+                            echo '<td><font color="red">Sin Observación</font></td>';
+                        }
+                        */ 
+                        ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     
                     
                     
@@ -503,7 +684,11 @@ echo '<th class="header">Observación</th>';
                           <?php
             
                  if (($obj->getObservacion() == null)) {
+<<<<<<< HEAD
             echo '<td title="Sin Observación"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+=======
+            echo '<td title="Sin observacion"><center><i style="font-size:12px;color:red" class="fa fa-times-circle" aria-hidden="true"></i></center></td>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     } else if (($obj->getObservacion() != null)) {
       ?>
          
@@ -517,7 +702,11 @@ echo '<th class="header">Observación</th>';
     <center>           <a title="Da clic para regresar" style="color:#000000" href="<?php echo site_url(); ?>BitacoraRefacciones">             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </a></center>
             
+<<<<<<< HEAD
             <h4 class="modal-title" id="myModalLabelC">Observación</h4>
+=======
+            <h4 class="modal-title" id="myModalLabelC">Comentario</h4>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           </div>
           <div class="modal-body">
            
@@ -538,7 +727,11 @@ echo '<th class="header">Observación</th>';
                     <?php
                     
                     }
+<<<<<<< HEAD
                         
+=======
+                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         
                        
                         if ($dataLevel == 'is_admin') {
@@ -592,6 +785,7 @@ echo '<th class="header">Observación</th>';
                         if ($dataLevel == 'is_admin') {
                             echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'BitacoraRefacciones/eliminar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-comment"></button></a></td>';
+<<<<<<< HEAD
                         } else if ($dataLevel == 'is_editor') {
                               echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-comment"><span class="glyphicon glyphicon-edit"></button></a></td>';
                           
@@ -600,6 +794,15 @@ echo '<th class="header">Observación</th>';
                         } else if ($dataLevel == 'is_director') {
                             
                         } else {
+=======
+                        } else if ($dataLevel == 'is_Gerente_Ventas') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-comment"><span class="glyphicon glyphicon-comment"></button></a></td>';
+                        } else if ($dataLevel == 'is_director') {
+                            
+                        } else if ($dataLevel == 'is_editor') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-comment"><span class="glyphicon glyphicon-comment"></button></a></td>';
+                        }  else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'BitacoraRefacciones/actualizar/' . $obj->getId_bitacora() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
                         }
                     }
@@ -614,4 +817,25 @@ echo '<th class="header">Observación</th>';
 
 
     </body>
+<<<<<<< HEAD
+=======
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+ // Write on keyup event of keyword input element
+ $(document).ready(function(){
+ $("#buscandoIguales").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+ $.each($("#example tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </html>

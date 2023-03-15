@@ -4,6 +4,7 @@ require 'CatalogoVenTecPojo.php';
 require 'IModeloAbstracto.php';
 
 
+<<<<<<< HEAD
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -11,6 +12,13 @@ require 'IModeloAbstracto.php';
  * "Controlar la complejidad es la esencia de la programación"
  */
  
+=======
+/**
+ * Description of CatalogoVenTecModelo
+ *
+ * @author Desarrollo.robus
+ */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class CatalogoVenTecModelo extends CI_Model implements IModeloAbstracto {
     public function __construct() {
         parent::__construct();
@@ -82,4 +90,17 @@ class CatalogoVenTecModelo extends CI_Model implements IModeloAbstracto {
         $this->db->from('users');
         return $this->db->get()->row();
     }
+<<<<<<< HEAD
     }
+=======
+
+    public function refacciones() {
+        
+    }
+
+    public function querybusqueda() {
+        
+    }
+
+}
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

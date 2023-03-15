@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+<<<<<<< HEAD
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -8,6 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * "Controlar la complejidad es la esencia de la programación"
  */
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class User_model extends CI_Model {
 
     public $status; 
@@ -241,9 +244,13 @@ class User_model extends CI_Model {
                 'email'=>$d['email'],
                 'password'=>$d['password'], 
                 'role'=>$d['role'], 
+<<<<<<< HEAD
                 'status'=>$this->status[1],
                 'banned_users'=>'unban'
                 
+=======
+                'status'=>$this->status[1]
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             );
             $q = $this->db->insert_string('users',$string);             
             $this->db->query($q);
@@ -293,10 +300,16 @@ class User_model extends CI_Model {
     //get email user
     public function getUserData()
     {   
+<<<<<<< HEAD
       /*  $query = $this->db->get('users');
         return $query->result();*/
         
           $query =  $this->db->query(" Select * From users where users.banned_users <> 'ban' ");
+=======
+        /*$query = $this->db->get('users');
+        return $query->result();*/
+            $query =  $this->db->query(" Select * From users where users.banned_users <> 'ban' ");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         return $query->result();
     }
     

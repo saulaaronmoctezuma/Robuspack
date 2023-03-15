@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+<<<<<<< HEAD
 
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
@@ -7,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
  */
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class modelComboBoxes extends CI_Model{
     //put your code here
     public function getEstados() {

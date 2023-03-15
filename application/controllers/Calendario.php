@@ -32,10 +32,13 @@ class Calendario extends CI_Controller {
         $this->load->model('Calendario/CalendarioModelo');
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //user data from session
         $data = $this->session->userdata;
         /* if (empty($data)) {
@@ -51,19 +54,31 @@ class Calendario extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             $this->load->view('header', $data);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         } else if ($dataLevel == "is_refacciones") {
             $this->load->view('header', $data);
+<<<<<<< HEAD
              $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         }else if ($dataLevel == "is_Gerente_Ventas") {
+=======
+            $this->load->view('navbar', $data);
+            $this->load->view('Calendario/calendario');
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
@@ -75,6 +90,7 @@ class Calendario extends CI_Controller {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -84,6 +100,9 @@ class Calendario extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Calendario/calendario');
         } else {
+=======
+        }else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -130,12 +149,17 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_Gerente_Ventas") {
             $result = $this->CalendarioModelo->addEvent();
             echo $result;
+<<<<<<< HEAD
         }else if ($dataLevel == "is_mantenimiento") {
+=======
+        } else if ($dataLevel == "is_mantenimiento") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $result = $this->CalendarioModelo->addEvent();
             echo $result;
         } else if ($dataLevel == "is_jefe_mantenimiento") {
             $result = $this->CalendarioModelo->addEvent();
             echo $result;
+<<<<<<< HEAD
         } else if ($dataLevel == "is_logistica") {
             $result = $this->CalendarioModelo->addEvent();
             echo $result;
@@ -143,6 +167,9 @@ class Calendario extends CI_Controller {
             $result = $this->CalendarioModelo->addEvent();
             echo $result;
         }     else {
+=======
+        }  else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -187,6 +214,7 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_jefe_mantenimiento") {
             $result = $this->CalendarioModelo->updateEvent();
             echo $result;
+<<<<<<< HEAD
         }else if ($dataLevel == "is_logistica") {
             $result = $this->CalendarioModelo->updateEvent();
             echo $result;
@@ -194,6 +222,10 @@ class Calendario extends CI_Controller {
             $result = $this->CalendarioModelo->updateEvent();
             echo $result;
         }  else {
+=======
+        } 
+        else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }
@@ -225,12 +257,26 @@ class Calendario extends CI_Controller {
         } else if ($dataLevel == "is_editor") {
             $result = $this->CalendarioModelo->deleteEvent();
             echo $result;
+<<<<<<< HEAD
         }   else {
+=======
+        }else if ($dataLevel == "is_refacciones") {
+            $result = $this->CalendarioModelo->deleteEvent();
+            echo $result;
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+            $result = $this->CalendarioModelo->deleteEvent();
+            echo $result;
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }
 
+<<<<<<< HEAD
     Public function dragUpdateEvent() {
+=======
+        Public function dragUpdateEvent() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -260,7 +306,11 @@ class Calendario extends CI_Controller {
         }else if ($dataLevel == "is_refacciones") {
             $result = $this->CalendarioModelo->dragUpdateEvent();
             echo $result;
+<<<<<<< HEAD
         } else if ($dataLevel == "is_mantenimiento") {
+=======
+        }else if ($dataLevel == "is_mantenimiento") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $result = $this->CalendarioModelo->dragUpdateEvent();
             echo $result;
         } else if ($dataLevel == "is_Gerente_Ventas") {
@@ -269,6 +319,7 @@ class Calendario extends CI_Controller {
         } else if ($dataLevel == "is_jefe_mantenimiento") {
             $result = $this->CalendarioModelo->dragUpdateEvent();
             echo $result;
+<<<<<<< HEAD
         } else if ($dataLevel == "is_logistica") {
             $result = $this->CalendarioModelo->dragUpdateEvent();
             echo $result;
@@ -276,6 +327,9 @@ class Calendario extends CI_Controller {
             $result = $this->CalendarioModelo->dragUpdateEvent();
             echo $result;
         }    else {
+=======
+        }   else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'Calendario/');
         }
     }

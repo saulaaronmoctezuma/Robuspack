@@ -2,11 +2,29 @@
 
 /**
 
+<<<<<<< HEAD
  * class @author  Saul González 
  */
 
 class FuventasPojo {
  
+=======
+ * class @author  Saul González & Karen González
+ * Fecha : Ultimo Cambio 02/09/2019 Hora 11:14 am
+ *  Fecha : Ultimo Cambio 12/09/2019 Hora 9:00 am
+ *  Fecha : Ultimo Cambio 16/04/2020 Hora 5:19 pm
+ */
+
+class FuventasPojo {
+
+    
+    
+    
+    
+    
+    
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $id_fuventas;
     private $cantidad_registros;
     private $ref;
@@ -39,6 +57,7 @@ class FuventasPojo {
     private $observaciones;
     private $vendedor;
     private $fecha_de_cobro_de_comisiones;
+<<<<<<< HEAD
     private $tipo_de_cambio;
     private $precio_mxn;
     private $descuento_mxn; 
@@ -49,6 +68,11 @@ class FuventasPojo {
 
     
     function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $tipo_de_precio, $pu_usd, $descuento, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones, $tipo_de_cambio, $precio_mxn, $descuento_mxn, $subtotal_mxn, $iva_mxn, $total_mxn) {
+=======
+
+
+    function __construct($id_fuventas, $cantidad_registros, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $remision, $fecha_de_remision, $orden_compra, $cantidad, $tipo_de_precio, $pu_usd, $descuento, $subtotal, $iva, $total_usd, $fecha, $pedimento, $fecha_pedimento, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->id_fuventas = $id_fuventas;
         $this->cantidad_registros = $cantidad_registros;
         $this->ref = $ref;
@@ -81,6 +105,7 @@ class FuventasPojo {
         $this->observaciones = $observaciones;
         $this->vendedor = $vendedor;
         $this->fecha_de_cobro_de_comisiones = $fecha_de_cobro_de_comisiones;
+<<<<<<< HEAD
         $this->tipo_de_cambio = $tipo_de_cambio;
         $this->precio_mxn = $precio_mxn;
         $this->descuento_mxn = $descuento_mxn;
@@ -91,6 +116,11 @@ class FuventasPojo {
     
     
     
+=======
+    }
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getId_fuventas() {
         return $this->id_fuventas;
     }
@@ -219,6 +249,7 @@ class FuventasPojo {
         return $this->fecha_de_cobro_de_comisiones;
     }
 
+<<<<<<< HEAD
     public function getTipo_de_cambio() {
         return $this->tipo_de_cambio;
     }
@@ -243,6 +274,8 @@ class FuventasPojo {
         return $this->total_mxn;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setId_fuventas($id_fuventas) {
         $this->id_fuventas = $id_fuventas;
     }
@@ -371,6 +404,7 @@ class FuventasPojo {
         $this->fecha_de_cobro_de_comisiones = $fecha_de_cobro_de_comisiones;
     }
 
+<<<<<<< HEAD
     public function setTipo_de_cambio($tipo_de_cambio) {
         $this->tipo_de_cambio = $tipo_de_cambio;
     }
@@ -396,5 +430,7 @@ class FuventasPojo {
     }
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 }

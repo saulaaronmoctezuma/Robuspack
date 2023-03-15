@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,6 +6,9 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <html lang="es-mx">
     <head>
         <title>Robuspack</title>
@@ -38,7 +42,11 @@
 
     </head>
     <div class="container" style="margin-top:10px;">
+<<<<<<< HEAD
        <center> <h1>Gestión de Empresa</h1></center>
+=======
+        <h1>Gestión de Empresa</h1>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             <div class="alert alert-info alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -59,7 +67,11 @@
                     
                           <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelEmpresa">
 
+<<<<<<< HEAD
                         <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+=======
+                        <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:16px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </form>  
         
                 </center>

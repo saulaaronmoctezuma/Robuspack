@@ -63,6 +63,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
   }
 
 
+<<<<<<< HEAD
  public function queryProspectos() {
 
         //user data from session
@@ -1809,6 +1810,14 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
         //user data from session
         $data = $this->session->userdata;
         $dataUser = $this->session->userdata;
+=======
+
+ 
+    public function query() {
+
+        //user data from session
+        $data = $this->session->userdata;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //check user level
         if (empty($data['role'])) {
             redirect(site_url() . 'main/login/');
@@ -1817,6 +1826,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
         $id_usuario = $this->userlevel->id($data['id']);
         //check user level
         $data['title'] = "Robuspack";
+<<<<<<< HEAD
        if (($dataLevel == "is_editor")&&($id_usuario == 4)) {
     //  if (($dataLevel == "is_editor")) {
              /* Para traerse el id del usuario */
@@ -2023,6 +2033,9 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colCensoMaquinaria;
         } if (($dataLevel == "is_editor")) {
+=======
+        if (($dataLevel == "is_editor")&&($id_usuario == 3)) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
              /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
@@ -2030,7 +2043,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             $this->db->select('*');
             $this->db->from('censo_maquinaria');
             $this->db->join('users', 'censo_maquinaria.id_usuario=users.id');
+<<<<<<< HEAD
             //$query = $this->db->where('censo_maquinaria.cliente_robuspack="Sí"');
+=======
+            //$query = $this->db->where('users.id= ', $dataLevel);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $query = $this->db->order_by("id_censomaquinaria", "desc");
 
             //tree los datos de la consulta
@@ -2085,8 +2102,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->correo_personal_otros,
                         $value->tipo_de_cliente,
                         $value->asesor,
+<<<<<<< HEAD
                         $value->asesor_maquinaria,
                         $value->asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->estatus_cliente,
                         $value->tamano_cliente,
                         $value->tipo_mercado,
@@ -2094,6 +2114,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->necesidad,
                         $value->compromiso,
                         $value->notas,
+<<<<<<< HEAD
                        
                        
                        $value->info_maquina_1,
@@ -2208,6 +2229,18 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->info_maquina_1,
+                        $value->info_maquina_2,
+                        $value->info_maquina_3,
+                        $value->info_maquina_4,
+                        $value->info_maquina_5,
+                        $value->info_maquina_6,
+                        $value->info_maquina_7,
+                        $value->refacciones,
+                        $value->corrugadora,
+                        $value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 );
 
@@ -2215,23 +2248,33 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colCensoMaquinaria;
         } else if ($dataLevel == "is_admin") {
+<<<<<<< HEAD
              $data = array(
                 //se lleva el valor del id del usuario
                 $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
               );
             /* Para traerse el id del usuario */
             $dataUser = $this->session->userdata;
+=======
+            /* Para traerse el id del usuario */
+            $data = $this->session->userdata;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /* Para traerse el id del usuario */
             //consulta la tabla venta
             $this->db->select('*');
             $this->db->from('censo_maquinaria');
             $this->db->join('users', 'censo_maquinaria.id_usuario=users.id');
+<<<<<<< HEAD
             //399
             $query = $this->db->where('censo_maquinaria.id_censomaquinaria>500');
             //$query = $this->db->where('censo_maquinaria.cliente_robuspack="Sí"');
            // $query = $this->db->where("users.id= ". $dataLevel . " or censo_maquinaria.asesor='".$dataUser["first_name"]. "' or censo_maquinaria.asesor_maquinaria='". $dataUser["first_name"]."' or censo_maquinaria.asesor_consumibles='". $dataUser["first_name"]."'" );
             
             $query = $this->db->order_by("fecha_insecion", "desc");
+=======
+            //$query = $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->order_by("id_censomaquinaria", "desc");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             //tree los datos de la consulta
             $query = $this->db->get();
@@ -2285,8 +2328,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->correo_personal_otros,
                         $value->tipo_de_cliente,
                         $value->asesor,
+<<<<<<< HEAD
                        $value->asesor_maquinaria,
                         $value->asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->estatus_cliente,
                         $value->tamano_cliente,
                         $value->tipo_mercado,
@@ -2295,6 +2341,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->compromiso,
                         $value->notas,
                         $value->info_maquina_1,
+<<<<<<< HEAD
                         $value-> modelo_maquina_1, 
                         $value->medida_maquina_1 , 
                         $value->tipo_maquina_1 , 
@@ -2389,6 +2436,16 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->info_maquina_2,
+                        $value->info_maquina_3,
+                        $value->info_maquina_4,
+                        $value->info_maquina_5,
+                        $value->info_maquina_6,
+                        $value->info_maquina_7,
+                        $value->refacciones,
+                        $value->corrugadora ,$value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                        );
 
@@ -2396,16 +2453,24 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colCensoMaquinaria;
         } else if ($dataLevel == "is_refacciones") {
+<<<<<<< HEAD
            $dataUser = $this->session->userdata;
             $data = array(
                 //se lleva el valor del id del usuario
                 $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
                 
+=======
+           $data = $this->session->userdata;
+            $data = array(
+                //se lleva el valor del id del usuario
+                $dataLevel = $this->userlevel->id($data['id']) /* Es para traerse el id del usuario */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             );
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
               $this->db->select('*');
+<<<<<<< HEAD
             $this->db->from('censo_maquinaria c');
             $this->db->join('users u', 'c.id_usuario=u.id');
             ///$query = $this->db->where('users.id= ', $dataLevel);
@@ -2413,6 +2478,12 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             $query = $this->db->where("u.id= ". $dataLevel . " or c.asesor='".$dataUser["first_name"]. "' or c.asesor_maquinaria='". $dataUser["first_name"]."' or c.asesor_consumibles='". $dataUser["first_name"]."'" );
            
             $query = $this->db->order_by("c.id_censomaquinaria", "desc");
+=======
+            $this->db->from('censo_maquinaria');
+            $this->db->join('users', 'censo_maquinaria.id_usuario=users.id');
+            $query = $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->order_by("id_censomaquinaria", "desc");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             
             
@@ -2471,8 +2542,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->correo_personal_otros,
                         $value->tipo_de_cliente,
                         $value->asesor,
+<<<<<<< HEAD
                        $value->asesor_maquinaria,
                         $value->asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->estatus_cliente,
                         $value->tamano_cliente,
                         $value->tipo_mercado,
@@ -2480,6 +2554,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->necesidad,
                         $value->compromiso,
                         $value->notas,
+<<<<<<< HEAD
                         
                         
                        $value->info_maquina_1,
@@ -2595,6 +2670,17 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->info_maquina_1,
+                        $value->info_maquina_2,
+                        $value->info_maquina_3,
+                        $value->info_maquina_4,
+                        $value->info_maquina_5,
+                        $value->info_maquina_6,
+                        $value->info_maquina_7,
+                        $value->refacciones,
+                        $value->corrugadora,$value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                        );
 
@@ -2617,6 +2703,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
 
             //consulta la tabla venta
               $this->db->select('*');
+<<<<<<< HEAD
             $this->db->from('censo_maquinaria c');
             $this->db->join('users u', 'c.id_usuario=u.id');
            // $query = $this->db->where('users.id= ', $dataLevel);
@@ -2624,6 +2711,12 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
              $query = $this->db->where("u.id= ". $dataLevel . " or c.asesor='".$dataUser["first_name"]. "' or c.asesor_maquinaria='". $dataUser["first_name"]."' or c.asesor_consumibles='". $dataUser["first_name"]."'" );
            
             $query = $this->db->order_by("c.id_censomaquinaria", "desc");
+=======
+            $this->db->from('censo_maquinaria');
+            $this->db->join('users', 'censo_maquinaria.id_usuario=users.id');
+            $query = $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->order_by("id_censomaquinaria", "desc");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             
             
@@ -2682,8 +2775,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->correo_personal_otros,
                         $value->tipo_de_cliente,
                         $value->asesor,
+<<<<<<< HEAD
                        $value->asesor_maquinaria,
                         $value->asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->estatus_cliente,
                         $value->tamano_cliente,
                         $value->tipo_mercado,
@@ -2691,6 +2787,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->necesidad,
                         $value->compromiso,
                         $value->notas,
+<<<<<<< HEAD
                         
                         
                        $value->info_maquina_1,
@@ -2806,6 +2903,17 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->info_maquina_1,
+                        $value->info_maquina_2,
+                        $value->info_maquina_3,
+                        $value->info_maquina_4,
+                        $value->info_maquina_5,
+                        $value->info_maquina_6,
+                        $value->info_maquina_7,
+                        $value->refacciones,
+                        $value->corrugadora,$value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                        );
 
@@ -2826,6 +2934,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             
             
         }
+<<<<<<< HEAD
         //inge edson
          //condicions que realice la consulta solo si es refacciones
         else if ($dataLevel == "is_jefe_mantenimiento")   { /* Para traerse el id del usuario */
@@ -3050,6 +3159,8 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             
         }
         
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         else if ($dataLevel == "is_maquinaria_refacciones") {
              $data = $this->session->userdata;
             $data = array(
@@ -3060,12 +3171,19 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
 
             //consulta la tabla venta
               $this->db->select('*');
+<<<<<<< HEAD
             $this->db->from('censo_maquinaria c');
             $this->db->join('users u', 'c.id_usuario=u.id');
            $query = $this->db->where("c.cliente_robuspack and u.id= ". $dataLevel . " or c.asesor='".$dataUser["first_name"]. "' or c.asesor_maquinaria='". $dataUser["first_name"]."' or c.asesor_consumibles='". $dataUser["first_name"]."'" );
            
             $query = $this->db->where('u.id= ', $dataLevel);
             $query = $this->db->order_by("c.id_censomaquinaria", "desc");
+=======
+            $this->db->from('censo_maquinaria');
+            $this->db->join('users', 'censo_maquinaria.id_usuario=users.id');
+            $query = $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->order_by("id_censomaquinaria", "desc");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             //tree los datos de la consulta
@@ -3121,8 +3239,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->correo_personal_otros,
                         $value->tipo_de_cliente,
                         $value->asesor,
+<<<<<<< HEAD
                         $value->asesor_maquinaria,
                         $value->asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->estatus_cliente,
                         $value->tamano_cliente,
                         $value->tipo_mercado,
@@ -3130,6 +3251,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->necesidad,
                         $value->compromiso,
                         $value->notas,
+<<<<<<< HEAD
                         
                         
                         
@@ -3246,6 +3368,17 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->info_maquina_1,
+                        $value->info_maquina_2,
+                        $value->info_maquina_3,
+                        $value->info_maquina_4,
+                        $value->info_maquina_5,
+                        $value->info_maquina_6,
+                        $value->info_maquina_7,
+                        $value->refacciones,
+                        $value->corrugadora,$value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                        );
 
@@ -3263,6 +3396,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
 
             //consulta la tabla venta
               $this->db->select('*');
+<<<<<<< HEAD
             $this->db->from('censo_maquinaria c');
             $this->db->join('users u', 'c.id_usuario=u.id');
             //$query = $this->db->where('users.id= ', $dataLevel);
@@ -3282,15 +3416,35 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
             
                    
 
+=======
+            $this->db->from('censo_maquinaria');
+            $this->db->join('users', 'censo_maquinaria.id_usuario=users.id');
+            $query = $this->db->where('users.id= ', $dataLevel);
+            $query = $this->db->order_by("id_censomaquinaria", "desc");
+
+
+            //tree los datos de la consulta
+            $query = $this->db->get();
+            $data = $query->result_array();
+
+            //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
             $colCensoMaquinaria = array();
 
+<<<<<<< HEAD
             foreach ($query->result() as $key => $value) {
                 $objeto = new CensoMaquinariaPojo(
                         $value->id_censomaquinaria, 
                           $value->grupo,
+=======
+              foreach ($query->result() as $key => $value) {
+                $objeto = new CensoMaquinariaPojo(
+                        $value->id_censomaquinaria, 
+                         $value->grupo,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->grupo_temporal,
                         $value->empresa,
                        $value->empresa_temporal,
@@ -3330,8 +3484,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->correo_personal_otros,
                         $value->tipo_de_cliente,
                         $value->asesor,
+<<<<<<< HEAD
                        $value->asesor_maquinaria,
                         $value->asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         $value->estatus_cliente,
                         $value->tamano_cliente,
                         $value->tipo_mercado,
@@ -3340,6 +3497,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->compromiso,
                         $value->notas,
                         $value->info_maquina_1,
+<<<<<<< HEAD
                         $value-> modelo_maquina_1, 
                         $value->medida_maquina_1 , 
                         $value->tipo_maquina_1 , 
@@ -3452,6 +3610,16 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->info_maquina_2,
+                        $value->info_maquina_3,
+                        $value->info_maquina_4,
+                        $value->info_maquina_5,
+                        $value->info_maquina_6,
+                        $value->info_maquina_7,
+                        $value->refacciones,
+                        $value->corrugadora,$value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                        );
 
@@ -3508,6 +3676,7 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->cotizacion,
                         $value->pedido,
                         $value->contrato,
+<<<<<<< HEAD
                         $value->first_name,
                           $value->refacciones_maquina_1,
                         $value->consumibles_maquina_1,
@@ -3529,6 +3698,9 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
                         $value->consumibles_maquina_9,
                         $value->refacciones_maquina_10,
                         $value->consumibles_maquina_10
+=======
+                        $value->first_name
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 );
 
                 array_push($colCensoMaquinaria, $objeto);
@@ -3541,7 +3713,10 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     
      public function get_by_id($kondisi)
   {
@@ -3628,7 +3803,11 @@ class CensoMaquinariaModelo extends CI_Model implements IModeloAbstracto {
           $grupo = $this->db->select('nombre_empresa')
                   //->where('')
                   ->order_by("nombre_empresa", "asc")
+<<<<<<< HEAD
                 ->get('todas_las_empresas_v2')
+=======
+                ->get('todas_las_empresas')
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 ->result();
 
         $options_arr;

@@ -1,0 +1,236 @@
+Select 
+m.referencia as codigo,
+ m.fecha_corte_rotacion,
+ 
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0) as total_requerido_semanal,
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0) as total_requerido_quincenal,
+
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0) as total_requerido_mensual,
+
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia ),0) as total_requerido_bimestral,
+
+ CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)) bimestral_entre_dos_subido_al_siguiente_entero,
+ 
+ 
+ ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+
++
+( (ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0))) as suma_de_semanal_quincenal_mensual_bimestral,
+
+
+
+(
+(
+
+ ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+((ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0)))
+    
+    
+    )*(3) 
+    
+    )
+    as suma_de_semanal_quincenal_mensuall_bimestral_por_3,
+
+
+((ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+((ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0)))
+    
+    
+    )*(3) 
+    
+    )+
+    
+    
+  (ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Trimestral"  group by v.referencia ),0)
+          ,0))
+    as suma_de_semanal_quincenal_mensual_bimestral_por_3_mas_lo_trimestral,
+
+
+IF(
+
+
+(
+
+
+ ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+
++
+( (ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0)))
+   -
+       (ifnull( (SELECT SUM(v.cantidad_maxima) from venta v where  m.referencia=v.referencia and v.confirmacion_orden_compra= 'Sin Pedido' group by v.referencia),0))
+        
+        
+    
+       )    
+
+    
+    
+    > 0,
+    
+    
+    (
+
+
+ ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+
++
+( (ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0)))
+   -
+       (ifnull( (SELECT SUM(v.cantidad_maxima) from venta v where  m.referencia=v.referencia and v.confirmacion_orden_compra= 'Sin Pedido' group by v.referencia),0))
+    )  ,0)
+    
+    
+    
+ as mensual_con_cons_or_de_com,
+
+
+
+IF(
+
+
+(
+
+
+ ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+
++
+( (ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0)))
+   -
+       (ifnull( (SELECT SUM(v.cantidad_maxima) from venta v where  m.referencia=v.referencia and v.confirmacion_orden_compra= 'Sin Pedido' group by v.referencia),0))
+        
+        
+    
+       )    
+
+    
+    
+    > 0,
+    
+    
+    (
+
+
+ ifnull(CEILING((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Bimestral"  group by v.referencia )/(2)),0)+
+
++
+( (ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semanal"  group by v.referencia ),0),0)*4)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Quincenal"  group by v.referencia ),0),0)*2)+
+(ifnull(round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Mensual"  group by v.referencia ),0),0)))
+   -
+       (ifnull( (SELECT SUM(v.cantidad_maxima) from venta v where  m.referencia=v.referencia and v.confirmacion_orden_compra= 'Sin Pedido' group by v.referencia),0))
+    )  ,0)
+     
+     *(3)
+     
+ as trimestral_con_cons_or_de_com,
+
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Trimestral"  group by v.referencia ),0) as total_requerido_trimestral,
+
+
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Semestral"  group by v.referencia ),0) as total_requerido_semestral,
+
+round((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia and v.periodo_surtimiento="Anual"  group by v.referencia ),0) as total_requerido_anual,
+
+
+
+
+
+
+
+
+
+
+
+ 
+round(m.inventario,0) as inventario,
+ 
+round(m.piezas_recibir,0) piezas_a_recibir,
+
+((m.piezas_recibir)+(m.inventario)) as disponibilidad_total, 
+
+if(((((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia group by v.referencia)-
+
+     (ifnull((SELECT SUM(v.cantidad_maxima) from venta v where  m.referencia=v.referencia and v.confirmacion_orden_compra= 'Sin Pedido' group by v.referencia),0))
+      
+     
+     )*(3))-((m.piezas_recibir)+(m.inventario))) > 0,(
+  (((SELECT SUM(v.cantidad_maxima) from venta v where m.referencia=v.referencia group by v.referencia)-
+ 
+   (ifnull(
+       (SELECT SUM(v.cantidad_maxima) from venta v where  m.referencia=v.referencia and v.confirmacion_orden_compra= 'Sin Pedido' group by v.referencia)
+       ,0))
+   
+   )*(3)))-( (m.piezas_recibir)+(m.inventario)),0)  
+   
+   
+   as piezas_a_solicitar
+
+
+  , 
+
+round((((m.piezas_recibir)+(m.inventario)) / 30),2) as meses_cubiertos ,
+
+DATE(DATE_ADD(m.fecha_corte_rotacion, INTERVAL 
+              ((((m.piezas_recibir)+(m.inventario)) / 30)*(30)) DAY)) as fecha_cubierta,
+
+m.pcfob,
+ 
+u.first_name AS vendedor,
+ 
+u.id as id_usuario
+ 
+FROM maquinaria m INNER join venta v
+ 
+on m.referencia=v.referencia inner join users u on u.id=v.id
+ 
+where m.referencia=v.referencia
+ 
+and m.referencia <> "NO APLICA"
+
+GROUP by v.referencia

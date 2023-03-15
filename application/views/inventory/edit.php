@@ -51,7 +51,11 @@
                            
                             <center><div class="row">
                                 <div class="col-md-4">
+<<<<<<< HEAD
                                     <label for="bill_no"  class="col-sm-5 control-label" style="text-align:left; font-size: 15px;">Tipo de entrada</label>
+=======
+                                    <label for="bill_no"  class="col-sm-5 control-label" style="text-align:left; font-size: 15px;">Tipo de salida</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                     <div class="form-group">
 

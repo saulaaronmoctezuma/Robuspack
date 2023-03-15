@@ -237,12 +237,16 @@ class Fuventas extends CI_Controller {
         $observaciones = $this->input->post('observaciones');
         $vendedor = $this->input->post('vendedor');
         $fecha_de_cobro_de_comisiones = $this->input->post('fecha_de_cobro_de_comisiones');
+<<<<<<< HEAD
         $tipo_de_cambio = $this->input->post('tipo_de_cambio');
         $precio_mxn = $this->input->post('precio_mxn');
         $descuento_mxn = $this->input->post('descuento_mxn');
         $subtotal_mxn = $this->input->post('subtotal_mxn');
         $iva_mxn = $this->input->post('iva_mxn');
         $total_mxn = $this->input->post('total_mxn');
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         // get foto
@@ -298,12 +302,15 @@ class Fuventas extends CI_Controller {
             'observaciones' => $observaciones,
             'vendedor' => $vendedor,
             'fecha_de_cobro_de_comisiones' => $fecha_de_cobro_de_comisiones,
+<<<<<<< HEAD
              'tipo_de_cambio' => $tipo_de_cambio,
             'precio_mxn' => $precio_mxn,
             'descuento_mxn' => $descuento_mxn,
             'subtotal_mxn' => $subtotal_mxn,
             'iva_mxn' => $iva_mxn,
             'total_mxn' => $total_mxn,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
 
@@ -437,12 +444,15 @@ class Fuventas extends CI_Controller {
         $observaciones = $this->input->post('observaciones');
         $vendedor = $this->input->post('vendedor');
         $fecha_de_cobro_de_comisiones = $this->input->post('fecha_de_cobro_de_comisiones');
+<<<<<<< HEAD
           $tipo_de_cambio = $this->input->post('tipo_de_cambio');
         $precio_mxn = $this->input->post('precio_mxn');
         $descuento_mxn = $this->input->post('descuento_mxn');
         $subtotal_mxn = $this->input->post('subtotal_mxn');
         $iva_mxn = $this->input->post('iva_mxn');
         $total_mxn = $this->input->post('total_mxn');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $path = './assets/verificacion/';
         $id = $this->input->post('id');
         $kondisi = array('id_fuventas' => $id);
@@ -508,6 +518,7 @@ class Fuventas extends CI_Controller {
         $data['observaciones'] = $observaciones;
         $data['vendedor'] = $vendedor;
         $data['fecha_de_cobro_de_comisiones'] = $fecha_de_cobro_de_comisiones;
+<<<<<<< HEAD
          $data['tipo_de_cambio'] = $tipo_de_cambio;
         $data['precio_mxn'] = $precio_mxn;
         $data['descuento_mxn'] = $descuento_mxn;
@@ -515,6 +526,10 @@ class Fuventas extends CI_Controller {
         $data['iva_mxn'] = $iva_mxn;
         $data['total_mxn'] = $total_mxn;
     
+=======
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         // hapus foto pada direktori

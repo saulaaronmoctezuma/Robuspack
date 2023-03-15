@@ -380,6 +380,12 @@
             }
             
             
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 function filterFloat(evt,input){
     // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
     var key = window.Event ? evt.which : evt.keyCode;    
@@ -442,12 +448,25 @@ function filter(__val__){
                 <div class="jumbotron">
                     <div class="row">
 
+<<<<<<< HEAD
 
+=======
+ <div class="row">
+<div class="form-group col-xs-1">
+                                <label>Cantidad Registros</label><br>
+                                <input class="form-control input-sm"  type="number" maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  min="1"  max="99" name="cantidad_registros" maxlength="2" value="1"><br>
+                            </div>
+</div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <div class="row">
                             <div class="form-group col-xs-4">
                                 <label>Ref</label><br>
+<<<<<<< HEAD
                                 <input class="form-control input-sm"  type="text" name="ref"><br>
+=======
+                                <input class="form-control input-sm"  type="text" name="ref" maxlength="8"><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
                             <div class="form-group col-xs-4">
@@ -592,6 +611,7 @@ function filter(__val__){
                             </div>
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Pu usd</label><br>
                                 <input id="pu_usd" type="text" min="0" onchange="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularCm_c()"  onkeyup="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="pu_usd">
@@ -602,6 +622,94 @@ function filter(__val__){
                                 <label>Total usd</label><br>
                                 <input readonly="readonly" min="0" title="Pu USD * Qty" style="background-color:#03E7F7;" id="total_usd" type="text" onkeyup="calcularCosto_total_compra_usd_lab_qro();" class="form-control input-sm" name="total_usd">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Pu usd</label><br>
+                                <input onkeypress="return filterFloat(event,this);" id="pu_usd" type="text" min="0" onchange="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularCm_c()"  onkeyup="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="pu_usd">
+                            </div> -->
+                            
+                            
+                            
+                            
+                            <div class="form-group col-xs-4">
+                                <label> Pu usd</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                        <input onkeypress="return filterFloat(event,this);" id="pu_usd" type="text" min="0" onchange="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularCm_c()"  onkeyup="calcularTotalUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="pu_usd">
+
+                                </div>
+                              </div>
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+   <!--                      
+
+
+
+<div class="form-group col-xs-4">
+  <label>
+precio
+  </label>
+  <div class="input-group">
+<div class="input-group-addon">
+  $
+</div>
+      <input class="form-control input-sm" id="email" name="email" type="text"/>
+  </div>
+</div>
+                            
+                            
+   <div class="form-group col-xs-4">
+  <label>
+Porcentaje
+  </label>
+  <div class="input-group">
+      <input max="100" type="text" class="form-control"/>
+    <span class="input-group-addon">
+        %
+    </span>
+</div>
+</div>
+              -->              
+                            
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Total usd</label><br>
+                                <input readonly="readonly" min="0" title="Pu USD * Qty" style="background-color:#03E7F7;" id="total_usd" type="text" onkeyup="calcularCosto_total_compra_usd_lab_qro();" class="form-control input-sm" name="total_usd">
+                            </div> -->
+              
+              
+                            
+               
+                            <div class="form-group col-xs-4">
+                                <label> Total usd</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                       <input readonly="readonly" min="0" title="Pu USD * Qty" style="background-color:#03E7F7;" id="total_usd" type="text" onkeyup="calcularCosto_total_compra_usd_lab_qro();" class="form-control input-sm" name="total_usd">
+                           
+                                </div>
+                              </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         </div><br> 
@@ -614,12 +722,28 @@ function filter(__val__){
 
                             <div class="form-group col-xs-4">
                                 <label>Tipo de embarque</label><br>
+<<<<<<< HEAD
                                 <input id="tipo_de_embarque" 
                                        type="text" data-date=""  class="form-control input-sm" name="tipo_de_embarque">
+=======
+                                <!--<input id="tipo_de_embarque" type="text" data-date=""  class="form-control input-sm" name="tipo_de_embarque">-->
+                                
+                                
+                                
+                                <select id="tipo_de_embarque"  name="tipo_de_embarque"  class="form-control input-sm" require>
+                                    <option  value="" >Selecciona una opción</option>
+                                    <OPTION VALUE="AEREO">AEREO</OPTION>
+                                    <OPTION VALUE="LOCAL">LOCAL</OPTION>
+                                    <OPTION VALUE="MARITIMO">MARITIMO</OPTION>
+                                    <OPTION VALUE="TERRESTRE">TERRESTRE</OPTION>
+                                       
+                                </select>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <!-- cambiar -->
                             </div>
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Tc pedimento</label><br>
                                 <input id="tc_pedimento" type="text" min="0" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control input-sm" name="tc_pedimento">
@@ -631,6 +755,39 @@ function filter(__val__){
                                 <input type="text" min="0" title="Arancel + Dta + Costo del Flete Mx + Honorarios Courier" id="importacion_por_partida_pz_mxn" readonly="readonly" style="background-color:#03E7F7;" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm"  name="importacion_por_partida_pz_mxn">
                             </div> 
 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Tc pedimento</label><br>
+                                <input onkeypress="return filterFloat(event,this);" id="tc_pedimento" type="text" min="0" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control input-sm" name="tc_pedimento">
+                            </div> -->
+                            
+                            
+                            <div class="form-group col-xs-4">
+                                <label> Tc pedimento</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                       <input onkeypress="return filterFloat(event,this);" id="tc_pedimento" type="text" min="0" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCostoFlete();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();calcularImportacionPartidaPzMxn();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" class="form-control input-sm" name="tc_pedimento">
+                           
+                                </div>
+                              </div>
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Importación por partida pz mxn</label><br>
+                                <input type="text" min="0" title="Arancel + Dta + Costo del Flete Mx + Honorarios Courier" id="importacion_por_partida_pz_mxn" readonly="readonly" style="background-color:#03E7F7;" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm"  name="importacion_por_partida_pz_mxn">
+                            </div> -->
+                            
+                            
+                            
+                            <div class="form-group col-xs-4">
+                                <label>Importación por partida pz mxn</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                         <input type="text" min="0" title="Arancel + Dta + Costo del Flete Mx + Honorarios Courier" id="importacion_por_partida_pz_mxn" readonly="readonly" style="background-color:#03E7F7;" onchange="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm"  name="importacion_por_partida_pz_mxn">
+                            
+                                </div>
+                              </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -643,6 +800,7 @@ function filter(__val__){
                         <div class="row">
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Importación por partida pz usd</label><br>
                                 <input readonly="readonly" min="0" title="Importación por partida pz mx / Tc Pedimento"  style="background-color:#03E7F7;" type="text" id="importacion_por_partida_pz_usd" onkeyup="calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();" class="form-control input-sm" name="importacion_por_partida_pz_usd">
@@ -658,6 +816,54 @@ function filter(__val__){
                                 <label>Costo total compra usd lab Qro</label><br>
                                 <input readonly="readonly" min="0" title="Importación Por Partida Pz Usd + Total USD" style="background-color:#03E7F7;" id="costo_total_compra_usd_lab_qro" onkeyup="calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" type="text" class="form-control input-sm" name="costo_total_compra_usd_lab_qro">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Importación por partida pz usd</label><br>
+                                <input readonly="readonly" min="0" title="Importación por partida pz mx / Tc Pedimento"  style="background-color:#03E7F7;" type="text" id="importacion_por_partida_pz_usd" onkeyup="calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();" class="form-control input-sm" name="importacion_por_partida_pz_usd">
+                            </div> -->
+                            
+                            
+                            <div class="form-group col-xs-4">
+                                <label> Importación por partida pz usd</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                       <input readonly="readonly" min="0" title="Importación por partida pz mx / Tc Pedimento"  style="background-color:#03E7F7;" type="text" id="importacion_por_partida_pz_usd" onkeyup="calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();" class="form-control input-sm" name="importacion_por_partida_pz_usd">
+                           
+                                </div>
+                              </div>
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Impx unidad</label><br>
+                                <input id="impx_unidad" title="Importación Por Partida Pz USD / Qty" style="background-color:#03E7F7;" readonly="readonly" type="text" class="form-control input-sm" name="impx_unidad">
+                            </div> -->
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Impx unidad</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                     <input id="impx_unidad" title="Importación Por Partida Pz USD / Qty" style="background-color:#03E7F7;" readonly="readonly" type="text" class="form-control input-sm" name="impx_unidad">
+                          
+                                </div>
+                              </div>
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Costo total compra usd lab Qro</label><br>
+                                <input readonly="readonly" min="0" title="Importación Por Partida Pz Usd + Total USD" style="background-color:#03E7F7;" id="costo_total_compra_usd_lab_qro" onkeyup="calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" type="text" class="form-control input-sm" name="costo_total_compra_usd_lab_qro">
+                            </div> -->
+                            
+                            
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label>Costo total compra usd lab Qro</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                        <input readonly="readonly" min="0" title="Importación Por Partida Pz Usd + Total USD" style="background-color:#03E7F7;" id="costo_total_compra_usd_lab_qro" onkeyup="calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();" type="text" class="form-control input-sm" name="costo_total_compra_usd_lab_qro">
+                           
+                                </div>
+                              </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -667,16 +873,37 @@ function filter(__val__){
                         <div class="row">
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Costo unitario compra usd lab qro</label><br>
                                 <input id="costo_unitario_compra_usd_lab_qro" title="Costo Total Compra Usd Lab Qro / Qty" style="background-color:#03E7F7;" readonly="readonly" type="text" class="form-control input-sm" name="costo_unitario_compra_usd_lab_qro">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Costo unitario compra usd lab qro</label><br>
+                                <input id="costo_unitario_compra_usd_lab_qro" title="Costo Total Compra Usd Lab Qro / Qty" style="background-color:#03E7F7;" readonly="readonly" type="text" class="form-control input-sm" name="costo_unitario_compra_usd_lab_qro">
+                            </div>--> 
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Costo unitario compra usd lab qro</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                          <input id="costo_unitario_compra_usd_lab_qro" title="Costo Total Compra Usd Lab Qro / Qty" style="background-color:#03E7F7;" readonly="readonly" type="text" class="form-control input-sm" name="costo_unitario_compra_usd_lab_qro">
+                           
+                                </div>
+                              </div>
+                            
+                            
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <!--<div class="form-group col-xs-4">
                                 <label>Status de Pago</label><br>
                                 <input type="text" class="form-control input-sm" name="status_de_pago">
                             </div>-->
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
 
 
@@ -694,6 +921,43 @@ function filter(__val__){
                                 <label>Cm</label><br>
                                 <input title="Pv extra bajo ref x pz + Com" readonly="readonly" min="0" style="background-color:#03E7F7;" id="cm" type="text" onkeyup="calcularCm_c();" class="form-control input-sm" name="cm">
                             </div> 
+=======
+                           <!-- <div class="form-group col-xs-4">
+                                 <label>Com</label><br>
+                                <input id="com" onkeypress="return filterFloat(event,this);" type="text" min="0" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="com">
+                            </div>-->
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                               <div class="form-group col-xs-4">
+                                <label>Com </label>
+                                <div class="input-group">
+                                        <input id="com" onkeypress="return filterFloat(event,this);" type="text" min="0" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="com">
+                                  <span class="input-group-addon">
+                                      %
+                                  </span> </div></div>
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Cm</label><br>
+                                <input title="Pv extra bajo ref x pz + Com" readonly="readonly" min="0" style="background-color:#03E7F7;" id="cm" type="text" onkeyup="calcularCm_c();" class="form-control input-sm" name="cm">
+                            </div> -->
+                           
+                           
+                            <div class="form-group col-xs-4">
+                                <label> Cm</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                       <input title="Pv extra bajo ref x pz + Com" readonly="readonly" min="0" style="background-color:#03E7F7;" id="cm" type="text" onkeyup="calcularCm_c();" class="form-control input-sm" name="cm">
+                            
+                                </div>
+                              </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -706,10 +970,29 @@ function filter(__val__){
 
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Cm c</label><br>
                                 <input readonly="readonly" min="0" title="Costo Unitario Compra Usd Lab Qro + Cm" style="background-color:#03E7F7;"  id="cm_c" type="text" class="form-control input-sm" name="cm_c">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Cm c</label><br>
+                                <input readonly="readonly" min="0" title="Costo Unitario Compra Usd Lab Qro + Cm" style="background-color:#03E7F7;"  id="cm_c" type="text" class="form-control input-sm" name="cm_c">
+                            </div> 
+                            -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Cm c</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                         <input readonly="readonly" min="0" title="Costo Unitario Compra Usd Lab Qro + Cm" style="background-color:#03E7F7;"  id="cm_c" type="text" class="form-control input-sm" name="cm_c">
+                           
+                                </div>
+                              </div>
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <div class="form-group col-xs-4">
                                 <label>Ent</label><br>
@@ -749,6 +1032,7 @@ function filter(__val__){
                             </div> 
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Valor aduana</label><br>
                                 <input id="valor_aduana" onchange="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" type="text" min="0" class="form-control input-sm" name="valor_aduana">
@@ -759,6 +1043,39 @@ function filter(__val__){
                                 <label>Arancel igi</label><br>
                                 <input id="arancel_igi" onkeyup="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" min="0"  type="text" class="form-control input-sm" name="arancel_igi">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Valor aduana</label><br>
+                                <input onkeypress="return filterFloat(event,this);" id="valor_aduana" onchange="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" type="text" min="0" class="form-control input-sm" name="valor_aduana">
+                            </div> -->
+                            
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Valor aduana</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                      <input onkeypress="return filterFloat(event,this);" id="valor_aduana" onchange="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularArancel();calcularDta();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" type="text" min="0" class="form-control input-sm" name="valor_aduana">
+                           
+                                </div>
+                              </div>
+
+
+                           <!-- <div class="form-group col-xs-4">
+                                <label></label><br>
+                                <input  id="arancel_igi" onkeypress="return filterFloat(event,this);" onkeyup="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" min="0"  type="text" class="form-control input-sm" name="arancel_igi">
+                            </div> -->
+                            
+                            
+                            
+                               <div class="form-group col-xs-4">
+                                <label>Arancel igi </label>
+                                <div class="input-group">
+                                     <input  id="arancel_igi" onkeypress="return filterFloat(event,this);" onkeyup="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularArancel();calcularIvaPedimento();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" min="0"  type="text" class="form-control input-sm" name="arancel_igi">
+                             <span class="input-group-addon">
+                                      %
+                                  </span> </div></div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
 
                         <br>
@@ -766,6 +1083,7 @@ function filter(__val__){
                         <div class="row">
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Arancel</label><br>
                                 <input title="Arancel Igi * Valor Aduana" readonly="readonly" min="0" style="background-color:#03E7F7;" id="arancel" type="text" onchange="calcularIvaPedimento();" onkeyup="calcularIvaPedimento();" class="form-control input-sm" name="arancel">
@@ -782,6 +1100,54 @@ function filter(__val__){
                                 <label>Iva del pedimento </label><br>
                                 <input readonly="readonly" title="((Valor Aduana + Arancel + Dta) * (0.008) )" min="0" style="background-color:#03E7F7;" id="iva_del_pedimento" type="text" class="form-control input-sm" name="iva_del_pedimento">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Arancel</label><br>
+                                <input title="Arancel Igi * Valor Aduana" readonly="readonly" min="0" style="background-color:#03E7F7;" id="arancel" type="text" onchange="calcularIvaPedimento();" onkeyup="calcularIvaPedimento();" class="form-control input-sm" name="arancel">
+                            </div> -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Arancel</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                            <input title="Arancel Igi * Valor Aduana" readonly="readonly" min="0" style="background-color:#03E7F7;" id="arancel" type="text" onchange="calcularIvaPedimento();" onkeyup="calcularIvaPedimento();" class="form-control input-sm" name="arancel">
+                         
+                                </div>
+                              </div>
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Dta</label><br>
+                                <input readonly="readonly" title="Valor Aduana * 0.008 " min="0" style="background-color:#03E7F7;" id="dta" type="text" onchange="calcularIvaPedimento();;" onkeyup="calcularIvaPedimento();" class="form-control input-sm" name="dta">
+
+                            </div>-->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Dta</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                     <input readonly="readonly" title="Valor Aduana * 0.008 " min="0" style="background-color:#03E7F7;" id="dta" type="text" onchange="calcularIvaPedimento();;" onkeyup="calcularIvaPedimento();" class="form-control input-sm" name="dta">
+
+                                </div>
+                              </div>
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Iva del pedimento </label><br>
+                                <input readonly="readonly" title="((Valor Aduana + Arancel + Dta) * (0.008) )" min="0" style="background-color:#03E7F7;" id="iva_del_pedimento" type="text" class="form-control input-sm" name="iva_del_pedimento">
+                            </div> -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Iva del pedimento</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                         <input readonly="readonly" title="((Valor Aduana + Arancel + Dta) * (0.008) )" min="0" style="background-color:#03E7F7;" id="iva_del_pedimento" type="text" class="form-control input-sm" name="iva_del_pedimento">
+                           
+                                </div>
+                              </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         </div>
@@ -793,6 +1159,7 @@ function filter(__val__){
                         <div class="row">
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Costo del flete mxn</label><br>
                                 <input id="costo_del_flete_mxn" readonly="readonly" title="Costo del Flete Usd * Tc Pedimento" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="costo_del_flete_mxn">
@@ -808,6 +1175,55 @@ function filter(__val__){
                                 <input type="text" min="0" id="costo_del_flete_usd" onkeyup="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="costo_del_flete_usd">
                             </div> 
 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Costo del flete mxn</label><br>
+                                <input id="costo_del_flete_mxn" readonly="readonly" title="Costo del Flete Usd * Tc Pedimento" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="costo_del_flete_mxn">
+                            </div>--> 
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Costo del flete mxn</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                          <input id="costo_del_flete_mxn" readonly="readonly" title="Costo del Flete Usd * Tc Pedimento" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="costo_del_flete_mxn">
+                           
+                                </div>
+                              </div>
+                            
+                            
+                            <!--<div class="form-group col-xs-4">
+                                <label>Honorarios courier</label><br>
+                                <input  onkeypress="return filterFloat(event,this);" id="honorarios_courier"  type="text" onkeyup="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="honorarios_courier">
+                            </div> -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Honorarios courier</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                        <input  onkeypress="return filterFloat(event,this);" id="honorarios_courier"  type="text" onkeyup="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="honorarios_courier">
+                           
+                                </div>
+                              </div>
+                            
+                            
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Costo del flete usd </label><br>
+                                <input onkeypress="return filterFloat(event,this);" type="text" min="0" id="costo_del_flete_usd" onkeyup="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="costo_del_flete_usd">
+                            </div> -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Costo del flete usd</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                       <input onkeypress="return filterFloat(event,this);" type="text" min="0" id="costo_del_flete_usd" onkeyup="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onchange="calcularCostoFlete();calcularImportacionPartidaPzMxn();calcularImportacionPorPartidaUSD();calcularImpx_unidad();calcularCosto_total_compra_usd_lab_qro();calcularCosto_unitario_compra_usd_lab_qro();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="costo_del_flete_usd">
+                         
+                                </div>
+                              </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         </div>
@@ -825,6 +1241,7 @@ function filter(__val__){
                         <div class="row">
                           
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Pv extra bajo ref x pz</label><br>
                                 <input type="text" min="0" id="pv_extra_bajo_ref_x_pz" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="pv_extra_bajo_ref_x_pz">
@@ -840,6 +1257,54 @@ function filter(__val__){
                                 <label>Utilidad</label><br>
                                 <input readonly="readonly" id="utilidad" title="1 - (Cm c {-/ Pv Extra Bajo Ref X Pz)" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="utilidad">
                             </div> 
+=======
+                            <!--<div class="form-group col-xs-4">
+                                <label>Pv extra bajo ref x pz</label><br>
+                                <input onkeypress="return filterFloat(event,this);" type="text" min="0" id="pv_extra_bajo_ref_x_pz" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="pv_extra_bajo_ref_x_pz">
+                            </div> -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label> Pv extra bajo ref x pz</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                         <input onkeypress="return filterFloat(event,this);" type="text" min="0" id="pv_extra_bajo_ref_x_pz" onchange="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" onkeyup="calcularCm();calcularCm_c();calcularUtilidadRefxPz();calcularUtilidad();" class="form-control input-sm" name="pv_extra_bajo_ref_x_pz">
+                           
+                                </div>
+                              </div>
+
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Utilidad refx pz</label><br>
+                                <input readonly="readonly" title="Pv Extra Bajo Ref x Pz  - Cm c" id="utilidad_refx_pz" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="utilidad_refx_pz">
+                            </div> -->
+                            
+                            
+                             <div class="form-group col-xs-4">
+                                <label>Utilidad refx pz</label>
+                                <div class="input-group">
+                              <div class="input-group-addon"> $</div>
+                                     <input readonly="readonly" title="Pv Extra Bajo Ref x Pz  - Cm c" id="utilidad_refx_pz" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="utilidad_refx_pz">
+                            
+                                </div>
+                              </div>
+                            
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Utilidad</label><br>
+                                <input readonly="readonly" id="utilidad" title="1 - (Cm c {-/ Pv Extra Bajo Ref X Pz)" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="utilidad">
+                            </div> -->
+                            
+                            
+                            
+                            <div class="form-group col-xs-4">
+                                <label>Utilidad </label>
+                                <div class="input-group">
+                                <input readonly="readonly" id="utilidad" title="1 - (Cm c {-/ Pv Extra Bajo Ref X Pz)" min="0" style="background-color:#03E7F7;" type="text" class="form-control input-sm" name="utilidad">
+                             <span class="input-group-addon">
+                                      %
+                                  </span> </div></div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         </div>
 
@@ -894,7 +1359,11 @@ function filter(__val__){
                             </div>
 
                         </div>
+<<<<<<< HEAD
                         <center><input class="btn btn-success" id="botonOrden" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+=======
+                        <center><input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
                         </center>

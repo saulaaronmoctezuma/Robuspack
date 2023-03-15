@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @charset "utf-8";
+=======
+/*@charset "utf-8";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 @font-face {
 	font-family: "CrassRoots";
@@ -42,7 +46,11 @@ html, body {
  
   /* make the above-mentioned pages really ugly */
   body { color: purple; background: yellow; }
+<<<<<<< HEAD
 }
+=======
+/*}
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 @media screen and (orientation: landscape) {
   @-ms-viewport {
@@ -50,8 +58,16 @@ html, body {
     height: 768px;
   }
   /* CSS for landscape layout goes here */
+<<<<<<< HEAD
 }
 
 @region-style #intro {
     p { color: blue; }
 }
+=======
+/*}
+
+@region-style #intro {
+    p { color: blue; }
+}*/
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

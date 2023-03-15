@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script>
     
 function fechaValidaActualizacionPrecio()
@@ -23,6 +24,10 @@ console.log(fechaActual);
 document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
 }
+=======
+<script type="text/javascript">
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </script>
 
 <!-- Content Wrapper. Contains page content -->
@@ -145,6 +150,7 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                 <label for="qty">Stock</label>
                                 <input type="text" class="form-control" readonly id="qty" name="qty" placeholderr="Escribe la cantidad" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
                             </div>
+<<<<<<< HEAD
                             
                             
                             <!--<input type="hidden" class="form-control" id="price" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
@@ -162,16 +168,27 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                             <div class="form-group">
                                 <label for="price2">Precio Venta 2 </label>
                                 <input type="text" class="form-control" id="price2" name="price2" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" placeholderr="Escribe el precio 2"  value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
+=======
+
+                            <div class="form-group">
+                                <label for="price2">Precio Venta 2 </label>
+                                <input type="text" class="form-control" id="price2" name="price2" placeholderr="Escribe el precio 2" value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
                             <div class="form-group">
                                 <label for="price2">Precio Venta 3</label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" id="price3" name="price3" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" placeholderr="Escribe el precio 3"  value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
+=======
+                                <input type="text" class="form-control" id="price3" name="price3" placeholderr="Escribe el precio 3" value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
                             <div class="form-group">
                                 <label for="price2">Precio Venta 4 </label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" id="price4" name="price4" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" placeholderr="Escribe el precio 4"  value="<?php echo $product_data['price4']; ?>" autocomplete="off" />
                             </div>
                             
@@ -184,6 +201,16 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                 <input type="date" class="form-control" id="fecha_actualizacion_precio" name="fecha_actualizacion_precio" placeholderr="Escribe el precio 5" value="<?php echo $product_data['fecha_actualizacion_precio']; ?>" autocomplete="off" />
                             </div>
                             
+=======
+                                <input type="text" class="form-control" id="price4" name="price4" placeholderr="Escribe el precio 4" value="<?php echo $product_data['price4']; ?>" autocomplete="off" />
+                            </div>
+                            
+                             <div class="form-group">
+                                <label for="price2">Precio Venta 5 </label>
+                                <input type="text" class="form-control" id="price5" name="price4" placeholderr="Escribe el precio 5" value="<?php echo $product_data['price5']; ?>" autocomplete="off" />
+                            </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group">
@@ -338,7 +365,12 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
                             <!--<label for="product_name">Precio Costo</label>-->
                             <input type="hidden" class="form-control" id="product_name" name="product_name" placeholderr="Escribe el precio del costo" value="<?php echo $product_data['name']; ?>" autocomplete="off" />
+<<<<<<< HEAD
                             
+=======
+                            <input type="hidden" class="form-control" id="price" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group">

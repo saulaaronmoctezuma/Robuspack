@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
@@ -6,6 +7,9 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+<!--<html lang="es-mx">-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <head>
 
         <title>Robuspack</title>
@@ -23,6 +27,11 @@
             }
         </script>
 
+<<<<<<< HEAD
+=======
+        
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <!-- Para traerse el rol que esta registrado-->
         <?php
         //check user level
@@ -42,7 +51,11 @@
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
 
+<<<<<<< HEAD
         <link rel="icon" href="<?= base_url('assets/images/robuspack_icon.png') ?>">
+=======
+        <link rel="icon" href="<?= base_url('assets/images/icono.PNG') ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -50,8 +63,13 @@
     <div class="container" style="margin-top:1px;">
 
         <div class="table-responsive">
+<<<<<<< HEAD
             <table class="table table-bordered table-striped"  >
                 <center>  <h2> Últimas Conexiones</h2></center>
+=======
+            <table class="table table-bordered table-striped">
+                <center>  <h1> Lista de Usuarios</h1></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 <div class="alert alert-info alert-info">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -62,11 +80,52 @@
                     <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
                 </div>
                 <center> <div class="form-group">
+<<<<<<< HEAD
                     <form method="post" action="<?php echo base_url(); ?>Reporte/pdfUsuario/pdf" target=”_blank”>
 
                         <button  class="btn btn-info" title="Da clic para exportar los datos a PDF" style="font-size:15px;color:red"><font color="white">Exportar&nbsp;&nbsp;     </font> <i class="fa fa-file-pdf-o"></i></button>
                     </form></center>
                 </div>
+=======
+                   
+                        
+                      <?php
+                            if ($dataLevel == 'is_admin') {
+                    echo   '
+                  <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button  style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a PDF" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
+                   </a>';
+                                  
+                            } else if ($dataLevel == 'is_editor') {
+                      echo   '
+                  <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button  style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a PDF" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
+                   </a>';
+                            }else if ($dataLevel == 'is_Gerente_Ventas') {
+                      echo   '
+                  <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
+                   </a>';
+                            }
+                            else if ($dataLevel == 'is_jefe_mantenimiento') {
+                      echo   '
+                  <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
+                   </a>';
+                            }  else if ($dataLevel == 'is_director') {
+                      echo   '
+                  <a title="Da clic para descargar en pdf" target="_blank" href="' . base_url() . 'Reporte/pdfUsuario/pdf">     <button style="font-size:18px;color:red" class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-pdf-o"></i></button>
+                   </a>';
+                            }
+                            ?>    
+                        
+                        
+                        
+                        
+                        
+                        
+                
+                
+                </center>
+                </div>
+            </table>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         </div>
 
@@ -91,8 +150,12 @@
                     echo '<tr><td>';
                     echo $obj->getFirst_name() .
                     '</td>'
+<<<<<<< HEAD
                     
                     . '<td>'
+=======
+                   . '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     . $obj->getEmail() .
                     '</td>'
                     . '<td>'
@@ -100,6 +163,7 @@
                     '</td>'
                     ;
 
+<<<<<<< HEAD
 
 
 
@@ -108,6 +172,10 @@
                
                 }
                 ?>
+=======
+                }
+                ?>    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </tr>
             </tbody>
         </table>

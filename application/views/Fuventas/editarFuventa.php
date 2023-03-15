@@ -167,6 +167,7 @@
 
 
             }
+<<<<<<< HEAD
             
              function precioMxn(){
                 m1 = document.getElementById("tipo_de_cambio").value;
@@ -276,6 +277,8 @@
           
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </script> 
 
     <body>
@@ -424,8 +427,13 @@
                              <tr>
                                 <td><b>Cantidad</b></td>
                                 <td>
+<<<<<<< HEAD
                                     <input id="cantidad" onkeyup="calcularSubtotal();calcularIva();calcularTotal();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn()"
                                     onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn()" min="0" class="form-control" type="number" name="cantidad" value="<?= $data->cantidad ?>">
+=======
+                                    <input id="cantidad" onkeyup="calcularSubtotal();calcularIva();calcularTotal();"
+                                    onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" min="0" class="form-control" type="number" name="cantidad" value="<?= $data->cantidad ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                   
                                 </td>
                             </tr>
@@ -433,7 +441,11 @@
                                   <tr>
                                 <td><b>Pu USD</b></td>
                                 <td >
+<<<<<<< HEAD
                                    <input id="pu_usd" onkeyup="calcularSubtotal();calcularIva();calcularTotal();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn()" onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();calcularSubtotalMxn();calcularIvaMxn();calcularTotalMxn()" class="form-control" min="0"  type="text" name="pu_usd" value="<?= $data->pu_usd ?>">
+=======
+                                   <input id="pu_usd" onkeyup="calcularSubtotal();calcularIva();calcularTotal();" onchange="calcularSubtotal();calcularIva();calcularTotal();descuento();" class="form-control" min="0"  type="text" name="pu_usd" value="<?= $data->pu_usd ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                   
                                 </td>
                             </tr>
@@ -491,6 +503,7 @@
                                 </td>
                             </tr>
                             
+<<<<<<< HEAD
                                
                             <tr>
                                 <td><b>Tipo de cambio</b></td>
@@ -547,6 +560,8 @@
                             
                             
                             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             
                              <tr>
                                 <td><b>Fecha Elaboración Factura(dd/mm/aaaa):</b></td>

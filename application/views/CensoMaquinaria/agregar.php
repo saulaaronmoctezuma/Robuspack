@@ -25,6 +25,7 @@
         ?>
     </head>
 
+<<<<<<< HEAD
 <style>
     
     .celdaColor{
@@ -34,6 +35,8 @@
         
     }
 </style>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -144,7 +147,11 @@
 
 
             } else if (getSelectValue === "Dueño") {
+<<<<<<< HEAD
                 document.getElementById("dueno").style.display = "inline-block";
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 document.getElementById("contacto").options[1].disabled = true;
                 document.getElementById("contacto").options[1].style.color = "red";
                 document.getElementById("nombre_dueno").style.display = "inline-block";
@@ -352,6 +359,7 @@
 
 
 
+<<<<<<< HEAD
 
      function agregarMaquina()
         {
@@ -488,10 +496,31 @@
                 document.getElementById("codigo_cubierta_maquina_7").style.display = "none";
                 document.getElementById("lbl_cliente_conoce_maquina_7").style.display = "none";
                 document.getElementById("cliente_conoce_maquina_7").style.display = "none";
+=======
+        function agregarMaquina()
+        {
+            getSelectValue = document.getElementById("maquina").value;
+            if (getSelectValue === "") {
+                document.getElementById("lbl_info_maquina_1").style.display = "none";
+                document.getElementById("info_maquina_1").style.display = "none";
+                document.getElementById("lbl_info_maquina_2").style.display = "none";
+                document.getElementById("info_maquina_2").style.display = "none";
+                document.getElementById("lbl_info_maquina_3").style.display = "none";
+                document.getElementById("info_maquina_3").style.display = "none";
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             } else if (getSelectValue === "1") {
                 // document.getElementById("nombre_dueno").disabled = true;
+<<<<<<< HEAD
                 
                 
 
@@ -687,10 +716,36 @@
                              
                          
               
+=======
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+
+                document.getElementById("lbl_info_maquina_2").style.display = "none";
+                document.getElementById("info_maquina_2").style.display = "none";
+                document.getElementById("lbl_info_maquina_3").style.display = "none";
+                document.getElementById("info_maquina_3").style.display = "none";
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+
+
+            } else if (getSelectValue === "2") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 document.getElementById("lbl_info_maquina_3").style.display = "none";
                 document.getElementById("info_maquina_3").style.display = "none";
+<<<<<<< HEAD
                 document.getElementById("lbl_maquina_3").style.display = "none";
                 document.getElementById("lbl_modelo_maquina_3").style.display = "none";
                 document.getElementById("modelo_maquina_3").style.display = "none";
@@ -775,10 +830,21 @@
                 
                 
                
+=======
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             }
             else if (getSelectValue === "3") {
+<<<<<<< HEAD
                 
                
                 
@@ -1622,11 +1688,100 @@
             }
             
             
+=======
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+
+                document.getElementById("lbl_info_maquina_4").style.display = "none";
+                document.getElementById("info_maquina_4").style.display = "none";
+                document.getElementById("lbl_info_maquina_5").style.display = "none";
+                document.getElementById("info_maquina_5").style.display = "none";
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+
+
+            } else if (getSelectValue === "4") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+
+            } else if (getSelectValue === "5") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_5").style.display = "inline-block";
+                document.getElementById("info_maquina_5").style.display = "inline-block"
+
+
+
+                document.getElementById("lbl_info_maquina_6").style.display = "none";
+                document.getElementById("info_maquina_6").style.display = "none";
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+
+
+            } else if (getSelectValue === "6") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_5").style.display = "inline-block";
+                document.getElementById("info_maquina_5").style.display = "inline-block"
+                document.getElementById("lbl_info_maquina_6").style.display = "inline-block";
+                document.getElementById("info_maquina_6").style.display = "inline-block"
+
+                document.getElementById("lbl_info_maquina_7").style.display = "none";
+                document.getElementById("info_maquina_7").style.display = "none";
+
+            } else if (getSelectValue === "7") {
+
+                document.getElementById("lbl_info_maquina_1").style.display = "inline-block";
+                document.getElementById("info_maquina_1").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_2").style.display = "inline-block";
+                document.getElementById("info_maquina_2").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_3").style.display = "inline-block";
+                document.getElementById("info_maquina_3").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_4").style.display = "inline-block";
+                document.getElementById("info_maquina_4").style.display = "inline-block";
+                document.getElementById("lbl_info_maquina_5").style.display = "inline-block";
+                document.getElementById("info_maquina_5").style.display = "inline-block"
+                document.getElementById("lbl_info_maquina_6").style.display = "inline-block";
+                document.getElementById("info_maquina_6").style.display = "inline-block"
+                document.getElementById("lbl_info_maquina_7").style.display = "inline-block";
+                document.getElementById("info_maquina_7").style.display = "inline-block"
+            }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         }
 
 
+<<<<<<< HEAD
           
   function showContentMedida1() {
             selectMedida1 = document.getElementById("medida_maquina_1");
@@ -1807,6 +1962,8 @@
 
         
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         function showContent() {
             element = document.getElementById("div_empresa_temporal");
             elementempresa = document.getElementById("div_empresa");
@@ -1815,7 +1972,10 @@
 
                 element.style.display = 'block';
                 elementempresa.style.display = 'none';
+<<<<<<< HEAD
                 document.getElementById('empresa_temporal').value = "";
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 deseleccionarClienteCombo();
 
             }
@@ -1832,7 +1992,11 @@
         }
 
         function deseleccionarClienteCombo() {
+<<<<<<< HEAD
             document.getElementById("cliente").selectedIndex = 0;
+=======
+            document.getElementById("empresa_temporal").selectedIndex = 0;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         }
 
@@ -1846,13 +2010,18 @@
 
                 element.style.display = 'block';
                 elementempresa.style.display = 'none';
+<<<<<<< HEAD
                deseleccionarGrupoCombo();
+=======
+                deseleccionarClienteCombo();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             }
             else {
 
                 element.style.display = 'none';
                 elementempresa.style.display = 'block';
+<<<<<<< HEAD
                 limpiarCajaTextoGrupo();
             }
         }
@@ -1864,10 +2033,23 @@
         function deseleccionarGrupoCombo() {
             document.getElementById("grupo").selectedIndex = 0;
             
+=======
+                limpiarCajaTextoCliente();
+            }
+        }
+
+        function limpiarCajaTextoCliente() {
+            document.getElementById('grupo_temporal').value = "";
+        }
+
+        function deseleccionarClienteCombo() {
+            document.getElementById("grupo_temporal").selectedIndex = 0;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         }
 
 
+<<<<<<< HEAD
    
     </script>
      <!-- Select2 CSS -->
@@ -1878,6 +2060,10 @@
      body { color: #000000; }
 </style>
 
+=======
+
+    </script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
     <body>
 
@@ -1895,8 +2081,11 @@
 
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="id_maquinaria"  name="id_clienteseguimiento">
+<<<<<<< HEAD
                         
                         
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </div>
                     <div class="jumbotron">
 
@@ -1916,7 +2105,11 @@
                             
                               <div class="form-group col-xs-6"  id="div_grupo">
                                 <label for="nombre">Grupo</label>
+<<<<<<< HEAD
                                 <select required id="grupo"  class="form-control select2"  name="grupo"  <?php echo form_dropdown('grupoCombo', $grupoCombo, '#', 'id="grupoCombo"'); ?> </select>
+=======
+                                <select required id="grupo"  class="form-control"  name="grupo"  <?php echo form_dropdown('grupoCombo', $grupoCombo, '#', 'id="grupoCombo"'); ?> </select>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
@@ -1928,7 +2121,11 @@
 
                             <div class="form-group col-xs-6" id="div_empresa">
                                 <label for="nombre">Empresa</label>
+<<<<<<< HEAD
                                 <select required id="cliente" class="form-control select2"  name="empresa" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+=======
+                                <select required id="cliente" class="form-control"  name="empresa" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
@@ -1974,6 +2171,7 @@
                         <div class="row">
 
 
+<<<<<<< HEAD
                            <!-- <div class="form-group col-xs-6">
                                 <label for="nombre">Tipo de Cliente </label>
                                 <input id="tipo_de_cliente" type="text" class="form-control form-control-sm"  name="tipo_de_cliente" placeholder="Ingresa el tipo de cliente">
@@ -1998,11 +2196,21 @@
                             
                             
                             
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Tipo de Cliente </label>
+                                <input id="tipo_de_cliente" type="text" class="form-control form-control-sm"  name="tipo_de_cliente" placeholder="Ingresa el tipo de cliente">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Tamaño del Cliente </label>
+<<<<<<< HEAD
                                 <input id="tamano_cliente" type="text" class="form-control form-control-sm"  name="tamano_cliente" placeholder="Ingresa el  de tamaño del cliente">
+=======
+                                <input id="tamano_cliente" type="text" class="form-control form-control-sm"  name="tamano_cliente" placeholder="Ingresa el  de tamano_cliente">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
@@ -2012,6 +2220,7 @@
 
 
                         <br>
+<<<<<<< HEAD
                                 <div class="row">
 
                             <div class="form-group col-xs-4     form-control-sm">
@@ -2088,17 +2297,24 @@
 
 
 
+=======
+
+                        <div class="row">
+
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Asesor </label>
+                                <input id="asesor" type="text" class="form-control form-control-sm"  name="asesor" placeholder="Ingresa el asesor">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Estatus Cliente </label>
                                 <input id="estatus_cliente" type="text" class="form-control form-control-sm"  name="estatus_cliente" placeholder="Ingresa el estatus cliente">
                             </div>
+<<<<<<< HEAD
                             
                               <div class="form-group col-xs-6">
-                                <label for="nombre">Tipo Mercado</label>
-                                <input id="tipo_mercado" type="text" class="form-control form-control-sm"  name="tipo_mercado" placeholder="Ingresa el tipo mercado">
-                            </div>
-
+=======
 
 
                         </div>
@@ -2108,6 +2324,35 @@
 
 
 
+                            <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
+                                <label for="nombre">Tipo Mercado</label>
+                                <input id="tipo_mercado" type="text" class="form-control form-control-sm"  name="tipo_mercado" placeholder="Ingresa el tipo mercado">
+                            </div>
+
+
+<<<<<<< HEAD
+
+                        </div>
+                        <br>
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Volumen producción</label>
+                                <input id="volumen_produccion" type="text" class="form-control form-control-sm"  name="volumen_produccion" placeholder="Ingresa el volumen produccion">
+                            </div>
+
+                        </div>
+
+
+                        <br>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
+                        <div class="row">
+
+
+
+
+<<<<<<< HEAD
                           
 
                             <div class="form-group col-xs-6">
@@ -2116,10 +2361,22 @@
                             </div>
                             
                             <div class="form-group col-xs-6">
+=======
+
+                            <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label for="nombre">Necesidad</label>
                                 <input id="necesidad" type="text" class="form-control form-control-sm"  name="necesidad" placeholder="Ingresa la necesidad">
                             </div>
 
+<<<<<<< HEAD
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Compromiso</label>
+                                <input id="compromiso" type="text" class="form-control form-control-sm"  name="compromiso" placeholder="Ingresa el compromiso">
+                            </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
 
 
@@ -2128,28 +2385,46 @@
                         <div class="row">
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Compromiso</label>
                                 <input id="compromiso" type="text" class="form-control form-control-sm"  name="compromiso" placeholder="Ingresa el compromiso">
                             </div>
                             
                             
+=======
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Notas </label>
                                 <input id="notas" type="text" class="form-control form-control-sm"  name="notas" placeholder="Ingresa las notas">
                             </div>
 
+<<<<<<< HEAD
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Refacciones </label>
+                                <input id="refacciones" type="text" class="form-control form-control-sm"  name="refacciones" placeholder="Ingresa la lista de refacciones">
+                            </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
 
 
                         <br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="row">
 
 
 
 
 
+<<<<<<< HEAD
                             
 
                             <div class="form-group col-xs-6">
@@ -2158,6 +2433,8 @@
                             </div>
                             
                             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-6">
                                 <label for="nombre">¿Tiene corrugadora? </label>
                                 <select name="corrugadora" class="form-control input-sm">
@@ -2171,6 +2448,7 @@
                         </div>
 
 
+<<<<<<< HEAD
                         <br>
                         <div class="row">
 
@@ -2196,6 +2474,8 @@
                         </div>
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </div>
 
 
@@ -2219,11 +2499,16 @@
                     <div class="jumbotron">
 
                         <div class="row">
+<<<<<<< HEAD
                             <H6 style="color:red;font-size: 15px;">Para agregar los datos de uno o más contactos es necesario primero seleccionar una opción dependiendo del puesto agregar y en automatico aparecerá los datos que se solicitan</H6>
                             <div class="form-group col-xs-6">
                                 
                                 <label for="nombre">Contacto </label>
                                 
+=======
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Contacto </label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <select name="contacto" id="contacto" class="form-control input-sm" onchange="agregarCliente()">
                                     <option  value="">Selecciona una opción</option>
                                     <OPTION VALUE="Dueño">Dueño</OPTION>
@@ -2269,12 +2554,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_dueno" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_dueno" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_dueno" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_dueno" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_dueno" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_dueno" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_dueno" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_dueno" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_dueno" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_dueno" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2309,12 +2602,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_ceo" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_ceo" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_ceo" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_ceo" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_ceo" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_ceo" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_ceo" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_ceo" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_ceo" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_ceo" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2358,12 +2659,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_gerente" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_gerente" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_gerente" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_gerente" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_gerente" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_gerente" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_gerente" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_gerente" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_gerente" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_gerente" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2374,8 +2683,13 @@
 
                         <center> 
                             <label id="produccion" style="display: none" class="font-weight-bold"><h3>
+<<<<<<< HEAD
  
                                     DATOS DE LA PERSONA ENCARGADA DE PRODUCCIÓN
+=======
+
+                                    DATOS DEL PRODUCCION
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
@@ -2399,12 +2713,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_produccion" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_produccion" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_produccion" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_produccion" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_produccion" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_produccion" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_produccion" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_produccion" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_produccion" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_produccion" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2414,7 +2736,11 @@
                         <center> 
                             <label id="mtto" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE LA PERSONA ENCARGADA DE MANTENIMIENTO
+=======
+                                    DATOS DEL MTTO
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
@@ -2438,12 +2764,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_mtto" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_mtto" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_mtto" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_mtto" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_mtto" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_mtto" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_mtto" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_mtto" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_mtto" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_mtto" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2453,7 +2787,11 @@
                         <center> 
                             <label id="compras" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE LA PERSONA ENCARGADA DE COMPRAS
+=======
+                                    DATOS DEL COMPRAS
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
@@ -2477,12 +2815,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_compras" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_compras" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_compras" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_compras" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_compras" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_compras" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_compras" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_compras" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_compras" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_compras" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2492,7 +2838,11 @@
                         <center> 
                             <label id="ventas" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE LA PERSONA ENCARGADA DE VENTAS
+=======
+                                    DATOS DEL VENTAS
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
@@ -2516,12 +2866,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_ventas" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_ventas" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_ventas" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_ventas" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_ventas" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_ventas" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_ventas" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_ventas" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_ventas" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_ventas" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2531,7 +2889,11 @@
                         <center> 
                             <label id="otros" style="display: none" class="font-weight-bold"><h3>
 
+<<<<<<< HEAD
                                     DATOS DE OTROS
+=======
+                                    DATOS DEL OTROS
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </h3></label></center>
                         <div class="row">
@@ -2555,12 +2917,20 @@
                             <div class="form-group col-xs-6"> 
 
                                 <label id="lbl_correo_personal_otros" style="display: none">Correo Personal </label>
+<<<<<<< HEAD
                                 <input id="correo_personal_otros" style="display: none" type="email" class="form-control form-control-sm"  name="correo_personal_otros" placeholder="Ingresa el correo personal">
+=======
+                                <input id="correo_personal_otros" style="display: none" type="text" class="form-control form-control-sm"  name="correo_personal_otros" placeholder="Ingresa el correo personal">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                             <div class="form-group col-xs-6">
                                 <label id="lbl_correo_empresarial_otros" style="display: none" >Correo Empresarial </label>
+<<<<<<< HEAD
                                 <input id="correo_empresarial_otros" style="display: none" type="email" class="form-control form-control-sm"  name="correo_empresarial_otros" placeholder="Ingresa el correo empresarial">
+=======
+                                <input id="correo_empresarial_otros" style="display: none" type="text" class="form-control form-control-sm"  name="correo_empresarial_otros" placeholder="Ingresa el correo empresarial">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
                         </div>
@@ -2578,6 +2948,7 @@
                     </div>
 
 
+<<<<<<< HEAD
                     
                         
             <div class="jumbotron">
@@ -2588,6 +2959,16 @@
                             <div class="form-group col-xs-4"></div>
                             <div class="form-group col-xs-4">
                                 <label for="nombre">Máquinas flexos a agregar </label>
+=======
+                    <div class="jumbotron">
+
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-4"></div>
+                            <div class="form-group col-xs-4">
+                                <label for="nombre">Máquinas a agregar </label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <select name="maquina" id="maquina" class="form-control input-sm" onchange="agregarMaquina()">
                                     <option  value="">Selecciona una opción</option>
                                     <OPTION VALUE="1">1</OPTION>
@@ -2597,13 +2978,17 @@
                                     <OPTION VALUE="5">5</OPTION>
                                     <OPTION VALUE="6">6</OPTION>
                                     <OPTION VALUE="7">7</OPTION>
+<<<<<<< HEAD
                                     
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </select>
 
                             </div>
                             <div class="form-group col-xs-4"></div>
 
+<<<<<<< HEAD
                         </div-->
                         
                         
@@ -4900,6 +5285,75 @@
                             
 
    </div>-->
+=======
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_1" style="display: none">Maquina 1  </label>
+                                <textarea name="info_maquina_1" id="info_maquina_1" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_2" style="display: none">Maquina 2  </label>
+                                <textarea name="info_maquina_2" id="info_maquina_2" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_3" style="display: none">Maquina 3  </label>
+                                <textarea name="info_maquina_3" id="info_maquina_3" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+
+
+
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_4" style="display: none">Maquina 4  </label>
+                                <textarea name="info_maquina_4" id="info_maquina_4" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_5" style="display: none">Maquina 5  </label>
+                                <textarea name="info_maquina_5" id="info_maquina_5" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+
+
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_6" style="display: none">Maquina 6  </label>
+                                <textarea name="info_maquina_6" id="info_maquina_6" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-6"> 
+                                <label id="lbl_info_maquina_7" style="display: none">Maquina 7 </label>
+                                <textarea name="info_maquina_7" id="info_maquina_7" class="form-control input-sm" rows="3" cols="80" style="resize:none;display: none" placeholder="Ingresa marca , modelo y medida de la máquina"></textarea>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -4915,7 +5369,11 @@
 
 
                     <center>
+<<<<<<< HEAD
                         <input id="botonOrden" class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+=======
+                        <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a></center>
             </div>
@@ -4971,6 +5429,7 @@
     <!-- END KONTEN UTAMA -->
 
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+<<<<<<< HEAD
     
       <!-- Select2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
@@ -4987,3 +5446,8 @@
 
         
         
+=======
+
+</body>
+</html>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

@@ -229,7 +229,11 @@
                         }
                   
 
+<<<<<<< HEAD
      /*if ($this->db->simple_query('select m.id_maquinaria  from mayo_2019_rotacion_inventario ma inner join maquinaria m on m.referencia=ma.12295'))
+=======
+     if ($this->db->simple_query('select m.id_maquinaria  from mayo_2019_rotacion_inventario ma inner join maquinaria m on m.referencia=ma.12295'))
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 {
         echo "Success!" ;
 }
@@ -237,7 +241,11 @@ else
 {
         echo "Query failed!";
 }
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     ?>
 
                     

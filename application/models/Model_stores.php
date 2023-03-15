@@ -38,12 +38,17 @@ class Model_stores extends CI_Model
 	/* get the active store data */
 	public function getActiveStore()
 	{
+<<<<<<< HEAD
 		$sql = "SELECT * FROM stores WHERE active = ?";
+=======
+		$sql = "SELECT * FROM clientes_robuspack";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 		$query = $this->db->query($sql, array(1));
 		return $query->result_array();
 	}
 
             /* get the brand data */
+<<<<<<< HEAD
 	public function getStoresData($id = null)
 	{
 		if($id) {
@@ -53,6 +58,17 @@ class Model_stores extends CI_Model
 		}
 
 		$sql = "SELECT * FROM stores";
+=======
+	public function getStoresData($id_cliente = null)
+	{
+		if($id_cliente) {
+			$sql = "SELECT * FROM clientes_robuspack where id_cliente = ?";
+			$query = $this->db->query($sql, array($id_cliente));
+			return $query->row_array();
+		}
+
+		$sql = "SELECT * FROM clientes_robuspack";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
@@ -60,7 +76,11 @@ class Model_stores extends CI_Model
 	public function create($data)
 	{
 		if($data) {
+<<<<<<< HEAD
 			$insert = $this->db->insert('stores', $data);
+=======
+			$insert = $this->db->insert('clientes_robuspack', $data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 			return ($insert == true) ? true : false;
 		}
 	}
@@ -68,8 +88,13 @@ class Model_stores extends CI_Model
 	public function update($data, $id)
 	{
 		if($data && $id) {
+<<<<<<< HEAD
 			$this->db->where('id', $id);
 			$update = $this->db->update('stores', $data);
+=======
+			$this->db->where('id_cliente', $id);
+			$update = $this->db->update('clientes_robuspack', $data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 			return ($update == true) ? true : false;
 		}
 	}
@@ -77,15 +102,24 @@ class Model_stores extends CI_Model
 	public function remove($id)
 	{
 		if($id) {
+<<<<<<< HEAD
 			$this->db->where('id', $id);
 			$delete = $this->db->delete('stores');
+=======
+			$this->db->where('id_cliente', $id);
+			$delete = $this->db->delete('clientes_robuspack');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 			return ($delete == true) ? true : false;
 		}
 	}
 
 	public function countTotalStores()
 	{
+<<<<<<< HEAD
 		$sql = "SELECT * FROM stores WHERE active = ?";
+=======
+		$sql = "SELECT * FROM clientes_robuspack";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 		$query = $this->db->query($sql, array(1));
 		return $query->num_rows();
 	}
@@ -94,8 +128,13 @@ class Model_stores extends CI_Model
           public function updateStock($data, $id)
 	{
 		if($data && $id) {
+<<<<<<< HEAD
 			$this->db->where('id', $id);
 			$update = $this->db->update('products', $data);
+=======
+			$this->db->where('id_cliente', $id);
+			$update = $this->db->update('clientes_robuspack', $data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 			return ($update == true) ? true : false;
 		}
 	}

@@ -13,7 +13,11 @@ class Options
     /**
      * The location of a temporary directory.
      *
+<<<<<<< HEAD
      * The directory specified must be writeable by the webserver process.
+=======
+     * The directory specified must be writable by the webserver process.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * The temporary directory is required to download remote images and when
      * using the PFDLib back end.
      *
@@ -112,7 +116,11 @@ class Options
      * Image DPI setting
      *
      * This setting determines the default DPI setting for images and fonts.  The
+<<<<<<< HEAD
      * DPI may be overridden for inline images by explictly setting the
+=======
+     * DPI may be overridden for inline images by explicitly setting the
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * image's width & height style attributes (i.e. if the image's native
      * width is 600 pixels and you specify the image's width as 72 points,
      * the image will have a DPI of 600 in the rendered PDF.  The DPI of
@@ -267,7 +275,11 @@ class Options
      *
      * @link http://www.pdflib.com
      *
+<<<<<<< HEAD
      * If pdflib present in web server and auto or selected explicitely above,
+=======
+     * If pdflib present in web server and auto or selected explicitly above,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * a real license code must exist!
      *
      * @var string

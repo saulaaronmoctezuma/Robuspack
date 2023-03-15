@@ -1858,6 +1858,7 @@ class CI_Email {
 
 		return (filter_var($email, FILTER_VALIDATE_EMAIL) === $email && preg_match('#\A[a-z0-9._+-]+@[a-z0-9.-]{1,253}\z#i', $email));
 	}*/
+<<<<<<< HEAD
 	
 	
 	
@@ -1882,6 +1883,10 @@ class CI_Email {
 	
 	
 	protected function _validate_email_for_shell(&$email)
+=======
+        
+        protected function _validate_email_for_shell(&$email)
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     {
         if (function_exists('idn_to_ascii') && $atpos = strpos($email, '@'))
         {

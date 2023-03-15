@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,6 +6,8 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="col-lg-4 col-lg-offset-4">
     <h2>Editar Perfil</h2>
     <h5>Hola <span><?php echo $first_name; ?></span>.</h5>     
@@ -31,6 +34,10 @@
       <?php echo form_password(array('name'=>'passconf', 'id'=> 'passconf', 'placeholder'=>'Confirmar Contraseña', 'class'=>'form-control', 'value'=> set_value('passconf'))); ?>
       <?php echo form_error('passconf') ?>
     </div>
+<<<<<<< HEAD
     <?php echo form_submit(array('value'=>'Cambiar', 'class'=>'btn btn-lg btn-success btn-block')); ?>
+=======
+    <?php echo form_submit(array('value'=>'Cambiar', 'class'=>'btn btn-lg btn-primary btn-block')); ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <?php echo form_close(); ?>
 </div>

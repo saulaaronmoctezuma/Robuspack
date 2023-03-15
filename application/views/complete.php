@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -6,6 +7,8 @@
  */
 -->
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="col-lg-4 col-lg-offset-4">
     <h2>Almost There!</h2>
     <h5>Hello <span><?php echo $firstName; ?></span>. <br>Your username is <span><?php echo $email;?></span>.</h5>

@@ -729,7 +729,11 @@ class GD implements Canvas
         $func_name = "imagecreatefrom$img_type";
         if (!function_exists($func_name)) {
             if (!method_exists("Dompdf\Helpers", $func_name)) {
+<<<<<<< HEAD
                 throw new \Exception("Function $func_name() not found.  Cannot convert $type image: $img_url.  Please install the image PHP extension.");
+=======
+                throw new \Exception("Function $func_name() not found.  Cannot convert $img_type image: $img_url.  Please install the image PHP extension.");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
             $func_name = "\\Dompdf\\Helpers::" . $func_name;
         }
@@ -978,6 +982,14 @@ class GD implements Canvas
         // N/A
     }
 
+<<<<<<< HEAD
+=======
+    public function page_line()
+    {
+        // N/A
+    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     /**
      * Streams the image to the client.
      *

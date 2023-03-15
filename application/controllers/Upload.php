@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 
 /*
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
@@ -8,6 +9,8 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
  
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class Upload extends CI_Controller {
 
     function __construct() {
@@ -81,4 +84,8 @@ class Upload extends CI_Controller {
             echo json_decode($result);
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

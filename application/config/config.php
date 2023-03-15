@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+<<<<<<< HEAD
 date_default_timezone_set('America/Mexico_City'); #Línea agregada
+=======
+date_default_timezone_set('America/Mexico_City'); 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -24,7 +28,11 @@ date_default_timezone_set('America/Mexico_City'); #Línea agregada
 |
 */
 /*$config['base_url'] = 'http://adminweb.com/admin/'; //change link*/
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/scrobuspack/';
+=======
+$config['base_url'] = 'http://localhost/master/';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 /*
 |--------------------------------------------------------------------------
@@ -239,9 +247,15 @@ $config['allow_get_array'] = TRUE;
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
 |
+<<<<<<< HEAD
 */ 
 //CAMBIE POR ERRORES $config['log_threshold'] = 0;
 $config['log_threshold'] =1;
+=======
+*/
+$config['log_threshold'] = 1;
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 /*
 |--------------------------------------------------------------------------
 | Error Logging Directory Path
@@ -397,16 +411,24 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 //$config['sess_expiration'] = 7200;
+<<<<<<< HEAD
 $config['sess_expiration'] = 39600;//son 11 horas (60 segundos * 60 minutos * 11 horas = 39600)
 
+=======
+$config['sess_expiration'] = 39600;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
+=======
+/*|--------------------------------------------------------------------------
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 | Cookie Related Variables
 |--------------------------------------------------------------------------
 |
@@ -561,7 +583,11 @@ $config['proxy_ips'] = '';
 | Roles user and status user
 |
 */
+<<<<<<< HEAD
 $config['roles'] = array('9', '1');
+=======
+$config['roles'] = array('8', '1');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 $config['status'] = array('Pendiente', 'Aprovado');
 $config['banned_users'] = array('unban', 'ban');
 
@@ -573,7 +599,14 @@ $config['banned_users'] = array('unban', 'ban');
 | This is about email sender
 |
 */
+<<<<<<< HEAD
 
+=======
+/*
+$config['register'] = 'admin@gmail.com';
+$config['forgot'] = 'admin@gmail.com';
+*/
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 $config['register'] = 'desarollador.ti@robuspack.com';
 $config['forgot'] = 'desarollador.ti@robuspack.com';

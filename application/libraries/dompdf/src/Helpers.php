@@ -63,7 +63,11 @@ class Helpers
         }
 
         // Is the url already fully qualified, a Data URI, or a reference to a named anchor?
+<<<<<<< HEAD
         if (mb_strpos($url, "://") !== false || mb_substr($url, 0, 1) === "#" || mb_strpos($url, "data:") === 0 || mb_strpos($url, "mailto:") === 0) {
+=======
+        if (mb_strpos($url, "://") !== false || mb_substr($url, 0, 1) === "#" || mb_strpos($url, "data:") === 0 || mb_strpos($url, "mailto:") === 0 || mb_strpos($url, "tel:") === 0) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             return $url;
         }
 
@@ -583,6 +587,10 @@ class Helpers
      * getimagesize doesn't give a good size for 32bit BMP image v5
      *
      * @param string $filename
+<<<<<<< HEAD
+=======
+     * @param resource $context
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * @return array The same format as getimagesize($filename)
      */
     public static function dompdf_getimagesize($filename, $context = null)

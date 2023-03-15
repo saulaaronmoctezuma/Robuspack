@@ -152,7 +152,11 @@ class CPDF implements Canvas
     private $_page_text;
 
     /**
+<<<<<<< HEAD
      * Array of pages for accesing after rendering is initially complete
+=======
+     * Array of pages for accessing after rendering is initially complete
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      *
      * @var array
      */
@@ -275,7 +279,11 @@ class CPDF implements Canvas
     /**
      * Opens a new 'object'
      *
+<<<<<<< HEAD
      * While an object is open, all drawing actions are recored in the object,
+=======
+     * While an object is open, all drawing actions are recorded in the object,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * as opposed to being drawn on the current page.  Objects can be added
      * later to a specific page or to several pages.
      *
@@ -562,6 +570,28 @@ class CPDF implements Canvas
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Draw line at the specified coordinates on every page.
+     *
+     * See {@link Style::munge_color()} for the format of the colour array.
+     *
+     * @param float $x1
+     * @param float $y1
+     * @param float $x2
+     * @param float $y2
+     * @param array $color
+     * @param float $width
+     * @param array $style optional
+     */
+    public function page_line($x1, $y1, $x2, $y2, $color, $width, $style = array())
+    {
+        $_t = 'line';
+        $this->_page_text[] = compact('_t', 'x1', 'y1', 'x2', 'y2', 'color', 'width', 'style');
+    }
+
+    /**
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      * @param float $x
      * @param float $y
      * @param float $r1
@@ -608,7 +638,11 @@ class CPDF implements Canvas
             imageinterlace($im, false);
 
             $tmp_dir = $this->_dompdf->getOptions()->getTempDir();
+<<<<<<< HEAD
             $tmp_name = tempnam($tmp_dir, "{$type}dompdf_img_");
+=======
+            $tmp_name = @tempnam($tmp_dir, "{$type}dompdf_img_");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             @unlink($tmp_name);
             $filename = "$tmp_name.png";
             $this->_image_cache[] = $filename;
@@ -1092,6 +1126,13 @@ class CPDF implements Canvas
                         }
                         $eval->evaluate($code, array('PAGE_NUM' => $page_number, 'PAGE_COUNT' => $this->_page_count));
                         break;
+<<<<<<< HEAD
+=======
+
+                    case 'line':
+                        $this->line( $x1, $y1, $x2, $y2, $color, $width, $style );
+                        break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 }
             }
 

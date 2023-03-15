@@ -1,17 +1,27 @@
 <?php
 
 /**
+<<<<<<< HEAD
 <!--
+=======
+  <!--
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 26/03/2018 Hora 10:15 pm
  * Fecha : Ultimo Cambio 03/0/2019 Hora 10:36 pm
  * Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
  * Sistema de Control Robuspack
  */
+<<<<<<< HEAD
 
 class verificacionPojo {
 
       private $id;
+=======
+class verificacionPojo {
+
+    private $id;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $no_maqui;
     private $modelo;
     private $empresa;
@@ -177,6 +187,9 @@ class verificacionPojo {
     }
 
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 }

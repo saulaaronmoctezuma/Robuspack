@@ -42,6 +42,7 @@
 
 
     </head>
+<<<<<<< HEAD
     
     <div class="container" style="margin-top:1px;">
         
@@ -63,6 +64,29 @@
  
     
     
+=======
+
+    <div class="container" style="margin-top:1px;">
+
+        <center>  <h1>Reporte de Cliente por Vendedor</h1></center>
+
+
+
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+        </div>
+
+        <!--<div class="text-center">
+            <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelMaximoMinimo">
+                <input type="submit" title="Da clic para exportar los datos a Excel" name="export" class="btn btn-success" value="Exportar a excel" />
+            </form>
+        </div>-->
+    </div>
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <div class="container" style="margin-top:1px;">
 
 
@@ -70,6 +94,7 @@
 
 
 
+<<<<<<< HEAD
             
 
                 
@@ -127,10 +152,74 @@
               
                     </tbody>
                 </table>
+=======
+
+
+
+            <table  border="1" class="table table-bordered table-striped">
+                <MARQUEE SCROLLDELAY =200> </MARQUEE>
+                <thead>
+                    <tr>
+
+                        <th style="text-align: center">No.</th>
+                        <th style="text-align: center">Cliente</th>
+                        <th style="text-align: center">Vendedor</th>
 
 
 
 
+                        <?php
+                        if ($dataLevel == 'is_admin') {
+                            
+                        } else if ($dataLevel == 'is_editor') {
+                            
+                        } else {
+                            
+                        }
+                        ?>
+                    </tr>
+                </thead>
+
+                <tbody align="center">
+
+                    <?php
+                    $contador = 1;
+
+                    foreach ($resumen as $obj) {
+                        echo '<tr><td>' . $contador . '</td><td>';
+                        echo $obj->getCliente() .
+                        '</td>'
+                        . '<td>' .
+                        $obj->getVendedor() .
+                        '</td>'
+                        ;
+                        $contador = $contador + 1;
+                        if ($dataLevel == 'is_admin') {
+                            
+                        } else if ($dataLevel == 'is_editor') {
+                            
+                        } else {
+                            
+                        }
+                    }
+                    ?>
+
+
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
+
+
+
+
+<<<<<<< HEAD
                 </body>
+=======
+            </body>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </div>
 </html>

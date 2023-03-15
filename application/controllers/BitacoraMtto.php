@@ -92,6 +92,23 @@ Class BitacoraMtto extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
+=======
+        } else if ($dataLevel == "is_servicio_a_clientes") {
+            $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
+            $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
+            $data['totalRegistroBitacoraMantenimientoCarlos'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoCarlos(1);
+            $data['totalRegistroBitacoraMantenimientoJorge'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoJorge(1);
+            $data['totalRegistroBitacoraMantenimientoMiguel'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoMiguel(1);
+            $data['totalRegistroBitacoraMantenimientoPablo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoPablo(1);
+            $data['totalRegistroBitacoraMantenimientoRodrigo'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoRodrigo(1);
+            $data['totalRegistroBitacoraMantenimientoVeronica'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVeronica(1);
+            $data['totalRegistroBitacoraMantenimientoVicente'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoVicente(1);
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
+            $this->load->view('footer');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else if ($dataLevel == "is_refacciones") {
             $data['bitacora_mtto'] = $this->BitacoraMttoModelo->query();
             $data['totalRegistroBitacoraMantenimientoAlejandro'] = $this->BitacoraMttoModelo->totalRegistroBitacoraMantenimientoAlejandro(1);
@@ -106,6 +123,7 @@ Class BitacoraMtto extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('BitacoraMtto/listarBitacoraMtto', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }
         
         
@@ -131,6 +149,9 @@ Class BitacoraMtto extends CI_Controller {
         
         
         else {
+=======
+        }  else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -774,7 +795,10 @@ Class BitacoraMtto extends CI_Controller {
 
         $config['upload_path'] = './assets/bitacora_mtto';
         $config['allowed_types'] = '*';
+<<<<<<< HEAD
       // $config['allowed_types'] = 'jpeg|jpg|png';
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $config['max_size'] = '20480';  //2MB max
           $config['max_width'] = '44800'; // pixel
           $config['max_height'] = '44800'; // pixel 

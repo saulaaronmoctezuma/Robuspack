@@ -32,6 +32,7 @@
        
         //check user level
         ?>
+<<<<<<< HEAD
         
         
          <script language=javascript type=text/javascript>
@@ -42,6 +43,10 @@ if ((evt.keyCode == 13) && (node.type=="text")) {return false;}
 }
 document.onkeypress = stopRKey; 
 </script>
+=======
+    
+ 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $theme; ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
@@ -153,6 +158,7 @@ document.onkeypress = stopRKey;
                    
                    
                 ';
+<<<<<<< HEAD
                     }  else if ($dataLevel == 'is_freelance') {
                          echo '
                     <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
@@ -160,6 +166,9 @@ document.onkeypress = stopRKey;
                   
                 ';
                     }  else if ($dataLevel == 'is_logistica') {
+=======
+                    } else if ($dataLevel == 'is_logistica') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                           echo '
                               
                        <div class="row">
@@ -187,7 +196,20 @@ document.onkeypress = stopRKey;
                 
                   
                 ';
+<<<<<<< HEAD
                     } else if ($dataLevel == 'is_refacciones') {
+=======
+                    } 
+                    else if ($dataLevel == 'is_freelance') {
+                         echo '
+                    <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
+                
+                  
+                ';
+                    } 
+                    
+                    else if ($dataLevel == 'is_refacciones') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 echo '
                     <input id="a3" type="hidden" class="form-control"  name="vendedor" placeholder="Ingresa el vendedor" >
                 
@@ -222,7 +244,11 @@ document.onkeypress = stopRKey;
                 
                 <div class="form-group col-xs-6">
                     <label for="nombre">Nombre de la Empresa </label>
+<<<<<<< HEAD
                     <input onKeyUp="this.value=this.value.toUpperCase();" id="a3" type="text" class="form-control"  name="nombre_empresa" placeholder="Ingresa el nombre de la empresa" required >
+=======
+                    <input onKeyUp="this.value=this.value.toUpperCase();" id="a3" type="text" class="form-control"  name="nombre_empresa" placeholder="Ingresa el nombre de la empresa" require>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </div>
 
 
@@ -234,7 +260,10 @@ document.onkeypress = stopRKey;
                         <OPTION VALUE="Baja California">Baja California</OPTION>
                         <OPTION VALUE="Baja California Sur">Baja California Sur </OPTION>
                         <OPTION VALUE="Campeche">Campeche</OPTION>
+<<<<<<< HEAD
                         <OPTION VALUE="CDMX">CDMX</OPTION>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <OPTION VALUE="Chiapas">Chiapas</OPTION>
                         <OPTION VALUE="Chihuahua">Chihuahua</OPTION>
                         
@@ -392,6 +421,7 @@ document.onkeypress = stopRKey;
                          </select>
                 </div>
                 ';
+<<<<<<< HEAD
                     } else if ($dataLevel == 'is_freelance') {
                            echo '        
                   <input id="a3" type="hidden" value="Dulce" class="form-control"  name="identificador" placeholder="Ingresa el identificador" >
@@ -400,6 +430,17 @@ document.onkeypress = stopRKey;
                       echo '   <div class="form-group col-xs-4">
                     <label for="nombre">Identificador</label>
                     <input id="a3" type="text" class="form-control"  name="identificador" required placeholder="Ingresa el identificador" >
+=======
+                    }
+                    else if ($dataLevel == 'is_freelance') {
+                           echo '        
+                  <input id="a3" type="hidden" class="form-control"  name="identificador" value="Dulce" placeholder="Ingresa el identificador" >
+                ';
+                    }else {
+                      echo '   <div class="form-group col-xs-4">
+                    <label for="nombre">Identificador</label>
+                    <input id="a3" type="text" class="form-control"  name="identificador" placeholder="Ingresa el identificador" >
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </div>';
                     }
 
@@ -584,7 +625,11 @@ document.onkeypress = stopRKey;
             </div>
         </div><BR>-->
     <center>
+<<<<<<< HEAD
         <input title="Da clic para guardar los datos" id="botonOrden" class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+=======
+        <input title="Da clic para guardar los datos" class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
     </center>
 </form>

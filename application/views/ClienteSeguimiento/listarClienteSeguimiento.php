@@ -33,6 +33,7 @@
         </script>
 
 
+<<<<<<< HEAD
        <?php
 //check user level
 $dataLevel = $this->userlevel->checkLevel($role);
@@ -42,6 +43,17 @@ $result = $this->User_model->getAllSettings();
 $site_title = $result->site_title;
 //check user level
 ?>
+=======
+        <!-- Para traerse el rol que esta registrado-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+        $site_title = $result->site_title;
+        //check user level
+        ?>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css">-->
@@ -106,7 +118,11 @@ $site_title = $result->site_title;
 
             <div class="table-responsive">
 
+<<<<<<< HEAD
                 <table id="example"  border="0" class="table table-bordered table-striped">
+=======
+                <table  border="0" class="table table-bordered table-striped">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <MARQUEE SCROLLDELAY =200> </MARQUEE>
 
 
@@ -139,16 +155,31 @@ $site_title = $result->site_title;
                             <th class="header">Cotización</th>
                             <th class="header">Pedido</th>
                             <th class="header">Contrato</th>
+<<<<<<< HEAD
                             
                             <th class="header">Fecha prospeccion </th>
                             <th class="header">Llamadas del Cliente </th>
                             <th class="header"> Fecha contactó el_cliente</th>
                             <th class="header">5 Llamadas Hechas</th>
+=======
+                            <th class="header">Fecha prospeccion </th>
+                            <th class="header">Llamadas Cliente </th>
+                            <th class="header"> Fecha contacto cliente</th>
+                            <th class="header"> Llamadas Hechas</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <th class="header">Fecha Ultima LLamada </th>
                             <th class="header"> Numero de visitas</th>
                             <th class="header">¿Venta Cerrada? </th>
                             <th class="header">¿Es cliente asignado? </th>
                             <th class="header">¿Es cliente nuevo? </th>
+<<<<<<< HEAD
+=======
+                            
+                            
+                            
+                            
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <?php
@@ -157,7 +188,11 @@ $site_title = $result->site_title;
                             } else if ($dataLevel == 'is_editor') {
                                 echo '<th class="header">Usuario</th>';
                             } else if ($dataLevel == 'is_Gerente_Ventas') {
+<<<<<<< HEAD
                                 echo '<th class="header">Usuario</th>';
+=======
+                                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             } else if ($dataLevel == 'is_director') {
                                 echo '<th class="header">Usuario</th>';
                             } else {
@@ -170,11 +205,17 @@ $site_title = $result->site_title;
                             if ($dataLevel == 'is_admin') {
 
 
+<<<<<<< HEAD
                                 echo '<th class="header" style="text-align:center;">Eliminar</th>';
                                  echo '<th class="header" colspan="1" style="text-align:center;">Modificar</th>';
                             } else if ($dataLevel == 'is_editor') {
                                   echo '<th class="header" style="text-align:center;">Eliminar</th>';
                                  echo '<th class="header" colspan="1" style="text-align:center;">Modificar</th>';
+=======
+                                echo '<th class="header" colspan="2" style="text-align:center;">Acción</th>';
+                            } else if ($dataLevel == 'is_editor') {
+                                echo '<th class="header" colspan="2" style="text-align:center;" >Acción</th>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 // echo '<th class="header">Fecha De Inserción</th>';
                                 // echo '<th class="header">Fecha de Modificación</th>';
                             } else if ($dataLevel == 'is_maquinaria') {
@@ -419,7 +460,15 @@ $site_title = $result->site_title;
                             echo '<td><center><img height="42" width="42" src="https://scrobuspack.com/assets/images/atencion.gif" /></center></td>';
                         }
 
+<<<<<<< HEAD
                            echo '<td>' .
+=======
+
+                        
+                        
+                        
+                            echo '<td>' .
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             $obj->getFecha_prospeccion() .
                             '</td>'
                             . '<td>'
@@ -447,7 +496,11 @@ $site_title = $result->site_title;
                             $obj->getCliente_nuevo() .
                             '</td>';
 
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         if ($dataLevel == 'is_admin') {
@@ -461,9 +514,13 @@ $site_title = $result->site_title;
                             $obj->getFirst_name() .
                             '</td>';
                         } else if ($dataLevel == 'is_Gerente_Ventas') {
+<<<<<<< HEAD
                              echo '<td>' .
                             $obj->getFirst_name() .
                             '</td>';
+=======
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         } else if ($dataLevel == 'is_director') {
                             echo '<td>' .
                             $obj->getFirst_name() .
@@ -471,6 +528,15 @@ $site_title = $result->site_title;
                         } else {
                             
                         }
+<<<<<<< HEAD
+=======
+                        
+                        
+                        
+                        
+                        
+                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         //compara si es administrador

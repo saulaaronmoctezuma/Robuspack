@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 
 
 /**
@@ -7,6 +8,20 @@
   */
 
 
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of ClienteSeguimientoPojo
+ *
+ * @author Desarrollo.robus
+ * 25-06-2019 10:31 am
+ */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 class CensoMaquinariaPojo {
 
     private $id_censomaquinaria;
@@ -50,10 +65,13 @@ class CensoMaquinariaPojo {
     private $correo_personal_otros;
     private $tipo_de_cliente;
     private $asesor;
+<<<<<<< HEAD
     private $asesor_maquinaria;
    private $asesor_consumibles;
      
    
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $estatus_cliente;
     private $tamano_cliente;
     private $tipo_mercado;
@@ -62,6 +80,7 @@ class CensoMaquinariaPojo {
     private $compromiso;
     private $notas;
     private $info_maquina_1;
+<<<<<<< HEAD
     private $modelo_maquina_1;
     private $medida_maquina_1;
     private $tipo_maquina_1;
@@ -170,6 +189,23 @@ class CensoMaquinariaPojo {
     private $consumibles_maquina_10;
 
     function __construct($id_censomaquinaria, $grupo, $grupo_temporal, $empresa, $empresa_temporal, $estado, $ciudad_municipio, $nombre_dueno, $celular_dueno, $correo_empresarial_dueno, $correo_personal_dueno, $nombre_ceo, $celular_ceo, $correo_empresarial_ceo, $correo_personal_ceo, $nombre_gerente, $celular_gerente, $correo_empresarial_gerente, $correo_personal_gerente, $nombre_produccion, $celular_produccion, $correo_empresarial_produccion, $correo_personal_produccion, $nombre_mtto, $celular_mtto, $correo_empresarial_mmto, $correo_personal_mtto, $nombre_compras, $celular_compras, $correo_empresarial_compras, $correo_personal_compras, $nombre_ventas, $celular_ventas, $correo_empresarial_ventas, $correo_personal_ventas, $nombre_otros, $celular_otros, $correo_empresarial_otros, $correo_personal_otros, $tipo_de_cliente, $asesor, $asesor_maquinaria, $asesor_consumibles, $estatus_cliente, $tamano_cliente, $tipo_mercado, $volumen_produccion, $necesidad, $compromiso, $notas, $info_maquina_1, $modelo_maquina_1, $medida_maquina_1, $tipo_maquina_1, $troquel_maquina_1, $codigo_cubierta_maquina_1, $cliente_conoce_maquina_1, $info_maquina_2, $modelo_maquina_2, $medida_maquina_2, $tipo_maquina_2, $troquel_maquina_2, $codigo_cubierta_maquina_2, $cliente_conoce_maquina_2, $info_maquina_3, $modelo_maquina_3, $medida_maquina_3, $tipo_maquina_3, $troquel_maquina_3, $codigo_cubierta_maquina_3, $cliente_conoce_maquina_3, $info_maquina_4, $modelo_maquina_4, $medida_maquina_4, $tipo_maquina_4, $troquel_maquina_4, $codigo_cubierta_maquina_4, $cliente_conoce_maquina_4, $info_maquina_5, $modelo_maquina_5, $medida_maquina_5, $tipo_maquina_5, $troquel_maquina_5, $codigo_cubierta_maquina_5, $cliente_conoce_maquina_5, $info_maquina_6, $modelo_maquina_6, $medida_maquina_6, $tipo_maquina_6, $troquel_maquina_6, $codigo_cubierta_maquina_6, $cliente_conoce_maquina_6, $info_maquina_7, $modelo_maquina_7, $medida_maquina_7, $tipo_maquina_7, $troquel_maquina_7, $codigo_cubierta_maquina_7, $cliente_conoce_maquina_7, $info_maquina_8, $modelo_maquina_8, $medida_maquina_8, $tipo_maquina_8, $troquel_maquina_8, $codigo_cubierta_maquina_8, $cliente_conoce_maquina_8, $info_maquina_9, $modelo_maquina_9, $medida_maquina_9, $tipo_maquina_9, $troquel_maquina_9, $codigo_cubierta_maquina_9, $cliente_conoce_maquina_9, $info_maquina_10, $modelo_maquina_10, $medida_maquina_10, $tipo_maquina_10, $troquel_maquina_10, $codigo_cubierta_maquina_10, $cliente_conoce_maquina_10, $maquina_conversion, $refacciones, $corrugadora, $cliente_robuspack, $first_name, $refacciones_maquina_1, $consumibles_maquina_1, $refacciones_maquina_2, $consumibles_maquina_2, $refacciones_maquina_3, $consumibles_maquina_3, $refacciones_maquina_4, $consumibles_maquina_4, $refacciones_maquina_5, $consumibles_maquina_5, $refacciones_maquina_6, $consumibles_maquina_6, $refacciones_maquina_7, $consumibles_maquina_7, $refacciones_maquina_8, $consumibles_maquina_8, $refacciones_maquina_9, $consumibles_maquina_9, $refacciones_maquina_10, $consumibles_maquina_10) {
+=======
+    private $info_maquina_2;
+    private $info_maquina_3;
+    private $info_maquina_4;
+    private $info_maquina_5;
+    private $info_maquina_6;
+    private $info_maquina_7;
+    private $refacciones;
+    private $corrugadora;
+    private $first_name;
+
+
+    
+    
+    
+    function __construct($id_censomaquinaria, $grupo, $grupo_temporal, $empresa, $empresa_temporal, $estado, $ciudad_municipio, $nombre_dueno, $celular_dueno, $correo_empresarial_dueno, $correo_personal_dueno, $nombre_ceo, $celular_ceo, $correo_empresarial_ceo, $correo_personal_ceo, $nombre_gerente, $celular_gerente, $correo_empresarial_gerente, $correo_personal_gerente, $nombre_produccion, $celular_produccion, $correo_empresarial_produccion, $correo_personal_produccion, $nombre_mtto, $celular_mtto, $correo_empresarial_mmto, $correo_personal_mtto, $nombre_compras, $celular_compras, $correo_empresarial_compras, $correo_personal_compras, $nombre_ventas, $celular_ventas, $correo_empresarial_ventas, $correo_personal_ventas, $nombre_otros, $celular_otros, $correo_empresarial_otros, $correo_personal_otros, $tipo_de_cliente, $asesor, $estatus_cliente, $tamano_cliente, $tipo_mercado, $volumen_produccion, $necesidad, $compromiso, $notas, $info_maquina_1, $info_maquina_2, $info_maquina_3, $info_maquina_4, $info_maquina_5, $info_maquina_6, $info_maquina_7, $refacciones, $corrugadora, $first_name) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->id_censomaquinaria = $id_censomaquinaria;
         $this->grupo = $grupo;
         $this->grupo_temporal = $grupo_temporal;
@@ -211,8 +247,11 @@ class CensoMaquinariaPojo {
         $this->correo_personal_otros = $correo_personal_otros;
         $this->tipo_de_cliente = $tipo_de_cliente;
         $this->asesor = $asesor;
+<<<<<<< HEAD
         $this->asesor_maquinaria = $asesor_maquinaria;
         $this->asesor_consumibles = $asesor_consumibles;
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->estatus_cliente = $estatus_cliente;
         $this->tamano_cliente = $tamano_cliente;
         $this->tipo_mercado = $tipo_mercado;
@@ -221,6 +260,7 @@ class CensoMaquinariaPojo {
         $this->compromiso = $compromiso;
         $this->notas = $notas;
         $this->info_maquina_1 = $info_maquina_1;
+<<<<<<< HEAD
         $this->modelo_maquina_1 = $modelo_maquina_1;
         $this->medida_maquina_1 = $medida_maquina_1;
         $this->tipo_maquina_1 = $tipo_maquina_1;
@@ -317,6 +357,21 @@ class CensoMaquinariaPojo {
         $this->consumibles_maquina_10 = $consumibles_maquina_10;
     }
 
+=======
+        $this->info_maquina_2 = $info_maquina_2;
+        $this->info_maquina_3 = $info_maquina_3;
+        $this->info_maquina_4 = $info_maquina_4;
+        $this->info_maquina_5 = $info_maquina_5;
+        $this->info_maquina_6 = $info_maquina_6;
+        $this->info_maquina_7 = $info_maquina_7;
+        $this->refacciones = $refacciones;
+        $this->corrugadora = $corrugadora;
+        $this->first_name = $first_name;
+    }
+
+    
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getId_censomaquinaria() {
         return $this->id_censomaquinaria;
     }
@@ -481,6 +536,7 @@ class CensoMaquinariaPojo {
         return $this->asesor;
     }
 
+<<<<<<< HEAD
     public function getAsesor_maquinaria() {
         return $this->asesor_maquinaria;
     }
@@ -489,6 +545,8 @@ class CensoMaquinariaPojo {
         return $this->asesor_consumibles;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getEstatus_cliente() {
         return $this->estatus_cliente;
     }
@@ -521,6 +579,7 @@ class CensoMaquinariaPojo {
         return $this->info_maquina_1;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_1() {
         return $this->modelo_maquina_1;
     }
@@ -545,10 +604,13 @@ class CensoMaquinariaPojo {
         return $this->cliente_conoce_maquina_1;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getInfo_maquina_2() {
         return $this->info_maquina_2;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_2() {
         return $this->modelo_maquina_2;
     }
@@ -573,10 +635,13 @@ class CensoMaquinariaPojo {
         return $this->cliente_conoce_maquina_2;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getInfo_maquina_3() {
         return $this->info_maquina_3;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_3() {
         return $this->modelo_maquina_3;
     }
@@ -601,10 +666,13 @@ class CensoMaquinariaPojo {
         return $this->cliente_conoce_maquina_3;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getInfo_maquina_4() {
         return $this->info_maquina_4;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_4() {
         return $this->modelo_maquina_4;
     }
@@ -629,10 +697,13 @@ class CensoMaquinariaPojo {
         return $this->cliente_conoce_maquina_4;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getInfo_maquina_5() {
         return $this->info_maquina_5;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_5() {
         return $this->modelo_maquina_5;
     }
@@ -657,10 +728,13 @@ class CensoMaquinariaPojo {
         return $this->cliente_conoce_maquina_5;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getInfo_maquina_6() {
         return $this->info_maquina_6;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_6() {
         return $this->modelo_maquina_6;
     }
@@ -685,10 +759,13 @@ class CensoMaquinariaPojo {
         return $this->cliente_conoce_maquina_6;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getInfo_maquina_7() {
         return $this->info_maquina_7;
     }
 
+<<<<<<< HEAD
     public function getModelo_maquina_7() {
         return $this->modelo_maquina_7;
     }
@@ -801,6 +878,8 @@ class CensoMaquinariaPojo {
         return $this->maquina_conversion;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getRefacciones() {
         return $this->refacciones;
     }
@@ -809,14 +888,18 @@ class CensoMaquinariaPojo {
         return $this->corrugadora;
     }
 
+<<<<<<< HEAD
     public function getCliente_robuspack() {
         return $this->cliente_robuspack;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getFirst_name() {
         return $this->first_name;
     }
 
+<<<<<<< HEAD
     public function getRefacciones_maquina_1() {
         return $this->refacciones_maquina_1;
     }
@@ -897,6 +980,8 @@ class CensoMaquinariaPojo {
         return $this->consumibles_maquina_10;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setId_censomaquinaria($id_censomaquinaria) {
         $this->id_censomaquinaria = $id_censomaquinaria;
     }
@@ -1061,6 +1146,7 @@ class CensoMaquinariaPojo {
         $this->asesor = $asesor;
     }
 
+<<<<<<< HEAD
     public function setAsesor_maquinaria($asesor_maquinaria) {
         $this->asesor_maquinaria = $asesor_maquinaria;
     }
@@ -1069,6 +1155,8 @@ class CensoMaquinariaPojo {
         $this->asesor_consumibles = $asesor_consumibles;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setEstatus_cliente($estatus_cliente) {
         $this->estatus_cliente = $estatus_cliente;
     }
@@ -1101,6 +1189,7 @@ class CensoMaquinariaPojo {
         $this->info_maquina_1 = $info_maquina_1;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_1($modelo_maquina_1) {
         $this->modelo_maquina_1 = $modelo_maquina_1;
     }
@@ -1125,10 +1214,13 @@ class CensoMaquinariaPojo {
         $this->cliente_conoce_maquina_1 = $cliente_conoce_maquina_1;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setInfo_maquina_2($info_maquina_2) {
         $this->info_maquina_2 = $info_maquina_2;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_2($modelo_maquina_2) {
         $this->modelo_maquina_2 = $modelo_maquina_2;
     }
@@ -1153,10 +1245,13 @@ class CensoMaquinariaPojo {
         $this->cliente_conoce_maquina_2 = $cliente_conoce_maquina_2;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setInfo_maquina_3($info_maquina_3) {
         $this->info_maquina_3 = $info_maquina_3;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_3($modelo_maquina_3) {
         $this->modelo_maquina_3 = $modelo_maquina_3;
     }
@@ -1181,10 +1276,13 @@ class CensoMaquinariaPojo {
         $this->cliente_conoce_maquina_3 = $cliente_conoce_maquina_3;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setInfo_maquina_4($info_maquina_4) {
         $this->info_maquina_4 = $info_maquina_4;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_4($modelo_maquina_4) {
         $this->modelo_maquina_4 = $modelo_maquina_4;
     }
@@ -1209,10 +1307,13 @@ class CensoMaquinariaPojo {
         $this->cliente_conoce_maquina_4 = $cliente_conoce_maquina_4;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setInfo_maquina_5($info_maquina_5) {
         $this->info_maquina_5 = $info_maquina_5;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_5($modelo_maquina_5) {
         $this->modelo_maquina_5 = $modelo_maquina_5;
     }
@@ -1237,10 +1338,13 @@ class CensoMaquinariaPojo {
         $this->cliente_conoce_maquina_5 = $cliente_conoce_maquina_5;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setInfo_maquina_6($info_maquina_6) {
         $this->info_maquina_6 = $info_maquina_6;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_6($modelo_maquina_6) {
         $this->modelo_maquina_6 = $modelo_maquina_6;
     }
@@ -1265,10 +1369,13 @@ class CensoMaquinariaPojo {
         $this->cliente_conoce_maquina_6 = $cliente_conoce_maquina_6;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setInfo_maquina_7($info_maquina_7) {
         $this->info_maquina_7 = $info_maquina_7;
     }
 
+<<<<<<< HEAD
     public function setModelo_maquina_7($modelo_maquina_7) {
         $this->modelo_maquina_7 = $modelo_maquina_7;
     }
@@ -1381,6 +1488,8 @@ class CensoMaquinariaPojo {
         $this->maquina_conversion = $maquina_conversion;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setRefacciones($refacciones) {
         $this->refacciones = $refacciones;
     }
@@ -1389,14 +1498,18 @@ class CensoMaquinariaPojo {
         $this->corrugadora = $corrugadora;
     }
 
+<<<<<<< HEAD
     public function setCliente_robuspack($cliente_robuspack) {
         $this->cliente_robuspack = $cliente_robuspack;
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setFirst_name($first_name) {
         $this->first_name = $first_name;
     }
 
+<<<<<<< HEAD
     public function setRefacciones_maquina_1($refacciones_maquina_1) {
         $this->refacciones_maquina_1 = $refacciones_maquina_1;
     }
@@ -1480,3 +1593,11 @@ class CensoMaquinariaPojo {
 
     
 }
+=======
+
+    
+    
+    
+    
+    }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

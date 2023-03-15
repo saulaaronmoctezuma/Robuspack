@@ -1,0 +1,411 @@
+<!--
+ * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
+ * Sistema de Control Robuspack SCR
+ * https://scrobuspack.com 
+ * "Controlar la complejidad es la esencia de la programación"
+ */
+-->
+<html lang="es-mx">
+    <head>
+        <title>Robuspack</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <?php
+        defined('BASEPATH') OR exit('No direct script access allowed');
+
+        $result = $this->User_model->getAllSettings();
+        $theme = $result->theme;
+        ?>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo $theme; ?>">
+        <link rel="stylesheet" href="<?php echo base_url() . 'public/css/main.css' ?>">
+
+        <!-- Pregunta al dar clic a eliminar-->
+        <script type="text/javascript">
+            function confirma() {
+                if (confirm("¿Realmente desea eliminarlo?")) {
+
+                } else {
+                    return false
+                }
+            }
+        </script>
+
+
+        <!-- Para traerse el rol que esta registrado-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+        $site_title = $result->site_title;
+        //check user level
+        ?>
+
+    </head>
+    
+    
+    
+    <div class="container" style="margin-top:1px;">
+        
+    <center>  <h1>Control SIC</h1></center>
+    
+    
+    
+    <div class="alert alert-info alert-info">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Bienvenido</strong> Agrega, Modifica o Elimina sus Datos
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+            </div>
+    
+    
+            <div class="row">
+             <div class="text-center">
+                <form method="post" action="<?php echo base_url(); ?>ClienteRefacciones/agregar">
+                    <input type="submit" name="agregar"  title="Da clic para agregar un nuevo registro" class="btn btn-success" value="Agregar Nuevo Registro" />
+                </form>
+                 <br>
+        
+        
+        
+        
+               <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelRefacciones">
+
+                        <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:16px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+                    </form> 
+             </div><BR>
+            </div>
+    </div>
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="container" style="margin-top:1px;">
+
+
+
+        <div class="table-responsive">
+            
+            
+            
+            
+            
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <table  border="0" class="table table-bordered table-striped">
+                <MARQUEE SCROLLDELAY =200> </MARQUEE>
+
+
+                <thead >
+                    <tr >
+
+
+
+                        <?php
+                        if ($dataLevel == 'is_admin') {
+                            echo '<th class="header">Usuario</th>';
+                        } else if ($dataLevel == 'is_Gerente_Ventas') {
+
+                            echo '<th class="header">Usuario</th>';
+                            ;
+                        }else if ($dataLevel == 'is_editor') {
+
+                            echo '<th class="header">Usuario</th>';
+                            ;
+                        }else if ($dataLevel == 'is_director') {
+
+                            echo '<th class="header">Usuario</th>';
+                            ;
+                        } else if ($dataLevel == 'is_refacciones') {
+                            
+                        } else {
+                            
+                        }
+                        ?>
+                         <th class="header">Grupo</th>
+                        <th class="header">Cliente</th>
+                        <th class="header">Código</th>
+                        <th class="header">Cantidad Máxima</th>
+                        <th class="header">Precio unitario</th>
+                         <th class="header">Vida Util Dias</th>
+                        <th class="header">Periodo Surtimiento</th>
+                        <th class="header">Periodo Surtimiento Vida Util</th>
+                        <th class="header">Cantidad Mínima</th>
+                        <th class="header">Paquetería</th>
+                        <th class="header">Tipo Entrega</th>
+                        <th class="header">Dias Crédito</th>
+                        <th class="header">Diámetro Rodillo en Pulgadas</th>
+                        <th class="header">Diámetro de Rodillo en Milímetros</th>
+                        
+                        <th class="header">Máquina Cliente</th>
+                        <th class="header">Capacitación</th>
+                        <th class="header">Capacitación Fecha</th>
+                        <th class="header">Piezas Juego</th>
+                        <th class="header">Costo Juego</th>
+                        <th class="header">Juego Mensuales</th>
+                        <th class="header">Golpes Prom Comp</th>
+                        <th class="header">Golpes Prom Rodicut</th>
+                        <th class="header">Beneficio Golpes Prom</th>
+                        <th class="header">Tiempo Rot Com</th>
+                        <th class="header">Tiempo Rot Rodicut</th>
+                        <th class="header">Beneficio Rot Prom</th>
+                        <th class="header">Precio Golpe</th>
+                        <th class="header">Ciudad Planta</th>
+                        <th class="header" style="table-layout: auto;">Observación</th>
+                           <th class="header">Marca de la Máquina</th>
+                        <th class="header">Modelo de la Máquina</th>
+                        <th class="header">Tipo Máquina</th>
+                        <th class="header">Troquel</th>
+                        <th class="header">Uso de Cfdi</th>
+                        <th class="header">Método Pago</th>
+                        <th class="header">Fecha Visita</th>
+                        <th class="header">Fecha Seguimiento</th>
+                        <th class="header">Golpes Máquina por Día</th>
+                         <th class="header">Confirmación de Orden de Compra</th>
+                        
+                       
+
+
+
+                    <?php
+                    if ($dataLevel == 'is_admin') {
+                        echo '<th class="header" colspan="2" >Acción</th>';
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+
+                    } else if ($dataLevel == 'is_refacciones') {
+                        echo '<th class="header" colspan="2" >Acción</th>';
+                    }else if ($dataLevel == 'is_maquinaria_refacciones') {
+                        echo '<th class="header" colspan="2" >Acción</th>';
+                    }else if ($dataLevel == 'is_editor') {
+                        echo '<th class="header" colspan="2" >Acción</th>';
+                    } else {
+
+                    }
+                    ?>
+
+
+
+                    </tr>
+                </thead>
+                <tbody align="center">
+
+<?php
+foreach ($ventas as $obj) {
+    echo '<tr><td>';
+
+
+
+    if ($dataLevel == 'is_admin') {
+        echo
+        $obj->getFirst_name() .
+        '</td>'
+        . '<td>'
+        ;
+    } else if ($dataLevel == 'is_Gerente_Ventas') {
+        echo
+
+        $obj->getFirst_name() .
+        '</td>'
+        . '<td>'
+        ;
+    }else if ($dataLevel == 'is_editor') {
+        echo
+
+        $obj->getFirst_name() .
+        '</td>'
+        . '<td>'
+        ;
+    } else if ($dataLevel == 'is_director') {
+        echo
+
+        $obj->getFirst_name() .
+        '</td>'
+        . '<td>'
+        ;
+    }else {
+        
+    }
+
+ echo $obj->getGrupo() .
+    '</td>'
+    . '<td>'
+    . $obj->getCliente() .
+    '</td>'
+    . '<td>'
+    . $obj->getReferencia() .
+    '</td>'
+    . '<td>'
+    . $obj->getCantidad_maxima() .
+    '</td>'
+    . '<td>'
+    . $obj->getPrecio_unitario() .
+    '</td>'
+    . '<td>'
+    . $obj->getVida_util_dias() .
+    '</td>'
+    . '<td>'
+    . $obj->getPeriodo_surtimiento() .
+    '</td>'
+     . '<td>'
+    . $obj->getPeriodo_surtimiento_vida_util() .
+    '</td>'
+    . '<td>'
+    . $obj->getCantidad_minima() .
+    '</td>'
+    . '<td>'
+    . $obj->getPaqueteria() .
+    '</td>'
+    . '<td>'
+    . $obj->getTipo_entrega() .
+    '</td>'
+    . '<td>'
+    . $obj->getDias_credito() .
+    '</td>'
+    . '<td>'
+    . $obj->getPulgadas() .
+    '</td>'
+    . '<td>'
+    . $obj->getDiametro_rod_ml() .
+    '</td>'
+    . '<td>'
+    . $obj->getMaquina_cliente() .
+    '</td>'
+    . '<td>'
+    . $obj->getCapacitacion() .
+    '</td>'
+    . '<td>'
+    . $obj->getCapacitacion_fecha() .
+    '</td>'
+    . '<td>'
+    . $obj->getPiezas_juego() .
+    '</td>'
+    . '<td>'
+    . $obj->getCosto_juego() .
+    '</td>'
+    . '<td>'
+    . $obj->getJuego_mensuales() .
+    '</td>'
+    . '<td>'
+    . $obj->getGolpes_prom_comp() .
+    '</td>'
+    . '<td>'
+    . $obj->getGolpes_prom_rodicut() .
+    '</td>'
+    . '<td>'
+    . $obj->getBeneficio_golpes_prom() .
+    '</td>'
+    . '<td>'
+    . $obj->getTiempo_rot_com() .
+    '</td>'
+    . '<td>'
+    . $obj->getTiempo_rot_rodicut() .
+    '</td>'
+    . '<td>'
+    . $obj->getBeneficio_rot_prom() .
+    '</td>'
+    . '<td>'
+    . $obj->getPrecio_golpe() .
+    '</td>'
+    . '<td>'
+    . $obj->getCiudad_planta() .
+    '</td>'
+    . '<td>'
+    . $obj->getObservacion() .
+    '</td>'
+     . '<td>'
+    . $obj->getMarca_maquina() .
+    '</td>'
+    . '<td>'
+    . $obj->getContacto() .
+    '</td>'
+    . '<td>'
+    . $obj->getTipo_maquina() .
+    '</td>'
+    . '<td>'
+    . $obj->getTroquel() .
+    '</td>'
+    . '<td>'
+    . $obj->getUso_de_cfdi() .
+    '</td>'
+    . '<td>'
+    . $obj->getMetodo_pago() .
+    '</td>'
+    . '<td>'
+    . $obj->getFecha_visita() .
+    '</td>'
+    . '<td>'
+    . $obj->getFecha_seguimiento() .
+    '</td>'
+    . '<td>'
+    . $obj->getGolpes_maquina() .
+    '</td>'
+      . '<td>'
+    . $obj->getConfirmacion_orden_compra() .
+    '</td>';
+
+
+    //compara si es administrador
+    if ($dataLevel == 'is_admin') {
+        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+    } if ($dataLevel == 'is_editor') {
+        echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'ClienteRefacciones/eliminar/' . $obj->getId_venta() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+    } else if ($dataLevel == 'is_Gerente_Ventas') {
+        
+    } else if ($dataLevel == 'is_refacciones') {
+        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+    }
+    else if ($dataLevel == 'is_maquinaria_refacciones') {
+        echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'ClienteRefacciones/obtener/' . $obj->getId_venta() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+    }
+//echo "<td><a href='" . base_url() . "ClienteRefacciones/eliminar/" . $obj->getId_venta() . "'>Elimina</a></td>";
+    // echo "<td><a href='" . base_url() . "ClienteRefacciones/obtener/" . $obj->getId_venta() . "'>Actualizar</a></td>";
+}
+?>
+                    </tr    >
+                </tbody>
+            </table>
+
+
+        </div> 
+    </div>
+
+
+
+ 
+    <br>
+    <!--<div class="text-center">
+        <form method="post" action="<?php echo base_url(); ?>ClienteRefacciones/agregar">
+            <input type="submit" name="agregar"  title="Da clic para agregar un nuevo registro" class="btn btn-success" value="Agregar" />
+        </form>
+       <!--   <a  class="btn btn-warning" href="<?= base_url('ClienteRefacciones/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Da clic para guardas los datos de la venta">Agregar nuevo registro</a>
+       <a class="btn btn-success" href="<?= base_url('ExcelClienteRefacciones/crearExcel') ?>" data-toggle="tooltip" data-placement="right" title="Da clic para ver los datos del en excel">Reporte En Excel</a>
+      <a class="btn btn-success" href="<?= base_url('ReportePdf/articulo') ?>" data-toggle="tooltip" data-placement="right" title="Da clic para ver los datos del articulo en pdf">Reporte En Pdf</a>
+        -->
+    <!--</div>-->
+
+</body>
+</html>
+

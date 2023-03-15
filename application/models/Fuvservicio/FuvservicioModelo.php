@@ -70,33 +70,54 @@ class FuvservicioModelo extends CI_Model {
     }
 
     public function get_by_id($kondisi) {
+<<<<<<< HEAD
         $this->db->from('fuvservicio');
+=======
+        $this->db->from('Fuvservicio');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->db->where($kondisi);
         $query = $this->db->get();
         return $query->row();
     }
 
     public function insert($data) {
+<<<<<<< HEAD
         $this->db->insert('fuvservicio', $data);
+=======
+        $this->db->insert('Fuvservicio', $data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         return TRUE;
     }
 
     public function delete($where) {
         $this->db->where($where);
+<<<<<<< HEAD
         $this->db->delete('fuvservicio');
+=======
+        $this->db->delete('Fuvservicio');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         return TRUE;
     }
 
     public function update($data, $kondisi) {
+<<<<<<< HEAD
         $this->db->update('fuvservicio', $data, $kondisi);
+=======
+        $this->db->update('Fuvservicio', $data, $kondisi);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         return TRUE;
     }
 
     public function query() {
         //$query = $this->db->get('verificacion');
         $this->db->select('*');
+<<<<<<< HEAD
         $this->db->from('fuvservicio');
         $this->db->order_by('fuvservicio.id_fuvservicio', 'desc');
+=======
+        $this->db->from('Fuvservicio');
+        $this->db->order_by('Fuvservicio.id_fuvservicio', 'desc');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
         // $this->db->where('users.id= ', $dataLevel);
         $query = $this->db->get();
@@ -109,6 +130,10 @@ class FuvservicioModelo extends CI_Model {
                     $value->ref,
                     $value->cliente,
                     $value->direccion, 
+<<<<<<< HEAD
+=======
+                     $value->referencia, 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value->codigo,
                     $value->tipo_de_prod,
                     $value->rfc,

@@ -39,12 +39,20 @@
         //check user level
         ?>
 
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     </head>
     <div class="container" style="margin-top:1px;">
         <div class="table-responsive">
 
+<<<<<<< HEAD
             <center>  <h1> Reporte Rotación de Inventario</h1></center>
+=======
+            <center>  <h1> Reporte Rotación de Inventario 2a</h1></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -56,7 +64,11 @@
             <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
         </div>
 
+<<<<<<< HEAD
       <div class="text-center">
+=======
+        <div class="text-center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             <form method="post" action="<?php echo base_url(); ?>ExportarExcel/crearExcelRotacionInventarioR">
                 <input type="submit" title="Da clic para exportar los datos a Excel" name="export" class="btn btn-success" value="Exportar a excel" />
             </form>
@@ -75,10 +87,17 @@
 
 
                         <th class="header" style="text-align: center">Código</th>
+<<<<<<< HEAD
                         <th class="header" style="text-align: center;" bgcolor="yellow"><a href="https://scrobuspack.com/Maquinaria/actualiza/1" > <font color="blue"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
                          Fecha_Corte de Rotación </font>
                         
                         </a></th>
+=======
+                        <th class="header" style="text-align: center;" bgcolor="yellow">
+                            <a href="http://localhost/master/Maquinaria/actualiza/1" ><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+                                <font color="blue">     Fecha_Corte de Rotación</font>
+                            </a></th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <th class="header" style="text-align: center">Pedido_Inteligente</th>
 
@@ -86,6 +105,7 @@
                         <th class="header" style="text-align: center">Total Req. Trimestral con Oc y Consignación</th>
                         <th class="header" style="text-align: center" bgcolor="yellow">Inventario</th>
                         <th class="header" style="text-align: center" bgcolor="yellow"  >Piezas a recibir</th>
+<<<<<<< HEAD
                         <th class="header" style="text-align: center" title="Inventario - Total Req. Mensual con Oc y Cons">Piezas requeridas con oc consig mensual</th>
                          <th class="header" style="text-align: center" title="Inventario -Total Req. Trimestral con Oc y Consignación
 ">Piezas requeridas con oc consig trimestral</th>
@@ -94,6 +114,14 @@
                         <th class="header" style="text-align: center" title="Fecha_Corte de Rotación +  (Meses Cubiertos*30)">Fecha_Cubierta</th>
                         <th class="header" style="text-align: center">Total mensual sin oc</th>
                         <th class="header" style="text-align: center" title="Total Req. Mensual con Oc y Cons + Total mensual sin oc"> Prospectacion Mercado Mensual</th>
+=======
+                        <th class="header" style="text-align: center">Piezas requeridas con oc consig mensual</th>
+                        <th class="header" style="text-align: center">Piezas requeridas con oc consig trimestral</th>
+                        <th class="header" style="text-align: center">Meses Cubiertos</th>
+                        <th class="header" style="text-align: center">Fecha_Cubierta</th>
+                        <th class="header" style="text-align: center">total_mensual_sin_oc</th>
+                        <th class="header" style="text-align: center">Informativo Prospectacion Mercado</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <th class="header" style="text-align: center">Pc_Fob</th>
 
                         <?php
@@ -112,9 +140,15 @@
 
                     <?php
                     foreach ($maximominimo as $obj) {
+<<<<<<< HEAD
                         echo '<tr><td>  <a href=https://scrobuspack.com/Maquinaria/rotacion/'.$obj->getId_maquinaria().'><font color="blue"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>   ';
                         echo $obj->getCodigo() .
                         '</font></a></td>'
+=======
+                        echo '<tr><td>  <a href=http://localhost/master/Maquinaria/rotacion/'.$obj->getId_maquinaria().'><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> ';
+                        echo $obj->getCodigo() .
+                        '</a></td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         . '<td >'
                         . $obj->getFecha_corte_rotacion() .
                         '</td>'
@@ -133,7 +167,11 @@
                         . '<td>'
                         . $obj->getPiezas_a_recibir() .
                         '</td>'
+<<<<<<< HEAD
                          . '<td>'
+=======
+                                . '<td>'
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         . $obj->getPiezas_requeridas_con_oc_consig_mensual() .
                         '</td>'
                         . '<td>'
@@ -169,7 +207,12 @@
                     ?>
 
                     </tr>
+<<<<<<< HEAD
 <tr  bgcolor="yellow">
+=======
+
+               <tr  bgcolor="yellow">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <td colspan="3" bgcolor="#DADADA"></td> 
 
 

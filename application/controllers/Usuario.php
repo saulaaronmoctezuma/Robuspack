@@ -1,10 +1,16 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 
 Class Usuario extends CI_Controller {
@@ -76,8 +82,18 @@ Class Usuario extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Usuario/listar', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }   else {
             redirect(site_url() . 'main/');
         }
     }
+=======
+        }  else {
+            redirect(site_url() . 'main/');
+        }
+    }
+
+   
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

@@ -95,7 +95,12 @@ class BitacoraModelo extends CI_Model {
 AS b
 INNER JOIN users u
 ON u.id=b.id
+<<<<<<< HEAD
 Where u.role=5 OR u.id=4 order by  b.id_bitacora desc
+=======
+Where u.id=11 or u.id=13
+order by b.id_bitacora desc
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 ');
 
             $colBitacora = array();
@@ -129,12 +134,18 @@ DATE_ADD(bitacora.fecha_modificar, INTERVAL -5 HOUR), users.first_name');
 AS b
 INNER JOIN users u
 ON u.id=b.id
+<<<<<<< HEAD
 Where u.role=5 order by b.id_bitacora desc
 
 ');
 
 
 //Where u.id=11 or u.id=13 or u.id=44
+=======
+Where u.id=11 or u.id=13
+order by b.id_bitacora desc
+');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $colBitacora = array();
 
             foreach ($query->result() as $key => $value) {
@@ -214,7 +225,11 @@ Where u.role=5 order by b.id_bitacora desc
             }
 
             return $colBitacora;
+<<<<<<< HEAD
         } else if ($dataLevel == "is_Gerente_Ventas") {
+=======
+        } else if ($dataLevel == "is_director") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             $data = array(
@@ -224,18 +239,29 @@ Where u.role=5 order by b.id_bitacora desc
             /* Para traerse el id del usuario */
 
             //consulta la tabla venta
+<<<<<<< HEAD
             $this->db->select('bitacora.id_bitacora,bitacora.grupo, bitacora.cliente, bitacora. descripcion, bitacora.archivo1,bitacora.observacion,bitacora.fecha_insercion, bitacora.fecha_modificar, users.first_name');
+=======
+            /*$this->db->select('bitacora.id_bitacora,bitacora.grupo, bitacora.cliente, bitacora. descripcion, bitacora.archivo1,bitacora.observacion,bitacora.fecha_insercion, bitacora.fecha_modificar, users.first_name');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->db->from('bitacora');
             $this->db->join('users', 'bitacora.id=users.id');
 
 
             //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+<<<<<<< HEAD
            // $this->db->where("users.id='11' OR  users.id='12' OR users.id='13'");
               $query = $this->db->where('users.id= ', $dataLevel);
             $query = $this->db->order_by("id_bitacora", "desc");
 
             $this->db->order_by("id_bitacora", "desc");
               /*  $query = $this->db->query('
+=======
+            $this->db->where("users.id='11' OR  users.id='12' OR users.id='13'");
+
+            $this->db->order_by("id_bitacora", "desc");*/
+                $query = $this->db->query('
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                        SELECT b.id_bitacora,b.grupo,b.cliente,b.descripcion, b.archivo1, b.observacion, 
                        DATE_ADD(b.fecha_insercion, INTERVAL -5 HOUR) as fecha_insercion ,
                        DATE_ADD(b.fecha_modificar, INTERVAL -5 HOUR) as fecha_modificar , u.first_name
@@ -245,7 +271,11 @@ INNER JOIN users u
 ON u.id=b.id
 Where u.id=11 or u.id=13
 order by b.id_bitacora desc
+<<<<<<< HEAD
 ');*/
+=======
+');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //tree los datos de la consulta
             $query = $this->db->get();
             $data = $query->result_array();
@@ -344,7 +374,11 @@ order by b.id_bitacora desc
         $grupo = $this->db->select('nombre_empresa')
                 //->where('')
                 ->order_by("nombre_empresa", "asc")
+<<<<<<< HEAD
                 ->get('todas_las_empresas_v2')
+=======
+                ->get('todas_las_empresas')
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 ->result();
 
         $options_arr;
@@ -361,9 +395,14 @@ order by b.id_bitacora desc
         return $options_arr;
     }
 
+<<<<<<< HEAD
 
 
 
+=======
+    
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function totalRegistroBitacoraCarlos()
     {
             $this->db->select('COUNT(*) as total_registros_gerardo');

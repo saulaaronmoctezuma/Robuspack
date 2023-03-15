@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script>
     
 function fechaValidaActualizacionPrecio()
@@ -25,6 +26,11 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 }
 </script>
 >
+=======
+<script type="text/javascript">
+
+</script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -136,7 +142,11 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
                                 <div class="form-group col-xs-6">
                                     <label for="linea">Linea</label>
+<<<<<<< HEAD
                                     <input type="text" class="form-control" id="linea" name="linea" VALUE="CUBIE" readonly placeholder="Escribe la linea" autocomplete="off" />
+=======
+                                    <input type="text" class="form-control" id="linea" name="linea" placeholder="Escribe la linea" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 </div>
                             </div><br>
@@ -157,13 +167,18 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                 </div>
                                 <div class="form-group col-xs-6">
                                     <label for="fecha_ultima_venta">Fecha Última Venta</label>
+<<<<<<< HEAD
                                     <input type="date" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholder="Escribe la fecha ultima venta" autocomplete="off" />
+=======
+                                    <input type="text" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholder="Escribe la fecha ultima venta" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </div>
 
                             </div><br>
 
 
                             <div class="row">
+<<<<<<< HEAD
                                
 
                                 <div class="form-group col-xs-6">
@@ -177,19 +192,39 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                     <label for="qty">Existencias</label>
                                     <input type="text" class="form-control" id="qty" name="qty" value="0" placeholder="Escribe el Existencias" autocomplete="off" />
                                 </div>
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="fecha_ultima_venta">Fecha Última Venta</label>
+                                    <input type="text" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholder="Escribe la fecha ultima venta" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group col-xs-6">
+                                    <label for="dias_ultima_venta">dias ultima venta</label>
+                                    <input type="text" class="form-control" id="dias_ultima_venta" name="dias_ultima_venta" placeholder="Escribe la dias ultima venta" autocomplete="off" />
+                                </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div><br>
 
 
 
 
                             <div class="row">
+<<<<<<< HEAD
                                 
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="qty">Existencias</label>
+                                    <input type="text" class="form-control" id="qty" name="qty" placeholder="Escribe el Existencias" autocomplete="off" />
+                                </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
                                 <input type="hidden" class="form-control" id="product_name" name="product_name" placeholder="Escribe el precio de compra" autocomplete="off"/>
                                 <div class="form-group col-xs-6">
                                     <label for="price">Precio Venta 1</label>
+<<<<<<< HEAD
                                     <input type="text" class="form-control" id="price" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" name="price" placeholder="Escribe el Precio de Venta"  autocomplete="off" />
                                 </div>
 
@@ -197,6 +232,11 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                     <label for="price2">Precio Venta 2</label>
                                     <input type="text" class="form-control" id="price2" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" name="price2" placeholder="Escribe el Precio de Venta 2"  autocomplete="off" />
                                 </div>
+=======
+                                    <input type="text" class="form-control" id="price" name="price" placeholder="Escribe el Precio de Venta" autocomplete="off" />
+                                </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             </div>
@@ -205,6 +245,7 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                             <div class="row">
 
 
+<<<<<<< HEAD
                                
 
                                 <div class="form-group col-xs-6">
@@ -220,6 +261,20 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                
                                 
                                 <input type="hidden" class="form-control" id="price5" name="price5" placeholder="Escribe el Precio de Venta 4"  autocomplete="off" />
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="price2">Precio Venta 2</label>
+                                    <input type="text" class="form-control" id="price2" name="price2" placeholder="Escribe el Precio de Venta 2" autocomplete="off" />
+                                </div>
+
+
+                                <div class="form-group col-xs-6">
+                                    <label for="price2">Precio Venta 3</label>
+                                    <input type="text" class="form-control" id="price3" name="price3" placeholder="Escribe el Precio de Venta 3" autocomplete="off" />
+                                </div>
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div>
 
@@ -228,13 +283,27 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
 
 
+<<<<<<< HEAD
  <div class="form-group col-xs-4">
                                     <label for="price2">Fecha Actualizacion precio</label>
                                     <input type="date" class="form-control" id="fecha_actualizacion_precio" onkeyup="fechaValidaActualizacionPrecio()" onclick="fechaValidaActualizacionPrecio()" name="fecha_actualizacion_precio" placeholder="Escribe el Precio de Venta 4" autocomplete="off" />
+=======
+
+                                <div class="form-group col-xs-6">
+                                    <label for="price2">Precio Venta 4</label>
+                                    <input type="text" class="form-control" id="price3" name="price4" placeholder="Escribe el Precio de Venta 4" autocomplete="off" />
+                                </div>
+                                
+                                
+                                 <div class="form-group col-xs-6">
+                                    <label for="price2">Precio Venta 5</label>
+                                    <input type="text" class="form-control" id="price5" name="price5" placeholder="Escribe el Precio de Venta 4" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </div>
 
                                
 
+<<<<<<< HEAD
                                 <div class="form-group col-xs-4">
                                     <label for="min">Cantidad Mínima</label>
                                     <input type="text" class="form-control" id="min" name="min" placeholder="Escribe la cantidad mínima" autocomplete="off" />
@@ -245,6 +314,8 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                     <input type="text" class="form-control" id="max" name="max" placeholder="Escribe la cantidad máxima" autocomplete="off" />
                                 </div>
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             </div>
@@ -262,6 +333,7 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                       </textarea>
                                     </div>-->
 
+<<<<<<< HEAD
 
                               
 
@@ -281,6 +353,22 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
                                     </select>
                                 </div>
+=======
+ <div class="form-group col-xs-6">
+                                    <label for="min">Cantidad Mínima</label>
+                                    <input type="text" class="form-control" id="min" name="min" placeholder="Escribe la cantidad mínima" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group col-xs-6">
+                                    <label for="max">Cantidad Máxima</label>
+                                    <input type="text" class="form-control" id="max" name="max" placeholder="Escribe la cantidad máxima" autocomplete="off" />
+                                </div>
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             </div>
@@ -293,12 +381,25 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                             <br>      
                             <div class="row"> 
 
+<<<<<<< HEAD
                                 
+=======
+                                <div class="form-group col-xs-6"> <label for="area">Área</label>
+
+                                    <select name="area" id="area" class="form-control input-sm" require>
+                                        <option  value="">Selecciona una opción</option>
+                                        <OPTION VALUE="Conversión">Conversión</OPTION>
+                                        <OPTION VALUE="Corrugados">Corrugados</OPTION>
+
+                                    </select>
+                                </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <div class="form-group col-xs-6">
                                     <label for="proveedor_principal">Proveedor Principal</label>
                                     <input type="text" class="form-control" id="proveedor_principal" name="proveedor_principal" placeholder="Escribe proveedor principal" autocomplete="off" />
 
                                 </div> 
+<<<<<<< HEAD
                                 
                                 
                                 
@@ -309,6 +410,8 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
                                 
                                 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <!--NO BORRAR
                                 <div class="form-group col-xs-6">
                                     <label for="store">Almacén</label>
@@ -387,11 +490,20 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
 
 
+<<<<<<< HEAD
                              
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="proveedor_secundario">Proveedor Secundario</label>
+                                    <input type="text" class="form-control" id="proveedor_secundario" name="proveedor_secundario" placeholder="Escribe proveedor secundario" autocomplete="off" />
+                                </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <div class="form-group col-xs-6">
                                     <label for="circunferencia">Circunferencia</label>
                                     <input type="text" class="form-control" id="circunferencia" name="circunferencia" placeholder="Escribe circunferencia" autocomplete="off" />
                                 </div>
+<<<<<<< HEAD
                                 
                                 
                                  <div class="form-group col-xs-6">
@@ -399,6 +511,8 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                     <input type="text" class="form-control" id="medidas_id" name="medidas_id" placeholder="Escribe el id" autocomplete="off" />
                                 </div>
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </div><br>
 
@@ -406,17 +520,36 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
 
 
+<<<<<<< HEAD
                                
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="medidas_id">ID</label>
+                                    <input type="text" class="form-control" id="medidas_id" name="medidas_id" placeholder="Escribe ek id" autocomplete="off" />
+                                </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <div class="form-group col-xs-6">
                                     <label for="ancho">Ancho</label>
                                     <input type="text" class="form-control" id="ancho" name="ancho" placeholder="Escribe ancho" autocomplete="off" />
                                 </div>
+<<<<<<< HEAD
                                 
+=======
+
+                            </div><br>
+
+                            <div class="row"> 
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <div class="form-group col-xs-6">
                                     <label for="espesoro">Espesor</label>
                                     <input type="text" class="form-control" id="espesor" name="espesor" placeholder="Escribe espesor" autocomplete="off" />
                                 </div>
 
+<<<<<<< HEAD
                             </div><br>
 
                             <div class="row"> 
@@ -425,10 +558,13 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
                                 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <div class="form-group col-xs-6">
                                     <label for="cue">Cue</label>
                                     <input type="text" class="form-control" id="cue" name="cue" placeholder="Escribe cue" autocomplete="off" />
                                 </div>
+<<<<<<< HEAD
                                 
                                 
                                 <div class="form-group col-xs-6">
@@ -436,12 +572,28 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                                     <input type="text" class="form-control" id="dicar" name="dicar" placeholder="Escribe dicar" autocomplete="off" />
                                 </div>
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div><br>
                             <div class="row"> 
 
 
 
+<<<<<<< HEAD
                                 
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="dicar">Dicar</label>
+                                    <input type="text" class="form-control" id="dicar" name="dicar" placeholder="Escribe dicar" autocomplete="off" />
+                                </div>
+                                
+                                
+                                <div class="form-group col-xs-6">
+                                    <label for="location">Ubicación</label>
+                                    <input type="text" class="form-control" id="location" name="location" placeholder="Escribe la ubicación" autocomplete="off" />
+                                </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
                             <input type="hidden" value="No Aplica" class="form-control" id="tipo_maquina" name="precio_de_compra" autocomplete="off" />
                             <input type="hidden" value="No Aplica" class="form-control" id="tipo_maquina" name="valor_almacen" autocomplete="off" />
@@ -459,7 +611,11 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                         <!-- /.box-body -->
 
                         <div class="box-footer">
+<<<<<<< HEAD
                             <button type="submit" id="botonOrden" class="btn btn-primary">Guardar</button>
+=======
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                          <!--   <a href="<?php echo base_url('products/') ?>" class="btn btn-warning">Regresar</a>-->
                             <a class="btn btn-warning" href="javascript:history.back(1)">Regresar</a>
                         </div>

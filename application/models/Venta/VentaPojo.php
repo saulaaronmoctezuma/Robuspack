@@ -1,10 +1,22 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of VentaPojo
+ *
+ * @author 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 class VentaPojo {
   private $id_venta;
@@ -44,6 +56,7 @@ class VentaPojo {
   private $fecha_seguimiento;
   private $golpes_maquina;
  
+<<<<<<< HEAD
   function __construct($id_venta, $grupo, $cliente, $referencia, $cantidad_maxima, $precio_unitario, $periodo_surtimiento, $cantidad_minima, $paqueteria, $tipo_entrega, $dias_credito, $pulgadas, $maquina_cliente, $capacitacion, $capacitacion_fecha, $piezas_juego, $costo_juego, $juego_mensuales, $golpes_prom_comp, $golpes_prom_rodicut, $beneficio_golpes_prom, $tiempo_rot_com, $tiempo_rot_rodicut, $beneficio_rot_prom, $precio_golpe, $ciudad_planta, $observacion, $contacto, $tipo_maquina, $troquel, $uso_de_cfdi, $metodo_pago, $forma_pago, $fecha_visita, $fecha_seguimiento, $golpes_maquina) {
       $this->id_venta = $id_venta;
       $this->grupo = $grupo;
@@ -376,5 +389,8 @@ class VentaPojo {
         return "id_venta". $this->id_venta;
     }
 
+=======
+  
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 }

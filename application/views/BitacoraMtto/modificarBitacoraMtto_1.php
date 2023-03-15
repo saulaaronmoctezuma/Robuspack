@@ -17,6 +17,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
         <!-- Bootstrap -->
 
+<<<<<<< HEAD
         <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
         <?php
         //check user level
@@ -34,6 +35,13 @@ $idUser= $this->session->userdata['id'];
         }if($idUser!=$data->id&& $dataLevel ==='1is_jefe_mantenimiento'){
            redirect('/BitacoraMtto', 'refresh');
         }
+=======
+        <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
+        <?php
+        //check user level
+        $dataLevel = $this->userlevel->checkLevel($role);
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         //check user level
         ?>
@@ -49,7 +57,11 @@ $idUser= $this->session->userdata['id'];
     <body>
 
         <div class="container">
+<<<<<<< HEAD
             <h1>Actualizar Bitácora</h1>
+=======
+            <h1>Actualizar Placa</h1>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -62,11 +74,14 @@ $idUser= $this->session->userdata['id'];
             <div class="row">
                 <form action="<?= base_url() ?>BitacoraMtto/updatedata" method="post" enctype="multipart/form-data">
              
+<<<<<<< HEAD
              
         
         
         
              
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 <div class="row">
                     <div class="form-group col-xs-3">
                         <label for="nombre">Cliente</label>
@@ -145,6 +160,7 @@ $idUser= $this->session->userdata['id'];
 
                         <SELECT name="mantenimiento" id="mantenimiento" class="form-control input-sm"> 
                                 <optgroup label="Selecciona una opción">
+<<<<<<< HEAD
                                     
                                      <option value="N/A" <?php
                                     if ($data->mantenimiento == "N/A") {
@@ -152,6 +168,9 @@ $idUser= $this->session->userdata['id'];
                                     }
                                     ?>>N/A</option>
                                     
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                     <option value="Correctivo" <?php
                                     if ($data->mantenimiento == "Correctivo") {
                                         echo "Selected";
@@ -638,6 +657,7 @@ $idUser= $this->session->userdata['id'];
               <!--  <input id="a4" type="file" class="form-control input-sm"  name="foto" >-->
                  <?php
                                     if (($data->foto == null)) {
+<<<<<<< HEAD
                                         echo '<font color="red">No tienes ningún archivo cargado</font><br>
                                         <font color="blue">   NOTA : Solo es compatible con imágenes jpg, png, jpeg.</font><br>'
                                         . '<input type="file" id="foto" accept="image/*" capture class="form-control input-sm" name="foto"><br>';
@@ -647,18 +667,29 @@ $idUser= $this->session->userdata['id'];
              NOTA : Solo es compatible con imágenes jpg, png, jpeg.
              
                            </font><br><input  id="foto"  class="form-control" type="file" capture="camera"  name="foto">
+=======
+                                        echo '<font color="red">No tienes ningún archivo cargado</font><br><br>'
+                                        . '<input type="file" class="form-control input-sm" name="foto"><br>';
+                                    } else if (($data->foto != null)) {
+                                        echo '    
+             <a  title="Da clic para visualizar el archivo" href="' . base_url() . 'assets/bitacora_mtto/' . $data->foto . '" target=”_blank” rel=”nofollow”><br> Ya tienes un archivo cargado</a><br>
+                           </font><br><input  id="foto"  class="form-control" type="file"  name="foto">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                            ';
                                     }
                                     ?>
             </div>
             
             
+<<<<<<< HEAD
 <script>
   const fileInput = document.getElementById('foto');
 
   fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
 </script>
           
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
             
             

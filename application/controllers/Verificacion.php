@@ -3,7 +3,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  *  class @author  Saul González & Karen González
  *  Fecha : Ultimo Cambio 26/03/2019 Hora 10:15 pm
  *  Fecha : Ultimo Cambio 03/04/2019 Hora 10:36 pm
@@ -58,7 +62,11 @@ class Verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $data['clienteCombo'] = $this->VerificacionModelo->getCliente();
             $this->load->view('Verificacion/listarVerificacion', $data);
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             $this->load->view('footer');
         } else if ($dataLevel == "is_refacciones") {
@@ -89,7 +97,11 @@ class Verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         } else if ($dataLevel == "is_mant2enimiento") {
+=======
+        } else if ($dataLevel == "is_mantenimiento") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['placa'] = $this->VerificacionModelo->query();
             $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
@@ -110,14 +122,22 @@ class Verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         } else if ($dataLevel == "is_Gere2nte_Ventas") {
+=======
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['placa'] = $this->VerificacionModelo->query();
             $data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/listarVerificacion', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
 
@@ -258,7 +278,11 @@ class Verificacion extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Verificacion/agregar');
             $this->load->view('footer');
+<<<<<<< HEAD
         }else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -297,7 +321,11 @@ class Verificacion extends CI_Controller {
       }
 
       } */
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function insertdata() {
 
         /* Para traerse el id del usuario */
@@ -313,16 +341,25 @@ class Verificacion extends CI_Controller {
         $pedimento = $this->input->post('pedimento');
         $num_factura = $this->input->post('num_factura');
         $comentario = $this->input->post('comentario');
+<<<<<<< HEAD
          $observacion = $this->input->post('observacion');
         
         // get foto
         $config['upload_path'] = './assets/verificacion';
         $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
           $config['overwrite'] = TRUE;
+=======
+        $observacion = $this->input->post('observacion');
+        // get foto
+        $config['upload_path'] = './assets/verificacion';
+        $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
+        $config['overwrite'] = TRUE;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         /* $config['max_size'] = '2048';  //2MB max
           $config['max_width'] = '4480'; // pixel
           $config['max_height'] = '4480'; // pixel */
         $this->upload->initialize($config);
+<<<<<<< HEAD
         
         
         
@@ -337,6 +374,22 @@ class Verificacion extends CI_Controller {
                 
 
         */
+=======
+
+
+
+        /*
+          $data['no_maqui'] = $no_maqui;
+          $data['modelo'] = $modelo;
+          $data['empresa'] = $empresa;
+          $data['serie'] = $serie;
+          $data['cliente'] = $cliente;
+          $data['pedimento'] = $pedimento;
+
+
+
+         */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data = array(
             'no_maqui' => $no_maqui,
             'modelo' => $modelo,
@@ -350,6 +403,7 @@ class Verificacion extends CI_Controller {
             'observacion' => $observacion,
             'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
+<<<<<<< HEAD
         
         
         
@@ -368,11 +422,32 @@ class Verificacion extends CI_Controller {
         $this->upload->do_upload('fotopostpdf');
         $fotopdf = $this->upload->data();
         
+=======
+
+
+
+
+
+
+        //pedimento
+        $this->upload->do_upload('pedimentopdf');
+        $pedimentopdf = $this->upload->data();
+
+        if (!empty($_FILES['pedimentopdf']['name'])) {
+            $data['pedimentopdf'] = $pedimentopdf['file_name'];
+        }
+
+        //foto placa
+        $this->upload->do_upload('fotopostpdf');
+        $fotopdf = $this->upload->data();
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->upload->do_upload('fotopost');
         $foto = $this->upload->data();
         if (!empty($_FILES['fotopost']['name'])) {
             $data['foto'] = $foto['file_name'];
         }
+<<<<<<< HEAD
         
         
         
@@ -395,6 +470,32 @@ class Verificacion extends CI_Controller {
             $data['refacciones'] = $refacciones['file_name'];
         }
         
+=======
+
+
+
+        $data['num_factura'] = $num_factura;
+
+
+        $this->upload->do_upload('fotopostpdf');
+        $fotopdf = $this->upload->data();
+
+        if (!empty($_FILES['fotopostpdf']['name'])) {
+            $data['factura'] = $fotopdf['file_name'];
+        }
+
+        //refacciones
+        $this->upload->do_upload('refacciones');
+        $refacciones = $this->upload->data();
+
+
+        if (!empty($_FILES['refacciones']['name'])) {
+            $data['refacciones'] = $refacciones['file_name'];
+        }
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           //contrato
         $this->upload->do_upload('contrato');
         $contrato = $this->upload->data();
@@ -405,6 +506,7 @@ class Verificacion extends CI_Controller {
         }
 
 
+<<<<<<< HEAD
         
         
         
@@ -522,6 +624,121 @@ class Verificacion extends CI_Controller {
         
         
        $this->VerificacionModelo->insert($data);
+=======
+
+
+
+        /*
+          if ($this->upload->do_upload('fotopost')) {
+          $foto = $this->upload->data();
+          $data = array(
+          'no_maqui' => $no_maqui,
+          'modelo' => $modelo,
+          'empresa' => $empresa,
+          'serie' => $serie,
+          'cliente' => $cliente,
+          'pedimento' => $pedimento,
+          'foto' => $foto['file_name'],
+          'num_factura' => $num_factura,
+          'factura' => "",
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->VerificacionModelo->insert($data);
+          redirect('Verificacion');
+          } else if ($this->upload->do_upload('fotopostpdf')) {
+
+          $fotopdf = $this->upload->data();
+          $data = array(
+          'no_maqui' => $no_maqui,
+          'modelo' => $modelo,
+          'empresa' => $empresa,
+          'serie' => $serie,
+          'cliente' => $cliente,
+          'pedimento' => $pedimento,
+          'foto' => "",
+          'num_factura' => $num_factura,
+          'factura' => $fotopdf['file_name'],
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->VerificacionModelo->insert($data);
+          redirect('Verificacion');
+          }
+
+
+
+
+
+
+          else if ($this->upload->do_upload('pedimentopdf')) {
+
+          $pedimentopdf = $this->upload->data();
+          $data = array(
+          'no_maqui' => $no_maqui,
+          'modelo' => $modelo,
+          'empresa' => $empresa,
+          'serie' => $serie,
+          'cliente' => $cliente,
+          'pedimento' => $pedimento,
+          'pedimentopdf' => $pedimentopdf['file_name'],
+          'foto' => "",
+          'num_factura' => $num_factura,
+          'factura' => "",
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->VerificacionModelo->insert($data);
+          redirect('Verificacion');
+          }
+
+
+          else if ($this->upload->do_upload('refacciones')) {
+
+          $refacciones= $this->upload->data();
+          $data = array(
+          'no_maqui' => $no_maqui,
+          'modelo' => $modelo,
+          'empresa' => $empresa,
+          'serie' => $serie,
+          'cliente' => $cliente,
+          'pedimento' => $pedimento,
+          'pedimentopdf' => "",
+          'foto' => "",
+          'num_factura' => $num_factura,
+          'factura' => "",
+          'refacciones' => $refacciones['file_name'],
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->VerificacionModelo->insert($data);
+          redirect('Verificacion');
+          }
+          else {
+
+
+          $data = array(
+          'no_maqui' => $no_maqui,
+          'modelo' => $modelo,
+          'empresa' => $empresa,
+          'serie' => $serie,
+          'cliente' => $cliente,
+          'pedimento' => $pedimento,
+          'pedimentopdf' => "",
+          'foto' => "",
+          'num_factura' =>  $num_factura,
+          'factura' => "",
+          'refacciones' => "",
+          'id' => $dataLevel = $this->userlevel->id($data['id'])
+          );
+          $this->VerificacionModelo->insert($data);
+          redirect('Verificacion');
+          }
+         */
+
+
+
+
+
+
+        $this->VerificacionModelo->insert($data);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         redirect('Verificacion');
     }
 
@@ -566,11 +783,19 @@ class Verificacion extends CI_Controller {
         $data['title'] = "Robuspack";
         if ($dataLevel == "is_admin") {
             //se trae los datos de la consulta del modelo
+<<<<<<< HEAD
              $data['clienteCombo'] = $this->VerificacionModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             //se trae el id del  modelo ClientesRefaccionesModelo
             
+=======
+            $data['clienteCombo'] = $this->VerificacionModelo->getCliente();
+            $this->load->view('header', $data);
+            $this->load->view('navbar', $data);
+            //se trae el id del  modelo ClientesRefaccionesModelo
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $kondisi = array('id_verificacion' => $id);
             $data['data'] = $this->VerificacionModelo->get_by_id($kondisi);
             return $this->load->view('Verificacion/editar', $data);
@@ -625,7 +850,11 @@ class Verificacion extends CI_Controller {
 
 
             $this->load->view('footer');
+<<<<<<< HEAD
         }  else if ($dataLevel == "is_mantenimiento") {
+=======
+        } else if ($dataLevel == "is_mantenimiento") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             $this->load->view('header', $data);
@@ -649,7 +878,11 @@ class Verificacion extends CI_Controller {
 
 
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_Gerente_Ventas") {
+=======
+        } else if ($dataLevel == "is_Gerente_Ventas") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             $this->load->view('header', $data);
@@ -661,7 +894,11 @@ class Verificacion extends CI_Controller {
 
 
             $this->load->view('footer');
+<<<<<<< HEAD
         }else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -713,6 +950,7 @@ class Verificacion extends CI_Controller {
 
 
 
+<<<<<<< HEAD
         public function updatedata() {
 
             $no_maqui = $this->input->post('no_maqui');
@@ -749,6 +987,44 @@ class Verificacion extends CI_Controller {
              $config['file_name'] = $_FILES['pedimentopdf']['name'];
               $config['file_name'] = $_FILES['refacciones']['name'];*/
             $this->upload->initialize($config);
+=======
+    public function updatedata() {
+
+        $no_maqui = $this->input->post('no_maqui');
+        $modelo = $this->input->post('modelo');
+        $empresa = $this->input->post('empresa');
+        $serie = $this->input->post('serie');
+        $cliente = $this->input->post('cliente');
+        $cliente_temporal = $this->input->post('cliente_temporal');
+        $pedimento = $this->input->post('pedimento');
+        $factura = $this->input->post('factura');
+        $foto = $this->input->post('old');
+        $pedimentopdf = $this->input->post('pedimentopdf');
+        $refacciones = $this->input->post('refacciones');
+        $num_factura = $this->input->post('num_factura');
+        $comentario = $this->input->post('comentario');
+        $observacion = $this->input->post('observacion');
+
+        $path = './assets/verificacion/';
+        $id = $this->input->post('id');
+        $kondisi = array('id_verificacion' => $id);
+        // get fotoz
+
+
+        $config['upload_path'] = './assets/verificacion';
+        $config['allowed_types'] = '*';
+        /* $config['max_size'] = '2048';  //2MB max
+          $config['max_width'] = '4480'; // pixel
+          $config['max_height'] = '4480'; // pixel */
+
+        /*
+          $config['file_name'] = $_FILES['fotopost']['name'];
+
+          $config['file_name'] = $_FILES['fotopostpdf']['name'];
+          $config['file_name'] = $_FILES['pedimentopdf']['name'];
+          $config['file_name'] = $_FILES['refacciones']['name']; */
+        $this->upload->initialize($config);
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -758,6 +1034,7 @@ class Verificacion extends CI_Controller {
 
 
 
+<<<<<<< HEAD
             $data['no_maqui'] = $no_maqui;
             $data['modelo'] = $modelo;
             $data['empresa'] = $empresa;
@@ -810,6 +1087,61 @@ class Verificacion extends CI_Controller {
              $data['observacion'] = $observacion;
 
                
+=======
+        $data['no_maqui'] = $no_maqui;
+        $data['modelo'] = $modelo;
+        $data['empresa'] = $empresa;
+        $data['serie'] = $serie;
+        $data['cliente'] = $cliente;
+        $data['cliente_temporal'] = $cliente_temporal;
+        $data['pedimento'] = $pedimento;
+
+        //pedimento
+        $this->upload->do_upload('pedimentopdf');
+        $pedimentopdf = $this->upload->data();
+
+        if (!empty($_FILES['pedimentopdf']['name'])) {
+            $data['pedimentopdf'] = $pedimentopdf['file_name'];
+        }
+
+        //foto placa
+        $this->upload->do_upload('fotopostpdf');
+        $fotopdf = $this->upload->data();
+
+        $this->upload->do_upload('fotopost');
+        $foto = $this->upload->data();
+        if (!empty($_FILES['fotopost']['name'])) {
+            $data['foto'] = $foto['file_name'];
+        }
+
+
+
+        $data['num_factura'] = $num_factura;
+
+
+        $this->upload->do_upload('fotopostpdf');
+        $fotopdf = $this->upload->data();
+
+        if (!empty($_FILES['fotopostpdf']['name'])) {
+            $data['factura'] = $fotopdf['file_name'];
+        }
+
+        //refacciones
+        $this->upload->do_upload('refacciones');
+        $refacciones = $this->upload->data();
+
+
+        if (!empty($_FILES['refacciones']['name'])) {
+            $data['refacciones'] = $refacciones['file_name'];
+        }
+
+
+        $data['comentario'] = $comentario;
+        $data['observacion'] = $observacion;
+        
+        
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //contrato
         $this->upload->do_upload('contrato');
         $contrato = $this->upload->data();
@@ -818,12 +1150,28 @@ class Verificacion extends CI_Controller {
         if (!empty($_FILES['contrato']['name'])) {
             $data['contrato'] = $contrato['file_name'];
         }
+<<<<<<< HEAD
  
             // hapus foto pada direktori
             @unlink($path . $this->input->post('filelama'));
             $this->VerificacionModelo->update($data, $kondisi);
             redirect('Verificacion');
         }
+=======
+
+
+       /* /* Para traerse el id del usuario 
+        $data = $this->session->userdata;
+        
+        $data = array(
+            'id' => $dataLevel = $this->userlevel->id($data['id'])
+        ); Para traerse el id del usuario */
+        // hapus foto pada direktori
+        @unlink($path . $this->input->post('filelama'));
+        $this->VerificacionModelo->update($data, $kondisi);
+        redirect('Verificacion');
+    }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 }
 

@@ -1,10 +1,23 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of Empresa
+ * bjm+ZH6@sk
+ *
+ * @author 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 class Empresa extends CI_Controller {
 
@@ -57,6 +70,7 @@ class Empresa extends CI_Controller {
             $data['empresa'] = $this->EmpresaModelo->query();
             $this->load->view('Empresa/listarEmpresa', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         } else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -64,6 +78,9 @@ class Empresa extends CI_Controller {
             $this->load->view('Empresa/listarEmpresa', $data);
             $this->load->view('footer');
         }else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -103,11 +120,14 @@ class Empresa extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('Empresa/agregarEmpresa', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('Empresa/agregarEmpresa', $data);
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else {
             redirect(site_url() . 'main/');
         }
@@ -224,6 +244,7 @@ class Empresa extends CI_Controller {
             $data = $this->EmpresaModelo->obtener($id_empresa);
             $this->load->view('Empresa/modificarEmpresa', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }  else if ($dataLevel == "is_editor") {
             $this->load->view('header', $data);
 
@@ -233,6 +254,9 @@ class Empresa extends CI_Controller {
             $this->load->view('Empresa/modificarEmpresa', $data);
             $this->load->view('footer');
         }else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
     }
@@ -274,4 +298,8 @@ class Empresa extends CI_Controller {
         $this->EmpresaModelo->actualizar($data);
         redirect('Empresa');
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

@@ -13,6 +13,10 @@ class FuvservicioPojo {
     private $ref;
     private $cliente;
     private $direccion;
+<<<<<<< HEAD
+=======
+     private $referencia;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $codigo;
     private $tipo_de_prod;
     private $rfc;
@@ -38,12 +42,21 @@ class FuvservicioPojo {
     private $observaciones;
     private $vendedor;
     private $fecha_de_cobro_de_comisiones;
+<<<<<<< HEAD
 
     function __construct($id_fuvservicio, $ref, $cliente, $direccion, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $orden_compra, $cantidad, $pu_usd, $subtotal, $iva, $total_usd, $fecha, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
+=======
+    
+    function __construct($id_fuvservicio, $ref, $cliente, $direccion, $referencia, $codigo, $tipo_de_prod, $rfc, $factura, $facturapdf, $orden_compra, $cantidad, $pu_usd, $subtotal, $iva, $total_usd, $fecha, $dias_de_credito, $fecha_vencimiento, $fecha_de_pago, $status_de_pago, $refacturacion, $nueva, $observaciones, $vendedor, $fecha_de_cobro_de_comisiones) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->id_fuvservicio = $id_fuvservicio;
         $this->ref = $ref;
         $this->cliente = $cliente;
         $this->direccion = $direccion;
+<<<<<<< HEAD
+=======
+        $this->referencia = $referencia;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->codigo = $codigo;
         $this->tipo_de_prod = $tipo_de_prod;
         $this->rfc = $rfc;
@@ -67,7 +80,10 @@ class FuvservicioPojo {
         $this->fecha_de_cobro_de_comisiones = $fecha_de_cobro_de_comisiones;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getId_fuvservicio() {
         return $this->id_fuvservicio;
     }
@@ -84,6 +100,13 @@ class FuvservicioPojo {
         return $this->direccion;
     }
 
+<<<<<<< HEAD
+=======
+    public function getReferencia() {
+        return $this->referencia;
+    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function getCodigo() {
         return $this->codigo;
     }
@@ -184,6 +207,13 @@ class FuvservicioPojo {
         $this->direccion = $direccion;
     }
 
+<<<<<<< HEAD
+=======
+    public function setReferencia($referencia) {
+        $this->referencia = $referencia;
+    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function setCodigo($codigo) {
         $this->codigo = $codigo;
     }
@@ -269,4 +299,8 @@ class FuvservicioPojo {
     }
 
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

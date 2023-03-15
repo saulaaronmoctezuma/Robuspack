@@ -464,28 +464,44 @@ class Cpdf
                         // Named with limited valid values
                         case 'NonFullScreenPageMode':
                             if (!in_array($v, array('UseNone', 'UseOutlines', 'UseThumbs', 'UseOC'))) {
+<<<<<<< HEAD
                                 continue;
+=======
+                                break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             }
                             $o['info'][$k] = $v;
                             break;
 
                         case 'Direction':
                             if (!in_array($v, array('L2R', 'R2L'))) {
+<<<<<<< HEAD
                                 continue;
+=======
+                                break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             }
                             $o['info'][$k] = $v;
                             break;
 
                         case 'PrintScaling':
                             if (!in_array($v, array('None', 'AppDefault'))) {
+<<<<<<< HEAD
                                 continue;
+=======
+                                break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             }
                             $o['info'][$k] = $v;
                             break;
 
                         case 'Duplex':
                             if (!in_array($v, array('None', 'AppDefault'))) {
+<<<<<<< HEAD
                                 continue;
+=======
+                                break;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             }
                             $o['info'][$k] = $v;
                             break;
@@ -4801,12 +4817,20 @@ EOT;
         imagesavealpha($img, false);
 
         // create temp alpha file
+<<<<<<< HEAD
         $tempfile_alpha = tempnam($this->tmp, "cpdf_img_");
+=======
+        $tempfile_alpha = @tempnam($this->tmp, "cpdf_img_");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         @unlink($tempfile_alpha);
         $tempfile_alpha = "$tempfile_alpha.png";
 
         // create temp plain file
+<<<<<<< HEAD
         $tempfile_plain = tempnam($this->tmp, "cpdf_img_");
+=======
+        $tempfile_plain = @tempnam($this->tmp, "cpdf_img_");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         @unlink($tempfile_plain);
         $tempfile_plain = "$tempfile_plain.png";
 

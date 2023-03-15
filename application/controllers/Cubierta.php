@@ -327,12 +327,16 @@ class Cubierta extends Admin_Controller {
             }elseif ($dataLevel == "is_mantenimiento") {
                 $buttons = '';
              }elseif ($dataLevel == "is_servicio_a_clientes") {
+<<<<<<< HEAD
                  $buttons = '';
             /* if(in_array('updateProduct', $this->permission)) { */
             $buttons .= '<a href="' . base_url('cubierta/update/' . $value['id']) . '" class="btn btn-default"><i class="fa fa-pencil"></i></a>';
             /* } */
 
            
+=======
+                $buttons = '';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
              }elseif ($dataLevel == "is_jefe_mantenimiento") {
                 $buttons = '';
              }elseif ($dataLevel == "is_maquinaria") {
@@ -365,7 +369,11 @@ class Cubierta extends Admin_Controller {
             redirect(site_url() . 'main/login/');
         }
        
+<<<<<<< HEAD
        $data['title'] = "Robuspack";
+=======
+        $data['title'] = "Robuspack";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         if ($dataLevel == "is_admin") {
               $result['data'][$key] = array(
                 //mostrar imagen $img,
@@ -382,7 +390,10 @@ class Cubierta extends Admin_Controller {
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -410,7 +421,11 @@ class Cubierta extends Admin_Controller {
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -427,20 +442,31 @@ class Cubierta extends Admin_Controller {
                 //mostrar imagen $img,
                 $value['sku'],
                 $value['description'],
+<<<<<<< HEAD
                 $value['qty'] . ' ' . $qty_status,
                  $value['price'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 //$value['linea'],
                 $value['medida_maquina'],
                 $value['tiempo_surtido'],
                  $value['fecha_ultima_venta'],
+<<<<<<< HEAD
                 
                // $store_data['name'],
               
+=======
+                $value['qty'] . ' ' . $qty_status,
+               // $store_data['name'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['price2'],
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -466,7 +492,11 @@ class Cubierta extends Admin_Controller {
                 $value['price2'],
                 $value['price3'],
                 $value['price4'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -483,7 +513,11 @@ class Cubierta extends Admin_Controller {
                 //mostrar imagen $img,
                 $value['sku'],
                 $value['description'],
+<<<<<<< HEAD
                // $value['linea'],
+=======
+                $value['linea'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['medida_maquina'],
                 $value['tiempo_surtido'],
                  $value['fecha_ultima_venta'],
@@ -492,8 +526,12 @@ class Cubierta extends Admin_Controller {
                 $value['price2'],
                 $value['price3'],
                 $value['price4'],
+<<<<<<< HEAD
                 $value['price5'],
                 $value['fecha_actualizacion_precio'],
+=======
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -520,7 +558,10 @@ class Cubierta extends Admin_Controller {
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -548,7 +589,10 @@ class Cubierta extends Admin_Controller {
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -576,7 +620,11 @@ class Cubierta extends Admin_Controller {
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -604,7 +652,11 @@ class Cubierta extends Admin_Controller {
                 $value['price3'],
                 $value['price4'],
                 $value['price5'],
+<<<<<<< HEAD
                 $value['fecha_actualizacion_precio'],
+=======
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $value['circunferencia'],
                 $value['medidas_id'],
                 $value['ancho'],
@@ -630,7 +682,11 @@ class Cubierta extends Admin_Controller {
      * and it stores the operation message into the session flashdata and display on the manage product page
      */
 
+<<<<<<< HEAD
        public function create() {
+=======
+    public function create() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         /* if(!in_array('createProduct', $this->permission)) { */
         /* redirect('dashboard', 'refresh'); */
         /* } */
@@ -657,10 +713,16 @@ class Cubierta extends Admin_Controller {
               $this->form_validation->set_rules('store', 'Store', 'trim|required'); */
             $this->form_validation->set_rules('sku', 'Sku', 'trim|required|is_unique[products.sku]');
             
+<<<<<<< HEAD
             
             $this->form_validation->set_message('required','<font size="4" color="red">El campo %s es obligatorio</font>');
             $this->form_validation->set_message('is_unique','<font size="4" color="red">Ya existe este sku registrado</font>');
 
+=======
+             $this->form_validation->set_message('required','El campo %s es obligatorio');
+             $this->form_validation->set_message('is_unique','Ya existe este sku registrado');
+             
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             //$this->form_validation->set_rules('availability', 'Availability', 'trim|required');
 
@@ -676,8 +738,11 @@ class Cubierta extends Admin_Controller {
                     'price2' => $this->input->post('price2'),
                     'price3' => $this->input->post('price3'),
                     'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                     'price5' => $this->input->post('price5'),
                     'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -751,6 +816,7 @@ class Cubierta extends Admin_Controller {
 
                 /* } */
             }
+<<<<<<< HEAD
         }else if ($dataLevel == "is_servicio_a_clientes") {
 
             /* $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
@@ -855,6 +921,9 @@ class Cubierta extends Admin_Controller {
                 /* } */
             }
         }  else if ($dataLevel == "is_editor") {
+=======
+        } else if ($dataLevel == "is_editor") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             //*editor//
 
             /* $this->form_validation->set_rules('product_name', 'Product name', 'trim|required');
@@ -878,8 +947,11 @@ class Cubierta extends Admin_Controller {
                     'price2' => $this->input->post('price2'),
                     'price3' => $this->input->post('price3'),
                     'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                     'price5' => $this->input->post('price5'),
                     'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -982,8 +1054,11 @@ class Cubierta extends Admin_Controller {
                     'price2' => $this->input->post('price2'),
                     'price3' => $this->input->post('price3'),
                     'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                     'price5' => $this->input->post('price5'),
                     'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     'min' => $this->input->post('min'),
                     'max' => $this->input->post('max'),
                     'qty' => $this->input->post('qty'),
@@ -1066,7 +1141,10 @@ class Cubierta extends Admin_Controller {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     /*
      * This function is invoked from another function to upload the image into the assets folder
      * and returns the image path
@@ -1128,7 +1206,10 @@ class Cubierta extends Admin_Controller {
                 'price2' => $this->input->post('price2'),
                 'price3' => $this->input->post('price3'),
                 'price4' => $this->input->post('price4'),
+<<<<<<< HEAD
                 'fecha_actualizacion_precio' => $this->input->post('fecha_actualizacion_precio'),
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 'qty' => $this->input->post('qty'),
                 'min' => $this->input->post('min'),
                 'max' => $this->input->post('max'),
@@ -1263,6 +1344,7 @@ class Cubierta extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('cubiertas/edit', $this->data);
+<<<<<<< HEAD
             }else if ($dataLevel == "is_servicio_a_clientes") {
                 $this->data['attributes'] = $attributes_final_data;
                 $this->data['brands'] = $this->model_brands->getActiveBrands();
@@ -1275,6 +1357,8 @@ class Cubierta extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('cubierta/edit', $this->data);
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
         }
     }

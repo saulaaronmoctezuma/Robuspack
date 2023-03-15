@@ -1,10 +1,16 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 
 Class ReporteMaximoMinimo extends CI_Controller {
@@ -24,7 +30,11 @@ Class ReporteMaximoMinimo extends CI_Controller {
         $this->load->model("ReporteMaximoMinimo/ReporteMaximoMinimoModelo");
     }
 
+<<<<<<< HEAD
      public function index() {
+=======
+    public function index() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data ['css'] = $this->css;
         $data ['base'] = $this->base;
         $this->load->model('ReporteMaximoMinimo/ReporteMaximoMinimoModelo');
@@ -104,4 +114,8 @@ Class ReporteMaximoMinimo extends CI_Controller {
             redirect(site_url() . 'main/');
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

@@ -53,8 +53,11 @@ class UserLevel{
             {
                 $userLevel = 'is_maquinaria_refacciones';
             }
+<<<<<<< HEAD
             
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             elseif($role == 11)
             {
                 $userLevel = 'is_mantenimiento';
@@ -67,6 +70,7 @@ class UserLevel{
             {
                 $userLevel = 'is_logistica';
             }
+<<<<<<< HEAD
             elseif($role == 14)
             {
                 $userLevel = 'is_servicio_a_clientes';
@@ -84,6 +88,20 @@ class UserLevel{
             
             
             
+=======
+             elseif($role == 14)
+            {
+                $userLevel = 'is_servicio_a_clientes';
+            }
+             elseif($role == 15)
+            {
+                $userLevel = 'is_freelance';
+            }
+             elseif($role == 16)
+            {
+                $userLevel = 'is_almacen';
+            }
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
             
         }else{

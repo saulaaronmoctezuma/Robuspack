@@ -1,7 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 Class TotSic extends CI_Controller {
 
     function __construct() {

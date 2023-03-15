@@ -106,12 +106,15 @@
 
                         <SELECT name="mantenimiento" id="mantenimiento" class="form-control input-sm"> 
                                 <optgroup label="Selecciona una opción">
+<<<<<<< HEAD
                                  <option value="N/A" <?php
                                     if ($mantenimiento == "N/A") {
                                         echo "Selected";
                                     }
                                     ?>>N/A</option>
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                     <option value="Correctivo" <?php
                                     if ($mantenimiento == "Correctivo") {

@@ -64,7 +64,11 @@ class CliVenModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
+<<<<<<< HEAD
             $query = $this->db->query('SELECT * FROM cliente_por_vendedor ORDER BY vendedor');
+=======
+            $query = $this->db->query('SELECT * FROM cliente_por_vendedor ORDER BY cliente');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
            
         $colMaqCli = array();
@@ -105,6 +109,7 @@ class CliVenModelo extends CI_Model implements IModeloAbstracto {
         }
         return $colMaqCli;
         }
+<<<<<<< HEAD
         
         else if ($dataLevel == "is_credito") {
             /* Para traerse el id del usuario */
@@ -134,6 +139,8 @@ class CliVenModelo extends CI_Model implements IModeloAbstracto {
         }
         
         
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         else if ($dataLevel == "is_Gerente_Ventas") {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -141,7 +148,11 @@ class CliVenModelo extends CI_Model implements IModeloAbstracto {
             //consulta la tabla venta
             $query = $this->db->from('cliente_por_vendedor');
 
+<<<<<<< HEAD
             $query = $this->db->order_by("vendedor", "asc");
+=======
+            $query = $this->db->order_by("cliente", "asc");
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             //tree los datos de la consulta
             $query = $this->db->get();
@@ -179,4 +190,11 @@ class CliVenModelo extends CI_Model implements IModeloAbstracto {
     public function refacciones() {
     }
 
+<<<<<<< HEAD
+=======
+    public function querybusqueda() {
+        
+    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

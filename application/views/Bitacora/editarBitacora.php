@@ -12,9 +12,15 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Robuspack</title>
 
+<<<<<<< HEAD
         <!-- Bootstrap -->
 
        <!-- <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">-->
+=======
+        
+
+        <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
@@ -44,7 +50,11 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
 
 
                             <tr>
+<<<<<<< HEAD
                                 <td><b>Grupo </b></td>
+=======
+                                <td><b>Grupo</b></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <td colspan="3">
                                     <input id="a2" class="form-control" type="text" name="grupo" value="<?= $data->grupo ?>">
                                 <!-- <textarea name="necesidad" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->necesidad ?></textarea>-->
@@ -123,6 +133,11 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
     </div>
     <!-- END KONTEN UTAMA -->
 
+<<<<<<< HEAD
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
+=======
+  <!--  <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </body>

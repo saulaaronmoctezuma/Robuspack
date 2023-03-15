@@ -3,19 +3,30 @@
 require 'ReporteMaximoMinimoPojo.php';
 require 'IModeloAbstracto.php';
 /*
+<<<<<<< HEAD
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
  * https://scrobuspack.com 
  * "Controlar la complejidad es la esencia de la programación"
+=======
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  */
 
 class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
 
+<<<<<<< HEAD
    public function __construct() {
+=======
+    public function __construct() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         parent::__construct();
 
         $this->load->database();
     }
+<<<<<<< HEAD
     
       public function getAllSettings()
     {
@@ -34,6 +45,22 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
     
    
      public function query() {
+=======
+
+    public function getAllSettings() {
+        $this->db->select('*');
+        $this->db->from('settings');
+        return $this->db->get()->row();
+    }
+
+    public function getUsers() {
+        $this->db->select('*');
+        $this->db->from('users');
+        return $this->db->get()->row();
+    }
+
+    public function query() {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
         //user data from session
@@ -53,9 +80,13 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
             /* Para traerse el id del usuario */
             $data = $this->session->userdata;
             /* Para traerse el id del usuario */
+<<<<<<< HEAD
            // $query = $this->db->query('SELECT * from mayo_2019_rotacion_inventario order by codigo desc');
      $query = $this->db->query('SELECT * from rotacion_inventario_propuesta order by codigo desc');
 
+=======
+            $query = $this->db->query('SELECT * from mayo_2019_rotacion_inventario order by codigo desc');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
             $colMaximoMinimo = array();
@@ -280,4 +311,8 @@ class ReporteMaximoMinimoModelo extends CI_Model implements IModeloAbstracto {
     public function querybusqueda() {
         
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

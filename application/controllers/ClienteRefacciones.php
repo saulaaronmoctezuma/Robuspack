@@ -55,6 +55,7 @@ class ClienteRefacciones extends CI_Controller {
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
             
             
             
@@ -71,6 +72,11 @@ class ClienteRefacciones extends CI_Controller {
             
             
             
+=======
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
             $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
             $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
@@ -143,6 +149,7 @@ class ClienteRefacciones extends CI_Controller {
             $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
             $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
             $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
+<<<<<<< HEAD
             
             
             
@@ -151,17 +158,28 @@ class ClienteRefacciones extends CI_Controller {
             
             $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
 
+=======
+
+            $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('footer');
         } else if ($dataLevel == "is_editor") {
             $data['ventas'] = $this->ClienteRefaccionesModelo->query();
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
+<<<<<<< HEAD
             
             
             
             
             
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['totalRegistroSicCarlos'] = $this->ClienteRefaccionesModelo->totalRegistroSicCarlos(1);
             $data['totalRegistroSicAldo'] = $this->ClienteRefaccionesModelo->totalRegistroSicAldo(1);
             $data['totalRegistroSicElvira'] = $this->ClienteRefaccionesModelo->totalRegistroSicElvira(1);
@@ -234,8 +252,11 @@ class ClienteRefacciones extends CI_Controller {
             $data['totalRegistroSicSConsignacion'] = $this->ClienteRefaccionesModelo->totalRegistroSicSConsignacion(1);
             $data['totalRegistroSicOrdenCompra'] = $this->ClienteRefaccionesModelo->totalRegistroSicOrdenCompra(1);
             $data['totalRegistroSicSinPedido'] = $this->ClienteRefaccionesModelo->totalRegistroSicSinPedido(1);
+<<<<<<< HEAD
             
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('ClienteRefacciones/listarClienteRefacciones', $data);
 
             $this->load->view('footer');
@@ -339,7 +360,11 @@ class ClienteRefacciones extends CI_Controller {
             $data['options'] = $this->ClienteRefaccionesModelo->getOptions();
             $this->load->view('ClienteRefacciones/agregarClienteRefacciones', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         }  else if ($dataLevel == "is_editor") {
+=======
+        } else if ($dataLevel == "is_editor") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -357,7 +382,11 @@ class ClienteRefacciones extends CI_Controller {
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
+<<<<<<< HEAD
 
+=======
+        $_POST = $this->input->post();
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data = array(
             'grupo' => $_POST['grupo'],
             'cliente' => $_POST['cliente'],
@@ -403,12 +432,19 @@ class ClienteRefacciones extends CI_Controller {
             'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
             'consumo_real' => $_POST['consumo_real'],
             'archivo' => $_POST['archivo'],
+<<<<<<< HEAD
             
             
             
             'codigo_cuchilla' => $_POST['codigo_cuchilla'],
             'cantidad_cuchilla' => $_POST['cantidad_cuchilla'],
             'precio_cuchilla' => $_POST['precio_cuchilla'],
+=======
+            'codigo_cuchilla' => $_POST['codigo_cuchilla'],
+            'cantidad_cuchilla' => $_POST['cantidad_cuchilla'],
+            'precio_cuchilla' => $_POST['precio_cuchilla'],
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'codigo_cuchilla_2' => $_POST['codigo_cuchilla_2'],
             'cantidad_cuchilla_2' => $_POST['cantidad_cuchilla_2'],
             'precio_cuchilla_2' => $_POST['precio_cuchilla_2'],
@@ -439,22 +475,53 @@ class ClienteRefacciones extends CI_Controller {
             'codigo_cuchilla_11' => $_POST['codigo_cuchilla_11'],
             'cantidad_cuchilla_11' => $_POST['cantidad_cuchilla_11'],
             'precio_cuchilla_11' => $_POST['precio_cuchilla_11'],
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
             
             'codigo_cubierta' => $_POST['codigo_cubierta'],
             'cantidad_cubierta' => $_POST['cantidad_cubierta'],
             'precio_cubierta' => $_POST['precio_cubierta'],
+<<<<<<< HEAD
+=======
+            
+            
+       
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'codigo_llanta' => $_POST['codigo_llanta'],
             'cantidad_llanta' => $_POST['cantidad_llanta'],
             'precio_llanta' => $_POST['precio_llanta'],
             'codigo_rasqueta' => $_POST['codigo_rasqueta'],
             'cantidad_rasqueta' => $_POST['cantidad_rasqueta'],
             'precio_rasqueta' => $_POST['precio_rasqueta'],
+<<<<<<< HEAD
             
             'codigo_inserto' => $_POST['codigo_inserto'],
             'cantidad_inserto' => $_POST['cantidad_inserto'],
             'precio_inserto' => $_POST['precio_inserto'],
               'codigo_inserto_2' => $_POST['codigo_inserto_2'],
+=======
+            'codigo_inserto' => $_POST['codigo_inserto'],
+            'cantidad_inserto' => $_POST['cantidad_inserto'],
+            'precio_inserto' => $_POST['precio_inserto'],
+            'codigo_inserto_2' => $_POST['codigo_inserto_2'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'cantidad_inserto_2' => $_POST['cantidad_inserto_2'],
             'precio_inserto_2' => $_POST['precio_inserto_2'],
             'codigo_inserto_3' => $_POST['codigo_inserto_3'],
@@ -682,9 +749,13 @@ class ClienteRefacciones extends CI_Controller {
             'fecha_ultima_factura' => $_POST['fecha_ultima_factura'],
             'consumo_real' => $_POST['consumo_real'],
             'archivo' => $_POST['archivo'],
+<<<<<<< HEAD
             
             
                  'codigo_cuchilla' => $_POST['codigo_cuchilla'],
+=======
+            'codigo_cuchilla' => $_POST['codigo_cuchilla'],
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'cantidad_cuchilla' => $_POST['cantidad_cuchilla'],
             'precio_cuchilla' => $_POST['precio_cuchilla'],
             'codigo_cuchilla_2' => $_POST['codigo_cuchilla_2'],
@@ -717,11 +788,21 @@ class ClienteRefacciones extends CI_Controller {
 'codigo_cuchilla_11' => $_POST['codigo_cuchilla_11'],
 'cantidad_cuchilla_11' => $_POST['cantidad_cuchilla_11'],
 'precio_cuchilla_11' => $_POST['precio_cuchilla_11'],
+<<<<<<< HEAD
+=======
+
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
             
             'codigo_cubierta' => $_POST['codigo_cubierta'],
             'cantidad_cubierta' => $_POST['cantidad_cubierta'],
             'precio_cubierta' => $_POST['precio_cubierta'],
+<<<<<<< HEAD
+=======
+            
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'codigo_llanta' => $_POST['codigo_llanta'],
             'cantidad_llanta' => $_POST['cantidad_llanta'],
             'precio_llanta' => $_POST['precio_llanta'],
@@ -730,7 +811,12 @@ class ClienteRefacciones extends CI_Controller {
             'precio_rasqueta' => $_POST['precio_rasqueta'],
             'codigo_inserto' => $_POST['codigo_inserto'],
             'cantidad_inserto' => $_POST['cantidad_inserto'],
+<<<<<<< HEAD
             'precio_inserto' => $_POST['precio_inserto']     ,
+=======
+            'precio_inserto' => $_POST['precio_inserto']
+            ,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'codigo_inserto_2' => $_POST['codigo_inserto_2'],
             'cantidad_inserto_2' => $_POST['cantidad_inserto_2'],
             'precio_inserto_2' => $_POST['precio_inserto_2'],
@@ -740,6 +826,10 @@ class ClienteRefacciones extends CI_Controller {
             'codigo_inserto_4' => $_POST['codigo_inserto_4'],
             'cantidad_inserto_4' => $_POST['cantidad_inserto_4'],
              'precio_inserto_4' => $_POST['precio_inserto_4'],
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         );
         $this->load->model('ClienteRefacciones/ClienteRefaccionesModelo');
         $this->ClienteRefaccionesModelo->actualizar($data);
@@ -796,10 +886,18 @@ class ClienteRefacciones extends CI_Controller {
 
 
 
+<<<<<<< HEAD
        $codigo_cuchilla = $this->input->post('codigo_cuchilla');
         $cantidad_cuchilla = $this->input->post('cantidad_cuchilla');
         $precio_cuchilla = $this->input->post('precio_cuchilla');
          $codigo_cuchilla_2 = $this->input->post('codigo_cuchilla_2');
+=======
+        $codigo_cuchilla = $this->input->post('codigo_cuchilla');
+        $cantidad_cuchilla = $this->input->post('cantidad_cuchilla');
+        $precio_cuchilla = $this->input->post('precio_cuchilla');
+        
+        $codigo_cuchilla_2 = $this->input->post('codigo_cuchilla_2');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 $cantidad_cuchilla_2 = $this->input->post('cantidad_cuchilla_2');
 $precio_cuchilla_2 = $this->input->post('precio_cuchilla_2');
 $codigo_cuchilla_3 = $this->input->post('codigo_cuchilla_3');
@@ -831,21 +929,43 @@ $cantidad_cuchilla_11 = $this->input->post('cantidad_cuchilla_11');
 $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
 
         
+<<<<<<< HEAD
         
         $codigo_cubierta = $this->input->post('codigo_cubierta');
         $cantidad_cubierta = $this->input->post('cantidad_cubierta');
         $precio_cubierta = $this->input->post('precio_cubierta');
+=======
+        $codigo_cubierta = $this->input->post('codigo_cubierta');
+        $cantidad_cubierta = $this->input->post('cantidad_cubierta');
+        $precio_cubierta = $this->input->post('precio_cubierta');
+       
+        
+        
+        
+        
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $codigo_llanta = $this->input->post('codigo_llanta');
         $cantidad_llanta = $this->input->post('cantidad_llanta');
         $precio_llanta = $this->input->post('precio_llanta');
         $codigo_rasqueta = $this->input->post('codigo_rasqueta');
         $cantidad_rasqueta = $this->input->post('cantidad_rasqueta');
         $precio_rasqueta = $this->input->post('precio_rasqueta');
+<<<<<<< HEAD
         
         $codigo_inserto = $this->input->post('codigo_inserto');
         $cantidad_inserto = $this->input->post('cantidad_inserto');
         $precio_inserto = $this->input->post('precio_inserto');
           $codigo_inserto_2 = $this->input->post('codigo_inserto_2');
+=======
+        $codigo_inserto = $this->input->post('codigo_inserto');
+        $cantidad_inserto = $this->input->post('cantidad_inserto');
+        $precio_inserto = $this->input->post('precio_inserto');
+
+
+
+        $codigo_inserto_2 = $this->input->post('codigo_inserto_2');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $cantidad_inserto_2 = $this->input->post('cantidad_inserto_2');
         $precio_inserto_2 = $this->input->post('precio_inserto_2');
         $codigo_inserto_3 = $this->input->post('codigo_inserto_3');
@@ -857,9 +977,14 @@ $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
 
 
 
+<<<<<<< HEAD
         
         
         
+=======
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $archivo = $this->input->post('archivo');
 
         $path = './assets/ClienteRefacciones/';
@@ -935,12 +1060,25 @@ $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
         $data['confirmacion_orden_compra'] = $confirmacion_orden_compra;
         $data['fecha_ultima_factura'] = $fecha_ultima_factura;
         $data['consumo_real'] = $consumo_real;
+<<<<<<< HEAD
         
         
           $data['codigo_cuchilla'] = $codigo_cuchilla;
         $data['cantidad_cuchilla'] = $cantidad_cuchilla;
         $data['precio_cuchilla'] = $precio_cuchilla;
         $data['codigo_cubierta'] = $codigo_cubierta;
+=======
+
+        $data['codigo_cuchilla'] = $codigo_cuchilla;
+        $data['cantidad_cuchilla'] = $cantidad_cuchilla;
+        $data['precio_cuchilla'] = $precio_cuchilla;
+        
+        
+        $data['codigo_cubierta'] = $codigo_cubierta;
+        $data['cantidad_cubierta'] = $cantidad_cubierta;
+        $data['precio_cubierta'] = $precio_cubierta;
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           $data['codigo_cuchilla_2'] = $codigo_cuchilla_2;
  $data['cantidad_cuchilla_2'] = $cantidad_cuchilla_2;
  $data['precio_cuchilla_2'] = $precio_cuchilla_2;
@@ -971,9 +1109,18 @@ $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
  $data['codigo_cuchilla_11'] = $codigo_cuchilla_11;
  $data['cantidad_cuchilla_11'] = $cantidad_cuchilla_11;
  $data['precio_cuchilla_11'] = $precio_cuchilla_11;
+<<<<<<< HEAD
         
         $data['cantidad_cubierta'] = $cantidad_cubierta;
         $data['precio_cubierta'] = $precio_cubierta;
+=======
+
+                
+                
+                
+                
+                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['codigo_llanta'] = $codigo_llanta;
         $data['cantidad_llanta'] = $cantidad_llanta;
         $data['precio_llanta'] = $precio_llanta;
@@ -983,7 +1130,12 @@ $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
         $data['codigo_inserto'] = $codigo_inserto;
         $data['cantidad_inserto'] = $cantidad_inserto;
         $data['precio_inserto'] = $precio_inserto;
+<<<<<<< HEAD
           $data['codigo_inserto_2'] = $codigo_inserto_2;
+=======
+
+        $data['codigo_inserto_2'] = $codigo_inserto_2;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['cantidad_inserto_2'] = $cantidad_inserto_2;
         $data['precio_inserto_2'] = $precio_inserto_2;
         $data['codigo_inserto_3'] = $codigo_inserto_3;
@@ -992,6 +1144,11 @@ $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
         $data['codigo_inserto_4'] = $codigo_inserto_4;
         $data['cantidad_inserto_4'] = $cantidad_inserto_4;
         $data['precio_inserto_4'] = $precio_inserto_4;
+<<<<<<< HEAD
+=======
+       
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         //pedimento
         //refacciones
@@ -1004,7 +1161,10 @@ $precio_cuchilla_11 = $this->input->post('precio_cuchilla_11');
           } */
 
 
+<<<<<<< HEAD
        
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         //$data['archivo'] = $archivo;
 

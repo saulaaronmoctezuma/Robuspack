@@ -4,7 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
 
+<<<<<<< HEAD
  * class @author  Saul González  
+=======
+ * class @author  Saul González & Karen González
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  * Fecha : Ultimo Cambio 25/06/2019 Hora 10:26 am
  * Fecha : 26/06/2019 12:34 PM
  * Sistema de Control Robuspack.
@@ -52,8 +56,11 @@ class CensoMaquinaria extends CI_Controller {
         if ($dataLevel == "is_admin") {
             $data['censomaquinaria'] = $this->CensoMaquinariaModelo->query();
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
+<<<<<<< HEAD
            
            
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
             $this->load->view('CensoMaquinaria/listarCensoMaquinaria', $data);
@@ -93,6 +100,7 @@ class CensoMaquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('CensoMaquinaria/listarCensoMaquinaria', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         } else if ($dataLevel == "is_jefe_mantenimiento") {
             $data['censomaquinaria'] = $this->CensoMaquinariaModelo->query();
             //$data['totalRegistroPlacas'] = $this->VerificacionModelo->totalRegistroPlacas(1);
@@ -104,6 +112,9 @@ class CensoMaquinaria extends CI_Controller {
         
         
         else {
+=======
+        } else {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             redirect(site_url() . 'main/');
         }
 
@@ -113,6 +124,7 @@ class CensoMaquinaria extends CI_Controller {
           redirect('main/logeo');
           } */
     }
+<<<<<<< HEAD
     
     
     
@@ -202,6 +214,8 @@ class CensoMaquinaria extends CI_Controller {
     }
     
     
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
     // fungsi untuk mengambil data
     public function lista() {
@@ -315,7 +329,10 @@ class CensoMaquinaria extends CI_Controller {
             $this->load->view('CensoMaquinaria/agregar');
             $this->load->view('footer');
         } else if ($dataLevel == "is_Gerente_Ventas") {
+<<<<<<< HEAD
                $data['grupoCombo'] = $this->CensoMaquinariaModelo->getGrupo();
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             $data['clienteCombo'] = $this->CensoMaquinariaModelo->getCliente();
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -328,6 +345,7 @@ class CensoMaquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('CensoMaquinaria/agregar');
             $this->load->view('footer');
+<<<<<<< HEAD
         }else if ($dataLevel == "is_jefe_mantenimiento") {
             $data['grupoCombo'] = $this->CensoMaquinariaModelo->getGrupo();
             $data['clienteCombo'] = $this->CensoMaquinariaModelo->getCliente();
@@ -416,6 +434,8 @@ class CensoMaquinaria extends CI_Controller {
             $this->load->view('navbar', $data);
             $this->load->view('CensoMaquinaria/agregarProspectos');
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else {
             redirect(site_url() . 'main/');
         }
@@ -456,6 +476,7 @@ class CensoMaquinaria extends CI_Controller {
 
       } */
 
+<<<<<<< HEAD
     
     
      public function actualizarFlexo($id) {
@@ -1061,6 +1082,8 @@ class CensoMaquinaria extends CI_Controller {
 
     
     
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function insertdata() {
 
         /* Para traerse el id del usuario */
@@ -1109,8 +1132,11 @@ class CensoMaquinaria extends CI_Controller {
         $correo_personal_otros = $this->input->post('correo_personal_otros');
         $tipo_de_cliente = $this->input->post('tipo_de_cliente');
         $asesor = $this->input->post('asesor');
+<<<<<<< HEAD
         $asesor_maquinaria = $this->input->post('asesor_maquinaria');
         $asesor_consumibles = $this->input->post('asesor_consumibles');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $estatus_cliente = $this->input->post('estatus_cliente');
         $tamano_cliente = $this->input->post('tamano_cliente');
         $tipo_mercado = $this->input->post('tipo_mercado');
@@ -1118,6 +1144,7 @@ class CensoMaquinaria extends CI_Controller {
         $necesidad = $this->input->post('necesidad');
         $compromiso = $this->input->post('compromiso');
         $notas = $this->input->post('notas');
+<<<<<<< HEAD
        
        $info_maquina_1 = $this->input->post('info_maquina_1');
         $modelo_maquina_1 = $this->input->post('modelo_maquina_1');
@@ -1229,6 +1256,17 @@ class CensoMaquinaria extends CI_Controller {
         $consumibles_maquina_9 = $this->input->post('consumibles_maquina_9');
         $refacciones_maquina_10 = $this->input->post('refacciones_maquina_10');
         $consumibles_maquina_10 = $this->input->post('consumibles_maquina_10');
+=======
+        $info_maquina_1 = $this->input->post('info_maquina_1');
+        $info_maquina_2 = $this->input->post('info_maquina_2');
+        $info_maquina_3 = $this->input->post('info_maquina_3');
+        $info_maquina_4 = $this->input->post('info_maquina_4');
+        $info_maquina_5 = $this->input->post('info_maquina_5');
+        $info_maquina_6 = $this->input->post('info_maquina_6');
+        $info_maquina_7 = $this->input->post('info_maquina_7');
+        $refacciones = $this->input->post('refacciones');
+        $corrugadora = $this->input->post('corrugadora');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         // get foto
         $config['upload_path'] = './assets/censomaquinaria';
@@ -1286,8 +1324,11 @@ class CensoMaquinaria extends CI_Controller {
             'correo_personal_otros' => $correo_personal_otros,
             'tipo_de_cliente' => $tipo_de_cliente,
             'asesor' => $asesor,
+<<<<<<< HEAD
                'asesor_maquinaria' => $asesor_maquinaria,
              'asesor_consumibles' => $asesor_consumibles,
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'estatus_cliente' => $estatus_cliente,
             'tamano_cliente' => $tamano_cliente,
             'tipo_mercado' => $tipo_mercado,
@@ -1295,6 +1336,7 @@ class CensoMaquinaria extends CI_Controller {
             'necesidad' => $necesidad,
             'compromiso' => $compromiso,
             'notas' => $notas,
+<<<<<<< HEAD
             
             
             'info_maquina_1' => $info_maquina_1,
@@ -1386,6 +1428,17 @@ class CensoMaquinaria extends CI_Controller {
             'refacciones' => $refacciones,
             'corrugadora' => $corrugadora,
             'cliente_robuspack' => $cliente_robuspack,
+=======
+            'info_maquina_1' => $info_maquina_1,
+            'info_maquina_2' => $info_maquina_2,
+            'info_maquina_3' => $info_maquina_3,
+            'info_maquina_4' => $info_maquina_4,
+            'info_maquina_5' => $info_maquina_5,
+            'info_maquina_6' => $info_maquina_6,
+            'info_maquina_7' => $info_maquina_7,
+            'refacciones' => $refacciones,
+            'corrugadora' => $corrugadora,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'id_usuario' => $dataLevel = $this->userlevel->id($data['id'])
 
 
@@ -1393,6 +1446,7 @@ class CensoMaquinaria extends CI_Controller {
                 //   'id' => $dataLevel = $this->userlevel->id($data['id'])
         );
 
+<<<<<<< HEAD
          $this->upload->do_upload('refacciones_maquina_1');
         $refacciones_maquina_1 = $this->upload->data();
         if (!empty($_FILES['refacciones_maquina_1']['name'])) {
@@ -1518,6 +1572,9 @@ class CensoMaquinaria extends CI_Controller {
 
         
         
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         /* if (!empty($_FILES['cotizacion']['name'])) {
           $data['cotizacion'] = $cotizacion['file_name'];
           } */
@@ -1607,6 +1664,7 @@ class CensoMaquinaria extends CI_Controller {
           }
          */
 
+<<<<<<< HEAD
  	       // $this->load->library('user_agent');
         //$browser = $this->agent->browser();
        // $os = $this->agent->platform();
@@ -1644,6 +1702,8 @@ class CensoMaquinaria extends CI_Controller {
             $this->email->message($message);
             $this->email->set_mailtype("html");
             $this->email->send();
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -1756,6 +1816,7 @@ class CensoMaquinaria extends CI_Controller {
             $data['data'] = $this->CensoMaquinariaModelo->get_by_id($kondisi);
             $this->load->view('CensoMaquinaria/editar', $data);
             $this->load->view('footer');
+<<<<<<< HEAD
         } else if ($dataLevel == "is_jefe_mantenimiento") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -1766,6 +1827,8 @@ class CensoMaquinaria extends CI_Controller {
             $data['data'] = $this->CensoMaquinariaModelo->get_by_id($kondisi);
             $this->load->view('CensoMaquinaria/editar', $data);
             $this->load->view('footer');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else {
             redirect(site_url() . 'main/');
         }
@@ -1861,8 +1924,11 @@ class CensoMaquinaria extends CI_Controller {
         $correo_personal_otros = $this->input->post('correo_personal_otros');
         $tipo_de_cliente = $this->input->post('tipo_de_cliente');
         $asesor = $this->input->post('asesor');
+<<<<<<< HEAD
          $asesor_maquinaria = $this->input->post('asesor_maquinaria');
         $asesor_consumibles = $this->input->post('asesor_consumibles');
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $estatus_cliente = $this->input->post('estatus_cliente');
         $tamano_cliente = $this->input->post('tamano_cliente');
         $tipo_mercado = $this->input->post('tipo_mercado');
@@ -1870,6 +1936,7 @@ class CensoMaquinaria extends CI_Controller {
         $necesidad = $this->input->post('necesidad');
         $compromiso = $this->input->post('compromiso');
         $notas = $this->input->post('notas');
+<<<<<<< HEAD
        
        
        
@@ -1966,6 +2033,17 @@ class CensoMaquinaria extends CI_Controller {
         $refacciones = $this->input->post('refacciones');
         $corrugadora = $this->input->post('corrugadora');
         $cliente_robuspack = $this->input->post('cliente_robuspack');
+=======
+        $info_maquina_1 = $this->input->post('info_maquina_1');
+        $info_maquina_2 = $this->input->post('info_maquina_2');
+        $info_maquina_3 = $this->input->post('info_maquina_3');
+        $info_maquina_4 = $this->input->post('info_maquina_4');
+        $info_maquina_5 = $this->input->post('info_maquina_5');
+        $info_maquina_6 = $this->input->post('info_maquina_6');
+        $info_maquina_7 = $this->input->post('info_maquina_7');
+        $refacciones = $this->input->post('refacciones');
+        $corrugadora = $this->input->post('corrugadora');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         $path = './assets/censomaquinaria';
         $id = $this->input->post('id');
@@ -2040,8 +2118,11 @@ class CensoMaquinaria extends CI_Controller {
         $data['correo_personal_otros'] = $correo_personal_otros;
         $data['tipo_de_cliente'] = $tipo_de_cliente;
         $data['asesor'] = $asesor;
+<<<<<<< HEAD
           $data['asesor_maquinaria'] = $asesor_maquinaria;
         $data['asesor_consumibles'] = $asesor_consumibles;   
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['estatus_cliente'] = $estatus_cliente;
         $data['tamano_cliente'] = $tamano_cliente;
         $data['tipo_mercado'] = $tipo_mercado;
@@ -2049,6 +2130,7 @@ class CensoMaquinaria extends CI_Controller {
         $data['necesidad'] = $necesidad;
         $data['compromiso'] = $compromiso;
         $data['notas'] = $notas;
+<<<<<<< HEAD
     
     
     $data['info_maquina_1'] = $info_maquina_1;
@@ -2148,6 +2230,17 @@ class CensoMaquinaria extends CI_Controller {
         $data['refacciones'] = $refacciones;
         $data['corrugadora'] = $corrugadora;
         $data['cliente_robuspack'] = $cliente_robuspack;
+=======
+        $data['info_maquina_1'] = $info_maquina_1;
+        $data['info_maquina_2'] = $info_maquina_2;
+        $data['info_maquina_3'] = $info_maquina_3;
+        $data['info_maquina_4'] = $info_maquina_4;
+        $data['info_maquina_5'] = $info_maquina_5;
+        $data['info_maquina_6'] = $info_maquina_6;
+        $data['info_maquina_7'] = $info_maquina_7;
+        $data['refacciones'] = $refacciones;
+        $data['corrugadora'] = $corrugadora;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -2162,6 +2255,7 @@ class CensoMaquinaria extends CI_Controller {
           if (!empty($_FILES['pedido']['name'])) {
           $data['pedido'] = $pedido['file_name'];
           } */
+<<<<<<< HEAD
     
             
 
@@ -2304,6 +2398,9 @@ class CensoMaquinaria extends CI_Controller {
             $this->email->message($message);
             $this->email->set_mailtype("html");
             $this->email->send();
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -2312,6 +2409,7 @@ class CensoMaquinaria extends CI_Controller {
         $this->CensoMaquinariaModelo->update($data, $kondisi);
         redirect('CensoMaquinaria');
     }
+<<<<<<< HEAD
     
     
     
@@ -3268,6 +3366,8 @@ class CensoMaquinaria extends CI_Controller {
         redirect('ReporteFlexo');
     }
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 }
 

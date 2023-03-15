@@ -321,6 +321,10 @@ Fecha : Ultimo Cambio 26/26/2019 Hora 12:36 Pm
 
 
   <!--<tr>
+<<<<<<< HEAD
+=======
+      <td colspan="2">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           <input class="form-control btn btn-success"  type="submit" value="Guardar" >
       </td>
   </tr>-->

@@ -67,10 +67,39 @@ class FucomprasModelo extends CI_Model implements IModeloAbstracto {
     }
 
     public function insert($data) {
+<<<<<<< HEAD
         $this->db->insert('fucompras', $data);
         return TRUE;
     }
 
+=======
+        $registros = $this->input->post('cantidad_registros');
+         $i = 0;
+         while ($i < $registros)
+             {
+           $this->db->insert('fucompras', $data);
+            
+            $i++;
+          
+            } 
+        
+          return TRUE;
+        
+     /* $j=0;  
+for ($j = 0; $j > $data['id_fucompras']; $j++)
+ {
+ 
+        $this->db->insert('fucompras', $data);
+        return TRUE;
+    }*/
+ }
+ 
+
+    
+    /*
+
+     *      */
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     public function delete($where) {
         $this->db->where($where);
         $this->db->delete('fucompras');
@@ -84,11 +113,19 @@ class FucomprasModelo extends CI_Model implements IModeloAbstracto {
 
     public function query() {
         //$query = $this->db->get('verificacion');
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->db->select('*');
         $this->db->from('fucompras');
         $this->db->order_by('fucompras.id_fucompras', 'desc');
         //hace el where donde compara el id con el id del usuario, para solo mostrar los registros que usurio haga realizado
+<<<<<<< HEAD
         // $this->db->where('users.id= ', $dataLevel);
+=======
+        // $this->db->where('users.id= ', $dataLevel);  
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $query = $this->db->get();
 
         $colFuCompras = array();
@@ -96,6 +133,10 @@ class FucomprasModelo extends CI_Model implements IModeloAbstracto {
         foreach ($query->result() as $key => $value) {
             $objeto = new FucomprasPojo(
                     $value->id_fucompras, 
+<<<<<<< HEAD
+=======
+                    $value->cantidad_registros, 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     $value->ref, 
                     $value->estatus, 
                     $value->compania_importadora,

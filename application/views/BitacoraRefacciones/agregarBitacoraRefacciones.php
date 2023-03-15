@@ -1,7 +1,11 @@
 <!--
  * @author  Saul González & Karen González
  * Fecha : Ultimo Cambio 25/06/2019 Hora 10:33 am
+<<<<<<< HEAD
             Ultimo Cambio 25/03/2020 Hora 11:54 am
+=======
+   
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  * Sistema de Control Robuspack
  */-->
 <!DOCTYPE html>
@@ -423,7 +427,11 @@
                 
               
             <center>
+<<<<<<< HEAD
                 <input class="btn btn-success" type="submit" id="botonOrden" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+=======
+                <input id="btn-unSoloClick" class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 
                 <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a></center>
     </div>

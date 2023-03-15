@@ -77,7 +77,11 @@
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
                 <tr>
+<<<<<<< HEAD
                   <th>Tipo de Entrada</th>
+=======
+                  <th>Tipo de Salida</th>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                   <th>No </th>
                   <th>Consecutivo</th>
                   <!--<th>Telefono</th>-->

@@ -45,13 +45,21 @@
     
     <div class="container" style="margin-top:1px;">
         
+<<<<<<< HEAD
     <center>  <h1>Reporte Máquinas por Cliente</h1></center>
+=======
+    <center>  <h1>Reporte Maquinas por Cliente</h1></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     
     
     
   <div class="form-group input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+<<<<<<< HEAD
                     <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+                    <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </div>
 
                <!-- <div class="text-center">
@@ -98,7 +106,11 @@
                         </tr>
                     </thead>
 
+<<<<<<< HEAD
                     <tbody align="center" id="myTable">
+=======
+                    <tbody align="center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <?php
                         foreach ($resumen as $obj) {
@@ -112,7 +124,11 @@
                             $obj->getMaquinas_por_cliente() .
                             '</td>'
                              ;
+<<<<<<< HEAD
 
+=======
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             if ($dataLevel == 'is_admin') {
                                 
                             } else if ($dataLevel == 'is_editor') {
@@ -122,12 +138,21 @@
                             }
                         }
                         ?>
+<<<<<<< HEAD
                         
+=======
+                      
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                    
 
                         </tr>
                         
+<<<<<<< HEAD
                          <tr>
+=======
+                        
+                        <tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <td colspan="2" bgcolor="#6F6F6F"><p style="color:white;">Total</p></td>
                           <td bgcolor="#6F6F6F">
                             <?php
@@ -142,6 +167,10 @@
                         </td>
                          </tr>
                         
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
               
                     </tbody>
                 </table>

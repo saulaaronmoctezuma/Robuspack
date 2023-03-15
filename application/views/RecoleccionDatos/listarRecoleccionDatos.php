@@ -50,6 +50,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+<<<<<<< HEAD
 
 
 
@@ -63,6 +64,8 @@
 
 
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script>
             $(document).ready(function() {
@@ -153,7 +156,11 @@
 
 
     <div class="container" style="margin-top:1px;">
+<<<<<<< HEAD
         <center>  <h1>BD Validada</h1></center>
+=======
+        <center>  <h1> Registro de Empresas</h1></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
         <div class="alert alert-info alert-info">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -168,7 +175,11 @@
             <a  class="btn btn-success" href="<?= base_url('RecoleccionDatos/agregar') ?>" data-toggle="tooltip" data-placement="right" title="Dar Clic para Guardar los Datos de los Clientes">Agregar Nuevo Registro</a>
         </div>
 
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -186,7 +197,11 @@
 
         <?php
         if ($dataLevel == 'is_admin') {
+<<<<<<< HEAD
            echo '
+=======
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <p><button class="hidediv">Ocultar Registros</button>
 <button class="showdiv">Mostrar Registros</button>
 </p>    
@@ -218,12 +233,21 @@
 </div>';
 
 
+<<<<<<< HEAD
                 echo '
 <div class="divTableRow">
 <div class="divTableCell">Alethia Información Compartida</div>
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroEmpresaAlethiaExistente   as $fila) {
+=======
+            echo '
+<div class="divTableRow">
+<div class="divTableCell">Alehia Información Compartida</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaAlethiaExistente as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -237,17 +261,28 @@
             }
             echo '</div>
 </div>';
+<<<<<<< HEAD
            
             
             
             
+=======
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
             echo '
 <div class="divTableRow">
 <div class="divTableCell">Fernanda</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaBerenice   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaBerenice as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -261,15 +296,26 @@
             }
             echo '</div>
 </div>';
+<<<<<<< HEAD
            
             
             
                   echo '
+=======
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Nadia</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaNadia   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaNadia as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -283,9 +329,15 @@
             }
             echo '</div>
 </div>';
+<<<<<<< HEAD
             
             
                 echo '
+=======
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Berenice</div>
 <div class="divTableCell"> ';
@@ -296,23 +348,39 @@
                 ?>
 
 
+<<<<<<< HEAD
               0
+=======
+                0
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 <?php
                 echo '</center></div>';
             }
             echo '</div>
+<<<<<<< HEAD
 </div>'   ;
 
             
                       
       echo '
+=======
+</div>';
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Aldo</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaAldo   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaAldo as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -327,13 +395,22 @@
             echo '</div>
 </div>';
 
+<<<<<<< HEAD
                     
       echo '
+=======
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Karen</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaKaren   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaKaren as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -348,13 +425,22 @@
             echo '</div>
 </div>';
 
+<<<<<<< HEAD
             
                echo '
+=======
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Saúl</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaSaul   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaSaul as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -389,6 +475,7 @@
             echo '</div></div>
 </div></div></div>
         ';
+<<<<<<< HEAD
             
             
             
@@ -414,6 +501,8 @@
             
             
             
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         } else if ($dataLevel == 'is_editor') {
             echo '
     <p><button class="hidediv">Ocultar Registros</button>
@@ -447,17 +536,27 @@
 </div>';
 
 
+<<<<<<< HEAD
                 echo '
 <div class="divTableRow">
 <div class="divTableCell">Alethia Información Compartida</div>
 <div class="divTableCell"> ';
 
             foreach ($totalRegistroEmpresaAlethiaExistente   as $fila) {
+=======
+            echo '
+<div class="divTableRow">
+<div class="divTableCell">Alehia Información Compartida</div>
+<div class="divTableCell"> ';
+
+            foreach ($totalRegistroEmpresaAlethiaExistente as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
 
 
+<<<<<<< HEAD
                 <?= $fila->total_registros_alethia_existente ?>
 
 
@@ -472,10 +571,27 @@
             
 
             echo '
+=======
+        <?= $fila->total_registros_alethia_existente ?>
+
+
+        <?php
+        echo '</center></div>';
+    }
+    echo '</div>
+</div>';
+
+
+
+
+
+    echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Fernanda</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaBerenice   as $fila) {
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
@@ -483,6 +599,15 @@
 
 
                 <?= $fila->total_registros_berenice ?>
+=======
+    foreach ($totalRegistroEmpresaBerenice as $fila) {
+
+        echo '<div class="grid_12" id="cuerpo"><center>';
+        ?>
+
+
+        <?= $fila->total_registros_berenice ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 <?php
@@ -490,15 +615,26 @@
             }
             echo '</div>
 </div>';
+<<<<<<< HEAD
            
             
             
                   echo '
+=======
+
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Nadia</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaNadia   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaNadia as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
@@ -512,9 +648,15 @@
             }
             echo '</div>
 </div>';
+<<<<<<< HEAD
             
             
                 echo '
+=======
+
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Berenice</div>
 <div class="divTableCell"> ';
@@ -525,6 +667,7 @@
                 ?>
 
 
+<<<<<<< HEAD
               0
 
 
@@ -537,10 +680,25 @@
             
                       
       echo '
+=======
+                0
+
+
+        <?php
+        echo '</center></div>';
+    }
+    echo '</div>
+</div>';
+
+
+
+    echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Aldo</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaAldo   as $fila) {
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
@@ -548,6 +706,15 @@
 
 
                 <?= $fila->total_registros_aldo ?>
+=======
+    foreach ($totalRegistroEmpresaAldo as $fila) {
+
+        echo '<div class="grid_12" id="cuerpo"><center>';
+        ?>
+
+
+        <?= $fila->total_registros_aldo ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 <?php
@@ -556,18 +723,28 @@
             echo '</div>
 </div>';
 
+<<<<<<< HEAD
                     
       echo '
+=======
+
+            echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Karen</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaKaren   as $fila) {
+=======
+            foreach ($totalRegistroEmpresaKaren as $fila) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
 
 
+<<<<<<< HEAD
                 <?= $fila->total_registros_karen ?>
 
 
@@ -579,10 +756,24 @@
 
             
                echo '
+=======
+        <?= $fila->total_registros_karen ?>
+
+
+        <?php
+        echo '</center></div>';
+    }
+    echo '</div>
+</div>';
+
+
+    echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Saúl</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaSaul   as $fila) {
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
@@ -599,14 +790,39 @@
 </div>';
 
             echo '
+=======
+    foreach ($totalRegistroEmpresaSaul as $fila) {
+
+        echo '<div class="grid_12" id="cuerpo"><center>';
+        ?>
+
+
+        <?= $fila->total_registros_saul ?>
+
+
+        <?php
+        echo '</center></div>';
+    }
+    echo '</div>
+</div>';
+
+    echo '
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <div class="divTableRow">
 <div class="divTableCell">Oscar</div>
 <div class="divTableCell"> ';
 
+<<<<<<< HEAD
             foreach ($totalRegistroEmpresaOscar as $fila) {
 
                 echo '<div class="grid_12" id="cuerpo"><center>';
                 ?>
+=======
+    foreach ($totalRegistroEmpresaOscar as $fila) {
+
+        echo '<div class="grid_12" id="cuerpo"><center>';
+        ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 <?= $fila->total_registros_oscar ?>
@@ -618,6 +834,7 @@
             echo '</div></div>
 </div></div></div>
         ';
+<<<<<<< HEAD
             
             
             
@@ -627,10 +844,28 @@
            
          
             
+=======
+        }
+        ?>
+
+    </div>
+
+
+    <div class="container" style="margin-top:1px;">
+        <?php
+        if ($dataLevel == 'is_admin') {
+            echo '<center>
+                  <a title="Da clic para exportar los datos en Excel" href="' . base_url() . 'ExportarExcel/crearExcelEmpresaRecoleccionDatos/">     <button  class="btn btn-info" title="Da clic para exportar los datos a Excel" style="font-size:15px;color:white"><font color="white">Exportar</font> <i class="fa fa-file-excel-o"></i></button>
+                   </a></center>';
+        } else if ($dataLevel == 'is_editor') {
+            
+        } else if ($dataLevel == 'is_director') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             
         }
         ?>
 
+<<<<<<< HEAD
  </div>
 
 
@@ -660,6 +895,104 @@
             
 
                    
+=======
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped"  >
+
+        </div>
+        <table id="example" class="table table-bordered table-striped" style="width:100%">    
+
+
+            <thead>
+                <tr>
+
+
+        <?php
+        if ($dataLevel == 'is_admin') {
+            echo '<th class="header" style="text-align: center" colspan= "Accion">Eliminar</th>'
+            . '<th class="header" style="text-align: center">Modificar</th>'
+            . '<th class="header" style="text-align: center">Usuario</th>';
+        } else if ($dataLevel == 'is_editor') {
+            echo '<th class="header" style="text-align: center">Eliminar</th>'
+            . '<th class="header" style="text-align: center">Modificar</th>'
+            . '<th class="header" style="text-align: center">Usuario</th>';
+        } else if ($dataLevel == 'is_credito') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_logistica') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_consultor') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_servicio_a_clientes') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_refacciones') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_maquinaria') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_Gerente_Ventas') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else if ($dataLevel == 'is_freelance') {
+            echo '<th class="header" style="text-align: center">Modificar</th>';
+        } else {
+            
+        }
+        ?>
+
+
+
+
+
+
+
+
+                    <?php
+                    if ($dataLevel == 'is_admin') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                   
+                      
+                      ';
+                    } else if ($dataLevel == 'is_editor') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                   
+                     
+                      ';
+                    } else if ($dataLevel == 'is_logistica') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                    
+                     
+                      ';
+                    } else if ($dataLevel == 'is_director') {
+                        echo ' <th style="text-align: center">Vendedor</th>
+                  
+                     
+                      ';
+                    } else if ($dataLevel == 'is_maquinaria') {
+                        echo ' 
+                  
+                     
+                      ';
+                    } else if ($dataLevel == 'is_maquinaria') {
+                        echo ' 
+                  
+                     
+                      ';
+                    } else {
+                        
+                    }
+                    ?>
+
+
+
+
+                    <?php
+                    if ($dataLevel == 'is_maquinaria') {
+                        
+                    } if ($dataLevel == 'is_Gerente_Ventas') {
+                        
+                    } else {
+                        
+                    }
+                    ?>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -668,6 +1001,7 @@
 
 
                   
+<<<<<<< HEAD
                     
                       
                     <?php
@@ -687,6 +1021,17 @@
                       
                       
                    
+=======
+                    <?php
+                    if ($dataLevel == 'is_freelance') {
+                           
+                    } else {
+                         echo '<th style="text-align: center">Identificador</th>';
+                    }
+                    ?>
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <th style="text-align: center">Nombre de la Empresa</th>
                     <th style="text-align: center">Estado</th>
                     <th style="text-align: center">Ciudad</th>
@@ -702,6 +1047,7 @@
                     <th style="text-align: center">Email</th>
                     <th style="text-align: center">Teléfono</th>
 
+<<<<<<< HEAD
                       <?php
                     if ($dataLevel == 'is_freelance') {
                            
@@ -791,6 +1137,10 @@
                         
                     }
                     ?>
+=======
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                 </tr>
@@ -798,6 +1148,7 @@
             <tbody align="center">
 
 
+<<<<<<< HEAD
                 <?php
                 foreach ($recolecciondatos as $obj) {
                     echo '<tr>';
@@ -873,6 +1224,92 @@
                     
                     
                    
+=======
+                    <?php
+                    foreach ($recolecciondatos as $obj) {
+                        echo '<tr>';
+
+
+
+                        //compara si es administrador
+                        if ($dataLevel == 'is_admin') {
+                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'RecoleccionDatos/eliminar/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_editor') {
+                            echo '<td><a title="Da clic para eliminar el registro" onclick="if(confirma() == false) return false" href="' . base_url() . 'RecoleccionDatos/eliminar/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a></td>';
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_credito') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_logistica') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_consultor') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_servicio_a_clientes') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_refacciones') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_maquinaria') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        } else if ($dataLevel == 'is_Gerente_Ventas') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        }else if ($dataLevel == 'is_Gerente_Ventas') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        }else if ($dataLevel == 'is_freelance') {
+                            echo '<td><a title="Da clic para modificar el registro" href="' . base_url() . 'RecoleccionDatos/obtener/' . $obj->getId_recolecion_datos() . '"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></button></a></td>';
+                        }  else {
+                            
+                        }
+
+
+
+
+
+
+
+
+                        //compara si es administrador
+                        if ($dataLevel == 'is_admin') {
+                            echo '<td>';
+                            echo $obj->getFirst_name() .
+                            '</td>';
+                        } else if ($dataLevel == 'is_editor') {
+                            echo '<td>';
+                            echo $obj->getFirst_name() .
+                            '</td>';
+                        } else if ($dataLevel == 'is_credito') {
+                            
+                        } else {
+                            
+                        }
+
+
+
+                        //compara si es administrador
+                        if ($dataLevel == 'is_admin') {
+                            echo '<td>' . $obj->getVendedor() .
+                            '</td>'
+
+                            ;
+                        } else if ($dataLevel == 'is_editor') {
+                            echo '<td>' . $obj->getVendedor() .
+                            '</td>'
+
+                            ;
+                        } else if ($dataLevel == 'is_logistica') {
+                            echo '<td>' . $obj->getVendedor() .
+                            '</td>'
+
+                            ;
+                        } else if ($dataLevel == 'is_maquinaria') {
+                            
+                        } else if ($dataLevel == 'is_credito') {
+                            
+                        } else {
+                            
+                        }
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         //compara si es administrador
                         if ($dataLevel == 'is_freelance') {
                             
@@ -882,6 +1319,7 @@
                             '</td>';
                         }
 
+<<<<<<< HEAD
                     
                      //compara si es administrador
                     if ($dataLevel == 'is_admin') {
@@ -950,6 +1388,57 @@
                 ?>
                 </tr>
             </tbody>
+=======
+
+
+
+
+
+
+                        echo '<td>' .
+                        $obj->getNombre_empresa() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getEstado() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getCiudad() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getDomicilio() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getNombre() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getCargo() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getEmail() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getTel() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getNombre2() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getCargo2() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getEmail2() .
+                        '</td>'
+                        . '<td>'
+                        . $obj->getTel2() .
+                        '</td>' .
+                        '</tr>'
+                        ;
+                    }
+                    ?>
+
+            </tbody>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </table>
 
 

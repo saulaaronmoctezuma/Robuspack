@@ -117,6 +117,7 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colCliente;
         
+<<<<<<< HEAD
         }else if ($dataLevel == "is_almacen") {
           /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -153,6 +154,8 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
             }
             return $colCliente;
         
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }else if ($dataLevel == "is_servicio_a_clientes") {
           /* Para traerse el id del usuario */
             $data = $this->session->userdata;
@@ -248,4 +251,11 @@ class ClienteModelo extends CI_Model implements IModeloAbstracto {
         
     }
 
+<<<<<<< HEAD
+=======
+    public function querybusqueda() {
+        
+    }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 }

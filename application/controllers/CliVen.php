@@ -58,6 +58,7 @@ Class CliVen extends CI_Controller {
             $this->load->view('CliVen/listarCliVen', $data);
             $this->load->view('footer');
         } 
+<<<<<<< HEAD
         else if ($dataLevel == "is_credito") {
             $this->load->view('header', $data);
             $this->load->view('navbar', $data);
@@ -65,6 +66,9 @@ Class CliVen extends CI_Controller {
             $this->load->view('CliVen/listarCliVen', $data);
             $this->load->view('footer');
         } 
+=======
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         
         else {
             redirect(site_url() . 'main/');

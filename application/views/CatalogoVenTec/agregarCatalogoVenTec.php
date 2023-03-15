@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,6 +6,8 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <head>
 
     <title>Robuspack</title>
@@ -30,8 +33,31 @@
     $site_title = $result->site_title;
     //check user level
     ?>      
+<<<<<<< HEAD
 
 
+=======
+    <script>
+        
+   
+ // agregarCatalogo
+            $("#botonOrden").click(function() {
+                // Si ha sido clicado
+                if (clicando) {
+                    // Mostramos que ya se ha clicado, y no puede clicarse de nuevo
+                    //  alert( "Que ya he realizado un click." );
+                    // Si no ha sido clicado
+                } else {
+                    // Le decimos que ha sido clicado
+                    clicando = true;
+                    // Mostramos el mensaje de que ha sido clicado
+                    //alert("Guardando Informacion");
+                }
+            });
+    
+        </script>
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 <div id="catalogo">
     <div class="container" >      
@@ -40,6 +66,7 @@
             <strong>Bienvenido</strong> Agrega los datos segun corresponda
         </div>
         <div class="col-sm-6 col-md-offset-2">
+<<<<<<< HEAD
         <h1> Catálogo de Vendedores y Técnicos </h1>
         <MARQUEE SCROLLDELAY =200></MARQUEE>
         <form name="formulario" id="formal" role="form" action="<?= base_url('CatalogoVenTec/formularioAgregar') ?>" method="POST" onsubmit="return valida()">
@@ -119,6 +146,89 @@
 
         </form>
     </div> 
+=======
+            <h1> Catálogo de Vendedores y Técnicos </h1>
+            <MARQUEE SCROLLDELAY =200></MARQUEE>
+            <form name="formulario" id="formal" role="form" action="<?= base_url('CatalogoVenTec/formularioAgregar') ?>" method="POST" >
+
+
+
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="id_catalogo"  name="id_catalogo">
+                </div>
+                <div id="mensaje"></div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input id="a1" type="text" class="form-control"  name="nombre" placeholder="Introduce el Nombre">
+                </div>
+
+
+
+
+
+                <div class="form-group">
+                    <label>Rol</label>
+                    <select name="rol" class="form-control input-sm" required>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Vendedor">Vendedor</OPTION>
+                        <OPTION VALUE="Técnico">Técnico</OPTION>
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label>Área</label>
+                    <select name="area" class="form-control input-sm" required>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="Maquinaria">Maquinaria</OPTION>
+                        <OPTION VALUE="Refacciones">Refacciones</OPTION>
+                        <OPTION VALUE="Soporte">Soporte</OPTION>
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label>Comisión</label>
+                    <select name="comision" class="form-control input-sm" required>
+                        <option  value="">Selecciona una opción</option>
+                        <OPTION VALUE="1%">1%</OPTION>
+                        <OPTION VALUE="2%">2%</OPTION>
+                        <OPTION VALUE="2.5%">2.5%</OPTION>
+                        <OPTION VALUE="3%">3%</OPTION>
+                        <OPTION VALUE="4%">4%</OPTION>
+                        <OPTION VALUE="5%">5%</OPTION>
+
+                    </select>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="nombre">Correo Electrónico</label>
+                    <input id="a4" type="email" class="form-control"  name="correo" placeholder="Introduce el Correo">
+                </div>
+
+                <br>
+                <center>
+
+
+                    <div class="form-group">
+                        <input id="btn-unSoloClick" class="btn btn-success" type="submit"  id="botonOrden" value="Guardar" data-toggle="tooltip" data-placement="right" title="Da Clic para Guardar los Datos del Catálogo">
+
+                        <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
+                    </div>
+
+
+                </center>     </div>
+    </div>
+
+</form>
+</div> 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 </body>
 </html>
 

@@ -172,8 +172,17 @@ class Stylesheet
         $this->setFontMetrics($dompdf->getFontMetrics());
         $this->_styles = array();
         $this->_loaded_files = array();
+<<<<<<< HEAD
         list($this->_protocol, $this->_base_host, $this->_base_path) = Helpers::explode_url($_SERVER["SCRIPT_FILENAME"]);
         $this->_page_styles = array("base" => null);
+=======
+        $script = __FILE__;
+        if(isset($_SERVER["SCRIPT_FILENAME"])){
+            $script = $_SERVER["SCRIPT_FILENAME"];
+        }
+        list($this->_protocol, $this->_base_host, $this->_base_path) = Helpers::explode_url($script);
+        $this->_page_styles = array("base" => new Style($this));
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     /**
@@ -281,7 +290,11 @@ class Stylesheet
     }
 
     /**
+<<<<<<< HEAD
      * lookup a specifc Style collection
+=======
+     * lookup a specific Style collection
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      *
      * lookup() returns the Style collection specified by $key, or null if the Style is
      * not found.
@@ -441,7 +454,11 @@ class Stylesheet
      * @param bool $first_pass
      *
      * @throws Exception
+<<<<<<< HEAD
      * @return string
+=======
+     * @return array
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
      */
     private function _css_selector_to_xpath($selector, $first_pass = false)
     {
@@ -566,7 +583,11 @@ class Stylesheet
                     break;
 
                 case "+":
+<<<<<<< HEAD
                     // All sibling elements that folow the current token
+=======
+                    // All sibling elements that follow the current token
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     if (mb_substr($query, -1, 1) !== "/") {
                         $query .= "/";
                     }
@@ -1261,7 +1282,11 @@ class Stylesheet
             throw new Exception("Error parsing css file: preg_match_all() failed.");
         }
 
+<<<<<<< HEAD
         // After matching, the array indicies are set as follows:
+=======
+        // After matching, the array indices are set as follows:
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         //
         // [0] => complete text of match
         // [1] => contains '@import ...;' or '@media {' if applicable
@@ -1357,7 +1382,11 @@ class Stylesheet
                                 $key = $page_selector;
 
                             default:
+<<<<<<< HEAD
                                 continue;
+=======
+                                break 2;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         }
 
                         // Store the style for later...
@@ -1556,7 +1585,11 @@ class Stylesheet
 
         foreach ($properties as $prop) {
             // If the $prop contains an url, the regex may be wrong
+<<<<<<< HEAD
             // @todo: fix the regex so that it works everytime
+=======
+            // @todo: fix the regex so that it works every time
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             /*if (strpos($prop, "url(") === false) {
               if (preg_match("/([a-z-]+)\s*:\s*[^:]+$/i", $prop, $m))
                 $prop = $m[0];
@@ -1726,4 +1759,8 @@ class Stylesheet
 
         return $str;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

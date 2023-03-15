@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -6,6 +7,9 @@
  */
 -->
 <php>
+=======
+    <php>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <html lang="es-mx">
     <title>Robuspack</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,7 +30,11 @@
 
 <div id="maquinaria">
     <form action="<?= base_url('ClienteSeguimiento/clienteSeguimientoModificar') ?>" method="post" align="center" onsubmit="return vali()">
+<<<<<<< HEAD
         <h1>Actualizar datos 1 </h1>
+=======
+        <h1>Actualizar datos </h1>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <MARQUEE SCROLLDELAY =200></MARQUEE>
         <div class="container" >
             <table class="table table-bordered table-striped">
@@ -118,7 +126,11 @@
                         <td><input id="a5" class="form-control" type="text" name="notas"  value="<?= $notas ?>"></td>
                     </tr>
                    
+<<<<<<< HEAD
                    
+=======
+                    <tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <td>
                         <input  class="btn btn-success" title="Da clic para guardar los datos" type="submit" value="Guardar" >
                        <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>

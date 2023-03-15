@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $result = $this->User_model->getAllSettings();
 $theme = $result->theme;
 ?>
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma 
  * Sistema de Control Robuspack SCR
@@ -11,28 +12,42 @@ $theme = $result->theme;
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<<<<<<< HEAD
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-mx"> <!--<![endif]-->
+=======
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php echo $title; ?></title>
         <meta name="description" content="">
+<<<<<<< HEAD
         <meta name="viewport" content="width=device-width, initial-scale=1">
           
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         
         
+=======
+        
+         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
          <link rel="icon" href="<?= base_url('assets/images/robuspack_icon.png') ?>">
        
         <!--CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url().'public/css/main.css' ?>">
+<<<<<<< HEAD
         
      
      
@@ -40,6 +55,59 @@ $theme = $result->theme;
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
          <!--´Para el filtro por busqueda por cierta cantidad-->
     </head>
+=======
+    <!--    <link rel="stylesheet" href="<?php echo base_url().'assets/css/cosmobootstrap.min.css' ?>">-->
+       
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        
+        
+       <!--´Para el filtro por busqueda por cierta cantidad-->
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+         <!--´Para el filtro por busqueda por cierta cantidad-->
+      
+         
+         
+         
+         <!--https://datatables.net/extensions/fixedcolumns/examples/integration/select.html-->
+       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.3.0/css/fixedColumns.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdn.datatables.net/keytable/2.5.1/css/keyTable.dataTables.min.css">
+       <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+        <!--https://datatables.net/extensions/fixedcolumns/examples/integration/select.html-->
+
+        
+    <style>
+      body {
+        font-family: 'Montserrat', serif;
+        font-size: 11px;
+      }
+      
+      table {
+         font-family: 'Montserrat', serif;
+        font-size: 11px; 
+      }
+     
+    </style>
+      
+      
+      
+      
+      
+      
+      
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+      
+      
+      
+      
+      
+         <!--´Para el filtro por busqueda por cierta cantidad-->
+    </head>
+     
+   <!--<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <style>
     
      #toTop {
@@ -62,6 +130,7 @@ $theme = $result->theme;
         padding: 10px 0 0 2px;
         z-index: 14;
     }
+<<<<<<< HEAD
     </style>
     <body>
         
@@ -69,11 +138,62 @@ $theme = $result->theme;
             <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <!-- Latest compiled and minified CSS -->
   	
+=======
+   
+    tfoot {
+    display: table-header-group;
+}
+
+
+.btn_whatsapp {
+        display:block;
+        width:70px;
+        height:70px;
+        color:#fff;
+        position: fixed;
+        right:20px;
+        bottom:15px;
+        border-radius:30%;
+        line-height:60px;
+        text-align:center;
+        z-index:999;
+
+}
+
+
+@media (max-width: 600px) {
+  .btn_whatsapp {
+    display: none;
+  }
+
+
+p, h1, h2, h3, h4, h5, table{
+font-family: 'Montserrat', sans-serif;
+color: #09E562;
+}
+
+
+
+
+
+    </style>
+
+   <body>
+   <!--<center>  <a name="arriba"></a></center>-->
+      
+      
+    <!-- Latest compiled and minified CSS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
   	
       <script type="text/javascript">
         $(document).ready(function () {
             (function ($) {
+<<<<<<< HEAD
                 $('#buscarPalabras').keyup(function () {
+=======
+                $('#filtrar').keyup(function () {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     var rex = new RegExp($(this).val(), 'i');
                     $('.buscar tr').hide();
                     $('.buscar tr').filter(function () {
@@ -85,7 +205,11 @@ $theme = $result->theme;
       </script> 
       
       
+<<<<<<< HEAD
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
@@ -97,6 +221,7 @@ $(document).ready(function(){
 });
 </script>
 
+<<<<<<< HEAD
 
 
 
@@ -119,6 +244,18 @@ $(document).ready(function(){
     
     
      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+=======
+<!--
+<div class="btn_whatsapp">
+<a href="https://wa.link/0E6H" target="_blank">
+<img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+</a>
+</div>-->
+
+
+
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <script>
             $(document).ready(function() {
                 $(".hidediv").click(function() {
@@ -132,6 +269,7 @@ $(document).ready(function(){
             });
 
         </script>
+<<<<<<< HEAD
         <style>
             .divTable,divTableBody{
 
@@ -172,3 +310,38 @@ $(document).ready(function(){
             }
 
         </style>
+=======
+<!--
+       
+<style>
+ .scrollable {
+    width: 500%;
+    margin: 0 auto;
+    border: 1px dashed black;   
+}
+
+    .fixed {
+    position: fixed;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #000;
+}
+
+.side {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    background-color: red;
+}
+ </style>
+        <div class='fixed side'>hola</div>
+<div class='scrollable'>hola</div>
+ 
+-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

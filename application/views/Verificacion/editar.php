@@ -17,7 +17,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
         <!-- Bootstrap -->
 
+<<<<<<< HEAD
         <link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf">
+=======
+       <!--<link rel="stylesheet" href="<?= base_url() ?>assets/font/glyphicons-halflings-regular.ttf-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         <?php
         //check user level
         $dataLevel = $this->userlevel->checkLevel($role);
@@ -38,10 +42,17 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
         <div class="container">
             <h1>Actualizar Placa</h1>
+<<<<<<< HEAD
            
             
             
             
+=======
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         </div>
 
         <!-- KONTEN UTAMA -->
@@ -84,12 +95,15 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                                     echo "Selected";
                                 }
                                 ?>>MAKBOX S DE RL DE CV</option>
+<<<<<<< HEAD
                                 
                                    <option value="CARTONPACK S DE RL DE CV" <?php
                                 if ($data->empresa == "CARTONPACK S DE RL DE CV") {
                                     echo "Selected";
                                 }
                                 ?>>CARTONPACK S DE RL DE CV</option>
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             </optgroup>
                         </SELECT><br>
@@ -101,7 +115,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <label>Serie</label><br>
                     <input type="text" style="width: 270px; height: 35px"  style="width: 270px; height: 35px" name="serie" value="' . $data->serie . '"><br><br>';
                         ?>
+<<<<<<< HEAD
                        <!--   <label>Cliente</label><br>
+=======
+                        <!--  <label>Cliente</label><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                       <select id="a3" class="form-control " style="width: 270px; height:45px" name="cliente"   <?php echo form_dropdown('clienteCombo', $clienteCombo, $data->cliente, '#', 'id="clienteCombo"'); ?> </select></td>
                         <BR>
                         -->
@@ -142,7 +160,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                         
                     <!--<input type="file" name="fotopost">';
+<<<<<<< HEAD
                     }else if ($dataLevel == 'is_Gerente_Ventas') {
+=======
+                    } else if ($dataLevel == 'is_Gerente_Ventas') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         echo '
                     <label>No Máquina</label><br>
                     <input type="text" style="width: 270px; height: 35px" name="no_maqui" value="' . $data->no_maqui . '"><br><br>
@@ -216,7 +238,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <label>Num. Factura</label><br>
                     <input type="text"  style="width: 270px; height: 35px"name="num_factura" value="' . $data->num_factura . '"><br><br>
                         
+<<<<<<< HEAD
                     <input type="hidden" name="contrato" value="' . $data->contrato . '">
+=======
+                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     
 
@@ -255,6 +281,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                             }
                             ?>>MAKBOX S DE RL DE CV</option>
 
+<<<<<<< HEAD
                     
                      <option value="CARTONPACK S DE RL DE CV" <?php
                             if ($data->empresa == "CARTONPACK S DE RL DE CV") {
@@ -263,6 +290,9 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                             ?>>CARTONPACK S DE RL DE CV</option>
 
                     
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </SELECT><br>
 
 
@@ -325,6 +355,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                             }
                             ?>>MAKBOX S DE RL DE CV</option>
 
+<<<<<<< HEAD
                                         <option value="CARTONPACK S DE RL DE CV" <?php
                             if ($data->empresa == "CARTONPACK S DE RL DE CV") {
                                 echo "Selected";
@@ -333,6 +364,9 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                             
                             
                             
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </SELECT><br>
 
 
@@ -353,7 +387,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <input type="text" style="width: 270px; height: 35px"  name="pedimento" value="' . $data->pedimento . '"><br><br>
                        
                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
+<<<<<<< HEAD
                      <input type="hidden" name="contrato" value="' . $data->contrato . '">  
+=======
+                    <input type="hidden" name="contrato" value="' . $data->contrato . '">    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_credito') {
                         echo '
@@ -386,11 +424,19 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     
                     <label>No. Factura</label><br>
                     <input type="text" style="width: 270px; height: 35px"  name="num_factura" value="' . $data->num_factura . '"><br><br>
+<<<<<<< HEAD
  <input type="hidden" name="contrato" value="' . $data->contrato . '">  
                     <!--<input type="file" name="fotopost">';
                     } else if ($dataLevel == 'is_refacciones') {
                         echo '
                     <label>No Máquina</label><br>
+=======
+                        <input type="hidden" name="contrato" value="' . $data->contrato . '">
+                    <!--<input type="file" name="fotopost">';
+                    } else if ($dataLevel == 'is_refacciones') {
+                        echo '
+                    <label>Nos Máquina</label><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <input type="text" name="no_maqui" readonly="readonly" style="background-color:#03E7F7;" value="' . $data->no_maqui . '"><br><br>
                     
                     <label>Modelo</label><br>
@@ -407,11 +453,16 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <label>Cliente</label><br>
                     <input type="text" name="cliente" readonly="readonly" style="background-color:#03E7F7;" value="' . $data->cliente . '"><br><br>
                     
+<<<<<<< HEAD
                       <input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '">
+=======
+                    <input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                     <label>No. Pedimento</label><br>
                     <input type="text" name="pedimento" readonly="readonly" style="background-color:#03E7F7;" value="' . $data->pedimento . '"><br><br>
                     
+<<<<<<< HEAD
                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
                    <input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">
                   
@@ -419,6 +470,15 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                          <input type="hidden" name="contrato" value="' . $data->contrato . '">  
                     <!--<input type="file" name="fotopost">';
                     
+=======
+                    <input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">
+                    <input type="hidden" name="fotopost"  value="' . $data->foto . '">
+                    <input type="hidden" name="fotopostpdf" value="' . $data->factura . '">
+                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
+                     <input type="hidden" name="contrato" value="' . $data->contrato . '">
+                        
+                    <!--<input type="file" name="fotopost">';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else if ($dataLevel == 'is_jefe_mantenimiento') {
                         echo '
                     <label>No Máquina</label><br>
@@ -430,12 +490,18 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <label>Empresa</label><br>
                     <input type="text" name="empresa" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px"  value="' . $data->empresa . '"><br><br>
                    
+<<<<<<< HEAD
                     <!--<label>Serie</label><br>
                     <input type="text" name="serie" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px" value="' . $data->serie . '"><br><br>-->
+=======
+                    <label>Serie</label><br>
+                    <input type="text" name="serie" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px" value="' . $data->serie . '"><br><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                    <input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '">
                     <label>Cliente</label><br>
                     <input type="text" name="cliente" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px" value="' . $data->cliente . '"><br><br>
                     
+<<<<<<< HEAD
                   <!--  <label>No. Pedimento</label><br>
                     <input type="text" name="pedimento" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px" value="' . $data->pedimento . '"><br><br>
                     -->
@@ -443,14 +509,24 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     
 
                             
+=======
+                    <label>No. Pedimento</label><br>
+                    <input type="text" name="pedimento" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px" value="' . $data->pedimento . '"><br><br>
+                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
                    <input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">
                   
                     <input type="hidden" name="fotopostpdf" value="' . $data->factura . '">
+<<<<<<< HEAD
                              <input type="hidden" name="contrato" value="' . $data->contrato . '">  
                             <input type="hidden" name="refacciones" value="' . $data->refacciones . '">
                             
                     <!--<input type="file" name="fotopost">';
+=======
+                    <input type="hidden" name="contrato" value="' . $data->contrato . '">
+                    <!--<input type="file" name="fotopost">-->';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     } else if ($dataLevel == 'is_mantenimiento') {
                         echo '
                     <label>No Máquina</label><br>
@@ -472,7 +548,14 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     <input type="text" name="pedimento" readonly="readonly" style="background-color:#03E7F7;width: 270px; height: 35px" value="' . $data->pedimento . '"><br><br>
                     
                     <input type="hidden" name="num_factura" value="' . $data->num_factura . '">
+<<<<<<< HEAD
                          <input type="hidden" name="contrato" value="' . $data->contrato . '">  
+=======
+                   <input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">
+                   
+                    <input type="hidden" name="fotopostpdf" value="' . $data->factura . '">
+                    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         
                     <!--<input type="file" name="fotopost">'
 
@@ -528,9 +611,14 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Pedimento PDF</label><br>
                              <input type="file" name="pedimentopdf"><br>';
                     } else if (($data->pedimentopdf != null) && ($dataLevel == 'is_logistica')) {
+<<<<<<< HEAD
                       //  echo '<input class="form-control" type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">';
                       
                       echo '<font color="red">Ya tienes un archivo cargado</font><br>
+=======
+                        //echo '<input class="form-control" type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '">';
+                        echo '<font color="red">Ya tienes un archivo cargado</font><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <label>Pedimento PDF</label><br>
                              <input type="file" name="pedimentopdf"><br>';
                     }
@@ -573,6 +661,31 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     }
                     ?>
 
+<<<<<<< HEAD
+=======
+
+                    <?php
+                    if (($data->foto == null) && ($dataLevel == 'is_Gerente_Ventas')) {
+                        echo ' <label>Foto Placa</label><br>
+                             <input type="file" name="fotopost"><br>';
+                    } else if (($data->foto != null) && ($dataLevel == 'is_Gerente_Ventas')) {
+                        echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
+                    }
+                    ?>
+
+                    <?php
+                    if ($dataLevel == 'is_Gerente_Ventas') {
+                        echo '<input type="hidden" name="factura" value="' . $data->factura . '">';
+                        echo '<input type="hidden" name="cliente_temporal" value="' . $data->cliente_temporal . '" >';
+                        echo '<input type="hidden" name="pedimento" value="' . $data->pedimento . '" >';
+                        echo '<input type="hidden" name="pedimentopdf" value="' . $data->pedimentopdf . '" >';
+                        echo '<input type="hidden" name="refacciones" value="' . $data->refacciones . '" >';
+                    }
+                    ?>
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <?php
                     if (($data->foto == null) && ($dataLevel == 'is_mantenimiento')) {
                         echo ' <label>Foto Placa</label><br>
@@ -596,14 +709,20 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Foto Placa</label><br>
                              <input type="file" name="fotopost"><br>';
                     } else if (($data->foto != null) && ($dataLevel == 'is_logistica')) {
+<<<<<<< HEAD
                         
                        // echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
                        echo '<font color="red">Ya tienes un archivo cargado</font><br>
+=======
+                        // echo '<input class="form-control" type="hidden" name="old" value="' . $data->foto . '">';
+                        echo '<font color="red">Ya tienes un archivo cargado</font><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <label>Foto Placa</label><br>
                              <input type="file" name="fotopost"><br>';
                     }
                     ?>
 
+<<<<<<< HEAD
  <?php
                     if (($data->foto == null) && ($dataLevel == 'is_Gerente_Ventas')) {
                         echo ' <label>Foto Placa</label><br>
@@ -622,6 +741,9 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                                        echo '<input type="hidden" name="refacciones" value="' . $data->refacciones . '" >';
                     } 
                     ?>
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -697,7 +819,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Refacciones</label><br>
                              <input type="file" name="refacciones"><br><br>';
                     } else if (($data->refacciones != null) && ($dataLevel == 'is_mantenimiento')) {
+<<<<<<< HEAD
                         echo '<input class="form-control" type="hidden" name="refacciones" value="' . $data->refacciones . '">';
+=======
+                        echo '<input class="form-control" type="hidden" name="fatura" value="' . $data->refacciones . '">';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }
                     ?>  
 
@@ -708,7 +834,11 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Refacciones</label><br>
                              <input type="file" name="refacciones"><br><br>';
                     } else if (($data->refacciones != null) && ($dataLevel == 'is_refacciones')) {
+<<<<<<< HEAD
                         echo '<input class="form-control" type="hidden" name="refacciones" value="' . $data->refacciones . '">';
+=======
+                        echo '<input class="form-control" type="hidden" name="fatura" value="' . $data->refacciones . '">';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }
                     ?>      
 
@@ -719,13 +849,23 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         echo ' <label>Refacciones</label><br>
                              <input type="file" name="refacciones"><br><br>';
                     } else if (($data->refacciones != null) && ($dataLevel == 'is_jefe_mantenimiento')) {
+<<<<<<< HEAD
                         echo '<input class="form-control" type="hidden" name="refacciones" value="' . $data->refacciones . '">';
+=======
+                        echo '<input class="form-control" type="hidden" name="fatura" value="' . $data->refacciones . '">';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     }
                     ?>  
                     
                     
                     
+<<<<<<< HEAD
                      <!--Contrato PDF-->
+=======
+                    
+                    
+                    <!--Contrato PDF-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <?php
                     if (($data->contrato == null) && ($dataLevel == 'is_admin')) {
                         echo ' <label>Contrato</label><br>
@@ -753,6 +893,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                     }
                     ?>
 
+<<<<<<< HEAD
                     
                     
                     
@@ -768,11 +909,32 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                                 <br>
                                 
                                 <td><b>Observación</b></td>
+=======
+
+
+
+
+                    <!-- <label>Comentario</label><br>
+                     <input type="text" style="width: 270px; height: 35px" name="comentario" value=<?= $data->comentario ?>><br>-->
+
+                    <?php
+                    if ($dataLevel == 'is_admin') {
+                        ?>
+                        <td><b>Comentario</b></td>
+                        <td colspan="3">
+                            <textarea  style="width: 270px; " name="comentario" class="form-control input-sm"  rows="7" cols="80"><?= $data->comentario ?></textarea>
+
+                        </td>
+                        <br>
+
+                        <td><b>Observación</b></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <td colspan="3">
                             <textarea  style="width: 270px; " name="observacion" class="form-control input-sm"  rows="7" cols="80"><?= $data->observacion ?></textarea>
 
                         </td>
                         <br>
+<<<<<<< HEAD
                                 
                        <?php
                         
@@ -791,6 +953,26 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         <br>
                        <?php
                     }else if ($dataLevel == 'is_logistica') {
+=======
+                        <?php
+                    } else if ($dataLevel == 'is_editor') {
+                        ?>
+                        <td><b>Comentario</b></td>
+                        <td colspan="3">
+                            <textarea  style="width: 28%; " name="comentario" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
+
+                        </td>
+                        <br>
+
+                        <td><b>Observación</b></td>
+                        <td colspan="3">
+                            <textarea  style="width:28%; " name="observacion" class="form-control input-sm"  rows="7" cols="80"><?= $data->observacion ?></textarea>
+
+                        </td>
+                        <br>
+                            <?php
+                        } else if ($dataLevel == 'is_logistica') {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             ?>
                         <td><b>Comentario</b></td>
                         <td colspan="3">
@@ -806,6 +988,7 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
                         </td>
                         <br>
     <?php
+<<<<<<< HEAD
 } else
                     {
                              ?>
@@ -827,6 +1010,35 @@ Fecha : Ultimo Cambio 30/07/2019 Hora 10:07 am
 
                     <!-- file lama -->
                     <input type="hidden" name="id" value="<?= $data->id_verificacion ?>">
+=======
+} else {
+    ?>
+                        <td><b>Comentario</b></td>
+                        <td colspan="3">
+                            <textarea  name="comentario" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->comentario ?></textarea>
+
+                        </td>
+                        <br>
+                         <td><b>Observación</b></td>
+                        <td colspan="3">
+                            <textarea  name="observacion" readonly="readonly" style="width: 28%;background-color:#03E7F7;" class="form-control input-sm" style="resize:none;" rows="7" cols="80"><?= $data->observacion ?></textarea>
+
+                        </td>
+                        <br>
+
+
+    <?php
+}
+?> 
+
+
+
+
+
+
+                    <!-- file lama -->
+                    <input type="hidden" name="id" value="<?= $id ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <!-- ID -->
                     <input type="hidden" name="id" value="<?= $data->id_verificacion ?>">
 

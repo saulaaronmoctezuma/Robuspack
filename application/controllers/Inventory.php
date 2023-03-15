@@ -133,6 +133,7 @@ class Inventory extends Admin_Controller {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('inventory/update/' . $value['id_entrada']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
                 // $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
+<<<<<<< HEAD
               $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
            
             }  elseif ($dataLevel == "is_servicio_a_clientes") {
@@ -140,10 +141,21 @@ class Inventory extends Admin_Controller {
                 $buttons .= ' <a href="' . base_url('inventory/update/' . $value['id_entrada']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
                    $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
            
+=======
+            
+                 $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+                  
+            }  elseif ($dataLevel == "is_servicio_a_clientes") {
+                $buttons = '';
+                $buttons .= ' <a href="' . base_url('inventory/update/' . $value['id_entrada']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
+                 $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+                  
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 } elseif ($dataLevel == "is_almacen") {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('inventory/update/' . $value['id_entrada']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
                    $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+<<<<<<< HEAD
                        
                        
            
@@ -152,6 +164,13 @@ class Inventory extends Admin_Controller {
                 $buttons = '';
                 $buttons .= ' <a href="' . base_url('inventory/update/' . $value['id_entrada']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
                   $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+=======
+                  $buttons .= '<a target="__blank" href="'.base_url('inventory/printDiv/'.$value['id_entrada']).'" class="btn btn-default"><i class="fa fa-print"></i></a>';
+                  
+            } elseif ($dataLevel == "is_Gerente_Ventas") {
+                $buttons = '';
+                $buttons .= ' <a href="' . base_url('inventory/update/' . $value['id_entrada']) . '" class="btn btn-default"><i class="fa fa-list"></i></a>';
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
 
 
@@ -263,7 +282,11 @@ class Inventory extends Admin_Controller {
                 $this->load->view('header', $data);
                 //$this->load->view('navbar', $data);
                 $this->render_template('inventory/create', $this->data);
+<<<<<<< HEAD
             }else  if ($dataLevel == "is_servicio_a_clientes") {
+=======
+            }else  if ($dataLevel == "is_servicio_a_aclientes") {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 $data['category'] = $this->model_inventory->get_category()->result();
 
                 // false case

@@ -1,6 +1,7 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+<<<<<<< HEAD
 <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -8,6 +9,9 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->
+=======
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     <?php
         //for warning -> flash_message
         //for info -> success_message

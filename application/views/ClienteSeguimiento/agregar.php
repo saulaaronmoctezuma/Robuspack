@@ -95,9 +95,14 @@
                 element.style.display = 'block';
                 elementempresa.style.display = 'none';
                 deseleccionarClienteCombo();
+<<<<<<< HEAD
                   document.getElementById('cliente_temporal').disabled = false;
                  document.getElementById('cliente').disabled = true;
 
+=======
+                 document.getElementById('cliente_temporal').disabled = false;
+                 document.getElementById('cliente').disabled = true;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             }
             else {
 
@@ -110,7 +115,11 @@
         }
 
         function limpiarCajaTextoCliente() {
+<<<<<<< HEAD
             document.getElementById('cliente_temporal').value = "";
+=======
+            document.getElementById('').value = "";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         }
 
         function deseleccionarClienteCombo() {
@@ -154,8 +163,12 @@
                             </div>
                             
                             
+<<<<<<< HEAD
                             
                               <div class="form-group col-xs-6">
+=======
+                                <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label>Nivel</label>
 
 
@@ -166,6 +179,7 @@
                                     <OPTION VALUE="3">3</OPTION>
                                     <OPTION VALUE="4">4</OPTION>
                                     <OPTION VALUE="NS">NS</OPTION>
+<<<<<<< HEAD
                                      <OPTION VALUE="Cancelada">Cancelada</OPTION>
                                     <OPTION VALUE="Vendida">Vendida</OPTION>
                                 </select>
@@ -199,15 +213,52 @@
                             </div>
                             
                             
+=======
+                                </select>
+
+                            </div>
+                            
+                             </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-xs-6"> <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                                <label><p style="color:blue;font-size:12px;">  &nbsp;Selecciona si no aparece el cliente</p></label>
+                            </div>
+
+                        </div>
+                        
+                        
+                        
+                      
+                        
+                      
+
+                        <div class="row">
+                           
+                            <div class="form-group col-xs-6">
+                                <label for="nombre"> Modelo de Máquina </label>
+                                <input id="modelo_maquina" type="text" class="form-control"  name="modelo_maquina" placeholder="Ingresa el modelo de la máquina">
+                            </div>
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                               <div class="form-group col-xs-6">
                                 <label for="nombre">Número de Máquina </label>
                                 <input id="numero_maquina" type="text" class="form-control"  name="numero_maquina" placeholder="Ingresa el número de la máquina">
                             </div>
+<<<<<<< HEAD
 
+=======
+                            
+                            
+                           
+                            
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         </div>
 
 
+<<<<<<< HEAD
                     
                         
                         
@@ -215,41 +266,90 @@
                         <br>
                         <div class="row">
                             <div class="form-group col-xs-6">
+=======
+                        
+                        
+                        <br>
+                       
+                        
+                        
+
+
+                        <div class="row">
+                            
+                            
+                              <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label for="nombre">Valor Cotización </label>
                                 <input id="valor_cotizacion" type="text" class="form-control"  name="valor_cotizacion" placeholder="Ingresa el valor de la cotización">
                             </div>
                             
+<<<<<<< HEAD
                               <div class="form-group col-xs-6">
                                 <label for="nombre">Último día de visita </label>
                                 <input id="fecha_dia_visita" type="date" class="form-control"  name="fecha_ultima_visita" placeholder="Ingresa el valor de la fecha_ultima_visita">
                             </div>
+=======
+                             <div class="form-group col-xs-6">
+                                <label for="nombre">Último día de visita </label>
+                                <input id="fecha_dia_visita" type="date" class="form-control"  name="fecha_ultima_visita" placeholder="Ingresa el valor de la fecha_ultima_visita">
+                            </div>
+                            
+                            
+                           
+                            
+                             
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                         </div>
                         
                         
                         
+<<<<<<< HEAD
                            
 
 
                         <br>
                         <div class="row">
                             <div class="form-group col-xs-6">
+=======
+                        
+
+
+
+
+                        <div class="row">
+                            
+                            
+                             <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label for="nombre">Necesidad</label>
                                 <textarea name="necesidad" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa una necesidad" require></textarea>
 
                             </div>
                             
+<<<<<<< HEAD
                              <div class="form-group col-xs-6">
+=======
+                            <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label for="nombre">Compromiso</label>
                                 <textarea name="compromiso" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa un compromiso" require></textarea>
                             </div>
 
 
+<<<<<<< HEAD
+=======
+                            
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
                         
                         
                         
+<<<<<<< HEAD
                         
 
 
@@ -257,11 +357,19 @@
 
                         <div class="row">
 
+=======
+                            
+                              <br>
+                        <div class="row">
+                            
+                            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Notas</label>
                                 <textarea name="notas" class="form-control input-sm"  rows="6" cols="80" style="resize:none;" placeholder="Ingresa una nota" require></textarea>
 
                             </div>
+<<<<<<< HEAD
 
 
    <div class="form-group col-xs-6">
@@ -279,6 +387,22 @@
                         
                         
                          <br>
+=======
+                            
+                            <div class="form-group col-xs-6">
+                                <label for="nombre">Fecha Prospección </label>
+                                <input id="fecha_prospeccion" type="date" class="form-control"  name="fecha_prospeccion">
+                            </div>
+                           
+
+                        </div>
+                              
+                              
+                         
+                              
+                              
+                                     <br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="row">
                             
                             
@@ -290,7 +414,11 @@
                             
                             
                             <div class="form-group col-xs-6">
+<<<<<<< HEAD
                                 <label for="nombre">Fecha en que nos contacto el cliente </label>
+=======
+                                <label for="nombre">Fecha Contacto Cliente </label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <input id="fecha_prospeccion" type="date" class="form-control"  name="fecha_contacto_cliente">
                             </div>
                             
@@ -306,13 +434,21 @@
                         <div class="row">
                             
                             <div class="form-group col-xs-6">
+<<<<<<< HEAD
                                 <label for="nombre">5 Llamadas Hechas</label>
+=======
+                                <label for="nombre">Llamadas Hechas</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <input id="llamdas_hechas" type="text" class="form-control"  name="llamdas_hechas" placeholder="Ingresa el número de llamadas hechas">
                             </div>
                             
                             
                             <div class="form-group col-xs-6">
+<<<<<<< HEAD
                                 <label for="nombre">Fecha de la Ultima Llamada </label>
+=======
+                                <label for="nombre">Fecha Ultima Llamada </label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <input id="fecha_ult_llamada" type="date" class="form-control"  name="fecha_ult_llamada">
                             </div>
                             
@@ -330,7 +466,11 @@
                             </div>
                                                                            
                                                                                <div class="form-group col-xs-6">
+<<<<<<< HEAD
                                 <label for="nombre">¿Venta Cerrada? </label>
+=======
+                                <label for="nombre">Venta Cerrada </label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 
                                 
                                 
@@ -371,6 +511,7 @@
                             </div>
 
                         </div>
+<<<<<<< HEAD
                                 
                         
                         
@@ -381,6 +522,13 @@
                         
                         
                         
+=======
+                                          
+                                     <br>
+                              
+                              
+                             
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <div class="row">
                             <div class="form-group col-xs-6">
                                 <label for="nombre">Cotización</label>
@@ -388,7 +536,11 @@
                                 <input id="a4" type="file" name="cotizacion" class="form-control">
                             </div>
                             
+<<<<<<< HEAD
                             <div class="form-group col-xs-6">
+=======
+                             <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label for="nombre">Pedido</label>
 
                                 <input id="a4" type="file" name="pedido" class="form-control">
@@ -396,7 +548,11 @@
 
                         </div>
 
+<<<<<<< HEAD
                         
+=======
+                           <br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <div class="row">
                             <div class="form-group col-xs-6">
@@ -413,7 +569,11 @@
 
 
                         <center>
+<<<<<<< HEAD
                             <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" id="botonOrden" title="Da clic para guardar los datos">
+=======
+                            <input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a></center>
                     </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script type="text/javascript">
     
     function fechaValidaActualizacionPrecio()
@@ -178,11 +179,175 @@ function filter(__val__){
         if (document.getElementById("price3").value === "NaN") {
             document.getElementById("price3").value = " ";
         }
+=======
+    <script type="text/javascript">
+
+
+
+
+        function filterFloat(evt,input){
+        // Backspace = 8, Enter = 13, ‘0′ = 48, ‘9′ = 57, ‘.’ = 46, ‘-’ = 43
+        var key = window.Event ? evt.which : evt.keyCode;    
+        var chark = String.fromCharCode(key);
+        var tempValue = input.value+chark;
+        if(key >= 48 && key <= 57){
+            if(filter(tempValue)=== false){
+                return false;
+            }else{       
+                return true;
+            }
+        }else{
+              if(key == 8 || key == 13 || key == 0) {     
+                  return true;              
+              }else if(key == 46){
+                    if(filter(tempValue)=== false){
+                        return false;
+                    }else{       
+                        return true;
+                    }
+              }else{
+                  return false;
+              }
+        }
+    }
+    function filter(__val__){
+        var preg = /^([0-9]+\.?[0-9]{0,2})$/; 
+        if(preg.test(__val__) === true){
+            return true;
+        }else{
+           return false;
+        }
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
 
 
+<<<<<<< HEAD
 </script>
+=======
+
+        function PrecioEnAlmacen() {
+            existencias = document.getElementById("qty").value;
+            precio_compra = document.getElementById("precio_de_compra").value;
+            valor_almacen1 = (existencias * precio_compra).toFixed(2);
+            document.getElementById("valor_almacen").value = valor_almacen1;
+            // alert ("hola");
+            if (document.getElementById("valor_almacen").value === "Infinity") {
+                document.getElementById("valor_almacen").value = " ";
+            }
+            if (document.getElementById("valor_almacen").value === "NaN") {
+                document.getElementById("valor_almacen").value = " ";
+            }
+        }
+
+
+        function Precio1() {
+            precio_compra = document.getElementById("precio_de_compra").value;
+            precio1 = Math.round((
+                             (
+                                Number(precio_compra) + 
+                                (
+                                    (
+                                    Number(precio_compra) * 0.23
+                                    )
+                                  +
+                                    (
+                                    Number(precio_compra) * 0.075
+                                    )
+                                )
+                             )
+
+
+                            / (0.83)
+
+
+                    ));
+
+            //precio1=5;
+            document.getElementById("price1").value = precio1;
+           // alert("hola");
+            if (document.getElementById("price1").value === "Infinity") {
+                document.getElementById("price1").value = " ";
+            }
+            if (document.getElementById("price1").value === "NaN") {
+                document.getElementById("price1").value = " ";
+            }
+        }
+
+
+
+
+        function Precio2() {
+            precio_compra = document.getElementById("precio_de_compra").value;
+            precio2 = Math.round((
+                             (
+                                Number(precio_compra) + 
+                                (
+                                    (
+                                    Number(precio_compra) * 0.23
+                                    )
+                                  +
+                                    (
+                                    Number(precio_compra) * 0.075
+                                    )
+                                )
+                             )
+
+
+                            / (0.75)
+
+
+                    ));
+
+            //precio1=5;
+            document.getElementById("price2").value = precio2;
+           // alert("hola");
+            if (document.getElementById("price2").value === "Infinity") {
+                document.getElementById("price2").value = " ";
+            }
+            if (document.getElementById("price2").value === "NaN") {
+                document.getElementById("price2").value = " ";
+            }
+        }
+
+          function Precio3() {
+            precio_compra = document.getElementById("precio_de_compra").value;
+            precio3 = Math.round((
+                             (
+                                Number(precio_compra) + 
+                                (
+                                    (
+                                    Number(precio_compra) * 0.23
+                                    )
+                                  +
+                                    (
+                                    Number(precio_compra) * 0.075
+                                    )
+                                )
+                             )
+
+
+                            / (0.65)
+
+
+                    ));
+
+
+            document.getElementById("price3").value = precio3;
+
+            if (document.getElementById("price3").value === "Infinity") {
+                document.getElementById("price3").value = " ";
+            }
+            if (document.getElementById("price3").value === "NaN") {
+                document.getElementById("price3").value = " ";
+            }
+        }
+
+
+
+    </script>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -248,7 +413,11 @@ function filter(__val__){
 
 
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label for="sku">Sku(Clave  )</label>
+=======
+                                <label for="sku">Sku</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <input type="text" class="form-control" id="sku" name="sku" placeholderr="Enter sku" value="<?php echo $product_data['sku']; ?>" autocomplete="off" />
                             </div>
 
@@ -296,12 +465,20 @@ function filter(__val__){
 
 
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label for="refacciones_consumibles">Tipo de consumible</label>
+=======
+                                <label for="refacciones_consumibles">Refacciones Consumibles</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <input type="text" class="form-control" id="refacciones_consumibles" name="refacciones_consumibles" placeholderr="Refacciones / Consumibles" value="<?php echo $product_data['refacciones_consumibles']; ?>" autocomplete="off" />
                             </div>
 
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label for="tiempo_surtido">Tiempo de fabricación (Días)</label>
+=======
+                                <label for="tiempo_surtido">Tiempo Surtido</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <input type="text" class="form-control" id="tiempo_surtido" name="tiempo_surtido" placeholderr="Tiempo Surtido" value="<?php echo $product_data['tiempo_surtido']; ?>" autocomplete="off" />
                             </div>
 
@@ -317,6 +494,7 @@ function filter(__val__){
                             </div>
 
                             <div class="form-group">
+<<<<<<< HEAD
                                <!-- <label for="qty">Stock(Existencia)</label> -->
                                 <input type="hidden" class="form-control" onkeyup="1PrecioEnAlmacen();" onchange="1PrecioEnAlmacen();" readonly style="background-color:#03E7F7;" id="qty" name="qty" placeholderr="Escribe la cantidad" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
                             </div>
@@ -339,16 +517,36 @@ function filter(__val__){
                              <div class="form-group">
                                 <label for="price1">Precio Venta 1 </label>
                                 <input onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" type="text"  style="background-color:#03E7F7;" title="Campo Autocompletable" class="form-control" id="price1" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+=======
+                                <label for="qty">Existencias</label>
+                                <input type="text" onkeyup="PrecioEnAlmacen();" onchange="PrecioEnAlmacen();" class="form-control" readonly id="qty" name="qty" placeholderr="Escribe la cantidad" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
+                            </div>
+
+
+
+                            <input type="hidden" class="form-control" id="price" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+
+
+
+                            <div class="form-group">
+                                <label for="price2">Precio Venta 1 </label>
+                                <input type="text" class="form-control" id="price1" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price" placeholderr="Escribe el precio 1" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
                             <div class="form-group">
                                 <label for="price2">Precio Venta 2 </label>
+<<<<<<< HEAD
                                 <input  onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" type="text"  style="background-color:#03E7F7;" title="Campo Autocompletable" class="form-control" id="price2" name="price2" placeholderr="Escribe el precio 2" value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
+=======
+                                <input type="text" class="form-control" id="price2" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price2" placeholderr="Escribe el precio 2" value="<?php echo $product_data['price2']; ?>" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
 
                             <div class="form-group">
                                 <label for="price2">Precio Venta 3</label>
+<<<<<<< HEAD
                                 <input  type="text"  style="background-color:#03E7F7;" title="Campo Autocompletable"  class="form-control" id="price3" name="price3" placeholderr="Escribe el precio 3" value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
                             </div>
 
@@ -364,6 +562,14 @@ function filter(__val__){
                                 <input type="date" class="form-control" id="fecha_actualizacion_precio"  title="Campo Autocompletable" name="fecha_actualizacion_precio" placeholderr="Escribe el precio 3" value="<?php echo $product_data['fecha_actualizacion_precio']; ?>" autocomplete="off" />
                             </div>
 
+=======
+                                <input type="text" class="form-control" id="price3" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price3" placeholderr="Escribe el precio 3" value="<?php echo $product_data['price3']; ?>" autocomplete="off" />
+                            </div>
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -460,7 +666,11 @@ function filter(__val__){
                             <?php $brand_data = json_decode($product_data['brand_id']); ?>
                                <select class="form-control select_group" id="brands" name="brands[]" multiple="multiple">
                             <?php foreach ($brands as $k => $v) : ?>
+<<<<<<< HEAD
                                                <option value="<?php echo $v['id'] ?>" <?php
+=======
+                                                   <option value="<?php echo $v['id'] ?>" <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 if (in_array($v['id'], $brand_data)) {
                                     echo 'selected="selected"';
                                 }
@@ -474,7 +684,11 @@ function filter(__val__){
                             <?php $category_data = json_decode($product_data['category_id']); ?>
                               <select class="form-control select_group" id="category" name="category[]" multiple="multiple">
                             <?php foreach ($category as $k => $v) : ?>
+<<<<<<< HEAD
                                               <option value="<?php echo $v['id'] ?>" <?php
+=======
+                                                  <option value="<?php echo $v['id'] ?>" <?php
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 if (in_array($v['id'], $category_data)) {
                                     echo 'selected="selected"';
                                 }
@@ -483,6 +697,7 @@ function filter(__val__){
                               </select>
                             </div>-->
 
+<<<<<<< HEAD
                             
                           <!--
                           NO BORRAR  NO BORRAR  NO BORRAR  
@@ -503,6 +718,28 @@ function filter(__val__){
 
      
                                         
+=======
+
+                            <!--
+                            NO BORRAR  NO BORRAR  NO BORRAR  
+                            <div class="form-group">
+                                  <label for="store">Almacén</label>
+                                  <select class="form-control select_group" id="store" name="store">
+                            <?php foreach ($stores as $k => $v) : ?>
+                                              <option value="<?php echo $v['id'] ?>" <?php
+                                if ($product_data['store_id'] == $v['id']) {
+                                    echo "selected='selected'";
+                                }
+                                ?>><?php echo $v['name'] ?></option>
+                            <?php endforeach ?>
+                                  </select>
+                              </div>-->
+
+                            <input type="hidden" class="form-control input-sm" id="store" name="store" value="<?php echo $product_data['store_id']; ?>">
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <!--<div class="form-group">
                               <label for="store">Disponibilidad</label>
                               <select class="form-control" id="availability" name="availability">
@@ -530,7 +767,10 @@ function filter(__val__){
 
 
 
+<<<<<<< HEAD
                            
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -550,6 +790,7 @@ function filter(__val__){
                                 <label for="proveedor_secundario">Proveedor Secundario</label>
                                 <input type="text" class="form-control" id="proveedor_secundario" name="proveedor_secundario" placeholderr="proveedor_secundario" value="<?php echo $product_data['proveedor_secundario']; ?>" autocomplete="off" />
                             </div>
+<<<<<<< HEAD
                             
                             
                             
@@ -572,6 +813,39 @@ function filter(__val__){
                                 <input type="text" class="form-control" id="condicion" name="condicion" placeholderr="condicion" value="<?php echo $product_data['condicion']; ?>" autocomplete="off" />
                             </div>
                             
+=======
+
+
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <label for="precio_de_compra">Precio de compra</label>
+                                <input type="text" class="form-control" onkeyup="PrecioEnAlmacen();Precio1();Precio2();Precio3();" onkeypress="return filterFloat(event,this);" onchange="PrecioEnAlmacen();Precio1();Precio2();Precio3();" id="precio_de_compra" name="precio_de_compra" placeholderr="precio_de_compra" value="<?php echo $product_data['precio_de_compra']; ?>" autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="valor_almacen">Valor Almacén</label>
+                                <input type="text" class="form-control" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" id="valor_almacen" name="valor_almacen" placeholderr="valor_almacen" value="<?php echo $product_data['valor_almacen']; ?>" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="indice_abc">Indice ABC</label>
+                                <input type="text" class="form-control" id="indice_abc" name="indice_abc" placeholderr="indice_abc" value="<?php echo $product_data['indice_abc']; ?>" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad_sugerida_a_solicitar">Cantidad Sugeridad a Solicitar</label>
+                                <input type="text" class="form-control" id="cantidad_sugerida_a_solicitar" name="cantidad_sugerida_a_solicitar" placeholderr="cantidad_sugerida_a_solicitar" value="<?php echo $product_data['cantidad_sugerida_a_solicitar']; ?>" autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="condicion">CondiciÓn</label>
+                                <input type="text" class="form-control" id="condicion" name="condicion" placeholderr="condicion" value="<?php echo $product_data['condicion']; ?>" autocomplete="off" />
+                            </div>
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <input type="hidden"  id="circunferencia" name="circunferencia" value="<?php echo $product_data['circunferencia']; ?>">
                             <input type="hidden"  id="ancho" name="ancho" value="<?php echo $product_data['ancho']; ?>">

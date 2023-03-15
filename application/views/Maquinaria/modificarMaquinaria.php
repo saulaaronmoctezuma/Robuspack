@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <!--
  * Desarrolladores : Saúl Aarón González Moctezuma && Ana Karen González Palma
  * Sistema de Control Robuspack SCR
@@ -5,12 +6,16 @@
  * "Controlar la complejidad es la esencia de la programación"
  */
 -->    
+=======
+      
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $result = $this->User_model->getAllSettings();
 $theme = $result->theme;
 ?>
+<<<<<<< HEAD
 
 <script>
     
@@ -39,6 +44,8 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 }
 </script>
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo $theme; ?>">
         <link rel="stylesheet" href="<?php echo base_url().'public/css/main.css' ?>">
@@ -53,12 +60,18 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
         <div class="container" >
             <table class="table table-bordered table-striped">
                 <tbody>
+<<<<<<< HEAD
                    <!-- <tr>
                         <td>-->
                             <input class="form-control"type="hidden" name="id_maquinaria" value="<?= $id_maquinaria ?>">
                             
                            <!-- </td>
                     </tr>-->
+=======
+                    <tr>
+                        <td><input class="form-control"type="hidden" name="id_maquinaria" value="<?= $id_maquinaria ?>"></td>
+                    </tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     <tr>
                         <td>Código</td>
                         <td><input id="a1" class="form-control" type="text" name="referencia" value="<?= $referencia ?>"></td>
@@ -76,6 +89,7 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                         <td><input id="a4" class="form-control" type="text" name="maquina" value="<?= $maquina ?>"></td>
                     </tr>
                   
+<<<<<<< HEAD
                   <tr>
                         <td bgcolor="#F75A74"><FONT COLOR="white">Pc Exwork Eur</FONT></td>
                         <td><input id="a4" class="form-control" type="text" name="pcexwork" value="<?= $pcexwork ?>"></td>
@@ -97,11 +111,20 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                      <tr>
                         <td>Precio 1 de la Máquina</td>
                         <td><input id="a4" class="form-control" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" type="text" name="precio1" value="<?= $precio1 ?>"></td>
+=======
+                     <tr>
+                        <td>Precio 1 de la Máquina</td>
+                        <td><input id="a4" class="form-control" type="text" name="precio1" value="<?= $precio1 ?>"></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </tr>
                     
                      <tr>
                         <td>Precio 2 de la Máquina</td>
+<<<<<<< HEAD
                         <td><input id="a4" class="form-control" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" type="text" name="precio2" value="<?= $precio2 ?>"></td>
+=======
+                        <td><input id="a4" class="form-control" type="text" name="precio2" value="<?= $precio2 ?>"></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </tr>
                     
                      <tr>
@@ -111,11 +134,16 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                     
                      <tr>
                         <td>Precio 4 de la Máquina</td>
+<<<<<<< HEAD
                         <td><input id="a4" class="form-control" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" type="text" name="precio4" value="<?= $precio4 ?>"></td>
+=======
+                        <td><input id="a4" class="form-control" type="text" name="precio4" value="<?= $precio4 ?>"></td>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     </tr>
                     
                      <tr>
                         <td>Precio 5 de la Máquina</td>
+<<<<<<< HEAD
                         <td><input id="a4" class="form-control" onclick="fechaValidaActualizacionPrecio()" onkeyup="fechaValidaActualizacionPrecio()" type="text" name="precio5" value="<?= $precio5 ?>"></td>
                     </tr>
                     
@@ -126,6 +154,26 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                      
                     
                     <!--Aqui los 4 precios pc-->
+=======
+                        <td><input id="a4" class="form-control" type="text" name="precio5" value="<?= $precio5 ?>"></td>
+                    </tr>
+                     <tr>
+                        <td>Pc Exwork</td>
+                        <td><input id="a4" class="form-control" type="text" name="pcexwork" value="<?= $pcexwork ?>"></td>
+                    </tr>
+                     <tr>
+                        <td>Pc Fob</td>
+                        <td><input id="a4" class="form-control" type="text" name="pcfob" value="<?= $pcfob ?>"></td>
+                    </tr>
+                     <tr>
+                        <td>Pc Cif</td>
+                        <td><input id="a4" class="form-control" type="text" name="pccif" value="<?= $pccif ?>"></td>
+                    </tr>
+                     <tr>
+                        <td>Pc Cip</td>
+                        <td><input id="a4" class="form-control" type="text" name="pccip" value="<?= $pccip ?>"></td>
+                    </tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                     
                     <tr>
                         <td>Ancho</td>
@@ -148,16 +196,28 @@ document.getElementById("fecha_actualizacion_precio").value = fechaActual;
                         <td><input id="a9" class="form-control" type="text" name="empresa_competencia_2"  value="<?= $empresa_competencia_2 ?>"></td>
                     </tr>
                     <tr>
+<<<<<<< HEAD
                         <td>Inventario</td>
                         <td><input id="a10" class="form-control" type="text" name="inventario" value="<?= $inventario ?>"></td>
                     </tr>
                     <tr>
+=======
+                        <td>Stock</td>
+                        <td><input id="a10" class="form-control" type="text" name="inventario" value="<?= $inventario ?>"></td>
+                    </tr>
+                   <tr>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         <td>Piezas a recibir</td>
                         <td><input id="a10" class="form-control" type="text" name="piezas_recibir" value="<?= $piezas_recibir ?>"></td>
                     </tr>
                     
+<<<<<<< HEAD
                     
                       <input id="fecha_corte_rotacion" class="form-control" type="hidden" name="fecha_corte_rotacion" value="<?= $fecha_corte_rotacion ?>">
+=======
+                     
+                        <input id="fecha_corte_rotacion" class="form-control" type="hidden" name="fecha_corte_rotacion" value="<?= $fecha_corte_rotacion ?>">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                    
                     
                     

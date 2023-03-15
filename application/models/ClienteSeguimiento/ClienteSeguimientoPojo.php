@@ -14,7 +14,11 @@
  */
 class ClienteSeguimientoPojo {
 
+<<<<<<< HEAD
      private $id_clienteseguimiento;
+=======
+    private $id_clienteseguimiento;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $cliente;
     private $nivel;
     private $necesidad;
@@ -34,15 +38,25 @@ class ClienteSeguimientoPojo {
     private $llamdas_hechas;
     private $fecha_ult_llamada;
     private $numero_visitas;
+<<<<<<< HEAD
    
+=======
+   // private $fecha_ult_visita;
+    //private $monto_cotizado;
+    //private $modelo_cotizado;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     private $ventas_cerrada;
     private $cliente_asignado;
     private $cliente_nuevo;
     
     
     
+<<<<<<< HEAD
     
   function __construct($id_clienteseguimiento, $cliente, $nivel, $necesidad, $compromiso, $notas, $modelo_maquina, $numero_maquina, $valor_cotizacion, $fecha_ultima_visita, $cotizacion, $pedido, $contrato, $first_name, $fecha_prospeccion, $llamadas_cliente, $fecha_contacto_cliente, $llamdas_hechas, $fecha_ult_llamada, $numero_visitas, $ventas_cerrada, $cliente_asignado, $cliente_nuevo) {
+=======
+    function __construct($id_clienteseguimiento, $cliente, $nivel, $necesidad, $compromiso, $notas, $modelo_maquina, $numero_maquina, $valor_cotizacion, $fecha_ultima_visita, $cotizacion, $pedido, $contrato, $first_name, $fecha_prospeccion, $llamadas_cliente, $fecha_contacto_cliente, $llamdas_hechas, $fecha_ult_llamada, $numero_visitas, $ventas_cerrada, $cliente_asignado, $cliente_nuevo) {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $this->id_clienteseguimiento = $id_clienteseguimiento;
         $this->cliente = $cliente;
         $this->nivel = $nivel;
@@ -253,6 +267,10 @@ class ClienteSeguimientoPojo {
     }
 
 
+<<<<<<< HEAD
 
 
 }
+=======
+}
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606

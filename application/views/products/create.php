@@ -1,5 +1,6 @@
 <script type="text/javascript">
     
+<<<<<<< HEAD
     function fechaValidaActualizacionPrecio()
 {
 let fechaActual = new Date();
@@ -23,6 +24,9 @@ console.log(fechaActual);
 document.getElementById("fecha_actualizacion_precio").value = fechaActual;
 
 }
+=======
+    
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     
     
     function filterFloat(evt,input){
@@ -246,7 +250,11 @@ function filter(__val__){
 
 
                                 <div class="form-group col-xs-6">
+<<<<<<< HEAD
                                     <label for="sku">Sku (Clave)</label>
+=======
+                                    <label for="sku">Sku</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                     <input type="text" class="form-control"  required="required" id="sku" name="sku" placeholder="Escribe el SKU" autocomplete="off" />
                                 </div>
 
@@ -280,6 +288,7 @@ function filter(__val__){
 
 
                             <div class="row">
+<<<<<<< HEAD
                                 
                                 
 
@@ -290,16 +299,26 @@ function filter(__val__){
                                 </div>
                                 
                                 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <div class="form-group col-xs-6">
                                     <label for="modulo">Módulo</label>
                                     <input type="text" class="form-control" id="modulo" name="modulo" placeholder="Escribe el módulo" autocomplete="off" />
                                 </div>
 
+<<<<<<< HEAD
                                
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="tipo_maquina">Tipo de Máquina</label>
+                                    <input type="text" class="form-control" id="tipo_maquina" name="tipo_maquina" placeholder="Escribe el tipo de máquina" autocomplete="off" />
+                                </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 </div><br>
                             <div class="row">
+<<<<<<< HEAD
                               <div class="form-group col-xs-6">
                                     <label for="tipo_maquina">Tipo de Máquina</label>
                                     <input type="text" class="form-control" id="tipo_maquina" name="tipo_maquina" placeholder="Escribe el tipo de máquina" autocomplete="off" />
@@ -318,10 +337,20 @@ function filter(__val__){
                             
                             <div class="row">
                                   <div class="form-group col-xs-6">
+=======
+
+                                <div class="form-group col-xs-6">
+                                    <label for="medida_maquina">Medida de la máquina</label>
+                                    <input type="text" class="form-control" id="medida_maquina" name="medida_maquina" placeholder="Escribe la medida de máquina" autocomplete="off" />
+                                </div>
+                                
+                                 <div class="form-group col-xs-6">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                     <label for="linea">Linea</label>
                                     <input type="text" class="form-control" id="linea" name="linea" placeholder="Escribe la linea" autocomplete="off" />
 
                                 </div>
+<<<<<<< HEAD
                                 
                                    <div class="form-group col-xs-6">
                                     <label for="refacciones_consumibles">Tipo de consumible</label>
@@ -374,11 +403,54 @@ function filter(__val__){
                                 <div class="form-group col-xs-6">
                                     <label for="valor_almacen">Valor en Almacén</label>
                                     <input type="text" class="form-control" id="valor_almacen" name="valor_almacen" placeholder="Escribe valor almacen  " autocomplete="off" />
+=======
+
+                            </div><br>
+                            <div class="row">
+                               
+
+                                <div class="form-group col-xs-6">
+                                    <label for="refacciones_consumibles">refacciones/consumibles</label>
+                                    <input type="text" class="form-control" id="refacciones_consumibles" name="refacciones_consumibles" placeholder="Escribe la refacciones_consumibles" autocomplete="off" />
+
+                                </div>
+
+
+
+                                <div class="form-group col-xs-6">
+                                    <label for="tiempo_surtido">Tiempo Surtido</label>
+                                    <input type="text" class="form-control" id="tiempo_surtido" name="tiempo_surtido" placeholder="Escribe la tiempo surtido" autocomplete="off" />
+
+                                </div>
+
+                            </div><br>
+
+
+                            <div class="row">
+                                <div class="form-group col-xs-6">
+                                    <label for="fecha_ultima_venta">Fecha Última Venta</label>
+                                    <input type="text" class="form-control" id="fecha_ultima_venta" name="fecha_ultima_venta" placeholder="Escribe la fecha ultima venta" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group col-xs-6">
+                                    <label for="dias_ultima_venta">Dias Última venta</label>
+                                    <input type="text" class="form-control" id="dias_ultima_venta" name="dias_ultima_venta" placeholder="Escribe la dias ultima venta" autocomplete="off" />
+                                </div>
+                                    </div><br>
+
+
+                            <div class="row">
+
+                                <div class="form-group col-xs-6">
+                                    <label for="qty">Existencias</label>
+                                    <input type="text" class="form-control" id="qty" onkeyup="PrecioEnAlmacen();" onChange="PrecioEnAlmacen();" name="qty" placeholder="Escribe el Existencias" autocomplete="off" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 </div>
                                 
                                 
                                 <div class="form-group col-xs-6">
                                     <label for="price">Precio Venta 1</label>
+<<<<<<< HEAD
                                     <input type="text" class="form-control" onkeyup="fechaValidaActualizacionPrecio()" onclick="fechaValidaActualizacionPrecio()" id="price1" name="price" style="background-color:#03E7F7;" title="Campo Autocompletable" placeholder="Escribe el Precio de Venta" autocomplete="off" />
                                 </div>
                               
@@ -485,6 +557,11 @@ function filter(__val__){
                                 
                                 
                            
+=======
+                                    <input type="text" class="form-control" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" id="price1" name="price" placeholder="Escribe el Precio de Venta" autocomplete="off" />
+                                </div>
+                            </div><br>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="row">
@@ -498,17 +575,66 @@ function filter(__val__){
 
                             </div>
  
+<<<<<<< HEAD
                             
                            
                             <div class="row">
 
 
                               
+=======
+                            <div class="row">
+                                <div class="form-group col-xs-6">
+                                    <label for="price2">Precio Venta 2</label>
+                                    <input type="text" class="form-control" id="price2" readonly style="background-color:#03E7F7;" title="Campo Autocompletable" name="price2" placeholder="Escribe el Precio de Venta 2" autocomplete="off" />
+                                </div>
+
+
+
+                                <div class="form-group col-xs-6">
+                                    <label for="price2">Precio Venta 3</label>
+                                    <input type="text" class="form-control" id="price3"  style="background-color:#03E7F7;" title="Campo Autocompletable" name="price3" placeholder="Escribe el Precio de Venta 3" autocomplete="off" />
+                                </div>
+                               
+                                <input type="hidden" class="form-control" id="price4" name="price4" placeholder="Escribe el Precio de Venta 4" autocomplete="off" />
+                            </div>
+
+                            <br>
+                            <div class="row">
+
+                                <div class="form-group col-xs-6">
+                                    <label for="min">Cantidad Mínima</label>
+                                    <input type="text" class="form-control" id="min" name="min" placeholder="Escribe la cantidad mínima" autocomplete="off" />
+                                </div>
+
+
+                                <div class="form-group col-xs-6">
+                                    <label for="max">Cantidad Máxima</label>
+                                    <input type="text" class="form-control" id="max" name="max" placeholder="Escribe la cantidad máxima" autocomplete="off" />
+                                </div>
+
+
+                            </div>
+
+
+                            <br>   
+                            <div class="row">
+
+
+                                <!--
+                                el id sirve para mostrar y opermita diseño      
+                                <div class="form-group">
+                                      <label for="">Descripción</label>
+                                      <textarea type="text" class="form-control" id="description" name="Escribe la descripción" placeholder="Escribe la descripción" autocomplete="off">
+                                      </textarea>
+                                    </div>-->
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
 
 
+<<<<<<< HEAD
                                <!-- <div class="form-group col-xs-6">
                                     <label for="location">Ubicación</label>-->
                                     <input type="hidden" class="form-control" id="location" name="location" placeholder="Escribe la ubicación" autocomplete="off" />
@@ -517,6 +643,16 @@ function filter(__val__){
 
  <input type="hidden" class="form-control" id="area" name="area" placeholder="area" autocomplete="off" />
                                 <!--div class="form-group col-xs-6"> <label for="area">Área</label>
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="location">Ubicación</label>
+                                    <input type="text" class="form-control" id="location" name="location" placeholder="Escribe la ubicación" autocomplete="off" />
+                                </div>
+
+
+
+                                <div class="form-group col-xs-6"> <label for="area">Área</label>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                     <select name="area" id="area" class="form-control input-sm" require>
                                         <option  value="">Selecciona una opción</option>
@@ -524,7 +660,11 @@ function filter(__val__){
                                         <OPTION VALUE="Corrugados">Corrugados</OPTION>
 
                                     </select>
+<<<<<<< HEAD
                                 </div> -->
+=======
+                                </div> 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             </div>
 
                             <!--<div class="form-group">
@@ -546,8 +686,21 @@ function filter(__val__){
 
                                 
                                 
+<<<<<<< HEAD
                               
                                
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="medidas_caracteristicas">Medidas / Caracteristicas</label>
+                                    <input type="text" class="form-control" id="medidas_caracteristicas" name="medidas_caracteristicas" placeholder="Escribe las medidas o caracteristicas" autocomplete="off" />
+
+                                </div>
+                                
+                                <div class="form-group col-xs-6">
+                                    <label for="proveedor_principal">Proveedor Principal</label>
+                                    <input type="text" class="form-control" id="proveedor_principal" name="proveedor_principal" placeholder="Escribe proveedor principal" autocomplete="off" />
+                                </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                                 <!--
                                 <?php /* if($attributes): */ ?>
@@ -601,6 +754,7 @@ function filter(__val__){
 
 
 
+<<<<<<< HEAD
                           
                                 
 
@@ -609,15 +763,79 @@ function filter(__val__){
                                  
 
                            
+=======
+                            <br>        
+
+                            <div class="row"> 
+
+                                
+
+
+                                <div class="form-group col-xs-6">
+                                    <label for="proveedor_secundario">Proveedor Secundario</label>
+                                    <input type="text" class="form-control" id="proveedor_secundario" name="proveedor_secundario" placeholder="Escribe proveedor secundario" autocomplete="off" />
+                                </div>
+                                
+                                 <div class="form-group col-xs-6">
+                                    <label for="precio_de_compra">Precio de Compra </label>
+                                    <input type="text" class="form-control" id="precio_de_compra" name="precio_de_compra" placeholder="Escribe precio de compra" onkeyup="PrecioEnAlmacen();Precio1();Precio2();Precio3();" onkeypress="return filterFloat(event,this);" onchange="PrecioEnAlmacen();Precio1();Precio2();Precio3();" autocomplete="off" />
+                                </div>
+
+                            </div>
+                            <br>
+                             <div class="row"> 
+
+                               
+
+
+                                <div class="form-group col-xs-6">
+                                    <label for="valor_almacen">Valor en Almacén</label>
+                                    <input type="text" class="form-control"  id="valor_almacen" readonly style="background-color:#03E7F7;" title="Campo Autocompletable"     name="valor_almacen" placeholder="Escribe valor almacen  " autocomplete="off" />
+                                </div>
+                                 
+                                     <div class="form-group col-xs-6">
+                                    <label for="indice_abc">Indice ABC </label>
+                                    <input type="text" class="form-control" id="indice_abc" name="indice_abc" placeholder="Escribe indice abc" autocomplete="off" />
+                                </div>  
+
+                             </div>
+                            
+                            
+                            <br>
+                               <div class="row"> 
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                               
 
 
+<<<<<<< HEAD
+=======
+                                <div class="form-group col-xs-6">
+                                    <label for="valor_almacen">Cantidad Sugerida a solicitar</label>
+                                    <input type="text" class="form-control" id="cantidad_sugerida_a_solicitar" name="cantidad_sugerida_a_solicitar" placeholder="Escribe cantidad sugerida a solicitar" autocomplete="off" />
+                                </div>
+                                   
+                                   <div class="form-group col-xs-6">
+                                    <label for="condicion">Condición </label>
+                                    <input type="text" class="form-control" id="indice_abc" name="condicion" placeholder="Escribe condicion" autocomplete="off" />
+                                </div>
+
+                             </div>
+                            
+                            <br>    
+                            <div class="row"> 
+
+                                
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                              
 
+<<<<<<< HEAD
                           
+=======
+                             </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             
 
 
@@ -645,7 +863,11 @@ function filter(__val__){
                         <!-- /.box-body -->
 
                         <div class="box-footer">
+<<<<<<< HEAD
                             <button type="submit" id="botonOrden" class="btn btn-primary">Guardar</button>
+=======
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                          <!--   <a href="<?php echo base_url('products/') ?>" class="btn btn-warning">Regresar</a>-->
                             <a class="btn btn-warning" href="javascript:history.back(1)">Regresar</a>
                         </div>

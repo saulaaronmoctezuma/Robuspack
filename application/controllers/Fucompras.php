@@ -165,7 +165,11 @@ class Fucompras extends CI_Controller {
         /* Para traerse el id del usuario */
         $data = $this->session->userdata;
         /* Para traerse el id del usuario */
+<<<<<<< HEAD
 
+=======
+        $cantidad_registros = $this->input->post('cantidad_registros');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $ref = $this->input->post('ref');
         $estatus = $this->input->post('estatus');
         $compania_importadora = $this->input->post('compania_importadora');
@@ -237,6 +241,10 @@ class Fucompras extends CI_Controller {
 
          */
         $data = array(
+<<<<<<< HEAD
+=======
+             'cantidad_registros' => $cantidad_registros,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'ref' => $ref,
             'estatus' => $estatus,
             'compania_importadora' => $compania_importadora,
@@ -312,6 +320,10 @@ class Fucompras extends CI_Controller {
           
           
           $this->FucomprasModelo->insert($data);
+<<<<<<< HEAD
+=======
+         // $this->session->set_flashdata('msg','<div class="alert alert-success">Product Saved</div>');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
           redirect('Fucompras'); 
     }
 
@@ -330,6 +342,10 @@ class Fucompras extends CI_Controller {
         $where = array('id_fucompras' => $id);
         $this->FucomprasModelo->delete($where);
         return redirect('Fucompras');
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
     }
 
     // edit
@@ -386,7 +402,11 @@ class Fucompras extends CI_Controller {
     }
 
     public function updatedata() {
+<<<<<<< HEAD
 
+=======
+$cantidad_registros = $this->input->post('cantidad_registros');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $ref = $this->input->post('ref');
         $estatus = $this->input->post('estatus');
         $compania_importadora = $this->input->post('compania_importadora');
@@ -461,7 +481,11 @@ class Fucompras extends CI_Controller {
 
 
 
+<<<<<<< HEAD
 
+=======
+$data['cantidad_registros'] = $cantidad_registros;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['ref'] = $ref;
         $data['estatus'] = $estatus;
         $data['compania_importadora'] = $compania_importadora;

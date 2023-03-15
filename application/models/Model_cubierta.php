@@ -1,8 +1,14 @@
 <?php
 require 'Product/ProductPojo.php';
+<<<<<<< HEAD
 //require 'IModeloAbstracto.php'; implements IModeloAbstracto 
 require 'Product/IModeloAbstracto.php';
 class Model_cubierta extends CI_Model implements IModeloAbstracto  {
+=======
+require 'IModeloAbstracto.php';
+
+class Model_cubierta extends CI_Model  implements IModeloAbstracto {
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
     public function __construct() {
         parent::__construct();
@@ -43,6 +49,7 @@ class Model_cubierta extends CI_Model implements IModeloAbstracto  {
             return $query->row_array();
         }
 
+<<<<<<< HEAD
         // no se utiliza$sql = "SELECT * FROM products ORDER BY id DESC";
         // si funciona $sql= "SELECT * FROM stores s INNER JOIN products p on p.store_id=s.id where s.id=1 order by p.id desc";
         
@@ -58,6 +65,10 @@ p.price4 as price4,
 p.price5 as price5,
 if(p.fecha_actualizacion_precio > m.fecha_actualizacion_precio,p.fecha_actualizacion_precio,m.fecha_actualizacion_precio) as fecha_actualizacion_precio,
 p.min, p.max, p.qty, p.image, p.description, p.location, p.area, p.attribute_value_id, p.brand_id, p.category_id, p.store_id, p.availability, p.linea, p.refacciones_consumibles, p.tiempo_surtido, p.fecha_ultima_venta, p.dias_ultima_venta, p.tipo_de_documento, p.numero_documento, p.traduccion, p.medidas_caracteristicas, p.serie_maquina, p.medida_maquina, p.modulo, p.tipo_maquina, p.proveedor_principal, p.proveedor_secundario, p.circunferencia, p.medidas_id, p.ancho, p.espesor, p.cue, p.dicar, p.pedimento, p.precio_de_compra, p.valor_almacen, p.indice_abc, p.cantidad_sugerida_a_solicitar, p.condicion, p.id_usuario, p.fecha_insercion, p.fecha_modificar FROM products p INNER join maquinaria m on TRIM(m.referencia)=TRIM(p.sku) WHERE p.store_id=1 order by p.id desc";
+=======
+        //$sql = "SELECT * FROM products ORDER BY id DESC";
+         $sql= "SELECT * FROM stores s INNER JOIN products p on p.store_id=s.id where s.id=1 order by p.id desc";
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         
         $query = $this->db->query($sql);
         return $query->result_array();

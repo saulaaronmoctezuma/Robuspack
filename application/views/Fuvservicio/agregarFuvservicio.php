@@ -197,7 +197,11 @@
             <div class="alert alert-info alert-dismissable">
 
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
+<<<<<<< HEAD
                 <strong>Agregar</strong> Ingresa los datos según corresponda
+=======
+                <center>    <strong>Fu V Servicio</strong></center>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             </div>
             <!--<h1>Agregar Datos</h1>-->
             <MARQUEE SCROLLDELAY =200></MARQUEE>
@@ -217,22 +221,46 @@
                                 <label>Ref</label><br>
                                 <input class="form-control input-sm"  type="text" name="ref"><br>
                             </div>
+<<<<<<< HEAD
 
                             <div class="form-group col-xs-4">
                                 <label>Cliente</label><br>
                                 <input type="text" class="form-control input-sm"   name="cliente"><br>
                             </div>
 
+=======
+                            <!--
+                                                        <div class="form-group col-xs-4">
+                                                            <label>Cliente</label><br>
+                                                            <input type="text" class="form-control input-sm"   name="cliente"><br>
+                                                        </div>-->
+                            <div class="form-group col-xs-4">
+                                <label for="nombre">Cliente</label>
+                                <select required id="cliente" class="form-control input-sm"  name="cliente" <?php echo form_dropdown('clienteCombo', $clienteCombo, '#', 'id="clienteCombo"'); ?> </select>
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-4">
                                 <label>Dirección</label><br>
 
                                 <input type="text" class="form-control input-sm" name="direccion"><br>
                             </div>
+<<<<<<< HEAD
                         </div>
 
                         <div class="row">
 
                             <div class="form-group col-xs-4">
+=======
+
+
+                            <div class="form-group col-xs-4">
+                                <label>Referencia</label><br>
+
+                                <input type="text" class="form-control input-sm" name="referencia"><br>
+                            </div>
+                            
+                             <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label>Código</label><br>
                                 <input type="text" class="form-control input-sm" name="codigo"><br>
                             </div>
@@ -248,6 +276,14 @@
                                     <OPTION VALUE="CUBIERTA">CUBIERTA</OPTION>
                                 </select>
                             </div> 
+<<<<<<< HEAD
+=======
+                        </div>
+
+                        <div class="row">
+
+                           
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -255,7 +291,22 @@
                                 <label>Descripción del Producto</label><br>
                                 <input type="text" class="form-control input-sm" name="rfc">
                             </div> 
+<<<<<<< HEAD
 
+=======
+                            
+                            
+                               <div class="form-group col-xs-4">
+                                <label>Factura</label><br>
+                                <input type="text" class="form-control input-sm" name="factura">
+                            </div>
+
+                            <div class="form-group col-xs-4">
+                                <label for="nombre">Factura <i style="font-size:18px;color:red" class="fa fa-file-pdf-o"></i></label>
+
+                                <input id="a4" type="file" name="facturapdf" class="form-control">
+                            </div>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div>
 
 
@@ -266,6 +317,7 @@
 
                         <div class="row">
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Factura</label><br>
                                 <input type="text" class="form-control input-sm" name="factura">
@@ -276,6 +328,9 @@
 
                                 <input id="a4" type="file" name="facturapdf" class="form-control">
                             </div>
+=======
+                         
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
 
@@ -284,8 +339,26 @@
                                 <input type="text" class="form-control input-sm" name="orden_compra">
                             </div>
 
+<<<<<<< HEAD
 
 
+=======
+                             <div class="form-group col-xs-4">
+                                <label>Cantidad</label><br>
+                                <input id="cantidad" onkeyup="calcularSubtotal();
+                                        calcularIva();
+                                        calcularTotal();" min="0" type="number" class="form-control input-sm" name="cantidad">
+                            </div>
+
+
+                            <div class="form-group col-xs-4">
+                                <label>PU USD</label><br>
+                                <input id="pu_usd" onkeyup="calcularSubtotal();
+                                        calcularIva();
+                                        calcularTotal();" min="0" type="number" class="form-control input-sm" name="pu_usd">
+                            </div> 
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <!-- <div class="form-group col-xs-4">
                                  <label>Remisión</label><br>
@@ -306,6 +379,7 @@
                         <br>    
                         <div class="row">
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Cantidad</label><br>
                                 <input id="cantidad" onkeyup="calcularSubtotal();
@@ -320,12 +394,16 @@
                                         calcularIva();
                                         calcularTotal();" min="0" type="number" class="form-control input-sm" name="pu_usd">
                             </div> 
+=======
+                           
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                             <div class="form-group col-xs-4">
                                 <label>Subtotal</label><br>
                                 <input id="subtotal" title="Cantidad * PU USD" style="background-color:#03E7F7;" readonly  type="text" class="form-control input-sm" name="subtotal">
                             </div>
+<<<<<<< HEAD
 
 
 
@@ -336,6 +414,11 @@
                         <div class="row">
 
                             <div class="form-group col-xs-4">
+=======
+                            
+                            
+                             <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label>IVA</label><br>
                                 <input title="PU USD * 16%"  style="background-color:#03E7F7;" id="iva" readonly type="text" class="form-control input-sm" name="iva">
                             </div> 
@@ -348,6 +431,18 @@
                             </div> 
 
 
+<<<<<<< HEAD
+=======
+                        </div><br>
+
+
+
+                        <div class="row">
+
+                           
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-4">
                                 <label>Fecha Elaboración Factura(dd/mm/aaaa):</label><br>
                                 <input id="fecha" title="Ingresa la fecha en el formato indicado"  min="00/00/0000" placeholder="dd/mm/aaaa" onkeyup="calcularFechaVencimiento();" 
@@ -356,8 +451,23 @@
                                 <!-- cambiar -->
                             </div>
 
+<<<<<<< HEAD
 
                           
+=======
+                                 <div class="form-group col-xs-4">
+                                <label>Días de crédito</label><br>
+                                <input id="dias_de_credito"  onkeyup="calcularFechaVencimiento();" min="0"  type="number" class="form-control input-sm" name="dias_de_credito">
+                            </div> 
+
+
+
+                            <div class="form-group col-xs-4">
+                                <label>Fecha de Vencimiento</label><br>
+                                <input id="fecha_vencimiento" title="Fecha de Elaboración de Factura + Días de crédito" readonly style="background-color:#03E7F7;"  type="text" class="form-control input-sm" name="fecha_vencimiento">
+                            </div> 
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div><br> 
 
 
@@ -389,6 +499,7 @@
                         <div class="row">
 
 
+<<<<<<< HEAD
                               <div class="form-group col-xs-4">
                                 <label>Días de crédito</label><br>
                                 <input id="dias_de_credito"  onkeyup="calcularFechaVencimiento();" min="0"  type="number" class="form-control input-sm" name="dias_de_credito">
@@ -400,12 +511,16 @@
                                 <label>Fecha de Vencimiento</label><br>
                                 <input id="fecha_vencimiento" title="Fecha de Elaboración de Factura + Días de crédito" readonly style="background-color:#03E7F7;"  type="text" class="form-control input-sm" name="fecha_vencimiento">
                             </div> 
+=======
+                       
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <div class="form-group col-xs-4">
                                 <label>Fecha de Pago</label><br>
                                 <input type="date" class="form-control input-sm" name="fecha_de_pago">
                             </div> 
 
+<<<<<<< HEAD
 
                             
 
@@ -422,6 +537,9 @@
                             </div>-->
 
 <div class="form-group col-xs-4">
+=======
+  <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label>Status de Pago</label><br>
 
                                 <select name="status_de_pago"  class="form-control input-sm" require>
@@ -439,19 +557,41 @@
                             </div> 
 
 
+<<<<<<< HEAD
                             <div class="form-group col-xs-4">
                                 <label>Nueva Fecha de Factura</label><br>
                                 <input type="text" class="form-control input-sm" name="nueva">
                             </div> 
                             
 
+=======
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                         </div><br> 
 
 
                         <div class="row">
 
 
+<<<<<<< HEAD
 <div class="form-group col-xs-4">
+=======
+
+                            <!--<div class="form-group col-xs-4">
+                                <label>Status de Pago</label><br>
+                                <input type="text" class="form-control input-sm" name="status_de_pago">
+                            </div>-->
+
+                          
+
+
+                            <div class="form-group col-xs-4">
+                                <label>Nueva Fecha de Factura</label><br>
+                                <input type="text" class="form-control input-sm" name="nueva">
+                            </div> 
+                            
+                            
+                            <div class="form-group col-xs-4">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                                 <label>Observacion</label><br>
                                 <input type="text" class="form-control input-sm" name="observaciones">
                             </div>
@@ -465,18 +605,37 @@
                                 <input type="text" class="form-control input-sm" name="vendedor">-->
                                 <select name="vendedor"  class="form-control input-sm" require>
                                     <option  value="" >Selecciona una opción</option>
+<<<<<<< HEAD
                                     <OPTION VALUE="Aldo Guillén">Aldo Guillén</OPTION>
                                     <OPTION VALUE="Rodrigo López">Rodrigo López</OPTION>
                                     <OPTION VALUE="Cesar Cantú">Cesar Cantú</OPTION>
                                     <OPTION VALUE="Gerardo Lopéz">Gerardo Lopéz</OPTION>
                                     <OPTION VALUE="Martín Sena">Martín Sena</OPTION>
                                     <OPTION VALUE="Sergio Peñafiel Soto">Sergio Peñafiel Soto</OPTION>
+=======
+
+                                    <OPTION VALUE="Casa Robuspack">Casa Robuspack</OPTION>
+                                    <OPTION VALUE="Aldo Guillén">Aldo Guillén</OPTION>
+                                    <OPTION VALUE="Martín Sena">Martín Sena</OPTION>
+                                    <OPTION VALUE="Gerardo Lopéz">Gerardo Lopéz</OPTION>
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
 
                                 </select>
                             </div> 
 
 
+<<<<<<< HEAD
+=======
+
+                        </div><br> 
+
+
+                        <div class="row">
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                             <div class="form-group col-xs-4">
                                 <label>Fecha de cobro de comisiones</label><br>
                                 <input type="date" class="form-control input-sm" name="fecha_de_cobro_de_comisiones">
@@ -493,7 +652,11 @@
 
 
 
+<<<<<<< HEAD
                         <center><input class="btn btn-success" type="submit" value="Agregar" id="botonOrden" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+=======
+                        <center><input class="btn btn-success" type="submit" value="Agregar" data-toggle="tooltip" data-placement="right" title="Da clic para guardar los datos">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                             <a title="Da clic para regresar al menú" href="javascript:window.history.go(-1);"class="btn btn-danger">Cancelar</a>
                         </center>

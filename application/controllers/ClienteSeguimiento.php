@@ -268,6 +268,10 @@ class ClienteSeguimiento extends CI_Controller {
         /* Para traerse el id del usuario */
 
         $cliente = $this->input->post('cliente');
+<<<<<<< HEAD
+=======
+       // $cliente_temporal = $this->input->post('cliente_temporal');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $nivel = $this->input->post('nivel');
         $necesidad = $this->input->post('necesidad');
         $compromiso = $this->input->post('compromiso');
@@ -282,10 +286,14 @@ class ClienteSeguimiento extends CI_Controller {
         $pedido = $this->input->post('pedido');
         $contrato = $this->input->post('contrato');
         
+<<<<<<< HEAD
         
         
         
           $fecha_prospeccion = $this->input->post('fecha_prospeccion');
+=======
+        $fecha_prospeccion = $this->input->post('fecha_prospeccion');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $llamadas_cliente = $this->input->post('llamadas_cliente');
         $fecha_contacto_cliente = $this->input->post('fecha_contacto_cliente');
         $llamdas_hechas = $this->input->post('llamdas_hechas');
@@ -299,6 +307,28 @@ class ClienteSeguimiento extends CI_Controller {
         $cliente_nuevo = $this->input->post('cliente_nuevo');
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         // get foto
         $config['upload_path'] = './assets/clienteseguimiento';
         $config['allowed_types'] = '*';
@@ -316,6 +346,10 @@ class ClienteSeguimiento extends CI_Controller {
         $cotizacion = $this->upload->data();
         $data = array(
             'cliente' => $cliente,
+<<<<<<< HEAD
+=======
+            // 'cliente_temporal' => $cliente_temporal,
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
             'nivel' => $nivel,
             'necesidad' => $necesidad,
             'compromiso' => $compromiso,
@@ -339,6 +373,29 @@ class ClienteSeguimiento extends CI_Controller {
             'cliente_asignado' => $cliente_asignado,
             'cliente_nuevo' => $cliente_nuevo
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         );
 
 
@@ -615,6 +672,11 @@ class ClienteSeguimiento extends CI_Controller {
     public function updatedata() {
 
         $cliente = $this->input->post('cliente');
+<<<<<<< HEAD
+=======
+        //$cliente_temporal = $this->input->post('cliente_temporal');
+        
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $nivel = $this->input->post('nivel');
         $necesidad = $this->input->post('necesidad');
         $compromiso = $this->input->post('compromiso');
@@ -628,7 +690,11 @@ class ClienteSeguimiento extends CI_Controller {
         $pedido = $this->input->post('pedido');
         $contrato = $this->input->post('contrato');
         
+<<<<<<< HEAD
         $fecha_prospeccion = $this->input->post('fecha_prospeccion');
+=======
+$fecha_prospeccion = $this->input->post('fecha_prospeccion');
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 $llamadas_cliente = $this->input->post('llamadas_cliente');
 $fecha_contacto_cliente = $this->input->post('fecha_contacto_cliente');
 $llamdas_hechas = $this->input->post('llamdas_hechas');
@@ -643,6 +709,46 @@ $cliente_nuevo = $this->input->post('cliente_nuevo');
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $path = './assets/clienteseguimiento/';
         $id = $this->input->post('id');
         $kondisi = array('id_clienteseguimiento' => $id);
@@ -676,6 +782,10 @@ $cliente_nuevo = $this->input->post('cliente_nuevo');
 
 
         $data['cliente'] = $cliente;
+<<<<<<< HEAD
+=======
+          //   $data['cliente_temporal'] = $cliente_temporal;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         $data['nivel'] = $nivel;
         $data['necesidad'] = $necesidad;
         $data['compromiso'] = $compromiso;
@@ -707,10 +817,17 @@ $cliente_nuevo = $this->input->post('cliente_nuevo');
         if (!empty($_FILES['contrato']['name'])) {
             $data['contrato'] = $contrato['file_name'];
         }
+<<<<<<< HEAD
         
         
         
              $data['fecha_prospeccion'] = $fecha_prospeccion;
+=======
+
+        
+        
+         $data['fecha_prospeccion'] = $fecha_prospeccion;
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
  $data['llamadas_cliente'] = $llamadas_cliente;
  $data['fecha_contacto_cliente'] = $fecha_contacto_cliente;
  $data['llamdas_hechas'] = $llamdas_hechas;
@@ -724,6 +841,26 @@ $cliente_nuevo = $this->input->post('cliente_nuevo');
  $data['cliente_nuevo'] = $cliente_nuevo;
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
         // hapus foto pada direktori
         @unlink($path . $this->input->post('filelama'));
         $this->ClienteSeguimientoModelo->update($data, $kondisi);

@@ -51,7 +51,11 @@
     
   <div class="form-group input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+<<<<<<< HEAD
                     <input type="text" id="myInput" placeholder="Escribe para buscar..."  class="form-control" />
+=======
+                    <input type="text" id="buscandoIguales" placeholder="Escribe para buscar..."  class="form-control" />
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
                 </div>
 
                 <!--<div class="text-center">
@@ -97,7 +101,11 @@
                         </tr>
                     </thead>
 
+<<<<<<< HEAD
                     <tbody align="center" id="myTable">
+=======
+                    <tbody align="center">
+>>>>>>> 3ca633ddf977474f5162ba742b7bbb723f11e606
 
                         <?php
                         foreach ($resumen as $obj) {
